@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>泊松分布交互式可视化 - 离线版</title>
+    <meta name="description" content="泊松分布交互式可视化工具，适用于教学和学习。完全离线，无需网络连接。">
+    <meta name="author" content="AI可视化助手">
+    <style>
+        body {
+            font-family: 'Arial', 'Microsoft YaHei', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        .instructions {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .instructions h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .instructions ul {
+            color: #34495e;
+            line-height: 1.6;
+        }
+        .chart-container {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎯 泊松分布交互式可视化</h1>
+        <p>探索泊松分布的数学特性 | 完全离线版本</p>
+    </div>
+    
+    <div class="instructions">
+        <h3>📖 使用说明</h3>
+        <ul>
+            <li><strong>调整参数：</strong>使用底部滑块调整λ参数（0.5 - 15.0）</li>
+            <li><strong>观察变化：</strong>实时查看PMF、CDF和统计特性的变化</li>
+            <li><strong>悬停查看：</strong>将鼠标悬停在图表上查看详细数值</li>
+            <li><strong>教学重点：</strong>注意期望值和方差都等于λ参数</li>
+            <li><strong>分布形状：</strong>观察λ值如何影响分布的形状和对称性</li>
+        </ul>
+    </div>
+    
+    <div class="chart-container">

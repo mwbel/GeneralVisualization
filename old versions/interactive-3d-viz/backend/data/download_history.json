@@ -1,0 +1,23 @@
+[
+  {
+    "id": "download_20251014_163511_0",
+    "filename": "visualization_20251014_163511.zip",
+    "code_preview": "",
+    "dependencies": [],
+    "options": {
+      "include_requirements": true,
+      "include_readme": true,
+      "include_sample_data": false,
+      "include_setup_script": true,
+      "include_docker": false,
+      "include_jupyter_notebook": false,
+      "python_version": "3.8",
+      "package_format": "zip"
+    },
+    "file_size": 1776,
+    "success": true,
+    "error_message": null,
+    "timestamp": "2025-10-14T16:35:11.229478",
+    "download_count": 1
+  }
+]

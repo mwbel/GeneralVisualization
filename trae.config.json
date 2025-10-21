@@ -1,0 +1,21 @@
+{
+  "workspaces": {
+    "Linear Algebra Visualization": {
+      "root": "app/modules/linear_algebra",
+      "inherits": ["app/components", "app/lib", "app/global_visual_standards.md"]
+    },
+    "Probability & Statistics Visualization": {
+      "root": "app/modules/probability_statistics",
+      "inherits": ["app/components", "app/lib", "app/global_visual_standards.md"]
+    },
+    "Differential Geometry Visualization": {
+      "root": "app/modules/differential_geometry",
+      "inherits": ["app/components", "app/lib", "app/global_visual_standards.md"]
+    }
+  },
+  "shared_settings": {
+    "auto_reload": true,
+    "hot_preview": true,
+    "theme": "app/global_visual_standards.md"
+  }
+}

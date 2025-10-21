@@ -1,0 +1,142 @@
+{
+  "Mathematics": {
+    "keywords": ["线性代数", "行列式", "特征值", "微积分", "几何", "矩阵", "空间变换", "向量", "数学", "代数"],
+    "subfields": {
+      "LinearAlgebra": {
+        "keywords": ["行列式", "矩阵", "向量", "体积", "面积", "线性变换", "特征值", "特征向量"],
+        "template": "visual_math_linear_algebra_prompt.txt",
+        "models": ["gpt-4", "claude-3.5-sonnet"]
+      },
+      "Geometry": {
+        "keywords": ["球体", "多面体", "投影", "旋转", "几何体", "立体几何", "空间几何"],
+        "template": "visual_math_geometry_prompt.txt",
+        "models": ["gpt-4", "gpt-4v"]
+      },
+      "Calculus": {
+        "keywords": ["微积分", "导数", "积分", "极限", "函数", "曲线", "曲面"],
+        "template": "visual_math_calculus_prompt.txt",
+        "models": ["gpt-4", "claude-3.5-sonnet"]
+      }
+    }
+  },
+  "Statistics": {
+    "keywords": ["概率", "分布", "抽样", "参数", "统计", "推断", "随机", "概率论"],
+    "subfields": {
+      "Distributions": {
+        "keywords": ["正态分布", "泊松分布", "超几何分布", "二项分布", "指数分布", "均匀分布"],
+        "template": "visual_stats_distribution_prompt.txt",
+        "models": ["gpt-4", "claude-3.5-sonnet"]
+      },
+      "Hypothesis": {
+        "keywords": ["假设检验", "置信区间", "显著性", "p值", "检验统计量"],
+        "template": "visual_stats_hypothesis_prompt.txt",
+        "models": ["gpt-4", "claude-3.5-sonnet"]
+      },
+      "Regression": {
+        "keywords": ["回归", "相关", "拟合", "预测", "线性回归", "多元回归"],
+        "template": "visual_stats_regression_prompt.txt",
+        "models": ["gpt-4", "claude-3.5-sonnet"]
+      }
+    }
+  },
+  "Physics": {
+    "keywords": ["力学", "轨道", "天体", "波动", "运动", "物理", "电磁", "光学"],
+    "subfields": {
+      "Astronomy": {
+        "keywords": ["太阳", "地球", "月球", "轨道", "相位", "行星", "天体运动"],
+        "template": "visual_physics_astronomy_prompt.txt",
+        "models": ["gpt-4", "gpt-4v"]
+      },
+      "Mechanics": {
+        "keywords": ["力", "运动", "速度", "加速度", "动量", "能量", "振动"],
+        "template": "visual_physics_mechanics_prompt.txt",
+        "models": ["gpt-4", "claude-3.5-sonnet"]
+      },
+      "Waves": {
+        "keywords": ["波", "频率", "振幅", "干涉", "衍射", "声波", "光波"],
+        "template": "visual_physics_waves_prompt.txt",
+        "models": ["gpt-4", "gpt-4v"]
+      }
+    }
+  },
+  "Biology": {
+    "keywords": ["细胞", "DNA", "解剖", "血液", "神经", "生物", "器官", "分子"],
+    "subfields": {
+      "Anatomy": {
+        "keywords": ["人体", "循环", "呼吸", "器官", "系统", "解剖结构"],
+        "template": "visual_bio_anatomy_prompt.txt",
+        "models": ["gpt-4v"]
+      },
+      "Molecular": {
+        "keywords": ["分子", "DNA", "蛋白质", "基因", "细胞结构", "生化反应"],
+        "template": "visual_bio_molecular_prompt.txt",
+        "models": ["gpt-4", "gpt-4v"]
+      },
+      "Ecology": {
+        "keywords": ["生态", "环境", "种群", "群落", "食物链", "生态系统"],
+        "template": "visual_bio_ecology_prompt.txt",
+        "models": ["gpt-4", "claude-3.5-sonnet"]
+      }
+    }
+  },
+  "Chemistry": {
+    "keywords": ["化学", "分子", "原子", "化学键", "反应", "元素", "化合物"],
+    "subfields": {
+      "MolecularStructure": {
+        "keywords": ["分子结构", "化学键", "原子", "电子", "轨道", "晶体"],
+        "template": "visual_chem_molecular_prompt.txt",
+        "models": ["gpt-4", "gpt-4v"]
+      },
+      "Reactions": {
+        "keywords": ["化学反应", "反应机理", "催化", "动力学", "热力学"],
+        "template": "visual_chem_reactions_prompt.txt",
+        "models": ["gpt-4", "claude-3.5-sonnet"]
+      }
+    }
+  },
+  "Engineering": {
+    "keywords": ["工程", "机械", "电路", "结构", "设计", "建筑", "材料"],
+    "subfields": {
+      "Mechanical": {
+        "keywords": ["机械", "齿轮", "传动", "结构", "应力", "变形"],
+        "template": "visual_eng_mechanical_prompt.txt",
+        "models": ["gpt-4", "gpt-4v"]
+      },
+      "Electrical": {
+        "keywords": ["电路", "电流", "电压", "电磁场", "信号", "电子"],
+        "template": "visual_eng_electrical_prompt.txt",
+        "models": ["gpt-4", "claude-3.5-sonnet"]
+      }
+    }
+  },
+  "DataScience": {
+    "keywords": ["数据", "机器学习", "人工智能", "算法", "网络", "图论"],
+    "subfields": {
+      "MachineLearning": {
+        "keywords": ["机器学习", "神经网络", "深度学习", "分类", "聚类", "回归"],
+        "template": "visual_ds_ml_prompt.txt",
+        "models": ["gpt-4", "claude-3.5-sonnet"]
+      },
+      "Networks": {
+        "keywords": ["网络", "图", "节点", "边", "社交网络", "复杂网络"],
+        "template": "visual_ds_networks_prompt.txt",
+        "models": ["gpt-4", "claude-3.5-sonnet"]
+      },
+      "DataAnalysis": {
+        "keywords": ["数据分析", "可视化", "图表", "趋势", "模式", "洞察"],
+        "template": "visual_ds_analysis_prompt.txt",
+        "models": ["gpt-4", "claude-3.5-sonnet"]
+      }
+    }
+  },
+  "General": {
+    "keywords": ["3D", "通用", "数据图", "关系图", "自定义", "基础"],
+    "subfields": {
+      "GenericVisualization": {
+        "keywords": ["自定义", "基础", "图表", "通用", "一般"],
+        "template": "visual_general_prompt.txt",
+        "models": ["gpt-3.5", "codellama"]
+      }
+    }
+  }
+}

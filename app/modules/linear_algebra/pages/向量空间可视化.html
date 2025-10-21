@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>向量空间可视化 - 一图胜千言</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.26.0/plotly.min.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="../frontend/global-mathjax.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 280px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 2px 0 15px rgba(0,0,0,0.1);
+            padding: 20px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+
+        .sidebar-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 15px;
+        }
+
+        .nav-item {
+            display: block;
+            padding: 12px 15px;
+            margin: 8px 0;
+            color: #4a5568;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s;
+            font-weight: 500;
+            border-left: 4px solid transparent;
+        }
+
+        .nav-item:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: translateX(5px);
+            border-left-color: #667eea;
+        }
+
+        .nav-item.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-left-color: #667eea;
+        }
+
+        .page-content {
+            margin-left: 280px;
+            flex: 1;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .concept-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            background: rgba(255,255,255,0.9);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            color: #4a5568;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .tab-button.active {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .tab-button:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .controls-section, .visualization-section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #4a5568;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .vector-input {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .vector-input h4 {
+            color: #4a5568;
+            margin-bottom: 15px;
+        }
+
+        .vector-controls {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .vector-controls.two-d {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .vector-input input {
+            padding: 8px;
+            border: 2px solid #e2e8f0;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .vector-input input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .result-display {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .result-display h3 {
+            margin-bottom: 15px;
+        }
+
+        .result-item {
+            background: rgba(255,255,255,0.2);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            text-align: left;
+        }
+
+        .plot-container {
+            height: 600px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .geometric-meaning {
+            background: #e6fffa;
+            border: 2px solid #38b2ac;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .geometric-meaning h4 {
+            color: #2c7a7b;
+            margin-bottom: 10px;
+        }
+
+        .preset-buttons {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .preset-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background 0.3s;
+        }
+
+        .preset-btn:hover {
+            background: #5a67d8;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            color: #4a5568;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .back-button:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .examples-section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-top: 30px;
+        }
+
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .example-card {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .example-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .formula {
+            font-size: 1.1em;
+            text-align: center;
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 2px solid #e9ecef;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .status-independent {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+
+        .status-dependent {
+            background: #fed7d7;
+            color: #742a2a;
+        }
+
+        .dimension-display {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2d3748;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 1200px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .concept-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-title">线性代数模块</div>
+        <a href="linear-algebra-module.html" class="nav-item">模块概览</a>
+        <a href="二阶行列式可视化.html" class="nav-item">二阶行列式</a>
+        <a href="三阶行列式可视化.html" class="nav-item">三阶行列式</a>
+        <a href="矩阵运算可视化.html" class="nav-item">矩阵运算</a>
+        <a href="向量空间可视化.html" class="nav-item active">向量空间</a>
+        <a href="../index.html">返回 “线性代数可视化世界”首页</a>
+<a href="../../../index.html" class="nav-item">返回 “万物可视化”首页</a>
+    </div>
+    
+    <div class="page-content">
+        <div class="header">
+            <h1>向量空间可视化</h1>
+            <p>探索线性相关性、基和维数的几何意义</p>
+        </div>
+
+        <div class="concept-tabs">
+            <button class="tab-button active" onclick="switchTab('independence')">线性相关性</button>
+            <button class="tab-button" onclick="switchTab('basis')">基与维数</button>
+            <button class="tab-button" onclick="switchTab('span')">向量张成</button>
+            <button class="tab-button" onclick="switchTab('subspace')">子空间</button>
+        </div>
+
+        <!-- Linear Independence Tab -->
+        <div id="independence-tab" class="tab-content active">
+            <div class="main-content">
+                <div class="controls-section">
+                    <h2 class="section-title">线性相关性</h2>
+                    
+                    <div class="geometric-meaning">
+                        <h4>定义</h4>
+                        <p>向量组 $\{v_1, v_2, \ldots, v_n\}$ <strong>线性无关</strong>，当且仅当方程 $c_1v_1 + c_2v_2 + \cdots + c_nv_n = 0$ 只有零解。</p>
+                        <p><strong>几何意义：</strong>线性无关的向量不能用其他向量的线性组合表示。</p>
+                    </div>
+
+                    <div class="preset-buttons">
+                        <button class="preset-btn" onclick="setIndependencePreset('independent2d')">2D线性无关</button>
+                        <button class="preset-btn" onclick="setIndependencePreset('dependent2d')">2D线性相关</button>
+                        <button class="preset-btn" onclick="setIndependencePreset('independent3d')">3D线性无关</button>
+                        <button class="preset-btn" onclick="setIndependencePreset('dependent3d')">3D线性相关</button>
+                    </div>
+
+                    <div class="vector-input">
+                        <h4>向量 v₁</h4>
+                        <div class="vector-controls" id="v1-controls">
+                            <input type="number" id="v1x" value="1" step="0.1" placeholder="x">
+                            <input type="number" id="v1y" value="0" step="0.1" placeholder="y">
+                            <input type="number" id="v1z" value="0" step="0.1" placeholder="z">
+                        </div>
+                    </div>
+
+                    <div class="vector-input">
+                        <h4>向量 v₂</h4>
+                        <div class="vector-controls" id="v2-controls">
+                            <input type="number" id="v2x" value="0" step="0.1" placeholder="x">
+                            <input type="number" id="v2y" value="1" step="0.1" placeholder="y">
+                            <input type="number" id="v2z" value="0" step="0.1" placeholder="z">
+                        </div>
+                    </div>
+
+                    <div class="vector-input">
+                        <h4>向量 v₃</h4>
+                        <div class="vector-controls" id="v3-controls">
+                            <input type="number" id="v3x" value="0" step="0.1" placeholder="x">
+                            <input type="number" id="v3y" value="0" step="0.1" placeholder="y">
+                            <input type="number" id="v3z" value="1" step="0.1" placeholder="z">
+                        </div>
+                    </div>
+
+                    <div class="result-display">
+                        <h3>分析结果</h3>
+                        <div class="result-item">
+                            <strong>线性相关性:</strong> 
+                            <span id="independence-status">线性无关</span>
+                            <span class="status-indicator status-independent" id="status-indicator">无关</span>
+                        </div>
+                        <div class="result-item">
+                            <strong>行列式值:</strong> <span id="determinant-value">1.00</span>
+                        </div>
+                        <div class="result-item">
+                            <strong>向量组的秩:</strong> <span id="rank-value">3</span>
+                        </div>
+                        <div class="result-item">
+                            <strong>张成空间维数:</strong> <span id="span-dimension">3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visualization-section">
+                    <h2 class="section-title">三维可视化</h2>
+                    <div id="independence-plot" class="plot-container"></div>
+                    
+                    <div style="margin-top: 20px;">
+                        <h4>向量信息</h4>
+                        <p><strong>v₁:</strong> (<span id="v1-display">1, 0, 0</span>)</p>
+                        <p><strong>v₂:</strong> (<span id="v2-display">0, 1, 0</span>)</p>
+                        <p><strong>v₃:</strong> (<span id="v3-display">0, 0, 1</span>)</p>
+                        <p><strong>几何解释:</strong> <span id="geometric-interpretation">三个向量构成标准正交基</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Basis and Dimension Tab -->
+        <div id="basis-tab" class="tab-content">
+            <div class="main-content">
+                <div class="controls-section">
+                    <h2 class="section-title">基与维数</h2>
+                    
+                    <div class="geometric-meaning">
+                        <h4>定义</h4>
+                        <p>向量空间V的一组<strong>基</strong>是V中线性无关且张成V的向量组。</p>
+                        <p><strong>维数</strong>是基中向量的个数，记作dim(V)。</p>
+                    </div>
+
+                    <div class="preset-buttons">
+                        <button class="preset-btn" onclick="setBasisPreset('standard2d')">2D标准基</button>
+                        <button class="preset-btn" onclick="setBasisPreset('custom2d')">2D自定义基</button>
+                        <button class="preset-btn" onclick="setBasisPreset('standard3d')">3D标准基</button>
+                        <button class="preset-btn" onclick="setBasisPreset('orthogonal3d')">3D正交基</button>
+                    </div>
+
+                    <div class="vector-input">
+                        <h4>基向量 e₁</h4>
+                        <div class="vector-controls">
+                            <input type="number" id="e1x" value="1" step="0.1" placeholder="x">
+                            <input type="number" id="e1y" value="0" step="0.1" placeholder="y">
+                            <input type="number" id="e1z" value="0" step="0.1" placeholder="z">
+                        </div>
+                    </div>
+
+                    <div class="vector-input">
+                        <h4>基向量 e₂</h4>
+                        <div class="vector-controls">
+                            <input type="number" id="e2x" value="0" step="0.1" placeholder="x">
+                            <input type="number" id="e2y" value="1" step="0.1" placeholder="y">
+                            <input type="number" id="e2z" value="0" step="0.1" placeholder="z">
+                        </div>
+                    </div>
+
+                    <div class="vector-input">
+                        <h4>基向量 e₃</h4>
+                        <div class="vector-controls">
+                            <input type="number" id="e3x" value="0" step="0.1" placeholder="x">
+                            <input type="number" id="e3y" value="0" step="0.1" placeholder="y">
+                            <input type="number" id="e3z" value="1" step="0.1" placeholder="z">
+                        </div>
+                    </div>
+
+                    <div class="result-display">
+                        <h3>基的性质</h3>
+                        <div class="result-item">
+                            <strong>是否构成基:</strong> <span id="is-basis">是</span>
+                        </div>
+                        <div class="result-item">
+                            <strong>空间维数:</strong> <span id="space-dimension">3</span>
+                        </div>
+                        <div class="result-item">
+                            <strong>是否正交:</strong> <span id="is-orthogonal">否</span>
+                        </div>
+                        <div class="result-item">
+                            <strong>是否标准正交:</strong> <span id="is-orthonormal">否</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visualization-section">
+                    <h2 class="section-title">基向量可视化</h2>
+                    <div id="basis-plot" class="plot-container"></div>
+                    
+                    <div style="margin-top: 20px;">
+                        <h4>坐标表示示例</h4>
+                        <p>任意向量 v = (2, 3, 1) 在当前基下的表示：</p>
+                        <p id="coordinate-representation">v = 2e₁ + 3e₂ + 1e₃</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vector Span Tab -->
+        <div id="span-tab" class="tab-content">
+            <div class="main-content">
+                <div class="controls-section">
+                    <h2 class="section-title">向量张成</h2>
+                    
+                    <div class="geometric-meaning">
+                        <h4>定义</h4>
+                        <p>向量组 $\{v_1, v_2, \ldots, v_n\}$ 的<strong>张成</strong>是所有这些向量线性组合的集合。</p>
+                <p>记作 $\text{span}\{v_1, v_2, \ldots, v_n\} = \{c_1v_1 + c_2v_2 + \cdots + c_nv_n \mid c_1, c_2, \ldots, c_n \in \mathbb{R}\}$</p>
+                    </div>
+
+                    <div class="preset-buttons">
+                        <button class="preset-btn" onclick="setSpanPreset('line')">直线</button>
+                        <button class="preset-btn" onclick="setSpanPreset('plane')">平面</button>
+                        <button class="preset-btn" onclick="setSpanPreset('space')">整个空间</button>
+                        <button class="preset-btn" onclick="setSpanPreset('origin')">原点</button>
+                    </div>
+
+                    <div class="vector-input">
+                        <h4>向量 u₁</h4>
+                        <div class="vector-controls">
+                            <input type="number" id="u1x" value="1" step="0.1" placeholder="x">
+                            <input type="number" id="u1y" value="1" step="0.1" placeholder="y">
+                            <input type="number" id="u1z" value="0" step="0.1" placeholder="z">
+                        </div>
+                    </div>
+
+                    <div class="vector-input">
+                        <h4>向量 u₂</h4>
+                        <div class="vector-controls">
+                            <input type="number" id="u2x" value="1" step="0.1" placeholder="x">
+                            <input type="number" id="u2y" value="-1" step="0.1" placeholder="y">
+                            <input type="number" id="u2z" value="0" step="0.1" placeholder="z">
+                        </div>
+                    </div>
+
+                    <div class="result-display">
+                        <h3>张成空间分析</h3>
+                        <div class="result-item">
+                            <strong>张成空间类型:</strong> <span id="span-type">平面</span>
+                        </div>
+                        <div class="result-item">
+                            <strong>张成空间维数:</strong> <span id="span-dim">2</span>
+                        </div>
+                        <div class="result-item">
+                            <strong>向量组的秩:</strong> <span id="span-rank">2</span>
+                        </div>
+                        <div class="result-item">
+                            <strong>几何描述:</strong> <span id="span-description">通过原点的平面</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visualization-section">
+                    <h2 class="section-title">张成空间可视化</h2>
+                    <div id="span-plot" class="plot-container"></div>
+                    
+                    <div style="margin-top: 20px;">
+                        <h4>张成空间方程</h4>
+                        <p id="span-equation">z = 0 (xy平面)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subspace Tab -->
+        <div id="subspace-tab" class="tab-content">
+            <div class="main-content">
+                <div class="controls-section">
+                    <h2 class="section-title">子空间</h2>
+                    
+                    <div class="geometric-meaning">
+                        <h4>定义</h4>
+                        <p>向量空间V的<strong>子空间</strong>W是V的非空子集，且对向量加法和标量乘法封闭。</p>
+                        <p><strong>子空间的性质：</strong></p>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>包含零向量</li>
+                            <li>对向量加法封闭</li>
+                            <li>对标量乘法封闭</li>
+                        </ul>
+                    </div>
+
+                    <div class="preset-buttons">
+                        <button class="preset-btn" onclick="setSubspacePreset('origin')">零子空间</button>
+                        <button class="preset-btn" onclick="setSubspacePreset('line')">直线子空间</button>
+                        <button class="preset-btn" onclick="setSubspacePreset('plane')">平面子空间</button>
+                        <button class="preset-btn" onclick="setSubspacePreset('whole')">整个空间</button>
+                    </div>
+
+                    <div class="vector-input">
+                        <h4>子空间生成向量 w₁</h4>
+                        <div class="vector-controls">
+                            <input type="number" id="w1x" value="1" step="0.1" placeholder="x">
+                            <input type="number" id="w1y" value="2" step="0.1" placeholder="y">
+                            <input type="number" id="w1z" value="1" step="0.1" placeholder="z">
+                        </div>
+                    </div>
+
+                    <div class="vector-input">
+                        <h4>子空间生成向量 w₂</h4>
+                        <div class="vector-controls">
+                            <input type="number" id="w2x" value="2" step="0.1" placeholder="x">
+                            <input type="number" id="w2y" value="1" step="0.1" placeholder="y">
+                            <input type="number" id="w2z" value="-1" step="0.1" placeholder="z">
+                        </div>
+                    </div>
+
+                    <div class="result-display">
+                        <h3>子空间性质</h3>
+                        <div class="result-item">
+                            <strong>子空间维数:</strong> <span id="subspace-dim">2</span>
+                        </div>
+                        <div class="result-item">
+                            <strong>子空间类型:</strong> <span id="subspace-type">平面</span>
+                        </div>
+                        <div class="result-item">
+                            <strong>基的个数:</strong> <span id="basis-count">2</span>
+                        </div>
+                        <div class="result-item">
+                            <strong>法向量:</strong> <span id="normal-vector">(1, 1, -1)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visualization-section">
+                    <h2 class="section-title">子空间可视化</h2>
+                    <div id="subspace-plot" class="plot-container"></div>
+                    
+                    <div style="margin-top: 20px;">
+                        <h4>子空间方程</h4>
+                        <p id="subspace-equation">x + y - z = 0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="examples-section">
+            <h2 class="section-title">典型例题与应用</h2>
+            <div class="example-grid">
+                <div class="example-card">
+                    <h4>• 线性相关性判定</h4>
+                    <p><strong>方法1：</strong>计算向量组构成矩阵的行列式</p>
+                    <p><strong>方法2：</strong>求解齐次线性方程组</p>
+                    <div class="formula">
+                        $$\begin{vmatrix} 1 & 2 & 3 \\ 2 & 4 & 6 \\ 1 & 1 & 1 \end{vmatrix} = 0$$
+                    </div>
+                    <p>行列式为0，所以向量组线性相关。</p>
+                </div>
+                
+                <div class="example-card">
+                    <h4>• 基的性质</h4>
+                    <p><strong>唯一性：</strong>任何向量在给定基下的坐标表示唯一</p>
+                    <p><strong>完备性：</strong>基能张成整个向量空间</p>
+                    <p><strong>最小性：</strong>基是张成空间的最小向量组</p>
+                    <p><strong>维数不变性：</strong>同一空间的所有基都有相同的向量个数</p>
+                </div>
+                
+                <div class="example-card">
+                    <h4>• 子空间的应用</h4>
+                    <p><strong>解空间：</strong>齐次线性方程组的解构成子空间</p>
+                    <p><strong>列空间：</strong>矩阵的列向量张成的子空间</p>
+                    <p><strong>零空间：</strong>$Ax=0$的解空间</p>
+                    <p><strong>特征空间：</strong>对应特征值的特征向量构成的子空间</p>
+                </div>
+                
+                <div class="example-card">
+                    <h4>• 实际应用</h4>
+                    <p><strong>数据科学：</strong>主成分分析中的主成分构成新的基</p>
+                    <p><strong>计算机图形学：</strong>坐标变换和投影</p>
+                    <p><strong>量子力学：</strong>状态空间和可观测量</p>
+                    <p><strong>信号处理：</strong>傅里叶基和小波基</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // MathJax configuration
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+
+        let currentTab = 'independence';
+
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName + '-tab').classList.add('active');
+            event.target.classList.add('active');
+            
+            currentTab = tabName;
+            
+            // Update visualization based on current tab
+            if (tabName === 'independence') {
+                updateIndependenceVisualization();
+            } else if (tabName === 'basis') {
+                updateBasisVisualization();
+            } else if (tabName === 'span') {
+                updateSpanVisualization();
+            } else if (tabName === 'subspace') {
+                updateSubspaceVisualization();
+            }
+        }
+
+        // Linear Independence Functions
+        function setIndependencePreset(type) {
+            const presets = {
+                independent2d: { v1: [1, 0, 0], v2: [0, 1, 0], v3: [0, 0, 0] },
+                dependent2d: { v1: [1, 2, 0], v2: [2, 4, 0], v3: [0, 0, 0] },
+                independent3d: { v1: [1, 0, 0], v2: [0, 1, 0], v3: [0, 0, 1] },
+                dependent3d: { v1: [1, 2, 3], v2: [2, 4, 6], v3: [1, 1, 1] }
+            };
+            
+            const preset = presets[type];
+            if (preset) {
+                document.getElementById('v1x').value = preset.v1[0];
+                document.getElementById('v1y').value = preset.v1[1];
+                document.getElementById('v1z').value = preset.v1[2];
+                document.getElementById('v2x').value = preset.v2[0];
+                document.getElementById('v2y').value = preset.v2[1];
+                document.getElementById('v2z').value = preset.v2[2];
+                document.getElementById('v3x').value = preset.v3[0];
+                document.getElementById('v3y').value = preset.v3[1];
+                document.getElementById('v3z').value = preset.v3[2];
+                updateIndependenceVisualization();
+            }
+        }
+
+        function updateIndependenceVisualization() {
+            // Get vectors
+            const v1 = [
+                parseFloat(document.getElementById('v1x').value) || 0,
+                parseFloat(document.getElementById('v1y').value) || 0,
+                parseFloat(document.getElementById('v1z').value) || 0
+            ];
+            const v2 = [
+                parseFloat(document.getElementById('v2x').value) || 0,
+                parseFloat(document.getElementById('v2y').value) || 0,
+                parseFloat(document.getElementById('v2z').value) || 0
+            ];
+            const v3 = [
+                parseFloat(document.getElementById('v3x').value) || 0,
+                parseFloat(document.getElementById('v3y').value) || 0,
+                parseFloat(document.getElementById('v3z').value) || 0
+            ];
+
+            // Calculate determinant
+            const det = v1[0]*(v2[1]*v3[2] - v2[2]*v3[1]) - 
+                       v1[1]*(v2[0]*v3[2] - v2[2]*v3[0]) + 
+                       v1[2]*(v2[0]*v3[1] - v2[1]*v3[0]);
+
+            // Determine linear independence
+            const isIndependent = Math.abs(det) > 0.001;
+            const rank = calculateRank([v1, v2, v3]);
+
+            // Update display
+            document.getElementById('independence-status').textContent = isIndependent ? '线性无关' : '线性相关';
+            document.getElementById('determinant-value').textContent = det.toFixed(3);
+            document.getElementById('rank-value').textContent = rank;
+            document.getElementById('span-dimension').textContent = rank;
+            
+            const statusIndicator = document.getElementById('status-indicator');
+            if (isIndependent) {
+                statusIndicator.textContent = '无关';
+                statusIndicator.className = 'status-indicator status-independent';
+            } else {
+                statusIndicator.textContent = '相关';
+                statusIndicator.className = 'status-indicator status-dependent';
+            }
+
+            // Update vector displays
+            document.getElementById('v1-display').textContent = `${v1[0]}, ${v1[1]}, ${v1[2]}`;
+            document.getElementById('v2-display').textContent = `${v2[0]}, ${v2[1]}, ${v2[2]}`;
+            document.getElementById('v3-display').textContent = `${v3[0]}, ${v3[1]}, ${v3[2]}`;
+
+            // Update geometric interpretation
+            let interpretation = '';
+            if (rank === 0) interpretation = '所有向量都是零向量';
+            else if (rank === 1) interpretation = '向量共线，张成一条直线';
+            else if (rank === 2) interpretation = '向量共面，张成一个平面';
+            else if (rank === 3) interpretation = '向量张成整个三维空间';
+            
+            document.getElementById('geometric-interpretation').textContent = interpretation;
+
+            // Update plot
+            updateIndependencePlot(v1, v2, v3, isIndependent);
+        }
+
+        function updateIndependencePlot(v1, v2, v3, isIndependent) {
+            const traces = [
+                // Vector v1
+                {
+                    x: [0, v1[0]],
+                    y: [0, v1[1]],
+                    z: [0, v1[2]],
+                    mode: 'lines+markers',
+                    line: { color: '#e53e3e', width: 6 },
+                    marker: { size: 8 },
+                    name: 'v₁',
+                    type: 'scatter3d'
+                },
+                // Vector v2
+                {
+                    x: [0, v2[0]],
+                    y: [0, v2[1]],
+                    z: [0, v2[2]],
+                    mode: 'lines+markers',
+                    line: { color: '#3182ce', width: 6 },
+                    marker: { size: 8 },
+                    name: 'v₂',
+                    type: 'scatter3d'
+                },
+                // Vector v3
+                {
+                    x: [0, v3[0]],
+                    y: [0, v3[1]],
+                    z: [0, v3[2]],
+                    mode: 'lines+markers',
+                    line: { color: '#38a169', width: 6 },
+                    marker: { size: 8 },
+                    name: 'v₃',
+                    type: 'scatter3d'
+                }
+            ];
+
+            // Add coordinate axes
+            const axisLength = 3;
+            traces.push(
+                // X-axis
+                {
+                    x: [0, axisLength],
+                    y: [0, 0],
+                    z: [0, 0],
+                    mode: 'lines',
+                    line: { color: 'rgba(0,0,0,0.3)', width: 2 },
+                    showlegend: false,
+                    type: 'scatter3d',
+                    hoverinfo: 'skip'
+                },
+                // Y-axis
+                {
+                    x: [0, 0],
+                    y: [0, axisLength],
+                    z: [0, 0],
+                    mode: 'lines',
+                    line: { color: 'rgba(0,0,0,0.3)', width: 2 },
+                    showlegend: false,
+                    type: 'scatter3d',
+                    hoverinfo: 'skip'
+                },
+                // Z-axis
+                {
+                    x: [0, 0],
+                    y: [0, 0],
+                    z: [0, axisLength],
+                    mode: 'lines',
+                    line: { color: 'rgba(0,0,0,0.3)', width: 2 },
+                    showlegend: false,
+                    type: 'scatter3d',
+                    hoverinfo: 'skip'
+                }
+            );
+
+            const layout = {
+                title: `向量组${isIndependent ? '线性无关' : '线性相关'}`,
+                scene: {
+                    xaxis: { title: 'X', range: [-4, 4] },
+                    yaxis: { title: 'Y', range: [-4, 4] },
+                    zaxis: { title: 'Z', range: [-4, 4] },
+                    aspectmode: 'cube',
+                    camera: {
+                        eye: { x: 1.5, y: 1.5, z: 1.5 }
+                    }
+                },
+                showlegend: true,
+                legend: { x: 0.02, y: 0.98 },
+                margin: { l: 0, r: 0, t: 50, b: 0 },
+                plot_bgcolor: '#f8f9fa',
+                paper_bgcolor: 'white'
+            };
+
+            Plotly.newPlot('independence-plot', traces, layout, { responsive: true });
+        }
+
+        // Basis Functions
+        function setBasisPreset(type) {
+            const presets = {
+                standard2d: { e1: [1, 0, 0], e2: [0, 1, 0], e3: [0, 0, 0] },
+                custom2d: { e1: [1, 1, 0], e2: [1, -1, 0], e3: [0, 0, 0] },
+                standard3d: { e1: [1, 0, 0], e2: [0, 1, 0], e3: [0, 0, 1] },
+                orthogonal3d: { e1: [1, 1, 0], e2: [1, -1, 0], e3: [0, 0, 2] }
+            };
+            
+            const preset = presets[type];
+            if (preset) {
+                document.getElementById('e1x').value = preset.e1[0];
+                document.getElementById('e1y').value = preset.e1[1];
+                document.getElementById('e1z').value = preset.e1[2];
+                document.getElementById('e2x').value = preset.e2[0];
+                document.getElementById('e2y').value = preset.e2[1];
+                document.getElementById('e2z').value = preset.e2[2];
+                document.getElementById('e3x').value = preset.e3[0];
+                document.getElementById('e3y').value = preset.e3[1];
+                document.getElementById('e3z').value = preset.e3[2];
+                updateBasisVisualization();
+            }
+        }
+
+        function updateBasisVisualization() {
+            // Get basis vectors
+            const e1 = [
+                parseFloat(document.getElementById('e1x').value) || 0,
+                parseFloat(document.getElementById('e1y').value) || 0,
+                parseFloat(document.getElementById('e1z').value) || 0
+            ];
+            const e2 = [
+                parseFloat(document.getElementById('e2x').value) || 0,
+                parseFloat(document.getElementById('e2y').value) || 0,
+                parseFloat(document.getElementById('e2z').value) || 0
+            ];
+            const e3 = [
+                parseFloat(document.getElementById('e3x').value) || 0,
+                parseFloat(document.getElementById('e3y').value) || 0,
+                parseFloat(document.getElementById('e3z').value) || 0
+            ];
+
+            // Calculate properties
+            const det = e1[0]*(e2[1]*e3[2] - e2[2]*e3[1]) - 
+                       e1[1]*(e2[0]*e3[2] - e2[2]*e3[0]) + 
+                       e1[2]*(e2[0]*e3[1] - e2[1]*e3[0]);
+            
+            const isBasis = Math.abs(det) > 0.001;
+            const rank = calculateRank([e1, e2, e3]);
+            
+            // Check orthogonality
+            const dot12 = e1[0]*e2[0] + e1[1]*e2[1] + e1[2]*e2[2];
+            const dot13 = e1[0]*e3[0] + e1[1]*e3[1] + e1[2]*e3[2];
+            const dot23 = e2[0]*e3[0] + e2[1]*e3[1] + e2[2]*e3[2];
+            const isOrthogonal = Math.abs(dot12) < 0.001 && Math.abs(dot13) < 0.001 && Math.abs(dot23) < 0.001;
+            
+            // Check orthonormality
+            const norm1 = Math.sqrt(e1[0]*e1[0] + e1[1]*e1[1] + e1[2]*e1[2]);
+            const norm2 = Math.sqrt(e2[0]*e2[0] + e2[1]*e2[1] + e2[2]*e2[2]);
+            const norm3 = Math.sqrt(e3[0]*e3[0] + e3[1]*e3[1] + e3[2]*e3[2]);
+            const isOrthonormal = isOrthogonal && Math.abs(norm1 - 1) < 0.001 && Math.abs(norm2 - 1) < 0.001 && Math.abs(norm3 - 1) < 0.001;
+
+            // Update display
+            document.getElementById('is-basis').textContent = isBasis ? '是' : '否';
+            document.getElementById('space-dimension').textContent = rank;
+            document.getElementById('is-orthogonal').textContent = isOrthogonal ? '是' : '否';
+            document.getElementById('is-orthonormal').textContent = isOrthonormal ? '是' : '否';
+
+            // Update coordinate representation
+            const v = [2, 3, 1];
+            if (isBasis) {
+                // Calculate coordinates in the new basis (simplified for display)
+                document.getElementById('coordinate-representation').textContent = 
+                    `v = ${v[0]}e₁ + ${v[1]}e₂ + ${v[2]}e₃`;
+            } else {
+                document.getElementById('coordinate-representation').textContent = 
+                    '当前向量组不构成基，无法表示任意向量';
+            }
+
+            // Update plot
+            updateBasisPlot(e1, e2, e3, isBasis);
+        }
+
+        function updateBasisPlot(e1, e2, e3, isBasis) {
+            const traces = [
+                // Basis vector e1
+                {
+                    x: [0, e1[0]],
+                    y: [0, e1[1]],
+                    z: [0, e1[2]],
+                    mode: 'lines+markers',
+                    line: { color: '#e53e3e', width: 8 },
+                    marker: { size: 10 },
+                    name: 'e₁',
+                    type: 'scatter3d'
+                },
+                // Basis vector e2
+                {
+                    x: [0, e2[0]],
+                    y: [0, e2[1]],
+                    z: [0, e2[2]],
+                    mode: 'lines+markers',
+                    line: { color: '#3182ce', width: 8 },
+                    marker: { size: 10 },
+                    name: 'e₂',
+                    type: 'scatter3d'
+                },
+                // Basis vector e3
+                {
+                    x: [0, e3[0]],
+                    y: [0, e3[1]],
+                    z: [0, e3[2]],
+                    mode: 'lines+markers',
+                    line: { color: '#38a169', width: 8 },
+                    marker: { size: 10 },
+                    name: 'e₃',
+                    type: 'scatter3d'
+                }
+            ];
+
+            // Add example vector
+            const exampleVector = [2, 3, 1];
+            traces.push({
+                x: [0, exampleVector[0]],
+                y: [0, exampleVector[1]],
+                z: [0, exampleVector[2]],
+                mode: 'lines+markers',
+                line: { color: '#805ad5', width: 6, dash: 'dash' },
+                marker: { size: 8 },
+                name: '示例向量 v',
+                type: 'scatter3d'
+            });
+
+            const layout = {
+                title: `${isBasis ? '基向量' : '非基向量组'}`,
+                scene: {
+                    xaxis: { title: 'X', range: [-4, 4] },
+                    yaxis: { title: 'Y', range: [-4, 4] },
+                    zaxis: { title: 'Z', range: [-4, 4] },
+                    aspectmode: 'cube',
+                    camera: {
+                        eye: { x: 1.5, y: 1.5, z: 1.5 }
+                    }
+                },
+                showlegend: true,
+                legend: { x: 0.02, y: 0.98 },
+                margin: { l: 0, r: 0, t: 50, b: 0 },
+                plot_bgcolor: '#f8f9fa',
+                paper_bgcolor: 'white'
+            };
+
+            Plotly.newPlot('basis-plot', traces, layout, { responsive: true });
+        }
+
+        // Span Functions
+        function setSpanPreset(type) {
+            const presets = {
+                line: { u1: [1, 2, 1], u2: [0, 0, 0] },
+                plane: { u1: [1, 1, 0], u2: [1, -1, 0] },
+                space: { u1: [1, 0, 0], u2: [0, 1, 0] },
+                origin: { u1: [0, 0, 0], u2: [0, 0, 0] }
+            };
+            
+            const preset = presets[type];
+            if (preset) {
+                document.getElementById('u1x').value = preset.u1[0];
+                document.getElementById('u1y').value = preset.u1[1];
+                document.getElementById('u1z').value = preset.u1[2];
+                document.getElementById('u2x').value = preset.u2[0];
+                document.getElementById('u2y').value = preset.u2[1];
+                document.getElementById('u2z').value = preset.u2[2];
+                updateSpanVisualization();
+            }
+        }
+
+        function updateSpanVisualization() {
+            // Get vectors
+            const u1 = [
+                parseFloat(document.getElementById('u1x').value) || 0,
+                parseFloat(document.getElementById('u1y').value) || 0,
+                parseFloat(document.getElementById('u1z').value) || 0
+            ];
+            const u2 = [
+                parseFloat(document.getElementById('u2x').value) || 0,
+                parseFloat(document.getElementById('u2y').value) || 0,
+                parseFloat(document.getElementById('u2z').value) || 0
+            ];
+
+            // Calculate span properties
+            const rank = calculateRank([u1, u2]);
+            let spanType = '';
+            let spanDescription = '';
+            let spanEquation = '';
+
+            if (rank === 0) {
+                spanType = '零空间';
+                spanDescription = '只包含零向量';
+                spanEquation = '{(0, 0, 0)}';
+            } else if (rank === 1) {
+                spanType = '直线';
+                spanDescription = '通过原点的直线';
+                spanEquation = `t(${u1[0] || u2[0]}, ${u1[1] || u2[1]}, ${u1[2] || u2[2]}), t ∈ ℝ`;
+            } else if (rank === 2) {
+                spanType = '平面';
+                spanDescription = '通过原点的平面';
+                // Calculate normal vector
+                const normal = [
+                    u1[1]*u2[2] - u1[2]*u2[1],
+                    u1[2]*u2[0] - u1[0]*u2[2],
+                    u1[0]*u2[1] - u1[1]*u2[0]
+                ];
+                spanEquation = `${normal[0].toFixed(1)}x + ${normal[1].toFixed(1)}y + ${normal[2].toFixed(1)}z = 0`;
+            }
+
+            // Update display
+            document.getElementById('span-type').textContent = spanType;
+            document.getElementById('span-dim').textContent = rank;
+            document.getElementById('span-rank').textContent = rank;
+            document.getElementById('span-description').textContent = spanDescription;
+            document.getElementById('span-equation').textContent = spanEquation;
+
+            // Update plot
+            updateSpanPlot(u1, u2, rank);
+        }
+
+        function updateSpanPlot(u1, u2, rank) {
+            const traces = [
+                // Vector u1
+                {
+                    x: [0, u1[0]],
+                    y: [0, u1[1]],
+                    z: [0, u1[2]],
+                    mode: 'lines+markers',
+                    line: { color: '#e53e3e', width: 6 },
+                    marker: { size: 8 },
+                    name: 'u₁',
+                    type: 'scatter3d'
+                },
+                // Vector u2
+                {
+                    x: [0, u2[0]],
+                    y: [0, u2[1]],
+                    z: [0, u2[2]],
+                    mode: 'lines+markers',
+                    line: { color: '#3182ce', width: 6 },
+                    marker: { size: 8 },
+                    name: 'u₂',
+                    type: 'scatter3d'
+                }
+            ];
+
+            // Add span visualization based on rank
+            if (rank === 1) {
+                // Draw line
+                const nonZeroVector = (u1[0] !== 0 || u1[1] !== 0 || u1[2] !== 0) ? u1 : u2;
+                const t_values = [-3, -2, -1, 0, 1, 2, 3];
+                const line_x = t_values.map(t => t * nonZeroVector[0]);
+                const line_y = t_values.map(t => t * nonZeroVector[1]);
+                const line_z = t_values.map(t => t * nonZeroVector[2]);
+                
+                traces.push({
+                    x: line_x,
+                    y: line_y,
+                    z: line_z,
+                    mode: 'lines',
+                    line: { color: 'rgba(138, 43, 226, 0.6)', width: 4 },
+                    name: '张成直线',
+                    type: 'scatter3d'
+                });
+            } else if (rank === 2) {
+                // Draw plane (simplified representation)
+                const meshSize = 3;
+                const s_values = [];
+                const t_values = [];
+                const plane_x = [];
+                const plane_y = [];
+                const plane_z = [];
+                
+                for (let s = -meshSize; s <= meshSize; s += 0.5) {
+                    for (let t = -meshSize; t <= meshSize; t += 0.5) {
+                        s_values.push(s);
+                        t_values.push(t);
+                        plane_x.push(s * u1[0] + t * u2[0]);
+                        plane_y.push(s * u1[1] + t * u2[1]);
+                        plane_z.push(s * u1[2] + t * u2[2]);
+                    }
+                }
+                
+                traces.push({
+                    x: plane_x,
+                    y: plane_y,
+                    z: plane_z,
+                    mode: 'markers',
+                    marker: { 
+                        color: 'rgba(138, 43, 226, 0.3)', 
+                        size: 2 
+                    },
+                    name: '张成平面',
+                    type: 'scatter3d'
+                });
+            }
+
+            const layout = {
+                title: `向量张成空间 (维数: ${rank})`,
+                scene: {
+                    xaxis: { title: 'X', range: [-4, 4] },
+                    yaxis: { title: 'Y', range: [-4, 4] },
+                    zaxis: { title: 'Z', range: [-4, 4] },
+                    aspectmode: 'cube',
+                    camera: {
+                        eye: { x: 1.5, y: 1.5, z: 1.5 }
+                    }
+                },
+                showlegend: true,
+                legend: { x: 0.02, y: 0.98 },
+                margin: { l: 0, r: 0, t: 50, b: 0 },
+                plot_bgcolor: '#f8f9fa',
+                paper_bgcolor: 'white'
+            };
+
+            Plotly.newPlot('span-plot', traces, layout, { responsive: true });
+        }
+
+        // Subspace Functions
+        function setSubspacePreset(type) {
+            const presets = {
+                origin: { w1: [0, 0, 0], w2: [0, 0, 0] },
+                line: { w1: [1, 2, 1], w2: [0, 0, 0] },
+                plane: { w1: [1, 2, 1], w2: [2, 1, -1] },
+                whole: { w1: [1, 0, 0], w2: [0, 1, 0] }
+            };
+            
+            const preset = presets[type];
+            if (preset) {
+                document.getElementById('w1x').value = preset.w1[0];
+                document.getElementById('w1y').value = preset.w1[1];
+                document.getElementById('w1z').value = preset.w1[2];
+                document.getElementById('w2x').value = preset.w2[0];
+                document.getElementById('w2y').value = preset.w2[1];
+                document.getElementById('w2z').value = preset.w2[2];
+                updateSubspaceVisualization();
+            }
+        }
+
+        function updateSubspaceVisualization() {
+            // Get vectors
+            const w1 = [
+                parseFloat(document.getElementById('w1x').value) || 0,
+                parseFloat(document.getElementById('w1y').value) || 0,
+                parseFloat(document.getElementById('w1z').value) || 0
+            ];
+            const w2 = [
+                parseFloat(document.getElementById('w2x').value) || 0,
+                parseFloat(document.getElementById('w2y').value) || 0,
+                parseFloat(document.getElementById('w2z').value) || 0
+            ];
+
+            // Calculate subspace properties
+            const rank = calculateRank([w1, w2]);
+            let subspaceType = '';
+            let subspaceEquation = '';
+            let normalVector = '';
+
+            if (rank === 0) {
+                subspaceType = '零子空间';
+                subspaceEquation = '{(0, 0, 0)}';
+                normalVector = '不适用';
+            } else if (rank === 1) {
+                subspaceType = '直线子空间';
+                const nonZeroVector = (w1[0] !== 0 || w1[1] !== 0 || w1[2] !== 0) ? w1 : w2;
+                subspaceEquation = `span{(${nonZeroVector[0]}, ${nonZeroVector[1]}, ${nonZeroVector[2]})}`;
+                normalVector = '不适用';
+            } else if (rank === 2) {
+                subspaceType = '平面子空间';
+                // Calculate normal vector
+                const normal = [
+                    w1[1]*w2[2] - w1[2]*w2[1],
+                    w1[2]*w2[0] - w1[0]*w2[2],
+                    w1[0]*w2[1] - w1[1]*w2[0]
+                ];
+                subspaceEquation = `${normal[0].toFixed(1)}x + ${normal[1].toFixed(1)}y + ${normal[2].toFixed(1)}z = 0`;
+                normalVector = `(${normal[0].toFixed(1)}, ${normal[1].toFixed(1)}, ${normal[2].toFixed(1)})`;
+            }
+
+            // Update display
+            document.getElementById('subspace-dim').textContent = rank;
+            document.getElementById('subspace-type').textContent = subspaceType;
+            document.getElementById('basis-count').textContent = rank;
+            document.getElementById('normal-vector').textContent = normalVector;
+            document.getElementById('subspace-equation').textContent = subspaceEquation;
+
+            // Update plot
+            updateSubspacePlot(w1, w2, rank);
+        }
+
+        function updateSubspacePlot(w1, w2, rank) {
+            const traces = [
+                // Vector w1
+                {
+                    x: [0, w1[0]],
+                    y: [0, w1[1]],
+                    z: [0, w1[2]],
+                    mode: 'lines+markers',
+                    line: { color: '#e53e3e', width: 6 },
+                    marker: { size: 8 },
+                    name: 'w₁',
+                    type: 'scatter3d'
+                },
+                // Vector w2
+                {
+                    x: [0, w2[0]],
+                    y: [0, w2[1]],
+                    z: [0, w2[2]],
+                    mode: 'lines+markers',
+                    line: { color: '#3182ce', width: 6 },
+                    marker: { size: 8 },
+                    name: 'w₂',
+                    type: 'scatter3d'
+                }
+            ];
+
+            // Add subspace visualization based on rank
+            if (rank === 1) {
+                // Draw line subspace
+                const nonZeroVector = (w1[0] !== 0 || w1[1] !== 0 || w1[2] !== 0) ? w1 : w2;
+                const t_values = [-3, -2, -1, 0, 1, 2, 3];
+                const line_x = t_values.map(t => t * nonZeroVector[0]);
+                const line_y = t_values.map(t => t * nonZeroVector[1]);
+                const line_z = t_values.map(t => t * nonZeroVector[2]);
+                
+                traces.push({
+                    x: line_x,
+                    y: line_y,
+                    z: line_z,
+                    mode: 'lines',
+                    line: { color: 'rgba(138, 43, 226, 0.6)', width: 4 },
+                    name: '直线子空间',
+                    type: 'scatter3d'
+                });
+            } else if (rank === 2) {
+                // Draw plane subspace
+                const meshSize = 3;
+                const plane_x = [];
+                const plane_y = [];
+                const plane_z = [];
+                
+                for (let s = -meshSize; s <= meshSize; s += 0.5) {
+                    for (let t = -meshSize; t <= meshSize; t += 0.5) {
+                        plane_x.push(s * w1[0] + t * w2[0]);
+                        plane_y.push(s * w1[1] + t * w2[1]);
+                        plane_z.push(s * w1[2] + t * w2[2]);
+                    }
+                }
+                
+                traces.push({
+                    x: plane_x,
+                    y: plane_y,
+                    z: plane_z,
+                    mode: 'markers',
+                    marker: { 
+                        color: 'rgba(138, 43, 226, 0.3)', 
+                        size: 2 
+                    },
+                    name: '平面子空间',
+                    type: 'scatter3d'
+                });
+            }
+
+            const layout = {
+                title: `子空间 (维数: ${rank})`,
+                scene: {
+                    xaxis: { title: 'X', range: [-4, 4] },
+                    yaxis: { title: 'Y', range: [-4, 4] },
+                    zaxis: { title: 'Z', range: [-4, 4] },
+                    aspectmode: 'cube',
+                    camera: {
+                        eye: { x: 1.5, y: 1.5, z: 1.5 }
+                    }
+                },
+                showlegend: true,
+                legend: { x: 0.02, y: 0.98 },
+                margin: { l: 0, r: 0, t: 50, b: 0 },
+                plot_bgcolor: '#f8f9fa',
+                paper_bgcolor: 'white'
+            };
+
+            Plotly.newPlot('subspace-plot', traces, layout, { responsive: true });
+        }
+
+        // Utility Functions
+        function calculateRank(vectors) {
+            // Simplified rank calculation
+            const nonZeroVectors = vectors.filter(v => 
+                Math.abs(v[0]) > 0.001 || Math.abs(v[1]) > 0.001 || Math.abs(v[2]) > 0.001
+            );
+            
+            if (nonZeroVectors.length === 0) return 0;
+            if (nonZeroVectors.length === 1) return 1;
+            
+            // Check if two vectors are linearly independent
+            const v1 = nonZeroVectors[0];
+            const v2 = nonZeroVectors[1];
+            const cross = [
+                v1[1]*v2[2] - v1[2]*v2[1],
+                v1[2]*v2[0] - v1[0]*v2[2],
+                v1[0]*v2[1] - v1[1]*v2[0]
+            ];
+            const crossMagnitude = Math.sqrt(cross[0]*cross[0] + cross[1]*cross[1] + cross[2]*cross[2]);
+            
+            if (crossMagnitude < 0.001) return 1; // Vectors are parallel
+            if (nonZeroVectors.length === 2) return 2;
+            
+            // Check if three vectors are linearly independent
+            const v3 = nonZeroVectors[2];
+            const det = v1[0]*(v2[1]*v3[2] - v2[2]*v3[1]) - 
+                       v1[1]*(v2[0]*v3[2] - v2[2]*v3[0]) + 
+                       v1[2]*(v2[0]*v3[1] - v2[1]*v3[0]);
+            
+            return Math.abs(det) > 0.001 ? 3 : 2;
+        }
+
+        function goBack() {
+            window.location.href = '../index.html';
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ensure correct navigation state
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Add active class to current page nav item
+            const currentPageNav = document.querySelector('a[href="向量空间可视化.html"]');
+            if (currentPageNav) {
+                currentPageNav.classList.add('active');
+            }
+            
+            // Add event listeners for all input fields
+            const inputIds = [
+                'v1x', 'v1y', 'v1z', 'v2x', 'v2y', 'v2z', 'v3x', 'v3y', 'v3z',
+                'e1x', 'e1y', 'e1z', 'e2x', 'e2y', 'e2z', 'e3x', 'e3y', 'e3z',
+                'u1x', 'u1y', 'u1z', 'u2x', 'u2y', 'u2z',
+                'w1x', 'w1y', 'w1z', 'w2x', 'w2y', 'w2z'
+            ];
+            
+            inputIds.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.addEventListener('input', function() {
+                        if (currentTab === 'independence') {
+                            updateIndependenceVisualization();
+                        } else if (currentTab === 'basis') {
+                            updateBasisVisualization();
+                        } else if (currentTab === 'span') {
+                            updateSpanVisualization();
+                        } else if (currentTab === 'subspace') {
+                            updateSubspaceVisualization();
+                        }
+                    });
+                }
+            });
+            
+            // Initialize with default visualization
+            updateIndependenceVisualization();
+        });
+    </script>
+</body>
+</html>

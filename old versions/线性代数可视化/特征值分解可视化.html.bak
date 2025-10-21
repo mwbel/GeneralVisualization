@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>特征值分解可视化</title>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <style>
+    :root { --bg:#0f0f14; --panel:#181824; --accent:#8a7bd1; --accent-2:#b39ddb; --text:#e6e6f0; --muted:#a9a9b8; --border:#2a2a3b; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans','PingFang SC','Microsoft YaHei',sans-serif; }
+    .page[data-autolatex="true"]{ display:flex; flex-direction:column; min-height:100vh; }
+    header.page-header{ border-bottom:1px solid var(--border); background:linear-gradient(90deg,#151522,#141321); }
+    .header-inner{ max-width:1200px; margin:0 auto; padding:20px 16px; display:flex; align-items:baseline; gap:16px; }
+    .title{ font-size:20px; font-weight:600; color:var(--text); }
+    .subtitle{ font-size:14px; color:var(--muted); }
+    .content{ max-width:1200px; margin:0 auto; padding:20px 16px; display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .card{ background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:16px; }
+    .card h3{ margin:0 0 12px; font-size:16px; color:var(--accent); }
+    .section-title{ font-size:14px; color:var(--muted); margin:8px 0 12px; }
+    .control-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap:8px; margin-bottom:12px; }
+    .control{ display:flex; flex-direction:column; gap:6px; background:#1e1e2b; border:1px solid var(--border); border-radius:8px; padding:8px; }
+    .control label{ font-size:12px; color:var(--muted); }
+    .control input{ background:#12121a; color:var(--text); border:1px solid var(--border); border-radius:6px; padding:6px 8px; font-size:13px; }
+    .mathjax-block{ background:#1c1c29; border:1px dashed var(--border); border-radius:10px; padding:10px 12px; margin:10px 0; }
+    .formula{ color:var(--text); text-align:left; line-height:1.6; }
+    mjx-container{ overflow-x:auto; overflow-y:hidden; white-space:normal; }
+    .viz{ height:480px; }
+    .legend{ font-size:12px; color:var(--muted); margin-top:8px; }
+  /* 统一风格对齐：蓝紫渐变背景 + 白色内容卡片 + 左侧导航 */
+    body { background: linear-gradient(135deg, #3b3d7a 0%, #6b6ee8 100%); color: #1e1e2e; }
+    header.page-header { display: none; }
+    .page-content { display: flex; }
+    .sidebar { width: 240px; position: fixed; top: 0; left: 0; bottom: 0; background: rgba(255,255,255,0.92); backdrop-filter: blur(6px); border-right: 1px solid rgba(0,0,0,0.06); padding: 16px 12px; overflow-y: auto; }
+    .sidebar .nav-title { font-weight: 700; color: #1e2a78; margin-bottom: 8px; }
+    .sidebar .nav-subtitle { font-size: 12px; color: #6370d6; margin-bottom: 12px; }
+    .sidebar ul { list-style: none; margin: 0; padding: 0; }
+    .sidebar li a { display: block; padding: 8px 10px; border-radius: 8px; color: #1f2340; text-decoration: none; }
+    .sidebar li a:hover { background: rgba(55,71,255,0.08); color: #3747ff; }
+    .sidebar li.active a { background: rgba(55,71,255,0.12); color: #3747ff; font-weight: 600; }
+    .content { max-width: 1200px; margin: 0 auto; padding: 24px 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-left: 260px; }
+    .card { background: #ffffff; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 16px; box-shadow: 0 6px 20px rgba(56,72,255,0.14); }
+    .card h3 { color: #3747ff; }
+    .formula, .legend { color: #1e1e2e; }
+    .control { background: #f6f7ff; border-color: rgba(0,0,0,0.06); }
+    .control input { background: #ffffff; color: #1e1e2e; border: 1px solid rgba(0,0,0,0.12); }
+    .mathjax-block { background: #f8f8ff; border-color: rgba(0,0,0,0.06); }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="nav-title">线性代数</div>
+    <div class="nav-subtitle">模块导航</div>
+    <ul class="nav-list">
+      <li class="sidebar-item"><a href="linear-algebra-module.html">模块概览</a></li>
+      <li class="sidebar-item"><a href="二阶行列式可视化.html">二阶行列式</a></li>
+      <li class="sidebar-item"><a href="三阶行列式可视化.html">三阶行列式</a></li>
+      <li class="sidebar-item"><a href="矩阵运算可视化.html">矩阵运算</a></li>
+      <li class="sidebar-item"><a href="向量空间可视化.html">向量空间</a></li>
+      <li class="sidebar-item"><a href="线性变换可视化.html">线性变换</a></li>
+      <li class="sidebar-item"><a href="矩阵高斯消元法可视化.html">高斯消元法</a></li>
+      <li class="sidebar-item active"><a href="特征值分解可视化.html">特征值分解</a></li>
+      <li class="sidebar-item"><a href="旋转矩阵可视化.html">旋转矩阵</a></li>
+      <li class="sidebar-item"><a href="正交分解可视化.html">正交分解</a></li>
+      <li class="sidebar-item"><a href="../index.html">返回主页</a></li>
+    </ul>
+  </div>
+  <div class="page-content">
+    <div class="page" data-autolatex="true">
+    <header class="page-header"><div class="header-inner"><div class="title">特征值分解可视化</div><div class="subtitle">linear_algebra_dualcolumn_stable · 紫灰配色</div></div></header>
+    <main class="content">
+      <!-- 左栏：代数定义与公式 -->
+      <section class="card">
+        <h3>代数定义与公式</h3>
+        <div class="mathjax-block"><div class="formula">\\[ A = \\begin{bmatrix} a & b \\ c & d \\end{bmatrix},\\; \\chi_A(\\lambda) = \\lambda^2 - (a+d)\\lambda + (ad-bc) \\]</div></div>
+        <div class="mathjax-block"><div class="formula">\\[ \\Delta = (a+d)^2 - 4(ad-bc)\\;\\Rightarrow\\; \\lambda_{1,2} = \\frac{(a+d) \\pm \\sqrt{\\Delta}}{2} \\]</div></div>
+        <div class="mathjax-block"><div class="formula" id="eigvals">\\[ \\text{当前特征值： } \\lambda_1 = -,\\; \\lambda_2 = - \\]</div></div>
+
+        <div class="section-title">参数设置（2×2 矩阵）</div>
+        <div class="control-grid">
+          <div class="control"><label>a</label><input id="a" type="number" step="0.1" value="2" /></div>
+          <div class="control"><label>b</label><input id="b" type="number" step="0.1" value="1" /></div>
+          <div class="control"><label>c</label><input id="c" type="number" step="0.1" value="1" /></div>
+          <div class="control"><label>d</label><input id="d" type="number" step="0.1" value="3" /></div>
+        </div>
+
+        <div class="mathjax-block"><div class="formula" id="eigvecs">\\[ \\text{特征向量： } v_1 = -,\\; v_2 = - \\]</div></div>
+        <div class="mathjax-block"><div class="formula" id="diag">\\[ \\text{若可对角化： } A = PDP^{-1},\\; D=\\operatorname{diag}(\\lambda_1, \\lambda_2) \\]</div></div>
+      </section>
+
+      <!-- 右栏：几何意义与交互 -->
+      <section class="card">
+        <h3>几何意义与交互</h3>
+        <div id="plot" class="viz"></div>
+        <div class="legend">展示特征向量方向（直线）与伸缩比例（特征值）。当 \\lambda 为负时显示反向伸缩。</div>
+      </section>
+    </main>
+  </div>
+  </div>
+
+  <script type="module">
+    import { configureMathJax, ensureMathJaxScript, typesetPage } from '/app/lib/mathjax.js';
+    import { enableAutoMath } from '/app/lib/autoMath.js';
+    import { attachFormulaResizer } from '/app/lib/responsive-math.js';
+
+    configureMathJax();
+    ensureMathJaxScript();
+    const pageEl = document.querySelector('.page');
+    enableAutoMath(pageEl);
+
+    function eig(A){
+      const a=A[0][0], b=A[0][1], c=A[1][0], d=A[1][1];
+      const tr=a+d, det=a*d-b*c; const Delta = tr*tr - 4*det;
+      if (Delta < 0) return { real:false, l1:null, l2:null, v1:null, v2:null };
+      const s=Math.sqrt(Delta); const l1=(tr+s)/2, l2=(tr-s)/2;
+      function eigvec(l){
+        // Solve (A - lI)v = 0, pick a nontrivial vector
+        const m00=a-l, m01=b, m10=c, m11=d-l;
+        let v;
+        if (Math.abs(m01)+Math.abs(m00) > Math.abs(m10)+Math.abs(m11)) { v = [-m01, m00]; }
+        else { v = [m11, -m10]; }
+        const n=Math.hypot(v[0],v[1])||1; return [v[0]/n, v[1]/n];
+      }
+      const v1=eigvec(l1), v2=eigvec(l2);
+      return { real:true, l1, l2, v1, v2 };
+    }
+
+    function render(A){
+      const e=eig(A);
+      const eigEl=document.getElementById('eigvals');
+      const vecEl=document.getElementById('eigvecs');
+      if (!e.real){
+        eigEl.innerHTML = `\\[ \\text{当前特征值：复数（不可显示）} \\]`;
+        vecEl.innerHTML = `\\[ \\text{特征向量：复特征值情形不展示} \\]`;
+      } else {
+        eigEl.innerHTML = `\\[ \\lambda_1 = ${e.l1.toFixed(3)},\\; \\lambda_2 = ${e.l2.toFixed(3)} \\]`;
+        vecEl.innerHTML = `\\[ v_1 = \\begin{bmatrix} ${e.v1[0].toFixed(3)} \\\\\\ ${e.v1[1].toFixed(3)} \\end{bmatrix},\\; v_2 = \\begin{bmatrix} ${e.v2[0].toFixed(3)} \\\\\\ ${e.v2[1].toFixed(3)} \\end{bmatrix} \\]`;
+      }
+      typesetPage(pageEl).then(()=> attachFormulaResizer(pageEl));
+
+      const traces=[];
+      // Axes
+      traces.push({ x:[-3,3], y:[0,0], type:'scatter', mode:'lines', line:{color:'#2a2a3b'}, hoverinfo:'skip', showlegend:false });
+      traces.push({ x:[0,0], y:[-3,3], type:'scatter', mode:'lines', line:{color:'#2a2a3b'}, hoverinfo:'skip', showlegend:false });
+      if (e.real){
+        const scale=2;
+        const v1=e.v1, v2=e.v2; const l1=e.l1, l2=e.l2;
+        traces.push({ x:[-scale*v1[0], scale*v1[0]], y:[-scale*v1[1], scale*v1[1]], type:'scatter', mode:'lines', name:`v1(λ=${l1.toFixed(2)})`, line:{color:'#8a7bd1', width:3} });
+        traces.push({ x:[-scale*v2[0], scale*v2[0]], y:[-scale*v2[1], scale*v2[1]], type:'scatter', mode:'lines', name:`v2(λ=${l2.toFixed(2)})`, line:{color:'#b39ddb', width:3} });
+      }
+      const layout={ paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)', xaxis:{range:[-3,3], color:'#a9a9b8'}, yaxis:{range:[-3,3], color:'#a9a9b8'}, margin:{l:40,r:20,t:20,b:40}, showlegend:true };
+      Plotly.react('plot', traces, layout, {displayModeBar:false});
+    }
+
+    function update(){
+      const a=parseFloat(document.getElementById('a').value);
+      const b=parseFloat(document.getElementById('b').value);
+      const c=parseFloat(document.getElementById('c').value);
+      const d=parseFloat(document.getElementById('d').value);
+      render([[a,b],[c,d]]);
+    }
+
+    ['a','b','c','d'].forEach(id=>{ document.getElementById(id).addEventListener('input', update); });
+    update();
+  </script>
+</body>
+</html>

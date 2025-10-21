@@ -1,0 +1,2538 @@
+解
+
+$$
+\widetilde{A}=\left[\begin{array}{r r r r}{2}&{2}&{3}&{1}\\ {1}&{-1}&{0}&{2}\\ {-1}&{2}&{1}&{-2}\end{array}\right]\xrightarrow{\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#}}\left[\begin{array}{r r r r}{1}&{0}&{0}&{-1}\\ {0}&{1}&{0}&{-3}\\ {0}&{0}&{1}&{3}\end{array}\right]=\widetilde{A}_{1},
+$$
+
+解以  $\widetilde{A}_{1}$  为增广矩阵的线性方程组,得
+
+$$
+\left\{ \begin{array}{l}x_{1} = -1, \\ x_{2} = -3, \\ x_{3} = 3. \end{array} \right.
+$$
+
+例2.28 解线性方程组
+
+$$
+\left\{ \begin{array}{l}2x_{1} - x_{2} + 3x_{3} = 1, \\ 4x_{1} - 2x_{2} + 5x_{3} = 4, \\ 2x_{1} - x_{2} + 4x_{3} = -1, \\ 6x_{1} - 3x_{2} + 5x_{3} = 11. \end{array} \right.
+$$
+
+解
+
+$$
+\widetilde{A}=\left[\begin{array}{c c c c}{2}&{-1}&{3}&{1}\\ {4}&{-2}&{5}&{4}\\ {2}&{-1}&{4}&{-1}\\ {6}&{-3}&{5}&{11}\end{array}\right]\xrightarrow{\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#\textstyle\#}\left[\begin{array}{c c c c}{1}&{-\frac{1}{2}}&{0}&{\frac{7}{2}}\\ {0}&{0}&{1}&{-2}\\ {0}&{0}&{0}&{0}\\ {0}&{0}&{0}&{0}\\ {0}&{0}&{0}&{0}\end{array}\right]=\widetilde{A}_{1}.
+$$
+
+矩阵  $\widetilde{A}_{1}$  有两个零行,它们对方程组的解不能提供任何信息,因而考虑以  $\widetilde{A}_{1}$  的非零行为增广矩阵的线性方程组
+
+$$
+\left\{ \begin{array}{l}x_{1} - \frac{1}{2} x_{2} = \frac{7}{2}, \\ x_{3} = -2. \end{array} \right.
+$$
+
+不难看出,每给定变量  $x_{2}$  一个值,可唯一地求出  $x_{1}, x_{3}$  的一组值。由于  $x_{2}$  可任意赋值,因而方程组有无穷多组解;另外,只要  $x_{2}$  的值确定,则  $x_{1}$  与  $x_{3}$  的值就唯一地确定了。因此,可以用  $x_{2}$  表达所有的解
+
+$$
+\left\{ \begin{array}{l}x_{1} = \frac{1}{2} x_{2} + \frac{7}{2}, \\ x_{2} = x_{2}, \\ x_{3} = 0 \cdot x_{2} - 2. \end{array} \right.
+$$
+
+称  $x_{2}$  为自由未知量
+
+例2.29 解线性方程组
+
+$$
+\left\{ \begin{array}{l}2x_{1} - x_{2} + 3x_{3} = 1, \\ 4x_{1} - 2x_{2} + 5x_{3} = 4, \\ 6x_{1} - 3x_{2} + 8x_{3} = 4. \end{array} \right.
+$$
+
+解
+
+$$
+\widetilde{A}=\left[\begin{array}{c c c c}{2}&{-1}&{3}&{1}\\ {4}&{-2}&{5}&{4}\\ {6}&{-3}&{8}&{4}\end{array}\right]\xrightarrow{\text{初等行变换}}\left[\begin{array}{c c c c}{2}&{-1}&{3}&{1}\\ {0}&{0}&{1}&{-2}\\ {0}&{0}&{0}&{1}\end{array}\right]=\widetilde{A}_{1}.
+$$
+
+注意以  $\widetilde{A}_{1}$  为增广矩阵的线性方程组的最后一个方程为
+
+$$
+0 = 1,
+$$
+
+这是一个矛盾方程,即不论未知量以什么值代入,都不能满足这个方程.因此,原方程组无解. 口
+
+上面三个例子,给出了解线性方程组可能出现的情况.一般地,若用初等行变换将非齐次线性方程组(2.32)的增广矩阵化为简化的阶梯形矩阵  $C,C$  的一般形式为
+
+$$
+C=\left[\begin{array}{l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l \end{array}\right]
+$$
+
+其中"\*"表示对应的元素可能不为零.  $d_{r + 1}$  可能为0,也可能为1. 以  $C$  的非零行作为增广矩阵的线性方程组有下面几种情况:
+
+(1)  $d_{r + 1}\neq 0$  ,则出现矛盾方程,原方程组无解;
+
+(2)  $d_{r + 1} = 0$  ,且  $r = n$  ,这时  $C$  的非零行具有下面的形式:
+
+$$
+\left[{\begin{array}{c c c c}{1}&{}&{}&{\vdots}&{d_{1}}\\ {}&{1}&{}&{\vdots}&{d_{2}}\\ {}&{}&{\ddots}&{}&{\vdots}\\ {}&{}&{}&{1}&{d_{n}}\end{array}}\right].
+$$
+
+因而,对应的方程组有唯一一组解
+
+$$
+x_{1} = d_{1},x_{2} = d_{2},\dots ,x_{n} = d_{n}.
+$$
+
+(3)  $d_{r + 1} = 0$  ,但  $r{<}n.$  不失一般性,为了叙述的方便我们设矩阵  $c$  的  $r$  个非零行的第一个非零元素位于前  $r$  列,即矩阵  $c$  具有如下的形式:
+
+$$
+\left[ \begin{array}{l l l l l l l l}{1} & 0 & \dots & 0 & {c_{1,r + 1}} & \dots & {c_{1n}} & {d_{1}}\\ 0 & 1 & \dots & 0 & {c_{2,r + 1}} & \dots & {c_{2n}} & {d_{2}}\\ \vdots & \vdots & & \vdots & \vdots & & \vdots & \vdots \\ 0 & 0 & \dots & 1 & {c_{r,r + 1}} & \dots & {c_{m}} & {d_{1}}\\ 0 & 0 & \dots & 0 & 0 & \dots & 0 & 0\\ \vdots & \vdots & & \vdots & \vdots & & \vdots & \vdots \\ 0 & 0 & \dots & 0 & 0 & \dots & 0 & 0 \end{array} \right]
+$$
+
+故与原方程组同解的方程组为
+
+$$
+\left\{ \begin{array}{l l}{x_{1}} & {+c_{1,r + 1}x_{r + 1} + \dots +c_{1n}x_{n} = d_{1},}\\ {x_{2}} & {+c_{2,r + 1}x_{r + 1} + \dots +c_{2n}x_{n} = d_{2},}\\ {\qquad \dots \dots}\\ {x_{r} + c_{r,r + 1}x_{r + 1} + \dots +c_{m}x_{n} = d_{r},} \end{array} \right. \tag{2.34}
+$$
+
+将  $x_{r + 1}, x_{r + 2}, \dots , x_{n}$  移到等号右端得
+
+$$
+\left\{ \begin{array}{l l}{x_{1}} & {= d_{1} - c_{1,r + 1}x_{r + 1} - \dots -c_{1n}x_{n},}\\ {x_{2}} & {= d_{2} - c_{2,r + 1}x_{r + 1} - \dots -c_{2n}x_{n},}\\ {\qquad \dots \dots}\\ {x_{r} = d_{r} - c_{r,r + 1}x_{r + 1} - \dots -c_{m}x_{n},} \end{array} \right. \tag{2.35}
+$$
+
+由(2.35)可以看出,任意给定  $x_{r + 1}, x_{r + 2}, \dots , x_{n}$  的一组值  $x_{r + 1} = x_{r + 1}^{0}, x_{r + 2} = x_{r + 2}^{0}$ ,  $\dots , x_{n} = x_{n}^{0}$ , 由(2.35)可唯一确定  $x_{1}, x_{2}, \dots , x_{r}$  的一组值
+
+$$
+x_{1} = x_{1}^{0}, x_{2} = x_{2}^{0}, \dots , x_{r} = x_{r}^{0},
+$$
+
+使得
+
+$$
+\left[ \begin{array}{c}{x_{1}}\\ \vdots \\ {x_{r}}\\ {x_{r + 1}}\\ \vdots \\ {x_{n}} \end{array} \right] = \left[ \begin{array}{c}{x_{1}^{0}}\\ \vdots \\ {x_{r}^{0}}\\ {x_{r + 1}^{0}}\\ \vdots \\ {x_{n}^{0}} \end{array} \right]
+$$
+
+为方程组(2.34)的解. 由于  $x_{r + 1}, x_{r + 2}, \dots , x_{n}$  可以任意取值,因而,方程组(2.34), 也即原方程组(2.32)有无穷多组解. 称  $x_{r + 1}, x_{r + 2}, \dots , x_{n}$  为自由未知量.
+
+(1)~(3)说明了线性方程组(2.32)解的所有可能情况. 它们分别对应于原方程组  $r(A) \neq r(\widetilde{A}), r(A) = r(\widetilde{A}) = n, r(A) = r(\widetilde{A}) < n$  的情形. 综合上面的讨论,有下面的定理.
+
+定理2.10 线性方程组
+
+$$
+A x = \beta \tag{2.32}
+$$
+
+有解的充分必要条件是  $r(A) = r(\widetilde{A})$
+
+(2.32)有唯一解的充分必要条件是  $r(A) = r(\widetilde{A}) = n$ ;
+
+(2.32)有无穷多组解的充分必要条件是  $r(A) = r(\widetilde{A})< n$ ;
+
+(2.32)无解的充分必要条件是  $r(A)\neq r(\widetilde{A})$
+
+当(2.32)有无穷多组解时,可将解写成
+
+$$
+\left\{ \begin{array}{l l}{x_{1} = d_{1} - c_{1,r + 1}x_{r + 1} - \dots -c_{1n}x_{n},}\\ {x_{2} = d_{2} - c_{2,r + 1}x_{r + 1} - \dots -c_{2n}x_{n},}\\ {\qquad \dots \dots \dots \dots}\\ {x_{r} = d_{r} - c_{r,r + 1}x_{r + 1} - \dots -c_{m}x_{n},}\\ {x_{r + 1} = \qquad x_{r + 1},}\\ {\qquad \dots \dots \dots \dots}\\ {x_{n} = \qquad x_{n},} \end{array} \right. \tag{2.36}
+$$
+
+其中  $x_{r + 1},x_{r + 2},\dots ,x_{n}$  为自由未知量.第三章将证明(2.36)给出了方程组(2.32)的所有解.常称(2.36)为方程组(2.32)的一般解.
+
+推论2.7 齐次线性方程组
+
+$$
+A x = 0 \tag{2.37}
+$$
+
+总有解.它至少有一组零解
+
+设  $A$  为  $m\times n$  矩阵,则它有非零解的充分必要条件是  $r(A)< n$
+
+推论2.8若齐次线性方程组(2.37)中方程的个数小于未知量的个数,即  $m< n$  ,则它必有非零解.
+
+若  $m = n$  ,则它有非零解的充分必要条件是  $|A| = 0$  ,它有唯一一组零解的充分必要条件是  $|A|\neq 0$
+
+# 习题二
+
+# (-)
+
+1. 设  $A = \left( \begin{array}{lll}2 & 4 & 1 \\ 0 & 3 & 2 \end{array} \right), B = \left( \begin{array}{lll}1 & -1 & 0 \\ 3 & 5 & 0 \end{array} \right), C = \left( \begin{array}{lll}0 & 2 & 0 \\ 0 & -1 & 1 \end{array} \right)$ , 求  $A + B, B - C, 2A - 3C$ .
+
+2. 设
+
+$$
+A=\left(\begin{array}{c c c}{{3}}&{{1}}&{{0}}\\ {{-1}}&{{2}}&{{1}}\\ {{3}}&{{4}}&{{2}}\end{array}\right),B=\left(\begin{array}{c c c}{{1}}&{{0}}&{{2}}\\ {{-1}}&{{1}}&{{1}}\\ {{2}}&{{1}}&{{1}}\end{array}\right),
+$$
+
+且矩阵  $X$  满足方程  $3A - 2X = B$  ,求  $X$
+
+3. 设
+
+$$
+\binom{a+2b}{2c+d}\binom{2a-b}{c-2d}=\binom{4}{4}-3,
+$$
+
+求  $a,b,c$  和  $d$
+
+4. 设  $A$  为  $m \times n$  矩阵, 且  $k A = O$ , 证明:  $k = 0$  或  $A = O$ .
+
+5. 计算下列矩阵的乘积:
+
+(1)  $\left( \begin{array}{rr}3 & 2 \\ -1 & 4 \\ 5 & 1 \end{array} \right)\left( \begin{array}{rr}1 & 8 & -1 \\ 2 & 0 & 3 \end{array} \right);$  
+(2)  $\left( \begin{array}{rrr}1 & 3 & -1 \\ 0 & 4 & 2 \\ 7 & 0 & 1 \end{array} \right)\left( \begin{array}{r}1 \\ -2 \\ 3 \end{array} \right);$
+
+(3)  $\left( \begin{array}{r}1 \\ -1 \\ 2 \\ 3 \end{array} \right)$  
+(4)  $(1 \quad 3 \quad 2)\left( \begin{array}{r}1 \\ 2 \\ -1 \end{array} \right);$
+
+(5)  $(1 - 1 \quad 2)\left( \begin{array}{rrr}2 & -1 & 0 \\ 1 & 1 & 3 \\ 1 & 0 & -1 \end{array} \right);$  
+(6)  $(x \quad y \quad 1)\left( \begin{array}{lll}a_{11} & a_{12} & b_{1} \\ a_{12} & a_{22} & b_{2} \\ b_{1} & b_{2} & c \end{array} \right)\left( \begin{array}{l}x \\ y \\ 1 \end{array} \right).$
+
+6. 设
+
+$$
+A={\binom{1}{\lambda}}\quad0\atop1),
+$$
+
+求  $A^{2}, A^{3}, A^{n}(n$  是正整数).
+
+7. 计算:
+
+(1)  $\left( \begin{array}{cc}\cos \theta & -\sin \theta \\ \sin \theta & \cos \theta \end{array} \right)^{n};$  
+(2)  $\left( \begin{array}{ccc}1 & 4 & 2 \\ 0 & -3 & -2 \\ 0 & 4 & 3 \end{array} \right)^{n};$
+
+(3)  $\left( \begin{array}{rrrr}1 & -1 & -1 & -1 \\ -1 & 1 & -1 & -1 \\ -1 & -1 & 1 & -1 \\ -1 & -1 & -1 & 1 \end{array} \right)^{n};$  
+(4)  $(\alpha \beta^{\mathrm{T}})^{n}, \alpha = \left( \begin{array}{l}a_{1} \\ a_{2} \\ a_{3} \end{array} \right), \beta = \left( \begin{array}{l}b_{1} \\ b_{2} \\ b_{3} \end{array} \right).$
+
+其中  $n$  为正整数.
+
+8. 求所有与矩阵  $A$  可交换的矩阵
+
+(1)  $A = \left( \begin{array}{ll}1 & 1 \\ 0 & 1 \end{array} \right);$  
+(2)  $A = \left( \begin{array}{lll}0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{array} \right).$
+
+9. 设
+
+$$
+A=\left(\begin{array}{c c c}{{a}}&{{}}&{{}}\\ {{}}&{{b}}&{{}}\\ {{}}&{{}}&{{c}}\end{array}\right),\quad a,b,c\boxplus\boxplus\boxplus.
+$$
+
+证明:与  $A$  可交换的矩阵必为对角矩阵
+
+10. 设矩阵  $A$  与  $P$  都是  $n$  阶矩阵, 且  $A$  为对称矩阵, 证明:  $P^{\mathrm{T}} A P$  也是对称矩阵.
+
+11. 设矩阵  $A$  与  $B$  都是  $n$  阶对称矩阵, 证明:  $A B$  也是对称矩阵的充分必要条件是  $A B = B A$ .
+
+12. 设  $A B = B A$ , 证明:
+
+$$
+(1)(A + B)^{2} = A^{2} + 2 A B + B^{2};
+$$
+
+$(2)A^{2} - B^{2} = (A + B)(A - B)$ ;
+
+(3)  $(A B)^{p} = A^{p}B^{p}$ , 其中  $p$  为非负整数.
+
+如果  $A B \neq B A$ , 上述等式是否成立?
+
+13. 找出一个满足  $A^{2} = E$  且  $A \neq E$  的二阶矩阵  $A$ .
+
+14. 如果  $A = \frac{1}{2} (B + E)$ , 证明  $A^{2} = A$  的充分必要条件是  $B^{2} = E$ .
+
+15. 设  $A$  是反对称矩阵,  $B$  是对称矩阵, 证明:
+
+(1)  $A^{2}$  是对称矩阵;
+
+(2)  $A B - B A$  是对称矩阵;
+
+(3)  $A B$  是反对称矩阵的充分必要条件是  $A B = B A$ .
+
+16. 设  $A$  是实对称矩阵, 且  $A^{2} = O$ , 证明:  $A = O$ .
+
+17. 设  $A$  为  $m \times n$  实矩阵, 证明: 若  $A A^{\mathrm{T}} = O$ , 则  $A = O$ .
+
+18. 设  $A = \left( \begin{array}{cc}1 & -1 \\ 2 & 3 \end{array} \right)$ , 求:
+
+(1)  $A^{2} - 2 A$ ; 
+(2)  $3 A^{3} - 2 A^{2} + 5 A - 4 E$ .
+
+19. 设  $f(\lambda) = \lambda^{2} - \lambda + 1, A = \left[ \begin{array}{ccc}2 & 2 & 3 \\ 1 & -1 & 0 \\ 3 & 1 & 2 \end{array} \right]$ , 求  $f(A)$ .
+
+20. 设  $A = \left( \begin{array}{cc}a & b \\ a^{\prime} & b^{\prime} \end{array} \right)$ , 求  $A^{*}$ . 若  $a d - b c \neq 0$ , 证明:  $A$  可逆, 并求  $A^{-1}$ .
+
+21. 求下列矩阵的逆矩阵:
+
+(1)  $\left( \begin{array}{cc}1 & 6 \\ 3 & -2 \end{array} \right)$ ; 
+(2)  $\left( \begin{array}{cc}\cos \theta & -\sin \theta \\ \sin \theta & \cos \theta \end{array} \right)$ ; 
+(3)  $\left( \begin{array}{ccc}1 & 2 & -3 \\ 0 & 1 & 2 \\ 0 & 0 & 1 \end{array} \right)$ ;
+
+(4)  $\left( \begin{array}{cccc}1 & & & \\ 1 & 2 & & \\ 2 & 1 & 3 & \\ 1 & 2 & 1 & 4 \end{array} \right)$ ; 
+(5)  $\left( \begin{array}{ccc}1 & 2 & -3 \\ 1 & -2 & 1 \\ 5 & -2 & -3 \end{array} \right)$ ; 
+(6)  $\left( \begin{array}{ccc}2 & 1 & 3 \\ 0 & 1 & 2 \\ 1 & 0 & 3 \end{array} \right)$ ;
+
+(7)  $\left( \begin{array}{cccc}1 & a & a^{2} & a^{3} \\ 0 & 1 & a & a^{2} \\ 0 & 0 & 1 & a \\ 0 & 0 & 0 & 1 \end{array} \right), \quad a \neq 0$ .
+
+22. 解下列矩阵方程:
+
+(1)  $X\left[ \begin{array}{ccc}5 & 0 & 0 \\ 0 & 3 & 4 \\ 0 & 2 & 3 \end{array} \right] = \left( \begin{array}{ccc}10 & 1 & -2 \\ -5 & -3 & 7 \end{array} \right)$ ; 
+(2)  $\left( \begin{array}{ccc}a & & \\ & b & \\ & & c \end{array} \right) X = \left[ \begin{array}{c}a \\ b \\ c \end{array} \right], a, b, c$  全不为零;
+
+$$
+\left[ \begin{array}{l l l l l l}{1} & 1 & 1 & \dots & 1 & 1\\ 0 & 1 & 1 & \dots & 1 & 1\\ 0 & 0 & 1 & \dots & 1 & 1\\ \vdots & \vdots & \vdots & \vdots & \vdots \\ 0 & 0 & 0 & \dots & 1 & 1\\ 0 & 0 & 0 & \dots & 0 & 1 \end{array} \right]_{n\times n}X = \left[ \begin{array}{l l l l l l}{2} & 1 & 0 & \dots & 0 & 0\\ 1 & 2 & 1 & \dots & 0 & 0\\ 0 & 1 & 2 & \dots & 0 & 0\\ \vdots & \vdots & \vdots & \vdots & \vdots \\ 0 & 0 & 0 & \dots & 2 & 1\\ 0 & 0 & 0 & \dots & 1 & 2 \end{array} \right]_{n\times n},
+$$
+
+(4)  $XP = PB$  ,其中  $P = \left[ \begin{array}{ccc}1 & 0 & 0\\ 2 & -1 & 0\\ 2 & 1 & 1 \end{array} \right],B = \left[ \begin{array}{ccc}1 & 0 & 0\\ 0 & 0 & 0\\ 0 & 0 & -1 \end{array} \right]$ ,并计算  $X^{5}$
+
+23. 设  $A = \left[ \begin{array}{ccc} - 1 & 0 & 0\\ 1 & -1 & 0\\ 1 & 1 & -1 \end{array} \right]$ ,计算  $(A + 2E)^{-1}(A^{2} + A - 2E)$
+
+24. 设  $A,B$  为  $n$  阶矩阵  $(n\geqslant 2)$  ,证明:
+
+(1)若  $A,B$  为  $n$  阶可逆矩阵,则  $(A B)^{*} = B^{*}A^{*}$
+
+(2)  $(-A)^{*} = (-1)^{n - 1}A^{*}$
+
+(3)  $(A^{\mathrm{T}})^{*} = (A^{*})^{\mathrm{T}}$
+
+(4)若  $A$  可逆,则  $A^{*}$  也可逆,且  $(A^{*})^{-1} = (A^{-1})^{*}$
+
+(5)若  $A$  可逆,则  $(A^{*})^{*} = |A|^{n - 2}A$
+
+25. 已知矩阵  $A$  的逆矩阵  $A^{-1} = \left[ \begin{array}{ccc}3 & -1 & 1\\ 1 & 1 & 0\\ 2 & 1 & 1 \end{array} \right]$ ,求  $A^{*}$  与  $(A^{*})^{-1},(A^{*})^{*}$
+
+26. 已知矩阵  $A = \left[ \begin{array}{cccc}1 & 2 & 3 & 4\\ 0 & 1 & 2 & 3\\ 0 & 0 & 1 & 2\\ 0 & 0 & 0 & 1 \end{array} \right]$ ,求  $A$  中所有元素的代数余子式之和
+
+27. 设  $A$  为  $n$  阶可逆矩阵,  $|A| = 2$  且  $-A$  是  $A^{*} + kA^{-1}$  的逆矩阵,求  $k$
+
+28. (1)已知矩阵  $A$  与矩阵  $X$  满足  $AX = B + 2X$  且
+
+$$
+A = \left[ \begin{array}{lll}3 & 0 & 1\\ 1 & 1 & 1\\ 1 & 1 & 4 \end{array} \right],B = \left[ \begin{array}{lll}2 & 1 & 3\\ 0 & 1 & 2\\ 1 & 0 & 3 \end{array} \right],
+$$
+
+求矩阵  $X.$
+
+(2)已知  $A = \left[ \begin{array}{lll}1 & 0 & 0\\ 1 & 1 & 0\\ 1 & 1 & 1 \end{array} \right],B = \left[ \begin{array}{lll}0 & 1 & 1\\ 1 & 0 & 1\\ 1 & 1 & 0 \end{array} \right]$ ,且矩阵  $X$  满足
+
+$$
+AXA + BXB = AXB + BXA + E,
+$$
+
+其中  $E$  是3阶单位矩阵,求  $X$
+
+(3)已知  $A$  是3阶矩阵,  $|A| > 0,A^{*} = \mathrm{diag}(1, - 1, - 4)$ ,且  $ABA^{-1} = BA^{-1} + 3E$ ,求矩阵  $B$
+
+29. 设  $A, B, C$  都是  $n$  阶非奇异矩阵, 证明:
+
+$$
+(ABC)^{-1} = C^{-1}B^{-1}A^{-1}.
+$$
+
+30. 设  $A$  和  $B$  是同阶非奇异矩阵, 证明下列等式等价, 即
+
+$$
+AB = BA \Longleftrightarrow AB^{-1} = B^{-1}A \Longleftrightarrow A^{-1}B = BA^{-1} \Longleftrightarrow A^{-1}B^{-1} = B^{-1}A^{-1}.
+$$
+
+31. 设  $A, B$  都是  $n$  阶矩阵, 下列命题是否成立?
+
+(1)若  $A,B$  都可逆,则  $A + B$  也可逆;
+
+(2)若  $A,B$  都可逆,则  $A B$  也可逆;
+
+(3)若  $A B$  可逆,则  $A,B$  都可逆
+
+32. 设  $n$  阶矩阵  $A$  满足  $A^{2} - A + E = O$ , 证明:  $A$  为非奇异矩阵.
+
+33. 设矩阵  $B$  可逆,  $A$  与  $B$  为同阶矩阵, 且满足  $A^{2} + AB + B^{2} = O$ , 证明:  $A$  和  $A + B$  都可逆.
+
+34. 设  $A$  是  $n(n \geqslant 2)$  阶矩阵,  $A^{2} = A$  但  $A \neq E, A^{*}$  是  $A$  的伴随矩阵, 证明:  $A^{*}$  不可逆.
+
+35. 设  $A, B$  为  $n$  阶可逆矩阵, 且  $E + BA^{-1}$  可逆, 证明:  $E + A^{-1}B$  可逆, 并给出其逆矩阵的表示式.
+
+36. 设  $A$  为3阶非零实矩阵,且  $A^{*} = -A^{\mathrm{T}}$  ,证明:  $|A| = -1$
+
+37. 设  $A$  为  $n$  阶矩阵, 且  $A^{k} = O(k$  为正整数, 称  $A$  为幂零矩阵), 证明:  $E - A$  可逆, 且
+
+$$
+(E - A)^{-1} = E + A + A^{2} + \dots +A^{k - 1}.
+$$
+
+38. 设  $A$  为5阶矩阵, 且  $|A| = \frac{1}{2}$ . 求  $|A^{*}| \left| \left(\frac{1}{3} A\right)^{-1} - 2A^{*} \right|$ .
+
+39. 若  $A, B$  都是  $n$  阶矩阵,  $B, A - E$  可逆, 且  $(A - E)^{-1} = (B - E)^{\mathrm{T}}$ , 证明: 矩阵  $A$  也可逆.
+
+40. 设  $A$  为  $n$  阶矩阵,  $|E - A| \neq O$ , 证明:
+
+$$
+(E + A)(E - A)^{*} = (E - A)^{*}(E + A).
+$$
+
+41. 用分块矩阵计算下列乘积:
+
+(1)  $\left[ \begin{array}{rrrr}3 & 2 & -1 & 0 \\ 2 & 0 & 1 & 1 \\ -2 & 4 & 0 & 1 \\ 1 & 0 & 4 & 0 \end{array} \right]\left[ \begin{array}{rrr}2 & 1 \\ 0 & 2 \\ -1 & 0 \\ 0 & 3 \end{array} \right];$
+
+(2)  $\left[ \begin{array}{rrrr}1 & -1 & 0 & 0 \\ 3 & -1 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 2 & -1 \end{array} \right]\left[ \begin{array}{rrrr}1 & 0 & 0 & 0 \\ -1 & 0 & 0 & 0 \\ 0 & 1 & 3 & -1 \\ 0 & 2 & 1 & 4 \end{array} \right].$
+
+42. (1) 设矩阵  $A, C$  都可逆, 求  $\left( \begin{array}{cc}0 & A \\ C & 0 \end{array} \right)^{-1}$ .
+
+A1(2)设矩阵  $A_{1},A_{2},\dots ,A_{s}$  都可逆,求 A
+
+43. 利用矩阵分块, 求下列矩阵的逆矩阵:
+
+(1)  $\left[ \begin{array}{cccccc}1 & 0 & 0 & 0 & 0\\ 2 & -1 & 0 & 0 & 0\\ 0 & 0 & 1 & 0 & 1\\ 0 & 0 & -1 & 1 & 0\\ 0 & 0 & 3 & 1 & 1 \end{array} \right];$  
+(2)  $\left[ \begin{array}{cccccc}0 & 0 & 0 & 1 & 2\\ 0 & 0 & 0 & 2 & 3\\ 1 & 1 & 0 & 0 & 0\\ 0 & 1 & 1 & 0 & 0\\ 0 & 0 & 1 & 0 & 0 \end{array} \right];$
+
+(3)  $\left[ \begin{array}{cccccc}0 & a_{2} & 0 & \dots & 0 & 0\\ 0 & 0 & a_{n} & \dots & 0 & 0\\ 0 & 0 & 0 & \ddots & 0 & 0\\ \vdots & \vdots & \vdots & & \ddots & \vdots \\ 0 & 0 & 0 & \dots & 0 & a_{n}\\ a_{1} & 0 & 0 & \dots & 0 & 0 \end{array} \right],$  其中  $a_{1}, a_{2}, \dots , a_{n}$  为非零常数;
+
+(4)  $\left[ \begin{array}{cccccc}a_{n + 1} & & & & \\ & a_{n + 2} & & & \\ & & \ddots & & \\ & & & a_{2n} & \end{array} \right],$  其中  $a_{1}, a_{2}, \dots , a_{2n}$  为非零常数.
+
+44. 设矩阵  $A = \left( \begin{array}{cc}1 & 1 \\ -3 & -2 \end{array} \right)$ , 将矩阵  $A$  表示成初等矩阵的乘积.
+
+45. 若对可逆矩阵  $A$  施行下列初等变换:
+
+(1)交换  $A$  的第  $i$  行与第  $j$  行;
+
+(2)将  $A$  的第  $i$  行乘以非零常数  $k$
+
+(3)  $A$  的第  $j$  行各元素加上第  $i$  行对应元素的  $\lambda$  倍
+
+则  $A^{- 1}$  相应地发生了什么变化?
+
+46. 设  $B = (b_{ij})_{r \times r}, C = (c_{ij})_{r \times n}$ , 且  $r(C) = r$ , 证明:
+
+(1)如果  $B C = O$  则  $B = O$
+
+(2)如果  $B C = C$  则  $B = E$
+
+47. 求下列各矩阵的秩:
+
+(1)  $\left[ \begin{array}{cccc}3 & 2 & 1 & 1 \\ 1 & 2 & -3 & 2 \\ 4 & 4 & -2 & 3 \end{array} \right];$  
+(2)  $\left[ \begin{array}{cccc}2 & -1 & 3 & 3 \\ 3 & 1 & -5 & 0 \\ 4 & -1 & 1 & 3 \\ 1 & 3 & -13 & -6 \end{array} \right];$
+
+(3)  $\left[ \begin{array}{cccccc}1 & 2 & -1 & 0 & 3 \\ 2 & -1 & 0 & 1 & -1 \\ 3 & 1 & -1 & 1 & 2 \\ 0 & -5 & 2 & 1 & -7 \end{array} \right];$  
+(4)  $\left[ \begin{array}{cccccc}1 & 3 & -1 & -2 \\ 2 & -1 & 2 & 3 \\ 3 & 2 & 1 & 1 \\ 1 & -4 & 3 & 5 \end{array} \right];$
+
+$$
+\left[ \begin{array}{cccc}a_{1}b_{1} & a_{1}b_{2} & \dots & a_{1}b_{n} \\ a_{2}b_{1} & a_{2}b_{2} & \dots & a_{2}b_{n} \\ \vdots & \vdots & & \vdots \\ a_{n}b_{1} & a_{n}b_{2} & \dots & a_{n}b_{n} \end{array} \right].
+$$
+
+48. 已知  $A = \left[ \begin{array}{cccc}1 & a & a & a \\ a & 1 & a & a \\ a & a & 1 & a \\ a & a & a & 1 \end{array} \right]$ ,
+
+(1)  $a$  取何值时,矩阵  $A$  可逆?
+
+(2)  $a$  取何值时,矩阵  $A$  的秩为3?
+
+(3)  $a$  取何值时,矩阵  $A$  的秩为1?
+
+49. 设  $A = \left[ \begin{array}{lll}1 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 1 \end{array} \right], B = \left[ \begin{array}{lll}a & 1 & 1 \\ 2 & 1 & a \\ 1 & 1 & a \end{array} \right]$ , 且矩阵  $AB$  的秩为2,求  $a$ .
+
+50. 设  $A = \left[ \begin{array}{cccc}1 & 2 & 3 & -1 \\ 0 & 1 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0 \end{array} \right], B = \left[ \begin{array}{cccc}1 & 0 & 1 & 0 \\ 0 & 2 & 0 & 0 \\ 1 & 0 & 2 & 0 \\ 0 & 0 & 0 & 1 \end{array} \right]$ , 求矩阵  $BA^{\star}$  的秩.
+
+51. 讨论下列线性方程组是否有解?如果有解,用高斯消元法求出它的所有的解:
+
+(1)  $\left\{ \begin{array}{l}x_{1} + 3x_{2} + 3x_{3} = 5, \\ 2x_{1} - x_{2} + 4x_{3} = 11, \\ -x_{2} + x_{3} = 3; \end{array} \right.$  
+(2)  $\left\{ \begin{array}{l}x_{1} + x_{2} + 2x_{3} + 3x_{4} + 4x_{5} = 0, \\ 2x_{1} + 2x_{2} + 7x_{3} + 11x_{4} + 14x_{5} = 0, \\ 3x_{1} + 3x_{2} + 6x_{3} + 10x_{4} + 15x_{5} = 0; \end{array} \right.$
+
+(3)  $\left\{ \begin{array}{l}x - 2y + z + 2u = -2, \\ 2x + 3y - z - 5u = 9, \\ 4x - y + z - u = 5, \\ 5x - 3y + 2z + u = 3; \end{array} \right.$  
+(4)  $\left\{ \begin{array}{l}8x_{1} + 6x_{2} + 5x_{3} + 2x_{4} = 21, \\ 3x_{1} + 3x_{2} + 2x_{3} + x_{4} = 10, \\ 4x_{1} + 2x_{2} + 3x_{3} + x_{4} = 8, \\ 3x_{1} + 5x_{2} + x_{3} + x_{4} = 15, \\ 7x_{1} + 4x_{2} + 5x_{3} + 2x_{4} = 18; \end{array} \right.$
+
+(5)  $\left\{ \begin{array}{l}2x_{1} + x_{2} - x_{3} = 1, \\ 3x_{1} - 2x_{2} + x_{3} = 4, \\ x_{1} + 4x_{2} - 3x_{3} = 7, \\ x_{1} + 2x_{2} + x_{3} = 4. \end{array} \right.$
+
+52. 设有方程组
+
+$$
+\left\{ \begin{array}{l}x_{1} - x_{2} = a_{1}, \\ x_{2} - x_{3} = a_{2}, \\ x_{3} - x_{4} = a_{3}, \\ x_{4} - x_{5} = a_{4}, \\ x_{5} - x_{1} = a_{5}. \end{array} \right.
+$$
+
+证明:该方程组有解的充分必要条件为  $\sum_{i = 1}^{5}a_{i} = 0$ .
+
+53. 讨论  $a, b$  满足什么条件时,齐次线性方程组
+
+$$
+\left\{ \begin{array}{l}a x_{1} + x_{2} + x_{3} = 0, \\ x_{1} + b x_{2} + x_{3} = 0, \\ x_{1} + 2 b x_{2} + x_{3} = 0 \end{array} \right.
+$$
+
+有非零解?
+
+54. 讨论  $a, b$  取何值时,线性方程组
+
+$$
+\left\{ \begin{array}{l l}{x_{1}} & {+x_{2}}\\ {2x_{1} + (a + 2)x_{2} - (b + 2)x_{3} = 3,}\\ {\qquad -3a x_{2} + (a + 2b)x_{3} = -3} \end{array} \right.
+$$
+
+有唯一解?无穷多组解?无解?在有解的情况下,求出所有的解
+
+# (二)
+
+55. 令  $E_{i j}$  表示第  $i$  行第  $j$  列的元素为1而其余元素都是零的  $n$  阶矩阵,  $A = (a_{i j})_{n\times n}$
+
+(1)求  $E_{i j}E_{i j}$
+
+(2)证明:如果  $A E_{i j} = E_{i j}A$  ,那么,  $k\neq i$  时,  $a_{i k} = 0,k\neq j$  时,  $a_{j k} = 0$  且  $a_{i i} = a_{j j}$
+
+(3)证明:如果矩阵  $A$  与所有的  $n$  阶矩阵可交换,那么,  $A$  一定是数量矩阵,即  $A = a E$
+
+56. 设  $A, B$  都是  $n$  阶矩阵,证明:  $\operatorname {tr}(A B) = \operatorname {tr}(B A)$  ( $n$  阶矩阵  $P = (p_{i j})_{n\times n}$  的主对角元之和  $\sum_{i = 1}^{n} p_{i j}$  称为矩阵  $P$  的迹,记为  $\operatorname {tr}P$  )
+
+57. 设  $A$  为  $n$  阶矩阵,且对于任意  $n\times 1$  矩阵  $\pmb{\alpha}$  都有  $\pmb{\alpha}^{\mathrm{T}} A \pmb{\alpha} = 0$  ,证明:  $A$  为反对称矩阵
+
+58. 设  $A$  为  $n$  阶非零的对称矩阵,证明:存在  $n\times 1$  矩阵  $\pmb{\alpha}$  ,使得  $\pmb{\alpha}^{\mathrm{T}} A \pmb{\alpha} \neq 0$
+
+59. 若  $n$  阶矩阵  $A$  满足  $A^{2} + 2 A + 2 E = 0$  ,证明:  $A + x E$  (其中  $x$  为任意实数)可逆,并求其逆矩阵的表达式.
+
+60. 设  $n$  阶矩阵  $A$  与  $B$  满足  $A + B = A B$  ,证明:  $A B = B A$  ,且  $A = B(B - E)^{-1}$
+
+61. 设  $A, B$  为  $n$  阶矩阵,且  $E - A B$  可逆,证明:  $E - B A$  也可逆
+
+62. 设  $A$  为  $n$  阶可逆矩阵,  $\pmb{\alpha} = (a_{1}, a_{2}, \dots , a_{n})^{\mathrm{T}}$  证明:
+
+$$
+|A - \pmb{\alpha} \pmb{\alpha}^{\mathrm{T}}| = (1 - \pmb{\alpha}^{\mathrm{T}} A^{-1} \pmb{\alpha})|A|.
+$$
+
+63. 设  $A, B, C, D$  都是  $n$  阶矩阵,  $|A| \neq 0$  ,且  $A C = C A$  ,证明:
+
+$$
+\left| \begin{array}{ll}A & B \\ C & D \end{array} \right| = |A D - C B|.
+$$
+
+64. 设  $A$  为  $n$  阶可逆矩阵,且  $A$  的元素都是整数,求证:  $A^{-1}$  的元素为整数的充分必要条件是  $|A| = \pm 1$
+
+65. 证明:两个  $n$  阶上三角矩阵的乘积仍为上三角矩阵
+
+66. 设  $A$  为  $m\times p$  矩阵,  $B$  为  $s\times n$  矩阵,证明:
+
+$$
+(1) r\left( \begin{array}{cc}A & O \\ O & B \end{array} \right) = r(A) + r(B); \qquad (2) r\left( \begin{array}{cc}A & C \\ O & B \end{array} \right) \geqslant r(A) + r(B);
+$$
+
+(3) 若  $p = s$  ,则  $r(A B) \geqslant r(A) + r(B) - p$
+
+67. 设有两个线性方程组如下:
+
+$$
+\begin{array}{r}{\left(\mathrm{~I~}\right)\left\{ \begin{array}{l l}{a_{11}y_{1} + a_{12}y_{2} + \dots +a_{1n}y_{n} = b_{1},}\\ {a_{21}y_{1} + a_{22}y_{2} + \dots +a_{2n}y_{n} = b_{2},}\\ {\qquad \dots \dots \dots \dots}\\ {a_{m1}y_{1} + a_{m2}y_{2} + \dots +a_{m n}y_{n} = b_{m};} \end{array} \right.\quad \left(\mathrm{~I~}\right)\left\{ \begin{array}{l l}{a_{11}x_{1} + a_{21}x_{2} + \dots +a_{m1}x_{m} = 0,}\\ {a_{12}x_{1} + a_{22}x_{2} + \dots +a_{m2}x_{m} = 0,}\\ {\qquad \dots \dots \dots \dots}\\ {a_{1n}x_{1} + a_{2n}x_{2} + \dots +a_{m n}x_{m} = 0,}\\ {b_{1}x_{1} + b_{2}x_{2} + \dots +b_{m}x_{m} = 1.} \end{array} \right.} \end{array}
+$$
+
+证明:(I)有解的充分必要条件是(II)无解.
+
+# 第三章  $n$  维向量与线性方程组
+
+第二章介绍的高斯消元法是解线性方程组的一个基本方法,采用不同的消元步骤得到的阶梯型矩阵,其非零行的行数,即所剩方程的个数是唯一的。但当方程组解不唯一时,自由未知量可以有不同的选择,由此而得到的解的集合是否相同?线性方程组的一般解具有怎样的结构?要解决这些问题,就需要引入  $n$  维向量的概念,定义向量的线性运算,研究向量组的线性相关性,进而引出向量组的秩与极大线性无关组的概念。本章概念密集,难点不少,需要仔细领会,深入钻研。学好第二章和本章便为学好线性代数打下了坚实的基础。
+
+本章概念密集,难点不少,需要仔细领会,深入钻研,学好第二章和本章便为学好线性代数打下了坚实的基础
+
+# 3.1  $n$  维向量
+
+# 3.1.1  $n$  维向量的定义
+
+在几何空间中,给定一个坐标系,可使几何向量与有序实数组  $(a_{x},a_{y},a_{z})$  建立一一对应的关系,从而可将几何向量记为  $(a_{x},a_{y},a_{z})$  .在许多实际问题中仅用三个数来刻画是不够的,例如,为了刻画宇宙中某星球的大小和位置,就需要知道四个数,即星球的半径  $r$  与星球中心的坐标  $x,y,z.$  若要描述该星球在某一时刻  $t$  的状态,则需要用到五个数组成的有序数组  $(r,x,y,z,t)$  .因此有必要将几何向量推广到  $n$  维向量.
+
+定义3.1  $n$  个数  $a_{1},a_{2},\dots ,a_{n}$  组成的有序数组  $(a_{1},a_{2},\dots ,a_{n})$  称为  $n$  维向量.数  $a_{i}$  称为向量的第  $i$  个分量.  $n$  称为向量的维数.分量是实数的向量称为实向量;分量是复数的向量称为复向量.
+
+如不特别声明,本章主要讨论实向量
+
+常用希腊字母如  $\alpha ,\beta ,\gamma ,\dots$  表示  $n$  维向量.如
+
+$$
+\pmb {\alpha} = (a_{1},a_{2},\dots ,a_{n})\quad \text{或}\quad \pmb {\alpha} = \left[ \begin{array}{c}a_{1} \\ a_{2} \\ \vdots \\ a_{n} \end{array} \right]
+$$
+
+都表示  $n$  维向量.前者称为行向量,后者称为列向量.两者没有本质区别,仅是写法上的不同.可以将行向量看成一个行矩阵,列向量看成一个列矩阵.利用矩阵的转置,有
+
+$$
+(a_{1},a_{2},\dots ,a_{n})^{\mathrm{T}} = \left[ \begin{array}{c}{a_{1}}\\ {a_{2}}\\ \vdots \\ {a_{n}} \end{array} \right],\quad \left[ \begin{array}{c}{a_{1}}\\ {a_{2}}\\ \vdots \\ {a_{n}} \end{array} \right]^{\mathrm{T}} = (a_{1},a_{2},\dots ,a_{n}).
+$$
+
+设  $\pmb {\alpha} = (a_{1},a_{2},\dots ,a_{n}),\pmb {\beta} = (b_{1},b_{2},\dots ,b_{n})$  都是  $n$  维向量,当且仅当它们的各个对应的分量都相等,即  $a_{i} = b_{i}(i = 1,2,\dots ,n)$  时,称向量  $\pmb{\alpha}$  与向量  $\pmb{\beta}$  相等,记作
+
+$$
+\alpha = \beta .
+$$
+
+显然,两个不同维数的向量一定不相等
+
+分量全为零的向量称为零向量,记为0. 即
+
+$$
+{\mathfrak{d}}=(0,0,\cdots,0).
+$$
+
+若  $\pmb {\alpha} = (a_{1},a_{2},\dots ,a_{n})$  ,则称
+
+$$
+(-a_{1}, - a_{2},\dots , - a_{n})
+$$
+
+为  $\pmb{\alpha}$  的负向量,记为  $- \alpha$
+
+# 3.1.2 向量的运算
+
+定义3.2设  $\pmb {\alpha} = (a_{1},a_{2},\dots ,a_{n}),\pmb {\beta} = (b_{1},b_{2},\dots ,b_{n})$  都是  $n$  维向量,称向量 $(a_{1} + b_{1},a_{2} + b_{2},\dots ,a_{n} + b_{n})$  为向量  $\pmb{\alpha}$  与  $\pmb{\beta}$  的和,记作  $\alpha +\beta$  ,即
+
+$$
+\pmb {\alpha} + \pmb {\beta} = (a_{1} + b_{1},a_{2} + b_{2},\dots ,a_{n} + b_{n}).
+$$
+
+定义3.3设  $\pmb {\alpha} = (a_{1},a_{2},\dots ,a_{n})$  为  $n$  维向量,  $k$  为实数,则称向量
+
+$$
+(k a_{1},k a_{2},\dots ,k a_{n})
+$$
+
+为数  $k$  与向量  $\pmb{\alpha}$  的数量乘积,简称数乘,记作  $k\alpha$  ,即
+
+$$
+k\alpha = (k a_{1},k a_{2},\dots ,k a_{n}).
+$$
+
+有了加法,也可以定义向量的减法.向量  $\pmb{\alpha}$  与  $\pmb{\beta}$  的差  $\alpha - \beta$  定义为  $\alpha +(- \beta)$  即
+
+$$
+\alpha -\beta = \alpha +(-\beta) = (a_{1} - b_{1},a_{2} - b_{2},\dots ,a_{n} - b_{n}).
+$$
+
+向量的加法和数乘统称为向量的线性运算,按定义容易验证向量的线性运算满足下面的八条运算律:
+
+(1)加法交换律:即  $\alpha +\beta = \beta +\alpha$
+
+(2)加法结合律:即  $(\alpha +\beta) + \gamma = \alpha +(\beta +\gamma)$
+
+(3)对任一向量  $\pmb{\alpha}$  ,有  $\alpha +0 = \alpha$
+
+(4)对任一向量  $\pmb{\alpha}$  ,有  $\alpha +(-\alpha) = 0$
+
+(5)对数1,有  $1\alpha = \alpha$
+
+(6)  $(k l)\alpha = k(l\alpha) = l(k\alpha)$
+
+(7)  $(k + l)\alpha = k\alpha +l\alpha$
+
+(8)  $k(\pmb {\alpha} + \pmb {\beta}) = k\pmb {\alpha} + k\pmb{\beta}$ .
+
+(1)~(8)中,  $\alpha , \beta , \gamma$  为  $n$  维向量, 0 为  $n$  维零向量, 为  $k, l$  为实数.
+
+在定义了向量的加法与数乘运算后,  $n$  维实向量的全体称为  $n$  维向量空间, 记作  $\mathbf{R}^{n}$ .
+
+# 3.1.3 线性方程组的向量表示
+
+设线性方程组
+
+$$
+\left\{ \begin{array}{l}a_{11}x_{1} + a_{12}x_{2} + \dots +a_{1n}x_{n} = b_{1}, \\ a_{21}x_{1} + a_{22}x_{2} + \dots +a_{2n}x_{n} = b_{2}, \\ \qquad \dots \dots \dots \dots \dots \\ a_{m1}x_{1} + a_{m2}x_{2} + \dots +a_{mn}x_{n} = b_{m}, \end{array} \right. \tag{3.1}
+$$
+
+记
+
+$$
+A = (a_{ij})_{m \times n} = \left[ \begin{array}{cccc}a_{11} & a_{12} & \dots & a_{1n} \\ a_{21} & a_{22} & \dots & a_{2n} \\ \vdots & \vdots & & \vdots \\ a_{m1} & a_{m2} & \dots & a_{mn} \end{array} \right], \quad x = \left[ \begin{array}{c}x_{1} \\ x_{2} \\ \vdots \\ x_{n} \end{array} \right], \quad \pmb{\beta} = \left[ \begin{array}{c}b_{1} \\ b_{2} \\ \vdots \\ b_{m} \end{array} \right], \tag{3.2}
+$$
+
+则线性方程组(3.1)可表示为
+
+$$
+A x = \beta .
+$$
+
+引入向量后,矩阵  $A = (a_{ij})_{m \times n}$  既可表示为
+
+$$
+A = \left[ \begin{array}{c}\gamma_{1} \\ \gamma_{2} \\ \vdots \\ \gamma_{m} \end{array} \right], \text{其中} \gamma_{i} = (a_{i1}, a_{i2}, \dots , a_{in}), i = 1, 2, \dots , m,
+$$
+
+也可表示为
+
+$$
+A = (\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \dots , \pmb{\alpha}_{n}), \text{其中} \pmb{\alpha}_{j} = \left[ \begin{array}{c}a_{1j} \\ a_{2j} \\ \vdots \\ a_{mj} \end{array} \right], j = 1, 2, \dots , n.
+$$
+
+这样的表示法与矩阵的分块表示是一致的. 由分块矩阵乘法得
+
+$$
+A x = (\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \dots , \pmb{\alpha}_{n}) \cdot \left[ \begin{array}{c}x_{1} \\ x_{2} \\ \vdots \\ x_{n} \end{array} \right] = x_{1} \pmb{\alpha}_{1} + x_{2} \pmb{\alpha}_{2} + \dots + x_{n} \pmb{\alpha}_{n}.
+$$
+
+从而线性方程组(3.1)可表成如下形式:
+
+$$
+x_{1}\pmb{\alpha}_{1} + x_{2}\pmb{\alpha}_{2} + \dots +x_{n}\pmb{\alpha}_{n} = \pmb {\beta}. \tag{3.3}
+$$
+
+称(3.3)式为线性方程组(3.1)的向量形式
+
+事实上,如果将  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{n},\pmb{\beta}$  记为行向量,由向量的线性运算知(3.3)式仍为线性方程组(3.1),通过比较不难发现,线性方程组(3.1)的系数矩阵此时为
+
+$$
+(\pmb{\alpha}_{1}^{\mathrm{T}},\pmb{\alpha}_{2}^{\mathrm{T}},\dots ,\pmb{\alpha}_{n}^{\mathrm{T}}).
+$$
+
+例如,设线性方程组
+
+$$
+\left\{ \begin{array}{l}x_{1} + 2x_{2} - x_{3} = 2, \\ x_{1} + 4x_{2} + 2x_{3} = 15, \\ 2x_{1} + 5x_{2} - 3x_{3} = 3. \end{array} \right. \tag{3.4}
+$$
+
+它的向量形式为
+
+$$
+x_{1}\pmb{\alpha}_{1} + x_{2}\pmb{\alpha}_{2} + x_{3}\pmb{\alpha}_{3} = \pmb {\beta},
+$$
+
+其中
+
+$$
+\pmb{\alpha}_{1} = \left[ \begin{array}{l}1 \\ 1 \\ 2 \end{array} \right], \quad \pmb{\alpha}_{2} = \left[ \begin{array}{l}2 \\ 4 \\ 5 \end{array} \right], \quad \pmb{\alpha}_{3} = \left[ \begin{array}{r} - 1 \\ -2 \\ -3 \end{array} \right], \quad \pmb {\beta} = \left[ \begin{array}{r}2 \\ 15 \\ 3 \end{array} \right].
+$$
+
+令  $\pmb{\beta}_{1} = \pmb{\alpha}_{1}^{\mathrm{T}},\pmb{\beta}_{2} = \pmb{\alpha}_{2}^{\mathrm{T}},\pmb{\beta}_{3} = \pmb{\alpha}_{3}^{\mathrm{T}}$  ,则线性方程组(3.4)可表为
+
+$$
+x_{1}\pmb{\beta}_{1} + x_{2}\pmb{\beta}_{2} + x_{3}\pmb{\beta}_{3} = \pmb{\beta}^{\mathrm{T}},
+$$
+
+显然线性方程组(3.4)的系数矩阵为
+
+$$
+(\pmb{\beta}_{1}^{\mathrm{T}},\pmb{\beta}_{2}^{\mathrm{T}},\pmb{\beta}_{3}^{\mathrm{T}}) = \left[ \begin{array}{lll}1 & 2 & -1 \\ 1 & 4 & -2 \\ 2 & 5 & -3 \end{array} \right].
+$$
+
+# 3.2 向量的线性关系
+
+这一节进一步研究  $n$  维向量之间的关系,其中向量的线性相关与线性无关是非常重要的概念,许多数学问题都涉及这个概念
+
+# 3.2.1 向量的线性组合
+
+对于两个  $n$  维向量  $\alpha ,\beta$  ,若存在一常数  $k$  ,使得
+
+$$
+\alpha = k\beta ,
+$$
+
+常称向量  $\alpha$  与  $\beta$  成比例.例如
+
+$$
+\pmb{\alpha} = \left[ \begin{array}{r} - 1 \\ 3 \\ 2 \end{array} \right], \quad \pmb {\beta} = \left[ \begin{array}{r} - 2 \\ 6 \\ 4 \end{array} \right],
+$$
+
+则  $\alpha = \frac{1}{2}\beta$ .
+
+将这个概念推广到有限多个  $n$  维向量,我们引入线性组合(或线性表示)的概念.
+
+定义3.4 对于  $n$  维向量  $\alpha_{1},\alpha_{2},\dots ,\alpha_{m},\beta$ ,如果存在数  $k_{1},k_{2},\dots ,k_{m}$ ,使
+
+$$
+\pmb {\beta} = k_{1}\pmb{\alpha}_{1} + k_{2}\pmb{\alpha}_{2} + \dots +k_{m}\pmb{\alpha}_{m}, \tag{3.5}
+$$
+
+则称向量  $\beta$  是向量  $\alpha_{1},\alpha_{2},\dots ,\alpha_{m}$  的一个线性组合,或称向量  $\beta$  可由向量  $\alpha_{1},\alpha_{2},\dots ,\alpha_{m}$  线性表示.称  $k_{1},k_{2},\dots ,k_{m}$  为组合系数或表示系数.
+
+例如,设
+
+$$
+\pmb{\alpha}_{1} = (1,2, - 1),\quad \pmb{\alpha}_{2} = (2, - 3,1),\quad \pmb{\alpha}_{3} = (4,1, - 1), \tag{3.6}
+$$
+
+不难验证
+
+$$
+\pmb{\alpha}_{3} = 2\pmb{\alpha}_{1} + \pmb{\alpha}_{2},
+$$
+
+$\alpha_{3}$  就是向量  $\alpha_{1},\alpha_{2}$  的一个线性组合,其中数2,1就是组合系数.又如,任一个  $n$  维向量  $\pmb{\alpha} = (a_{1},a_{2},\dots ,a_{n})^{\mathrm{T}}$  都是向量
+
+$$
+\pmb{\epsilon}_{1} = \left[ \begin{array}{c}1 \\ 0 \\ \vdots \\ 0 \end{array} \right],\pmb{\epsilon}_{2} = \left[ \begin{array}{c}0 \\ 1 \\ \vdots \\ 0 \end{array} \right],\dots ,\pmb{\epsilon}_{n} = \left[ \begin{array}{c}0 \\ 0 \\ \vdots \\ 1 \end{array} \right], \tag{3.7}
+$$
+
+的一个线性组合,显然
+
+$$
+\pmb{\alpha} = a_{1}\pmb{\epsilon}_{1} + a_{2}\pmb{\epsilon}_{2} + \dots +a_{n}\pmb{\epsilon}_{n},
+$$
+
+即  $\alpha$  可由  $\pmb{\epsilon}_{1},\pmb{\epsilon}_{2},\dots ,\pmb{\epsilon}_{n}$  线性表示,表示系数就是  $\alpha$  的分量  $a_{1},a_{2},\dots ,a_{n}$
+
+称(3.7)式的  $n$  个  $n$  维向量  $\pmb{\epsilon}_{1},\pmb{\epsilon}_{2},\dots ,\pmb{\epsilon}_{n}$  为  $n$  维单位向量,也可称为  $n$  维基本向量.如果将  $\alpha$  与  $\pmb{\epsilon}_{1},\pmb{\epsilon}_{2},\dots ,\pmb{\epsilon}_{n}$  都写成行向量,则也有同样的结果.向量间的这种线性关系不因其是行向量还是列向量而有所改变.
+
+设(3.5)式中的向量为
+
+$$
+\pmb{\alpha}_{1} = \left[ \begin{array}{c}a_{11} \\ a_{21} \\ \vdots \\ a_{n1} \end{array} \right],\pmb{\alpha}_{2} = \left[ \begin{array}{c}a_{12} \\ a_{22} \\ \vdots \\ a_{n2} \end{array} \right],\dots ,\pmb{\alpha}_{m} = \left[ \begin{array}{c}a_{1m} \\ a_{2m} \\ \vdots \\ a_{nm} \end{array} \right],\pmb{\beta} = \left[ \begin{array}{c}b_{1} \\ b_{2} \\ \vdots \\ b_{n} \end{array} \right].
+$$
+
+将数  $k_{1},k_{2},\dots ,k_{m}$  记成  $x_{1},x_{2},\dots ,x_{m}$ ,则(3.5)式正是线性方程组
+
+$$
+\begin{array}{r}{(a_{11}x_{1} + a_{12}x_{2} + \dots +a_{1m}x_{m} = b_{1},}\\ {(a_{21}x_{1} + a_{22}x_{2} + \dots +a_{2m}x_{m} = b_{2},} \end{array} \tag{3.8}
+$$
+
+$$
+(a_{n1}x_{1} + a_{n2}x_{2} + \dots +a_{nm}x_{m} = b_{n}
+$$
+
+的向量表示法.如果  $\beta$  可由向量  $\alpha_{1},\alpha_{2},\dots ,\alpha_{m}$  线性表示,则表示系数  $k_{1},k_{2},\dots ,k_{m}$  就是线性方程组(3.8)的一组解;反之,如果方程组(3.8)有一组解
+
+$$
+x_{1} = c_{1},x_{2} = c_{2},\dots ,x_{m} = c_{m},
+$$
+
+则有
+
+$$
+c_{1}\pmb{\alpha}_{1} + c_{2}\pmb{\alpha}_{2} + \dots +c_{m}\pmb{\alpha}_{m} = \pmb {\beta},
+$$
+
+即向量  $\beta$  可由向量  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m}$  线性表示.于是有下面的定理.
+
+定理3.1设  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m},\pmb{\beta}$  为  $n$  维向量,则  $\beta$  可由  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m}$  线性表示的充分必要条件是线性方程组(3.8)有解.
+
+记
+
+$$
+A = (a_{ij})_{n\times m} = (\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m}),\quad \pmb {x} = \left[ \begin{array}{c}x_{1}\\ x_{2}\\ \vdots \\ x_{m} \end{array} \right],\quad \pmb {\beta} = \left[ \begin{array}{c}b_{1}\\ b_{2}\\ \vdots \\ b_{n} \end{array} \right]. \tag{3.9}
+$$
+
+则(3.8)式又可表示为
+
+$$
+A x = \beta . \tag{3.10}
+$$
+
+由定理3.1得如下推论
+
+推论3.1  $n$  维向量  $\beta$  可由  $n$  维向量组  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m}$  线性表示的充分必要条件为
+
+$$
+r(A) = r(\widetilde{A}),
+$$
+
+其中  $A$  如(3.9)式所示,  $\widetilde{A} = (A\quad \beta)$  进而  $\beta$  可由  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m}$  线性表示且表示系数唯一的充分必要条件是  $r(A) = r(\widetilde{A}) = m;\pmb{\beta}$  可由  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m}$  线性表示但表示系数不唯一的充分必要条件是  $r(A) = r(\widetilde{A})< m;\pmb{\beta}$  不能由  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m}$  线性表示的充分必要条件是  $r(A)\neq r(\widetilde{A})$
+
+例3.1 设向量
+
+$$
+\pmb{\alpha}_{1} = \left[ \begin{array}{l}1\\ 1\\ 1 \end{array} \right],\quad \pmb{\alpha}_{2} = \left[ \begin{array}{l}1\\ 1\\ 0 \end{array} \right],\quad \pmb{\alpha}_{3} = \left[ \begin{array}{l}1\\ 0\\ 0 \end{array} \right],
+$$
+
+证明:任意一个三维向量都可由  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\pmb{\alpha}_{3}$  线性表示,且表示式唯一.
+
+证设  $\pmb {\beta} = (b_{1},b_{2},b_{3})^{\mathrm{T}}$  为任意一个三维向量,记  $A = (\pmb{\alpha}_{1},\pmb{\alpha}_{2},\pmb{\alpha}_{3})$
+
+$$
+\widetilde{A} = (\pmb{\alpha}_{1},\pmb{\alpha}_{2},\pmb{\alpha}_{3},\pmb {\beta}) = \left[ \begin{array}{llll}1 & 1 & 1 & b_{1}\\ 1 & 1 & 0 & b_{2}\\ 1 & 0 & 0 & b_{3} \end{array} \right]\xrightarrow{\text{初等行变换}}\left[ \begin{array}{llll}1 & 0 & 0 & b_{3}\\ 0 & 1 & 0 & b_{2} - b_{3}\\ 0 & 0 & 1 & b_{1} - b_{2} \end{array} \right],
+$$
+
+由于  $r(A) = r(\widetilde{A}) = 3$  ,所以任意三维向量  $\beta$  都可由  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\pmb{\alpha}_{3}$  线性表示,且表示系数唯一,其表示式为
+
+$$
+\pmb {\beta} = b_{3}\pmb{\alpha}_{1} + (b_{2} - b_{3})\pmb{\alpha}_{2} + (b_{1} - b_{2})\pmb{\alpha}_{3}.
+$$
+
+例3.2 设向量
+
+$$
+\pmb{\alpha}_{1}=\left[\begin{array}{l}{2}\\ {2}\\ {a}\\ {2}\end{array}\right],\quad\pmb{\alpha}_{2}=\left[\begin{array}{l}{1}\\ {0}\\ {1}\\ {0}\end{array}\right],\quad\pmb{\alpha}_{3}=\left[\begin{array}{l}{3}\\ {1}\\ {1}\\ {1}\end{array}\right],\quad\pmb{\beta}=\left[\begin{array}{l}{4}\\ {-1}\\ {6}\\ {b}\end{array}\right],
+$$
+
+讨论  $a,b$  为何值时,  $\pmb{\beta}$  不能由  $\alpha_{1},\alpha_{2},\alpha_{3}$  线性表示?  $a,b$  为何值时,  $\pmb{\beta}$  可由  $\alpha_{1},\alpha_{2},\alpha_{3}$  线性表示?并写出所有的表示式.
+
+解令
+
+$$
+\widetilde{A} = (\pmb{\alpha}_{1},\pmb{\alpha}_{2},\pmb{\alpha}_{3},\pmb {\beta}) = \left[ \begin{array}{l l l l}{2} & 1 & 3 & 4\\ 2 & 0 & 1 & {-1}\\ a & 1 & 1 & 6\\ 2 & 0 & 1 & b \end{array} \right]\xrightarrow{\textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \textstyle \left[ \begin{array}{l l l l l}{2} & 0 & 1 & {-1}\\ 0 & 1 & 2 & 5\\ 0 & 0 & {-2 - a} & {2 + a}\\ 0 & 0 & 0 & {b + 1} \end{array} \right]},
+$$
+
+显然,当  $b\neq - 1$  时,  $r(A)\neq r(\widetilde{A})$  ,线性方程组  $A x = \beta$  无解,故  $\pmb{\beta}$  不能由  $\alpha_{1},\alpha_{2},\alpha_{3}$  线性表示;当  $b = - 1,a\neq - 2$  时,  $r(A) = r(\widetilde{A}) = 3$  ,线性方程组  $A x = \beta$  有唯一解  $x_{1}$ $= 0,x_{2} = 7,x_{3} = - 1$  ,故  $\pmb{\beta}$  可由  $\alpha_{1},\alpha_{2},\alpha_{3}$  线性表示,且表示系数唯一,表示式为
+
+$$
+\pmb {\beta} = 0\cdot \pmb{\alpha}_{1} + 7\pmb{\alpha}_{2} - \pmb{\alpha}_{3}.
+$$
+
+当  $b = - 1,a = - 2$  时,  $r(A) = r(\widetilde{A}) = 2< 3$  ,线性方程组  $A x = \beta$  有无穷多解,其解为
+
+$$
+\left\{x_{1} = -\frac{1}{2} -\frac{1}{2} k,\right.
+$$
+
+故  $\pmb{\beta}$  可由  $\alpha_{1},\alpha_{2},\alpha_{3}$  线性表示,且表示式有无穷多,其表示式为
+
+例3.3设向量组  $\alpha_{1},\alpha_{2},\dots ,\alpha_{m}$  为  $n$  维向量组,证明:向量组中每一向量都可由  $\alpha_{1},\alpha_{2},\dots ,\alpha_{m}$  线性表示.
+
+证任取  $\alpha_{i},1\leqslant i\leqslant m$  ,有
+
+$$
+\pmb{\alpha}_{i} = 0\pmb{\alpha}_{1} + 0\pmb{\alpha}_{2} + \dots +0\pmb{\alpha}_{i - 1} + 1\pmb{\alpha}_{i} + 0\pmb{\alpha}_{i + 1} + \dots +0\pmb{\alpha}_{m},
+$$
+
+# 3.2.2 向量组的等价
+
+定义3.5 设有两个向量组
+
+$$
+(\mathrm{~I~})\quad \pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{s},\qquad (\mathrm{~II~})\quad \pmb{\beta}_{1},\pmb{\beta}_{2},\dots ,\pmb{\beta}_{t},
+$$
+
+若(I)中的每个向量都能由向量组(Ⅱ)线性表示,则称向量组(I)可由向量组(Ⅱ)线性表示.若向量组(I)与(Ⅱ)可以互相线性表示,则称向量组(I)与(Ⅱ)等价.
+
+由定理3.1不难得到如下命题
+
+命题3.1向量组  $\beta_{1},\beta_{2},\dots ,\beta_{t}$  可由向量组  $\alpha_{1},\alpha_{2},\dots ,\alpha_{s}$  线性表示的充分必要条件为
+
+$$
+r(A) = r(B),
+$$
+
+其中矩阵  $A$  是以向量  $\alpha_{1},\alpha_{2},\dots ,\alpha_{s}$  为列构造的矩阵,矩阵  $B$  是以向量  $\alpha_{1},\alpha_{2},\dots ,\alpha_{s},\beta_{1},\beta_{2},\dots ,\beta_{t}$  为列构造的矩阵.
+
+例3.4设向量
+
+$$
+\pmb{\alpha}_{1}=\left[\begin{array}{c}{1}\\ {-1}\\ {0}\end{array}\right],\quad\pmb{\alpha}_{2}=\left[\begin{array}{c}{2}\\ {0}\\ {1}\end{array}\right],\quad\pmb{\alpha}_{3}=\left[\begin{array}{c}{1}\\ {1}\\ {-1}\end{array}\right],\quad\pmb{\beta}_{1}=\left[\begin{array}{c}{3}\\ {-3}\\ {2}\end{array}\right],\quad\pmb{\beta}_{2}=\left[\begin{array}{c}{-1}\\ {3}\\ {-3}\end{array}\right],
+$$
+
+问  $\beta_{1},\beta_{2}$  能否由  $\alpha_{1},\alpha_{2},\alpha_{3}$  线性表示?
+
+解记  $A = (\pmb{\alpha}_{1},\pmb{\alpha}_{2},\pmb{\alpha}_{3}),B = (\pmb{\alpha}_{1},\pmb{\alpha}_{2},\pmb{\alpha}_{3},\pmb{\beta}_{1},\pmb{\beta}_{2})$  ,由
+
+$$
+B=\left[\begin{array}{r r r r r}{1}&{2}&{1}&{3}&{-1}\\ {-1}&{0}&{1}&{-3}&{3}\\ {0}&{1}&{-1}&{2}&{-3}\end{array}\right]\xrightarrow{\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\ h\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar\hbar
+$$
+
+知  $r(A) = r(B) = 3$  ,故  $\beta_{1},\beta_{2}$  能由  $\alpha_{1},\alpha_{2},\alpha_{3}$  线性表示,且
+
+$$
+\pmb{\beta}_{1} = 2\pmb{\alpha}_{1} + \pmb{\alpha}_{2} - \pmb{\alpha}_{3},\qquad \pmb{\beta}_{2} = -\pmb{\alpha}_{1} - \pmb{\alpha}_{2} + 2\pmb{\alpha}_{3}
+$$
+
+命题3.2设向量组  $\alpha_{1},\alpha_{2},\dots ,\alpha_{s}$  可由向量组  $\beta_{1},\beta_{2},\dots ,\beta_{t}$  线性表示,又向量 $\gamma$  可由向量组  $\alpha_{1},\alpha_{2},\dots ,\alpha_{s}$  线性表示,则向量  $\gamma$  可由向量组  $\beta_{1},\beta_{2},\dots ,\beta_{t}$  线性表示.
+
+证由已知条件,可设
+
+$$
+\gamma = l_{1}\pmb{\alpha}_{1} + l_{2}\pmb{\alpha}_{2} + \dots +l_{s}\pmb{\alpha}_{s} = \sum_{i = 1}^{s}l_{i}\pmb{\alpha}_{i},
+$$
+
+$$
+\pmb{\alpha}_{t} = k_{i1}\pmb{\beta}_{1} + k_{i2}\pmb{\beta}_{2} + \dots +k_{i t}\pmb{\beta}_{t} = \sum_{j = 1}^{t}k_{i j}\pmb{\beta}_{j},\qquad i = 1,2,\dots ,s,
+$$
+
+于是
+
+$$
+\gamma = \sum_{i = 1}^{s}l_{i}\pmb{\alpha}_{i} = \sum_{i = 1}^{s}l_{i}\big(\sum_{j = 1}^{t}k_{i j}\pmb{\beta}_{j}\big) = \sum_{j = 1}^{t}\big(\sum_{i = 1}^{s}l_{i}k_{i j}\big)\pmb{\beta}_{j},
+$$
+
+即向量  $\gamma$  可由向量组  $\beta_{1},\beta_{2},\dots ,\beta_{s}$  线性表示.
+
+由此可知,向量组的线性表示是有传递性的,即若向量组(I)可由向量组(Ⅱ)线性表示,向量组(Ⅱ)可由向量组(Ⅲ)线性表示,则向量组(I)也可由向量组(Ⅲ)线性表示.
+
+与矩阵的等价相仿,关于向量组的等价关系有下面的命题
+
+命题3.3 向量组的等价关系具有:
+
+(1)反身性.即每个向量组与它自身等价.
+
+(2)对称性.即若向量组  $(\mathrm{~I~})\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{s}$  与向量组  $(\mathbb{I})\pmb{\beta}_{1},\pmb{\beta}_{2},\dots ,\pmb{\beta}_{t}$  等价,则
+
+向量组  $(\mathbb{I})$  也与向量组  $(\mathrm{I})$  等价.
+
+(3)传递性.即若向量组  $(\mathrm{I})\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{s}$  与向量组  $(\mathrm{II})\pmb{\beta}_{1},\pmb{\beta}_{2},\dots ,\pmb{\beta}_{t}$  等价,而向量组  $(\mathbb{I})\pmb{\beta}_{1},\pmb{\beta}_{2},\dots ,\pmb{\beta}_{t}$  与向量组  $(\mathbb{I})\gamma_{1},\gamma_{2},\dots ,\gamma_{r}$  等价,则向量组  $(\mathrm{I})$  与向量组(Ⅲ)也等价.
+
+# 3.2.3 线性相关与线性无关
+
+由定义3.4知  $n$  维零向量可由任何一个  $n$  维向量组  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m}$  线性表示.事实上
+
+$$
+\mathbf{0} = 0\pmb{\alpha}_{1} + 0\pmb{\alpha}_{2} + \dots +0\pmb{\alpha}_{m},
+$$
+
+这里的表示系数全是零.
+
+然而,对于有些向量来说,可以找到不全为零的数,使得它们的线性组合为零向量.例如,对于(3.6)式给出的三个向量,就有
+
+$$
+2\pmb{\alpha}_{1} + \pmb{\alpha}_{2} + (-1)\pmb{\alpha}_{3} = \mathbf{0}.
+$$
+
+而对有些向量,如(3.7)式所给出的基本向量组,则只有组合系数全为零时,它们的线性组合才能为零向量.由此,我们引入如下定义.
+
+定义3.6设  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m}$  为  $n$  维向量,若存在不全为零的数  $k_{1},k_{2},\dots ,k_{m}$  使
+
+$$
+k_{1}\pmb{\alpha}_{1} + k_{2}\pmb{\alpha}_{2} + \dots +k_{m}\pmb{\alpha}_{m} = \mathbf{0}, \tag{3.11}
+$$
+
+则称向量  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m}$  线性相关.否则称它们线性无关,即仅当
+
+$$
+k_{1} = k_{2} = \dots = k_{m} = 0
+$$
+
+时(3.11)式才成立,则  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m}$  线性无关.
+
+对于一个向量构成的向量组,如果这个向量是零向量,则称它线性相关,若它不是零向量则称它线性无关.
+
+由定义可见,如果将  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m}$  看作列向量,则向量  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m}$  线性相关等价于齐次线性方程组
+
+$$
+x_{1}\pmb{\alpha}_{1} + x_{2}\pmb{\alpha}_{2} + \dots +x_{m}\pmb{\alpha}_{m} = \mathbf{0} \tag{3.12}
+$$
+
+有非零解.
+
+定理3.2  $n$  维向量  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m}$  线性相关(线性无关)的充分必要条件是齐次线性方程组(3.12)有非零解(仅有零解).
+
+由定理3.2可得如下推论
+
+推论3.2 令
+
+$$
+\pmb{\alpha}_{1} = \left[ \begin{array}{c}a_{11} \\ a_{21} \\ \vdots \\ a_{n1} \end{array} \right], \pmb{\alpha}_{2} = \left[ \begin{array}{c}a_{12} \\ a_{22} \\ \vdots \\ a_{n2} \end{array} \right], \dots , \pmb{\alpha}_{m} = \left[ \begin{array}{c}a_{1m} \\ a_{2m} \\ \vdots \\ a_{nm} \end{array} \right],
+$$
+
+则向量  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m}$  线性相关的充分必要条件是  $r(A)< m$  ,其中
+
+$$
+A = (\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m}).
+$$
+
+换句话说,向量  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m}$  线性无关的充分必要条件是  $r(A) = m$
+
+推论3.3  $n$  个  $n$  维向量  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{n}$  线性相关的充分必要条件是
+
+$$
+|A| = 0,
+$$
+
+其中  $A = (\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{n})$  ,视  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{n}$  为列向量
+
+也就是说,  $n$  个  $n$  维向量  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{n}$  线性无关的充分必要条件是  $|A|\neq 0$
+
+由推论2.8可知,当方程的个数小于未知量的个数时,齐次线性方程组必有非零解,因而有下面的推论.
+
+推论3.4对于  $\mathbf{R}^{n}$  中任意  $m$  个向量,当  $m > n$  时必线性相关
+
+例3.5 设有向量组
+
+$$
+\pmb {\alpha} = (2, - 1,1,3),\quad \pmb {\beta} = (1,0,4,2),\quad \pmb {\gamma} = (-4,2, - 2,k),
+$$
+
+讨论  $k$  取何值时  $\alpha ,\beta ,\gamma$  线性相关?  $k$  取何值时  $\alpha ,\beta ,\gamma$  线性无关?
+
+解以  $\alpha ,\beta ,\gamma$  为列构造矩阵
+
+$$
+A=(\pmb{\alpha}^{\mathrm{T}}\pmb{\beta}^{\mathrm{T}},\pmb{\gamma}^{\mathrm{T}})=\left[\begin{array}{r r r}{2}&{1}&{-4}\\ {-1}&{0}&{2}\\ {1}&{4}&{-2}\\ {3}&{2}&{k}\end{array}\right]\xrightarrow{\hbar\mathbb{H}\mathbb{H}\mathbb{H}\mathbb{H}\mathbb{H}\mathbb{H}\mathbb{H}\mathbb{H}\mathbb{H}\mathbb{H}\mathbb{H}\mathbb{H}\mathbb{H}\mathbb{H}\mathbb{H}\mathbb{H}\mathbb{H}\mathbb{H}\mathbb{H}\mathbb{H}\mathbb{H}}\left[\begin{array}{r r r}{1}&{0}&{-2}\\ {0}&{1}&{0}\\ {0}&{0}&{k+6}\\ {0}&{0}&{0}\end{array}\right].
+$$
+
+由上式右端的矩阵可见,当  $k = - 6$  时,  $r(A) = 2< 3,\pmb {\alpha},\pmb {\beta},\gamma$  线性相关;当  $k\neq - 6$  时,  $r(A) = 3,\pmb {\alpha},\pmb {\beta},\gamma$  线性无关. 口
+
+例3.6 证明:  $n$  维单位向量  $\pmb{\epsilon}_{1},\pmb{\epsilon}_{2},\dots ,\pmb{\epsilon}_{n}$  组成的向量组线性无关.
+
+证考察关系式
+
+$$
+k_{1}\pmb{\epsilon}_{1} + k_{2}\pmb{\epsilon}_{2} + \dots +k_{n}\pmb{\epsilon}_{n} = \mathbf{0},
+$$
+
+即
+
+$$
+k_{1}\left[ \begin{array}{c}1\\ 0\\ \vdots \\ 0 \end{array} \right] + k_{2}\left[ \begin{array}{c}0\\ 1\\ \vdots \\ 0 \end{array} \right] + \dots +k_{n}\left[ \begin{array}{c}0\\ 0\\ \vdots \\ 1 \end{array} \right] = \left[ \begin{array}{c}k_{1}\\ k_{2}\\ \vdots \\ k_{n} \end{array} \right] = \left[ \begin{array}{c}0\\ 0\\ \vdots \\ 0 \end{array} \right],
+$$
+
+由此得
+
+$$
+k_{1} = k_{2} = \dots = k_{n} = 0,
+$$
+
+由定义知,向量组  $\pmb{\epsilon}_{1},\pmb{\epsilon}_{2},\dots ,\pmb{\epsilon}_{n}$  线性无关.
+
+例3.7 设向量  $\alpha ,\beta ,\gamma$  线性无关,令
+
+$$
+\begin{array}{r}{\xi = \alpha ,\quad \eta = \alpha +\beta ,\quad \zeta = \alpha -\beta -\gamma ,} \end{array}
+$$
+
+问向量  $\xi ,\eta ,\zeta$  是否也线性无关?
+
+解设有一组数  $k_{1},k_{2},k_{3}$  使
+
+$$
+k_{1}\xi +k_{2}\eta +k_{3}\zeta = 0,
+$$
+
+即
+
+$$
+(k_{1} + k_{2} + k_{3})\alpha +(k_{2} - k_{3})\beta -k_{3}\gamma = 0.
+$$
+
+因为  $\alpha ,\beta ,\gamma$  线性无关,所以  $k_{1},k_{2},k_{3}$  必定满足
+
+$$
+\left\{ \begin{array}{c}k_{1} + k_{2} + k_{3} = 0, \\ k_{2} - k_{3} = 0, \\ -k_{3} = 0. \end{array} \right.
+$$
+
+显然,此方程组只有零解  $k_{1} = k_{2} = k_{3} = 0.$  所以向量  $\xi ,\eta ,\zeta$  也线性无关.
+
+例3.8 讨论下列向量的线性相关性:
+
+$$
+(1)\pmb{\alpha}_{1} = \left[ \begin{array}{l}1 \\ 1 \\ 1 \end{array} \right],\pmb{\alpha}_{2} = \left[ \begin{array}{l}9 \\ 9 \\ 0 \end{array} \right],\pmb{\alpha}_{3} = \left[ \begin{array}{l}9 \\ 5 \\ 3 \end{array} \right],\pmb{\alpha}_{4} = \left[ \begin{array}{l}9 \\ 0 \\ 1 \end{array} \right];
+$$
+
+$$
+(2)\pmb{\beta}_{1} = \left[ \begin{array}{l}2 \\ 0 \\ 1 \\ 4 \end{array} \right],\pmb{\beta}_{2} = \left[ \begin{array}{l}1 \\ 0 \\ 7 \\ 6 \end{array} \right],\pmb{\beta}_{3} = \left[ \begin{array}{r} - 1 \\ 0 \\ 5 \\ 2 \end{array} \right],\pmb{\beta}_{4} = \left[ \begin{array}{r}3 \\ 0 \\ -2 \\ 8 \end{array} \right].
+$$
+
+解  $(1)\pmb{\alpha}_{1},\pmb{\alpha}_{2},\pmb{\alpha}_{3},\pmb{\alpha}_{4}$  是4个3维向量,由推论3.4可知,向量  $\alpha_{1},\alpha_{2},\alpha_{3},\alpha_{4}$  线性相关;
+
+(2)令
+
+$$
+B = (\pmb{\beta}_{1},\pmb{\beta}_{2},\pmb{\beta}_{3},\pmb{\beta}_{4}) = \left[ \begin{array}{cccc}2 & 1 & -1 & 3 \\ 0 & 0 & 0 & 0 \\ 1 & 7 & 5 & -2 \\ 4 & 6 & 2 & 8 \end{array} \right],
+$$
+
+因为  $|B| = 0$ ,由推论3.3可知, $B$  的列向量即  $\pmb{\beta}_{1},\pmb{\beta}_{2},\pmb{\beta}_{3},\pmb{\beta}_{4}$  线性相关.
+
+命题3.4 若向量组  $\alpha_{1},\alpha_{2},\dots ,\alpha_{m}$  中有部分向量线性相关,则该向量组必线性相关.
+
+证 不失一般性,设  $\alpha_{1},\alpha_{2},\dots ,\alpha_{s}$  线性相关  $(s< m)$ . 于是存在不全为零的数  $k_{1},k_{2},\dots ,k_{s}$ ,使得
+
+$$
+k_{1}\pmb{\alpha}_{1} + k_{2}\pmb{\alpha}_{2} + \dots +k_{s}\pmb{\alpha}_{s} = \mathbf{0},
+$$
+
+从而有不全为零的数  $k_{1},k_{2},\dots ,k_{s},0,\dots ,0$ ,使得
+
+$$
+k_{1}\pmb{\alpha}_{1} + k_{2}\pmb{\alpha}_{2} + \dots +k_{s}\pmb{\alpha}_{s} + 0\pmb{\alpha}_{s + 1} + \dots +0\pmb{\alpha}_{m} = \mathbf{0},
+$$
+
+因此  $\alpha_{1},\alpha_{2},\dots ,\alpha_{m}$  线性相关.
+
+等价地,命题3.4也可叙述为:若向量  $\alpha_{1},\alpha_{2},\dots ,\alpha_{m}$  线性无关,则其任一部分组的向量都线性无关.
+
+命题3.5 设  $\alpha_{1},\alpha_{2},\dots ,\alpha_{s}\in \mathbf{R}^{n},\pmb{\beta}_{1},\pmb{\beta}_{2},\dots ,\pmb{\beta}_{s}\in \mathbf{R}^{m}$  都为列向量. 令  $n + m$  维列
+
+向量
+
+$$
+\gamma_{i} = \left( \begin{array}{c} \pmb{\alpha}_{i} \\ \pmb{\beta}_{i} \end{array} \right), \quad i = 1,2,\dots ,s.
+$$
+
+若  $\gamma_{1},\gamma_{2},\dots ,\gamma_{s}$  线性相关,则  $\alpha_{1},\alpha_{2},\dots ,\alpha_{s}$  也线性相关.
+
+证由于  $\gamma_{1},\gamma_{2},\dots ,\gamma_{s}$  线性相关,故存在  $s$  个不全为零的数  $k_{1},k_{2},\dots ,k_{s}$  使
+
+$$
+k_{1}\gamma_{1} + k_{2}\gamma_{2} + \dots +k_{s}\gamma_{s} = \mathbf{0},
+$$
+
+即
+
+$$
+k_{1}\left( \begin{array}{c} \pmb{\alpha}_{1} \\ \pmb{\beta}_{1} \end{array} \right) + k_{2}\left( \begin{array}{c} \pmb{\alpha}_{2} \\ \pmb{\beta}_{2} \end{array} \right) + \dots +k_{s}\left( \begin{array}{c} \pmb{\alpha}_{s} \\ \pmb{\beta}_{s} \end{array} \right) = \left( \begin{array}{c} \mathbf{0}_{1} \\ \mathbf{0}_{2} \end{array} \right),
+$$
+
+其中  $\mathbf{0}_{1}$  为  $n$  维零向量,  $\mathbf{0}_{2}$  为  $m$  维零向量.由分块矩阵的数乘运算,得
+
+$$
+k_{1}\pmb{\alpha}_{1} + k_{2}\pmb{\alpha}_{2} + \dots +k_{s}\pmb{\alpha}_{s} = \mathbf{0}_{1},
+$$
+
+即  $\alpha_{1},\alpha_{2},\dots ,\alpha_{s}$  也线性相关.
+
+常称  $\alpha_{1},\alpha_{2},\dots ,\alpha_{s}$  为  $\gamma_{1},\gamma_{2},\dots ,\gamma_{s}$  的截短向量,或  $\gamma_{1},\gamma_{2},\dots ,\gamma_{s}$  是  $\alpha_{1},\alpha_{2},\dots ,\alpha_{s}$  的接长向量.该命题说明:若  $\gamma_{1},\gamma_{2},\dots ,\gamma_{s}$  线性相关,则其截短向量  $\alpha_{1},\alpha_{2},\dots ,\alpha_{s}$  也线性相关.
+
+等价地,命题3.5也可叙述为:若向量  $\alpha_{1},\alpha_{2},\dots ,\alpha_{s}$  线性无关,则其接长向量  $\gamma_{1},\gamma_{2},\dots ,\gamma_{s}$  也线性无关.
+
+# 3.2.4 线性组合与线性相关的关系
+
+定理3.3向量  $\alpha_{1},\alpha_{2},\dots ,\alpha_{m}(m\geqslant 2)$  线性相关的充分必要条件是其中至少有一个向量是其余向量的线性组合.
+
+证必要性若  $\alpha_{1},\alpha_{2},\dots ,\alpha_{m}$  线性相关,则存在一组不全为零的数  $k_{1},k_{2},\dots ,k_{m}$ ,使得
+
+$$
+k_{1}\pmb{\alpha}_{1} + k_{2}\pmb{\alpha}_{2} + \dots +k_{m}\pmb{\alpha}_{m} = \mathbf{0}.
+$$
+
+不失一般性,设  $k_{1}\neq 0$ ,于是
+
+$$
+\pmb{\alpha}_{1} = -\frac{k_{2}}{k_{1}}\pmb{\alpha}_{2} - \frac{k_{3}}{k_{1}}\pmb{\alpha}_{3} - \dots -\frac{k_{m}}{k_{1}}\pmb{\alpha}_{m},
+$$
+
+即  $\alpha_{1}$  是  $\alpha_{1},\alpha_{2},\dots ,\alpha_{s}$  的线性组合.
+
+充分性不妨设  $\alpha_{1}$  可由  $\alpha_{2},\alpha_{3},\dots ,\alpha_{m}$  线性表示,即存在数  $l_{2},l_{3},\dots ,l_{m}$ ,使
+
+$$
+\pmb{\alpha}_{1} = l_{2}\pmb{\alpha}_{2} + l_{3}\pmb{\alpha}_{3} + \dots +l_{m}\pmb{\alpha}_{m},
+$$
+
+从而
+
+$$
+-\pmb{\alpha}_{1} + l_{2}\pmb{\alpha}_{2} + l_{3}\pmb{\alpha}_{3} + \dots +l_{m}\pmb{\alpha}_{m} = \mathbf{0}.
+$$
+
+显然,  $- 1,l_{2},l_{3},\dots ,l_{m}$  不全为零,故  $\alpha_{1},\alpha_{2},\dots ,\alpha_{m}$  线性相关.
+
+定理3.3建立了线性相关与线性组合这两个概念之间的联系.显然,由两个向量组成的向量组  $\alpha ,\beta$  线性相关的充分必要条件是存在数  $k$ ,使  $\alpha = k\beta$  或  $\beta = k\alpha$ ,也
+
+就是它们的分量对应成比例.从几何上看,两个二维或三维向量构成的向量组线性相关表示它们共线.另外,由定理3.3可知,三个三维向量  $\alpha , \beta , \gamma$  线性相关,则至少有一个向量是另外两个向量的线性组合,譬如  $\gamma = k\alpha +l\beta$ .如果把它们都看成几何向量,并将它们的起点放在同一个点处,这就表示  $\gamma$  在  $\alpha$  与  $\beta$  所在的平面上.因而三个三维向量  $\alpha , \beta , \gamma$  线性相关的几何意义就是它们共面.
+
+定理3.4若向量  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{m}$  线性无关,而向量  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{m}, \beta$  线性相关,则向量  $\beta$  可由  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{m}$  线性表示,且表示系数唯一.
+
+证因为  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{m}, \beta$  线性相关,所以存在一组不全为零的数
+
+$$
+k_{1}, k_{2}, \dots , k_{m}, k,
+$$
+
+使得
+
+$$
+k_{1}\alpha_{1} + k_{2}\alpha_{2} + \dots +k_{m}\alpha_{m} + k\beta = 0.
+$$
+
+下面用反证法证明  $k \neq 0$
+
+若  $k = 0$ ,则  $k_{1}, k_{2}, \dots , k_{m}$  不全为零,且有
+
+$$
+k_{1}\alpha_{1} + k_{2}\alpha_{2} + \dots +k_{m}\alpha_{m} = 0.
+$$
+
+这与  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{m}$  线性无关相矛盾,从而  $k \neq 0$ .于是
+
+$$
+\beta = -\frac{k_{1}}{k}\alpha_{1} - \frac{k_{2}}{k}\alpha_{2} - \dots -\frac{k_{m}}{k}\alpha_{m},
+$$
+
+即  $\beta$  可由  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{m}$  线性表示
+
+下面也用反证法证明  $\beta$  由  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{m}$  线性表示的表示系数是唯一的.
+
+假设由  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{m}$  线性表示  $\beta$  有两种表示方法,设
+
+$$
+\beta = l_{1}\alpha_{1} + l_{2}\alpha_{2} + \dots +l_{m}\alpha_{m},
+$$
+
+$$
+\beta = h_{1}\alpha_{1} + h_{2}\alpha_{2} + \dots +h_{m}\alpha_{m},
+$$
+
+将两式相减,得
+
+$$
+(l_{1} - h_{1})\alpha_{1} + (l_{2} - h_{2})\alpha_{2} + \dots +(l_{m} - h_{m})\alpha_{m} = 0.
+$$
+
+由于  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{m}$  线性无关,所以,  $l_{i} - h_{i} = 0$ ,即
+
+$$
+l_{i} = h_{i}, \qquad i = 1,2, \dots , m.
+$$
+
+这说明,  $\beta$  由  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{m}$  线性表示的表示系数是唯一的.
+
+例3.9若  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{n}$  是  $n$  个线性无关的  $n$  维向量,向量
+
+$$
+\alpha_{n + 1} = k_{1}\alpha_{1} + k_{2}\alpha_{2} + \dots +k_{n}\alpha_{n}, \tag{3.13}
+$$
+
+其中  $k_{1}, k_{2}, \dots , k_{n}$  全不为零.证明:  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{n}, \alpha_{n + 1}$  中任意  $n$  个向量都线性无关.
+
+证由于  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{n}$  线性无关,所以我们只需证明,将  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{n}$  中的任何一个向量换成  $\alpha_{n + 1}$  后所得的向量组线性无关即可.设将  $\alpha_{i}$  换为  $\alpha_{n + 1}$  后所得的向量组为
+
+$$
+\alpha_{1}, \alpha_{2}, \dots , \alpha_{i - 1}, \alpha_{i + 1}, \dots , \alpha_{n}, \alpha_{n + 1}, \quad i = 2, \dots , n,
+$$
+
+或
+
+$$
+\alpha_{2}, \alpha_{3}, \dots , \alpha_{n}, \alpha_{n + 1}, \quad i = 1.
+$$
+
+我们用反证法证明它们线性无关. 设
+
+$$
+\alpha_{1}, \alpha_{2}, \dots , \alpha_{i - 1}, \alpha_{i + 1}, \dots , \alpha_{n}, \alpha_{n + 1}
+$$
+
+线性相关,由于  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{i - 1}, \alpha_{i + 1}, \dots , \alpha_{n}$  是  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{n}$  的部分组,所以它们线性无关. 由定理3.4,  $\alpha_{n + 1}$  可由  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{i - 1}, \alpha_{i + 1}, \dots , \alpha_{n}$  线性表示,且表示系数唯一,即
+
+$$
+\pmb{\alpha}_{n + 1} = l_{1} \pmb{\alpha}_{1} + l_{2} \pmb{\alpha}_{2} + \dots + l_{r - 1} \pmb{\alpha}_{i - 1} + l_{i + 1} \pmb{\alpha}_{i + 1} + \dots + l_{n} \pmb{\alpha}_{n}.
+$$
+
+将上式与(3.13)式两端分别相减,得
+
+$$
+\begin{array}{r l} & {\mathbf{0} = (k_{1} - l_{1})\pmb{\alpha}_{1} + (k_{2} - l_{2})\pmb{\alpha}_{2} + \dots +(k_{i - 1} - l_{i - 1})\pmb{\alpha}_{i - 1}}\\ & {\quad \quad +k_{i}\pmb{\alpha}_{i} + (k_{i + 1} - l_{i + 1})\pmb{\alpha}_{i + 1} + \dots +(k_{n} - l_{n})\pmb{\alpha}_{n}.} \end{array}
+$$
+
+由于  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{n}$  线性无关,因而
+
+$$
+k_{i} = 0, \quad k_{s} - l_{s} = 0, \quad s = 1, 2, \dots , i - 1, i + 1, \dots , n.
+$$
+
+这显然与  $k_{1}, k_{2}, \dots , k_{r}$  全不为零相矛盾. 所以  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{i - 1}, \alpha_{i + 1}, \dots , \alpha_{n + 1}$  线性无关.
+
+由  $\alpha_{i}$  的任意性可知,结论成立.
+
+若向量组  $\beta_{1}, \beta_{2}, \dots , \beta_{s}$  可由向量组  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{m}$  线性表示,设为
+
+$$
+\left\{ \begin{array}{l l}{\pmb{\beta}_{1} = a_{11}\pmb{\alpha}_{1} + a_{21}\pmb{\alpha}_{2} + \dots +a_{m1}\pmb{\alpha}_{m},}\\ {\pmb{\beta}_{2} = a_{12}\pmb{\alpha}_{1} + a_{22}\pmb{\alpha}_{2} + \dots +a_{m2}\pmb{\alpha}_{m},}\\ {\qquad \dots \dots \dots \dots}\\ {\pmb{\beta}_{s} = a_{1s}\pmb{\alpha}_{1} + a_{2s}\pmb{\alpha}_{2} + \dots +a_{m s}\pmb{\alpha}_{m}.} \end{array} \right. \tag{3.14}
+$$
+
+用矩阵符号记(3.14)式为
+
+$$
+(\pmb{\beta}_{1}, \pmb{\beta}_{2}, \dots , \pmb{\beta}_{s}) = (\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \dots , \pmb{\alpha}_{m}) \pmb{A},
+$$
+
+称矩阵  $A = (a_{ij})_{m \times s}$  为  $\beta_{1}, \beta_{2}, \dots , \beta_{s}$  由  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{m}$  线性表示的表示矩阵,其中  $A$  的第  $j$  列是  $\beta_{j}$  由  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{m}$  线性表示的表示系数,
+
+$$
+A = \left[ \begin{array}{cccc}a_{11} & a_{12} & \dots & a_{1s} \\ a_{21} & a_{22} & \dots & a_{2s} \\ \vdots & \vdots & & \vdots \\ a_{s1} & a_{s2} & \dots & a_{s m} \end{array} \right].
+$$
+
+在上述的记法下,我们有下面的结论
+
+命题3.6设向量组  $\alpha_{1},\alpha_{2},\dots ,\alpha_{m}$  线性无关,向量组  $\beta_{1},\beta_{2},\dots ,\beta_{s}$  可由  $\alpha_{1}$ $\alpha_{2},\dots ,\alpha_{m}$  线性表示,即  $(\pmb{\beta}_{1},\pmb{\beta}_{2},\dots ,\pmb{\beta}_{s}) = (\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m})A$  ,则  $\beta_{1},\beta_{2},\dots ,\beta_{s}$  线性无关 (线性相关)的充分必要条件为表示矩阵  $A$  的秩等于  $s$  (小于  $s$  ),即  $r(A) = s(r(A)$ $< s)$
+
+证 我们先证明  $\beta_{1}, \beta_{2}, \dots , \beta_{s}$  线性相关的充分必要条件为  $r(A) < s$ .
+
+设  $\beta_{1}, \beta_{2}, \dots , \beta_{s}$  线性相关,则齐次线性方程组  $(\beta_{1}, \beta_{2}, \dots , \beta_{s}) x = 0$  有非零解. 取
+
+它的一个非零解  $\scriptstyle x_{0}$  ,则  $(\pmb{\beta}_{1},\pmb{\beta}_{2},\dots ,\pmb{\beta}_{s})\pmb{x}_{0} = \mathbf{0}$  ,从而
+
+$$
+(\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m})A_{m\times s}\pmb{x}_{0} = \mathbf{0}.
+$$
+
+由于向量组  $\alpha_{1},\alpha_{2},\dots ,\alpha_{m}$  线性无关,所以
+
+$$
+A_{m\times s}x_{0} = \mathbf{0},
+$$
+
+即齐次线性方程组  $A x = \mathbf{0}$  有非零解,故  $r(A)< s$
+
+反之,若  $r(A)< s$  ,则齐次线性方程组  $A_{m\times s}x = \mathbf{0}$  有非零解,取它的一个非零解  $\scriptstyle x_{0}$  ,则  $A_{m\times s}x_{0} = \mathbf{0}.$  此等式两边左乘  $(\alpha_{1},\alpha_{2},\dots ,\alpha_{m})$  ,得
+
+$$
+(\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m})A_{m\times s}x_{0} = \mathbf{0}.
+$$
+
+从而
+
+$$
+(\pmb{\beta}_{1},\pmb{\beta}_{2},\dots ,\pmb{\beta}_{s})\pmb{x}_{0} = \mathbf{0},
+$$
+
+故  $\pmb{\beta}_{1},\pmb{\beta}_{2},\dots ,\pmb{\beta}_{s}$  线性相关.
+
+对于  $\pmb{\beta}_{1},\pmb{\beta}_{2},\dots ,\pmb{\beta}_{s}$  线性无关的充分必要条件为  $r(A) = s$  的证明只需用反证法,利用上面的证明即可得到.读者可自行试之. 口
+
+由此,再重新看一看例3.7,由于  $\alpha ,\beta ,\gamma$  线性无关,而  $\xi ,\eta ,\zeta$  可由  $\beta ,\alpha ,\gamma$  线性表示,表示系数所组成的矩阵为
+
+$$
+A={\left(\begin{array}{l l l}{1}&{1}&{1}\\ {0}&{1}&{-1}\\ {0}&{0}&{-1}\end{array}\right)}.
+$$
+
+显然  $r(A) = 3$  ,所以  $\xi ,\eta ,\zeta$  线性无关
+
+# 3.3 向量组的秩
+
+我们在3.2节看到,(3.6)式中的向量  $\pmb{\alpha}_{1} = (1,2, - 1),\pmb{\alpha}_{2} = (2, - 3,1),\pmb{\alpha}_{3} = (4,1, - 1)$  线性相关,而向量  $\alpha_{1},\alpha_{2}$  线性无关,向量组中的任意向量都可以由  $\alpha_{1},\alpha_{2}$  线性表示,即
+
+$$
+\pmb{\alpha}_{1} = 1\pmb{\alpha}_{1} + 0\pmb{\alpha}_{2},\quad \pmb{\alpha}_{2} = 0\pmb{\alpha}_{1} + 1\pmb{\alpha}_{2},\quad \pmb{\alpha}_{3} = 2\pmb{\alpha}_{1} + \pmb{\alpha}_{2}.
+$$
+
+同样,  $\alpha_{2},\alpha_{3}$  与  $\alpha_{1},\alpha_{3}$  也都具有这样的性质.我们还看到,基本向量组  $\pmb{\epsilon}_{1},\pmb{\epsilon}_{2},\dots ,\pmb{\epsilon}_{n}$  线性无关,任意的  $n$  维实向量都可以由基本向量组  $\pmb{\epsilon}_{1},\pmb{\epsilon}_{2},\dots ,\pmb{\epsilon}_{n}$  线性表示.因而使我们想到,对于一般的  $n$  维向量组,是否也能从中选出线性无关的部分向量组,使向量组的任意向量都可以由这个部分组的向量线性表示?为此讨论下面的概念与有关定理.
+
+# 3.3.1 极大线性无关组
+
+定义3.7 设  $\alpha_{i_{1}},\alpha_{i_{2}},\dots ,\alpha_{i_{r}}$  是向量组  $\alpha_{1},\alpha_{2},\dots ,\alpha_{m}$  的部分向量组,它满足:
+
+$(1)\pmb{\alpha}_{i_{1}},\pmb{\alpha}_{i_{2}},\dots ,\pmb{\alpha}_{i_{r}}$  线性无关;
+
+(2)向量组  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m}$  的每一个向量都可由  $\pmb{\alpha}_{i_{1}},\pmb{\alpha}_{i_{2}},\dots ,\pmb{\alpha}_{i_{r}}$  线性表示,则称向量组  $\pmb{\alpha}_{i_{1}},\pmb{\alpha}_{i_{2}},\dots ,\pmb{\alpha}_{i_{r}}$  是向量组  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m}$  的一个极大线性无关组,简称极大无关组.
+
+由定义与命题3.3不难推出,关于向量组与它的极大无关组成立下述三个命题
+
+命题3.7 一个向量组若有极大线性无关组,则这个向量组与其极大线性无关组等价.
+
+命题3.8 若向量组的极大线性无关组不唯一,则其任意两个极大线性无关组都等价.
+
+命题3.9 向量组  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m}$  有极大线性无关组的充分必要条件是该向量组中至少有一个非零向量.
+
+证 由于含零向量的向量组一定线性相关,命题的必要性显然
+
+充分性设向量组  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m}$  中至少有一个非零向量,记作  $\pmb{\alpha}_{i_{1}}$  ,若  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m}$  中其余的向量中都可由  $\pmb{\alpha}_{i_{1}}$  线性表示,则  $\pmb{\alpha}_{i_{1}}$  就是向量组的极大无关组;若  $\pmb{\alpha}_{1}$ $\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m}$  其余的向量中有向量不能由  $\pmb{\alpha}_{i_{1}}$  线性表示的,从中选一个,记为  $\pmb{\alpha}_{i_{2}}$  ,则  $\pmb{\alpha}_{i_{2}}$  与  $\pmb{\alpha}_{i_{1}}$  线性无关.然后用同样的方法再选取  $\pmb{\alpha}_{i_{1}}$  ,使  $\pmb{\alpha}_{i_{1}},\pmb{\alpha}_{i_{2}},\pmb{\alpha}_{i_{3}}$  线性无关.依次选下去,直至得到线性无关的向量组  $\pmb{\alpha}_{i_{1}},\pmb{\alpha}_{i_{2}},\dots ,\pmb{\alpha}_{i_{r}}$  ,且  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m}$  中剩余的向量都可由  $\pmb{\alpha}_{i_{1}},\pmb{\alpha}_{i_{2}},\dots ,\pmb{\alpha}_{i_{r}}$  线性表示为止,则  $\pmb{\alpha}_{i_{1}},\pmb{\alpha}_{i_{2}},\dots ,\pmb{\alpha}_{i_{r}}$  即为向量组  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m}$  的极大线性无关组.充分性得证. 口
+
+例如,本节开始提到的向量组  $\pmb{\alpha}_{1} = (1,2, - 1),\pmb{\alpha}_{2} = (2, - 3,1),\pmb{\alpha}_{3} = (4,1,$ $- 1)$  中,  $\pmb{\alpha}_{1},\pmb{\alpha}_{2};\pmb{\alpha}_{2},\pmb{\alpha}_{3}$  与  $\pmb{\alpha}_{1},\pmb{\alpha}_{3}$  都是它的极大无关组.显然,向量组  $\{\pmb{\alpha}_{1},\pmb{\alpha}_{2},\pmb{\alpha}_{3}\}$  与  $\{\pmb{\alpha}_{1},\pmb{\alpha}_{2}\}$  等价,极大无关组  $\{\pmb{\alpha}_{1},\pmb{\alpha}_{2}\}$  与  $\{\pmb{\alpha}_{2},\pmb{\alpha}_{3}\}$  及  $\{\pmb{\alpha}_{1},\pmb{\alpha}_{3}\}$  都等价.
+
+由此可见,向量组的极大无关组可以不唯一.但是,向量组的各个极大无关组所含向量个数都相等.这个结果,对于一般的向量组也成立.我们先证明下述定理
+
+定理3.5 给定两个向量组
+
+$$
+(\mathrm{I})\quad \pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{s},\qquad (\mathrm{II})\quad \pmb{\beta}_{1},\pmb{\beta}_{2},\dots ,\pmb{\beta}_{s},
+$$
+
+若向量组  $(\mathrm{I})$  能被向量组  $(\mathrm{II})$  线性表示,且  $s > t$  ,则向量组  $(\mathrm{I})$  中的向量线性相关
+
+证 只要证明存在不全为零的数  $k_{1},k_{2},\dots ,k_{s}$  使得  $\sum_{i = 1}^{s}k_{i}\pmb{\alpha}_{i} = \mathbf{0}$  即可.由已知条件,设
+
+$$
+\pmb{\alpha}_{i} = \sum_{j = 1}^{i}l_{j_{1}}\pmb{\beta}_{j} = l_{1j_{1}}\pmb{\beta}_{1} + l_{2j_{2}}\pmb{\beta}_{2} + \dots +l_{n}\pmb{\beta}_{t},\quad i = 1,2,\dots ,s,
+$$
+
+将这些向量视为列向量,即
+
+$$
+\pmb{\alpha}_{i} = (\pmb{\beta}_{1},\pmb{\beta}_{2},\dots ,\pmb{\beta}_{t})\left[ \begin{array}{c}l_{1i} \\ l_{2i} \\ \vdots \\ l_{ti} \end{array} \right], \quad i = 1,2,\dots ,s,
+$$
+
+可将上述  $s$  个等式合并写成
+
+$$
+(\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{s}) = (\pmb{\beta}_{1},\pmb{\beta}_{2},\dots ,\pmb{\beta}_{t})\left[ \begin{array}{c c c c}{l_{11}} & {l_{12}} & \dots & {l_{1s}}\\ {l_{21}} & {l_{22}} & \dots & {l_{2s}}\\ \vdots & \vdots & & \vdots \\ {l_{t1}} & {l_{t2}} & \dots & {l_{t s}} \end{array} \right],
+$$
+
+记
+
+$$
+C = \left[ \begin{array}{cccc}l_{11} & l_{12} & \dots & l_{1s} \\ l_{21} & l_{22} & \dots & l_{2s} \\ \vdots & \vdots & & \vdots \\ l_{t1} & l_{t2} & \dots & l_{ts} \end{array} \right].
+$$
+
+因为  $s > t$ ,故  $r(C)< s$ ,因而,齐次线性方程组
+
+$$
+C x = 0
+$$
+
+有非零解,即存在不全为零的数  $k_{1},k_{2},\dots ,k_{s}$ ,使得
+
+$$
+C\left[ \begin{array}{c}k_{1} \\ k_{2} \\ \vdots \\ k_{s} \end{array} \right] = \mathbf{0}.
+$$
+
+因而,
+
+$$
+\sum_{i = 1}^{s}k_{i}\pmb{\alpha}_{i} = (\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{s})\left[ \begin{array}{c}k_{1} \\ k_{2} \\ \vdots \\ k_{s} \end{array} \right] = (\pmb{\beta}_{1},\pmb{\beta}_{2},\dots ,\pmb{\beta}_{t})C\left[ \begin{array}{c}k_{1} \\ k_{2} \\ \vdots \\ k_{s} \end{array} \right] = \mathbf{0},
+$$
+
+即  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{s}$  线性相关.
+
+与定理3.5等价的命题是下面的推论3.5.
+
+推论3.5若向量  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{s}$  线性无关,且它们可由向量组  $\pmb{\beta}_{1},\pmb{\beta}_{2},\dots ,\pmb{\beta}_{t}$  线性表示,则  $s\leq t$
+
+定理3.5常被称为向量组的替换定理,由此定理不难得出如下推论
+
+推论3.6 两个线性无关的等价的向量组必含有相同个数的向量.
+
+推论3.7 一个向量组若有两个极大线性无关组,则它们所含向量的个数相等.
+
+上述两推论的证明留给读者.
+
+# 3.3.2 向量组的秩
+
+推论3.7表明,向量组的极大无关组所含向量个数与极大无关组的选择无关,它是由向量组本身所确定的.这是向量组的一个重要属性.类似于矩阵的秩,我们引入向量组的秩的概念.
+
+定义3.8向量组  $\alpha_{1},\alpha_{2},\dots ,\alpha_{m}$  的极大线性无关组所含向量的个数称为向量组的秩,记作  $r(\alpha_{1},\alpha_{2},\dots ,\alpha_{m})$
+
+规定全由零向量组成的向量组的秩为零
+
+显然,  $0\leqslant r(\alpha_{1},\alpha_{2},\dots ,\alpha_{m})\leqslant m.$
+
+由定义,向量组  $\pmb{\alpha}_{1} = (1,2, - 1),\pmb{\alpha}_{2} = (2, - 3,1),\pmb{\alpha}_{3} = (4,1, - 1)$  的秩为2,即
+
+$$
+r(\alpha_{1},\alpha_{2},\alpha_{3}) = 2.
+$$
+
+显然,线性无关的向量组就是其自身的极大无关组,所以有下面的命题
+
+命题3.10向量组  $\alpha_{1},\alpha_{2},\dots ,\alpha_{m}$  线性无关(线性相关)的充分必要条件是  $r(\alpha_{1},\alpha_{2},\dots ,\alpha_{m}) = m.$ $(r(\alpha_{1},\alpha_{2},\dots ,\alpha_{m})< m.$  )
+
+由等价的传递性可知,任意两个等价的向量组的极大无关组也等价.所以有:
+
+命题3.11 等价的向量组必有相同的秩
+
+例3.10 证明向量组  $\alpha ,\beta ,\gamma$  线性无关的充分必要条件是向量组
+
+$$
+\alpha +\beta ,\quad \beta +\gamma ,\quad \gamma +\alpha
+$$
+
+线性无关.
+
+证设
+
+$$
+\left\{ \begin{array}{l}\xi = \alpha +\beta , \\ \eta = \beta +\gamma , \\ \zeta = \gamma +\alpha , \end{array} \right.
+$$
+
+则有
+
+$$
+\left\{ \begin{array}{l}\alpha = \frac{1}{2} (\xi -\eta +\zeta), \\ \beta = \frac{1}{2} (\xi +\eta -\zeta), \\ \gamma = \frac{1}{2} (-\xi +\eta +\zeta). \end{array} \right.
+$$
+
+由定义3.5,向量组  $\alpha ,\beta ,\gamma$  与  $\xi ,\eta ,\zeta$  等价,从而有相同的秩.所以
+
+$\alpha ,\beta ,\gamma$  线性无关  $\Leftrightarrow r(\alpha ,\beta ,\gamma) = 3$
+
+$$
+\Leftrightarrow r(\xi ,\eta ,\zeta) = r(\alpha +\beta ,\beta +\gamma ,\gamma +\alpha) = 3
+$$
+
+命题3.12 如果一个向量组的秩为  $r(r > 0)$ ,则向量组中任意  $r$  个线性无关
+
+的向量都是它的一个极大无关组.
+
+证设向量组  $\alpha_{1},\alpha_{2},\dots ,\alpha_{m}$  的秩为  $r$  ,且  $\alpha_{i_{1}},\alpha_{i_{2}},\dots ,\alpha_{i_{r}}$  是  $\alpha_{1},\alpha_{2},\dots ,\alpha_{m}$  中  $r$  个线性无关的向量.设  $\alpha_{k}$  是向量组中任一个向量,则
+
+$$
+\alpha_{i_{1}},\alpha_{i_{2}},\dots ,\alpha_{i_{r}},\alpha_{k}
+$$
+
+线性相关,否则与  $r(\alpha_{1},\alpha_{2},\dots ,\alpha_{m}) = r$  相矛盾.由定理  $3.4,\alpha_{k}$  可由  $\alpha_{i_{1}},\alpha_{i_{2}},\dots ,\alpha_{i_{r}}$  线性表示.由定义,  $\alpha_{i_{1}},\alpha_{i_{2}},\dots ,\alpha_{i_{r}}$  为向量组的一个极大无关组. 口
+
+命题3.13 设向量组  $\alpha_{1},\alpha_{2},\dots ,\alpha_{s}$  可由向量组  $\beta_{1},\beta_{2},\dots ,\beta_{t}$  线性表示,则
+
+$$
+r(\alpha_{1},\alpha_{2},\dots ,\alpha_{s})\leqslant r(\beta_{1},\beta_{2},\dots ,\beta_{t}).
+$$
+
+证设向量组  $\alpha_{1},\alpha_{2},\dots ,\alpha_{s}$  与向量组  $\beta_{1},\beta_{2},\dots ,\beta_{t}$  的极大无关组分别为  $\alpha_{i_{1}}$ $\alpha_{i_{2}},\dots ,\alpha_{i_{r}}$  与  $\beta_{j_{1}},\beta_{j_{2}},\dots ,\beta_{j_{k}}$  ,则
+
+因此,  $\alpha_{i_{1}},\alpha_{i_{2}},\dots ,\alpha_{i_{r}}$  可由  $\beta_{j_{1}},\beta_{j_{2}},\dots ,\beta_{j_{k}}$  线性表示,由推论  $3.5,r\leqslant k$  ,即
+
+$$
+r(\alpha_{1},\alpha_{2},\dots ,\alpha_{s})\leqslant r(\beta_{1},\beta_{2},\dots ,\beta_{t}).
+$$
+
+# 3.3.3 向量组的秩与矩阵的秩的关系
+
+定理3.6设  $A$  是  $m\times n$  矩阵,则  $A$  的列向量组  $\alpha_{1},\alpha_{2},\dots ,\alpha_{n}$  的秩等于矩阵 $A$  的秩.
+
+证我们分两步证明这个定理:
+
+(1)先证明,若矩阵  $A$  的秩为  $r$  ,则  $A$  中有  $r$  个线性无关的列向量.
+
+设  $r(A) = r$  ,则  $A$  中必有一个  $r$  阶子式  $D\neq 0.$  设  $D$  位于  $A$  的第  $j_{1},j_{2},\dots ,j_{r}$  列,且
+
+$$
+j_{1}< j_{2}< \dots < j_{r}.
+$$
+
+由  $A$  的这  $r$  个列向量  $\alpha_{j_{1}},\alpha_{j_{2}},\dots ,\alpha_{j_{r}}$  构成的矩阵记为  $A_{1}$  .显然,  $r(A_{1}) = r.$  由推论3.2知  $\alpha_{j_{1}},\alpha_{j_{2}},\dots ,\alpha_{j_{r}}$  线性无关.
+
+(2)再证明,  $A$  中的任一列向量  $\alpha_{j}$  都可由(1)中的  $r$  个线性无关的列向量线性表示.
+
+事实上,若  $\alpha_{j}$  是  $\alpha_{j_{1}},\alpha_{j_{2}},\dots ,\alpha_{j_{r}}$  中的某个向量,则显然  $\alpha_{j}$  可由  $\alpha_{j_{1}},\alpha_{j_{2}},\dots ,\alpha_{j_{r}}$  线性表示;若  $\alpha_{j}$  不在  $\alpha_{j_{1}},\alpha_{j_{2}},\dots ,\alpha_{j_{r}}$  中,不妨设  $j_{1}< j_{2}< \dots < j_{i}< j< j_{i + 1}< \dots < j_{r}$  于是矩阵
+
+$$
+A_{2} = (\alpha_{j_{1}},\alpha_{j_{2}},\dots ,\alpha_{j_{i}},\alpha_{j},\alpha_{j_{i + 1}},\dots ,\alpha_{j_{r}})
+$$
+
+是矩阵  $A$  的子阵,故  $r(A_{2})\leqslant r(A) = r< r + 1.$  仍由推论3.2可知,  $A_{2}$  的列向量线性相关.由定理3.4,  $\alpha_{j}$  可由  $\alpha_{j_{1}},\alpha_{j_{2}},\dots ,\alpha_{j_{r}}$  线性表示.
+
+由(1)与(2)可见,
+
+$$
+r(\alpha_{1},\alpha_{2},\dots ,\alpha_{n}) = r(A).
+$$
+
+矩阵  $A$  的列(行)向量组的秩简称  $A$  的列(行)秩.由于  $r(A) = r(A^{\mathrm{T}})$  ,而  $A$  的行秩就是  $A^{\mathrm{T}}$  的列秩,故也等于  $A$  的秩,所以
+
+例3.11 设有向量组
+
+$$
+\pmb{\alpha}_{1}=\left[\begin{array}{c}{1}\\ {-2}\\ {1}\end{array}\right],\quad\pmb{\alpha}_{2}=\left[\begin{array}{c}{2}\\ {-4}\\ {2}\end{array}\right],\quad\pmb{\alpha}_{3}=\left[\begin{array}{c}{1}\\ {0}\\ {3}\end{array}\right],\quad\pmb{\alpha}_{4}=\left[\begin{array}{c}{0}\\ {-4}\\ {-4}\end{array}\right],
+$$
+
+求该向量组的秩和它的一个极大无关组,并将其余向量用所求的极大无关组线性表示.
+
+解构造矩阵  $A = (\pmb{\alpha}_{1},\pmb{\alpha}_{2},\pmb{\alpha}_{3},\pmb{\alpha}_{4})$  ,对  $A$  作初等行变换,将其化为简化的阶梯形矩阵,即
+
+$$
+A=\left[\begin{array}{c c c c}{{1}}&{{2}}&{{1}}&{{0}}\\ {{-2}}&{{-4}}&{{0}}&{{-4}}\\ {{1}}&{{2}}&{{3}}&{{-4}}\end{array}\right]\xrightarrow{\hphantom{-}\hphantom{-}\hphantom{-}\hphantom{-}\hphantom{-}\hphantom{-}\hphantom{-}\hphantom{-}\hphantom{-}\hphantom{-}\hphantom{-}\hphantom{-}\hphantom{-}\hphantom{-}\hphantom{-}\hphantom{-}\hphantom{-}\hphantom{-}\hphantom{-}\hphantom{-}\hphantom{-}}}\end{array}\left[\begin{array}{c c c c}{{1}}&{{2}}&{{0}}&{{2}}\\ {{0}}&{{0}}&{{1}}&{{-2}}\\ {{0}}&{{0}}&{{0}}&{{0}}\end{array}\right]=B.
+$$
+
+显然,  $r(A) = r(B) = 2$  ,即  $r(\pmb{\alpha}_{1},\pmb{\alpha}_{2},\pmb{\alpha}_{3},\pmb{\alpha}_{4}) = 2.$  把上面最后一个矩阵  $B$  记作  $B =$ $(\pmb{\beta}_{1},\pmb{\beta}_{2},\pmb{\beta}_{3},\pmb{\beta}_{4})$  .易见  $\beta_{1},\beta_{3}$  是  $B$  的列向量组的一个极大线性无关组,它可以看作是矩阵  $A_{1} = (\pmb{\alpha}_{1},\pmb{\alpha}_{3})$  经初等行变换得到的,所以  $\pmb{\alpha}_{1},\pmb{\alpha}_{3}$  是  $A$  的列向量组的一个极大线性无关组.
+
+令  $\pmb{\alpha}_{2} = k_{1}\pmb{\alpha}_{1} + k_{3}\pmb{\alpha}_{2},\pmb{\alpha}_{4} = l_{1}\pmb{\alpha}_{1} + l_{3}\pmb{\alpha}_{3}$  ,利用简化的阶梯形矩阵  $B$  求解这两个线性方程组,易得
+
+$$
+k_{1} = 2,k_{3} = 0; l_{1} = 2,l_{3} = -2.
+$$
+
+所以
+
+$$
+\pmb{\alpha}_{2} = 2\pmb{\alpha}_{1},\pmb{\alpha}_{4} = 2\pmb{\alpha}_{1} - 2\pmb{\alpha}_{3}.
+$$
+
+值得注意的是  $\pmb{\alpha}_{2}$  用  $\pmb{\alpha}_{1},\pmb{\alpha}_{3}$  的表示系数2,0与  $\pmb{\alpha}_{4}$  用  $\pmb{\alpha}_{1},\pmb{\alpha}_{3}$  的表示系数2,一2恰是简化的阶梯形矩阵  $B$  第二列与第四列的前两个元素.这不是偶然的.因为解线性方程组  $\pmb{\alpha}_{2} = k_{1}\pmb{\alpha}_{1} + k_{3}\pmb{\alpha}_{3}$  等价于解线性方程组  $\pmb{\beta}_{2} = k_{1}\pmb{\beta}_{1} + k_{3}\pmb{\beta}_{3}$  .解后面的线性方程组,相当于解以矩阵  $B$  的第一列与第三列为系数矩阵,以第二列为常数项的线性方程组.由于矩阵  $B$  为简化的阶梯形矩阵,去掉它的零行,与第一列与第三列对应的是单位矩阵,因而第二列的前两个元素即为方程组的解.同理,容易从矩阵  $B$  得到线性方程组  $\pmb{\alpha}_{4} = l_{1}\pmb{\alpha}_{1} + l_{3}\pmb{\alpha}_{3}$  的解.
+
+如果只需求向量组的秩和极大无关组,那么,只要用初等行变换将  $A$  化为一般的阶梯形矩阵即可.
+
+从本例的解法可见,对矩阵作初等行变换不改变它的列向量之间的线性关系.同样,对矩阵作初等列变换也不改变它的行向量之间的线性关系.
+
+命题3.14设  $\alpha_{1},\alpha_{2},\dots ,\alpha_{m}$  线性无关,  $\pmb{\beta}_{j} = \sum_{i = 1}^{m}a_{i j}\pmb{\alpha}_{i}$ $j = 1,2,\dots ,s$  令  $A = (a_{i j})_{m\times s}$  ,则  $r(\pmb{\beta}_{1},\pmb{\beta}_{2},\dots ,\pmb{\beta}_{s}) = r(A)$
+
+证若  $\beta_{1},\beta_{2},\dots ,\beta_{s}$  全为零向量,则  $A = 0$  ,显然  $r(\pmb{\beta}_{1},\pmb{\beta}_{2},\dots ,\pmb{\beta}_{s}) = r(A) = 0$
+
+下面设  $\beta_{1},\beta_{2},\dots ,\beta_{s}$  不全为零向量,因此,  $A\neq 0$  设  $r(A) = r > 0$  ,则  $A$  的列秩也为  $r$  记  $A = (\gamma_{1},\gamma_{2},\dots ,\gamma_{r},\gamma_{r + 1},\dots ,\gamma_{s})$  ,不失一般性,设  $A$  的前  $r$  个列  $\gamma_{1},\gamma_{2},\dots ,$ $\gamma_{r}$  线性无关,且
+
+$$
+\gamma_{k} = l_{1k}\gamma_{1} + l_{2k}\gamma_{2} + \dots +l_{n k}\gamma_{r},\quad k = r + 1,r + 2,\dots ,s. \tag{3.15}
+$$
+
+记  $A_{1} = (\gamma_{1},\gamma_{2},\dots ,\gamma_{r}),r(A_{1}) = r$  ,则由  $\pmb{\beta}_{j} = \sum_{i = 1}^{m}a_{i j}\pmb{\alpha}_{i},j = 1,2,\dots ,s$  ,可得
+
+$$
+(\pmb{\beta}_{1},\pmb{\beta}_{2},\dots ,\pmb{\beta}_{s}) = (\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m})A, \tag{3.16}
+$$
+
+$$
+(\pmb{\beta}_{1},\pmb{\beta}_{2},\dots ,\pmb{\beta}_{r}) = (\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m})A_{1}. \tag{3.17}
+$$
+
+若  $r$  个数  $c_{1},c_{2},\dots ,c_{r}$  使
+
+$$
+c_{1}\pmb{\beta}_{1} + c_{2}\pmb{\beta}_{2} + \dots +c_{r}\pmb{\beta}_{r} = \mathbf{0},
+$$
+
+即
+
+$$
+(\pmb{\beta}_{1},\pmb{\beta}_{2},\dots ,\pmb{\beta}_{r})\left[ \begin{array}{c}c_{1}\\ c_{2}\\ \vdots \\ c_{r} \end{array} \right] = \mathbf{0}.
+$$
+
+将(3.17)式代入上式得
+
+$$
+(\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m})A_{1}\left[ \begin{array}{c}c_{1}\\ c_{2}\\ \vdots \\ c_{r} \end{array} \right] = \mathbf{0},
+$$
+
+由于  $\alpha_{1},\alpha_{2},\dots ,\alpha_{m}$  线性无关,故
+
+$$
+A_{1}\left[ \begin{array}{c}c_{1}\\ c_{2}\\ \vdots \\ c_{r} \end{array} \right] = \mathbf{0}. \tag{3.18}
+$$
+
+由  $r(A_{1}) = r$  ,所以齐次线性方程组(3.18)有唯一的零解:  $c_{1} = c_{2} = \dots = c_{r} = 0$  ,即  $\pmb{\beta}_{1},\pmb{\beta}_{2},\dots ,\pmb{\beta}_{r}$  线性无关.
+
+由(3.16),(3.17)与(3.15)式得
+
+$$
+\pmb{\beta}_{k} = (\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m})\left[ \begin{array}{c}a_{1k}\\ a_{2k}\\ \vdots \\ a_{mk} \end{array} \right] = (\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{m})A_{1}\left[ \begin{array}{c}l_{1k}\\ l_{2k}\\ \vdots \\ l_{rk} \end{array} \right]
+$$
+
+$$
+= (\pmb{\beta}_{1},\pmb{\beta}_{2},\dots ,\pmb{\beta}_{r})\left[ \begin{array}{c}l_{1k}\\ l_{2k}\\ \vdots \\ l_{rk} \end{array} \right],\quad k = r + 1,r + 2,\dots ,s.
+$$
+
+即向量组  $\beta_{1},\beta_{2},\dots ,\beta_{s}$  的其余列都可由  $\beta_{1},\beta_{2},\dots ,\beta_{r}$  线性表示.故  $\beta_{1},\beta_{2},\dots ,\beta_{r}$  是向量组  $\beta_{1},\beta_{2},\dots ,\beta_{s}$  的极大线性无关组,即  $r(\pmb{\beta}_{1},\pmb{\beta}_{2},\dots ,\pmb{\beta}_{s}) = r(A)$
+
+命题3.14及其证明说明:
+
+(1)若向量组  $\alpha_{1},\alpha_{2},\dots ,\alpha_{m}$  线性无关,而向量组  $\beta_{1},\beta_{2},\dots ,\beta_{s}$  可由  $\alpha_{1},\alpha_{2},\dots ,\alpha_{m}$  线性表示,表示系数构成的矩阵  $A$  的秩就是向量组  $\beta_{1},\beta_{2},\dots ,\beta_{s}$  的秩;
+
+(2)若  $A$  的列向量组的极大线性无关组为  $\gamma_{k_{1}},\gamma_{k_{2}},\dots ,\gamma_{k_{r}}$  ,对应地  $\beta_{k_{1}},\beta_{k_{2}},\dots ,\beta_{k_{r}}$  就是向量组  $\beta_{1},\beta_{2},\dots ,\beta_{s}$  的极大线性无关组;
+
+(3)  $A$  的第  $k$  列  $\gamma_{k}$  由  $\gamma_{k_{1}},\gamma_{k_{2}},\dots ,\gamma_{k_{r}}$  线性表示的表示系数就是  $\beta_{k}$  由  $\beta_{k_{1}},\beta_{k_{2}},\dots ,\beta_{k_{r}}$  线性表示的表示系数.
+
+另外,也可由向量组的秩和极大线性无关组讨论矩阵的秩
+
+例3.12 设  $A,B$  均为  $m\times n$  矩阵,证明
+
+$$
+r(A + B)\leqslant r(A) + r(B).
+$$
+
+证设  $A = (\alpha_{1},\alpha_{2},\dots ,\alpha_{n})$  与  $B = (\pmb{\beta}_{1},\pmb{\beta}_{2},\dots ,\pmb{\beta}_{n})$  ,则
+
+$$
+A + B = (\alpha_{1} + \beta_{1},\alpha_{2} + \beta_{2},\dots ,\alpha_{n} + \beta_{n}).
+$$
+
+再设  $A$  与  $B$  的列向量组的极大线性无关组分别为
+
+则矩阵  $A$  与  $B$  的列向量分别可由  $\alpha_{i_{1}},\alpha_{i_{2}},\dots ,\alpha_{i_{s}}$  与  $\beta_{j_{1}},\beta_{j_{2}},\dots ,\beta_{j_{t}}$  线性表示,即
+
+$$
+\begin{array}{r}{\pmb{\alpha}_{p} = k_{1}\pmb{\alpha}_{i_{1}} + k_{2}\pmb{\alpha}_{i_{2}} + \dots +k_{s}\pmb{\alpha}_{i_{s}},}\\ {\pmb{\beta}_{p} = l_{1}\pmb{\beta}_{j_{1}} + l_{2}\pmb{\beta}_{j_{2}} + \dots +l_{t}\pmb{\beta}_{j_{t}}.} \end{array}
+$$
+
+因而
+
+$$
+\pmb{\alpha}_{p} + \pmb{\beta}_{p} = k_{1}\pmb{\alpha}_{i_{1}} + k_{2}\pmb{\alpha}_{i_{2}} + \dots +k_{s}\pmb{\alpha}_{i_{s}} + l_{1}\pmb{\beta}_{j_{1}} + l_{2}\pmb{\beta}_{j_{2}} + \dots +l_{t}\pmb{\beta}_{j_{t}},
+$$
+
+$$
+p = 1,2,\dots ,n,
+$$
+
+即矩阵  $A + B$  的列向量组可由矩阵  $C = (\alpha_{i_{1}},\alpha_{i_{2}},\dots ,\alpha_{i_{s}},\beta_{j_{1}},\beta_{j_{2}},\dots ,\beta_{j_{t}})$  的列向量组线性表示,由命题3.13得
+
+$$
+r(A + B)\leqslant r(C)\leqslant s + t = r(A) + r(B).
+$$
+
+类似地可以证明,
+
+$$
+\max \{r(A),r(B)\} \leqslant r(A\quad B)\leqslant r(A) + r(B),
+$$
+
+其中  $A$  为  $m\times p$  矩阵,  $B$  为  $m\times q$  矩阵,  $(A\quad B)$  为  $m\times (p + q)$  矩阵
+
+例3.13 证明
+
+$$
+r(A B)\leqslant \min \{r(A),r(B)\} ,
+$$
+
+其中  $A$  为  $m\times p$  矩阵,  $B$  为  $p\times n$  矩阵
+
+证设
+
+$$
+A = (a_{i j})_{m\times p} = (\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{p}),\qquad B = (b_{i j})_{p\times n},
+$$
+
+则
+
+$$
+A B = (\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{p})B = (\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{p})\left[ \begin{array}{c c c c}{b_{11}} & {b_{12}} & \dots & {b_{1n}}\\ {b_{21}} & {b_{22}} & \dots & {b_{2n}}\\ \vdots & \vdots & & \vdots \\ {b_{p1}} & {b_{p2}} & \dots & {b_{p n}} \end{array} \right].
+$$
+
+如果记  $A B$  的列向量为  $\gamma_{1},\gamma_{2},\dots ,\gamma_{n}$  ,则上式说明,  $\gamma_{1},\gamma_{2},\dots ,\gamma_{n}$  可由  $\pmb{\alpha}_{1},\pmb{\alpha}_{2},\dots ,\pmb{\alpha}_{p}$  线性表示
+
+$$
+\pmb{\gamma}_{k} = b_{1k}\pmb{\alpha}_{1} + b_{2k}\pmb{\alpha}_{2} + \dots +b_{p k}\pmb{\alpha}_{p},\quad k = 1,2,\dots ,n.
+$$
+
+由命题3.13,
+
+$$
+r(A B) = r(\gamma_{1},\gamma_{2},\dots ,\gamma_{n})\leqslant r(\alpha_{1},\alpha_{2},\dots ,\alpha_{p}) = r(A).
+$$
+
+又因为  $(A B)^{\mathrm{T}} = B^{\mathrm{T}}A^{\mathrm{T}}$  ,由上面讨论知
+
+$$
+r(B^{\mathrm{T}}A^{\mathrm{T}})\leqslant r(B^{\mathrm{T}}).
+$$
+
+而  $r(B) = r(B^{\mathrm{T}}),r(A B) = r(B^{\mathrm{T}}A^{\mathrm{T}})$  ,故
+
+$$
+r(A B)\leqslant r(B).
+$$
+
+因而
+
+$$
+r(A B)\leqslant \min \{r(A),r(B)\} .
+$$
+
+# 3.4 齐次线性方程组
+
+由2.7节与向量组线性关系的讨论,我们已经知道:
+
+齐次线性方程组  $A x = 0$  有非零解  $\Leftrightarrow r(A){<}n\Leftrightarrow A$  的列向量线性相关.
+
+本节要讨论的问题是:当齐次线性方程组有非零解时,解的结构如何?怎样求出它的所有的解?
+
+# 3.4.1 齐次线性方程组解的性质
+
+命题3.15 设有齐次线性方程组
+
+$$
+A x = 0, \tag{3.19}
+$$
+
+其中  $A = (a_{i j})_{m\times n},x = \left[ \begin{array}{c}{x_{1}}\\ {x_{2}}\\ \vdots \\ {x_{n}} \end{array} \right].$  设  $\pmb{\eta}_{1},\pmb{\eta}_{2},\dots ,\pmb{\eta}_{s}$  是(3.19)的  $s$  个解向量,则它们的线
+
+性组合  $\sum_{i = 1}^{s}k_{i}\pmb{\eta}_{i}$  仍是齐次线性方程组  $A x = 0$  的解向量,其中  $k_{1},k_{2},\dots ,k_{s}$  为任意常
+
+数.
+
+由上述性质可知,当齐次线性方程组有非零解时,则它必有无穷多个解。然而,齐次线性方程组(3.19)的解向量是  $n$  维向量,由推论3.4可知,(3.19)的线性无关的解向量的个数不可能多于  $n$ 。因而使我们想到,是否存在一个与(3.19)的全体解向量等价的线性无关的向量组,使得(3.19)的任何一个解向量都能由它们线性表示?
+
+当齐次线性方程组(3.19)有非零解时,这样一组解向量必定存在。为此,我们引入齐次线性方程组的基础解系的概念。
+
+# 3.4.2 基础解系的存在性与求法
+
+定义3.9 设  $\pmb{\eta}_{1}, \pmb{\eta}_{2}, \dots , \pmb{\eta}_{p}$  是齐次线性方程组  $A x = 0$  的一组解向量,如果:
+
+(1)  $\pmb{\eta}_{1}, \pmb{\eta}_{2}, \dots , \pmb{\eta}_{p}$  线性无关;
+
+(2)齐次线性方程组  $A x = 0$  的任意一个解向量都可由  $\pmb{\eta}_{1}, \pmb{\eta}_{2}, \dots , \pmb{\eta}_{p}$  线性表示,
+
+则称  $\pmb{\eta}_{1}, \pmb{\eta}_{2}, \dots , \pmb{\eta}_{p}$  是齐次线性方程组  $A x = 0$  的一个基础解系。
+
+定理3.7 设  $A$  是  $m \times n$  矩阵,若  $r(A) = r < n$ ,则齐次线性方程组  $A x = 0$  存在一个由  $n - r$  个线性无关的解向量  $\pmb{\eta}_{1}, \pmb{\eta}_{2}, \dots , \pmb{\eta}_{n - r}$  构成的基础解系,它们的线性组合
+
+$$
+\tilde{\pmb{\eta}} = k_{1} \pmb{\eta}_{1} + k_{2} \pmb{\eta}_{2} + \dots + k_{n - r} \pmb{\eta}_{n - r}, \tag{3.20}
+$$
+
+其中  $k_{1}, k_{2}, \dots , k_{n - r}$  为任意常数,给出了齐次线性方程组  $A x = 0$  的所有解。
+
+证(1)先证存在  $n - r$  个线性无关的解向量。
+
+由高斯消元法,对矩阵  $A$  作初等行变换,将它化为简化的阶梯形矩阵  $R$ 。不失一般性,可设
+
+$$
+R=\left(\begin{array}{c c c c c c c c}{{1}}&{{0}}&{{\cdots}}&{{0}}&{{c_{1,r+1}}}&{{\cdots}}&{{c_{1n}}}\\ {{0}}&{{1}}&{{\cdots}}&{{0}}&{{c_{2,r+1}}}&{{\cdots}}&{{c_{2n}}}\\ {{\vdots}}&{{\vdots}}&{{}}&{{\vdots}}&{{\vdots}}&{{}}&{{\vdots}}\\ {{0}}&{{0}}&{{\cdots}}&{{1}}&{{c_{r,r+1}}}&{{\cdots}}&{{c_{r n}}}\\ {{0}}&{{0}}&{{\cdots}}&{{0}}&{{0}}&{{\cdots}}&{{0}}\\ {{\vdots}}&{{\vdots}}&{{}}&{{\vdots}}&{{\vdots}}&{{}}&{{\vdots}}\\ {{0}}&{{0}}&{{\cdots}}&{{0}}&{{0}}&{{\cdots}}&{{0}}\end{array}\right),
+$$
+
+则原方程组与阶梯形方程组  $R x = 0$  同解,即
+
+$$
+\left\{ \begin{array}{l l}{x_{1}} & {+c_{1,r + 1}x_{r + 1} + \dots +c_{1n}x_{n} = 0,}\\ {x_{2}} & {+c_{2,r + 1}x_{r + 1} + \dots +c_{2n}x_{n} = 0,}\\ {\qquad \dots \dots \dots \dots \dots}\\ {x_{r} + c_{r,r + 1}x_{r + 1} + \dots +c_{r n}x_{n} = 0} \end{array} \right. \tag{3.21}
+$$
+
+是  $A x = 0$  的同解方程组.取  $x_{r + 1},x_{r + 2},\dots ,x_{n}$  为自由未知量,将它们分别代以下面的  $n - r$  组数:
+
+$$
+\left[ \begin{array}{c}x_{r + 1} \\ x_{r + 2} \\ \vdots \\ x_{n} \end{array} \right] = \left[ \begin{array}{c}1 \\ 0 \\ \vdots \\ 0 \end{array} \right], \left[ \begin{array}{c}0 \\ 1 \\ \vdots \\ 0 \end{array} \right], \dots , \left[ \begin{array}{c}0 \\ 0 \\ \vdots \\ 1 \end{array} \right],
+$$
+
+可得方程组  $R x = 0$  的  $n - r$  个解向量
+
+$$
+\pmb{\eta}_{1}=\left(\begin{array}{c}d_{11} \\d_{21} \\ \vdots \\d_{r1} \\1 \\0 \\ \vdots \\0\end{array}\right), \pmb{\eta}_{2}=\left(\begin{array}{c}d_{12} \\d_{22} \\ \vdots \\d_{r2} \\0 \\1 \\ \vdots \\0\end{array}\right), \dots , \pmb{\eta}_{n-r}=\left(\begin{array}{c}d_{1,n-r} \\d_{2,n-r} \\ \vdots \\d_{r,n-r} \\0 \\0 \\ \vdots \\1\end{array}\right).
+$$
+
+不难看出,  $\pmb{\eta}_{1}, \pmb{\eta}_{2}, \dots , \pmb{\eta}_{n - r}$  的截短向量组
+
+$$
+\left[ \begin{array}{c}1 \\0 \\ \vdots \\0 \end{array} \right], \left[ \begin{array}{c}0 \\1 \\ \vdots \\0 \end{array} \right], \dots , \left[ \begin{array}{c}0 \\0 \\ \vdots \\1 \end{array} \right]
+$$
+
+线性无关,由命题3.5知,  $\pmb{\eta}_{1}, \pmb{\eta}_{2}, \dots , \pmb{\eta}_{n - r}$  也线性无关
+
+(2)再证  $A x = 0$  的任一解向量都可由  $\pmb{\eta}_{1}, \pmb{\eta}_{2}, \dots , \pmb{\eta}_{n - r}$  线性表示.
+
+设
+
+$$
+\pmb{\eta} = (d_{1}, d_{2}, \dots , d_{r}, k_{1}, k_{2}, \dots , k_{n - r})^{\mathrm{T}}
+$$
+
+是方程组  $A x = 0$  的一个解向量,由齐次线性方程组解的性质可知,
+
+$$
+\widetilde{\pmb{\eta}} = k_{1} \pmb{\eta}_{1} + k_{2} \pmb{\eta}_{2} + \dots + k_{n - r} \pmb{\eta}_{n - r}
+$$
+
+也是  $A x = 0$  的一个解向量.所以
+
+$$
+\pmb{\eta} - \widetilde{\pmb{\eta}} = \left[ \begin{array}{c}d_{1} \\ \vdots \\ d_{r} \\ k_{1} \\ k_{2} \\ \vdots \\ k_{n - r} \end{array} \right] - k_{1} \left[ \begin{array}{c}d_{11} \\ \vdots \\ d_{r1} \\ 1 \\ 0 \\ \vdots \\ 0 \end{array} \right] - k_{2} \left[ \begin{array}{c}d_{12} \\ \vdots \\ d_{r2} \\ 0 \\ 1 \\ \vdots \\ 0 \end{array} \right] - \dots - k_{n - r} \left[ \begin{array}{c}d_{1,n - r} \\ \vdots \\ d_{r,n - r} \\ 0 \\ 0 \\ \vdots \\ 1 \end{array} \right] \xrightarrow{\text{记为}} \left[ \begin{array}{c}l_{1} \\ \vdots \\ l_{r} \\ 0 \\ 0 \\ \vdots \\ 0 \end{array} \right]
+$$
+
+仍是  $A x = 0$  的一个解向量.将它代入同解的阶梯形方程组(3.21)中得
+
+$$
+l_{k} = 0, \quad k = 1,2, \dots , r,
+$$
+
+从而  $\pmb{\eta}^{- }\tilde{\pmb{\eta}} = \mathbf{0}$ . 即
+
+$$
+\pmb{\eta} = \tilde{\pmb{\eta}} = k_{1} \pmb{\eta}_{1} + k_{2} \pmb{\eta}_{2} + \dots + k_{n - r} \pmb{\eta}_{n - r},
+$$
+
+即齐次线性方程组(3.19)的任一个解都可由  $\pmb{\eta}_{1}, \pmb{\eta}_{2}, \dots , \pmb{\eta}_{n - r}$  线性表示.
+
+由此,  $\pmb{\eta}_{1}, \pmb{\eta}_{2}, \dots , \pmb{\eta}_{n - r}$  是齐次线性方程组  $Ax = 0$  的基础解系.
+
+可以证明,如果齐次线性方程组(3.19)中,  $(A) = r$ ,则它的任意  $n - r$  个线性无关的解都是它的一个基础解系.
+
+形如(3.20)的解称为齐次线性方程组  $Ax = 0$  的通解(也称一般解).
+
+定理的证明过程也给出了求齐次线性方程组基础解系的一个具体方法. 需要指出的是,自由未知量的取值是自由的,故不是唯一的,而自由未知量的选取也不是唯一的. 事实上,在方程组  $Rx = 0$  中,任何  $r$  个未知量只要它们的系数行列式不为零,其余  $n - r$  个未知量都可选作自由未知量. 因此方程组  $Ax = 0$  的基础解系不是唯一的. 但它的任何两个基础解系是等价的,它们所含解向量的个数是唯一确定的,即含有  $n - r$  个解向量. 因而,用不同的基础解系,或者不同的自由未知量所表达的齐次线性方程组的解集是相同的.
+
+由定理3.7还可看出齐次线性方程组解的结构的一个重要特点:
+
+系数矩阵的秩  $+$  基础解系含解向量的个数  $=$  未知量的个数.
+
+例3.14 求齐次线性方程组
+
+$$
+\left\{ \begin{array}{l}3x_{1} + 5x_{2} + 6x_{3} - 4x_{4} = 0, \\ x_{1} + 2x_{2} + 4x_{3} - 3x_{4} = 0, \\ 4x_{1} + 5x_{2} - 2x_{3} + 3x_{4} = 0, \\ 3x_{1} + 8x_{2} + 24x_{3} - 19x_{4} = 0 \end{array} \right.
+$$
+
+的基础解系与通解
+
+解 首先将系数矩阵化成简化阶梯形矩阵,
+
+$$
+A={\left[\begin{array}{l l l}{3}&{5}&{6}&{-4}\\ {1}&{2}&{4}&{-3}\\ {4}&{5}&{-2}&{3}\\ {3}&{8}&{24}&{-19}\end{array}\right]}\longrightarrow{\left[\begin{array}{l l l}{1}&{2}&{4}&{-3}\\ {0}&{1}&{6}&{-5}\\ {0}&{0}&{0}&{0}\\ {0}&{0}&{0}&{0}\end{array}\right]}\longrightarrow{\left[\begin{array}{l l l}{1}&{0}&{-8}&{7}\\ {0}&{1}&{6}&{-5}\\ {0}&{0}&{0}&{0}\\ {0}&{0}&{0}&{0}\end{array}\right]}.
+$$
+
+选  $x_{3}, x_{4}$  为自由未知量,分别取  $x_{3} = 1, x_{4} = 0$  和  $x_{3} = 0, x_{4} = 1$ ,得基础解系
+
+$$
+\pmb{\eta}_{1} = \left[ \begin{array}{c}8 \\ -6 \\ 1 \\ 0 \end{array} \right], \quad \pmb{\eta}_{2} = \left[ \begin{array}{c} -7 \\ 5 \\ 0 \\ 1 \end{array} \right].
+$$
+
+于是原方程组的通解为  $x = k_{1} \pmb{\eta}_{1} + k_{2} \pmb{\eta}_{2}$ ,即
+
+$$
+\pmb {x} = \left[ \begin{array}{c}x_{1} \\ x_{2} \\ x_{3} \\ x_{4} \end{array} \right] = k_{1}\left[ \begin{array}{c}8 \\ -6 \\ 1 \\ 0 \end{array} \right] + k_{2}\left[ \begin{array}{c} - 7 \\ 5 \\ 0 \\ 1 \end{array} \right], \quad k_{1}, k_{2} \text{为任意常数.}
+$$
+
+例3.15 设齐次线性方程组
+
+$$
+\begin{array}{r}{\mathrm{~(~I~)~}\Big\{x_{1}+x_{2}\qquad\quad=0,\qquad\mathrm{~(~II~)~}\Big\{x_{1}-x_{2}+x_{3}\qquad=0,}\\ {x_{2}\quad-x_{4}=0,\qquad\mathrm{~(~II~)~}\Big\{x_{2}-x_{1}+x_{4}=0.}\end{array}
+$$
+
+(1)求方程组(I)的基础解系;
+
+(2)求方程组(I)和(II)的公共解
+
+解(1)记方程组(I)为  $A x = 0$
+
+$$
+A={\binom{1}{0}}\quad1\quad0\quad0\quad{\binom{1}{0}}\quad{\binom{1}{0}}\quad0\quad1\quad.
+$$
+
+(I)的基础解系为
+
+$$
+\xi_{1}=\left[\begin{array}{c}0 \\0 \\1 \\0\end{array}\right], \quad \xi_{2}=\left[\begin{array}{c}-1 \\1 \\0 \\1\end{array}\right].
+$$
+
+(2)由(1)得方程组(I)的通解为
+
+$$
+\xi = a\left[ \begin{array}{c}0 \\ 0 \\ 1 \\ 0 \end{array} \right] + b\left[ \begin{array}{c} - 1 \\ 1 \\ 0 \\ 1 \end{array} \right] = \left[ \begin{array}{c} - b \\ b \\ a \\ b \end{array} \right],
+$$
+
+将此解代入方程组(II),得
+
+$$
+\left\{ \begin{array}{c} - b - b + a \\ b - a + b = 0, \end{array} \right.
+$$
+
+解得  $a = 2b$  ,故(I)和(II)的公共解为
+
+$$
+\pmb {x} = \left[ \begin{array}{c}x_{1} \\ x_{2} \\ x_{3} \\ x_{4} \end{array} \right] = b\left[ \begin{array}{c} - 1 \\ 1 \\ 2 \\ 1 \end{array} \right],
+$$
+
+求公共解还可用其他方法,例如:
+
+(1)联立方程组(I)和(II)得  $C x = 0$  ,其通解就是方程组(I)和(II)的公共解,其中  $C = \left[ \begin{array}{c}A \\ B \end{array} \right], A, B$  分别为方程组(I)和(II)的系数矩阵.
+
+(2)分别求出线性方程组(I)和(II)的通解,设为  $k_{1} \xi_{1} + k_{2} \xi_{2}$  和  $l_{1} \eta_{1} + l_{2} \eta_{2}$
+
+找出它们的公共解. 也就是求满足线性方程组  $k_{1}\pmb{\xi}_{1} + k_{2}\pmb{\xi}_{2} - l_{1}\pmb{\eta}_{1} - l_{2}\pmb{\eta}_{2} = \mathbf{0}$  的解  $k_{1}, k_{2}$  (或  $l_{1}, l_{2}$ ).
+
+例3.16 设  $A, B$  分别是  $m \times n$  和  $n \times p$  矩阵, 且  $AB = O$ , 证明
+
+$$
+r(A) + r(B) \leqslant n.
+$$
+
+证 将  $B$  按列分块为  $B = (\pmb{\beta}_{1}, \pmb{\beta}_{2}, \dots , \pmb{\beta}_{p})$ , 由
+
+$$
+AB = A(\pmb{\beta}_{1}, \pmb{\beta}_{2}, \dots , \pmb{\beta}_{p}) = (A\pmb{\beta}_{1}, A\pmb{\beta}_{2}, \dots , A\pmb{\beta}_{p}) = O
+$$
+
+得
+
+$$
+A\pmb{\beta}_{j} = \mathbf{0}, \quad j = 1,2, \dots , p,
+$$
+
+即  $B$  的每个列向量都是齐次线性方程组  $Ax = \mathbf{0}$  的解向量.
+
+(1) 若  $B = O$ , 则显然有  $r(A) + r(B) \leqslant n$
+
+(2) 若  $B \neq O$ , 则说明  $Ax = \mathbf{0}$  有非零解, 从而有基础解系  $\pmb{\eta}_{1}, \pmb{\eta}_{2}, \dots , \pmb{\eta}_{n - r}$ , 其中  $r = r(A)$ . 因而  $B$  的列向量  $\pmb{\beta}_{1}, \pmb{\beta}_{2}, \dots , \pmb{\beta}_{p}$  都可由  $\pmb{\eta}_{1}, \pmb{\eta}_{2}, \dots , \pmb{\eta}_{n - r}$  线性表示. 由命题 3.13 可知
+
+$$
+r(B) = r(\pmb{\beta}_{1}, \pmb{\beta}_{2}, \dots , \pmb{\beta}_{p}) \leqslant r(\pmb{\eta}_{1}, \pmb{\eta}_{2}, \dots , \pmb{\eta}_{n - r}) = n - r(A).
+$$
+
+综合(1), (2)有
+
+$$
+r(A) + r(B) \leqslant n.
+$$
+
+# 3.5 非齐次线性方程组
+
+设有非齐次线性方程组
+
+$$
+\left\{ \begin{array}{l}a_{11}x_{1} + a_{12}x_{2} + \dots +a_{1n}x_{n} = b_{1}, \\ a_{21}x_{1} + a_{22}x_{2} + \dots +a_{2n}x_{n} = b_{2}, \\ \qquad \dots \dots \dots \dots \dots \\ a_{m1}x_{1} + a_{m2}x_{2} + \dots +a_{mn}x_{n} = b_{m}, \end{array} \right. \tag{3.22}
+$$
+
+其中  $b_{1}, b_{2}, \dots , b_{m}$  不全为零. 其矩阵形式为
+
+$$
+A x = \beta ,
+$$
+
+其向量形式为
+
+$$
+x_{1}\pmb{\alpha}_{1} + x_{2}\pmb{\alpha}_{2} + \dots +x_{n}\pmb{\alpha}_{n} = \pmb {\beta},
+$$
+
+其中
+
+$$
+A = (a_{ij})_{m \times n} = (\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \dots , \pmb{\alpha}_{n}),
+$$
+
+$$
+\pmb{\alpha}_{j} = \left[ \begin{array}{c}a_{1j} \\ a_{2j} \\ \vdots \\ a_{mj} \end{array} \right], j = 1,2, \dots , n, \quad \pmb{x} = \left[ \begin{array}{c}x_{1} \\ x_{2} \\ \vdots \\ x_{n} \end{array} \right], \quad \pmb{\beta} = \left[ \begin{array}{c}b_{1} \\ b_{2} \\ \vdots \\ b_{m} \end{array} \right].
+$$
+
+本节要讨论的问题是: 非齐次线性方程组 (3.22) 解的性质及方程组有解时如何求
+
+出它的所有的解.
+
+我们已经知道,
+
+非齐次线性方程组(3.22)有解
+
+$\Leftrightarrow$  向量  $\beta$  可由  $A$  的列向量  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{n}$  线性表示
+
+$\Leftrightarrow \alpha_{1}, \alpha_{2}, \dots , \alpha_{n}$  与  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{n}, \beta$  是等价向量组
+
+$$
+\Leftrightarrow r(\alpha_{1}, \alpha_{2}, \dots , \alpha_{n}) = r(\alpha_{1}, \alpha_{2}, \dots , \alpha_{n}, \beta)
+$$
+
+$$
+\Leftrightarrow r(A) = r(A, \beta).
+$$
+
+对于每一个非齐次线性方程组(3.22),令它的常数项为零,则可得到一个齐次线性方程组
+
+$$
+\left\{ \begin{array}{l}a_{11} x_{1} + a_{12} x_{2} + \dots + a_{1n} x_{n} = 0, \\ a_{21} x_{1} + a_{22} x_{2} + \dots + a_{2n} x_{n} = 0, \\ \qquad \dots \dots \dots \dots \dots \\ a_{m1} x_{1} + a_{m2} x_{2} + \dots + a_{mn} x_{n} = 0. \end{array} \right. \tag{3.23}
+$$
+
+称(3.23)为非齐次线性方程组(3.22)对应的齐次线性方程组,也称(3.23)为(3.22)的导出组.
+
+# 3.5.1 非齐次线性方程组解的性质
+
+关于非齐次线性方程组  $A x = \beta$  的解有下述命题
+
+命题3.16(1)若  $\gamma_{1}, \gamma_{2}$  是  $A x = \beta$  的任意两个解向量,则  $\gamma_{1} - \gamma_{2}$  是对应的齐次线性方程组  $A x = 0$  的解向量.
+
+(2)设  $\gamma_{0}$  是  $A x = \beta$  的一个解向量,  $\eta$  是对应的齐次线性方程组  $A x = 0$  的任一解向量,则  $\gamma_{0} + \eta$  仍是  $A x = \beta$  的一个解向量.
+
+(3)  $A x = \beta$  的任一解向量  $\gamma$  都可表示成
+
+$$
+\gamma = \gamma_{0} + \eta ,
+$$
+
+其中  $\gamma_{0}$  是  $A x = \beta$  的某个解向量,  $\eta$  是对应的齐次线性方程组的某个解向量.
+
+证 事实上,
+
+$$
+A(\gamma_{1} - \gamma_{2}) = A \gamma_{1} - A \gamma_{2} = \beta - \beta = 0,
+$$
+
+$$
+A(\gamma_{0} + \eta) = A \gamma_{0} + A \eta = \beta + 0 = \beta ,
+$$
+
+因而(1),(2)得证.
+
+由于  $\gamma = \gamma_{0} + (\gamma - \gamma_{0})$ ,由(1)知,  $\gamma - \gamma_{0}$  是对应的齐次线性方程组的解向量,记其为  $\eta = \gamma - \gamma_{0}$ ,(3)即得证.
+
+# 3.5.2 非齐次线性方程组解的结构
+
+既然  $A x = \beta$  的任一解向量都可表示成  $\gamma_{0} + \eta$  的形式,而且,形如  $\gamma_{0} + \eta$  的向
+
+量必为  $Ax = \beta$  的解向量,因此当  $\pmb{\eta}$  取遍对应的齐次线性方程组的所有解时,  $\gamma_{0} + \eta$  就取遍了方程组  $Ax = \beta$  的所有解.于是有下述定理.
+
+定理3.8若非齐次线性方程组(3.22)满足  $r(A) = r(A,\pmb {\beta}) = r,\pmb{\eta}_{1},\pmb{\eta}_{2},\dots ,$ $\pmb{\eta}_{n - r}$  是对应的齐次线性方程组  $Ax = 0$  的基础解系,  $\gamma_{0}$  是  $Ax = \beta$  的某个解,则
+
+$$
+x = \gamma_{0} + k_{1}\eta_{1} + k_{2}\eta_{2} + \dots +k_{n - r}\eta_{n - r} \tag{3.24}
+$$
+
+给出了  $Ax = \beta$  的所有解,其中  $k_{1},k_{2},\dots ,k_{n - r}$  是任意常数.
+
+称  $\gamma_{0}$  为(3.22)的一个特解,称(3.24)为  $Ax = \beta$  的通解
+
+可见非齐次线性方程组通解的结构为
+
+非齐次线性方程组的通解  $=$  非齐次线性方程组的特解十对应的齐次线性方程组的通解.
+
+例3.17 求非齐次线性方程组
+
+$$
+\left\{ \begin{array}{l}x_{1} + x_{2} + 2x_{3} + x_{4} + 2x_{5} = 7, \\ x_{1} + 2x_{2} + 3x_{3} + 4x_{4} + 5x_{5} = 15, \\ 2x_{1} + 3x_{2} + 5x_{3} + 5x_{4} + 7x_{5} = 22 \end{array} \right.
+$$
+
+的通解.
+
+解用初等行变换将其增广矩阵  $\widetilde{A} = (A,\pmb {\beta})$  化为简化的阶梯形矩阵,
+
+$$
+(A,\pmb {\beta})\longrightarrow \left[ \begin{array}{cccccc}1 & 0 & 1 & -2 & -1 & -1 \\ 0 & 1 & 1 & 3 & 3 & 8 \\ 0 & 0 & 0 & 0 & 0 & 0 \end{array} \right],
+$$
+
+取  $x_{3},x_{4},x_{5}$  为自由未知量
+
+令  $x_{3} = x_{4} = x_{5} = 0$  ,得特解
+
+$$
+\gamma_{0} = \left[ \begin{array}{c} - 1 \\ 8 \\ 0 \\ 0 \\ 0 \end{array} \right].
+$$
+
+分别取  $\left[ \begin{array}{c}x_{3} \\ x_{4} \\ x_{5} \end{array} \right]$  为  $\left[ \begin{array}{c}1 \\ 0 \\ 0 \\ 0 \end{array} \right], \left[ \begin{array}{c}0 \\ 1 \\ 0 \\ 0 \end{array} \right], \left[ \begin{array}{c}0 \\ 0 \\ 1 \\ 0 \end{array} \right]$ ,得出对应的齐次线性方程组的基础解系
+
+$$
+\pmb{\eta}_{1} = \left[ \begin{array}{c} - 1 \\ -1 \\ 1 \\ 0 \\ 0 \end{array} \right], \quad \pmb{\eta}_{2} = \left[ \begin{array}{c}2 \\ -3 \\ 0 \\ 1 \\ 0 \end{array} \right], \quad \pmb{\eta}_{3} = \left[ \begin{array}{c}1 \\ -3 \\ 0 \\ 0 \\ 1 \end{array} \right].
+$$
+
+于是,原方程组的通解为
+
+$$
+x = \gamma_{0} + k_{1}\pmb{\eta}_{1} + k_{2}\pmb{\eta}_{2} + k_{3}\pmb{\eta}_{3}
+$$
+
+$$
+= \left[ \begin{array}{c} - 1 \\ 8 \\ 0 \\ 0 \\ 0 \end{array} \right] + k_{1}\left[ \begin{array}{c} - 1 \\ -1 \\ 1 \\ 0 \\ 0 \end{array} \right] + k_{2}\left[ \begin{array}{c}2 \\ -3 \\ 0 \\ 1 \\ 0 \end{array} \right] + k_{1}\left[ \begin{array}{c}1 \\ -3 \\ 0 \\ 0 \\ 1 \end{array} \right],
+$$
+
+其中  $k_{1}, k_{2}, k_{3}$  是任意常数.  $\square$
+
+例3.18 已知  $\gamma_{1}, \gamma_{2}, \gamma_{3}$  是三元非齐次线性方程组  $Ax = \beta$  的解,  $r(A) = 1$ , 且
+
+$$
+\gamma_{1} + \gamma_{2} = \left[ \begin{array}{l}1 \\ 0 \\ 0 \end{array} \right], \quad \gamma_{2} + \gamma_{3} = \left[ \begin{array}{l}1 \\ 1 \\ 0 \end{array} \right], \quad \gamma_{1} + \gamma_{3} = \left[ \begin{array}{l}1 \\ 1 \\ 1 \end{array} \right],
+$$
+
+求方程组  $Ax = \beta$  的通解.
+
+解令
+
+$$
+\pmb{\eta}_{1} = (\pmb{\gamma}_{2} + \pmb{\gamma}_{3}) - (\pmb{\gamma}_{1} + \pmb{\gamma}_{2}) = \left[ \begin{array}{l}0 \\ 1 \\ 0 \end{array} \right],
+$$
+
+$$
+\pmb{\eta}_{2} = (\pmb{\gamma}_{1} + \pmb{\gamma}_{3}) - (\pmb{\gamma}_{2} + \pmb{\gamma}_{3}) = \left[ \begin{array}{l}0 \\ 0 \\ 0 \\ 1 \end{array} \right],
+$$
+
+由非齐次线性方程组解的性质与解的结构可知,  $\pmb{\eta}_{1}, \pmb{\eta}_{2}$  是对应的齐次线性方程组的基础解系,  $\frac{1}{2} (\gamma_{1} + \gamma_{2}) = \left[ \begin{array}{l} \frac{1}{2} \\ 0 \\ 0 \end{array} \right]$  是非齐次线性方程组的一个特解. 因而, 原方程组的通解为
+
+$$
+x = \frac{1}{2} (\gamma_{1} + \gamma_{2}) + k_{1}\pmb{\eta}_{1} + k_{2}\pmb{\eta}_{2} = \left[ \begin{array}{l} \frac{1}{2} \\ 0 \\ 0 \end{array} \right] + k_{1}\left[ \begin{array}{l}0 \\ 1 \\ 0 \end{array} \right] + k_{2}\left[ \begin{array}{l}0 \\ 0 \\ 1 \end{array} \right],
+$$
+
+其中  $k_{1}, k_{2}$  是任意常数.  $\square$
+
+# 习题三
+
+# (一)
+
+1. 设  $5(\alpha -\beta) + 4(\beta -\gamma) = 2(\alpha +\gamma)$ , 求向量  $\gamma$ . 其中
+
+$$
+\pmb {\alpha} = \left[ \begin{array}{c}3 \\ -1 \\ 0 \\ 1 \end{array} \right], \quad \pmb {\beta} = \left[ \begin{array}{c}1 \\ -1 \\ 3 \\ 2 \end{array} \right].
+$$
+
+2. 把向量  $\pmb{\beta}$  表示成向量  $\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \pmb{\alpha}_{3}$  的线性组合, 其中
+
+$$
+\pmb {\beta} = \left[ \begin{array}{c}1 \\ 2 \\ 3 \end{array} \right], \quad \pmb{\alpha}_{1} = \left[ \begin{array}{c}1 \\ 0 \\ 1 \end{array} \right], \quad \pmb{\alpha}_{2} = \left[ \begin{array}{c}1 \\ 1 \\ 0 \end{array} \right], \quad \pmb{\alpha}_{3} = \left[ \begin{array}{c}1 \\ 1 \\ 1 \end{array} \right].
+$$
+
+3. 找出下面的四个向量中哪个向量不能由其余三个向量线性表示?
+
+$$
+\pmb{\alpha}_{1} = \left[ \begin{array}{c}1 \\ 1 \\ 1 \\ 1 \end{array} \right], \quad \pmb{\alpha}_{2} = \left[ \begin{array}{c}0 \\ 5 \\ 2 \\ 1 \end{array} \right], \quad \pmb{\alpha}_{3} = \left[ \begin{array}{c}1 \\ -1 \\ 0 \\ 0 \end{array} \right], \quad \pmb{\alpha}_{4} = \left[ \begin{array}{c}2 \\ -3 \\ 0 \\ 1 \end{array} \right].
+$$
+
+4. 设向量组
+
+$$
+\pmb {\beta} = \left[ \begin{array}{c}1 \\ 2 \\ -2 \\ 1 \end{array} \right], \quad \pmb{\alpha}_{1} = \left[ \begin{array}{c}1 \\ 0 \\ 1 \\ 0 \end{array} \right], \quad \pmb{\alpha}_{2} = \left[ \begin{array}{c}3 \\ -1 \\ 2 \\ 1 \end{array} \right], \quad \pmb{\alpha}_{3} = \left[ \begin{array}{c}1 \\ a \\ b \\ 0 \end{array} \right].
+$$
+
+问:
+
+(1)  $a, b$  取何值时, 向量  $\pmb{\beta}$  是向量  $\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \pmb{\alpha}_{3}$  的线性组合, 并写出  $a = 1, b = \frac{1}{3}$  时  $\pmb{\beta}$  的表达式;
+
+(2)  $a, b$  取何值时, 向量  $\pmb{\beta}$  不能由向量  $\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \pmb{\alpha}_{3}$  线性表示.
+
+5. 设有向量组
+
+$$
+\pmb{\alpha}_{1} = \left[ \begin{array}{c}1 \\ 0 \\ 2 \\ 3 \end{array} \right], \quad \pmb{\alpha}_{2} = \left[ \begin{array}{c}1 \\ 1 \\ 3 \\ 5 \end{array} \right], \quad \pmb{\alpha}_{3} = \left[ \begin{array}{c}1 \\ -1 \\ a + 2 \\ 1 \end{array} \right], \quad \pmb{\alpha}_{4} = \left[ \begin{array}{c}1 \\ 2 \\ 4 \\ a + 8 \end{array} \right], \quad \pmb{\beta} = \left[ \begin{array}{c}1 \\ 1 \\ b + 3 \\ 5 \end{array} \right].
+$$
+
+讨论:(1)  $a, b$  为何值时,  $\pmb{\beta}$  不能由  $\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \pmb{\alpha}_{3}, \pmb{\alpha}_{4}$  线性表示?
+
+(2)  $a, b$  为何值时,  $\pmb{\beta}$  可由  $\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \pmb{\alpha}_{3}, \pmb{\alpha}_{4}$  线性表示, 且表示式唯一? 写出该表示式.
+
+(3)  $a, b$  为何值时,  $\pmb{\beta}$  可由  $\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \pmb{\alpha}_{3}, \pmb{\alpha}_{4}$  线性表示, 但表示式不唯一? 并写出所有的表示式.
+
+6. 判断下列向量组的线性相关性:
+
+(1)  $\pmb{\alpha} = \left( \begin{array}{c}2 \\ 4 \end{array} \right), \pmb{\beta} = \left( \begin{array}{c}1 \\ 0 \end{array} \right), \pmb{\gamma} = \left( \begin{array}{c}1 \\ -1 \end{array} \right)$ ; 
+(2)  $\pmb{\alpha} = \left[ \begin{array}{c}2 \\ 2 \\ 1 \end{array} \right], \pmb{\beta} = \left[ \begin{array}{c}1 \\ 0 \\ 1 \end{array} \right]$ ;
+
+(3)  $\pmb{\alpha} = \left[ \begin{array}{c}2 \\ 1 \\ -1 \end{array} \right], \pmb{\beta} = \left[ \begin{array}{c}1 \\ -1 \\ 1 \end{array} \right], \pmb{\gamma} = \left[ \begin{array}{c} - 1 \\ 1 \\ 2 \end{array} \right]$ ; 
+(4)  $\pmb{\alpha} = \left[ \begin{array}{c}1 \\ 1 \\ 1 \\ 1 \end{array} \right], \pmb{\beta} = \left[ \begin{array}{c}1 \\ 1 \\ -1 \\ -1 \end{array} \right], \pmb{\gamma} = \left[ \begin{array}{c}1 \\ -1 \\ 1 \\ -1 \end{array} \right]$ .
+
+7. 讨论下列向量组的线性相关性:
+
+$$
+\pmb {\alpha} = \left[ \begin{array}{c}{1}\\ {2}\\ {3}\\ {4} \end{array} \right],\pmb {\beta} = \left[ \begin{array}{c}{2}\\ {1}\\ {-1}\\ {1} \end{array} \right],\pmb {\gamma} = \left[ \begin{array}{c}{-1}\\ {k}\\ {0}\\ {2} \end{array} \right];\pmb {\alpha} = \left[ \begin{array}{c}{2}\\ {4}\\ {k}\\ {-2} \end{array} \right],\pmb {\beta} = \left[ \begin{array}{c}{1}\\ {2}\\ {-3}\\ {-1} \end{array} \right],\pmb {\gamma} = \left[ \begin{array}{c}{4}\\ {5}\\ {-4}\\ {3} \end{array} \right].
+$$
+
+8. 判别以下命题是否正确:
+
+(1)若存在一组全为零的数  $k_{1}, k_{2}, \dots , k_{m}$ ,使向量组  $\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \dots , \pmb{\alpha}_{m}$  的线性组合
+
+$$
+k_{1}\pmb{\alpha}_{1} + k_{2}\pmb{\alpha}_{2} + \dots +k_{m}\pmb{\alpha}_{m} = \mathbf{0},
+$$
+
+则  $\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \dots , \pmb{\alpha}_{m}$  线性无关;
+
+(2)若存在一组不全为零的数  $k_{1}, k_{2}, \dots , k_{m}$ ,使向量组  $\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \dots , \pmb{\alpha}_{m}$  的线性组合
+
+$$
+k_{1}\pmb{\alpha}_{1} + k_{2}\pmb{\alpha}_{2} + \dots +k_{m}\pmb{\alpha}_{m} \neq \mathbf{0},
+$$
+
+则  $\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \dots , \pmb{\alpha}_{m}$  线性无关;
+
+(3)若对任何一组不全为零的数  $k_{1}, k_{2}, \dots , k_{m}$ ,都有
+
+$$
+k_{1}\pmb{\alpha}_{1} + k_{2}\pmb{\alpha}_{2} + \dots +k_{m}\pmb{\alpha}_{m} \neq \mathbf{0},
+$$
+
+则  $\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \dots , \pmb{\alpha}_{m}$  线性无关;
+
+(4)向量组  $\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \dots , \pmb{\alpha}_{m}$  中  $\pmb{\alpha}_{1}$  不能由  $\pmb{\alpha}_{2}, \dots , \pmb{\alpha}_{m}$  线性表示,则  $\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \dots , \pmb{\alpha}_{m}$  线性无关;
+
+(5)向量组  $\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \dots , \pmb{\alpha}_{m}$  线性相关,且  $\pmb{\alpha}_{1}$  不能由  $\pmb{\alpha}_{2}, \dots , \pmb{\alpha}_{m}$  线性表示,则  $\pmb{\alpha}_{2}, \dots , \pmb{\alpha}_{m}$  线性相关;
+
+(6)向量组  $\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \dots , \pmb{\alpha}_{m}$ $(m > 2)$  中任意两个向量都线性无关,则向量组  $\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \dots , \pmb{\alpha}_{m}$  也线性无关.
+
+9. 设向量组  $\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \dots , \pmb{\alpha}_{s}$ $(s \geqslant 3)$  线性无关,指出向量组
+
+$$
+\pmb{\alpha}_{1} + \pmb{\alpha}_{2}, \pmb{\alpha}_{2} + \pmb{\alpha}_{3}, \dots , \pmb{\alpha}_{s} + \pmb{\alpha}_{1}
+$$
+
+的线性关系并说明理由.
+
+10. 设向量  $\alpha , \beta , \gamma$  线性无关,问  $l, m$  满足什么条件时,向量组
+
+$$
+l\beta -\alpha , \quad n\gamma -\beta , \quad \alpha -\gamma
+$$
+
+也线性无关?
+
+11. 设向量  $\alpha , \beta , \gamma$  线性无关,证明向量  $\alpha -\beta , \beta +\gamma , \gamma -\alpha$  也线性无关.
+
+12. 证明:向量组  $\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \dots , \pmb{\alpha}_{s}$ $(s \geqslant 2)$  线性无关的充分必要条件是  $\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \dots , \pmb{\alpha}_{s}$  中任意  $k$ $(1 \leqslant k \leqslant s)$  个向量都线性无关.
+
+13. 证明:两个  $n$  维向量  $(n \geqslant 2)$  线性相关的充分必要条件是这两个向量的对应分量成比例.
+
+14. 设向量组  $\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \dots , \pmb{\alpha}_{s}$  线性无关,证明:向量组
+
+$$
+\pmb{\alpha}_{1}, \pmb{\alpha}_{2} + \pmb{\alpha}_{2}, \pmb{\alpha}_{1} + \pmb{\alpha}_{2} + \pmb{\alpha}_{3}, \dots , \pmb{\alpha}_{1} + \pmb{\alpha}_{2} + \dots + \pmb{\alpha}_{s}
+$$
+
+也线性无关.
+
+15. 设  $n$  维基本向量组  $\pmb{\epsilon}_{1}, \pmb{\epsilon}_{2}, \dots , \pmb{\epsilon}_{n}$  可由  $n$  维向量组  $\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \dots , \pmb{\alpha}_{n}$  线性表示,证明: $\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \dots , \pmb{\alpha}_{n}$  线性无关.
+
+16. 设  $\pmb{\alpha}_{1}, \pmb{\alpha}_{2}, \dots , \pmb{\alpha}_{n}$  是  $n$  个  $n$  维向量,证明它们线性无关的充分必要条件是任一个  $n$  维向量都可被它们线性表示.
+
+17. 设向量  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{s}$  线性无关, 而向量  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{s}, \beta , \gamma$  线性相关, 且  $\beta$  与  $\gamma$  都不能由  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{s}$  线性表示. 证明:  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{s}, \beta$  与  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{s}, \gamma$  等价.
+
+18. 设向量  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{m}$  线性相关, 但其中任意  $m - 1$  个向量都线性无关, 证明: 必存在  $m$  个全不为零的数  $k_{1}, k_{2}, \dots , k_{m}$ , 使得
+
+$$
+k_{1} \alpha_{1} + k_{2} \alpha_{2} + \dots + k_{m} \alpha_{m} = 0.
+$$
+
+19. 求下列向量组的极大线性无关组与秩:
+
+$$
+\pmb{\alpha}_{1}=\left(\begin{array}{c}{3}\\ {-5}\\ {2}\\ {1}\end{array}\right),\pmb{\alpha}_{2}=\left(\begin{array}{c}{1}\\ {1}\\ {0}\\ {-5}\end{array}\right),\pmb{\alpha}_{3}=\left(\begin{array}{c}{-1}\\ {3}\\ {1}\\ {3}\end{array}\right),\pmb{\alpha}_{4}=\left(\begin{array}{c}{2}\\ {-4}\\ {-1}\\ {-3}\end{array}\right);
+$$
+
+$$
+\pmb{\alpha}_{1}=\left(\begin{array}{c}{2}\\ {1}\\ {3}\\ {0}\end{array}\right),\pmb{\alpha}_{2}=\left(\begin{array}{c}{0}\\ {2}\\ {-1}\\ {0}\end{array}\right),\pmb{\alpha}_{3}=\left(\begin{array}{c}{14}\\ {7}\\ {0}\\ {3}\end{array}\right),\pmb{\alpha}_{4}=\left(\begin{array}{c}{4}\\ {2}\\ {-1}\\ {1}\end{array}\right),\pmb{\alpha}_{5}=\left(\begin{array}{c}{6}\\ {5}\\ {1}\\ {2}\end{array}\right).
+$$
+
+20. 求下列向量组的秩及其一个极大线性无关组, 并将其余向量用极大线性无关组线性表示:
+
+$$
+\pmb{\alpha}_{1}=\left(\begin{array}{c}{2}\\ {4}\\ {2}\end{array}\right),\pmb{\alpha}_{2}=\left(\begin{array}{c}{1}\\ {1}\\ {0}\end{array}\right),\pmb{\alpha}_{3}=\left(\begin{array}{c}{2}\\ {3}\\ {1}\end{array}\right),\pmb{\alpha}_{4}=\left(\begin{array}{c}{3}\\ {5}\\ {2}\end{array}\right);
+$$
+
+$$
+\pmb{\alpha}_{1}=\left(\begin{array}{c}{6}\\ {4}\\ {1}\\ {-1}\\ {2}\end{array}\right),\pmb{\alpha}_{2}=\left(\begin{array}{c}{1}\\ {0}\\ {2}\\ {3}\\ {-4}\end{array}\right),\pmb{\alpha}_{3}=\left(\begin{array}{c}{1}\\ {4}\\ {-9}\\ {-16}\\ {22}\end{array}\right),\pmb{\alpha}_{4}=\left(\begin{array}{c}{7}\\ {1}\\ {0}\\ {-1}\\ {3}\end{array}\right).
+$$
+
+21. 设向量  $\alpha = 2 \xi - \eta , \beta = \xi + \eta , \gamma = -\xi + 3 \eta$ , 试用不同的方法验证向量  $\alpha , \beta , \gamma$  线性相关.
+
+22. 设向量组  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{s}$  的秩为  $r$ , 证明: 其中任意选取  $m$  个向量所构成的向量组的秩  $\geq r + m - s$ .
+
+23. 设  $A, B$  均为  $m \times n$  矩阵,  $C = (A \quad B)$  为  $m \times 2 n$  矩阵, 证明
+
+$$
+\max \{r(A), r(B)\} \leqslant r(C) \leqslant r(A) + r(B).
+$$
+
+24. 用基础解系表示出下列方程组的全部解:
+
+(1)  $\left\{ \begin{array}{l}2 x - y + 3 z = 0, \\ x + 3 y + 2 z = 0, \\ 3 x - 5 y + 4 z = 0, \\ x + 17 y + 4 z = 0; \end{array} \right.$  
+(2)  $\left\{ \begin{array}{l}x_{1} + x_{2} + x_{3} + x_{4} + x_{5} = 0, \\ 3 x_{1} + 2 x_{2} + x_{3} + x_{4} - 3 x_{5} = 0, \\ x_{2} + 2 x_{3} + 2 x_{4} + 6 x_{5} = 0, \\ 5 x_{1} + 4 x_{2} + 3 x_{3} + 3 x_{4} - x_{5} = 0; \end{array} \right.$
+
+(3)  $\left\{ \begin{array}{l}x_{1} + 2 x_{2} + 4 x_{3} - 3 x_{4} = 1, \\ 3 x_{1} + 5 x_{2} + 6 x_{3} - 4 x_{4} = 2, \\ 4 x_{1} + 5 x_{2} - 2 x_{3} + 3 x_{4} = 1, \\ 3 x_{1} + 8 x_{2} + 24 x_{3} - 19 x_{4} = 5; \end{array} \right.$  
+(4)  $\left\{ \begin{array}{l}2 x + y - z = 1, \\ 3 x - 2 y + z = 4, \\ x + 4 y - 3 z = 7, \\ x + 2 y + z = 4; \end{array} \right.$
+
+$$
+\begin{array}{r}{\left\{ \begin{array}{l l}{x_{1} + 3x_{2} + 5x_{3} - 4x_{4}} & {= 1,}\\ {x_{1} + 3x_{2} + 2x_{3} - 2x_{4} + x_{5} = -1,}\\ {x_{1} - 2x_{2} + x_{3} - x_{4} - x_{5} = 3,}\\ {x_{1} - 4x_{2} + x_{3} + x_{4} - x_{5} = 3,}\\ {x_{1} + 2x_{2} + x_{3} - x_{4} + x_{5} = -1.} \end{array} \right.} \end{array}
+$$
+
+25. 已知矩阵
+
+$$
+\left(\begin{array}{c c c c}{{1}}&{{-11}}&{{3}}&{{7}}\\ {{-2}}&{{16}}&{{-4}}&{{-10}}\\ {{1}}&{{-2}}&{{0}}&{{1}}\\ {{0}}&{{-3}}&{{1}}&{{2}}\\ {{0}}&{{0}}&{{0}}&{{0}}\end{array}\right)
+$$
+
+的各个列向量都是齐次线性方程组
+
+$$
+\left\{ \begin{array}{l l}{4x_{1} + 3x_{2} + 2x_{3} + \quad 2x_{5} = 0,}\\ {x_{1} + x_{2} + x_{3} + x_{4} + x_{5} = 0,}\\ {2x_{1} + x_{2} - \quad 2x_{4}\quad = 0,}\\ {3x_{1} + 2x_{2} + x_{3} - x_{4} + x_{5} = 0} \end{array} \right.
+$$
+
+的解向量,问这四个解向量能否构成方程组的基础解系?是多了还是少了?多了如何去掉?少了如何补充?
+
+26. 已知齐次线性方程组
+
+$$
+(\mathrm{~I~})\left\{ \begin{array}{c c}{{x_{1} + x_{2}}}&{{=0,}}\\ {{x_{2}}}&{{-x_{4} = 0,}}\end{array} \right.
+$$
+
+又已知齐次线性方程组(I)的通解
+
+$$
+\pmb {\eta} = c_{1}\left[ \begin{array}{c}0 \\ 1 \\ 1 \\ 0 \end{array} \right] + c_{2}\left[ \begin{array}{c} - 1 \\ 2 \\ 2 \\ 1 \end{array} \right],
+$$
+
+(1)求齐次线性方程组(I)的基础解系;
+
+(2)线性方程组(I)和(Ⅱ)是否有公共非零解?若有,求出所有公共非零解;若没有,则说明理由.
+
+27.  $k$  取何值时,下列方程组无解?有唯一解?或有无穷多组解?在有无穷多组解时,求出其全部解.
+
+(1)  $\left\{ \begin{array}{l}kx + y + z = 1, \\ x + ky + z = k, \\ x + y + kz = k^{2}; \end{array} \right.$  
+(2)  $\left\{ \begin{array}{l}2x - y - z = 2, \\ x - 2y + z = k, \\ x + y - 2z = k^{2}. \end{array} \right.$
+
+28. 当  $a, b$  取何值时,下列线性方程组无解、有唯一解或无穷多组解?在有解时,求出其所有解.
+
+(1)  $\left\{ \begin{array}{l}ax + y + z = 4, \\ x + by + z = 3, \\ x + 2by + z = 4; \end{array} \right.$  
+(2)  $\left\{ \begin{array}{l}x_{1} + x_{2} + x_{3} + x_{4} = 0, \\ x_{2} + 2x_{3} + 2x_{4} = 1, \\ -x_{2} + (a - 3)x_{3} - 2x_{4} = b, \\ 3x_{1} + 2x_{2} + x_{3} + ax_{4} = -1. \end{array} \right.$
+
+29. 设线性方程组
+
+$$
+\left\{ \begin{array}{l}x_{1} + a_{1}x_{2} + a_{1}^{2}x_{3} = a_{1}^{3}, \\ x_{1} + a_{2}x_{2} + a_{2}^{2}x_{3} = a_{2}^{3}, \\ x_{1} + a_{3}x_{2} + a_{3}^{2}x_{3} = a_{3}^{3}, \\ x_{1} + a_{4}x_{2} + a_{4}^{2}x_{3} = a_{4}^{3}. \end{array} \right.
+$$
+
+(1) 证明:若常数  $a_{1}, a_{2}, a_{3}, a_{4}$  互不相等,则此线性方程组无解;
+
+(2) 若  $a_{1} = a_{3} = a, a_{2} = a_{4} = -a(a \neq 0)$ ,且
+
+$$
+\pmb{\eta}_{1} = \left[ \begin{array}{c} - 1 \\ 1 \\ 1 \end{array} \right], \quad \pmb{\eta}_{2} = \left[ \begin{array}{c}1 \\ 1 \\ -1 \end{array} \right]
+$$
+
+是该线性方程组的两个解,试写出此线性方程组的通解
+
+30. 判别以下命题是否正确:
+
+(1) 若  $\pmb{\eta}_{1}, \pmb{\eta}_{2}, \pmb{\eta}_{3}$  是方程组  $Ax = 0$  的基础解系,则与  $\pmb{\eta}_{1}, \pmb{\eta}_{2}, \pmb{\eta}_{3}$  等价的向量组也为此方程组的基础解系;
+
+(2) 若  $A$  是  $m \times n$  矩阵,当  $m < n$  时,方程组  $Ax = \pmb {\beta}(\pmb {\beta} \neq 0)$  必有无穷多解;
+
+(3) 设  $A$  是  $m \times n$  矩阵,  $r(A) = n$ ,则方程组  $Ax = \pmb {\beta}(\pmb {\beta} \neq 0)$  必有唯一解;
+
+(4) 设  $A$  是  $m \times n$  矩阵,  $r(A) = m$ ,则方程组  $Ax = \pmb{\beta}$  必有解;
+
+(5) 若方程组  $Ax = 0$  只有零解,则方程组  $Ax = \pmb {\beta}(\pmb {\beta} \neq 0)$  必有唯一解
+
+31. 设  $A$  是  $n$  阶方阵,若对于任意一个  $n$  维向量  $\pmb{x} = (x_{1}, x_{2}, \dots , x_{n})^{\mathrm{T}}$  都有  $Ax = 0$ ,则  $A = O$ .
+
+32. 设齐次线性方程组  $\sum_{j = 1}^{n}a_{ij}x_{j} = 0, i = 1, 2, \dots , n$  的系数行列式  $|A| = 0$ ,其中  $A = (a_{ij})_{n \times n}$ ,而  $A$  中某元素  $a_{ij}$  的代数余子式  $A_{ij} \neq 0$ . 证明
+
+$$
+(A_{i1}, A_{i2}, \dots , A_{in})^{\mathrm{T}}
+$$
+
+是该齐次线性方程组的一个基础解系
+
+33. 证明:非齐次线性方程组
+
+$$
+\sum_{j = 1}^{n}a_{ij}x_{j} = b_{i}, \quad i = 1, 2, \dots , n
+$$
+
+对任意常数  $b_{1}, b_{2}, \dots , b_{n}$  都有解的充分必要条件是其系数矩阵  $A = (a_{ij})_{n \times n}$  的行列式不为零.
+
+34. 设  $\xi$  是非齐次线性方程组  $Ax = \pmb {\beta}(\pmb {\beta} \neq 0)$  的一个解,  $\pmb{\eta}_{1}, \pmb{\eta}_{2}, \dots , \pmb{\eta}_{r}$  是其对应的齐次线性方程组  $Ax = 0$  的一个基础解系,证明:
+
+(1)  $\pmb{\eta}_{1}, \pmb{\eta}_{2}, \dots , \pmb{\eta}_{r}, \pmb{\xi}$  线性无关;
+
+(2)  $\xi , \eta_{1} + \xi , \eta_{2} + \xi , \dots , \eta_{r} + \xi$  线性无关;
+
+(3) 方程组  $Ax = \pmb{\beta}$  的任一个解  $\gamma$  都可表示成
+
+$$
+\gamma = c_{1} \xi + c_{1}(\eta_{1} + \xi) + c_{2}(\eta_{2} + \xi) + \dots + c_{r}(\eta_{r} + \xi),
+$$
+
+其中  $c_{0} + c_{1} + \dots + c_{r} = 1$
+
+35. 设  $A^{*}$  为  $n$  阶方阵  $A$  的伴随矩阵,  $n \geq 2$ . 证明:
+
+$$
+r(A^{\star})=\left\{\begin{array}{l l}{n,}&{\frac{\mathrm{if}}{\mathrm{if}}r(A)=n,}\\ {1,}&{\frac{\mathrm{if}}{\mathrm{if}}r(A)=n-1,}\\ {0,}&{\frac{\mathrm{if}}{\mathrm{if}}r(A)< n-1.}\end{array}\right.
+$$
+
+# (二)
+
+36. 设  $a_{1}, a_{2}, \dots , a_{s}$  是  $s$  个互不相同的数,且  $s < t$ . 证明:向量组
+
+$$
+\beta_{1}, \beta_{2}, \dots , \beta_{s}
+$$
+
+线性无关,其中
+
+$$
+\pmb{\beta}_{1}=\left(\begin{array}{c}{1}\\ {a_{1}}\\ {a_{1}^{2}}\\ {\vdots}\\ {a_{1}^{-1}}\end{array}\right),\pmb{\beta}_{2}=\left(\begin{array}{c}{1}\\ {a_{2}}\\ {a_{2}^{2}}\\ {\vdots}\\ {a_{2}^{-1}}\end{array}\right),\dots,\pmb{\beta}_{s}=\left(\begin{array}{c}{1}\\ {a_{s}}\\ {a_{s}^{2}}\\ {\vdots}\\ {a_{s}^{-1}}\end{array}\right).
+$$
+
+37. 设向量组  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{s}$  线性相关,  $\alpha_{1} \neq 0$ ,则必存在自然数  $k, 2 \leqslant k \leqslant s$ ,使  $\alpha_{k}$  是  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{k - 1}$  的线性组合.
+
+38. 设  $r(\alpha_{1}, \alpha_{2}, \dots , \alpha_{s}) = r(\beta_{1}, \beta_{2}, \dots , \beta_{s})$ ,且  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{s}$  可由  $\beta_{1}, \beta_{2}, \dots , \beta_{s}$  线性表示,则向量组  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{s}$  与向量组  $\beta_{1}, \beta_{2}, \dots , \beta_{s}$  等价.
+
+39. 设向量  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{m}$  线性无关,向量  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{m}, \beta (\beta \neq 0)$  线性相关,则  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{m}$  中至少有一个向量  $\alpha_{i} (1 \leqslant i \leqslant m)$  可由向量  $\alpha_{1}, \alpha_{2}, \dots , \alpha_{i - 1}, \alpha_{i + 1}, \dots , \alpha_{m}, \beta$  线性表示.
+
+40. 证明:  $m \times n$  矩阵  $A$  的列向量组线性无关的充分必要条件是:当  $AB = O$  时,必有  $B = O$ ,这里  $B$  是  $n \times s$  矩阵.
+
+41. 设  $m \times n$  矩阵  $A$  的秩为  $r$ ,证明:存在秩为  $n - r$  的  $n$  阶矩阵  $B$ ,使
+
+$$
+A B = O.
+$$
+
+42. 设  $m \times n$  矩阵  $A$  的秩为  $r, r < n$ . 证明:齐次线性方程组  $Ax = 0$  的任意  $n - r$  个线性无关的解向量都是它的一个基础解系.
+
+43. 设  $A$  是  $m \times n$  实矩阵,证明:
+
+(1)  $A x = 0$  与  $A^{\mathrm{T}}A x = 0$  是同解方程组;
+
+(2)  $r(A) = r(A^{\mathrm{T}}A) = r(A^{\mathrm{T}}) = r(A A^{\mathrm{T}})$
+
+(3)方程组  $(A^{\mathrm{T}}A)x = A^{\mathrm{T}}\pmb{\beta}$  必有解.
+
+44. 设  $A$  是  $m \times n$  矩阵,  $B$  是  $n \times s$  矩阵. 证明:方程组  $ABX = O$  与  $BX = O$  同解的充分必要条件是  $r(AB) = r(B)$ .
+
+45. 设  $A$  为  $n$  阶方阵,且  $A^{2} = A$  (称  $A$  为幂等矩阵). 证明:
+
+$$
+r(A) + r(A - E) = n.
+$$
+
+46. 设  $A$  为  $n$  阶方阵,且  $A^{2} = E$  (称  $A$  为对合矩阵). 证明:
+
+$$
+r(A + E) + r(A - E) = n.
+$$
+
+47. 设  $A$  为  $m \times n$  矩阵,  $B$  为  $m \times 1$  矩阵,证明:方程组  $Ax = B$  有解的充分必要条件是  $A^{\mathrm{T}}y = 0$  的任一解向量  $y_{0}$  都是  $B^{\mathrm{T}}y = 0$  的解向量.
+
+48. 设  $A$  为  $n$  阶矩阵,且  $n > 2$ ,证明:
+
+$$
+(A^{*})^{*} = |A|^{n - 2}A.
+$$
+
+49. 设  $A$  为  $n$  阶矩阵,证明:  $r(A^{n}) = r(A^{n + 1})$ .
+
+# 第四章 线性空间
+
+在这一章我们将讨论线性代数一个最基本的概念——线性空间。第三章在  $n$  维实向量集合上定义了加法和数乘运算,它们满足八条运算律。回忆在  $m \times n$  矩阵集合上我们也定义过这两种运算。类似的情况还出现在其他集合,例如在定义域相同的函数集合上,也存在着加法和数乘运算。不难看出,虽然上述集合完全不同,但所定义的加法和数乘都满足八条运算律。对这些集合的共同点加以抽象就导出了线性空间的概念。
+
+# 4.1 线性空间的概念
+
+# 4.1.1 数域
+
+首先我们介绍数域的概念。
+
+定义4.1 设  $P$  是包含0和1的数集,若  $P$  中数的和、差、积、商(0不作除数)均在  $P$  内,则称  $P$  是一个数域。
+
+显然,复数集  $\mathbf{C}$  、实数集  $\mathbf{R}$  和有理数集  $\mathbf{Q}$  都是数域。
+
+例4.1 数集  $\mathbf{Q}(\sqrt{2}) = \{a + b\sqrt{2} |a,b \in \mathbf{Q}\}$  是一个数域。
+
+容易看出,  $\mathbf{Q}(\sqrt{2})$  中任意两个数,如  $a_{1} + b_{1}\sqrt{2}, a_{2} + b_{2}\sqrt{2}$  的和、差、积仍为  $\mathbf{Q}(\sqrt{2})$  中的数,而它们的商(此时  $a_{2}, b_{2}$  不同时为0)为
+
+$$
+\frac{a_{1} + b_{1}\sqrt{2}}{a_{2} + b_{2}\sqrt{2}} = \frac{(a_{1} + b_{1}\sqrt{2})(a_{2} - b_{2}\sqrt{2})}{a_{2}^{2} - 2b_{2}^{2}} = \frac{a_{1}a_{2} - 2b_{1}b_{2}}{a_{2}^{2} - 2b_{2}^{2}} +\frac{a_{2}b_{1} - a_{1}b_{2}}{a_{2}^{2} - 2b_{2}^{2}}\sqrt{2}.
+$$
+
+由于  $a_{1}, a_{2}, b_{1}$  和  $b_{2}$  均是有理数,且  $a_{2}, b_{2}$  不同时为0,故  $\frac{a_{1}a_{2} - 2b_{1}b_{2}}{a_{2}^{2} - 2b_{2}^{2}}$  和  $\frac{a_{2}b_{1} - a_{1}b_{2}}{a_{2}^{2} - 2b_{2}^{2}}$  也是有理数,即  $\frac{a_{1} + b_{1}\sqrt{2}}{a_{2} + b_{2}\sqrt{2}} \in \mathbf{Q}(\sqrt{2})$ 。这样我们证明了  $\mathbf{Q}(\sqrt{2})$  是数域。
+
+若集合  $U$  上定义了某种运算,而  $U$  中任意元素进行这种运算所得的结果均仍在  $U$  中,则称  $U$  对这种运算是封闭的。这样我们得到数域的一个等价定义:
+
+包含0和1的数集  $P$  若对加、减、乘和除(0不作除数)运算是封闭的,则称  $P$  为一个数域。
+
+# 4.1.2 线性空间的定义和例子
+
+定义4.2 设  $V$  是非空集合,  $P$  是数域。在  $V$  的元素间定义了一种加法:  $\forall \alpha$ ,

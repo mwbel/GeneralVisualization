@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Visual Chat - 智能可视化生成器</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif; margin: 0; }
+    header { padding: 12px 16px; background: #f6f6fb; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: space-between; }
+    .kind { font-weight: 600; color: #555; }
+    .time { color: #888; }
+    .container { display: grid; grid-template-columns: 360px 1fr 420px; gap: 12px; padding: 12px; height: calc(100vh - 60px); box-sizing: border-box; }
+    .panel { border: 1px solid #eee; border-radius: 8px; padding: 12px; overflow: auto; }
+    textarea { width: 100%; height: 160px; box-sizing: border-box; }
+    button { padding: 8px 12px; margin-right: 8px; }
+    .error { background: #ffe8e8; color: #b00020; border: 1px solid #ffc2c2; padding: 8px; border-radius: 6px; margin-bottom: 8px; display: none; }
+    .code { white-space: pre; background: #0f172a; color: #e2e8f0; padding: 12px; border-radius: 6px; min-height: 300px; }
+    iframe { width: 100%; height: 100%; border: 0; }
+    .chip { display: inline-block; padding: 2px 8px; border-radius: 999px; background: #eef2ff; color: #3730a3; font-size: 12px; margin-right: 6px; }
+    .row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <span class="chip">Visual Chat</span>
+      <span class="kind" id="kind">kind: -</span>
+    </div>
+    <div class="time" id="time">耗时：- ms</div>
+  </header>
+  <div class="container">
+    <div class="panel" id="left">
+      <div id="error" class="error"></div>
+      <h3>输入与用例</h3>
+      <textarea id="prompt" placeholder="描述你的可视化需求..."></textarea>
+      <div class="row" style="margin:8px 0;">
+        <button id="generate">生成可视化</button>
+        <button id="retry">一键重试</button>
+      </div>
+      <h4>一键用例</h4>
+      <div class="row">
+        <button id="caseA">用例A（行列式3D几何）</button>
+        <button id="caseB">用例B（泊松/超几何分布）</button>
+      </div>
+      <p style="font-size:12px;color:#666;">说明：若环境无 scipy，先展示 Poisson，并提示安装。</p>
+    </div>
+    <div class="panel" id="middle">
+      <h3>交互图</h3>
+      <iframe id="viz" title="viz"></iframe>
+    </div>
+    <div class="panel" id="right">
+      <h3>生成的代码</h3>
+      <div class="row" style="margin-bottom:8px;">
+        <button id="downloadPy">下载 .py</button>
+      </div>
+      <div id="code" class="code"></div>
+      <h3>失败日志</h3>
+      <div id="logs" style="font-size:13px;color:#666;"></div>
+    </div>
+  </div>
+  <script>
+    const $ = (id) => document.getElementById(id);
+    let lastPrompt = '';
+
+    const classifyKind = (text) => {
+      const low = (text || '').toLowerCase();
+      if (["行列式","矩阵","向量","线性代数","determinant","matrix","vector","linear algebra"].some(k => low.includes(k))) return 'det';
+      if (["分布","泊松","poisson","超几何","二项","正态","distribution","binomial","normal","hypergeometric"].some(k => low.includes(k))) return 'dist';
+      return 'general';
+    };
+
+    const setError = (msg) => {
+      const el = $('error');
+      if (msg) { el.style.display = 'block'; el.textContent = msg; }
+      else { el.style.display = 'none'; el.textContent = ''; }
+    };
+
+    const renderHTML = (html) => {
+      $('viz').srcdoc = html || '<div style="padding:16px;color:#666;">暂无内容</div>';
+    };
+
+    const renderCode = (code) => {
+      $('code').textContent = code || '';
+    };
+
+    const downloadPy = (code) => {
+      const blob = new Blob([code || ''], { type: 'text/x-python' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `visualmind_${Date.now()}.py`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    };
+
+    const callAPIs = async (prompt) => {
+      const start = performance.now();
+      const kind = classifyKind(prompt);
+      $('kind').textContent = `kind: ${kind}`;
+
+      // 1) HTML 可视化（已有后端）
+      const htmlReq = fetch('http://localhost:8000/api/v1/visualization/generate-html', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt, visualization_type: 'custom', complexity: 'medium', include_interactivity: true, theme: 'modern' })
+      }).then(r => r.ok ? r.json() : Promise.reject(new Error(`HTML接口失败: ${r.status}`)));
+
+      // 2) 代码生成（已有后端）
+      const codeReq = fetch('http://localhost:8000/api/v1/code/generate', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt, visualization_type: 'custom' })
+      }).then(r => r.ok ? r.json() : Promise.reject(new Error(`代码接口失败: ${r.status}`)));
+
+      try {
+        const [htmlRes, codeRes] = await Promise.all([htmlReq, codeReq]);
+        renderHTML(htmlRes.html_content);
+        renderCode(codeRes.python_code);
+        const ms = Math.round(performance.now() - start);
+        $('time').textContent = `耗时：${ms} ms`;
+        setError('');
+        lastPrompt = prompt;
+      } catch (e) {
+        setError(e.message);
+        const logs = $('logs');
+        const ts = new Date().toLocaleString();
+        logs.innerHTML += `<div>[${ts}] 失败：${e.message} | kind=${classifyKind(prompt)} | prompt=${prompt}</div>`;
+      }
+    };
+
+    $('generate').onclick = () => {
+      const p = $('prompt').value.trim();
+      if (!p) { setError('请输入描述'); return; }
+      callAPIs(p);
+    };
+
+    $('retry').onclick = () => {
+      if (!lastPrompt) { setError('暂无上次请求'); return; }
+      callAPIs(lastPrompt);
+    };
+
+    $('downloadPy').onclick = () => {
+      const code = $('code').textContent;
+      if (!code) { setError('暂无可下载代码'); return; }
+      downloadPy(code);
+    };
+
+    $('caseA').onclick = () => {
+      const text = '请创建一个线性代数中3阶行列式几何意义的3D可视化，展示平行六面体体积=|det(A)|，可旋转缩放。用Plotly。';
+      $('prompt').value = text; callAPIs(text);
+    };
+    $('caseB').onclick = () => {
+      const text = '请绘制 Poisson（泊松）与超几何分布的对比图，带 λ 的滑动条控制；若环境无 scipy，先仅展示 Poisson 并给出安装提示。';
+      $('prompt').value = text; callAPIs(text);
+    };
+  </script>
+</body>
+</html>

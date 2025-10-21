@@ -1,0 +1,3716 @@
+[
+    {
+        "type": "text",
+        "text": "普通高等教育\"十一五\"国家级规划教材",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "国家工科基地教材·工程数学与教学软件",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "线性代数",
+        "text_level": 1,
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(第三版)",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "上海交通大学数学系 编",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "高等教育出版中心 数理出版分社联系电话:010- 64034725E- mail:mph@mail.sciencep.com",
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "普通高等教育\"十一五\"国家级规划教材国家工科基地教材工程数学与教学软件",
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "线性代数",
+        "text_level": 1,
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "(第三版)",
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "上海交通大学数学系 编",
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "科学出版社",
+        "text_level": 1,
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "北京",
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "内容简介",
+        "text_level": 1,
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "本书内容包括行列式、矩阵、 $n$  维向量与线性方程组、线性空间、矩阵的对角化、实二次型和线性变换等线性代数的基本知识以及基本线性代数问题的计算机实现，通过将线性代数的基本知识与计算机相结合使学生能利用数学软件解决一些简单的线性代数的实际问题，书末还给出了有关的Matlab软件的使用说明.",
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "本书可作为高等工科院校理工科、经济学、管理学等各专业“线性代数”课程的教材，也可供教师和学生作参考之用.",
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "图书在版编目（CIP）数据",
+        "text_level": 1,
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "线性代数/上海交通大学数学系编．一3版．一北京：科学出版社，2014.6普通高等教育“十一五”国家级规划教材·国家工科基地教材·工程数学与教学软件ISBN978- 7- 03- 041199- 0I.线…Ⅱ.上…Ⅲ.线性代数- 高等学校- 教材IV.O151.2中国版本图书馆CIP数据核字（2014）第126427号",
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "责任编辑：姚莉丽/责任校对：刘小梅责任印制：阎磊/封面设计：陈敬",
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "科学出版社出版北京东黄城根北街16号邮政编码：100717http://www.sciencep.com保定市中画美凯印刷有限公司印刷科学出版社发行各地新华书店经销",
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "2000年1月第一版 开本：  $720\\times 1000$  B52007年10月第 二 版 印张：  $181 / 2$  2014年6月第 三 版 字数：3720002014年7月第二十二次印刷定价：32.00元（如有印装质量问题，我社负责调换）",
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "第三版前言",
+        "text_level": 1,
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "本书的第三版在第二版使用多年的基础上，根据教学实践中的反映稍作修改和调整。总体而言，其定位是适用于理工科和经济管理等应用类各专业，教材的结构和主要内容并无变化。所作的改变是：",
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "（1）个别章节的文字阐述和例题有些改动，第七章略有删减，改变的目的是希望教材更符合易于教学的要求；（2）第八章采用的数学软件改为Matlab，原因是Matlab是在科学计算方面广泛使用的数学软件，它还有功能强大的工具箱，延伸到了科学研究和应用学科的诸多领域，对于多数工程类和经济管理类等应用型学科的学生早些了解接触这个软件是十分有益的。",
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "这版的修改工作由李世栋、乐经良、王纪林、蒋启芬和刘小军完成，对新版教材可能存在的问题，敬请同行和读者不吝指正。",
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "编者  2014年3月",
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "第二版前言",
+        "text_level": 1,
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "本书自2000年出版以来已逾七年,除了上海交通大学本科非数学专业以其作为\"线性代数\"课程的教材外,也有其他一些高校在对线性代数要求较高的理工科专业采用此教材。在教学实践中,同行们肯定了本书理论完备、阐述严谨、宜于教学、注重应用和结合软件等特点,也提出了一些修改意见。",
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "此次再版基本上保持了本书原来的结构与特色,除了在文字上作了一些修订之外,主要在以下方面有所变化:",
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "(1)对有些章节的内容阐述略作简化;",
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "(2)适当增加了例题与习题,拓宽了题型,尤其是选编了一些近年在研究生入学考试中出现的试题类型;",
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "(3)鉴于Mathematica版本的升级,故对第八章\"数学软件与应用实例\"应用Mathematica5.1进行了重写。",
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "此次修改,前七章由原编写者完成,第八章由刘小军老师改写,蒋启芬老师校读了全书。",
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "编者",
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "2007年3月",
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "第一版前言",
+        "text_level": 1,
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "线性代数是大学数学教育中一门主要基础课程,对于培养面向21世纪人才起着重要的作用,本书是编者在上海交通大学进行多年教学实践和改革探索的基础上编写的,其基本内容符合原国家教委1995年颁布的\"工程数学课程教学基本要求\",并且适当作了一些改革的尝试:介绍了线性代数若干典型的应用实例和数学软件Mathematica在线性代数运算方面的基本功能,本书这部分内容实际上进行了数学实验的初步训练,我们认为,让学生应用数学知识并通过使用计算机来解决实际问题是数学教育中非常值得重视的环节.",
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "本书共分8章,第一章到第七章是线性代数的基本内容,第一章主要介绍了行列式的基本概念和行列式的计算,并包含了行列式的一个应用——Cramer法则,第二章介绍了矩阵的代数运算、可逆矩阵、矩阵的初等变换、矩阵的秩和分块矩阵的概念以及有关性质,作为应用,在第二章的最后讨论了消元法解线性方程组与线性方程组有解的条件,第三章讨论  $n$  维向量的线性关系和向量组的秩的概念,并在此基础上讨论了线性方程组解的结构,经第二、三章的铺垫,第四章介绍了线性空间和欧氏空间的概念,第五章在介绍了方阵的特征值和特征向量以及矩阵相似的概念后讨论了方阵的对角化问题,第六章介绍了实二次型的概念和化二次型为标准形的方法,并讨论了正定二次型的相关性质,第七章介绍了线性变换的基本概念和性质,第八章介绍了数学软件Mathematica的最基本的使用方法以及用以解决最基本的线性代数问题的有关指令,并给出了若干应用实例,可用于计算机辅助教学,每章的习题分为两类,(一)是基本题目,(二)是难度较高的题目,书后附有习题的答案与概念索引.",
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "我们在选材上以基本概念与基本方法为核心,力图做到突出重点,简明扼要,清晰易懂,便于教学,在习题的配置上,既注意基本内容的训练,又有适当的提高题.",
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "本书可作为高等学校工科、理科(非数学专业)与经济管理学科线性代数课程的教材,课内  $36\\sim 54$  学时的都可选用,也可供成人教育的广大师生和工程技术人员使用,某些章节不同专业可根据不同情况予以取舍.",
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "本书第一章由王纪林编写,第二、五、六章由李世栋编写,第三章由冯卫国编写,第四、七章由乐经良编写,第八章由李世栋与乐经良共同编写,另外,黄建国提供了第八章中建筑模型的应用实例和相关数据,童品苗参与了部分原稿的计算机输入工作,由于编者水平所限,不妥甚至谬误之处在所难免,恳请读者批",
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "评指正.",
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "本书的出版得到了科学出版社鼎力帮助与上海交通大学教务处与应用数学系的关心和支持,李乔、沈灏两位教授和其他一些老师对本书的编写给了许多具体的帮助,在此深表感谢.",
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "编者",
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "1999年8月",
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "于上海交通大学",
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "目录",
+        "text_level": 1,
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "第三版前言",
+        "text_level": 1,
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "第二版前言",
+        "text_level": 1,
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "第一版前言",
+        "text_level": 1,
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "第一章 行列式",
+        "text_level": 1,
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "第一章 行列式1.1 行列式的概念1.2 行列式的性质1.3 行列式的计算1.4 拉普拉斯定理1.5 克拉默定理习题一41",
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "第二章 矩阵 47",
+        "text_level": 1,
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "第二章 矩阵2.1 矩阵的概念2.2 矩阵的运算2.3 可逆矩阵2.4 矩阵的分块2.5 矩阵的初等变换与矩阵的秩2.6 分块矩阵的初等变换2.7 解线性方程组的高斯消元法习题二94",
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "第三章  $\\pmb{n}$  维向量与线性方程组 103",
+        "text_level": 1,
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "第三章  $\\pmb{n}$  维向量与线性方程组1033.1  $n$  维向量1033.2 向量的线性关系1063.3 向量组的秩1173.4 齐次线性方程组1253.5 非齐次线性方程组130习题三133",
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "第四章 线性空间 140",
+        "text_level": 1,
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "第四章 线性空间1404.1 线性空间的概念1404.2 线性空间的维数、基与坐标1434.3 基变换与坐标变换147",
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "4.4 欧氏空间 151",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "习题四 157",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "第五章 矩阵的对角化 163",
+        "text_level": 1,
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "5.1 矩阵的特征值与特征向量 163",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "5.2 相似矩阵和矩阵的对角化 171",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "5.3 正交矩阵与实对称矩阵的相似对角矩阵 176",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "习题五 183",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "第六章 实二次型 187",
+        "text_level": 1,
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "6.1 实二次型的基本概念及其标准形式 187",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "6.2 化实二次型为标准形 189",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "6.3 实二次型的正惯性指数 196",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "6.4 正定二次型 199",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "习题六 203",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "第七章 线性变换 206",
+        "text_level": 1,
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "7.1 线性变换的概念 206",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "7.2 线性变换与矩阵 209",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "7.3* 欧氏空间的正交变换和对称变换 215",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "习题七 219",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "第八章 数学软件与应用实例 223",
+        "text_level": 1,
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "8.1 Matlab的基本使用 223",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "8.2 线性代数基本运算 234",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "8.3 应用实例 240",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "习题八 257",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "习题答案 263",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "参考文献 279",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "索引 280",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "第一章 行列式",
+        "text_level": 1,
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "第一章 行列式行列式是线性代数课程的一个重要内容。本章先介绍二阶和三阶行列式的定义及其性质,然后给出  $n$  阶行列式的定义,并介绍几种特殊行列式的常用计算法。最后给出利用行列式求  $n$  元线性方程组唯一的常用方法,即克拉默定理。",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "1.1 行列式的概念",
+        "text_level": 1,
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "1.1 行列式的概念本节先介绍二阶和三阶行列式,并用以求二元和三元线性方程组的唯一解。然后利用排列的逆序数给出  $n$  阶行列式的定义和基本概念。",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "1.1.1 二阶和三阶行列式的概念",
+        "text_level": 1,
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "定义1.1以数  $a_{11},a_{12},a_{21},a_{22}$  为元素的二阶行列式为",
+        "page_idx": 10
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left| \\begin{array}{cc}a_{11} & a_{12} \\\\ a_{21} & a_{22} \\end{array} \\right| = a_{11}a_{22} - a_{12}a_{21}. \\tag{1.1}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "简记为  $D = \\mid a_{i j}\\mid_{2}$  .其中,  $a_{i j}$  称为行列式的  $(i,j)$  元素,即该元素位于行列式的第  $i$  行和第  $j$  列的交汇处.  $i$  和  $j$  常分别称为元素  $a_{i j}$  的行下标和列下标.",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "例如,元素  $a_{21}$  位于行列式  $\\mid a_{i j}\\mid_{2}$  的第2行和第1列的交汇处",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "例1.1 计算行列式  $\\left| \\begin{array}{cc}2 & - 1 \\\\ 6 & 5 \\end{array} \\right|$",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "解据(1.1)式,有",
+        "page_idx": 10
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left| \\begin{array}{cc}2 & -1 \\\\ 6 & 5 \\end{array} \\right| = 2\\times 5 - (-1)\\times 6 = 16.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "例1.2 已知函数  $f(x) = \\left| \\begin{array}{cc}1 - x & - 1 \\\\ 4 & 2 + x \\end{array} \\right|$ ,求  $x$ ,使得  $f(x) = 0$",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "解因为",
+        "page_idx": 10
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf(x) = \\left| \\begin{array}{cc}1 - x & -1 \\\\ 4 & 2 + x \\end{array} \\right| = (1 - x)(2 + x) - (-1)\\times 4 = -x^{2} - x + 6,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "$f(x) = 0$  ,即  $- x^{2} - x + 6 = - (x + 3)(x - 2) = 0$  ,得  $x = - 3$  或2.",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "例1.3 设二元线性方程组",
+        "page_idx": 10
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left\\{ \\begin{array}{l}a_{11}x_{1} + a_{12}x_{2} = b_{1}, \\\\ a_{21}x_{1} + a_{22}x_{2} = b_{2}. \\end{array} \\right. \\tag{1.2}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "试问:在什么条件下,线性方程组(1.2)有唯一解。",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "解 在方程(1)的两端同时乘以  $a_{22}$ ,在方程(2)的两端同时乘以  $a_{12}$ ,然后将所得两式相减,即  $a_{22}(1) - a_{12}(2)$ ,得",
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(a_{11}a_{22} - a_{12}a_{21})x_{1} = b_{1}a_{22} - a_{12}b_{2}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "由此可知,当  $a_{11}a_{22} - a_{12}a_{21} \\neq 0$  时,有",
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nx_{1} = \\frac{b_{1}a_{22} - a_{12}b_{2}}{a_{11}a_{22} - a_{12}a_{21}}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "同理可得,当  $a_{11}a_{22} - a_{12}a_{21} \\neq 0$  时,有",
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nx_{2} = \\frac{a_{11}b_{2} - b_{1}a_{21}}{a_{11}a_{22} - a_{12}a_{21}}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "记",
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left| \\begin{array}{ll}a_{11} & a_{12} \\\\ a_{21} & a_{22} \\end{array} \\right|, \\quad D_{1} = \\left| \\begin{array}{ll}b_{1} & a_{12} \\\\ b_{2} & a_{22} \\end{array} \\right|, \\quad D_{2} = \\left| \\begin{array}{ll}a_{11} & b_{1} \\\\ a_{21} & b_{2} \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "称  $D$  为线性方程组(1.2)的系数行列式",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "以上结论可以表述为:",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "当线性方程组(1.2)的系数行列式  $D \\neq 0$  时,有唯一解,且其解可表示为",
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nx_{1} = \\frac{D_{1}}{D}, \\qquad x_{2} = \\frac{D_{2}}{D}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "例1.4 设二元线性方程组为",
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left\\{ \\begin{array}{l}3x_{1} - 4x_{2} = 5, \\\\ kx_{1} + 2x_{2} = -3. \\end{array} \\right.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "试问:常数  $k$  为何值时有唯一解,并求此解",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "解 因为其系数行列式",
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left| \\begin{array}{cc}3 & -4 \\\\ k & 2 \\end{array} \\right| = 6 + 4k,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "所以,当  $k \\neq - \\frac{3}{2}$  时  $D \\neq 0$ ,此时方程组有唯一解.又",
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{1} = \\left| \\begin{array}{cc}5 & -4 \\\\ -3 & 2 \\end{array} \\right| = -2, \\quad D_{2} = \\left| \\begin{array}{cc}3 & 5 \\\\ k & -3 \\end{array} \\right| = -9 - 5k.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "其唯一解为",
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nx_{1} = \\frac{D_{1}}{D} = -\\frac{1}{3 + 2k}, \\qquad x_{2} = \\frac{D_{2}}{D} = -\\frac{9 + 5k}{6 + 4k}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "定义1.2 以数  $a_{ij}(i,j = 1,2,3)$  为元素的三阶行列式为",
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left|a_{ij}\\right|_{3} = \\left| \\begin{array}{lll}a_{11} & a_{12} & a_{13} \\\\ a_{21} & a_{22} & a_{23} \\\\ a_{31} & a_{32} & a_{33} \\end{array} \\right|\n$$\n",
+        "text_format": "latex",
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n= a_{11}\\left| \\begin{array}{cc}a_{22} & a_{23} \\\\ a_{32} & a_{33} \\end{array} \\right| - a_{12}\\left| \\begin{array}{cc}a_{21} & a_{23} \\\\ a_{31} & a_{33} \\end{array} \\right| + a_{13}\\left| \\begin{array}{cc}a_{21} & a_{22} \\\\ a_{31} & a_{32} \\end{array} \\right|. \\tag{1.3}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "三阶行列式也可按以下对角线展开法计算",
+        "page_idx": 12
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l}{|a_{i j}|_{3} =} & {\\underbrace{\\left(a_{11}\\times a_{12}\\times a_{13}\\right)}_{\\left(a_{11}\\times a_{22}\\times a_{23}\\right)} = a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32}}\\\\ & {\\underbrace{\\left(a_{11}\\times a_{22}\\times a_{23}\\right)}_{\\left(a_{11}\\times a_{22}\\times a_{23}\\right)} = a_{13}a_{22}a_{31} - a_{12}a_{21}a_{33} - a_{11}a_{22}a_{32}.} \\end{array} \\tag{1.4}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "称元素  $a_{11}, a_{22}, a_{33}$  为行列式  $D = |a_{ij}|_{3}$  的主对角线元素,称  $a_{13}, a_{22}, a_{31}$  为行列式  $D = |a_{ij}|_{3}$  的次对角线元素.",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "例1.5 计算三阶行列式  $D = \\left| \\begin{array}{ccc}1 & 2 & - 4 \\\\ - 2 & 2 & 1 \\\\ 3 & - 4 & - 2 \\end{array} \\right|$ .",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "解 由(1.3)式得",
+        "page_idx": 12
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {D = \\left| \\begin{array}{c c c}{1} & {2} & {-4}\\\\ {-2} & {2} & {1}\\\\ {3} & {-4} & {-2} \\end{array} \\right|}\\\\ & {\\quad = 1\\times \\left| \\begin{array}{c c c}{2} & {1}\\\\ {-4} & {-2} \\end{array} \\right| - 2\\times \\left| \\begin{array}{c c}{-2} & {1}\\\\ {3} & {-2} \\end{array} \\right| + (-4)\\times \\left| \\begin{array}{c c}{-2} & {2}\\\\ {3} & {-4} \\end{array} \\right|}\\\\ & {\\quad = 1\\times 0 - 2\\times 1 + (-4)\\times 2 = -10.} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "或由(1.4)式得",
+        "page_idx": 12
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left| \\begin{array}{ccc}1 & 2 & -4 \\\\ -2 & 2 & 1 \\\\ 3 & -4 & -2 \\end{array} \\right|\n$$\n",
+        "text_format": "latex",
+        "page_idx": 12
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n= 1 \\times 2 \\times (-2) + 2 \\times 1 \\times 3 + (-4) \\times (-2) \\times (-4) - (-4) \\times 2 \\times 3\n$$\n",
+        "text_format": "latex",
+        "page_idx": 12
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n-2 \\times (-2) \\times (-2) - 1 \\times 1 \\times (-4) = -10.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "类似于例1.4的讨论,对于三元线性方程组",
+        "page_idx": 12
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left\\{ \\begin{array}{l}a_{11}x_{1} + a_{12}x_{2} + a_{13}x_{3} = b_{1}, \\\\ a_{21}x_{1} + a_{22}x_{2} + a_{23}x_{3} = b_{2}, \\\\ a_{31}x_{1} + a_{32}x_{2} + a_{33}x_{3} = b_{3}, \\end{array} \\right. \\tag{1.5}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "有类似结论:",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "当方程组(1.5)的系数行列式  $D \\neq 0$  时,有唯一解. 其解为",
+        "page_idx": 12
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nx_{1} = \\frac{D_{1}}{D}, \\qquad x_{2} = \\frac{D_{2}}{D}, \\qquad x_{3} = \\frac{D_{3}}{D}, \\tag{1.6}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "其中，",
+        "page_idx": 13
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {D = \\left| \\begin{array}{l l l}{a_{11}} & {a_{12}} & {a_{13}}\\\\ {a_{21}} & {a_{22}} & {a_{23}}\\\\ {a_{31}} & {a_{32}} & {a_{33}} \\end{array} \\right|,\\qquad D_{1} = \\left| \\begin{array}{l l l}{b_{1}} & {a_{12}} & {a_{13}}\\\\ {b_{2}} & {a_{22}} & {a_{23}}\\\\ {b_{3}} & {a_{32}} & {a_{33}} \\end{array} \\right|,}\\\\ & {D_{2} = \\left| \\begin{array}{l l l}{a_{11}} & {b_{1}} & {a_{13}}\\\\ {a_{21}} & {b_{2}} & {a_{23}}\\\\ {a_{31}} & {b_{3}} & {a_{33}} \\end{array} \\right|,\\qquad D_{3} = \\left| \\begin{array}{l l l}{a_{11}} & {a_{12}} & {b_{1}}\\\\ {a_{21}} & {a_{22}} & {b_{2}}\\\\ {a_{31}} & {a_{32}} & {b_{3}} \\end{array} \\right|.} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "例1.6 设三元线性方程组为",
+        "page_idx": 13
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left\\{ \\begin{array}{c}x_{1} + 2x_{2} - 4x_{3} = 1, \\\\ -2x_{1} + 2x_{2} + x_{3} = 0, \\\\ 3x_{1} - 4x_{2} - 2x_{3} = 1. \\end{array} \\right.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "试问：此方程组是否有唯一解？若有，求出其唯一解",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "解方程组的系数行列式",
+        "page_idx": 13
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left| \\begin{array}{ccc}1 & 2 & -4 \\\\ -2 & 2 & 1 \\\\ 3 & -4 & -2 \\end{array} \\right| = -10 \\neq 0,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "所以此方程组有唯一解，行列式",
+        "page_idx": 13
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{1} = \\left| \\begin{array}{ccc}1 & 2 & -4 \\\\ 0 & 2 & 1 \\\\ 1 & -4 & -2 \\end{array} \\right| = 10, \\quad D_{2} = \\left| \\begin{array}{ccc}1 & 1 & -4 \\\\ -2 & 0 & 1 \\\\ 3 & 1 & -2 \\end{array} \\right| = 6, \\quad D_{3} = \\left| \\begin{array}{ccc}1 & 2 & 1 \\\\ -2 & 2 & 0 \\\\ 3 & -4 & 1 \\end{array} \\right| = 8.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "因此，由（1.6）式可得其唯一解为",
+        "page_idx": 13
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nx_{1} = \\frac{D_{1}}{D} = -1, \\qquad x_{2} = \\frac{D_{2}}{D} = -\\frac{3}{5}, \\qquad x_{3} = \\frac{D_{3}}{D} = -\\frac{4}{5}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "1.1.2  $n$  阶排列的逆序数",
+        "text_level": 1,
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "我们将用  $n$  阶排列的逆序数给出  $n$  阶行列式的定义，因此先介绍  $n$  阶排列及其逆序数的概念.",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "在这里，  $n$  阶排列是指由  $n$  个有序的数  $(n \\geq 2)$  构成的排列. 记作  $i_{1}, i_{2}, \\dots , i_{n}$  其中  $i_{j} (j = 1,2, \\dots , n)$  表示排列中的第  $j$  个数. 易知，共有  $n!$  个不同的  $n$  阶排列.",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "在  $n$  阶行列式定义中将要用到的是  $1,2, \\dots , n (n \\geq 2)$  这  $n$  个数构成的  $n$  阶排列.",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "定义1.3在一个  $n$  阶排列  $i_{1},i_{2},\\dots ,i_{n}$  中，按照在排列中的次序，任取其中的两个数，记作  $(i_j,i_k)$  ，其中  $j< k$  ，称为排列的一个数对.如果在数对  $(i_j,i_k)$  中  $i_j<$ $i_{k}$  ，则称其为排列的一个顺序.如果在数对  $(i_j,i_k)$  中  $i_j > i_k$  ，则称其为排列的一个逆序.排列  $i_{1},i_{2},\\dots ,i_{n}$  中逆序的个数称为该排列的逆序数，记作",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "易知,在一个  $n$  阶排列中,共有  $\\mathrm{C}_{n}^{2} = \\frac{n(n - 1)}{2}$  个不同的数对.若  $\\tau (i_{1},i_{2},\\dots ,i_{n})$  是偶数,则称排列  $i_{1},i_{2},\\dots ,i_{n}$  为偶排列,否则称其为奇排列.",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "例1.7 试求以下排列的逆序数:",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "(1)23541; \n(2)32541;",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "(3)  $12\\dots (n - 1)n$  \n(4)  $n(n - 1)\\dots 21.$",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "解(1)在排列23541中有逆序(2.1),(3.1),(5.4),(5.1),(4.1),所以",
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\tau (23541) = 5.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "因此排列23541是奇排列",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "(2)在排列32541中有逆序(3.2),(3.1),(2.1),(5.4),(5.1),(4.1),所以",
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\tau (32541) = 6.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "因此排列32541是偶排列",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "(3)在排列  $12\\dots (n - 1)n$  中没有逆序,所以",
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\tau (12\\dots (n - 1)n) = 0.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "因此排列  $12\\dots (n - 1)n$  是偶排列.常称其为自然排列",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "(4)在排列  $n(n - 1)\\dots 21$  中的每一个数对都是逆序,所以",
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\tau (n(n - 1)\\dots 21) = \\mathrm{C}_{n}^{2} = \\frac{n(n - 1)}{2}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "可见,当  $n(n - 1)\\dots 21$  为偶排列时,  $n(n - 1)$  是4的倍数.因此,当  $n = 4k$  或  $n = 4k + 1(k = 1,2,\\dots)$  时排列  $n(n - 1)\\dots 21$  是偶排列,当  $n = 4k + 2$  或  $n = 4k + 3(k = 1,2,\\dots)$  时排列  $n(n - 1)\\dots 21$  是奇排列.",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "在一个  $n$  阶排列中,交换其中某两个数的位置,而其余各数的位置保持不变,就得到了另一个排列.对排列进行一次这种操作,称为对此排列作了一次对换.在例1.7中,排列(2)就是排列(1)经一次对换得到的,它们的奇偶性是不同的.一般我们有以下结论.",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "定理1.1对换改变排列的奇偶性.即对奇排列作一次对换,所得的排列是偶排列,而对偶排列作一次对换,所得的排列是奇排列.",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "证先考虑相邻两数的对换.设排列为",
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\ni_{1}i_{2}\\dots i_{s}a b j_{1}j_{2}\\dots j_{t},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "交换其中  $a,b$  两个数的位置,得排列",
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\ni_{1}i_{2}\\dots i_{s}b a j_{1}j_{2}\\dots j_{t}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "在这两个排列中,除了数对  $(a,b)$  与  $(b,a)$  以外,其他数对都是相同的.所以当  $a< b$  时,有",
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\tau (i_{1}i_{2}\\dots i_{s}b a j_{1}j_{2}\\dots j_{t}) = \\tau (i_{1}i_{2}\\dots i_{s}a b j_{1}j_{2}\\dots j_{t}) + 1;\n$$\n",
+        "text_format": "latex",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "而当  $a > b$  时有",
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\tau (i_{1}i_{2}\\dots i_{s}b a j_{1}j_{2}\\dots j_{t}) = \\tau (i_{1}i_{2}\\dots i_{s}a b j_{1}j_{2}\\dots j_{t}) - 1;\n$$\n",
+        "text_format": "latex",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "因此它们的奇偶性是不同的.",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "再考虑不相邻两数的对换.设排列为",
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\ni_{1}i_{2}\\dots i_{s}a k_{1}k_{2}\\dots k_{r}b j_{1}j_{2}\\dots j_{t}, \\tag{1.7}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "交换其中  $a,b$  两个数的位置,得排列",
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\ni_{1}i_{2}\\dots i_{s}b k_{1}k_{2}\\dots k_{r}a j_{1}j_{2}\\dots j_{t}, \\tag{1.8}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "其中  $r\\geqslant 1.$  为了讨论它们的奇偶性,我们先在(1.7)式中将数  $a$  依次与其右边相邻的数作  $r$  次对换,得排列",
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\ni_{1}i_{2}\\dots i_{s}k_{1}k_{2}\\dots k_{r}a b j_{1}j_{2}\\dots j_{t}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "然后,在所得的排列中,将数  $b$  依次与其左边相邻的数作  $r + 1$  次对换,得排列(1.8)式.所以(1.8)式可视为由(1.7)式作了  $2r + 1$  次相邻两数的对换得到的.由前面的讨论知,排列(1.8)的奇偶性是排列(1.7)改变了  $2r + 1$  次奇偶性得到的.因此它们的奇偶性是不同的. 口",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "推论1.1在  $n!$  个不同的  $n$  阶排列中,奇偶排列各占一半.",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "证假设在  $n!$  个不同的  $n$  阶排列中,奇排列有  $s$  个,偶排列有  $t$  个.我们对这 $s$  个奇排列作最左边两个数的对换,则所得的  $s$  个排列都是偶排列.因此,偶排列至少有  $s$  个,故  $s\\leqslant t.$  同理可得  $s\\geqslant t.$  所以  $s = t.$  即奇偶排列各占一半. 口",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "1.1.3  $n$  阶行列式的概念",
+        "text_level": 1,
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "在三阶行列式(1.4)式的展开式中可见,共有  $3! = 6$  项,其中每项由行列式 $|a_{ij}|_{3}$  中3个数的乘积构成.它们的行下标都是排列123,而它们的列下标正好是1,2,3这3个数构成的所有不同的排列.如果记  $\\sum_{(j_{1}j_{2}j_{3})}$  为对1,2,3这3个数构成的所有不同排列求和,则行列式(1.4)可表示为",
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mid a_{i j}\\mid_{3}=\\left|\\begin{array}{l l l}{{a_{11}}}&{{a_{12}}}&{{a_{13}}}\\\\ {{a_{21}}}&{{a_{22}}}&{{a_{23}}}\\\\ {{a_{31}}}&{{a_{32}}}&{{a_{33}}}\\end{array}\\right|=\\sum_{(j_{1}j_{2}j_{3})}(- 1)^{\\tau(j_{1}j_{2}j_{3})}a_{1j_{1}}a_{2j_{2}}a_{3j_{3}}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "一般地,定义  $n$  阶  $(n\\geqslant 2)$  行列式如下.",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "定义1.4由  $n^{2}$  个元素构成的  $n$  阶行列式为",
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mid a_{i j}\\mid_{n}=\\left|\\begin{array}{c c c c}{{a_{11}}}&{{a_{12}}}&{{\\cdots}}&{{a_{1n}}}\\\\ {{a_{21}}}&{{a_{22}}}&{{\\cdots}}&{{a_{2n}}}\\\\ {{\\vdots}}&{{\\vdots}}&{{}}&{{\\vdots}}\\\\ {{a_{n1}}}&{{a_{n2}}}&{{\\cdots}}&{{a_{m n}}}\\end{array}\\right|=\\sum_{(j_{1}j_{2}\\cdots j_{n})}(- 1)^{\\tau(j_{1}j_{2}\\cdots j_{n})}a_{1j_{1}}a_{2j_{2}}\\cdots a_{n j_{n}},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "其中  $\\sum_{(j_{1}j_{2}\\dots j_{n})}$  是对  $1,2,\\dots ,n$  这  $n$  个数构成的所有不同排列的求和.",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "约定,一阶行列式就是1个元素,即式  $\\left|a_{11}\\right|_{1} = a_{11}$",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "由定义可见,  $n$  阶行列式的展开式共有  $n!$  项,各项的一般表达式为",
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(-1)^{\\tau (j_{1}j_{2}\\dots j_{n})}a_{1j_{1}}a_{2j_{2}}\\dots a_{n j_{n}}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "其由取自于行列式  $\\left|a_{i j}\\right|_{n}$  中第  $1,2,\\dots ,n$  行和第  $j_{1},j_{2},\\dots ,j_{n}$  列的  $n$  个元素相乘构成,它们分别属于  $\\left|a_{i j}\\right|_{n}$  不同的行和不同的列.各项的正负号由其列下标的排列  $j_{1},j_{2},\\dots ,j_{n}$  的奇偶性确定,即当  $j_{1},j_{2},\\dots ,j_{n}$  为奇排列时,该项是负的.否则该项是正的.",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "由推论1.1知,  $n$  阶行列式展开式共有  $n!$  项,正负项的项数是相同的,各有  $\\frac{n!}{2}$  项.",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "例1.8 试用定义计算行列式",
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left|a_{i j}\\right|_{4} = \\left| \\begin{array}{c c c c}{0} & 4 & 0 & 0\\\\ 0 & {-1} & 0 & 3\\\\ 2 & 5 & 0 & 8\\\\ {-2} & 3 & 1 & 6 \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "解由定义知,  $D$  的展开式共有24项.其展开式中的一般项为",
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(-1)^{\\tau (j_{1}j_{2}j_{3}j_{4})}a_{1j_{1}}a_{2j_{2}}a_{3j_{3}}a_{4j_{4}},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "其中元素  $a_{1j_{1}}$  取自  $D$  的第一行.当  $j_{1}\\neq 2$  时  $a_{1j_{1}} = 0$  ,此时该项为零.只有  $j_{1} = 2$  时, $a_{1j} = a_{12} = 4\\neq 0.$  故  $D$  的展开式中不为零的项必具有形式  $(- 1)^{\\tau (2j_{2}j_{3}j_{4})}a_{12}a_{2j_{2}}a_{3j_{3}}a_{4j_{4}}$  其中  $j_{2}j_{3}j_{4}$  是134的一个排列.再看元素  $a_{2j_{2}}$  ,它取自  $D$  的第二行,且  $j_{2}\\neq 2$  只有  $j_{2} = 4$  时,  $a_{2j_{2}} = a_{24} = 3\\neq 0$  因此  $D$  的展开式中不为零的项必具有形式 $(- 1)^{\\tau (24j_{3}j_{4})}a_{12}a_{24}a_{3j_{3}}a_{4j_{4}}$  ,其中  $j_{3}j_{4}$  是13的排列.依次可知,  $D$  的展开式中不为零的项只有一项",
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(-1)^{\\tau (2413)}a_{12}a_{24}a_{31}a_{43} = (-1)^{3}\\times 4\\times 3\\times 2\\times 1 = -24,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "所以  $D = - 24$",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "例1.9 试用定义计算  $n$  阶行列式",
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left| \\begin{array}{cccc}a_{11} & a_{12} & \\dots & a_{1,n - 1} & a_{1n}\\\\ 0 & a_{22} & \\dots & a_{2,n - 1} & a_{2n}\\\\ \\vdots & \\vdots & & \\vdots & \\vdots \\\\ 0 & 0 & \\dots & a_{n - 1,n - 1} & a_{n - 1,n}\\\\ 0 & 0 & \\dots & 0 & a_{m} \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "解在这个行列式中,当  $i > j$  时,有  $a_{i j} = 0$  即  $D$  主对角线下方的元素都为零.称这种行列式为上三角行列式.",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "由行列式的定义知,  $D$  的展开式共有  $n!$  项.其展开式中的一般项为",
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(-1)^{\\tau (j_{1}j_{2}\\dots j_{n - 1}j_{n})}a_{1j_{1}}a_{2j_{2}}\\dots a_{n - 1,j_{n - 1}}a_{n j_{n}},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "其中元素  $a_{n j_{n}}$  取自  $D$  的第  $n$  行.当  $j_{n}{<}n$  时  $a_{n j_{n}} = 0$  ,此时该项为零.因此在其余的项中必有  $a_{n j_{n}} = a_{m}$  .而元素  $a_{n - 1,j_{n - 1}}$  取自  $D$  的第  $n - 1$  行,在  $D$  的展开式里含  $a_{m}$  的项中  $j_{n - 1}\\neq n$  ,而当  $j_{n - 1}{<}n - 1$  时  $a_{n - 1,j_{n - 1}} = 0$  ,此时该项为零.因此在其余项中必有  $a_{n - 1,j_{n - 1}} = a_{n - 1,n - 1}$  .依次可知,在  $D$  的展开式中,除了",
+        "page_idx": 17
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(-1)^{\\tau (12\\dots (n - 1)n)}a_{11}a_{22}\\dots a_{n - 1,n - 1}a_{m} = a_{11}a_{22}\\dots a_{n - 1,n - 1}a_{m}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "外,其余各项都为零,所以",
+        "page_idx": 17
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = a_{11}a_{22}\\dots a_{n - 1,n - 1}a_{m}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "由例1.9可得,上三角形行列式等于其主对角线上  $n$  个元素的乘积.例如",
+        "page_idx": 17
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left| \\begin{array}{cccc}1 & -1 & 0 & 4 \\\\ 0 & 2 & 3 & 0 \\\\ 0 & 0 & 3 & 8 \\\\ 0 & 0 & 0 & 4 \\end{array} \\right| = 1\\times 2\\times 3\\times 4 = 24.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "如果在  $n$  阶行列式  $D = \\left|a_{ij}\\right|_{n}$  中,当  $i< j$  时,有  $a_{ij} = 0$  ,即  $D$  主对角线上方的元素都为零,称这种行列式为下三角行列式.如果在  $n$  阶行列式  $D = \\left|a_{ij}\\right|_{n}$  中,当  $i\\neq j$  时,有  $a_{ij} = 0$  ,即  $D$  中除了主对角线上的元素以外,其余元素都为零,称这种行列式为对角行列式.不难推得,下三角行列式和对角行列式也都等于其主对角线上  $n$  个元素的乘积,即",
+        "page_idx": 17
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left| \\begin{array}{cccccc}a_{11} & 0 & \\dots & 0 & 0 \\\\ a_{21} & a_{22} & \\dots & 0 & 0 \\\\ \\vdots & \\vdots & & \\vdots & \\vdots \\\\ a_{n - 1,1} & a_{n - 1,2} & \\dots & a_{n - 1,n - 1} & 0 \\\\ a_{n1} & a_{n2} & \\dots & a_{n,n - 1} & a_{m} \\end{array} \\right| = a_{11}a_{22}\\dots a_{n - 1,n - 1}a_{m}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 17
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left| \\begin{array}{cccccc}a_{11} & 0 & \\dots & 0 & 0 \\\\ 0 & a_{22} & \\dots & 0 & 0 \\\\ \\vdots & \\vdots & & \\vdots & \\vdots \\\\ 0 & 0 & \\dots & a_{n - 1,n - 1} & 0 \\\\ 0 & 0 & \\dots & 0 & a_{m} \\end{array} \\right| = a_{11}a_{22}\\dots a_{n - 1,n - 1}a_{m}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "例1.10 计算  $n$  阶行列式",
+        "page_idx": 17
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left| \\begin{array}{cccccc}0 & 0 & \\dots & 0 & a_{1n} \\\\ 0 & 0 & \\dots & a_{2,n - 1} & a_{2n} \\\\ \\vdots & \\vdots & & \\vdots & \\vdots \\\\ 0 & a_{n - 1,2} & \\dots & a_{n - 1,n - 1} & a_{n - 1,n} \\\\ a_{n1} & a_{n2} & \\dots & a_{n,n - 1} & a_{m} \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "解 这种行列式不同于下三角行列式,其在次对角线上方的元素都为零.由行",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "列式的定义并仿照例1.9的讨论方法可知, $D$  的展开式的一般项为",
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(-1)^{\\tau (j_{1}j_{2}\\dots j_{n - 1}j_{n})}a_{1j_{1}}a_{2j_{2}}\\dots a_{n - 1,j_{n - 1}}a_{n j_{n}}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "除了",
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(-1)^{\\tau (n(n - 1)\\dots 21)}a_{1n}a_{2,n - 1}\\dots a_{n - 1,2}a_{n1} = (-1)^{\\frac{n(n - 1)}{2}}a_{1n}a_{2,n - 1}\\dots a_{n - 1,2}a_{n1}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "外,其余的各项都为零,所以",
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = (-1)^{\\frac{n(n - 1)}{2}}a_{1n}a_{2,n - 1}\\dots a_{n - 1,2}a_{n1}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "例如",
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left| \\begin{array}{cccc}0 & 0 & 0 & 1 \\\\ 0 & 0 & 3 & 9 \\\\ 0 & 5 & 2 & 0 \\\\ 7 & -2 & 0 & 1 \\end{array} \\right| = (-1)^{\\frac{4\\times 3}{2}}\\times 1\\times 3\\times 5\\times 7 = 105.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "同理可得",
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l}&{\\left|\\begin{array}{l l l l l}{a_{11}}&{a_{12}}&{\\cdots}&{a_{1,n-1}}&{a_{1n}}\\\\ {a_{21}}&{a_{22}}&{\\cdots}&{a_{2,n-1}}&{0}\\\\ {\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}\\\\ {a_{n-1,1}}&{a_{n-1,2}}&{\\cdots}&{0}&{0}\\\\ {a_{n1}}&{0}&{\\cdots}&{0}&{0}\\end{array}\\right|=(-1)^{\\frac{n(n-1)}{2}}a_{1n}a_{2,n-1}\\cdots a_{n-1,2}a_{n1}.}\\\\ &{\\left|\\begin{array}{l l l l l}{0}&{0}&{\\cdots}&{0}&{a_{1n}}\\\\ {0}&{0}&{\\cdots}&{a_{2,n-1}}&{0}\\\\ {\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}\\\\ {0}&{a_{n-1,2}}&{\\cdots}&{0}&{0}\\\\ {a_{n1}}&{0}&{\\cdots}&{0}&{0}\\end{array}\\right|=(-1)^{\\frac{n(n-1)}{2}}a_{1n}a_{2,n-1}\\cdots a_{n-1,2}a_{n1}.}\\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "由定理1.1我们还可以得到以下推论",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "推论1.2在  $n$  阶行列式的展开式中,其一般项可以表示为",
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(-1)^{\\tau (i_{1}i_{2}\\dots i_{n}) + \\tau (k_{1}k_{2}\\dots k_{n})}a_{i_{1}k_{1}}a_{i_{2}k_{2}}\\dots a_{i_{n}k_{n}},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "其中  $i_{1}i_{2}\\dots i_{n}$  与  $k_{1}k_{2}\\dots k_{n}$  是数  $1,2,\\dots ,n$  的某个排列",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "这是因为  $\\tau (123\\dots n) = 0,n$  阶行列式展开式中的一般项可以表示为",
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(-1)^{\\tau (j_{1}j_{2}j_{3}\\dots j_{n})}a_{1j_{1}}a_{2j_{2}}a_{3j_{3}}\\dots a_{n j_{n}} = (-1)^{\\tau (123\\dots n) + \\tau (j_{1}j_{2}j_{3}\\dots j_{n})}a_{1j_{1}}a_{2j_{2}}a_{3j_{3}}\\dots a_{n j_{n}}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "当我们交换其中元素  $a_{1j_{1}}$  与  $a_{2j_{2}}$  的位置时,由于交换排列中任意两个数的位置将改变排列的奇偶性,所以逆序  $\\tau (123\\dots n) + \\tau (j_{1}j_{2}j_{3}\\dots j_{5})$  与  $\\tau (213\\dots n) + \\tau (j_{2}j_{1}j_{3}\\dots j_{5})$  的奇偶性相同.所以",
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {\\quad (-1)^{\\tau (j_{1}j_{2}j_{3}\\dots j_{n})}a_{1j_{1}}a_{2j_{2}}a_{3j_{3}}\\dots a_{n j_{n}}}\\\\ & {= (-1)^{\\tau (123\\dots n) + \\tau (j_{1}j_{2}j_{3}\\dots j_{n})}a_{1j_{1}}a_{2j_{2}}a_{3j_{3}}\\dots a_{n j_{n}}}\\\\ & {= (-1)^{\\tau (213\\dots n) + \\tau (j_{2}j_{1}j_{3}\\dots j_{n})}a_{2j_{2}}a_{1j_{1}}a_{3j_{3}}\\dots a_{n j_{n}}.} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "类似地,当我们若干次交换一般项中元素的位置,使得它们的行下标为  $i_{1}i_{2}\\dots i_{n}$  时,其列下标是某个排列  $k_{1}k_{2}\\dots k_{n}$ ,此时就有",
+        "page_idx": 19
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(-1)^{\\tau (j_{1}j_{2}j_{3}\\dots j_{n})}a_{i_{1}j_{1}}a_{2j_{2}}a_{3j_{3}}\\dots a_{n j_{n}} = (-1)^{\\tau (i_{1}i_{2}\\dots i_{n}) + \\tau (k_{1}k_{2}\\dots k_{n})}a_{i_{1}k_{1}}a_{i_{2}k_{2}}\\dots a_{i_{n}k_{n}}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "利用推论1.2,我们可以得到  $n$  阶行列式展开式的其他表示形式",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "推论1.3 行列式  $D = \\mid a_{ij}\\mid_{n}$  的展开式中,如果每项的行下标都取为排列  $i_{1}i_{2}\\dots i_{n}$ ,则",
+        "page_idx": 19
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\mid a_{ij}\\mid_{n} = (-1)^{\\tau (i_{1}i_{2}\\dots i_{n})}\\sum_{(k_{1}k_{2}\\dots k_{n})}(-1)^{\\tau (k_{1}k_{2}\\dots k_{n})}a_{i_{1}k_{1}}a_{i_{2}k_{2}}\\dots a_{i_{n}k_{n}}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "证 由推论1.2知,在  $D = \\mid a_{ij}\\mid_{n}$  的展开式中,一般项可表示为",
+        "page_idx": 19
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(-1)^{\\tau (i_{1}i_{2}\\dots i_{n}) + \\tau (k_{1}k_{2}\\dots k_{n})}a_{i_{1}k_{1}}a_{i_{2}k_{2}}\\dots a_{i_{n}k_{n}}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "因为展开式有  $n!$  项,其中各项的行下标都是  $i_{1}i_{2}\\dots i_{n}$ ,各项的列下标  $k_{1}k_{2}\\dots k_{n}$  是  $n!$  个不同的排列.又逆序  $\\tau (i_{1}i_{2}\\dots i_{n})$  是一个常数,因此",
+        "page_idx": 19
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{l}{{D=\\mid a_{i j}\\mid_{n}=\\sum_{(k_{1}k_{2}\\cdots k_{n})}(-1)^{\\tau(i_{1}i_{2}\\cdots i_{n})+\\tau(k_{1}k_{2}\\cdots k_{n})}a_{i_{1}k_{1}}a_{i_{2}k_{2}}\\cdots a_{i_{n}k_{n}}}}\\\\ {{=(-1)^{\\tau(i_{1}i_{2}\\cdots i_{n})}\\sum_{(k_{1}k_{2}\\cdots k_{n})}(-1)^{\\tau(k_{1}k_{2}\\cdots k_{n})}a_{i_{1}k_{1}}a_{i_{2}k_{2}}\\cdots a_{i_{n}k_{n}}.}}\\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "同理可得如下推论",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "推论1.4 行列式  $D = \\mid a_{ij}\\mid_{n}$  的展开式中,如果每项的列下标都取为排列  $k_{1}k_{2}\\dots k_{n}$ ,则",
+        "page_idx": 19
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\mid a_{ij}\\mid_{n} = (-1)^{\\tau (k_{1}k_{2}\\dots k_{n})}\\sum_{(i_{1}i_{2}\\dots i_{n})}(-1)^{\\tau (i_{1}i_{2}\\dots i_{n})}a_{i_{1}k_{1}}a_{i_{2}k_{2}}\\dots a_{i_{n}k_{n}}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "特别地,当  $D = \\mid a_{ij}\\mid_{n}$  的展开式中,每项的列下标都取为排列  $12\\dots n$  时,因为逆序  $\\tau (123\\dots n) = 0$ ,所以有以下推论.",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "推论1.5 行列式  $D = \\mid a_{ij}\\mid_{n}$  的展开式中,如果每项的列下标都取为排列  $12\\dots n$ ,则",
+        "page_idx": 19
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\mid a_{ij}\\mid_{n} = \\sum_{(i_{1}i_{2}\\dots i_{n})}(-1)^{\\tau (i_{1}i_{2}\\dots i_{n})}a_{i_{1}1}a_{i_{2}2}\\dots a_{i_{n}k_{n}}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "1.2 行列式的性质",
+        "text_level": 1,
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "由  $n$  阶行列式的定义可知,当  $n$  较大时,除了一些特殊的行列式(如三角形的行列式)以外,一般用定义求行列式值的计算量很大.本节介绍行列式的基本性质,它们不仅可以简化行列式的计算,而且在行列式理论的研究中也很重要.",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "定义1.5 设  $n$  阶行列式为  $D = \\mid a_{ij}\\mid_{n}$ ,称行列式  $\\mid a_{ij}\\mid_{n}$  为  $D$  的转置行列式.记作  $D^{\\mathrm{T}}$ ,即  $D^{\\mathrm{T}} = \\mid a_{ji}\\mid_{n}$",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "由定义可见, $D$  的转置行列式就是将  $D$  中的行与列互换所得的行列式.如",
+        "page_idx": 19
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\mid a_{i j}\\mid_{n} = \\left| \\begin{array}{c c c c}{a_{11}} & {a_{12}} & \\dots & {a_{1n}}\\\\ {a_{21}} & {a_{22}} & \\dots & {a_{2n}}\\\\ \\vdots & \\vdots & & \\vdots \\\\ {a_{n1}} & {a_{n2}} & \\dots & {a_{m}} \\end{array} \\right|,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "则",
+        "page_idx": 20
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD^{\\mathrm{T}} = \\mid a_{j i}\\mid_{n} = \\left| \\begin{array}{c c c c}{a_{11}} & {a_{21}} & \\dots & {a_{n1}}\\\\ {a_{12}} & {a_{22}} & \\dots & {a_{n2}}\\\\ \\vdots & \\vdots & & \\vdots \\\\ {a_{1n}} & {a_{2n}} & \\dots & {a_{m}} \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "性质1行列式中的行列互换,其值不变,即  $D^{\\mathrm{T}} = D$",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "证设行列式  $D^{\\mathrm{T}} = \\mid b_{i j}\\mid_{n}$  ,即  $b_{i j} = a_{j i}$  将  $D^{\\mathrm{T}}$  的列下标都取为排列  $12\\dots n$  展开,则由推论1.5得",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "$D^{\\mathrm{T}} = \\mid b_{i j}\\mid_{n} = \\sum_{(i_{1}i_{2}\\dots i_{n})}(- 1)^{\\tau (i_{1}i_{2}\\dots i_{n})}b_{i_{1}1}b_{i_{2}2}\\dots b_{i_{n}n} = \\sum_{(i_{1}i_{2}\\dots i_{n})}(- 1)^{\\tau (i_{1}i_{2}\\dots i_{n})}a_{1i_{1}}a_{2i_{2}}\\dots a_{n_{n}}$  而由定义1.4,知",
+        "page_idx": 20
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\mid a_{i j}\\mid_{n} = \\sum_{(i_{1}i_{2}\\dots i_{n})}(-1)^{\\tau (i_{1}i_{2}\\dots i_{n})}a_{1i_{1}}a_{2i_{2}}\\dots a_{m_{n}}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "所以有  $D^{\\mathrm{T}} = D$",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "性质1告诉我们,在  $n$  阶行列式中,行列式的行与列互换所得的结果是相同的,所以行列式关于行的性质同样适用于行列式的列.因此下面仅讨论行列式关于其行的性质.",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "性质2交换行列式  $D$  中任意两行对应元素的位置  $①$  (简称交换  $D$  的任意两行)得行列式  $D_{1}$  ,则  $D_{1} = - D.$  即若设  $i\\neq k$  ,且",
+        "page_idx": 20
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD=\\left|\\begin{array}{c c c c}{{a_{11}}}&{{a_{12}}}&{{\\cdots}}&{{a_{1n}}}\\\\ {{\\vdots}}&{{\\vdots}}&{{}}&{{\\vdots}}\\\\ {{a_{i1}}}&{{a_{i2}}}&{{\\cdots}}&{{a_{m}}}\\\\ {{\\vdots}}&{{\\vdots}}&{{}}&{{\\vdots}}\\\\ {{a_{i1}}}&{{a_{i2}}}&{{\\cdots}}&{{a_{n}}}\\\\ {{\\vdots}}&{{\\vdots}}&{{}}&{{\\vdots}}\\\\ {{a_{n1}}}&{{a_{n2}}}&{{\\cdots}}&{{a_{m}}}\\end{array}\\right|,\\qquad D_{1}=\\left|\\begin{array}{c c c c}{{a_{11}}}&{{a_{12}}}&{{\\cdots}}&{{a_{1n}}}\\\\ {{\\vdots}}&{{\\vdots}}&{{}}&{{\\vdots}}\\\\ {{a_{k1}}}&{{a_{k2}}}&{{\\cdots}}&{{a_{k n}}}\\\\ {{\\vdots}}&{{\\vdots}}&{{}}&{{\\vdots}}\\\\ {{a_{i1}}}&{{a_{i2}}}&{{\\cdots}}&{{a_{n}}}\\\\ {{\\vdots}}&{{\\vdots}}&{{}}&{{\\vdots}}\\\\ {{a_{n1}}}&{{a_{n2}}}&{{\\cdots}}&{{a_{m}}}\\end{array},\\right|\n$$\n",
+        "text_format": "latex",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "则有  $D_{1} = - D$",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "证不妨设  $i{<}k$  ,将  $D_{1}$  的展开式中,行下标都取为排列",
+        "page_idx": 20
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n12\\dots (i - 1)k(i + 1)\\dots (k - 1)i(k + 1)\\dots n,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "注意到  $D_{1}$  第  $i$  行的行下标是  $k$  ，而第  $k$  行的行下标是  $i$  .由推论1.3得",
+        "page_idx": 21
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{1} = (-1)^{\\tau (12\\dots k\\dots n)}\\sum_{(j_{1}j_{2}\\dots j_{i}\\dots j_{k}\\dots j_{n})}(-1)^{\\tau (j_{1}j_{2}\\dots j_{i}\\dots j_{k}\\dots j_{n})}a_{11j_{1}}a_{2j_{2}}\\dots a_{ij_{i}}\\dots a_{kj_{k}}\\dots a_{ni_{n}}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "因为排列",
+        "page_idx": 21
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n12\\dots (i - 1)k(i + 1)\\dots (k - 1)i(k + 1)\\dots n\n$$\n",
+        "text_format": "latex",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "与排列",
+        "page_idx": 21
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n12\\dots (i - 1)i(i + 1)\\dots (k - 1)k(k + 1)\\dots n\n$$\n",
+        "text_format": "latex",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "的奇偶性不同，  $(- 1)^{\\tau (12\\dots (i - 1)k(i + 1)\\dots (k - 1)i(k + 1)\\dots n)} = - 1.$  又",
+        "page_idx": 21
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\sum_{(j_{1}j_{2}\\dots j_{i}\\dots j_{k}\\dots j_{n})}(-1)^{\\tau (j_{1}j_{2}\\dots j_{i}\\dots j_{k}\\dots j_{n})}a_{1j_{1}}a_{2j_{2}}\\dots a_{ij_{i}}\\dots a_{kj_{k}}\\dots a_{ni_{n}} = |a_{ij}|_{n} = D.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "所以有  $D_{1} = - D$",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "特别地，当行列式  $D$  中有两行对应的元素相同（简称  $D$  中有两行相同）时，我们交换这两行的位置，得  $D = - D.$  所以有以下推论.",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "推论1.6 若行列式  $D$  中有两行相同，则  $D = 0$",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "性质3若行列式  $D = |a_{ij}|_{n}$  的某一行的所有元素都乘以因子  $k$  所得的行列式为  $D_{1}$  ，则  $D_{1} = kD.$  即若  $D$  的第  $i$  行元素  $(1\\leq i\\leq n)$  都乘以因子  $k$  得  $D_{1}$  ，则",
+        "page_idx": 21
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{1} = \\left| \\begin{array}{cccc}a_{11} & a_{12} & \\dots & a_{1n}\\\\ \\vdots & \\vdots & & \\vdots \\\\ ka_{n1} & ka_{i2} & \\dots & ka_{in}\\\\ \\vdots & \\vdots & & \\vdots \\\\ a_{n1} & a_{n2} & \\dots & a_{nn} \\end{array} \\right| = kD = k\\left| \\begin{array}{cccc}a_{11} & a_{12} & \\dots & a_{1n}\\\\ \\vdots & \\vdots & & \\vdots \\\\ a_{i1} & a_{i2} & \\dots & a_{in}\\\\ \\vdots & \\vdots & & \\vdots \\\\ a_{n1} & a_{n2} & \\dots & a_{nn} \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "证由定义1.4得，",
+        "page_idx": 21
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{l}{D_{1} = \\sum_{(j_{1}j_{2}\\dots j_{n})}(-1)^{\\tau (j_{1}j_{2}\\dots j_{n})}a_{1j_{1}}a_{2j_{2}}\\dots (ka_{ij_{i}})\\dots a_{nj_{n}}}\\\\ {= k\\sum_{(j_{1}j_{2}\\dots j_{n})}(-1)^{\\tau (j_{1}j_{2}\\dots j_{n})}a_{1j_{1}}a_{2j_{2}}\\dots a_{ij_{i}}\\dots a_{nj_{n}}}\\\\ {= kD.} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "由性质3易得以下推论",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "推论1.7 设  $D$  为  $n$  阶行列式，则有",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "（1）若  $D$  的某一行的所有元素为零（此行简称为零行），则  $D = 0$  \n（2）若  $D$  中有两行元素分别对应成比例（简称两行成比例），则  $D = 0$",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "性质4如果行列式某行的各元素都是两个元素的和，则这个行列式等于两个行列式之和，这两个行列式分别以这两个元素为所在行对应位置的元素，其他元素与  $D$  相同.即若行列式  $D$  的第  $i$  行元素  $(1\\leq i\\leq n)$  为  $a_{ij} + b_{ij}(1\\leq j\\leq n)$  ，则有",
+        "page_idx": 21
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l}&{D=\\left|\\begin{array}{c c c c}{a_{11}}&{a_{12}}&{\\cdots}&{a_{1n}}\\\\ {\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}\\\\ {a_{i1}+b_{i1}}&{a_{i2}+b_{i2}}&{\\cdots}&{a_{i n}+b_{i n}}\\\\ {\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}\\\\ {a_{n1}}&{a_{n2}}&{\\cdots}&{a_{n n}}\\end{array}\\right|}\\\\ &{\\quad=\\left|\\begin{array}{c c c c}{a_{11}}&{a_{12}}&{\\cdots}&{a_{1n}}\\\\ {\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}\\\\ {a_{i1}}&{a_{i2}}&{\\cdots}&{a_{n n}}\\\\ {\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}\\\\ {a_{n1}}&{a_{n2}}&{\\cdots}&{a_{n n}}\\end{array}\\right|+\\left|\\begin{array}{c c c c}{a_{11}}&{a_{12}}&{\\cdots}&{a_{1n}}\\\\ {\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}\\\\ {b_{i1}}&{b_{i2}}&{\\cdots}&{b_{n n}}\\\\ {\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}\\\\ {a_{n1}}&{a_{n2}}&{\\cdots}&{a_{n n}}\\end{array}\\right|.}\\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "请读者注意:一般的情况下,行列式  $\\left|a_{ij} + b_{ij}\\right|_{n} \\neq \\left|a_{ij}\\right|_{n} + \\left|b_{ij}\\right|_{n}$ . 例如",
+        "page_idx": 22
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {D = \\left|a_{i j} + b_{i j}\\right|_{2} = \\left|a_{11} + b_{11}\\quad a_{12} + b_{12}\\right|}\\\\ & {\\quad = \\left|a_{21} + b_{21}\\quad a_{22} + b_{22}\\right| + \\left|a_{11}\\quad b_{12}\\right|}\\\\ & {\\quad = \\left|a_{21} + b_{21}\\quad a_{22} + b_{22}\\right| + \\left|a_{21} + b_{21}\\quad a_{22} + b_{22}\\right|}\\\\ & {\\quad = \\left|a_{11}\\quad a_{12}\\right| + \\left|a_{11}\\quad a_{12}\\right| + \\left|b_{11}\\quad b_{12}\\right| + \\left|b_{11}\\quad b_{12}\\right|.}\\\\ & {\\quad = \\left|a_{21}\\quad a_{22}\\right| + \\left|b_{21}\\quad b_{22}\\right| + \\left|a_{21}\\quad a_{22}\\right| + \\left|b_{21}\\quad b_{22}\\right|.} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "性质5行列式  $D = \\left|a_{ij}\\right|_{n}$  某行的各元素乘以同一个因子后,分别加到  $D$  另一行对应元素上得行列式  $D_{1}$  ,则  $D_{1} = D.$  即若设  $D$  的第  $i$  行各元素同乘以因子  $c$  后,加到其第  $k$  行  $(1\\leqslant i,k\\leqslant n,i\\neq k)$  的对应元素上(简称第  $i$  行乘以  $c$  加到第  $k$  行),得",
+        "page_idx": 22
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{1}=\\left|\\begin{array}{c c c c c}{{a_{11}}}&{{a_{12}}}&{{\\cdots}}&{{a_{1n}}}\\\\ {{\\vdots}}&{{\\vdots}}&{{}}&{{\\vdots}}\\\\ {{a_{i1}}}&{{a_{i2}}}&{{\\cdots}}&{{a_{i n}}}\\\\ {{\\vdots}}&{{\\vdots}}&{{}}&{{\\vdots}}\\\\ {{a_{k1}+c a_{i1}}}&{{a_{k2}+c a_{i2}}}&{{\\cdots}}&{{a_{k n}+c a_{i n}}}\\\\ {{\\vdots}}&{{\\vdots}}&{{}}&{{\\vdots}}\\\\ {{a_{n1}}}&{{a_{n2}}}&{{\\cdots}}&{{a_{n n}}}\\end{array}\\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "则有  $D_{1} = D$",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "性质4可以由定义1.4得到,性质5可由性质4及推论1.6得到.它们的证明留给读者完成.",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "例1.11 计算四阶行列式",
+        "page_idx": 22
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left| \\begin{array}{cccc}0 & -1 & -1 & 2 \\\\ 1 & -1 & 0 & 2 \\\\ -1 & 2 & -1 & 0 \\\\ 2 & 1 & 1 & 0 \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "解 我们用行列式的性质先将  $D$  化为三角形行列式, 然后利用例 1.9 的结论计算. 为此, 先交换  $D$  的第一行和第二行, 得",
+        "page_idx": 23
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD\\frac{r_{1}\\leftrightarrow r_{2}\\mathbb{O}}{r_{4} + (-2)r_{1}\\leftrightarrow r_{4}} (-1)\\left| \\begin{array}{cccc}1 & -1 & 0 & 2 \\\\ 0 & -1 & -1 & 2 \\\\ -1 & 2 & -1 & 0 \\\\ 2 & 1 & 1 & 0 \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "然后将第一行乘以 1 , 加到第三行上, 再将第一行乘以 - 2 加到第四行上, 得",
+        "page_idx": 23
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD\\frac{r_{3} + 1r_{1}\\rightarrow r_{3}}{r_{4} + (-2)r_{1}\\rightarrow r_{4}} (-1)\\left| \\begin{array}{cccc}1 & -1 & 0 & 2 \\\\ 0 & -1 & -1 & 2 \\\\ 0 & 1 & -1 & 2 \\\\ 0 & 3 & 1 & -4 \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "类似地, 有",
+        "page_idx": 23
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD\\frac{r_{3} + 1r_{2}\\rightarrow r_{3}}{r_{4} + 3r_{2}\\rightarrow r_{4}} (-1)\\left| \\begin{array}{cccc}1 & -1 & 0 & 2 \\\\ 0 & -1 & -1 & 2 \\\\ 0 & 0 & -2 & 4 \\\\ 0 & 0 & -2 & 2 \\end{array} \\right|\n$$\n",
+        "text_format": "latex",
+        "page_idx": 23
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\frac{r_{4} + (-1)r_{3}\\rightarrow r_{4}}{r_{4} + (-1)r_{3}\\rightarrow r_{4}} (-1)\\left| \\begin{array}{cccc}1 & -1 & 0 & 2 \\\\ 0 & -1 & -1 & 2 \\\\ 0 & 0 & -2 & 4 \\\\ 0 & 0 & 0 & -2 \\end{array} \\right|\n$$\n",
+        "text_format": "latex",
+        "page_idx": 23
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n= (-1)\\times 1\\times (-1)\\times (-2)\\times (-2) = 4.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "利用行列式的性质, 将行列式化为上 (下) 三角行列式, 然后由例 1.9 的结论直接得到结果是计算行列式的一个常用方法, 常称这种方法为计算行列式的化三角法.",
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "定义 1.6 在  $n$  阶行列式  $D = |a_{ij}|_{n}$  中去掉元素  $a_{ij}$  所在的第  $i$  行和第  $j$  列后, 余下的  $(n - 1)^{2}$  个元素按原位置构成的  $n - 1$  阶行列式称为  $D$  中元素  $a_{ij}$  的余子式, 记作  $M_{ij}$ . 即",
+        "page_idx": 23
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nM_{ij} = \\left| \\begin{array}{c c c c c c c}{a_{11}} & \\dots & {a_{1,j - 1}} & {a_{1,j + 1}} & \\dots & {a_{1n}}\\\\ \\vdots & & \\vdots & & \\vdots & & \\vdots \\\\ {a_{i - 1,1}} & \\dots & {a_{i - 1,j - 1}} & {a_{i - 1,j + 1}} & \\dots & {a_{i - 1,n}}\\\\ {a_{i + 1,1}} & \\dots & {a_{i + 1,j - 1}} & {a_{i + 1,j + 1}} & \\dots & {a_{i + 1,n}}\\\\ \\vdots & & \\vdots & & \\vdots & & \\vdots \\\\ {a_{n1}} & \\dots & {a_{n,j - 1}} & {a_{n,j + 1}} & \\dots & {a_{m}} \\end{array} \\right|,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "其中  $i,j = 1,2,\\dots ,n.$  称  $n - 1$  阶行列式  $(- 1)^{i + j}M_{ij}$  为  $D$  中元素  $a_{ij}$  的代数余子式,记作  $A_{ij}$ . 即  $A_{ij} = (- 1)^{i + j}M_{ij}$ .",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "例1.12写出以下四阶行列式第二行元素的余子式和代数余子式",
+        "page_idx": 24
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left| \\begin{array}{cccc}0 & -1 & -1 & 2 \\\\ 1 & -1 & 0 & 2 \\\\ -1 & 2 & -1 & 0 \\\\ 2 & 1 & 1 & 0 \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "解  $D$  的第二行元素的余子式分别为",
+        "page_idx": 24
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {M_{21} = \\left| \\begin{array}{c c c}{-1} & {-1} & {2}\\\\ {2} & {-1} & 0\\\\ {1} & {1} & 0 \\end{array} \\right| = 6,\\qquad M_{22} = \\left| \\begin{array}{c c c}{0} & {-1} & {2}\\\\ {-1} & {-1} & 0\\\\ {2} & {1} & 0 \\end{array} \\right| = 2,}\\\\ & {M_{23} = \\left| \\begin{array}{c c c}{0} & {-1} & {2}\\\\ {-1} & {2} & 0\\\\ {2} & {1} & 0 \\end{array} \\right| = -10,\\quad M_{24} = \\left| \\begin{array}{c c c}{0} & {-1} & {-1}\\\\ {-1} & {2} & {-1}\\\\ {2} & {1} & 1 \\end{array} \\right| = 6.} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "第二行元素的代数余子式分别为",
+        "page_idx": 24
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA_{21} = (-1)^{2 + 1}M_{21} = -6, \\qquad A_{22} = (-1)^{2 + 2}M_{22} = 2,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 24
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA_{23} = (-1)^{2 + 3}M_{23} = 10, \\qquad A_{24} = (-1)^{2 + 4}M_{24} = 6.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "性质6  $n$  阶行列式  $D = \\left|a_{ij}\\right|_{n}$  等于  $D$  内任一行的各元素与其对应的代数余子式乘积的和. 即",
+        "page_idx": 24
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = a_{i1}A_{i1} + a_{i2}A_{i2} + \\dots +a_{in}A_{in} = \\sum_{k = 1}^{n}a_{ik}A_{ik} \\quad (1 \\leqslant i \\leqslant n). \\tag{1.9}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "常称(1.9)式为  $D$  按第  $i$  行的展开式",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "证 我们分三步来证明性质6.",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "(1)先证明",
+        "page_idx": 24
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left| \\begin{array}{cccccc}a_{11} & a_{12} & \\dots & a_{1,n - 1} & a_{1n} \\\\ a_{21} & a_{22} & \\dots & a_{2,n - 1} & a_{2n} \\\\ \\vdots & \\vdots & & \\vdots & \\vdots \\\\ a_{n - 1,1} & a_{n - 1,2} & \\dots & a_{n - 1,n - 1} & a_{n - 1,n} \\\\ 0 & 0 & \\dots & 0 & 1 \\end{array} \\right| = \\left| \\begin{array}{cccccc}a_{11} & a_{12} & \\dots & a_{1,n - 1} \\\\ a_{21} & a_{22} & \\dots & a_{2,n - 1} \\\\ \\vdots & \\vdots & & \\vdots \\\\ a_{n - 1,1} & a_{n - 1,2} & \\dots & a_{n - 1,n - 1} \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "由定义1.4知",
+        "page_idx": 25
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r}{\\mathcal{L}\\frac{\\mathrm{d}}{\\mathrm{d}t} = \\sum_{(j_{1}j_{2}\\dots j_{n})}(-1)^{\\tau (j_{1}j_{2}\\dots j_{n})}a_{1j_{1}}a_{2j_{2}}\\dots a_{n - 1,j_{n - 1}}a_{n j_{n}}.} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "因为当  $j_{n} \\neq n$  时,  $a_{n j_{n}} = 0$ , 当  $j_{n} = n$  时,  $a_{n j_{n}} = 1$ . 而逆序",
+        "page_idx": 25
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\tau (j_{1}j_{2}\\dots j_{n - 1}n) = \\tau (j_{1}j_{2}\\dots j_{n - 1}).\n$$\n",
+        "text_format": "latex",
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "所以",
+        "page_idx": 25
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {\\mathcal{L}\\frac{\\mathrm{d}}{\\mathrm{d}t} = \\sum_{(j_{1}j_{2}\\dots j_{n - 1}n)}(-1)^{\\tau (j_{1}j_{2}\\dots j_{n - 1}n)}a_{1j_{1}}a_{2j_{2}}\\dots a_{n - 1,j_{n - 1}}}\\\\ & {\\quad = \\sum_{(j_{1}j_{2}\\dots j_{n - 1})}(-1)^{\\tau (j_{1}j_{2}\\dots j_{n - 1})}a_{1j_{1}}a_{2j_{2}}\\dots a_{n - 1,j_{n - 1}}}\\\\ & {\\quad = \\mathcal{L}\\frac{\\mathrm{d}}{\\mathrm{d}t}.} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "（2）证明",
+        "page_idx": 25
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {\\left| \\begin{array}{c c c c c c c c}{a_{11}} & \\dots & {a_{1,j - 1}} & {a_{1,j}} & {a_{1,j + 1}} & \\dots & {a_{1n}}\\\\ \\vdots & \\vdots & \\vdots & \\vdots & \\vdots & \\vdots \\\\ {a_{i - 1,1}} & \\dots & {a_{i - 1,j - 1}} & {a_{i - 1,j}} & {a_{i,j + 1}} & \\dots & {a_{i n}}\\\\ 0 & \\dots & 0 & 1 & 0 & \\dots & 0\\\\ {a_{i + 1,1}} & \\dots & {a_{i + 1,j - 1}} & {a_{i + 1,j}} & {a_{i + 1,j + 1}} & \\dots & {a_{i + 1,n}}\\\\ \\vdots & \\vdots & \\vdots & \\vdots & \\vdots & \\vdots \\\\ {a_{n1}} & \\dots & {a_{n,j - 1}} & {a_{n j}} & {a_{n,j + 1}} & \\dots & {a_{n n}} \\end{array} \\right| = A_{i j},} \\end{array} \\tag{1.10}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "其中  $A_{ij}$  是行列式  $D = |a_{ij}|_{n}$  中元素  $a_{ij}$  的代数余子式",
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "将(1.10)式左端的第  $i$  行依次与其第  $i + 1, i + 2, \\dots , n - 1, n$  行交换（共交换  $n - i$  次），再将所得行列式的第  $j$  列依次与其第  $j + 1, j + 2, \\dots , n - 1, n$  列交换（共交换  $n - j$  次）. 然后据(1)的结果，并注意到  $(- 1)^{(n - i) + (n - j)} = (- 1)^{i + j}$ . 得",
+        "page_idx": 25
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l}&{\\left|\\begin{array}{c c c c c c c c c}{a_{11}}&{\\cdots}&{a_{1,j-1}}&{a_{1,j+1}}&{\\cdots}&{a_{1n}}&{a_{1j}}\\\\ {\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}\\\\ {a_{i-1,1}}&{\\cdots}&{a_{i-1,j-1}}&{a_{i-1,j+1}}&{\\cdots}&{a_{i n}}&{a_{i j}}\\\\ {a_{i+1,1}}&{\\cdots}&{a_{i+1,j-1}}&{a_{i+1,j+1}}&{\\cdots}&{a_{i+1,n}}&{a_{i+1,j}}\\\\ {\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}\\\\ {a_{i1}}&{\\cdots}&{a_{i,j-1}}&{a_{i,j+1}}&{\\cdots}&{a_{i n}}&{a_{i j}}\\\\ {0}&{\\cdots}&{0}&{0}&{\\cdots}&{0}&{1}\\end{array}\\right|}\\\\ &{=(-1)^{i+j}\\left|\\begin{array}{c c c c c c c c}{a_{11}}&{\\cdots}&{a_{1,j-1}}&{a_{1,j+1}}&{\\cdots}&{a_{1n}}\\\\ {\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}\\\\ {a_{i-1,1}}&{\\cdots}&{a_{i-1,j-1}}&{a_{i-1,j+1}}&{\\cdots}&{a_{i-1,n}}\\\\ {a_{i+1,1}}&{\\cdots}&{a_{i+1,j-1}}&{a_{i+1,j+1}}&{\\cdots}&{a_{i+1,n}}\\\\ {\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}\\\\ {a_{n1}}&{\\cdots}&{a_{n,j-1}}&{a_{n,j+1}}&{\\cdots}&{a_{n}}\\end{array}\\right|}\\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "(3)证明(1.9)式.为此先将  $D = \\left|a_{ij}\\right|_{n}$  记为",
+        "page_idx": 26
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left| \\begin{array}{c c c c c c}{a_{11}} & {a_{12}} & \\dots & {a_{1n}} & {}\\\\ \\vdots & \\vdots & {} & \\vdots & {}\\\\ {a_{i1} + 0 + \\dots +0} & {0 + a_{i2} + \\dots +0} & \\dots & {0 + \\dots +a_{m}}\\\\ \\vdots & \\vdots & {} & \\vdots & {}\\\\ {a_{n1}} & {a_{n2}} & \\dots & {a_{m}} & {} \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "由性质4,得",
+        "page_idx": 26
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left| \\begin{array}{c c c c c}{a_{11}} & {a_{12}} & \\dots & {a_{1n}}\\\\ \\vdots & \\vdots & {} & \\vdots \\\\ {a_{i1}} & 0 & \\dots & 0\\\\ \\vdots & \\vdots & {} & \\vdots \\\\ {a_{n1}} & {a_{n2}} & \\dots & {a_{m}} \\end{array} \\right| + \\left| \\begin{array}{c c c c c}{a_{11}} & {a_{12}} & \\dots & {a_{1n}}\\\\ \\vdots & \\vdots & {} & \\vdots \\\\ 0 & {a_{i2}} & \\dots & 0\\\\ \\vdots & \\vdots & {} & \\vdots \\\\ {a_{n1}} & {a_{n2}} & \\dots & {a_{m}} \\end{array} \\right| + \\dots +\\left| \\begin{array}{c c c c c}{a_{11}} & {a_{12}} & \\dots & {a_{1n}}\\\\ \\vdots & \\vdots & {} & \\vdots \\\\ 0 & 0 & \\dots & {a_{m}}\\\\ \\vdots & \\vdots & {} & \\vdots \\\\ {a_{n1}} & {a_{n2}} & \\dots & {a_{m}} \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "又由性质3知,上式等于",
+        "page_idx": 26
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\na_{i1}\\left| \\begin{array}{c c c c c}{a_{11}} & {a_{12}} & \\dots & {a_{1n}}\\\\ \\vdots & \\vdots & {} & \\vdots \\\\ 1 & 0 & \\dots & 0\\\\ \\vdots & \\vdots & {} & \\vdots \\\\ {a_{n1}} & {a_{n2}} & \\dots & {a_{m}} \\end{array} \\right| + a_{i2}\\left| \\begin{array}{c c c c c}{a_{11}} & {a_{12}} & \\dots & {a_{1n}}\\\\ \\vdots & \\vdots & {} & \\vdots \\\\ 0 & 1 & \\dots & 0\\\\ \\vdots & \\vdots & {} & \\vdots \\\\ {a_{n1}} & {a_{n2}} & \\dots & {a_{m}} \\end{array} \\right| + \\dots +a_{m}\\left| \\begin{array}{c c c c c}{a_{11}} & {a_{12}} & \\dots & {a_{1n}}\\\\ \\vdots & \\vdots & {} & \\vdots \\\\ 0 & 0 & \\dots & 1\\\\ \\vdots & \\vdots & {} & \\vdots \\\\ {a_{n1}} & {a_{n2}} & \\dots & {a_{m}} \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "然后利用(1.10)式,即可得",
+        "page_idx": 26
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = a_{i1}A_{i1} + a_{i2}A_{i2} + \\dots +a_{m}A_{m} = \\sum_{k = 1}^{n}a_{ik}A_{ik}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "例1.13 利用性质6,计算四阶行列式",
+        "page_idx": 26
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left| \\begin{array}{cccc}0 & -1 & -1 & 2 \\\\ 1 & -1 & 0 & 2 \\\\ -1 & 2 & -1 & 0 \\\\ 2 & 1 & 1 & 0 \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "解在例1.12中已得  $D$  第二行元素的代数余子式分别是",
+        "page_idx": 26
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA_{21} = -6, \\quad A_{22} = 2, \\quad A_{23} = 10, \\quad A_{24} = 6.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "因此,取  $i = 2$ ,由(1.9)式",
+        "page_idx": 26
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = a_{21}A_{21} + a_{22}A_{22} + a_{23}A_{23} + a_{24}A_{24}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 26
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n= 1\\times (-6) + (-1)\\times 2 + 0\\times 10 + 2\\times 6 = 4.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "性质6提供了一个用  $n - 1$  阶行列式来计算  $n$  阶行列式的方法.即先利用行列式的性质,使得行列式的某行(列)出现较多的零,然后对此行(列)用(1.9)式展开.常称这种方法为降阶法.",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "例1.14 试求方程  $f(x) = 0$  的根,其中",
+        "page_idx": 26
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf(x) = \\left| \\begin{array}{cccc}2 & 2 & -1 & 3 \\\\ 4 & x^{2} - 5 & -2 & 6 \\\\ -3 & 2 & -1 & x^{2} + 1 \\\\ 3 & -2 & 1 & -2 \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "解",
+        "page_idx": 27
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf(x) = \\frac{r_{2} + (-2)r_{1} \\rightarrow r_{2}}{r_{3} + 1r_{4} \\rightarrow r_{3}} \\left| \\begin{array}{cccc}2 & 2 & -1 & 3 \\\\ 0 & x^{2} - 9 & 0 & 0 \\\\ 0 & 0 & 0 & x^{2} - 1 \\\\ 3 & -2 & 1 & -2 \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "此时, $f(x)$  中的第二行和第三行有较多的零。对  $f(x)$  按第二行展开,得",
+        "page_idx": 27
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf(x) = (x^{2} - 9)(-1)^{2 + 2} \\left| \\begin{array}{ccc}2 & -1 & 3 \\\\ 0 & 0 & x^{2} - 1 \\\\ 3 & 1 & -2 \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "再对上式右面的三阶行列式按第二行展开,得",
+        "page_idx": 27
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{c}f(x) = (x^{2} - 9)(x^{2} - 1)(-1)^{2 + 3} \\left| \\begin{array}{cc}2 & -1 \\\\ 3 & 1 \\end{array} \\right| \\\\ = -5(x^{2} - 9)(x^{2} - 1). \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "因此,方程  $f(x) = 0$  的根为  $1, - 1, 3, - 3$",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "例1.15 计算行列式  $D = \\left| \\begin{array}{ccc}1 + x_{1}^{2} & x_{1}x_{2} & x_{1}x_{3} \\\\ x_{2}x_{1} & 1 + x_{2}^{2} & x_{2}x_{3} \\\\ x_{3}x_{1} & x_{3}x_{2} & 1 + x_{3}^{2} \\end{array} \\right|$ .",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "解 我们直接给出计算过程,请读者自行判断计算过程中用了哪些性质",
+        "page_idx": 27
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left| \\begin{array}{ccc}1 & x_{1}x_{2} & x_{1}x_{3} \\\\ 0 & 1 + x_{2}^{2} & x_{2}x_{3} \\\\ 0 & x_{3}x_{2} & 1 + x_{3}^{2} \\end{array} \\right| + \\left| \\begin{array}{ccc}x_{1}^{2} & x_{1}x_{2} & x_{1}x_{3} \\\\ x_{2}x_{1} & 1 + x_{2}^{2} & x_{2}x_{3} \\\\ x_{3}x_{1} & x_{3}x_{2} & 1 + x_{3}^{2} \\end{array} \\right|\n$$\n",
+        "text_format": "latex",
+        "page_idx": 27
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n= \\left| \\begin{array}{ccc}1 + x_{2}^{2} & x_{2}x_{3} \\\\ x_{3}x_{2} & 1 + x_{3}^{2} \\end{array} \\right| + x_{1}^{2} \\left| \\begin{array}{ccc}1 & x_{2} & x_{3} \\\\ x_{2} & 1 + x_{2}^{2} & x_{2}x_{3} \\\\ x_{3} & x_{3}x_{2} & 1 + x_{3}^{2} \\end{array} \\right|\n$$\n",
+        "text_format": "latex",
+        "page_idx": 27
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n= \\left| \\begin{array}{ccc}1 & x_{2}x_{3} \\\\ 0 & 1 + x_{3}^{2} \\end{array} \\right| + \\left| \\begin{array}{ccc}x_{2}^{2} & x_{2}x_{3} \\\\ x_{3}x_{2} & 1 + x_{3}^{2} \\end{array} \\right| + x_{1}^{2} \\left| \\begin{array}{ccc}1 & x_{2} & x_{3} \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{array} \\right|\n$$\n",
+        "text_format": "latex",
+        "page_idx": 27
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n= (1 + x_{3}^{2}) + x_{2}^{2} \\left| \\begin{array}{cc}1 & x_{3} \\\\ x_{3} & 1 + x_{3}^{2} \\end{array} \\right| + x_{1}^{2}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "例1.16 已知四阶行列式",
+        "page_idx": 28
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left| \\begin{array}{cccc}0 & -1 & -1 & 2 \\\\ 1 & -1 & 0 & 2 \\\\ -1 & 2 & -1 & 0 \\\\ 2 & 1 & 1 & 0 \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "试求  $- A_{42} - A_{43} + 2A_{44}$",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "解 由(1.9)式知",
+        "page_idx": 28
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n-A_{42} - A_{43} + 2A_{44} = 0A_{41} - A_{42} - A_{43} + 2A_{44}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "是以元素  $0, - 1, - 1,2$  替换了  $D$  的第四行元素,所以",
+        "page_idx": 28
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n-A_{42} - A_{43} + 2A_{44} = \\left| \\begin{array}{cccc}0 & -1 & -1 & 2 \\\\ 1 & -1 & 0 & 2 \\\\ -1 & 2 & -1 & 0 \\\\ 0 & -1 & -1 & 2 \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "上式中右端的行列式为零,所以",
+        "page_idx": 28
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n-A_{42} - A_{43} + 2A_{44} = 0. \\tag{□}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "事实上,如果将  $D = \\mid a_{ij}\\mid_{n}$  中第  $i$  行的元素对应换为元素  $k_{1},k_{2},\\dots ,k_{n}$ ,则由(1.9)式得",
+        "page_idx": 28
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nk_{1}A_{i1} + k_{2}A_{i2} + \\dots +k_{n}A_{in} = \\left| \\begin{array}{cccc}a_{11} & a_{12} & \\dots & a_{1n} \\\\ \\vdots & \\vdots & & \\vdots \\\\ k_{1} & k_{2} & \\dots & k_{n} \\\\ \\vdots & \\vdots & & \\vdots \\\\ a_{n1} & a_{n2} & \\dots & a_{nn} \\end{array} \\right| \\leftarrow (\\text{第} i\\text{行}).\n$$\n",
+        "text_format": "latex",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "特别地,当取  $k_{1},k_{2},\\dots ,k_{n}$  为  $D$  的第  $j$  行  $(j\\neq i)$  的元素  $a_{j1},a_{j2},\\dots ,a_{jn}$  时,有",
+        "page_idx": 28
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\na_{j1}A_{i1} + a_{j2}A_{i2} + \\dots +a_{jn}A_{in} = \\left| \\begin{array}{cccc}a_{11} & a_{12} & \\dots & a_{1n} \\\\ \\vdots & \\vdots & & \\vdots \\\\ a_{j1} & a_{j2} & \\dots & a_{jn} \\\\ \\vdots & \\vdots & & \\vdots \\\\ a_{j1} & a_{j2} & \\dots & a_{jn} \\\\ \\vdots & \\vdots & & \\vdots \\\\ a_{n1} & a_{n2} & \\dots & a_{nn} \\end{array} \\right| \\leftarrow (\\text{第} i\\text{行}).\n$$\n",
+        "text_format": "latex",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "所以,当  $i\\neq j$  时有",
+        "page_idx": 28
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\na_{j1}A_{i1} + a_{j2}A_{i2} + \\dots +a_{jn}A_{in} = 0.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "因此得以下推论",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "推论1.8 设行列式  $D = \\mid a_{ij}\\mid_{n}$ ,则",
+        "page_idx": 28
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\na_{j1}A_{i1} + a_{j2}A_{i2} + \\dots +a_{jn}A_{in} = \\left\\{ \\begin{array}{ll}D, & i = j, \\\\ 0, & i \\neq j. \\end{array} \\right.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "1.3 行列式的计算",
+        "text_level": 1,
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "在上一节介绍行列式性质的过程中,我们给出了计算行列式的两个常用方法,即化三角法和降阶法。下面介绍一些特殊  $n$  阶行列式的计算方法。",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "例1.17 计算  $n$  阶行列式",
+        "page_idx": 29
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left| \\begin{array}{cccc}x + a_{1} & a_{2} & \\dots & a_{n} \\\\ a_{1} & x + a_{2} & \\dots & a_{n} \\\\ \\vdots & \\vdots & & \\vdots \\\\ a_{1} & a_{2} & \\dots & x + a_{n} \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "解注意到  $D$  是每行元素之和都为  $x + \\sum_{i = 1}^{n} a_{i}$  的行列式(称为行和相等的行列式),所以",
+        "page_idx": 29
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD\\frac{\\left|x+\\sum_{i=1}^{n}a_{i}\\quad a_{2}\\quad\\cdots\\quad a_{n}\\right|}{\\left|x+\\sum_{i=1}^{n}a_{i}\\quad x+a_{2}\\quad\\cdots\\quad a_{n}\\right|}\\\\ \\frac{c_{1}+c_{2}\\rightarrow c_{1}}{c_{1}+c_{3}\\rightarrow c_{1}}\\left|\\begin{array}{c c c c}{\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}\\\\ {\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}\\\\ {c_{1}+c_{n}\\rightarrow c_{1}}&{a_{2}}&{\\cdots}&{x+a_{n}}\\end{array}\\right|\n$$\n",
+        "text_format": "latex",
+        "page_idx": 29
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {\\frac{\\mathrm{~\\#~}\\mathbb{E}\\mathbb{E}\\mathbb{E}\\mathbb{E}\\mathbb{E}\\mathbb{E}\\mathbb{E}\\mathbb{E}\\mathbb{E}\\mathbb{E}\\mathbb{E}\\mathbb{E}\\mathbb{E}\\mathbb{E}\\mathbb{E}\\mathbb{E}\\mathbb{E}\\mathbb{E}\\mathbb{E}\\mathbb{E}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{c}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{a}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{b}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{d}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{z}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{t}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{u}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{v}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{w}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{p}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{m}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{em}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{ex}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{ee}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{es}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{se}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{te}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{et}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{}}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\\mathbb{e}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "例1.18 计算  $n + 1$  阶行列式",
+        "page_idx": 29
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left| \\begin{array}{ccccc}c_{0} & a_{1} & a_{2} & \\dots & a_{n} \\\\ b_{1} & c_{1} & 0 & \\dots & 0 \\\\ b_{2} & 0 & c_{2} & \\dots & 0 \\\\ \\vdots & \\vdots & \\vdots & & \\vdots \\\\ b_{n} & 0 & 0 & \\dots & c_{n} \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "解 行列式  $D$  中除了第一行和第一列以及主对角线的元素以外, 其余元素都为零, 常称其为箭形行列式.",
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "先假设  $D$  的主对角线元素  $c_{i} \\neq 0 (i = 1,2, \\dots , n)$ . 把  $D$  的第  $k$  列元素乘以  $\\left(- \\frac{b_{k - 1}}{c_{k - 1}}\\right)$ , 依次加到第一列  $(k = 2,3, \\dots , n + 1)$ , 就把  $D$  化为上三角行列式了. 因此",
+        "page_idx": 30
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD=\\left|{\\begin{array}{c c c c c c}{c_{0}-\\sum_{k=1}^{n}{\\frac{a_{k}b_{k}}{c_{k}}}}&{a_{1}}&{a_{2}}&{\\cdots}&{a_{n}}\\\\ {0}&{c_{1}}&{0}&{\\cdots}&{0}\\\\ {0}&{0}&{c_{2}}&{\\cdots}&{0}\\\\ {\\vdots}&{\\vdots}&{\\vdots}&{}&{\\vdots}\\\\ {0}&{0}&{0}&{\\cdots}&{c_{n}}\\end{array}}\\right|=\\left(c_{0}-\\sum_{k=1}^{n}{\\frac{a_{k}b_{k}}{c_{k}}}\\right)c_{1}c_{2}\\cdots c_{n}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "若  $D$  的主对角线元素中有某个  $c_{i} = 0 (i = 1,2, \\dots , n)$ , 不妨设  $c_{1} = 0$ , 则将  $D$  按第二列展开, 可得",
+        "page_idx": 30
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD=\\left|{\\begin{array}{c c c c c}{c_{0}}&{a_{1}}&{a_{2}}&{\\cdots}&{a_{n}}\\\\ {b_{1}}&{0}&{0}&{\\cdots}&{0}\\\\ {b_{2}}&{0}&{c_{2}}&{\\cdots}&{0}\\\\ {\\vdots}&{\\vdots}&{\\vdots}&&{\\vdots}\\\\ {b_{n}}&{0}&{0}&{\\cdots}&{c_{n}}\\end{array}}\\right|=-a_{1}\\left|{\\begin{array}{c c c c c}{b_{1}}&{0}&{0}&{\\cdots}&{0}\\\\ {b_{2}}&{c_{2}}&{0}&{\\cdots}&{0}\\\\ {b_{3}}&{0}&{c_{3}}&{\\cdots}&{0}\\\\ {\\vdots}&{\\vdots}&{\\vdots}&&{\\vdots}\\\\ {b_{n}}&{0}&{0}&{\\cdots}&{c_{n}}\\end{array}}\\right|\n$$\n",
+        "text_format": "latex",
+        "page_idx": 30
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n= -a_{1} b_{1} c_{2} c_{3} \\dots c_{n}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "一般地, 当  $D$  中有某个  $c_{i} = 0 (i = 1,2, \\dots , n)$  时, 将  $D$  按第  $i + 1$  列展开, 可得",
+        "page_idx": 30
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = -a_{i} b_{i} c_{1} c_{2} \\dots c_{i - 1} c_{i + 1} \\dots c_{n}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "当  $D$  的元素  $c_{i} (i = 1,2, \\dots , n)$  中至少有两个零时, 则  $D$  中至少有两列的对应元素是成比例的, 因此  $D = 0$ .",
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "箭形行列式的计算结果常被用来计算一些特殊的行列式, 如以下的行列式.",
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "例1.19 计算  $n$  阶行列式",
+        "page_idx": 30
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD=\\left|{\\begin{array}{c c c c c}{x_{1}}&{a_{2}}&{a_{3}}&{\\cdots}&{a_{n}}\\\\ {a_{1}}&{x_{2}}&{a_{3}}&{\\cdots}&{a_{n}}\\\\ {a_{1}}&{a_{2}}&{x_{3}}&{\\cdots}&{a_{n}}\\\\ {\\vdots}&{\\vdots}&{\\vdots}&&{\\vdots}\\\\ {a_{1}}&{a_{2}}&{a_{3}}&{\\cdots}&{x_{n}}\\end{array}}\\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "解先设  $x_{k} \\neq a_{k} (k = 1,2, \\dots , n)$ . 构造  $n + 1$  阶行列式",
+        "page_idx": 31
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{1}=\\left|\\begin{array}{c c c c c c}{{1}}&{{0}}&{{0}}&{{0}}&{{\\cdots}}&{{0}}\\\\ {{1}}&{{x_{1}}}&{{a_{2}}}&{{a_{3}}}&{{\\cdots}}&{{a_{n}}}\\\\ {{1}}&{{a_{1}}}&{{x_{2}}}&{{a_{3}}}&{{\\cdots}}&{{a_{n}}}\\\\ {{1}}&{{a_{1}}}&{{a_{2}}}&{{x_{3}}}&{{\\cdots}}&{{a_{n}}}\\\\ {{\\vdots}}&{{\\vdots}}&{{\\vdots}}&{{\\vdots}}&{{}}&{{\\vdots}}\\\\ {{1}}&{{a_{1}}}&{{a_{2}}}&{{a_{3}}}&{{\\cdots}}&{{x_{n}}}\\end{array}\\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "由性质6可知",
+        "page_idx": 31
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = D_{1}\\frac{\\left| \\begin{array}{c c c c c c c}{1} & {-a_{1}} & {-a_{2}} & {-a_{3}} & \\dots & {-a_{n}}\\\\ {1} & {x_{1} - a_{1}} & 0 & 0 & \\dots & 0\\\\ {1} & 0 & {x_{2} - a_{2}} & 0 & \\dots & 0\\\\ {1} & 0 & 0 & {x_{3} - a_{3}} & \\dots & 0\\\\ {\\vdots} & \\vdots & \\vdots & \\vdots & & \\vdots \\\\ {c_{n + 1} + (-a_{n})c_{1} - a_{n}} & 1 & 0 & 0 & 0 & \\dots & {x_{n} - a_{n}} \\end{array} \\right|}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 31
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\frac{\\left|1 + \\sum_{k = 1}^{n}\\frac{a_{k}}{x_{k} - a_{k}}\\right|}{\\left| \\begin{array}{c c c c c c c}{0} & {x_{1} - a_{1}} & 0 & 0 & \\dots & 0\\\\ 0 & 0 & {x_{2} - a_{2}} & 0 & \\dots & 0\\\\ 0 & 0 & 0 & {x_{3} - a_{3}} & \\dots & 0\\\\ \\vdots & \\vdots & \\vdots & \\vdots & & \\vdots \\\\ 0 & 0 & 0 & 0 & \\dots & {x_{n} - a_{n}} \\end{array} \\right|}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 31
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n= \\left(1 + \\sum_{k = 1}^{n} \\frac{a_{k}}{x_{k} - a_{k}}\\right) \\left(x_{1} - a_{1}\\right) \\left(x_{2} - a_{2}\\right) \\dots \\left(x_{n} - a_{n}\\right),\n$$\n",
+        "text_format": "latex",
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "其中  $D_{1}$  称为  $D$  的加边行列式,这种方法称为加边法",
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "如果  $D$  中有某个  $x_{k} = a_{k}$ ,不妨设  $x_{1} = a_{1}$ ,则有",
+        "page_idx": 31
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD=\\left|\\begin{array}{c c c c c c}{{a_{1}}}&{{a_{2}}}&{{a_{3}}}&{{\\cdots}}&{{a_{n}}}\\\\ {{a_{1}}}&{{x_{2}}}&{{a_{3}}}&{{\\cdots}}&{{a_{n}}}\\\\ {{a_{1}}}&{{a_{2}}}&{{x_{3}}}&{{\\cdots}}&{{a_{n}}}\\\\ {{\\vdots}}&{{\\vdots}}&{{\\vdots}}&{{}}&{{\\vdots}}\\\\ {{a_{1}}}&{{a_{2}}}&{{a_{3}}}&{{\\cdots}}&{{x_{n}}}\\end{array}\\right|={a_{1}}\\left|\\begin{array}{c c c c c c}{{1}}&{{a_{2}}}&{{a_{3}}}&{{\\cdots}}&{{a_{n}}}\\\\ {{1}}&{{x_{2}}}&{{a_{3}}}&{{\\cdots}}&{{a_{n}}}\\\\ {{1}}&{{a_{2}}}&{{x_{3}}}&{{\\cdots}}&{{a_{n}}}\\\\ {{\\vdots}}&{{\\vdots}}&{{\\vdots}}&{{}}&{{\\vdots}}\\\\ {{1}}&{{a_{2}}}&{{a_{3}}}&{{\\cdots}}&{{x_{n}}}\\end{array}\\right|\n$$\n",
+        "text_format": "latex",
+        "page_idx": 31
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r}{= a_{1}\\left| \\begin{array}{c c c c c}{1} & 0 & 0 & \\dots & 0\\\\ 1 & {x_{2} - a_{2}} & 0 & \\dots & 0\\\\ 1 & 0 & {x_{3} - a_{3}} & \\dots & 0\\\\ \\vdots & \\vdots & \\vdots & & \\vdots \\\\ 1 & 0 & 0 & \\dots & {x_{n} - a_{n}} \\end{array} \\right|} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 32
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n= a_{1}(x_{2} - a_{2})(x_{3} - a_{3})\\dots (x_{n} - a_{n}).\n$$\n",
+        "text_format": "latex",
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "一般地,当有某个  $x_{k} = a_{k}$  时,可得",
+        "page_idx": 32
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = (x_{1} - a_{1})(x_{2} - a_{2})\\dots (x_{k - 1} - a_{k - 1})a_{k}(x_{k + 1} - a_{k + 1})\\dots (x_{n} - a_{n}).\n$$\n",
+        "text_format": "latex",
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "如果  $D$  中至少有两个  $x_{k} = a_{k}$  时,则  $D$  中至少有两列是成比例的,因此  $D = 0$",
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "例如由例1.19可得",
+        "page_idx": 32
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD=\\left|\\begin{array}{l l l l l}{0}&{2}&{3}&{\\cdots}&{n}\\\\ {1}&{0}&{3}&{\\cdots}&{n}\\\\ {1}&{2}&{0}&{\\cdots}&{n}\\\\ {\\vdots}&{\\vdots}&{\\vdots}&{}&{\\vdots}\\\\ {1}&{2}&{3}&{\\cdots}&{0}\\end{array}\\right|=\\Big(1+\\sum_{k=1}^{n}\\frac{k}{0-k}\\Big)(0-1)(0-2)\\cdots(0-n)\n$$\n",
+        "text_format": "latex",
+        "page_idx": 32
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n= (-1)^{n}(1 - n)n!.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "例1.20 证明  $n$  阶三对角行列式",
+        "page_idx": 32
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{n}=|\\begin{array}{c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c|_{\\begin{array}{c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c\\end{array}}|_{\\begin{array}{c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c\\end{array}}|_{\\left.\\begin{array}{c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c\n$$\n",
+        "text_format": "latex",
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "其中空白处的元素为零,满足递推关系式",
+        "page_idx": 32
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{n} = \\alpha_{n}D_{n - 1} - \\beta_{n - 1}\\gamma_{n - 1}D_{n - 2}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "证将  $D_{n}$  按第  $n$  列展开,因为元素  $\\alpha_{n}$  的余子式是与  $D_{n}$  同形的  $n - 1$  阶行列式,记作  $D_{n - 1}$ ,则",
+        "page_idx": 32
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{n} = \\alpha_{n}D_{n - 1} + \\beta_{n - 1}A_{n - 1,n},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "其中代数余子式  $A_{n - 1,n}$  为  $n - 1$  阶行列式",
+        "page_idx": 32
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA_{n - 1,n} = -\\left| \\begin{array}{l l l l l l}{\\alpha_{1}} & {\\beta_{1}} & & & & \\\\ {\\gamma_{1}} & {\\alpha_{2}} & {\\beta_{2}} & & & \\\\ & {\\gamma_{2}} & {\\alpha_{3}} & {\\beta_{3}} & & \\\\ & & \\ddots & \\ddots & \\ddots & \\\\ & & & {\\gamma_{n - 3}} & {\\alpha_{n - 2}} & {\\beta_{n - 2}}\\\\ & & & & & {\\gamma_{n - 1}} \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "将  $A_{n - 1,n}$  按第  $n - 1$  行展开,得  $A_{n - 1,n} = - \\gamma_{n - 1}D_{n - 2}$ . 故",
+        "page_idx": 33
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{n} = \\alpha_{n}D_{n - 1} - \\beta_{n - 1}\\gamma_{n - 1}D_{n - 2}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "在行列式的计算中常使用上述三对角行列式的递推关系式",
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "例1.21 计算五阶三对角行列式",
+        "page_idx": 33
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{5} = \\left| \\begin{array}{lllll}5 & 3 & 0 & 0 & 0 \\\\ 2 & 5 & 3 & 0 & 0 \\\\ 0 & 2 & 5 & 3 & 0 \\\\ 0 & 0 & 2 & 5 & 3 \\\\ 0 & 0 & 0 & 2 & 5 \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "解因为  $D_{1} = 5,D_{2} = \\left| \\begin{array}{ll}5 & 3 \\\\ 2 & 5 \\end{array} \\right| = 19$ ,由例1.20知",
+        "page_idx": 33
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{3} = 5\\times D_{2} - 3\\times 2\\times D_{1} = 5\\times 19 - 3\\times 2\\times 5 = 65,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 33
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{4} = 5\\times D_{3} - 3\\times 2\\times D_{2} = 5\\times 65 - 3\\times 2\\times 19 = 211,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 33
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{5} = 5\\times D_{4} - 3\\times 2\\times D_{3} = 5\\times 211 - 3\\times 2\\times 65 = 665.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "例1.22 证明  $n$  阶  $(n\\geqslant 2)$  范德蒙德(Vandermonde)行列式",
+        "page_idx": 33
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{n} = \\left| \\begin{array}{c c c c}{1} & 1 & \\dots & 1\\\\ {x_{1}} & {x_{2}} & \\dots & {x_{n}}\\\\ {x_{1}^{2}} & {x_{2}^{2}} & \\dots & {x_{n}^{2}}\\\\ \\vdots & \\vdots & & \\vdots \\\\ {x_{1}^{n - 1}} & {x_{2}^{n - 1}} & \\dots & {x_{n}^{n - 1}} \\end{array} \\right| = \\prod_{1\\leqslant i< j\\leqslant n}(x_{j} - x_{i})\\mathbb{O}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "证对行列式的阶数  $n$  用数学归纳法",
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "当  $n = 2$  时,",
+        "page_idx": 33
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{2} = \\left| \\begin{array}{cc}1 & 1 \\\\ x_{1} & x_{2} \\end{array} \\right| = x_{2} - x_{1}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "结论成立.",
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "设结论对  $n - 1$  阶行列式成立,即",
+        "page_idx": 34
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{n - 1} = \\prod_{1 \\leqslant i < j \\leqslant n - 1} (x_{j} - x_{i}).\n$$\n",
+        "text_format": "latex",
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "则对于  $D_{n}$ ,按  $i = n, n - 1, \\dots , 3, 2$  的次序,将第  $i - 1$  行的元素乘以  $(- x_{n})$  后加到第  $i$  行的对应元素上,得",
+        "page_idx": 34
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l}&{D_{n}=\\left|\\begin{array}{c c c c}{1}&{\\cdots}&{1}&{1}\\\\ {x_{1}-x_{n}}&{\\cdots}&{x_{n-1}-x_{n}}&{0}\\\\ {x_{1}^{2}-x_{1}x_{n}}&{\\cdots}&{x_{n-1}^{2}-x_{n-1}x_{n}}&{0}\\\\ {\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}\\\\ {x_{1}^{n-1}-x_{1}^{n-2}x_{n}}&{\\cdots}&{x_{n-1}^{n-1}-x_{n-1}^{n-2}x_{n}}&{0}\\end{array}\\right|}\\\\ &{\\qquad=\\left|\\begin{array}{c c c c}{1}&{\\cdots}&{1}&{1}\\\\ {x_{1}-x_{n}}&{\\cdots}&{x_{n-1}-x_{n}}&{0}\\\\ {x_{1}(x_{1}-x_{n})}&{\\cdots}&{x_{n-1}(x_{n-1}-x_{n})}&{0}\\\\ {\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}\\\\ {x_{1}^{n-2}(x_{1}-x_{n})}&{\\cdots}&{x_{n-1}^{n-2}(x_{n-1}-x_{n})}&{0}\\end{array}\\right|.}\\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "在上述行列式中,按第  $n$  列展开,得",
+        "page_idx": 34
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{n} = (-1)^{1 + n} \\left| \\begin{array}{cccc} x_{1} - x_{n} & x_{2} - x_{n} & \\dots & x_{n - 1} - x_{n} \\\\ x_{1}(x_{1} - x_{n}) & x_{2}(x_{2} - x_{n}) & \\dots & x_{n - 1}(x_{n - 1} - x_{n}) \\\\ \\vdots & \\vdots & \\vdots & \\vdots \\\\ x_{1}^{n - 2}(x_{1} - x_{n}) & x_{2}^{n - 2}(x_{2} - x_{n}) & \\dots & x_{n - 1}^{n - 2}(x_{n - 1} - x_{n}) \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "在所得的  $n - 1$  阶行列式中,提出第  $j$  列的公因子  $(x_{j} - x_{n}) (j = 1, 2, \\dots , n - 1)$ ,得",
+        "page_idx": 34
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{c}{{D_{n}=(-1)^{n+1}(x_{1}-x_{n})(x_{2}-x_{n})^{\\cdots}(x_{n-1}-x_{n})D_{n-1}}}\\\\ {{{}}}\\\\ {{=(x_{n}-x_{1})(x_{n}-x_{2})^{\\cdots}(x_{n}-x_{n-1})D_{n-1}.}}\\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "由归纳法假设得",
+        "page_idx": 34
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{l}{{D_{n}=(x_{n}-x_{1})(x_{n}-x_{2})\\cdots(x_{n}-x_{n-1})\\prod_{1\\leqslant i< j\\leqslant n-1}(x_{j}-x_{i})}}\\\\ {{=\\prod_{1\\leqslant i< j\\leqslant n}(x_{j}-x_{i}).}}\\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "由例1.22的结论可知,范德蒙德行列式  $D_{n} = 0$  的充分必要条件是  $D_{n}$  中至少有两个  $x_{i}$  是相等的,即  $D_{n}$  中至少有两列元素是相同的.",
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "例1.23 试求方程  $f(x) = 0$  的根, 其中",
+        "page_idx": 35
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf(x) = \\left| \\begin{array}{cccc}1 & x & x^2 & x^3 \\\\ 1 & -1 & 1 & -1 \\\\ 1 & 2 & 4 & 8 \\\\ 1 & 3 & 9 & 27 \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "解易知  $f(x)$  是变量  $\\mathcal{X}$  的3次方程,因此  $f(x) = 0$  有3个根.又",
+        "page_idx": 35
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf(x) = \\left| \\begin{array}{cccc}1 & x & x^2 & x^3 \\\\ 1 & -1 & (-1)^2 & (-1)^3 \\\\ 1 & 2 & 2^2 & 2^3 \\\\ 1 & 3 & 3^2 & 3^3 \\end{array} \\right|,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "即  $f(x)$  是四阶范德蒙德行列式的转置.故  $f(x) = 0$  的充分必要条件是这个四阶行列式中至少有两行是相同的.所以  $f(x)$  的3个根分别为是",
+        "page_idx": 35
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nx_{1} = -1, \\quad x_{2} = 2, \\quad x_{3} = 3.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "范德蒙德行列式的结果也常被用来计算行列式",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "例1.24 计算  $n$  阶行列式  $(n \\geq 2)$",
+        "page_idx": 35
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left| \\begin{array}{cccccc}1 & 1 & \\dots & 1 & 1 \\\\ x_1 & x_2 & \\dots & x_{n - 1} & x_n \\\\ x_1^2 & x_2^2 & \\dots & x_{n - 1}^2 & x_n^2 \\\\ \\vdots & \\vdots & & \\vdots & \\vdots \\\\ x_1^{n - 2} & x_2^{n - 2} & \\dots & x_{n - 1}^{n - 2} & x_n^{n - 2} \\\\ x_1^n & x_2^n & \\dots & x_{n - 1}^n & x_n^n \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "解构造  $n + 1$  阶范德蒙德行列式",
+        "page_idx": 35
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf(y) = \\left| \\begin{array}{cccccc}1 & 1 & \\dots & 1 & 1 \\\\ x_1 & x_2 & \\dots & x_n & y \\\\ x_1^2 & x_2^2 & \\dots & x_n^2 & y^2 \\\\ \\vdots & \\vdots & & \\vdots & \\vdots \\\\ x_1^{n - 2} & x_2^{n - 2} & \\dots & x_n^{n - 2} & y^{n - 2} \\\\ x_1^{n - 1} & x_2^{n - 1} & \\dots & x_n^{n - 1} & y^{n - 1} \\\\ x_1^n & x_2^n & \\dots & x_n^n & y^n \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "由例1.22的结论知",
+        "page_idx": 35
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf(y) = (y - x_1)(y - x_2)\\dots (y - x_n)\\prod_{1\\leqslant i< j\\leqslant n}(x_j - x_i).\n$$\n",
+        "text_format": "latex",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "记  $K = \\prod_{1\\leqslant i< j\\leqslant n}(x_j - x_i)$ , 并把乘积  $(y - x_1)(y - x_2)\\dots (y - x_n)$  展开为  $y$  的多项式, 可得",
+        "page_idx": 35
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf(y) = K\\Big[y^{n} - \\big(\\sum_{i = 1}^{n}x_{i}\\big)y^{n - 1} + \\big(\\sum_{1\\leqslant i< j\\leqslant n}x_{i}x_{j}\\big)y^{n - 2} + \\dots +(-1)^{n}\\prod_{i = 1}^{n}x_{i}\\Big].\n$$\n",
+        "text_format": "latex",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "另外,如果对  $f(y)$  按第  $n + 1$  列展开,可得",
+        "page_idx": 36
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf(y) = A_{n + 1,n + 1}y^{n} + A_{n,n + 1}y^{n - 1} + A_{n - 1,n + 1}y^{n - 2} + \\dots +A_{1,n + 1},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "其中,  $A_{i,j}$  是  $f(y)$  中  $(i,j)$  元素的代数余子式.注意到  $A_{n,n + 1} = (- 1)^{n + (n + 1)}D = - D.$  比较  $f(y)$  的上面两个展开式中变量  $y^{n - 1}$  的系数得",
+        "page_idx": 36
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA_{n,n + 1} = -D = -\\big(\\sum_{i = 1}^{n}x_{i}\\big)K = -\\big(\\sum_{i = 1}^{n}x_{i}\\big)\\prod_{1\\leqslant i< j\\leqslant n}(x_{j} - x_{i}).\n$$\n",
+        "text_format": "latex",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "所以",
+        "page_idx": 36
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\big(\\sum_{i = 1}^{n}x_{i}\\big)\\prod_{1\\leqslant i< j\\leqslant n}(x_{j} - x_{i}) = (x_{1} + x_{2} + \\dots +x_{n})\\prod_{1\\leqslant i< j\\leqslant n}(x_{j} - x_{i}).\n$$\n",
+        "text_format": "latex",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "1.4 拉普拉斯定理",
+        "text_level": 1,
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "拉普拉斯(Laplace)定理也称为拉普拉斯展开式.它是把行列式中按某一行(列)展开的性质,推广到按行列式的某几行(列)展开.本节将介绍拉普拉斯定理,并用以导出行列式的乘积公式.",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "1.4.1 拉普拉斯定理",
+        "text_level": 1,
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "在介绍拉普拉斯定理之前,先介绍行列式的子式和代数余子式",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "定义1.7在  $n$  阶行列式  $D$  中,任取  $k$  行  $k$  列  $(0< k< n)$  ,位于这  $k^{2}$  个交叉点处的元素,按它们在  $D$  中的相对位置所构成的  $k$  阶行列式  $N^{(k)}$  称为  $D$  的一个  $k$  阶子式.在  $D$  中,去掉  $N^{(k)}$  所在的列与行,称由余下的元素按它们在  $D$  中的相对位置构成的  $n - k$  阶行列式  $M^{(n - k)}$  为  $D$  中  $k$  阶子式  $N^{(k)}$  的余子式.如果子式  $N^{(k)}$  位于  $D$  的第  $i_{1},i_{2},\\dots ,i_{k}$  行和第  $j_{1},j_{2},\\dots ,j_{k}$  列,则称",
+        "page_idx": 36
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(-1)^{(i_{1} + i_{2} + \\dots +i_{k}) + (j_{1} + j_{2} + \\dots +j_{k})}M^{(n - k)}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "为  $N^{(k)}$  的代数余子式,记作  $A^{(n - k)}$  ,即",
+        "page_idx": 36
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA^{(n - k)} = (-1)^{(i_{1} + i_{2} + \\dots +i_{k}) + (j_{1} + j_{2} + \\dots +j_{k})}M^{(n - k)}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "例如,在五阶行列式  $D = \\left|a_{ij}\\right|_{\\mathrm{F}}$  中,取第二,四行和第一,四列,则得  $D$  的一个二阶子式",
+        "page_idx": 36
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nN^{(2)} = \\left| \\begin{array}{ll}a_{21} & a_{24} \\\\ a_{41} & a_{44} \\end{array} \\right|,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "其余子式为",
+        "page_idx": 36
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nM^{(3)} = \\left| \\begin{array}{lll}a_{12} & a_{13} & a_{15} \\\\ a_{32} & a_{33} & a_{35} \\\\ a_{52} & a_{53} & a_{55} \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "$N^{(2)}$  的代数余子式为",
+        "page_idx": 37
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA^{(3)} = (-1)^{(2 + 4) + (1 + 4)}M^{(3)} = -\\left| \\begin{array}{lll}a_{12} & a_{13} & a_{15} \\\\ a_{32} & a_{33} & a_{35} \\\\ a_{52} & a_{53} & a_{55} \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "由定义1.7可知,  $n$  阶行列式  $D$  中共有  $(\\mathrm{C}_{n}^{k})^{2}$  个  $k$  阶子式.如果取定了  $D$  中的某  $k$  行,则位于这  $k$  行的  $k$  阶子式共有  $\\mathrm{C}_{n}^{k}$  个.",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "定理1.2(拉普拉斯定理)在  $n$  阶行列式  $D$  中取定了某  $k$  行  $(0< k< n)$ ,记位于这  $k$  行的  $k$  阶子式为  $N_{i}^{(k)}(i = 1,2,\\dots ,\\mathrm{C}_{n}^{k})$ ,它们的代数余子式分别为  $A_{i}^{(n - k)}$ ,则",
+        "page_idx": 37
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = N_{1}^{(k)}A_{1}^{(n - k)} + N_{2}^{(k)}A_{2}^{(n - k)} + \\dots +N_{t}^{(k)}A_{t}^{(n - k)} = \\sum_{i = 1}^{t}N_{i}^{(k)}A_{i}^{(n - k)}, \\tag{1.11}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "其中  $t = \\mathrm{C}_{n}^{k}$",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "限于篇幅,我们略去了定理1.2的证明",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "常称(1.11)式为行列式  $D$  的拉普拉斯展开式.由行列式的性质1知,在行列式  $D$  中取定某  $k$  列,记  $N_{i}^{(k)}$  和  $A_{i}^{(n - k)}(i = 1,2,\\dots ,\\mathrm{C}_{n}^{k})$  分别为位于这  $k$  列的余子式和对应的代数余子式时,(1.11)式仍成立.",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "易见,当  $k = 1$  时,拉普拉斯展开式就是行列式的性质6中  $D$  按某行的展开式.",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "例1.25 用拉普拉斯定理计算行列式",
+        "page_idx": 37
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left| \\begin{array}{lllll}1 & 2 & 0 & 0 & 1 \\\\ 0 & 1 & 2 & 3 & 0 \\\\ 1 & 3 & 0 & 0 & 0 \\\\ 0 & 2 & 2 & 1 & 0 \\\\ 0 & 3 & 4 & 1 & 3 \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "解因为  $D$  的第一,三行有较多的零元素,所以对  $D$  的第一,三行用拉普拉斯定理.在  $D$  第一,三行中,共有  $\\mathrm{C}_{5}^{2} = 10$  个二阶子式,易知其中的7个二阶子式为零,其余3个二阶子式为",
+        "page_idx": 37
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nN_{1}^{(2)} = \\left| \\begin{array}{ll}1 & 2 \\\\ 1 & 3 \\end{array} \\right| = 1, \\quad N_{2}^{(2)} = \\left| \\begin{array}{ll}1 & 1 \\\\ 1 & 0 \\end{array} \\right| = -1, \\quad N_{3}^{(2)} = \\left| \\begin{array}{ll}2 & 1 \\\\ 3 & 0 \\end{array} \\right| = -3.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "它们对应的代数余子式分别是",
+        "page_idx": 37
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {A_{1}^{(3)} = (-1)^{(1 + 3) + (1 + 2)}\\left| \\begin{array}{l l l}{2} & {3} & {0}\\\\ {2} & {1} & {0}\\\\ {4} & {1} & {3} \\end{array} \\right| = 12,}\\\\ & {A_{2}^{(3)} = (-1)^{(1 + 3) + (1 + 5)}\\left| \\begin{array}{l l l}{1} & {2} & {3}\\\\ {2} & {2} & {1}\\\\ {3} & {4} & {1} \\end{array} \\right| = 6,} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 37
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA_{3}^{(3)} = (-1)^{(1 + 3) + (2 + 5)}\\left| \\begin{array}{ccc}0 & 2 & 3 \\\\ 0 & 2 & 1 \\\\ 0 & 4 & 1 \\end{array} \\right| = 0,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "所以",
+        "page_idx": 38
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = N_{1}^{(2)}A_{1}^{(3)} + N_{2}^{(2)}A_{2}^{(3)} + N_{3}^{(2)}A_{3}^{(3)} = 1\\times 12 + (-1)\\times 6 + (-3)\\times 0 = 6.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "例1.26 利用拉普拉斯定理证明:",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "(1)若  $n + m$  阶行列式",
+        "page_idx": 38
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{1}=\\left|\\begin{array}{c c c c c c c c c c}{a_{11}}&{a_{21}}&{\\cdots}&{a_{1n}}&{0}&{0}&{\\cdots}&{0}\\\\ {a_{21}}&{a_{22}}&{\\cdots}&{a_{2n}}&{0}&{0}&{\\cdots}&{0}\\\\ {\\vdots}&{\\vdots}&&{\\vdots}&{\\vdots}&{\\vdots}&&{\\vdots}\\\\ {a_{n1}}&{a_{n2}}&{\\cdots}&{a_{n n}}&{0}&{0}&{\\cdots}&{0}\\\\ {c_{11}}&{c_{12}}&{\\cdots}&{c_{1n}}&{b_{11}}&{b_{12}}&{\\cdots}&{b_{1n}}\\\\ {c_{21}}&{c_{22}}&{\\cdots}&{c_{2n}}&{b_{21}}&{b_{22}}&{\\cdots}&{b_{2n}}\\\\ {\\vdots}&{\\vdots}&&{\\vdots}&{\\vdots}&&{\\vdots}&&{\\vdots}\\\\ {c_{m1}}&{c_{m2}}&{\\cdots}&{c_{m n}}&{b_{m1}}&{b_{m2}}&{\\cdots}&{b_{m n}}\\end{array}\\right|,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "则有",
+        "page_idx": 38
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{1}=\\left|\\begin{array}{c c c c c}{a_{11}}&{a_{12}}&{\\cdots}&{a_{1n}}\\\\ {a_{21}}&{a_{22}}&{\\cdots}&{a_{2n}}\\\\ {\\vdots}&&{\\vdots}\\\\ {a_{n1}}&{a_{n2}}&{\\cdots}&{a_{m}}\\end{array}\\right|\\cdot\\left|\\begin{array}{c c c c c}{b_{11}}&{b_{12}}&{\\cdots}&{b_{1n}}\\\\ {b_{21}}&{b_{22}}&{\\cdots}&{b_{2n}}\\\\ {\\vdots}&&{\\vdots}&&{\\vdots}\\\\ {b_{m1}}&{b_{m2}}&{\\cdots}&{b_{m n}}\\end{array}\\right|;\n$$\n",
+        "text_format": "latex",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "(2)若  $n + m$  阶行列式",
+        "page_idx": 38
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{2}=\\left|\\begin{array}{c c c c c c c c c}{0}&{0}&{\\cdots}&{0}&{a_{11}}&{a_{12}}&{\\cdots}&{a_{1n}}\\\\ {0}&{0}&{\\cdots}&{0}&{a_{21}}&{a_{22}}&{\\cdots}&{a_{2n}}\\\\ {\\vdots}&{\\vdots}&&{\\vdots}&{\\vdots}&{\\vdots}&&{\\vdots}\\\\ {0}&{0}&{\\cdots}&{0}&{a_{n1}}&{a_{n2}}&{\\cdots}&{a_{n n}}\\\\ {b_{11}}&{b_{12}}&{\\cdots}&{b_{1n}}&{c_{11}}&{c_{12}}&{\\cdots}&{c_{1n}}\\\\ {b_{21}}&{b_{22}}&{\\cdots}&{b_{2n}}&{c_{21}}&{c_{22}}&{\\cdots}&{c_{2n}}\\\\ {\\vdots}&{\\vdots}&&{\\vdots}&{\\vdots}&&{\\vdots}&&{\\vdots}\\\\ {b_{m1}}&{b_{m2}}&{\\cdots}&{b_{m n}}&{c_{m1}}&{c_{m2}}&{\\cdots}&{c_{m n}}\\end{array}\\right|,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "则有",
+        "page_idx": 38
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{2} = (-1)^{m} \\left| \\begin{array}{c c c c c}{a_{11}} & {a_{12}} & \\dots & {a_{1n}}\\\\ {a_{21}} & {a_{22}} & \\dots & {a_{2n}}\\\\ \\vdots & \\vdots & & \\vdots \\\\ {a_{n1}} & {a_{n2}} & \\dots & {a_{m}} \\end{array} \\right|\\cdot \\left| \\begin{array}{c c c c c}{b_{11}} & {b_{12}} & \\dots & {b_{1n}}\\\\ {b_{21}} & {b_{22}} & \\dots & {b_{2n}}\\\\ \\vdots & \\vdots & & \\vdots \\\\ {b_{m1}} & {b_{m2}} & \\dots & {b_{m n}} \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "证(1)在  $D_{1}$  中取前  $n$  行,位于这  $n$  行的  $n$  阶子式中除了",
+        "page_idx": 39
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nN_{1}^{(n)} = \\left| \\begin{array}{cccc}a_{11} & a_{12} & \\dots & a_{1n} \\\\ a_{21} & a_{22} & \\dots & a_{2n} \\\\ \\vdots & \\vdots & & \\vdots \\\\ a_{n1} & a_{n2} & \\dots & a_{nn} \\end{array} \\right|\n$$\n",
+        "text_format": "latex",
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "以外,其余的都为零.而  $N_{1}^{(n)}$  对应的代数余子式是",
+        "page_idx": 39
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA_{1}^{(m)} = (-1)^{k}\\left| \\begin{array}{cccc}b_{11} & b_{12} & \\dots & b_{1m} \\\\ b_{21} & b_{22} & \\dots & b_{2n} \\\\ \\vdots & \\vdots & & \\vdots \\\\ b_{m1} & b_{m2} & \\dots & b_{mn} \\end{array} \\right|,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "其中  $(- 1)^{k} = (- 1)^{(1 + 2 + \\dots +n) + (1 + 2 + \\dots +n)} = (- 1)^{2(1 + 2 + \\dots +n)} = 1.$  所以",
+        "page_idx": 39
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = N_{1}^{(n)}A_{1}^{(m)} = \\left| \\begin{array}{cccc}a_{11} & a_{12} & \\dots & a_{1n} \\\\ a_{21} & a_{22} & \\dots & a_{2n} \\\\ \\vdots & \\vdots & & \\vdots \\\\ a_{n1} & a_{n2} & \\dots & a_{nn} \\end{array} \\right| \\cdot \\left| \\begin{array}{cccc}b_{11} & b_{12} & \\dots & b_{1m} \\\\ b_{21} & b_{22} & \\dots & b_{2n} \\\\ \\vdots & \\vdots & & \\vdots \\\\ b_{m1} & b_{m2} & \\dots & b_{mn} \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "(2)在  $D_{2}$  中取前  $n$  行,位于这  $n$  行的  $n$  阶子式中除了",
+        "page_idx": 39
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nN_{1}^{(n)} = \\left| \\begin{array}{cccc}a_{11} & a_{12} & \\dots & a_{1n} \\\\ a_{21} & a_{22} & \\dots & a_{2n} \\\\ \\vdots & \\vdots & & \\vdots \\\\ a_{n1} & a_{n2} & \\dots & a_{nm} \\end{array} \\right|\n$$\n",
+        "text_format": "latex",
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "以外,其余的都为零.而  $N_{1}^{(n)}$  对应的代数余子式是",
+        "page_idx": 39
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA_{1}^{(m)} = (-1)^{k}\\left| \\begin{array}{cccc}b_{11} & b_{12} & \\dots & b_{1m} \\\\ b_{21} & b_{22} & \\dots & b_{2m} \\\\ \\vdots & \\vdots & & \\vdots \\\\ b_{m1} & b_{m2} & \\dots & b_{mn} \\end{array} \\right|,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "其中  $(- 1)^{k} = (- 1)^{(1 + 2 + \\dots +n) + ((m + 1) + (m + 2) + \\dots +(m + n))} = (- 1)^{2(1 + 2 + \\dots +n) + m} = (- 1)^{mn}.$  所以",
+        "page_idx": 39
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = N_{1}^{(n)}A_{1}^{(m)} = (-1)^{mn}\\left| \\begin{array}{cccc}a_{11} & a_{12} & \\dots & a_{1n} \\\\ a_{21} & a_{22} & \\dots & a_{2n} \\\\ \\vdots & \\vdots & & \\vdots \\\\ a_{n1} & a_{n2} & \\dots & a_{nn} \\end{array} \\right| \\cdot \\left| \\begin{matrix} b_{11} & b_{12} & \\dots & b_{1m} \\\\ b_{21} & b_{22} & \\dots & b_{2m} \\\\ \\vdots & \\vdots & & \\vdots \\\\ b_{m1} & b_{m2} & \\dots & b_{mn} \\end{matrix} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "例1.27 用拉普拉斯定理计算以下行列式:",
+        "page_idx": 39
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{1}=\\left|\\begin{array}{l l l l l}{1}&{2}&{0}&{0}&{0}\\\\ {0}&{1}&{0}&{0}&{0}\\\\ {1}&{3}&{1}&{0}&{2}\\\\ {0}&{2}&{2}&{1}&{0}\\\\ {5}&{3}&{1}&{1}&{3}\\end{array}\\right|,\\quad D_{2}=\\left|\\begin{array}{l l l l l}{0}&{0}&{0}&{2}&{-1}\\\\ {0}&{0}&{0}&{3}&{2}\\\\ {1}&{3}&{1}&{0}&{0}\\\\ {0}&{2}&{0}&{1}&{0}\\\\ {5}&{3}&{1}&{1}&{3}\\end{array}\\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "解由例1.26可得,在  $D_{1}$  中取第一,二行,则有",
+        "page_idx": 40
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{1}=\\left|\\begin{array}{l l l l l}{1}&{2}&{0}&{0}&{0}\\\\ {0}&{1}&{0}&{0}&{0}\\\\ {1}&{3}&{1}&{0}&{2}\\\\ {0}&{2}&{2}&{1}&{0}\\\\ {5}&{3}&{1}&{1}&{3}\\right|=\\left|\\begin{array}{l l l}{1}&{2}\\\\ {0}&{1}\\end{array}\\right|\\cdot\\left|\\begin{array}{l l l}{1}&{0}&{2}\\\\ {2}&{1}&{0}\\\\ {1}&{1}&{3}\\end{array}\\right|=5.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "同样,在  $D_{2}$  中取第一,二行,则有",
+        "page_idx": 40
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{2}=\\left|\\begin{array}{l l l l l}{0}&{0}&{0}&{2}&{-1}\\\\ {0}&{0}&{0}&{3}&{2}\\\\ {1}&{3}&{1}&{0}&{0}\\\\ {0}&{2}&{0}&{1}&{0}\\\\ {5}&{3}&{1}&{1}&{3}\\end{array}\\right|=(-1)^{2\\times3}\\left|\\begin{array}{l l}{2}&{-1}\\\\ {3}&{2}\\end{array}\\right|\\cdot\\left|\\begin{array}{l l l}{1}&{3}&{1}\\\\ {0}&{2}&{0}\\\\ {5}&{3}&{1}\\end{array}\\right|=-56.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "例1.28 设  $2n$  阶行列式",
+        "page_idx": 40
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{2n}=\\left|\\begin{array}{l l l l l}{a_{1}}&{}&{}&{}&{}&{b_{1}}\\\\ {}&{a_{2}}&{}&{}&{}&{b_{2}}\\\\ {}&{\\ddots}&{}&{}&{}&{\\ddots}\\\\ {}&{}&{a_{n-1}}&{}&{b_{n-1}}&{}\\\\ {}&{}&{}&{a_{n}}&{b_{n}}&{}\\\\ {}&{}&{}&{b_{n}}&{a_{n}}&{}\\\\ {}&{}&{}&{b_{n-1}}&{}&{a_{n-1}}&{}\\\\ {}&{}&{\\ddots}&{}&{}&{\\ddots}&{}\\\\ {}&{}&{}&{}&{}&{a_{2}}&{}\\\\ {b_{1}}&{}&{}&{}&{}&{a_{1}}&{}\\end{array}\\right|,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "试证明:",
+        "page_idx": 40
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{2n} = (a_{n}^{2} - b_{n}^{2})(a_{n - 1}^{2} - b_{n - 1}^{2})\\dots (a_{1}^{2} - b_{1}^{2}) = \\prod_{i = 1}^{n}(a_{i}^{2} - b_{i}^{2}).\n$$\n",
+        "text_format": "latex",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "证取  $D_{2n}$  的第  $n$  行和第  $n + 1$  行,位于这两行的二阶子式中除了子式",
+        "page_idx": 40
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nN_{1}^{(2)} = \\left| \\begin{array}{cc}a_{n} & b_{n} \\\\ b_{n} & a_{n} \\end{array} \\right| = a_{n}^{2} - b_{n}^{2}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "以外,其余的都为零.而  $N_{1}^{(2)}$  对应的代数余子式是",
+        "page_idx": 41
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA_{1}^{(2n - 2)} = (-1)^{2[n + (n + 1)]}| \\begin{array}{c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c} & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & \\\\ & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "$= D_{2n - 2}$",
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "所以",
+        "page_idx": 41
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{2n} = N_{1}^{(2)}A_{1}^{(2n - 2)} = (a_{n}^{2} - b_{n}^{2})D_{2n - 2}. \\tag{1.12}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "由递推式(1.12),即可得",
+        "page_idx": 41
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {D_{2n} = (a_{n}^{2} - b_{n}^{2})D_{2n - 2} = (a_{n}^{2} - b_{n}^{2})(a_{n - 1}^{2} - b_{n - 1}^{2})D_{2n - 4}}\\\\ & {\\qquad = \\dots \\dots \\dots \\dots}\\\\ & {\\qquad = (a_{n}^{2} - b_{n}^{2})(a_{n - 1}^{2} - b_{n - 1}^{2})\\dots (a_{2}^{2} - b_{2}^{2})D_{2}}\\\\ & {\\qquad = (a_{n}^{2} - b_{n}^{2})(a_{n - 1}^{2} - b_{n - 1}^{2})\\dots (a_{2}^{2} - b_{2}^{2})(a_{1}^{2} - b_{1}^{2}).} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "1.4.2 行列式的乘积公式",
+        "text_level": 1,
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "定理1.3设  $n$  阶行列式  $D_{1} = |a_{ij}|_{n}$  与  $D_{2} = |b_{ij}|_{n}$ ,则它们的乘积  $D_{1}D_{2}$  等于  $n$  阶行列式  $|c_{ij}|_{n}$ ,即",
+        "page_idx": 41
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{1}D_{2} = |c_{ij}|_{n}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "行列式  $|c_{ij}|_{n}$  中的元素  $c_{ij}$  是  $D_{1}$  的第  $i$  行元素与  $D_{2}$  的第  $j$  列对应元素乘积的和,即",
+        "page_idx": 41
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nc_{ij} = a_{i1}b_{1j} + a_{i2}b_{2j} + \\dots +a_{in}b_{nj} = \\sum_{k = 1}^{n}a_{ik}b_{kj},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "其中  $i,j = 1,2,\\dots ,n$",
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "证构造  $2n$  阶行列式",
+        "page_idx": 41
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD=\\left[\\begin{array}{c c c c c c c c c}{a_{11}}&{a_{12}}&{\\cdots}&{a_{1n}}&{0}&{0}&{\\cdots}&{0}\\\\ {a_{21}}&{a_{22}}&{\\cdots}&{a_{2n}}&{0}&{0}&{\\cdots}&{0}\\\\ {\\vdots}&{\\vdots}&&{\\vdots}&{\\vdots}&{\\vdots}&&{\\vdots}\\\\ {a_{n1}}&{a_{n2}}&{\\cdots}&{a_{m}}&{0}&{0}&{\\cdots}&{0}\\\\ {-1}&{0}&{\\cdots}&{0}&{b_{11}}&{b_{12}}&{\\cdots}&{b_{1n}}\\\\ {0}&{-1}&{\\cdots}&{0}&{b_{21}}&{b_{22}}&{\\cdots}&{b_{2n}}\\\\ {\\vdots}&{\\vdots}&&{\\vdots}&{\\vdots}&&{\\vdots}\\\\ {0}&{0}&{\\cdots}&{-1}&{b_{n1}}&{b_{n2}}&{\\cdots}&{b_{m}}\\end{array}\\right],\n$$\n",
+        "text_format": "latex",
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "由例1.26(1)知",
+        "page_idx": 42
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = D_{1}D_{2},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "其中",
+        "page_idx": 42
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{1} = \\left|a_{ij}\\right|_{n} = \\left| \\begin{array}{cccc}a_{11} & a_{12} & \\dots & a_{1n} \\\\ a_{21} & a_{22} & \\dots & a_{2n} \\\\ \\vdots & \\vdots & & \\vdots \\\\ a_{n1} & a_{n2} & \\dots & a_{nn} \\end{array} \\right|, \\quad D_{2} = \\left|b_{ij}\\right|_{n} = \\left| \\begin{array}{cccc}b_{11} & b_{12} & \\dots & b_{1n} \\\\ b_{21} & b_{22} & \\dots & b_{2n} \\\\ \\vdots & \\vdots & & \\vdots \\\\ b_{n1} & b_{n2} & \\dots & b_{nn} \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "另外,将  $D$  的第  $n + 1, n + 2, \\dots , 2n$  行分别乘以  $a_{i1}, a_{i2}, \\dots , a_{in}$  后,都加到  $D$  的第  $i$  行上  $(i = 1,2, \\dots , n)$ ,则有",
+        "page_idx": 42
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD=\\left|\\begin{array}{c c c c c c c c c}{0}&{0}&{\\cdots}&{0}&{c_{11}}&{c_{12}}&{\\cdots}&{c_{1n}}\\\\ {0}&{0}&{\\cdots}&{0}&{c_{21}}&{c_{22}}&{\\cdots}&{c_{2n}}\\\\ {\\vdots}&{\\vdots}&&{\\vdots}&{\\vdots}&{\\vdots}&&{\\vdots}\\\\ {0}&{0}&{\\cdots}&{0}&{c_{n1}}&{c_{n2}}&{\\cdots}&{c_{m}}\\\\ {-1}&{0}&{\\cdots}&{0}&{b_{11}}&{b_{12}}&{\\cdots}&{b_{1n}}\\\\ {0}&{-1}&{\\cdots}&{0}&{b_{21}}&{b_{22}}&{\\cdots}&{b_{2n}}\\\\ {\\vdots}&{\\vdots}&&{\\vdots}&{\\vdots}&&{\\vdots}\\\\ {c_{i j}=a_{i1}b_{i j}+a_{i2}b_{i j}+\\cdots+a_{i n}b_{i j}=\\sum_{k=1}^{n}a_{i k}b_{i j}\\quad(i,j=1,2,\\cdots,n).}\\end{array}\\right| \\tag{1.13}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "其中",
+        "page_idx": 42
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nc_{ij} = a_{i1}b_{ij} + a_{i2}b_{ij} + \\dots + a_{in}b_{in} = \\sum_{k = 1}^{n}a_{i k}b_{i k} \\quad (i,j = 1,2, \\dots , n).\n$$\n",
+        "text_format": "latex",
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "又由例1.26(2)得,(1.13)式为",
+        "page_idx": 42
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = (-1)^{n^{2}}\\left| \\begin{array}{cccc} - 1 & 0 & \\dots & 0 \\\\ 0 & -1 & \\dots & 0 \\\\ \\vdots & \\vdots & & \\vdots \\\\ 0 & 0 & \\dots & -1 \\end{array} \\right| \\cdot \\left| \\begin{array}{cccc}c_{11} & c_{12} & \\dots & c_{1n} \\\\ c_{21} & c_{22} & \\dots & c_{2n} \\\\ \\vdots & \\vdots & & \\vdots \\\\ c_{n1} & c_{n2} & \\dots & c_{nn} \\end{array} \\right|\n$$\n",
+        "text_format": "latex",
+        "page_idx": 42
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n= (-1)^{n^{2} + n}\\left| \\begin{array}{c c c c}{c_{11}} & {c_{12}} & \\dots & {c_{1n}}\\\\ {c_{21}} & {c_{22}} & \\dots & {c_{2n}}\\\\ \\vdots & \\vdots & & \\vdots \\\\ {c_{n1}} & {c_{n2}} & \\dots & {c_{m}} \\end{array} \\right| = \\left| \\begin{array}{c c c c}{c_{11}} & {c_{12}} & \\dots & {c_{1n}}\\\\ {c_{21}} & {c_{22}} & \\dots & {c_{2n}}\\\\ \\vdots & \\vdots & & \\vdots \\\\ {c_{n1}} & {c_{n2}} & \\dots & {c_{m}} \\end{array} -\\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "所以  $D_{1}D_{2} = |c_{ij}|_{n}$ .",
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "我们通常把定理1.3中行列式的乘积法则称为\"行乘列法则\".由行列式的性质1知,行列式的乘积也可以采用\"行乘行法则\",\"列乘行法则\"和\"列乘列法则\".",
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "例1.29 设行列式",
+        "page_idx": 43
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{1}=\\left|\\begin{array}{c c c}{{1}}&{{1}}&{{0}}\\\\ {{0}}&{{2}}&{{0}}\\\\ {{1}}&{{1}}&{{1}}\\end{array}\\right|,\\quad D_{2}=\\left|\\begin{array}{c c c}{{2}}&{{4}}&{{1}}\\\\ {{1}}&{{5}}&{{2}}\\\\ {{1}}&{{1}}&{{-1}}\\end{array}\\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "试用乘积法则计算  $D_{1}D_{2}$",
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "解 由定理1.3,得",
+        "page_idx": 43
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {D_{1}D_{2} = \\left| \\begin{array}{l l l}{1\\times 2 + 1\\times 1 + 0\\times 1} & {1\\times 4 + 1\\times 5 + 0\\times 1} & {1\\times 1 + 1\\times 2 + 0\\times (-1)}\\\\ {0\\times 2 + 2\\times 1 + 0\\times 1} & {0\\times 4 + 2\\times 5 + 0\\times 1} & {0\\times 1 + 2\\times 2 + 0\\times (-1)}\\\\ {1\\times 2 + 1\\times 1 + 1\\times 1} & {1\\times 4 + 1\\times 5 + 1\\times 1} & {1\\times 1 + 1\\times 2 + 1\\times (-1)} \\end{array} \\right|}\\\\ & {\\qquad = \\left| \\begin{array}{l l l}{3} & 9 & 3\\\\ {2} & {10} & 4\\\\ {4} & {10} & 2 \\end{array} \\right| = -12.} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "例1.30 设行列式",
+        "page_idx": 43
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left| \\begin{array}{cccc}a_{1} & a_{2} & a_{3} & a_{4} \\\\ -a_{2} & a_{1} & -a_{4} & a_{3} \\\\ -a_{3} & a_{4} & a_{1} & -a_{2} \\\\ -a_{4} & -a_{3} & a_{2} & a_{1} \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "试求  $D^{2}$",
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "解 由定理1.3及行列式的性质,得",
+        "page_idx": 43
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD^{2} = D D = D D^{\\mathrm{T}} = \\left| \\begin{array}{c c c c c}{a_{1}} & {a_{2}} & {a_{3}} & {a_{4}}\\\\ {-a_{2}} & {a_{1}} & {-a_{4}} & {a_{3}}\\\\ {-a_{3}} & {a_{4}} & {a_{1}} & {-a_{2}}\\\\ {-a_{4}} & {-a_{3}} & {a_{2}} & {a_{1}} \\end{array} \\right|\\left| \\begin{array}{c c c c c}{a_{1}} & {-a_{2}} & {-a_{3}} & {-a_{4}}\\\\ {a_{2}} & {a_{1}} & {a_{4}} & {-a_{3}}\\\\ {a_{3}} & {-a_{4}} & {a_{1}} & {a_{2}}\\\\ {a_{4}} & {a_{3}} & {-a_{2}} & {a_{1}} \\end{array} \\right|\n$$\n",
+        "text_format": "latex",
+        "page_idx": 43
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n= \\left| \\begin{array}{c c c c c}{\\sum_{i = 1}^{4}a_{i}^{2}} & 0 & 0 & 0\\\\ 0 & {\\sum_{i = 1}^{4}a_{i}^{2}} & 0 & 0\\\\ 0 & 0 & {\\sum_{i = 1}^{4}a_{i}^{2}} & 0\\\\ 0 & 0 & 0 & {\\sum_{i = 1}^{4}a_{i}^{2}} \\end{array} \\right|\n$$\n",
+        "text_format": "latex",
+        "page_idx": 44
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n= (\\sum_{i = 1}^{4}a_{i}^{2})^{4} = (a_{1}^{2} + a_{2}^{2} + a_{3}^{2} + a_{4}^{2})^{4}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "例1.31 证明等式",
+        "page_idx": 44
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left| \\begin{array}{l l l}{a_{1} + b_{1}x} & {a_{1}x + b_{1}} & {c_{1}}\\\\ {a_{2} + b_{2}x} & {a_{2}x + b_{2}} & {c_{2}}\\\\ {a_{3} + b_{3}x} & {a_{3}x + b_{3}} & {c_{3}} \\end{array} \\right| = (1 - x^{2})\\left| \\begin{array}{l l l}{a_{1}} & {b_{1}} & {c_{1}}\\\\ {a_{2}} & {b_{2}} & {c_{2}}\\\\ {a_{3}} & {b_{3}} & {c_{3}} \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "证 由定理1.3可得",
+        "page_idx": 44
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left| \\begin{array}{l l l}{a_{1} + b_{1}x} & {a_{1}x + b_{1}} & {c_{1}}\\\\ {a_{2} + b_{2}x} & {a_{2}x + b_{2}} & {c_{2}}\\\\ {a_{3} + b_{3}x} & {a_{3} x + b_{3}} & {c_{3}} \\end{array} \\right| = \\left| \\begin{array}{l l l}{a_{1}} & {b_{1}} & {c_{1}}\\\\ {a_{2}} & {b_{2}} & {c_{2}}\\\\ {a_{3}} & {b_{3}} & {c_{3}} \\end{array} \\right|\\left| \\begin{array}{l l l}{1} & {x} & 0\\\\ {x} & 1 & 0\\\\ {0} & 0 & 1 \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "因为",
+        "page_idx": 44
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left| \\begin{array}{ccc}1 & x & 0 \\\\ x & 1 & 0 \\\\ 0 & 0 & 1 \\end{array} \\right| = (1 - x^{2}),\n$$\n",
+        "text_format": "latex",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "所以",
+        "page_idx": 44
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left| \\begin{array}{ccc}a_{1} + b_{1}x & a_{1}x + b_{1} & c_{1} \\\\ a_{2} + b_{2}x & a_{2}x + b_{2} & c_{2} \\\\ a_{3} + b_{3}x & a_{3}x + b_{3} & c_{3} \\end{array} \\right| = (1 - x^{2})\\left| \\begin{array}{ccc}a_{1} & b_{1} & c_{1} \\\\ a_{2} & b_{2} & c_{2} \\\\ a_{3} & b_{3} & c_{3} \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "1.5 克拉默定理",
+        "text_level": 1,
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "克拉默(Cramer)定理又称为克拉默法则,是行列式在线性方程组求解理论中的重要应用.我们已经在例1.3中给出  $n = 2$  时克拉默定理的结论.可以证明,其一般结论如下.",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "定理1.4 若  $n$  元线性方程组",
+        "page_idx": 44
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left\\{ \\begin{array}{l}a_{11}x_{1} + a_{12}x_{2} + \\dots +a_{1n}x_{n} = b_{1}, \\\\ a_{21}x_{1} + a_{22}x_{2} + \\dots +a_{2n}x_{n} = b_{2}, \\\\ \\qquad \\dots \\dots \\dots \\dots \\dots \\\\ a_{n1}x_{1} + a_{n2}x_{2} + \\dots +a_{m}x_{n} = b_{n} \\end{array} \\right. \\tag{1.14}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "的系数行列式",
+        "page_idx": 45
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left|a_{ij}\\right|_{n} = \\left| \\begin{array}{cccc}a_{11} & a_{12} & \\dots & a_{1n} \\\\ a_{21} & a_{22} & \\dots & a_{2n} \\\\ \\vdots & \\vdots & & \\vdots \\\\ a_{n1} & a_{n2} & \\dots & a_{nn} \\end{array} \\right| \\neq 0,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "则方程组(1.14)有唯一解,且其解可表示为",
+        "page_idx": 45
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nx_{1} = \\frac{D_{1}}{D}, \\quad x_{2} = \\frac{D_{2}}{D}, \\quad \\dots , \\quad x_{n} = \\frac{D_{n}}{D}, \\tag{1.15}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "其中,  $D_{j}(j = 1,2,\\dots ,n)$  是把  $D$  的第  $j$  列换成方程组(1.14)右端的常数列所得的  $n$  阶行列式,即",
+        "page_idx": 45
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{j} = \\left| \\begin{array}{c c c c c c c}{a_{11}} & \\dots & {a_{1,j - 1}} & {b_{1}} & {a_{1,j + 1}} & \\dots & {a_{1n}}\\\\ {a_{21}} & \\dots & {a_{2,j - 1}} & {b_{2}} & {a_{2,j + 1}} & \\dots & {a_{2n}}\\\\ \\vdots & & \\vdots & \\vdots & \\vdots & & \\vdots \\\\ {a_{n1}} & \\dots & {a_{n,j - 1}} & {b_{n}} & {a_{n,j + 1}} & \\dots & {a_{m}} \\end{array} \\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "证我们先证明(1.15)式是线性方程组(1.14)的解.为此我们先将  $D_{j}$  按第  $j$  列展开,由于  $D_{j}$  中  $b_{i}(1 \\leqslant i \\leqslant n)$  的代数余子式就是  $D$  中元素  $a_{ij}$  的代数余子式  $A_{ij}$  因此",
+        "page_idx": 45
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{j} = b_{1}A_{1j} + b_{2}A_{2j} + \\dots +b_{n}A_{nj} = \\sum_{k = 1}^{n}b_{k}A_{kj}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "然后将  $x_{j} = \\frac{D_{j}}{D} (j = 1,2,\\dots ,n)$  代入(1.14)式的第  $i(i = 1,2,\\dots ,n)$  个方程",
+        "page_idx": 45
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\sum_{j = 1}^{n}a_{ij}x_{j} = b_{i} \\quad (1 \\leqslant i \\leqslant n)\n$$\n",
+        "text_format": "latex",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "的左端.由于  $\\sum_{k = 1}^{n}a_{ij}A_{kj} = \\left\\{ \\begin{array}{ll}0, & k \\neq i, \\\\ D, & k = i, \\end{array} \\right.$  故",
+        "page_idx": 45
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{l}{{\\sum_{j=1}^{n}a_{i j}\\frac{D_{j}}{D}=\\frac{1}{D}\\sum_{j=1}^{n}a_{i j}D_{j}=\\frac{1}{D}\\sum_{j=1}^{n}a_{i j}\\left(\\sum_{k=1}^{n}b_{k}A_{k j}\\right)}}\\\\ {{=\\frac{1}{D}\\sum_{k=1}^{n}b_{k}\\left(\\sum_{j=1}^{n}a_{i j}A_{k j}\\right)=\\frac{1}{D}b_{i}\\sum_{j=1}^{n}a_{i j}A_{i j}=\\frac{b_{i}}{D}D=b_{i}.}}\\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "因此(1.15)式是线性方程组(1.14)的解.",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "其次, 我们证明当方程组(1.14)有解时, 其解就是(1.15)式. 为此设方程组的解为",
+        "page_idx": 46
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nx_{1} = c_{1}, \\quad x_{2} = c_{2}, \\quad \\dots , \\quad x_{n} = c_{n}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "将其代入方程组, 并将  $D$  中元素  $a_{i1}$  的代数余子式  $A_{i1}$  分别乘以(1.14)式中第  $i$  个方程的两端  $(i = 1,2, \\dots , n)$ , 得",
+        "page_idx": 46
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left\\{ \\begin{array}{l}a_{11} A_{11} c_{1} + a_{12} A_{11} c_{2} + \\dots + a_{1n} A_{11} c_{n} = b_{1} A_{11}, \\\\ a_{21} A_{21} c_{1} + a_{22} A_{21} c_{2} + \\dots + a_{2n} A_{21} c_{n} = b_{2} A_{21}, \\\\ \\qquad \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\dots \\end{array} \\right. \\tag{1.16}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "将(1.16)式中的各方程相加, 得",
+        "page_idx": 46
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left(\\sum_{i = 1}^{n} a_{i1} A_{i1}\\right) c_{1} + \\left(\\sum_{i = 1}^{n} a_{i2} A_{i1}\\right) c_{2} + \\dots + \\left(\\sum_{i = 1}^{n} a_{m} A_{i1}\\right) c_{n} = \\sum_{i = 1}^{n} b_{i} A_{i1}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "由",
+        "page_idx": 46
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\sum_{i = 1}^{n} a_{ij} A_{i1} = a_{ij} A_{i1} + a_{ij} A_{i1} + \\dots + a_{ij} A_{i1} = \\left\\{ \\begin{array}{ll}D, & j = 1, \\\\ 0, & j \\neq 1, \\end{array} \\right.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "以及",
+        "page_idx": 46
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\sum_{i = 1}^{n} b_{i} A_{i1} = b_{1} A_{11} + b_{2} A_{21} + \\dots + b_{n} A_{n1} = D_{1},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "得  $D c_{1} = D_{1}$ . 因为  $D \\neq 0$ , 所以  $c_{1} = \\frac{D_{1}}{D}$ . 同理可得",
+        "page_idx": 46
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nc_{j} = \\frac{D_{j}}{D} \\quad (j = 2, 3, \\dots , n).\n$$\n",
+        "text_format": "latex",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "综上所述, 可得当  $D \\neq 0$  时, 线性方程组(1.14)有唯一解, 其解为(1.15)式. 例1.32 已知线性方程组",
+        "page_idx": 46
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left\\{ \\begin{array}{c} - x_{2} - x_{3} + 2 x_{4} = 1, \\\\ x_{1} - x_{2} + 2 x_{4} = 0, \\\\ -x_{1} + 2 x_{2} - x_{3} = 0, \\\\ 2 x_{1} + x_{2} + x_{3} = 0, \\end{array} \\right.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "试问此方程组是否有唯一解? 若有解, 求其解.",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "解 由例1.10知其系数行列式",
+        "page_idx": 46
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left| \\begin{array}{cccc}0 & -1 & -1 & 2 \\\\ 1 & -1 & 0 & 2 \\\\ -1 & 2 & -1 & 0 \\\\ 2 & 1 & 1 & 0 \\end{array} \\right| = 4 \\neq 0.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "所以该线性方程组有唯一解. 又",
+        "page_idx": 46
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{1}=\\left|\\begin{array}{c c c c}{{1}}&{{-1}}&{{-1}}&{{2}}\\\\ {{0}}&{{-1}}&{{0}}&{{2}}\\\\ {{0}}&{{2}}&{{-1}}&{{0}}\\\\ {{0}}&{{1}}&{{1}}&{{0}}\\end{array}\\right|=6,\\qquad D_{2}=\\left|\\begin{array}{c c c c}{{0}}&{{1}}&{{-1}}&{{2}}\\\\ {{1}}&{{0}}&{{0}}&{{2}}\\\\ {{-1}}&{{0}}&{{-1}}&{{0}}\\\\ {{2}}&{{0}}&{{1}}&{{0}}\\end{array}\\right|=-2,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 47
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{3}=\\left|\\begin{array}{c c c c}{{0}}&{{-1}}&{{1}}&{{2}}\\\\ {{1}}&{{-1}}&{{0}}&{{2}}\\\\ {{-1}}&{{2}}&{{0}}&{{0}}\\\\ {{2}}&{{1}}&{{0}}&{{0}}\\end{array}\\right|=-10,\\qquad D_{4}=\\left|\\begin{array}{c c c c}{{0}}&{{-1}}&{{-1}}&{{1}}\\\\ {{1}}&{{-1}}&{{0}}&{{0}}\\\\ {{-1}}&{{2}}&{{-1}}&{{0}}\\\\ {{2}}&{{1}}&{{1}}&{{0}}\\end{array}\\right|=-4.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "所以其解为",
+        "page_idx": 47
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nx_{1} = \\frac{D_{1}}{D} = \\frac{3}{2},\\quad x_{2} = \\frac{D_{2}}{D} = -\\frac{1}{2},\\quad x_{3} = \\frac{D_{3}}{D} = -\\frac{5}{2},\\quad x_{4} = \\frac{D_{4}}{D} = -1.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "例1.33 设线性方程组为",
+        "page_idx": 47
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left\\{ \\begin{array}{c}x_{1} + x_{2} + x_{3} + x_{4} = 1, \\\\ a_{1}x_{1} + a_{2}x_{2} + a_{3}x_{3} + a_{4}x_{4} = b, \\\\ a_{1}^{2}x_{1} + a_{2}^{2}x_{2} + a_{3}^{2}x_{3} + a_{4}^{2}x_{4} = b^{2}, \\\\ a_{1}^{3}x_{1} + a_{2}^{3}x_{2} + a_{3}^{3}x_{3} + a_{4}^{3}x_{4} = b^{3}, \\end{array} \\right.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "其中常数  $a_{i}(i = 1,2,3,4)$  互不相同.试问此方程组是否有唯一解?若有解,则求其解.",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "解 此方程组的系数行列式是范德蒙德行列式,因此",
+        "page_idx": 47
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left|a_{j}^{i - 1}\\right|_{4} = \\left(a_{4} - a_{3}\\right)\\left(a_{4} - a_{2}\\right)\\left(a_{4} - a_{1}\\right)\\left(a_{3} - a_{2}\\right)\\left(a_{3} - a_{1}\\right)\\left(a_{2} - a_{1}\\right).\n$$\n",
+        "text_format": "latex",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "由于常数  $a_{i}(i = 1,2,3,4)$  互不相同,得  $D \\neq 0$ ,所以方程组有唯一解.又因为行列式  $D_{j}(j = 1,2,3,4)$  是  $D$  中以  $b$  替换  $a_{j}$  所得的范德蒙德行列式,因此",
+        "page_idx": 47
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {D_{1} = (a_{4} - a_{3})(a_{4} - a_{2})(a_{4} - b)(a_{3} - a_{2})(a_{3} - b)(a_{2} - b),}\\\\ & {D_{2} = (a_{4} - a_{3})(a_{4} - b)(a_{4} - a_{1})(a_{3} - b)(a_{3} - a_{1})(b - a_{1}),}\\\\ & {D_{3} = (a_{4} - b)(a_{4} - a_{2})(a_{4} - a_{1})(b - a_{2})(b - a_{1})(a_{2} - a_{1}),}\\\\ & {D_{4} = (b - a_{3})(b - a_{2})(b - a_{1})(a_{3} - a_{2})(a_{3} - a_{1})(a_{2} - a_{1}).} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "所以方程组的解为",
+        "page_idx": 47
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {x_{1} = \\frac{D_{1}}{D} = \\frac{(a_{4} - b)(a_{3} - b)(a_{2} - b)}{(a_{4} - a_{1})(a_{3} - a_{1})(a_{2} - a_{1})},}\\\\ & {x_{2} = \\frac{D_{2}}{D} = \\frac{(a_{4} - b)(a_{3} - b)(b - a_{1})}{(a_{4} - a_{2})(a_{3} - a_{2})(a_{2} - a_{1})},}\\\\ & {x_{3} = \\frac{D_{3}}{D} = \\frac{(a_{4} - b)(b - a_{2})(b - a_{1})}{(a_{4} - a_{3})(a_{3} - a_{2})(a_{3} - a_{1})},}\\\\ & {x_{4} = \\frac{D_{4}}{D} = \\frac{(b - a_{3})(b - a_{2})(b - a_{1})}{(a_{4} - a_{3})(a_{4} - a_{2})(a_{4} - a_{1})}.} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "如果方程组(1.14)中的常数  $b_{i} = 0 (i = 1,2,\\dots ,n)$ ，即",
+        "page_idx": 48
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left\\{ \\begin{array}{l}a_{11}x_{1} + a_{12}x_{2} + \\dots +a_{1n}x_{n} = 0, \\\\ a_{21}x_{1} + a_{22}x_{2} + \\dots +a_{2n}x_{n} = 0, \\\\ \\qquad \\dots \\dots \\dots \\dots \\dots \\\\ a_{n1}x_{1} + a_{n2}x_{2} + \\dots +a_{m}x_{n} = 0, \\end{array} \\right. \\tag{1.17}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "则称其为  $n$  元齐次线性方程组。而当方程组(1.14)中的常数  $b_{i}(i = 1,2,\\dots ,n)$  不全为零时，称其为  $n$  元非齐次线性方程组。",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "由定理1.4可得以下推论。",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "推论1.9 若齐次线性方程组(1.17)的系数行列式不为零，则其只有零解，即其解为  $x_{j} = 0 (j = 1,2,\\dots ,n)$ 。",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "推论1.10 若齐次线性方程组(1.17)有非零解，即解中的  $x_{j}(j = 1,2,\\dots ,n)$  不全为零，则其系数行列式  $D = 0$ 。",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "例1.34 已知齐次线性方程组",
+        "page_idx": 48
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left\\{ \\begin{array}{l}ax_{1} + x_{2} + x_{3} = 0, \\\\ x_{1} + ax_{2} + x_{3} = 0, \\\\ x_{1} + x_{2} + ax_{3} = 0 \\end{array} \\right.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "有非零解，试求常数  $a$  的值。",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "解 因为该方程组的系数行列式为",
+        "page_idx": 48
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left| \\begin{array}{ccc}a & 1 & 1 \\\\ 1 & a & 1 \\\\ 1 & 1 & a \\end{array} \\right| = (a + 2)(a - 1)^{2},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "所以由推论1.10可知，  $a = - 2$  或  $a = 1$ 。",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "例1.35 给定  $xOy$  平面上三个点  $(1,1), (2, - 1), (3,1)$ ，求过这三个点，而且对称轴与  $y$  轴平行的抛物线方程。",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "解 设所求抛物线方程为  $y = f(x) = c + bx + ax^{2}$ ，则有",
+        "page_idx": 48
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left\\{ \\begin{array}{l}f(1) = c + b + a = 1, \\\\ f(2) = c + 2b + 4a = -1, \\\\ f(3) = c + 3b + 9a = 1. \\end{array} \\right.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "上式是以  $c,b,a$  为变量的线性方程组，其系数行列式是范德蒙德行列式的转置",
+        "page_idx": 48
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left| \\begin{array}{ccc}1 & 1 & 1 \\\\ 1 & 2 & 4 \\\\ 1 & 3 & 9 \\end{array} \\right| = (3 - 2)(3 - 1)(2 - 1) = 2\\neq 0.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "由克拉默定理知其有唯一解。经计算得  $D_{1} = 14, D_{2} = - 16, D_{3} = 4$ ，故得",
+        "page_idx": 48
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nc = 7, \\quad b = -8, \\quad a = 2.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "因此，所求抛物线方程为  $y = f(x) = 7 - 8x + 2x^{2}$ 。",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "附录:关于求和号  $\\Sigma$",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "为了书写和运算的简便,我们在教材中使用了求和号,即",
+        "page_idx": 49
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\sum_{i = 1}^{n}a_{i} = a_{1} + a_{2} + \\dots +a_{n},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "其中  $\\Sigma$  表示求和,字母  $i$  是求和指标.求和指标也可以用其他字母和方式表示,如",
+        "page_idx": 49
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\sum_{i = 1}^{n}a_{i} = \\sum_{k = 1}^{n}a_{k} = \\sum_{i = 0}^{n - 1}a_{i + 1} = \\sum_{i = 2}^{n + 1}a_{i - 1}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "利用加法的交换律、结合律及加法与乘法之间的分配律,可得求和号的常用性质:",
+        "page_idx": 49
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{l}{{\\sum_{i=1}^{n}(a_{i}+b_{i})=\\sum_{i=1}^{n}a_{i}+\\sum_{i=1}^{n}b_{i};}}\\\\ {{\\sum_{i=1}^{n}a_{i}=\\sum_{i=1}^{n}(k a_{i});}}\\\\ {{\\sum_{i=1}^{n}(a_{i}+b_{i})x_{i}=\\sum_{i=1}^{n}a_{i}x_{i}+\\sum_{i=1}^{n}b_{i}x_{i};}}\\\\ {{\\sum_{i=1}^{n}a_{i}=\\sum_{i=1}^{k}a_{i}+\\sum_{i=1}^{n}a_{i}\\quad(1\\leqslant k< n).}}\\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "当需要计算  $m\\times n$  个元素  $a_{ij}(i = 1,2,\\dots ,m;j = 1,2,\\dots ,n)$  的加法时,我们需要用到两重求和号",
+        "page_idx": 49
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {\\sum_{i = 1}^{m}\\sum_{j = 1}^{n}a_{i j} = \\sum_{j = 1}^{m}(a_{i1} + a_{i2} + \\dots +a_{i n})}\\\\ & {\\qquad = (a_{11} + a_{12} + \\dots +a_{1n}) + (a_{21} + a_{22} + \\dots +a_{2n}) + \\dots +(a_{m1} + a_{m2} + \\dots +a_{m n}).} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "因为",
+        "page_idx": 49
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {\\sum_{j = 1}^{n}\\sum_{i = 1}^{m}a_{i j} = \\sum_{j = 1}^{n}(a_{1j} + a_{2j} + \\dots +a_{m j})}\\\\ & {\\qquad = (a_{11} + a_{21} + \\dots +a_{m1}) + (a_{12} + a_{22} + \\dots +a_{m2}) + \\dots +(a_{1n} + a_{2n} + \\dots +a_{m n}).} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "比较上述两式,并由加法的交换律和结合律,可得",
+        "page_idx": 49
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\sum_{i = 1}^{m}\\sum_{j = 1}^{n}a_{i j} = \\sum_{j = 1}^{n}\\sum_{i = 1}^{m}a_{i j}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "对特殊的加法运算,我们将用到特殊的求和号.如",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "(1)计算  $\\frac{n(n + 1)}{2}$  个元素  $a_{ij}(i = 1,2,\\dots ,n;j = i,i + 1,\\dots ,n)$  的加法",
+        "page_idx": 49
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nS = (a_{11} + a_{12} + \\dots +a_{1n}) + (a_{22} + a_{23} + \\dots +a_{2n}) + \\dots +(a_{n - 1,n - 1} + a_{n - 1,n}) + a_{nn},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "可用求和号",
+        "page_idx": 49
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nS = \\sum_{i = 1}^{n}\\sum_{j = i}^{n}a_{ij}\\quad \\text{或}\\quad S = \\sum_{j = 1}^{n}\\sum_{i = 1}^{j}a_{ij}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "(2)需要计算下标满足条件  $P(i,j)$  的各元素  $a_{ij}$  的加法时,可用求和号  $\\sum_{P(i,j)}a_{ij}$",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "例如,当  $i\\geqslant 1,j\\geqslant 1$  时,",
+        "page_idx": 49
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\sum_{i + j = 5}a_{ij} = a_{14} + a_{23} + a_{32} + a_{41};\n$$\n",
+        "text_format": "latex",
+        "page_idx": 49
+    }
+]

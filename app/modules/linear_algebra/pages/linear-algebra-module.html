@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>线性代数可视化模块 - 一图胜千言</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="../frontend/global-mathjax.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 280px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 2px 0 15px rgba(0,0,0,0.1);
+            padding: 20px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+
+        .sidebar-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 15px;
+        }
+
+        .nav-item {
+            display: block;
+            padding: 12px 15px;
+            margin: 8px 0;
+            color: #4a5568;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s;
+            font-weight: 500;
+            border-left: 4px solid transparent;
+        }
+
+        .nav-item:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: translateX(5px);
+            border-left-color: #667eea;
+        }
+
+        .nav-item.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-left-color: #667eea;
+        }
+
+        .main-content {
+            margin-left: 280px;
+            flex: 1;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            opacity: 0.8;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            color: #4a5568;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .module-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .module-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+
+        .module-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .module-title {
+            font-size: 1.8em;
+            color: #2d3748;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .module-description {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .module-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .module-features li {
+            padding: 8px 0;
+            color: #2d3748;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .module-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #38a169;
+            font-weight: bold;
+        }
+
+        .module-button {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .module-button:hover {
+            background: linear-gradient(135deg, #5a67d8, #6b46c1);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .concepts-overview {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
+        }
+
+        .concepts-title {
+            font-size: 2.2em;
+            color: #2d3748;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .concepts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .concept-item {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s;
+        }
+
+        .concept-item:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .concept-item h4 {
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .concept-item p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .formula {
+            background: #e6fffa;
+            border: 2px solid #38b2ac;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        .learning-path {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
+        }
+
+        .path-title {
+            font-size: 2.2em;
+            color: #2d3748;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .path-steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .path-step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+
+        .step-title {
+            font-size: 1.2em;
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .step-description {
+            color: #4a5568;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+
+        .path-arrow {
+            font-size: 2em;
+            color: #667eea;
+            margin: 0 10px;
+        }
+
+        .footer-info {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .footer-info h3 {
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .footer-info p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2em;
+            }
+            
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .path-steps {
+                flex-direction: column;
+            }
+            
+            .path-arrow {
+                transform: rotate(90deg);
+                margin: 10px 0;
+            }
+        }
+
+        .difficulty-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .difficulty-beginner {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+
+        .difficulty-intermediate {
+            background: #fef5e7;
+            color: #744210;
+        }
+
+        .difficulty-advanced {
+            background: #fed7d7;
+            color: #742a2a;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-title">线性代数模块</div>
+        <a href="#overview" class="nav-item active">模块概览</a>
+        <a href="二阶行列式可视化.html" class="nav-item">二阶行列式</a>
+        <a href="三阶行列式可视化.html" class="nav-item">三阶行列式</a>
+        <a href="矩阵运算可视化.html" class="nav-item">矩阵运算</a>
+        <a href="向量空间可视化.html" class="nav-item">向量空间</a>
+        <a href="线性变换可视化.html" class="nav-item">线性变换</a>
+        <a href="矩阵高斯消元法可视化.html" class="nav-item">高斯消元法</a>
+        <a href="特征值分解可视化.html" class="nav-item">特征值分解</a>
+        <a href="旋转矩阵可视化.html" class="nav-item">旋转矩阵</a>
+        <a href="正交分解可视化.html" class="nav-item">正交分解</a>
+        <a href="../index.html">返回 “线性代数可视化世界”首页</a>
+<a href="../../../index.html" class="nav-item">返回 “万物可视化”首页</a>
+    </div>
+    
+    <div class="main-content">
+        <div class="container">
+        <div class="header">
+            <h1>线性代数可视化模块</h1>
+            <p>探索线性代数的几何本质，让抽象概念变得直观易懂</p>
+            <p class="subtitle">基于上海交通大学《线性代数》第3版教材</p>
+        </div>
+
+        <div class="modules-grid">
+            <div class="module-card" onclick="openVisualization('二阶行列式可视化.html')">
+                <div class="module-icon">📐</div>
+                <h3 class="module-title">二阶行列式</h3>
+                <div class="difficulty-badge difficulty-beginner">初级</div>
+                <p class="module-description">
+                    理解二阶行列式的定义、计算方法和几何意义
+                </p>
+                <ul class="module-features">
+                    <li>交互式计算演示</li>
+                    <li>平行四边形面积可视化</li>
+                    <li>克拉默法则应用</li>
+                    <li>实时参数调节</li>
+                </ul>
+                <button class="module-button">开始学习</button>
+            </div>
+
+            <div class="module-card" onclick="openVisualization('三阶行列式可视化.html')">
+                <div class="module-icon">🎲</div>
+                <h3 class="module-title">三阶行列式</h3>
+                <div class="difficulty-badge difficulty-intermediate">中级</div>
+                <p class="module-description">
+                    掌握三阶行列式的计算技巧和三维几何解释
+                </p>
+                <ul class="module-features">
+                    <li>萨吕斯法则演示</li>
+                    <li>代数余子式展开</li>
+                    <li>平行六面体体积</li>
+                    <li>3D交互式可视化</li>
+                </ul>
+                <button class="module-button">开始学习</button>
+            </div>
+
+            <div class="module-card" onclick="openVisualization('矩阵运算可视化.html')">
+                <div class="module-icon">🔢</div>
+                <h3 class="module-title">矩阵运算</h3>
+                <div class="difficulty-badge difficulty-intermediate">中级</div>
+                <p class="module-description">
+                    探索矩阵加法、乘法和线性变换的几何意义
+                </p>
+                <ul class="module-features">
+                    <li>矩阵运算动画</li>
+                    <li>线性变换可视化</li>
+                    <li>几何变换效果</li>
+                    <li>实时计算结果</li>
+                </ul>
+                <button class="module-button">开始学习</button>
+            </div>
+
+            <div class="module-card" onclick="openVisualization('向量空间可视化.html')">
+                <div class="module-icon">🌌</div>
+                <h3 class="module-title">向量空间</h3>
+                <div class="difficulty-badge difficulty-advanced">高级</div>
+                <p class="module-description">
+                    深入理解线性相关性、基、维数和子空间概念
+                </p>
+                <ul class="module-features">
+                    <li>线性相关性判定</li>
+                    <li>基和维数可视化</li>
+                    <li>向量张成空间</li>
+                    <li>子空间几何表示</li>
+                </ul>
+                <button class="module-button">开始学习</button>
+            </div>
+
+            <!-- 新增：五个页面入口卡片 -->
+            <div class="module-card" onclick="openVisualization('线性变换可视化.html')">
+                <div class="module-icon">↔️</div>
+                <h3 class="module-title">线性变换</h3>
+                <div class="difficulty-badge difficulty-beginner">初级</div>
+                <p class="module-description">从矩阵乘法理解线性变换与向量映射</p>
+                <ul class="module-features">
+                    <li>参数化矩阵与向量</li>
+                    <li>网格变换几何意义</li>
+                    <li>公式实时排版与缩放</li>
+                </ul>
+                <button class="module-button">开始学习</button>
+            </div>
+
+            <div class="module-card" onclick="openVisualization('矩阵高斯消元法可视化.html')">
+                <div class="module-icon">🧮</div>
+                <h3 class="module-title">高斯消元法</h3>
+                <div class="difficulty-badge difficulty-intermediate">中级</div>
+                <p class="module-description">行初等变换，化为行阶梯形并观察数值演化</p>
+                <ul class="module-features">
+                    <li>主元选择与归一化</li>
+                    <li>逐步消元与回代</li>
+                    <li>热力图展示矩阵状态</li>
+                </ul>
+                <button class="module-button">开始学习</button>
+            </div>
+
+            <div class="module-card" onclick="openVisualization('特征值分解可视化.html')">
+                <div class="module-icon">📈</div>
+                <h3 class="module-title">特征值分解</h3>
+                <div class="difficulty-badge difficulty-intermediate">中级</div>
+                <p class="module-description">计算2×2特征值与特征向量，理解伸缩方向</p>
+                <ul class="module-features">
+                    <li>特征多项式与判别式</li>
+                    <li>特征向量方向线</li>
+                    <li>自适应数学排版</li>
+                </ul>
+                <button class="module-button">开始学习</button>
+            </div>
+
+            <div class="module-card" onclick="openVisualization('旋转矩阵可视化.html')">
+                <div class="module-icon">🌀</div>
+                <h3 class="module-title">旋转矩阵</h3>
+                <div class="difficulty-badge difficulty-beginner">初级</div>
+                <p class="module-description">展示单位圆与向量旋转，保距保角的性质</p>
+                <ul class="module-features">
+                    <li>角度滑块交互</li>
+                    <li>原/旋后向量对比</li>
+                    <li>紫灰主题坐标系</li>
+                </ul>
+                <button class="module-button">开始学习</button>
+            </div>
+
+            <div class="module-card" onclick="openVisualization('正交分解可视化.html')">
+                <div class="module-icon">📐</div>
+                <h3 class="module-title">正交分解</h3>
+                <div class="difficulty-badge difficulty-beginner">初级</div>
+                <p class="module-description">向量在方向上的投影与垂直分量的直观几何</p>
+                <ul class="module-features">
+                    <li>投影系数与分量展示</li>
+                    <li>垂直分量虚线显示</li>
+                    <li>公式自适应缩放</li>
+                </ul>
+                <button class="module-button">开始学习</button>
+            </div>
+        </div>
+
+        <div class="learning-path">
+            <h2 class="path-title">推荐学习路径</h2>
+            <div class="path-steps">
+                <div class="path-step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">二阶行列式</div>
+                    <div class="step-description">从最基础的概念开始，理解行列式的几何意义</div>
+                </div>
+                <div class="path-arrow">→</div>
+                <div class="path-step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">三阶行列式</div>
+                    <div class="step-description">扩展到三维空间，掌握更复杂的计算方法</div>
+                </div>
+                <div class="path-arrow">→</div>
+                <div class="path-step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">矩阵运算</div>
+                    <div class="step-description">学习矩阵操作和线性变换的应用</div>
+                </div>
+                <div class="path-arrow">→</div>
+                <div class="path-step">
+                    <div class="step-number">4</div>
+                    <div class="step-title">向量空间</div>
+                    <div class="step-description">深入理解线性代数的核心理论概念</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="concepts-overview">
+            <h2 class="concepts-title">核心概念一览</h2>
+            <div class="concepts-grid">
+                <div class="concept-item">
+                    <h4>行列式 (Determinant)</h4>
+                    <p>方阵的一个标量值，反映线性变换对面积/体积的缩放效果。</p>
+                    <div class="formula">
+                        $$\begin{vmatrix} a & b \\ c & d \end{vmatrix} = ad - bc$$
+                    </div>
+                    <p><strong>几何意义：</strong>二维平面上平行四边形的有向面积</p>
+                </div>
+
+                <div class="concept-item">
+                    <h4>矩阵乘法 (Matrix Multiplication)</h4>
+                    <p>两个矩阵相乘的运算，对应线性变换的复合。</p>
+                    <div class="formula">
+                        $$(AB)_{ij} = \sum_{k} A_{ik}B_{kj}$$
+                    </div>
+                    <p><strong>几何意义：</strong>连续应用两个线性变换</p>
+                </div>
+
+                <div class="concept-item">
+                    <h4>线性相关性 (Linear Dependence)</h4>
+                    <p>向量组中某个向量可以用其他向量线性表示的性质。</p>
+                    <div class="formula">
+                        $$c_1\vec{v_1} + c_2\vec{v_2} + \cdots + c_n\vec{v_n} = \vec{0}$$
+                    </div>
+                    <p><strong>几何意义：</strong>向量共线或共面</p>
+                </div>
+
+                <div class="concept-item">
+                    <h4>基 (Basis)</h4>
+                    <p>向量空间中线性无关且能张成整个空间的向量组。</p>
+                    <div class="formula">
+                        $$\vec{v} = c_1\vec{e_1} + c_2\vec{e_2} + \cdots + c_n\vec{e_n}$$
+                    </div>
+                    <p><strong>几何意义：</strong>空间的"坐标系"</p>
+                </div>
+
+                <div class="concept-item">
+                    <h4>线性变换 (Linear Transformation)</h4>
+                    <p>保持向量加法和标量乘法的映射。</p>
+                    <div class="formula">
+                        $$T(\vec{u} + \vec{v}) = T(\vec{u}) + T(\vec{v})$$
+                    </div>
+                    <p><strong>几何意义：</strong>旋转、缩放、剪切等几何变换</p>
+                </div>
+
+                <div class="concept-item">
+                    <h4>特征值与特征向量</h4>
+                    <p>在线性变换下方向不变的向量及其缩放因子。</p>
+                    <div class="formula">
+                        $$A\vec{v} = \lambda\vec{v}$$
+                    </div>
+                    <p><strong>几何意义：</strong>变换的"主方向"</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-info">
+            <h3>学习建议</h3>
+            <p>
+                线性代数是数学的重要分支，在计算机科学、物理学、工程学等领域有广泛应用。
+                建议按照推荐路径循序渐进学习，每个概念都要理解其几何直观，
+                这样才能真正掌握线性代数的精髓。记住：<strong>几何直观是理解抽象概念的关键！</strong>
+            </p>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        // MathJax configuration
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+
+        function openVisualization(filename) {
+            window.location.href = filename;
+        }
+
+        function goBack() {
+            window.location.href = '../index.html';
+        }
+
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effects to module cards
+            const moduleCards = document.querySelectorAll('.module-card');
+            moduleCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Add click animation
+            const buttons = document.querySelectorAll('.module-button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    
+                    // Create ripple effect
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.cssText = `
+                        position: absolute;
+                        width: ${size}px;
+                        height: ${size}px;
+                        left: ${x}px;
+                        top: ${y}px;
+                        background: rgba(255,255,255,0.3);
+                        border-radius: 50%;
+                        transform: scale(0);
+                        animation: ripple 0.6s ease-out;
+                        pointer-events: none;
+                    `;
+                    
+                    this.style.position = 'relative';
+                    this.style.overflow = 'hidden';
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                    
+                    // Navigate to the visualization
+                    const card = this.closest('.module-card');
+                    const onclick = card.getAttribute('onclick');
+                    if (onclick) {
+                        eval(onclick);
+                    }
+                });
+            });
+        });
+
+        // Add CSS for ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(2);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

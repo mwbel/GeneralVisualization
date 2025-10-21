@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>向量投影可视化 - 线性代数模块</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.26.0/plotly.min.js"></script>
+  <script type="module">
+    import { configureMathJax, typesetPage, ensureMathJaxScript } from '/app/lib/mathjax.js';
+    import { enableAutoMath } from '/app/lib/autoMath.js';
+    import { attachFormulaResizer } from '/app/lib/responsive-math.js';
+    configureMathJax();
+    ensureMathJaxScript();
+  </script>
+  <style>
+    /* linear_algebra_dualcolumn_stable 紫灰稳重配色 */
+    :root {
+      --bg-grad-1: #667eea; /* 低饱和紫 */
+      --bg-grad-2: #6b7280; /* 中性灰 */
+      --card-bg: rgba(255,255,255,0.96);
+      --border: #e5e7eb;
+      --text-main: #1f2937;
+      --accent: #4f46e5;
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, var(--bg-grad-1) 0%, var(--bg-grad-2) 100%); color: var(--text-main); }
+    .page { max-width: 1200px; margin: 0 auto; padding: 24px; }
+    .header { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin-bottom: 18px; }
+    .title { font-size: 24px; font-weight: 700; color: #2d3748; }
+    .subtitle { font-size: 18px; color: #374151; margin-top: 6px; }
+
+    .dual { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 18px; }
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+    .section-title { font-size: 20px; font-weight: 600; margin-bottom: 10px; color: #2d3748; }
+    .controls { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 10px 0 14px; }
+    .controls input { width: 100%; padding: 8px 10px; border: 1px solid var(--border); border-radius: 8px; font-size: 16px; }
+    .controls label { font-size: 14px; color: #4b5563; }
+
+    .mathjax-block { background: #f9fafb; border: 1px dashed #e5e7eb; border-radius: 10px; padding: 12px; margin: 10px 0; text-align: left; }
+    .mathjax-block mjx-container { max-width: 100% !important; overflow: visible !important; }
+    .examples { margin-top: 18px; }
+    .example-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 14px; }
+
+    .plot { height: 420px; }
+  </style>
+</head>
+<body>
+  <div class="page" data-autolatex="true">
+    <div class="header">
+      <div class="title">向量投影（Projection）</div>
+      <div class="subtitle">左：代数定义与公式；右：几何意义（2D交互）。字体 17–18px，整体左对齐，稳重紫灰配色。</div>
+    </div>
+
+    <div class="dual">
+      <!-- 左栏：代数定义与公式 -->
+      <div class="card">
+        <div class="section-title">代数定义</div>
+        <div class="mathjax-block" id="def-block">
+          $$\text{给定向量 }\, \mathbf{a}, \mathbf{b} \in \mathbb{R}^2,\; \text{投影 } \operatorname{proj}_{\mathbf{b}}(\mathbf{a}) = \frac{\mathbf{a}\cdot\mathbf{b}}{\|\mathbf{b}\|^2}\,\mathbf{b}$$
+        </div>
+
+        <div class="section-title">参数设置</div>
+        <div class="controls">
+          <div>
+            <label>向量 a = (a₁,a₂)</label>
+            <input id="a1" type="number" value="2" step="0.1" />
+            <input id="a2" type="number" value="1" step="0.1" />
+          </div>
+          <div>
+            <label>向量 b = (b₁,b₂)</label>
+            <input id="b1" type="number" value="1" step="0.1" />
+            <input id="b2" type="number" value="2" step="0.1" />
+          </div>
+          <div>
+            <label>系数展示</label>
+            <input id="prec" type="number" value="2" min="0" max="6" />
+          </div>
+        </div>
+
+        <div class="section-title">公式推导</div>
+        <div class="mathjax-block" id="calc1"></div>
+        <div class="mathjax-block" id="calc2"></div>
+        <div class="mathjax-block" id="result"></div>
+      </div>
+
+      <!-- 右栏：几何意义 -->
+      <div class="card">
+        <div class="section-title">几何意义（2D）</div>
+        <div id="plot2d" class="plot"></div>
+      </div>
+    </div>
+
+    <!-- 典型例题与应用 -->
+    <div class="examples">
+      <div class="section-title">典型例题与应用</div>
+      <div class="example-card">
+        <div class="mathjax-block" id="ex1"></div>
+      </div>
+      <div class="example-card">
+        <div class="mathjax-block" id="ex2"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { typesetPage } from '/app/lib/mathjax.js';
+    import { enableAutoMath } from '/app/lib/autoMath.js';
+    import { attachFormulaResizer } from '/app/lib/responsive-math.js';
+
+    const pageEl = document.querySelector('.page');
+    enableAutoMath(pageEl);
+
+    // 数据与渲染
+    function update() {
+      const a1 = parseFloat(document.getElementById('a1').value);
+      const a2 = parseFloat(document.getElementById('a2').value);
+      const b1 = parseFloat(document.getElementById('b1').value);
+      const b2 = parseFloat(document.getElementById('b2').value);
+      const p = parseInt(document.getElementById('prec').value, 10) || 2;
+
+      const dot = a1*b1 + a2*b2;
+      const bnorm2 = b1*b1 + b2*b2;
+      const coeff = bnorm2 === 0 ? 0 : dot / bnorm2;
+      const proj = [coeff*b1, coeff*b2];
+
+      const fmt = (x) => Number.isFinite(x) ? x.toFixed(p) : 'NaN';
+      const s1 = `$$ \\mathbf{a}\\cdot\\mathbf{b} = ${fmt(dot)},\quad \\|\\mathbf{b}\\|^2 = ${fmt(bnorm2)} $$`;
+      const s2 = `$$ \\operatorname{proj}_{\\mathbf{b}}(\\mathbf{a}) = \\frac{${fmt(dot)}}{${fmt(bnorm2)}}\\,\\mathbf{b} = ${fmt(coeff)}\\,( ${fmt(b1)},\\,${fmt(b2)} ) $$`;
+      const s3 = `$$ \\boxed{ \\operatorname{proj}_{\\mathbf{b}}(\\mathbf{a}) = ( ${fmt(proj[0])},\\, ${fmt(proj[1])} ) } $$`;
+      document.getElementById('calc1').innerHTML = s1;
+      document.getElementById('calc2').innerHTML = s2;
+      document.getElementById('result').innerHTML = s3;
+
+      // 例题
+      document.getElementById('ex1').innerHTML = `$$ \\text{例 1：}\\; \\operatorname{proj}_{(1,2)}( (2,1) ) = ( ${fmt(proj[0])}, ${fmt(proj[1])} ) $$`;
+      document.getElementById('ex2').innerHTML = `$$ \\text{例 2：}\\; \\operatorname{proj}_{(3,1)}( (1,3) ) = \\frac{(1\\cdot3+3\\cdot1)}{3^2+1^2}\\,(3,1) $$`;
+
+      // Plotly 2D
+      const origin = {x: [0], y: [0], mode: 'markers', marker:{size:6,color:'#4f46e5'}, name:'O'};
+      const vecA = {x: [0,a1], y:[0,a2], mode:'lines+markers', line:{color:'#4f46e5',width:5}, marker:{size:6}, name:'a'};
+      const vecB = {x: [0,b1], y:[0,b2], mode:'lines+markers', line:{color:'#6b7280',width:5}, marker:{size:6}, name:'b'};
+      const vecProj = {x: [0, proj[0]], y:[0, proj[1]], mode:'lines+markers', line:{color:'#7c3aed',width:5}, marker:{size:6}, name:'proj_b(a)'};
+      const layout = {
+        showlegend: true,
+        xaxis:{range:[-5,5], zeroline:true},
+        yaxis:{range:[-5,5], zeroline:true},
+        margin:{l:30,r:10,t:20,b:30},
+        paper_bgcolor:'rgba(255,255,255,0)',
+        plot_bgcolor:'rgba(255,255,255,0)'
+      };
+      Plotly.newPlot('plot2d', [origin, vecA, vecB, vecProj], layout, {displayModeBar:false});
+    }
+
+    // 初次渲染与挂载
+    update();
+    await typesetPage(pageEl);
+    attachFormulaResizer(pageEl);
+
+    // 交互绑定
+    ['a1','a2','b1','b2','prec'].forEach(id => {
+      document.getElementById(id).addEventListener('input', async () => {
+        update();
+        await typesetPage(pageEl);
+        attachFormulaResizer(pageEl);
+      });
+    });
+  </script>
+</body>
+</html>

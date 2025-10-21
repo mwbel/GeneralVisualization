@@ -1,0 +1,5027 @@
+[
+    {
+        "type": "equation",
+        "text": "\n$$\n\\pmb{\\epsilon}_{1}=\\frac{1}{\\sqrt{2}}\\left[\\begin{array}{c}{1}\\\\ {1}\\\\ {0}\\\\ {0}\\end{array}\\right],\\quad\\pmb{\\epsilon}_{2}=\\frac{1}{\\sqrt{6}}\\left[\\begin{array}{c}{1}\\\\ {-1}\\\\ {2}\\\\ {0}\\end{array}\\right],\\quad\\pmb{\\epsilon}_{3}=\\frac{1}{2\\sqrt{3}}\\left[\\begin{array}{c}{-1}\\\\ {1}\\\\ {1}\\\\ {3}\\end{array}\\right].\n$$\n",
+        "text_format": "latex",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "与  $\\lambda_{4} = - 3$  对应的特征子空间的基经单位化后得",
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\pmb{\\epsilon}_{4}=\\frac{1}{2}\\left[\\begin{array}{c}{1}\\\\ {-1}\\\\ {-1}\\\\ {1}\\end{array}\\right].\n$$\n",
+        "text_format": "latex",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(3)写出变量的正交代换,化二次型为标准形",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "令  $Q = (\\pmb{\\epsilon}_{1},\\pmb{\\epsilon}_{2},\\pmb{\\epsilon}_{3},\\pmb{\\epsilon}_{4}),\\pmb {x} = Q\\pmb{y}$ ,即",
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left\\{ \\begin{array}{l l}{x_{1} = \\frac{1}{\\sqrt{2}} y_{1} + \\frac{1}{\\sqrt{6}} y_{2} - \\frac{1}{2\\sqrt{3}} y_{3} + \\frac{1}{2} y_{4},}\\\\ {x_{2} = \\frac{1}{\\sqrt{2}} y_{1} - \\frac{1}{\\sqrt{6}} y_{2} + \\frac{1}{2\\sqrt{3}} y_{3} - \\frac{1}{2} y_{4},}\\\\ {x_{3} = \\frac{2}{\\sqrt{6}} y_{2} + \\frac{1}{2\\sqrt{3}} y_{3} - \\frac{1}{2} y_{4},}\\\\ {x_{4} = \\frac{\\sqrt{3}}{2} y_{3} + \\frac{1}{2} y_{4},} \\end{array} \\right. \\tag{6.8}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "则新变量的二次型为",
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf = y_{1}^{2} + y_{2}^{2} + y_{3}^{2} - 3y_{4}^{2}. \\tag{6.9}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "由于矩阵  $Q$  为正交矩阵,所作的线性代换(6.8)又称为正交代换.由定理5.5可知,用正交代换化二次型为标准形时,标准形中变量的系数为二次型矩阵  $A$  的特征值,即",
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf = \\lambda_{1}y_{1}^{2} + \\lambda_{2}y_{2}^{2} + \\dots +\\lambda_{n}y_{n}^{2}, \\tag{6.10}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "其中  $\\lambda_{1},\\lambda_{2},\\dots ,\\lambda_{n}$  是矩阵  $A$  的  $n$  个特征值.",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "6.2.2 配方法",
+        "text_level": 1,
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "配方法就是初等数学中的配完全平方的方法.我们仍通过例题来说明这种方法.",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "例6.3用配方法将例6.2中的二次型",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "$f(x_{1},x_{2},x_{3},x_{4}) = 2x_{1}x_{2} + 2x_{1}x_{3} - 2x_{1}x_{4} - 2x_{2}x_{3} + 2x_{2}x_{4} + 2x_{3}x_{4}$  化为标准形,并求出所用的非退化的线性代换",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "解由于二次型中没有变量的平方项,故针对某个交叉乘积项,如  $2x_{1}x_{2}$  作如",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "下的非退化的线性代换以产生新变量的平方项:",
+        "page_idx": 1
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left\\{ \\begin{array}{l l}{x_{1} = y_{1} + y_{2},}\\\\ {x_{2} = y_{1} - y_{2},}\\\\ {x_{3} = y_{3},}\\\\ {x_{4} = y_{4},} \\end{array} \\right. \\tag{6.11}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "则原二次型变为",
+        "page_idx": 1
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf = 2(y_{1} + y_{2})(y_{1} - y_{2}) + 2(y_{1} + y_{2})y_{3} - 2(y_{1} + y_{2})y_{4}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 1
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n-2(y_{1} - y_{2})y_{3} + 2(y_{1} - y_{2})y_{4} + 2y_{3}y_{4}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 1
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n= 2y_{1}^{2} - 2y_{2}^{2} + 4y_{2}y_{3} - 4y_{2}y_{4} + 2y_{3}y_{4}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "由于新变量的二次型中含有平方项,如  $y_{1}^{2}$  或  $y_{2}^{2}$ ,并注意到,二次型中除  $y_{1}^{2}$  外其他项中均不含变量  $y_{1}$ ,所以,只需将所有含  $y_{2}$  的项配成完全平方",
+        "page_idx": 1
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf = 2y_{1}^{2} - 2(y_{2} - y_{3} + y_{4})^{2} + 2y_{3}^{2} + 2y_{4}^{2} - 2y_{3}y_{4}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "配平方后,剩余的项中不再含有  $y_{1}$  和  $y_{2}$ ,但含有  $y_{3}$  和  $y_{4}$  的平方项,故可继续使用上面的配完全平方法,将含  $y_{3}$  的项都配成完全平方,则二次型变为",
+        "page_idx": 1
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf = 2y_{1}^{2} - 2(y_{2} - y_{3} + y_{4})^{2} + 2\\left(y_{3} - \\frac{1}{2} y_{4}\\right)^{2} + \\frac{3}{2} y_{4}^{2}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "令",
+        "page_idx": 1
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left\\{ \\begin{array}{l l}{z_{1} = y_{1},}\\\\ {z_{2} = y_{2} - y_{3} + y_{4},}\\\\ {z_{3} = y_{3} - \\frac{1}{2} y_{4},}\\\\ {z_{4} = y_{4},} \\end{array} \\right. \\tag{6.12}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "则二次型化为标准形",
+        "page_idx": 1
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf = 2z_{1}^{2} - 2z_{2}^{2} + 2z_{3}^{2} + \\frac{3}{2} z_{4}^{2}. \\tag{6.13}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "由(6.12)式中解得",
+        "page_idx": 1
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left\\{ \\begin{array}{l l}{y_{1} = z_{1},}\\\\ {y_{2} = z_{2} + z_{3} - \\frac{1}{2} z_{4},}\\\\ {y_{3} = z_{3} + \\frac{1}{2} z_{4},}\\\\ {y_{4} = z_{4},} \\end{array} \\right.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "代入(6.11)式,得到所作的线性代换为",
+        "page_idx": 1
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left\\{ \\begin{array}{l}x_{1} = z_{1} + z_{2} + z_{3} - \\frac{1}{2} z_{4}, \\\\ x_{2} = z_{1} - z_{2} - z_{3} + \\frac{1}{2} z_{4}, \\\\ x_{3} = z_{3} + \\frac{1}{2} z_{4}, \\\\ x_{4} = z_{4}. \\end{array} \\right. \\tag{6.14}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "(6.11),(6.12),(6.14)式中的线性代换可以用矩阵的形式表示如下:令",
+        "page_idx": 2
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\pmb {x} = \\left[ \\begin{array}{l}{x_{1}}\\\\ {x_{2}}\\\\ {x_{3}}\\\\ {x_{4}} \\end{array} \\right],\\quad \\pmb {y} = \\left[ \\begin{array}{l}{y_{1}}\\\\ {y_{2}}\\\\ {y_{3}}\\\\ {y_{4}} \\end{array} \\right],\\quad \\pmb {z} = \\left[ \\begin{array}{l}{z_{1}}\\\\ {z_{2}}\\\\ {z_{3}}\\\\ {z_{4}} \\end{array} \\right],\n$$\n",
+        "text_format": "latex",
+        "page_idx": 2
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nC_{1}=\\left[\\begin{array}{c c c c}{{1}}&{{1}}&{{0}}&{{0}}\\\\ {{1}}&{{-1}}&{{0}}&{{0}}\\\\ {{0}}&{{0}}&{{1}}&{{0}}\\\\ {{0}}&{{0}}&{{0}}&{{1}}\\end{array}\\right],\\quad C_{2}=\\left[\\begin{array}{c c c c}{{1}}&{{0}}&{{0}}&{{0}}\\\\ {{0}}&{{1}}&{{1}}&{{-\\frac{1}{2}}}\\\\ {{0}}&{{0}}&{{1}}&{{\\frac{1}{2}}}\\\\ {{0}}&{{0}}&{{0}}&{{1}}\\end{array}\\right],\n$$\n",
+        "text_format": "latex",
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "则  $\\scriptstyle x = C_{1}y,y = C_{2}z$  ,故  $\\scriptstyle x = (C_{1}C_{2})z$  ,若记  $C = C_{1}C_{2}$  ,则",
+        "page_idx": 2
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nC = C_{1}C_{2} = \\left[ \\begin{array}{rrrr}1 & 1 & 1 & -\\frac{1}{2} \\\\ 1 & -1 & -1 & \\frac{1}{2} \\\\ 0 & 0 & 1 & \\frac{1}{2} \\\\ 0 & 0 & 0 & 1 \\end{array} \\right].\n$$\n",
+        "text_format": "latex",
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "不难看出,矩阵  $C$  非奇异,因而,所作的线性代换是非退化的",
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "对一般的二次型,总可用本例所示的方法化为标准形",
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "$6.2.3^{*}$  初等变换法",
+        "text_level": 1,
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "引理对  $n$  阶实对称矩阵  $A$  ,存在初等矩阵  $P_{1},P_{2},\\dots ,P_{s}$  ,使得",
+        "page_idx": 2
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nP_{s}^{\\mathrm{T}}(\\dots (P_{2}^{\\mathrm{T}}(P_{1}^{\\mathrm{T}}A P_{1})P_{2})\\dots)P_{s} = \\mathrm{diag}(\\mu_{1},\\mu_{2},\\dots ,\\mu_{n}). \\tag{6.15}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "证我们可以将实对称矩阵  $A$  看作是实二次型  $\\mathbf{x}^{\\mathrm{T}}A\\mathbf{x}$  的矩阵.由定理6.2,存在非退化的线性代换  $\\scriptstyle x = P y$  ,使得二次型化为标准形,因而二次型的矩阵  $A$  合同于对角矩阵,即",
+        "page_idx": 2
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nP^{\\mathrm{T}}A P = \\Lambda = \\mathrm{diag}(\\mu_{1},\\mu_{2},\\dots ,\\mu_{n}).\n$$\n",
+        "text_format": "latex",
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "由于任何可逆矩阵都能表示成有限个初等矩阵的乘积,设",
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nP = P_{1}P_{2}\\dots P_{s},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "其中  $P_{1}, P_{2}, \\dots , P_{s}$  为初等矩阵,则",
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nP^{\\mathrm{T}} = P_{s}^{\\mathrm{T}}\\dots P_{2}^{\\mathrm{T}}P_{1}^{\\mathrm{T}},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "因而",
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\Lambda = P_{s}^{\\mathrm{T}}(\\dots (P_{2}^{\\mathrm{T}}(P_{1}^{\\mathrm{T}}A P_{1})P_{2})\\dots)P_{s}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "注意到如果  $P_{k}$  是单位矩阵作某种初等列变换得到的初等矩阵,则  $P_{k}^{\\mathrm{T}}$  就是单位矩阵作同种初等行变换得到的初等矩阵(例如,  $P_{k}$  是单位矩阵交换第  $i$  列与第  $j$  列得到的初等矩阵,  $P_{k}^{\\mathrm{T}}$  就是单位矩阵交换第  $i$  行和第  $j$  行得到的初等矩阵),因而  $P_{k}^{\\mathrm{T}}A P_{k}$  相当于对矩阵  $A$  施行了一次初等列变换与一次同样的初等行变换,称之为对矩阵  $A$  施行了一对相应的初等变换.另外,如果矩阵  $A$  经过(6.15)式所示的各对相应的初等变换变为对角矩阵,则单位矩阵  $E$  经过同样的初等列变换变为矩阵  $P$ .因而,可以用下面的方法,将二次型化为标准形,同时求出所用的初等变换:",
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "(1)构造矩阵",
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nC={\\binom{A}{E}},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "其中  $A = (a_{j_{i}})_{n\\times n}$  为二次型的矩阵,  $E$  为  $n$  阶单位矩阵",
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "(2)如果  $a_{11}\\neq 0$  ,则将  $A$  的第一行的适当倍数加到  $A$  的其余各行,使  $A$  的第一列的其余各元素都变为零,每对  $A$  作一次初等行变换时,对矩阵  $C$  施行一次同样的初等列变换,由于  $A$  为对称矩阵,这样变换后,  $A$  的第一行的其余元素也必变为零.",
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "如果  $a_{11} = 0$  ,但存在某个  $a_{j1} = a_{1j}\\neq 0$  ,则将  $A$  的第  $j$  行加至第一行,并将  $C$  的第  $j$  列加至第一列,使  $C$  的第一行第一列的元素不为零.为简单起见,仍记  $C$  中与矩阵  $A$  对应的子块为  $A$  ,再用上面的方法将矩阵  $A$  的第一列与  $C$  的第一行其余元素都变为零.",
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "可用下面的分块矩阵表示上述结果:",
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n{\\binom{A}{E}}\\to{\\left[\\begin{array}{l l}{\\mu_{1}}&{0}\\\\ {0}&{A_{1}}\\\\ {R_{1}}&{R_{2}}\\end{array}\\right]},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "其中  $A_{1}$  是  $n - 1$  阶实对称矩阵,单位矩阵  $E$  经过上述初等列变换后所变成的矩阵写成了与  $A$  的分块形式相应的形式  $(R_{1} R_{2})$",
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "(3)用同样的方法变换矩阵  $\\left[ \\begin{array}{l}A_{1} \\\\ R_{2} \\end{array} \\right]$ ,经过有限次一对相应的初等变换,必可将矩阵  $\\binom{A}{E}$  化成矩阵  $\\binom{\\Lambda}{P}$ ,则  $x = P y$ ,即为所作的非退化的线性代换.",
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "例6.4 用初等变换法将例6.2中的二次型化为标准形,并求出所用的非退化的线性代换.",
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "解 例6.2的二次型为",
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\[ f(x_{1},x_{2},x_{3},x_{4})=2x_{1}x_{2}+2x_{1}x_{3}- 2x_{1}x_{4}- 2x_{2}x_{3}+2x_{2}x_{4}+2x_{3}x_{4}, \\] 二次型的矩阵为",
+        "page_idx": 4
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA=\\left[\\begin{array}{r r r r}{{0}}&{{1}}&{{1}}&{{-1}}\\\\ {{1}}&{{0}}&{{-1}}&{{1}}\\\\ {{1}}&{{-1}}&{{0}}&{{1}}\\\\ {{-1}}&{{1}}&{{1}}&{{0}}\\end{array}\\right],\n$$\n",
+        "text_format": "latex",
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "构造矩阵",
+        "page_idx": 4
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left(\\begin{array}{c}{A}\\\\ {E}\\end{array}\\right)=\\left[\\begin{array}{c c c c c}{0}&{1}&{1}&{-1}\\\\ {1}&{0}&{-1}&{1}\\\\ {1}&{-1}&{0}&{1}\\\\ {-1}&{1}&{1}&{0}\\\\ {1}&{0}&{0}&{0}\\\\ {0}&{1}&{0}&{0}\\\\ {0}&{0}&{1}&{0}\\\\ {0}&{0}&{0}&{1}\\end{array}\\right]\\xrightarrow{r_{1}+r_{2}\\rightarrow r_{1}}\\left[\\begin{array}{c c c c c}{1}&{1}&{0}&{0}\\\\ {1}&{0}&{-1}&{1}\\\\ {1}&{-1}&{0}&{1}\\\\ {-1}&{1}&{1}&{0}\\\\ {1}&{0}&{0}&{0}\\\\ {0}&{1}&{0}&{0}\\\\ {0}&{0}&{1}&{0}\\\\ {0}&{0}&{0}&{1}\\end{array}\\right]\n$$\n",
+        "text_format": "latex",
+        "page_idx": 4
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r}{\\frac{\\left[2\\begin{array}{c c c c}{2}&{1}&{0}&{0}\\\\ {1}&{0}&{-1}&{1}\\\\ {0}&{-1}&{0}&{1}\\\\ {0}&{1}&{1}&{0}\\\\ {1}&{0}&{0}&{0}\\\\ {1}&{1}&{0}&{0}\\\\ {0}&{0}&{1}&{0}\\\\ {0}&{0}&{0}&{1}\\end{array}\\right]}{\\left[2\\begin{array}{c c c c}{2}&{1}&{0}&{0}\\\\ {0}&{-\\frac{1}{2}}&{-1}&{1}\\\\ {0}&{-1}&{0}&{1}\\\\ {0}&{1}&{1}&{0}\\\\ {1}&{0}&{0}&{0}\\\\ {1}&{1}&{0}&{0}\\\\ {0}&{0}&{1}&{0}\\\\ {0}&{0}&{0}&{1}\\end{array}\\right]}}\\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 4
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\frac{c_{2}+(-1/2)c_{1}\\rightarrow c_{2}}{c_{2}+(-1/2)c_{1}\\rightarrow c_{2}}\\left[\\begin{array}{c c c c}{2}&{0}&{0}&{0}\\\\ {0}&{-\\frac{1}{2}}&{-1}&{1}\\\\ {0}&{-1}&{0}&{1}\\\\ {\\frac{1}{1}}&{1}&{1}&{0}\\\\ {1}&{-\\frac{1}{2}}&{0}&{0}\\\\ {1}&{\\frac{1}{2}}&{0}&{0}\\\\ {0}&{0}&{1}&{0}\\\\ {0}&{0}&{0}&{1}\\end{array}\\right]\\frac{r_{3}+(-2)r_{2}\\rightarrow r_{3}}{c_{3}+(-2)c_{2}\\rightarrow c_{3}}\\left[\\begin{array}{c c c c}{2}&{0}&{0}&{0}\\\\ {0}&{-\\frac{1}{2}}&{0}&{1}\\\\ {0}&{0}&{2}&{-1}\\\\ {0}&{1}&{-1}&{0}\\\\ {1}&{-\\frac{1}{2}}&{1}&{0}\\\\ {1}&{\\frac{1}{2}}&{-1}&{0}\\\\ {0}&{0}&{1}&{0}\\\\ {0}&{0}&{0}&{1}\\end{array}\\right]}\\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 4
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r}{\\frac{r_{4}+2r_{2}\\rightarrow r_{4}}{c_{4}+2c_{2}\\rightarrow c_{4}}\\left[\\begin{array}{c c c c}{2}&{0}&{0}&{0}\\\\ {0}&{-\\frac{1}{2}}&{0}&{0}\\\\ {0}&{0}&{2}&{-1}\\\\ {0}&{0}&{-1}&{2}\\\\ {1}&{-\\frac{1}{2}}&{1}&{-1}\\\\ {1}&{\\frac{1}{2}}&{-1}&{1}\\\\ {0}&{0}&{1}&{0}\\\\ {0}&{0}&{0}&{1}\\end{array}\\right]\\frac{r_{4}+\\frac{1}{2}r_{3}\\rightarrow r_{4}}{c_{4}+\\frac{1}{2}c_{3}\\rightarrow c_{4}}\\left[\\begin{array}{c c c c}{2}&{0}&{0}&{0}\\\\ {0}&{-\\frac{1}{2}}&{0}&{0}\\\\ {0}&{0}&{2}&{0}\\\\ {0}&{0}&{0}&{\\frac{3}{2}}\\\\ {1}&{-\\frac{1}{2}}&{1}&{-\\frac{1}{2}}\\\\ {1}&{\\frac{1}{2}}&{-1}&{\\frac{1}{2}}\\\\ {0}&{0}&{1}&{\\frac{1}{2}}\\\\ {0}&{0}&{0}&{1}\\end{array}\\right],}\\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "令  $\\scriptstyle x = P y$  ,其中",
+        "page_idx": 5
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nP = \\left[ \\begin{array}{rrrr}1 & -\\frac{1}{2} & 1 & -\\frac{1}{2} \\\\ 1 & \\frac{1}{2} & -1 & \\frac{1}{2} \\\\ 0 & 0 & 1 & \\frac{1}{2} \\\\ 0 & 0 & 0 & 1 \\end{array} \\right],\n$$\n",
+        "text_format": "latex",
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "则二次型化为标准形",
+        "page_idx": 5
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf = 2y_{1}^{2} - \\frac{1}{2} y_{2}^{2} + 2y_{3}^{2} + \\frac{3}{2} y_{4}^{2}. \\tag{6.16}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "上面我们介绍了三种化二次型为标准形的方法,所用的非退化的线性代换不同,得到的二次型的标准形的形式也不同。后两种非退化线性代换的矩阵  $P$  未必为正交矩阵,所得标准形的平方项的系数也不一定是二次型矩阵的特征值。",
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "观察(6.9),(6.13),(6.16)式可以发现,虽然它们的具体形式不同,但是它们都含有4个平方项。这是由于矩阵  $P$  非奇异,因而矩阵  $P^{\\mathrm{T}}AP$  与矩阵  $A$  的秩相同,而标准形中平方项的个数恰等于二次型的秩。不仅如此,三个标准形中,都有3个系数为正的项,1个系数为负的项。这也不是偶然的,它是下面6.3节惯性定理的结论。",
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "6.3 实二次型的正惯性指数",
+        "text_level": 1,
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "我们先引入规范标准形的概念。",
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "定义6.4形如",
+        "page_idx": 5
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nz_{1}^{2} + z_{2}^{2} + \\dots +z_{p}^{2} - z_{p + 1}^{2} - \\dots -z_{p}^{2}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "的二次型标准形称为规范标准形。",
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "定理6.3(惯性定理)对任何实二次型  $f = x^{\\mathrm{T}}A x = \\sum_{i = 1}^{n}\\sum_{j = 1}^{n}a_{i j}x_{i}x_{j}$ ,必存在非退化的线性代换化二次型为规范标准形,一个二次型的规范标准形是唯一的.",
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "证由定理6.2可知,对任何实二次型  $f = \\sum_{i = 1}^{n}\\sum_{j = 1}^{n}a_{i j}x_{i}x_{j}$ ,必存在非退化的线性代换使其化为标准形,再适当地交换变量的标号(也是非退化的线性代换)使其具有如下的形式:",
+        "page_idx": 6
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf = \\mu_{1}y_{1}^{2} + \\mu_{2}y_{2}^{2} + \\dots +\\mu_{p}y_{p}^{2} - \\mu_{p + 1}y_{p + 1}^{2} - \\dots -\\mu_{r}y_{r}^{2}, \\tag{6.17}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "其中  $\\mu_{1},\\mu_{2},\\dots ,\\mu_{p},\\mu_{p + 1},\\dots ,\\mu_{r}$  为正数,  $r$  为二次型的秩.然后作非退化的线性代换,",
+        "page_idx": 6
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left\\{ \\begin{array}{l l}{y_{1} =} & {\\frac{1}{\\sqrt{\\mu_{1}}} z_{1},}\\\\ \\vdots & \\ddots \\\\ {y_{r} =} & {\\frac{1}{\\sqrt{\\mu_{r}}} z_{r},}\\\\ {y_{r + 1} =} & {\\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\quad}\\\\ \\vdots & \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad}\\\\ {y_{n} =} & {\\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qnot}\\\\ \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qnot}\\\\ \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qnot \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qnot \\qquad \\qquad \\qquad \\qnot \\qquad \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot \\qnot} \\end{array} \\right.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "则可将(6.17)式化为规范标准形",
+        "page_idx": 6
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf = z_{1}^{2} + z_{2}^{2} + \\dots +z_{p}^{2} - z_{p + 1}^{2} - \\dots -z_{r}^{2}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "下面用反证法证明唯一性",
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "设有两个非退化的线性代换  $\\scriptstyle x = P y$  与  $\\scriptstyle x = Q z$  都将实二次型  $f = x^{\\mathrm{T}}A x$  化为规范标准形",
+        "page_idx": 6
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r}{f = y_{1}^{2} + y_{2}^{2} + \\dots +y_{p}^{2} - y_{p + 1}^{2} - \\dots -y_{r}^{2},}\\\\ {f = z_{1}^{2} + z_{2}^{2} + \\dots +z_{q}^{2} - z_{q + 1}^{2} - \\dots -z_{r}^{2},} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "但  $p{<}q$  则对于给定的  $\\pmb {x} = (x_{1},x_{2},\\dots ,x_{n})^{\\mathrm{T}}$  ,对应的  $\\mathbf{y} = (y_{1},y_{2},\\dots ,y_{n})^{\\mathrm{T}}$  与  $z =$ $(z_{1},z_{2},\\dots ,z_{n})^{\\mathrm{T}}$  满足",
+        "page_idx": 6
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r}{f = y_{1}^{2} + y_{2}^{2} + \\dots +y_{p}^{2} - y_{p + 1}^{2} - \\dots -y_{r}^{2}}\\\\ {= z_{1}^{2} + z_{2}^{2} + \\dots +z_{q}^{2} - z_{q + 1}^{2} - \\dots -z_{r}^{2},} \\end{array} \\tag{6.18}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "其中",
+        "page_idx": 6
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r}{\\mathbf{y} = P^{-1}Q\\mathbf{z}.} \\end{array} \\tag{6.19}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "设  $P^{- 1}Q = (m_{ij})_{n\\times n}$ ,并在(6.19)式中令  $y_{1} = y_{2} = \\dots = y_{p} = z_{q + 1} = z_{q + 2} = \\dots = z_{n} = 0$ ,即",
+        "page_idx": 6
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left\\{ \\begin{array}{l l}{m_{11}z_{1} + m_{12}z_{2} + \\dots +m_{1n}z_{n}} & {= 0,}\\\\ {\\dots \\dots \\dots}\\\\ {m_{p1}z_{1} + m_{p2}z_{2} + \\dots +m_{p n}z_{n}} & {= 0,}\\\\ {\\qquad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad}\\\\ {\\qquad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\qquad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qququad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qq \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad \\qquad} \\end{array} \\right. \\tag{6.20}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "方程组(6.20)是含有  $n$  个未知量,  $p + n - q$  个方程的齐次线性方程组. 由假设,  $p + n - q < n$ , 因而它有非零解. 设  $z = (z_{1}^{*}, z_{2}^{*}, \\dots , z_{q}^{*}, 0, \\dots , 0)^{\\mathrm{T}}$  是 (6.20) 式的一组非零解, 对应的  $y = (0, 0, \\dots , 0, y_{p + 1}^{*}, y_{p + 2}^{*}, \\dots , y_{n}^{*})^{\\mathrm{T}}$ , 其中  $y_{p + 1}^{*}, y_{p + 2}^{*}, \\dots , y_{n}^{*}$  不全为零. 将  $z$  与  $y$  的这两组值分别代入 (6.18) 式  $f$  的两个表达式中, 得",
+        "page_idx": 7
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf = -(y_{p + 1}^{*})^{2} - (y_{p + 2}^{*})^{2} - \\dots -(y_{r}^{*})^{2} \\leqslant 0,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 7
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf = (z_{1}^{*})^{2} + (z_{2}^{*})^{2} + \\dots + (z_{q}^{*})^{2} > 0.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "矛盾的结果说明  $p \\geqslant q$",
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "同理可证,  $q \\geqslant p$ , 因而  $p = q$ . 唯一性得证.",
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "由惯性定理可知, 实二次型的标准形中, 系数为正的平方项的个数  $p$  与化二次型为标准形时所用的非退化线性代换无关, 它是由二次型唯一确定的. 同样, 系数为负的平方项的个数  $r - p$  也是由二次型唯一确定的.",
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "定义6.5 实二次型  $f(x_{1}, x_{2}, \\dots , x_{n})$  的标准形中, 系数为正的平方项的个数  $p$  称为二次型  $f(x_{1}, x_{2}, \\dots , x_{n})$  的正惯性指数; 系数为负的平方项的个数  $r - p$  称为二次型  $f(x_{1}, x_{2}, \\dots , x_{n})$  的负惯性指数, 其中  $r$  为二次型  $f(x_{1}, x_{2}, \\dots , x_{n})$  的秩.  $p - (r - p) = 2p - r$  称为二次型  $f(x_{1}, x_{2}, \\dots , x_{n})$  的符号差.",
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "将定理6.3应用于实对称矩阵, 即得下面的推论",
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "推论6.1 任何实对称矩阵  $A$  都合同于对角矩阵",
+        "page_idx": 7
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\operatorname {diag}(\\underbrace{1,\\cdots,1}_{p\\uparrow},\\underbrace{-1,\\cdots, - 1}_{r - p\\uparrow}, - 1,0,0,\\dots ,0),\n$$\n",
+        "text_format": "latex",
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "其中  $r = r(A), p$  为与矩阵  $A$  对应的二次型的正惯性指数.",
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "推论6.2 如果  $f(x_{1}, x_{2}, \\dots , x_{n}) = x^{\\mathrm{T}}Ax$  与  $g(y_{1}, y_{2}, \\dots , y_{n}) = y^{\\mathrm{T}}By$  都是  $n$  个变量的实二次型, 它们有相同的秩与正惯性指数, 则必有非退化的线性代换  $x = Py$ , 使得  $x^{\\mathrm{T}}Ax = y^{\\mathrm{T}}(P^{\\mathrm{T}}AP)y = y^{\\mathrm{T}}By$",
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "证 设两个二次型的秩为  $r$ , 正惯性指数为  $p$ . 则由定理6.3可知, 存在非退化的线性代换",
+        "page_idx": 7
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r}{\\pmb {x} = P_{1}\\pmb {z}\\quad \\stackrel {\\mathrm{~\\scriptstyle~\\leftrightarrow~}}{\\equiv}\\quad \\pmb {y} = P_{2}\\pmb {z},} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "使得",
+        "page_idx": 7
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r}{\\pmb{x}^{\\mathrm{T}}A\\pmb {x} = \\pmb{z}^{\\mathrm{T}}(P_{1}^{\\mathrm{T}}A P_{1})\\pmb {z} = z_{1}^{2} + z_{2}^{2} + \\dots +z_{p}^{2} - z_{p + 1}^{2} - \\dots -z_{r}^{2},}\\\\ {\\pmb{y}^{\\mathrm{T}}B\\pmb {y} = \\pmb{z}^{\\mathrm{T}}(P_{2}^{\\mathrm{T}}B P_{2})\\pmb {z} = z_{1}^{2} + z_{2}^{2} + \\dots +z_{p}^{2} - z_{p + 1}^{2} - \\dots -z_{r}^{2}.} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "因此,令  $\\mathbf{x} = P_{1}P_{2}^{- 1}\\mathbf{y}\\overset {\\mathrm{~i~a~t~}}{=}P\\mathbf{y}$  ,就有",
+        "page_idx": 8
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {\\pmb{x}^{\\mathrm{T}}A\\pmb {x} = \\pmb{y}^{\\mathrm{T}}(P^{\\mathrm{T}}A P)\\pmb {y} = \\pmb{y}^{\\mathrm{T}}((P_{1}P_{2}^{-1})^{\\mathrm{T}}A(P_{1}P_{2}^{-1}))\\pmb{y}}\\\\ & {\\qquad = (P_{2}^{-1}\\pmb{y})^{\\mathrm{T}}(P_{1}^{\\mathrm{T}}A P_{1})(P_{2}^{-1}\\pmb{y})}\\\\ & {\\qquad = \\pmb{z}^{\\mathrm{T}}(P_{1}^{\\mathrm{T}}A P_{1})\\pmb {z} = \\pmb{z}^{\\mathrm{T}}(P_{2}^{\\mathrm{T}}B P_{2})\\pmb{z}}\\\\ & {\\qquad = (P_{2}\\pmb {z})^{\\mathrm{T}}B(P_{2}\\pmb {z}) = \\pmb{y}^{\\mathrm{T}}B\\pmb {y}.} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "6.4 正定二次型",
+        "text_level": 1,
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "本节我们讨论一种重要的实二次型——正定二次型",
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "定义6.6设  $f(x_{1},x_{2},\\dots ,x_{n}) = \\mathbf{x}^{\\mathrm{T}}A\\mathbf{x}$  为  $n$  个变量的实二次型,如果对于任意一组不全为零的实数  $c_{1},c_{2},\\dots ,c_{n}$  ,都有",
+        "page_idx": 8
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf(c_{1},c_{2},\\dots ,c_{n}) > 0,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "则称二次型为正定二次型.称正定二次型的矩阵为正定矩阵",
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "例如,实二次型  $f(x_{1},x_{2},x_{3}) = x_{1}^{2} + x_{2}^{2} + x_{3}^{2}$  为正定二次型,而  $g(x_{1},x_{2},x_{3}) =$ $x_{1}^{2} + x_{2}^{2} - x_{3}^{2}$  与  $h(x_{1},x_{2},x_{3}) = x_{1}^{2} + x_{2}^{2}$  就不是正定二次型.  $g(0,0,1) = - 1< 0$ $h(0,0,1) = 0.$  如何判断一个二次型是否为正定二次型呢?由上述各例可见,如果一个二次型是标准形或规范标准形,则比较容易判断它的正定性,对于标准形式的二次型,有下面的判定定理",
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "定理6.4  $n$  个变量的实二次型  $f(x_{1},x_{2},\\dots ,x_{n}) = \\mu_{1}x_{1}^{2} + \\mu_{2}x_{2}^{2} + \\dots +\\mu_{n}x_{n}^{2}$  为正定二次型的充分必要条件是  $\\mu_{1} > 0,\\mu_{2} > 0,\\dots ,\\mu_{n} > 0$  ,即二次型的正惯性指数为  $n$",
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "证记  $f(x_{1},x_{2},\\dots ,x_{n}) = \\mu_{1}x_{1}^{2} + \\mu_{2}x_{2}^{2} + \\dots +\\mu_{n}x_{n}^{2} = \\mathbf{x}^{\\mathrm{T}}A\\mathbf{x}.$",
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "必要性依次取  $\\mathbf{x}_{i} = (0,\\dots ,1,\\dots ,0)^{\\mathrm{T}},i = 1,2,\\dots ,n$  ,代入二次型得",
+        "page_idx": 8
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathbf{x}_{i}^{\\mathrm{T}}A\\mathbf{x}_{i} = \\mu_{i} > 0,\\quad i = 1,2,\\dots ,n.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "必要性得证",
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "充分性由于  $\\mu_{1} > 0,\\mu_{2} > 0,\\dots ,\\mu_{n} > 0$  ,显然",
+        "page_idx": 8
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf(x_{1},x_{2},\\dots ,x_{n}) = \\mu_{1}x_{1}^{2} + \\mu_{2}x_{2}^{2} + \\dots +\\mu_{n}x_{n}^{2}\\geqslant 0.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "对任意  $\\mathbf{x} = (x_{1},x_{2},\\dots ,x_{n})^{\\mathrm{T}}\\neq \\mathbf{0},x_{1},x_{2},\\dots ,x_{n}$  中至少有一个不为零,因而",
+        "page_idx": 8
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf(x_{1},x_{2},\\dots ,x_{n}) = \\mu_{1}x_{1}^{2} + \\mu_{2}x_{2}^{2} + \\dots +\\mu_{n}x_{n}^{2} > 0,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "由定义,二次型为正定二次型",
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "我们知道,对于一般的实二次型,一定存在非退化的线性代换将其化为标准形.只要二次型的正定性经非退化的线性代换后不变,就不难判定其正定性",
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "定理6.5  $n$  个变量的实二次型  $f(x_{1},x_{2},\\dots ,x_{n}) = \\mathbf{x}^{\\mathrm{T}}A\\mathbf{x}$  经非退化的实线性代换后其正定性不变.",
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "证设实二次型  $f(x_{1},x_{2},\\dots ,x_{n}) = \\mathbf{x}^{\\mathrm{T}}A\\mathbf{x}$  经非退化的实线性代换  $x = P y$  后变为",
+        "page_idx": 9
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {f(x_{1},x_{2},\\dots ,x_{n}) = \\mathbf{x}^{\\mathrm{T}}A\\mathbf{x} = \\mathbf{y}^{\\mathrm{T}}(P^{\\mathrm{T}}A P)\\mathbf{y}}\\\\ & {\\qquad = \\mathbf{y}^{\\mathrm{T}}B\\mathbf{y} = g(y_{1},y_{2},\\dots ,y_{n}).} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "现设  $x^{\\mathrm{T}}A x$  为正定二次型,即  $\\forall x\\neq 0,x^{\\mathrm{T}}A x > 0$  ,那么,  $\\forall y_{0}\\neq 0$  ,由于是非退化的线性代换,必有  $x_{0} = P y_{0}\\neq 0$  ,因而必有",
+        "page_idx": 9
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\ny_{0}^{\\mathrm{T}}B y_{0} = y_{0}^{\\mathrm{T}}(P^{\\mathrm{T}}A P)y_{0} = x_{0}^{\\mathrm{T}}A x_{0} > 0,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "即  $\\mathbf{y}^{\\mathrm{T}}B\\mathbf{y}$  也为正定二次型",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "同理,若  $\\mathbf{y}^{\\mathrm{T}}B\\mathbf{y}$  是正定二次型,则  $x^{\\mathrm{T}}A x$  也是正定二次型",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "因而,  $x^{\\mathrm{T}}A x$  与  $\\mathbf{y}^{\\mathrm{T}}B\\mathbf{y}$  有相同的正定性.",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "由定理6.4与6.5可见,要判断  $n$  个变量的实二次型  $f(x_{1},x_{2},\\dots ,x_{n}) = \\mathbf{x}^{\\mathrm{T}}A\\mathbf{x}$  是否为正定二次型只要看它的正惯性指数是否等于  $n$  或它的标准形(或规范标准形)是否为正定二次型即可.有下述定理",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "定理6.6设矩阵  $A$  为实对称矩阵,则下述的四个命题等价:",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "(1)  $A$  为正定矩阵;",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "(2)  $A$  的特征值全大于零;",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "(3)  $A$  合同于单位矩阵;",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "(4)存在非奇异实矩阵  $M$  ,使得  $A = M^{\\mathrm{T}}M.$",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "定理6.7 正定矩阵的行列式大于零",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "定理6.6与6.7的证明留给读者",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "实际上,还常用下面的方法判定二次型的正定性",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "定义6.7设  $A = (a_{i j})_{n\\times n}$  为  $n$  阶矩阵,称子式",
+        "page_idx": 9
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{k}=\\left|\\begin{array}{c c c c}{{a_{11}}}&{{a_{12}}}&{{\\cdots}}&{{a_{1k}}}\\\\ {{a_{21}}}&{{a_{22}}}&{{\\cdots}}&{{a_{2k}}}\\\\ {{\\vdots}}&{{\\vdots}}&{{}}&{{\\vdots}}\\\\ {{a_{k1}}}&{{a_{k2}}}&{{\\cdots}}&{{a_{k k}}}\\end{array}\\right|.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "为矩阵  $A$  的  $k$  阶顺序主子式,  $k = 1,2,\\dots ,n.$",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "定理6.8  $n$  个变量的实二次型  $f(x_{1},x_{2},\\dots ,x_{n}) = \\mathbf{x}^{\\mathrm{T}}A\\mathbf{x}$  为正定二次型的充分必要条件为矩阵  $A$  的顺序主子式全大于零.",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "证*必要性  $A$  为  $n$  阶正定矩阵,则  $\\forall x = (x_{1},x_{2},\\dots ,x_{n})^{\\mathrm{T}}\\neq \\mathbf{0},,\\mathbf{x}^{\\mathrm{T}}A\\mathbf{x} > 0.$  设  $A$  的  $k$  阶顺序主子式对应的  $k$  阶实对称矩阵为  $A_{k},\\forall y_{k} = (x_{1},x_{2},\\dots ,x_{k})^{\\mathrm{T}}\\neq$  0,取",
+        "page_idx": 9
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathbf{x}={\\binom{\\mathbf{y}_{k}}{\\mathbf{0}}}=(x_{1},x_{2},\\cdots,x_{k},0,\\cdots,0)^{\\mathrm{T}},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "则",
+        "page_idx": 9
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\pmb{x}^{\\mathrm{T}}A\\pmb {x} = \\sum_{i = 1}^{k}\\sum_{j = 1}^{k}a_{ij}x_{i}x_{j} = \\pmb{y}^{\\mathrm{T}}A_{k}\\pmb {y} > 0,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "即  $A_{k}$  为正定矩阵,由定理  $6.7,|A_{k}| > 0(k = 1,2,\\dots ,n)$ .",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "充分性 对  $A$  的阶数用数学归纳法",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "$n = 1$  时,  $A = (a_{11}),a_{11} > 0$ ,对应的二次型为  $f(x_{1}) = a_{11}x_{1}^{2}$ ,显然为正定二次型.",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "设对  $n - 1$  阶实对称矩阵结论正确,则对  $n$  阶实对称矩阵  $A = (a_{ij})_{n\\times n}$  按下面的形式分块:",
+        "page_idx": 10
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA = \\left[ \\begin{array}{cc}A_{n - 1} & \\pmb {\\alpha} \\\\ \\pmb{\\alpha}^{\\mathrm{T}} & a_{m} \\end{array} \\right],\n$$\n",
+        "text_format": "latex",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "其中  $A_{n - 1}$  是  $A$  的  $n - 1$  阶顺序主子式所对应的矩阵,对  $A$  施行下面的分块矩阵的初等变换:",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "$\\left[ \\begin{array}{cc}E_{n - 1} & \\mathbf{0} \\\\ - \\mathbf{\\alpha}^{\\mathrm{T}}A_{n - 1}^{- 1} & 1 \\end{array} \\right]\\left[ \\begin{array}{cc}A_{n - 1} & \\mathbf{\\alpha} \\\\ \\mathbf{\\alpha}^{\\mathrm{T}} & a_{m} \\end{array} \\right]\\left[ \\begin{array}{cc}E_{n - 1} & - A_{n - 1}^{- 1}\\mathbf{\\alpha} \\\\ \\mathbf{0}^{\\mathrm{T}} & 1 \\end{array} \\right] = \\left[ \\begin{array}{cc}A_{n - 1} & \\mathbf{0} \\\\ \\mathbf{0}^{\\mathrm{T}} & a_{m} - \\mathbf{\\alpha}^{\\mathrm{T}}A_{n - 1}^{- 1}\\mathbf{\\alpha} \\end{array} \\right],$  记  $Q = \\left[ \\begin{array}{cc}E_{n - 1} & - A_{n - 1}^{- 1}\\pmb {\\alpha} \\\\ \\mathbf{0}^{\\mathrm{T}} & 1 \\end{array} \\right]$ ,其中  $E_{n - 1}$  是  $n - 1$  阶单位矩阵,则上式可写成",
+        "page_idx": 10
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nQ^{\\mathrm{T}}A Q = \\left[ \\begin{array}{cc}A_{n - 1} & \\mathbf{0} \\\\ \\mathbf{0}^{\\mathrm{T}} & a_{m} - \\mathbf{\\alpha}^{\\mathrm{T}}A_{n - 1}^{-1}\\mathbf{\\alpha} \\end{array} \\right].\n$$\n",
+        "text_format": "latex",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "显然  $Q$  可逆,  $|Q| = 1$ ,且",
+        "page_idx": 10
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mid Q^{\\mathrm{T}}A Q\\mid = \\mid A\\mid = \\left| \\begin{array}{cc}A_{n - 1} & \\mathbf{0} \\\\ \\mathbf{0}^{\\mathrm{T}} & a_{m} - \\mathbf{\\alpha}^{\\mathrm{T}}A_{n - 1}^{-1}\\mathbf{\\alpha} \\end{array} \\right| = \\mid A_{n - 1}\\mid \\cdot (a_{m} - \\mathbf{\\alpha}^{\\mathrm{T}}A_{n - 1}^{-1}\\mathbf{\\alpha}).\n$$\n",
+        "text_format": "latex",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "由于  $\\mid A\\mid >0,\\mid A_{n - 1}\\mid >0$  ,故  $a_{m} - \\pmb{\\alpha}^{\\mathrm{T}}A_{n - 1}^{- 1}\\pmb {\\alpha} > 0.$  因此,  $\\forall x = \\left[ \\begin{array}{c}z_{n - 1} \\\\ x_{n} \\end{array} \\right]\\neq \\mathbf{0}$ ,其中  $z_{n - 1} = (x_{1},x_{2},\\dots ,x_{n - 1})^{\\mathrm{T}}$",
+        "page_idx": 10
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r}x^{\\mathrm{T}}Q^{\\mathrm{T}}A Q x = x^{\\mathrm{T}}\\left[ \\begin{array}{cc}A_{n - 1} & \\mathbf{0} \\\\ \\mathbf{0}^{\\mathrm{T}} & a_{m} - \\mathbf{\\alpha}^{\\mathrm{T}}A_{n - 1}^{-1}\\mathbf{\\alpha} \\end{array} \\right]x = z_{n - 1}^{\\mathrm{T}}A_{n - 1}z_{n - 1} + (a_{m} - \\mathbf{\\alpha}^{\\mathrm{T}}A_{n - 1}^{-1}\\mathbf{\\alpha})x_{n}^{2} > 0 \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "即  $Q^{\\mathrm{T}}A Q$  为正定矩阵,由定理6.5,  $A$  也为正定矩阵",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "例6.5 判断二次型",
+        "page_idx": 10
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf(x_{1},x_{2},x_{3}) = 3x_{1}^{2} - 4x_{1}x_{2} + 2x_{2}^{2} - 4x_{2}x_{3} + 7x_{3}^{2}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "是否为正定二次型?",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "解法一 二次型的矩阵为",
+        "page_idx": 10
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA = \\left[ \\begin{array}{rrr}3 & -2 & 0 \\\\ -2 & 2 & -2 \\\\ 0 & -2 & 7 \\end{array} \\right],\n$$\n",
+        "text_format": "latex",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "它的各阶顺序主子式依次为  $D_{1} = 3, D_{2} = 2, D_{3} = 2$ , 由定理 6.8,  $f$  为正定二次型.",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "解法二 配方法",
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf(x_{1}, x_{2}, x_{3}) = 3\\left(x_{1} - \\frac{2}{3} x_{2}\\right)^{2} + \\frac{2}{3} (x_{2} - 3x_{3})^{2} + x_{3}^{2},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "$f$  的正惯性指数为3,由定理  $6.4,f$  为正定二次型",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "例6.6 判定二次型  $f(x_{1}, x_{2}, \\dots , x_{n}) = \\sum_{i = 1}^{n} x_{i}^{2} + \\sum_{1 \\leqslant i < j \\leqslant n} x_{i} x_{j}$  的正定性.",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "解 二次型的矩阵为",
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA = \\left[ \\begin{array}{ccccc}1 & \\frac{1}{2} & \\dots & \\frac{1}{2} \\\\ \\frac{1}{2} & 1 & \\dots & \\frac{1}{2} \\\\ \\vdots & \\vdots & & \\vdots \\\\ \\frac{1}{2} & \\frac{1}{2} & \\dots & 1 \\end{array} \\right],\n$$\n",
+        "text_format": "latex",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "$A$  的  $k$  阶顺序主子式为",
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD_{k} = \\left| \\begin{array}{ccccc}1 & \\frac{1}{2} & \\dots & \\frac{1}{2} \\\\ \\frac{1}{2} & 1 & \\dots & \\frac{1}{2} \\\\ \\vdots & \\vdots & & \\vdots \\\\ \\frac{1}{2} & \\frac{1}{2} & \\dots & 1 \\end{array} \\right|_{k \\times k} = \\frac{k + 1}{2}\\left(\\frac{1}{2}\\right)^{k - 1}, \\quad k = 1, 2, \\dots , n,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "它们全大于零,因此,二次型为正定二次型",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "例6.7 设  $f(x_{1}, x_{2}, \\dots , x_{n}) = x^{\\mathrm{T}} A x$  为正定二次型,证明:  $|E + A| > 1$",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "证 设矩阵  $A$  的特征值为  $\\lambda_{1}, \\lambda_{2}, \\dots , \\lambda_{n}$ , 因为  $f(x_{1}, x_{2}, \\dots , x_{n}) = x^{\\mathrm{T}} A x$  为正定二次型,所以  $A$  的特征值全大于零,即",
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\lambda_{1} > 0, \\lambda_{2} > 0, \\dots , \\lambda_{n} > 0,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "而  $E + A$  的特征值为  $\\lambda_{1} + 1, \\lambda_{2} + 1, \\dots , \\lambda_{n} + 1$ ,故",
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n|E + A| = (\\lambda_{1} + 1)(\\lambda_{2} + 1) \\dots (\\lambda_{n} + 1) > 1.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "例6.8 设  $B$  为  $m \\times n$  实矩阵,证明:  $B x = 0$  只有零解的充分必要条件是  $B^{\\mathrm{T}} B$  为正定矩阵.",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "证 显然  $B^{\\mathrm{T}} B$  为实对称矩阵",
+        "page_idx": 11
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l}{B x = \\mathbf{0}\\mathbf{\\Xi}\\mathbf{\\Xi}\\mathbf{\\Xi}\\mathbf{\\Xi}\\mathbf{\\Xi}\\mathbf{\\Xi}\\mathbf{\\Xi}\\mathbf{\\Xi}\\mathbf{\\Xi}\\mathbf{\\Xi}\\mathbf{\\Xi}\\mathbf{\\Xi}\\mathbf{\\Xi}\\mathbf{\\Xi}\\mathbf{\\Xi}\\mathbf{\\Xi}\\mathbf{\\Xi}\\mathbf{\\Xi}\\mathbf{\\Xi}\\mathbf{\\Xi}\\mathbf{\\Lambda}\\mathbf{\\Xi}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}}\\\\ {\\iff \\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}}}\\\\ {\\iff \\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\mathbf{\\Lambda}\\Lambda}\\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "除了正定二次型外, 实二次型中还有负定二次型, 半正 (负) 定二次型以及不定二次型. 它们的定义如下:",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "定义6.8 设  $f(x_{1},x_{2},\\dots ,x_{n}) = \\mathbf{x}^{\\mathrm{T}}A\\mathbf{x}$  为  $n$  个变量的实二次型, 如果对于任意一组不全为零的实数  $c_{1},c_{2},\\dots ,c_{n}$ , 都有",
+        "page_idx": 12
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf(c_{1},c_{2},\\dots ,c_{n})< 0,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "则称  $f(x_{1},x_{2},\\dots ,x_{n})$  为负定二次型; 如果对于任意一组不全为零的实数  $c_{1},c_{2},\\dots ,c_{n}$ , 都有",
+        "page_idx": 12
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf(c_{1},c_{2},\\dots ,c_{n})\\geqslant 0(f(c_{1},c_{2},\\dots ,c_{n})\\leqslant 0),\n$$\n",
+        "text_format": "latex",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "则称  $f(x_{1},x_{2},\\dots ,x_{n})$  为半正 (负) 定二次型; 如果  $f(x_{1},x_{2},\\dots ,x_{n})$  既不是半正定二次型, 又不是半负定二次型, 则称它为不定二次型.",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "负定二次型, 半正定二次型及半负定二次型的矩阵分别称为负定矩阵, 半正定矩阵与半负定矩阵.",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "可以像正定二次型 (正定矩阵) 那样讨论负定二次型 (负定矩阵), 半正定 (半负定) 二次型 (半正定 (半负定) 矩阵) 的相关性质, 这里不再展开了.",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "习题六",
+        "text_level": 1,
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "(-)",
+        "text_level": 1,
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "1. 写出下列二次型的矩阵并求出二次型的秩:",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "(1)  $f(x,y,z) = x^{2} + 4xy + 4y^{2} + 2xz + z^{2} + 4yz;$  \n(2)  $f(x_{1},x_{2},x_{3}) = x_{1}^{2} - 2x_{1}x_{2} + 2x_{2}^{2} - 2x_{1}x_{3} + x_{3}^{2} + 2x_{2}x_{3};$  \n(3)  $f(x_{1},x_{2},\\dots ,x_{n}) = \\sum_{i = 1}^{n - 1}(x_{i} - x_{i + 1})^{2}.$",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "2. 已知二次型的矩阵如下, 写出对应的二次型:",
+        "page_idx": 12
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n[{\\begin{array}{r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r}{[{\\begin{array}{r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r}{[{\\begin{array}{c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c}{[{\\begin{array}{c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c}{[{\\begin{array}{c}0 & 0 & -1 & 0 & \\dots & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\\\ 0 & 1 & 0 & -1 & \\dots & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\\\ 0 -1 & 0 & 1 & \\dots & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\end{array}}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}[{\\begin{array}{c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c}{[{\\begin{array}{{\\begin{array}{c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c}{[{[{\\begin{array}{{\\begin{array}{c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c}{[{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{\\\nbegin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\mathbf{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{}}{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{}}[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{}}}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{[{\\begin{array}{{x}}[{\\begin{array}{{x}}[{\\begin{array}{{x}}[{\\begin{array}{{x}}[{\\begin{array}{{x}}[{\\begin{array}{{x}}[{\\begin{array}{{x}}[{\\begin{array}{{x}}[{\\begin{array}{{x}}[{\\begin{array}{{x}}{[{\\begin{array}{{x}}[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{x}}[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{x}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}}}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{y}}{[{\\begin{array}{{{y}}{[{\\begin{array}{{{y}}{[{\\begin{array}{{{y}}{[{\\begin{array}{{{y}}{[{\\begin{array}{{{y}}{[{\\begin{array}{{{y}}{[{\\begin{array}{{{y}}{[{\\begin{array}{{{y}}{[{\\begin{array}{{{y}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}}{{x}}[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{x}}{[{\\begin{array}{{{y}}{[{\\begin{array}{{{y}}{[{\\begin{array}{{{y}}{[{\\begin{array}{{{y}}{[{\\begin{array}{{{y}}{[{\\begin{array}{{{y}}{[{\\begin{array}{{{y}}{[{\\begin{array}{{{y}}{[{\\begin{array}{{{y}}}{{y}}{[{\\begin{array}{{{y}}{[{\\begin{array}{{{y}}}{{y}}{[{\\begin{array}{{{y}}}{{y}}{[{\\begin{array}{{{y}}}{{y}}{[{\\begin{array}{{{y}}}{{y}}{[{\\begin{array}{{{y}}}{{y}}{[{\\begin{array}{{{y}}}{{y}}{[{\\begin{array}{{{y}}}{{y}}{[{\\begin{array}{{{y}}}{{y}}}{{y}}{[{\\begin{array}{{{y}}}{{y}}{[{\\begin{array}{{{y}}}{{y}}{[{\\begin{array}{{{y}}}{{y}}{[{\\begin{array}{{{y}}}{{y}}{[{\\begin{array}{{{y}}}{{y}}{[{\\begin{array}{{{y}}}{{y}}{[{\\begin{array}{{{y}}{[{\\begin{array}{{{y}}}{{y}}{[{\\begin{array}{{{y}}}{{y}}{[{\\begin{array}{{{y}}}{{y}}{[{\\begin{array}{{{y}}}{{y}}{[{\\begin{array}{{{y}}}{{y}}{[\\begin{array}{{{y}}}{{y}}{[{\\begin{array}{{{y}}}{{y}}{[{\\begin{array}{{{y}}}{{y}}{[{\\begin{array}{{{y}}}{{y}}{[{\\begin{array}{{{y}}}{{y}}{[{\\begin{array}{{{y}}}{{y}}{[{\\begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{y}}{\\begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{array}{c}}{\\begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{\\begin{array}{{{y}}}{{y}}{[{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\begin{\\array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}\\end{array}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}}{\\begin{array}{c}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "3. 用正交代换法化下列二次型为标准形,并求出所用的正交代换:",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "(1)  $f(x_{1},x_{2},x_{3}) = 2x_{1}^{2} + 3x_{2}^{2} + x_{3}^{2} + 4x_{1}x_{2} - 4x_{1}x_{3};$",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "(2)  $f(x_{1},x_{2},x_{3},x_{4}) = 2x_{1}x_{2} - 2x_{3}x_{4};$",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "(3)  $f(x_{1},x_{2},x_{3}) = 2x_{1}x_{2} + 2x_{1}x_{3} + 2x_{2}x_{3};$",
+        "page_idx": 12
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf(x_{1},x_{2},x_{3}) = x_{1}^{2} + 4x_{2}^{2} + x_{3}^{2} - 4x_{1}x_{2} - 8x_{1}x_{3} - 4x_{2}x_{3}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "4. 用配方法化下列二次型为标准形,并求出所作的非退化线性代换:",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "(1)  $f(x_{1},x_{2},x_{3}) = x_{1}^{2} - x_{3}^{2} + 2x_{1}x_{2} + 2x_{2}x_{3}$ ;",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "(2)  $f(x_{1},x_{2},x_{3}) = x_{1}x_{2} + x_{1}x_{3} + x_{2}x_{3}$ .",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "$5^{*}$ . 用初等变换法将第4题的二次型化为标准形,并求出所作的非退化线性代换.",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "6. 化第3题中的二次型为规范标准形.",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "7. 设矩阵  $A$  和矩阵  $B$  合同,矩阵  $c$  和矩阵  $D$  合同,证明:",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "合同.",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "8. 证明:矩阵",
+        "page_idx": 13
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left[ \\begin{array}{c c c c c}{\\lambda_{1}} & & & & \\\\ & {\\lambda_{2}} & & \\\\ & & \\ddots & \\\\ & & & {\\lambda_{n}} \\end{array} \\right]\\quad \\stackrel {\\mathrm{~}}{\\equiv}\\quad \\left[ \\begin{array}{c c c c c}{\\lambda_{i_{1}}} & & & \\\\ & {\\lambda_{i_{2}}} & & \\\\ & & \\ddots & \\\\ & & & {\\lambda_{n}} \\end{array} \\right]\n$$\n",
+        "text_format": "latex",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "合同,其中  $i_{1},i_{2},\\dots ,i_{n}$  是  $1,2,\\dots ,n$  的一个排列.",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "9. 判定下列二次型是否为正定二次型:",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "(1)  $f(x_{1},x_{2},x_{3}) = x_{1}^{2} + 2x_{2}^{2} - 3x_{3}^{2} + 4x_{1}x_{2} + 2x_{2}x_{3}$ ;",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "(2)  $f(x_{1},x_{2},x_{3},x_{4}) = 3x_{1}^{2} + 3x_{2}^{2} + 3x_{3}^{2} + x_{4}^{2} + 2x_{1}x_{2} + 2x_{1}x_{3} + 2x_{2}x_{3}$ ;",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "(3)  $f(x_{1},x_{2},\\dots ,x_{n}) = \\sum_{i = 1}^{n}x_{i}^{2} + \\sum_{i = 1}^{n - 1}x_{i}x_{i + 1}$ .",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "10. 判定下列矩阵是否为正定矩阵:",
+        "page_idx": 13
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA=\\left[\\begin{array}{c c c}{{10}}&{{4}}&{{12}}\\\\ {{4}}&{{2}}&{{-14}}\\\\ {{12}}&{{-14}}&{{1}}\\end{array}\\right];\\qquad(2)A=\\left[\\begin{array}{c c c c}{{1}}&{{1}}&{{1}}&{{1}}\\\\ {{1}}&{{2}}&{{2}}&{{2}}\\\\ {{1}}&{{2}}&{{3}}&{{3}}\\\\ {{1}}&{{2}}&{{3}}&{{4}}\\end{array}\\right].\n$$\n",
+        "text_format": "latex",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "11. 讨论参数  $t$  满足什么条件时下列二次型正定:",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "(1)  $f(x_{1},x_{2},x_{3}) = x_{1}^{2} + 4x_{2}^{2} + 2x_{3}^{2} + 2t x_{1}x_{2} + 2x_{1}x_{3}$ ;",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "(2)  $f(x_{1},x_{2},x_{3}) = x_{1}^{2} + 4x_{2}^{2} + 5x_{3}^{2} + 4x_{1}x_{2} - 2t x_{1}x_{3} + 4x_{2}x_{3}$ .",
+        "page_idx": 13
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf(x_{1},x_{2},x_{3}) = t x_{1}^{2} + x_{2}^{2} + 5x_{3}^{2} - 4x_{1}x_{2} - 2t x_{1}x_{3} + 4x_{2}x_{3}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "12. 设  $n$  阶矩阵  $A$  是正定矩阵  $(n\\geqslant 2)$ ,证明:  $A^{-1}$  和  $A^{*}$  也是正定矩阵.",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "13. 设  $A$  为正定矩阵:",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "(1)证明:  $A^{m}(m$  是正整数)也是正定矩阵;",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "(2)设  $g(x) = x^{m} + x^{m - 1} + \\dots +x + 1$ ,证明:  $g(A)$  也是正定矩阵.",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "14. 设  $A,B$  都为  $n$  阶正定矩阵,  $k,l$  为正实数,证明:  $k A + l B,B A B$  也是正定矩阵.",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "15. 设  $A$  为  $m\\times n$  实矩阵,且  $r(A) = n$ ,证明:  $A^{\\mathrm{T}}A$  也是正定矩阵.",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "16. 设  $A$  为  $n$  阶正定矩阵,  $P$  为  $n$  阶可逆实矩阵,证明:  $P^{\\mathrm{T}}A P$  为正定矩阵.",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "17. 设  $A$  为实对称矩阵,且满足  $A^{2} - 3A + 2E = O$ ,证明:  $A$  为正定矩阵.",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "18. 设  $A = (a_{ij})_{n\\times n}$  是正定矩阵,  $b_{i}$  为非零实数,  $i = 1,2,\\dots ,n$ ,证明:  $B = (a_{ij}b_{i}b_{j})_{n\\times n}$  也是正",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "定矩阵.",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "19. 证明:矩阵  $A$  为正定矩阵的充分必要条件是,存在非奇异实矩阵  $M$  使得  $A = M^{\\top}M.$",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "20. 设  $A$  为实对称矩阵,  $t$  为实数. 证明:  $t$  充分大之后,  $tE + A$  是正定矩阵.",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "(二)",
+        "text_level": 1,
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "21. 证明:正定矩阵  $A$  为正交矩阵的充分必要条件是  $A$  为单位矩阵.",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "22. 用正交代换化二次型  $\\sum_{n = 1}^{n}x_{n}^{2} + \\sum_{1\\leqslant t< k\\leqslant n}x_{i}x_{k}$  为标准形.",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "23. 把  $n$  阶实二次型按其矩阵的合同关系分类(即矩阵合同的二次型都归为同一类),共分几类?",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "24. 设  $f(x_{1},x_{2},\\dots ,x_{n}) = x^{\\top}Ax$  为一个实二次型,且有  $n$  维实向量  $x_{1},x_{2}$ ,使得",
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nx_{1}^{\\top}Ax_{1} > 0, \\quad x_{2}^{\\top}Ax_{2}< 0.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "证明:必存在  $n$  维实向量  $x_{0}\\neq 0$ ,使得  $x_{1}^{\\top}Ax_{0} = 0$",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "25. 设  $A$  和  $B$  是两个  $n$  阶实对称矩阵,并且  $A$  是正定矩阵. 证明:存在一个  $n$  阶实可逆矩阵  $P$ ,使得  $P^{\\top}AP$  与  $P^{\\top}BP$  都是对角矩阵.",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "26. 设矩阵  $A$  为  $n$  阶实对称矩阵,且  $A^{2} = A.$  证明:  $E + A + A^{2} + \\dots +A^{k}(k$  为正整数)为正定矩阵.",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "27. 设  $A,B$  为同阶正定矩阵,且  $\\mid x A - B\\mid = 0$  的根全为1,证明:  $A = B.$",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "28. 设  $A,B$  为  $n$  阶正定矩阵,且  $AB = BA$ ,证明:  $AB$  也是正定矩阵.",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "29. 设  $\\alpha_{1},\\alpha_{2},\\dots ,\\alpha_{n}$  是两两正交的  $n$  维单位实列向量,  $k$  为实数,  $H = E - \\lambda \\alpha_{1}\\alpha_{2}^{\\top}$ ,其中  $E$  为  $n$  阶单位矩阵. 证明:",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "(1)  $H$  是实对称矩阵;",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "(2)  $\\alpha_{1}$  是  $H$  的特征向量,并求对应的特征值;",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "(3)  $\\alpha_{2},\\dots ,\\alpha_{n}$  也是  $H$  的特征向量,并求对应的特征值;",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "(4)  $k$  取何值时,  $H$  为正交矩阵?",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "(5)  $k$  取何值时,  $H$  为可逆矩阵?",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "(6)  $k$  取何值时,  $H$  为正定矩阵?",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "第七章 线性变换",
+        "text_level": 1,
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "线性变换是将线性空间映到自身的一种映射, 它的特点是保持向量间的线性关系不变, 即保持了向量的加法和数乘关系不变. 本章将介绍线性变换的概念和性质, 讨论线性变换与矩阵的对应关系, 并介绍两种特殊的线性变换.",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "7.1 线性变换的概念",
+        "text_level": 1,
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "7.1.1 线性变换",
+        "text_level": 1,
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "定义7.1设  $V$  是数域  $P$  上的线性空间,若存在一个  $V$  到自身的映射  $\\mathcal{A}$  即 $\\forall \\alpha \\in V$  ,有唯一的  $\\mathcal{A}\\alpha \\in V$  与  $\\alpha$  对应,则称  $\\mathcal{A}$  为  $V$  的一个变换,  $\\mathcal{A}\\alpha$  称为  $\\alpha$  在变换  $\\mathcal{A}$  下的像,  $\\alpha$  称为  $\\mathcal{A}\\alpha$  的原像.",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "有时也将  $\\mathcal{A}\\alpha$  记作  $\\mathcal{A}(\\alpha)$",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "定义7.2设  $V$  是数域  $P$  上的线性空间,  $\\mathcal{A}$  为  $V$  的一个变换,若  $\\forall \\alpha ,\\beta \\in V$  和 $\\forall k\\in P$  ,成立",
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}(\\alpha +\\beta) = \\mathcal{A}(\\alpha) + \\mathcal{A}(\\beta),\n$$\n",
+        "text_format": "latex",
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}(k\\alpha) = k\\mathcal{A}(\\alpha),\n$$\n",
+        "text_format": "latex",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "则称  $\\mathcal{A}$  是线性的,也称  $\\mathcal{A}$  为  $V$  的一个线性变换",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "例7.1设  $V$  是数域  $P$  上的线性空间,  $c$  是数域  $P$  中的一个常数,定义变换 $\\mathcal{A}$  为",
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}\\alpha = c\\alpha ,\\quad \\forall \\alpha \\in V,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "那么容易验证  $\\mathcal{A}$  是线性变换,通常称之为数乘变换",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "特别,当  $c = 1$  ,记此变换为  $\\mathcal{E}$  ,称为恒等变换,即有",
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{E}\\alpha = \\alpha ,\\quad \\forall \\alpha \\in V.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "而当  $c = 0$  ,记此变换为  $\\mathcal{O}$  ,称为零变换,有",
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{O}\\alpha = \\mathbf{0},\\quad \\forall \\alpha \\in V.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "例7.2在所有一元实系数多项式组成的实线性空间  $P[x]$  上定义变换  $\\mathcal{D}$  为",
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{D}(p(x)) = \\frac{\\mathrm{d}}{\\mathrm{d}x} (p(x)),\\quad \\forall p(x)\\in P[x].\n$$\n",
+        "text_format": "latex",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "称之为微分变换.由求导法则可知,  $\\mathcal{D}$  是线性变换",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "例7.3在实线性空间  $C[a,b]$  上定义变换  $\\mathcal{I}$  为",
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{I}(f(x)) = \\int_{a}^{x}f(t)\\mathrm{d}t,\\quad \\forall f(x)\\in C[a,b].\n$$\n",
+        "text_format": "latex",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "称之为积分变换, 由积分法则可知,  $\\mathcal{I}$  是线性变换.",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "例7.4在  $\\mathbf{R}^{3}$  中, 定义下列变换: 对任意的  $\\left[ \\begin{array}{c}x_{1} \\\\ x_{2} \\\\ x_{3} \\end{array} \\right] \\in \\mathbf{R}^{3}$ ,",
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}_{1}\\left[\\left( \\begin{array}{c}x_{1} \\\\ x_{2} \\\\ x_{3} \\end{array} \\right)\\right] = \\left( \\begin{array}{c}x_{1} + x_{2} \\\\ x_{3} \\\\ x_{1} \\end{array} \\right), \\quad \\mathcal{A}_{2}\\left[\\left( \\begin{array}{c}x_{1} \\\\ x_{2} \\\\ x_{3} \\end{array} \\right)\\right] = \\left( \\begin{array}{c}1 \\\\ 0 \\\\ x_{3} \\end{array} \\right), \\quad \\mathcal{A}_{3}\\left[\\left( \\begin{array}{c}x_{1} \\\\ x_{2} \\\\ x_{3} \\end{array} \\right)\\right] = \\left( \\begin{array}{c}x_{1}x_{2} \\\\ x_{2}x_{3} \\\\ x_{3}^{2} \\end{array} \\right),\n$$\n",
+        "text_format": "latex",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "试确定它们是否为线性变换?",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "解对任意的  $\\left[ \\begin{array}{c}x_{1} \\\\ x_{2} \\\\ x_{3} \\end{array} \\right], \\left( \\begin{array}{c}y_{1} \\\\ y_{2} \\\\ y_{3} \\end{array} \\right) \\in \\mathbf{R}^{3}$  和  $k \\in \\mathbf{R}$ ,",
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}_{1}\\left[\\left( \\begin{array}{c}x_{1} \\\\ x_{2} \\\\ x_{3} \\end{array} \\right) + \\left( \\begin{array}{c}y_{1} \\\\ y_{2} \\\\ y_{3} \\end{array} \\right)\\right] = \\mathcal{A}_{1}\\left[\\left( \\begin{array}{c}x_{1} + y_{1} \\\\ x_{2} + y_{2} \\\\ x_{3} + y_{3} \\\\ x_{1} + y_{1} \\end{array} \\right)\\right] = \\left( \\begin{array}{c}x_{1} + y_{1} + x_{2} + y_{2} \\\\ x_{3} + y_{3} \\\\ x_{1} + y_{1} \\end{array} \\right)\n$$\n",
+        "text_format": "latex",
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n= \\left( \\begin{array}{c}x_{1} + x_{2} \\\\ x_{3} \\\\ x_{1} \\end{array} \\right) + \\left( \\begin{array}{c}y_{1} + y_{2} \\\\ y_{3} \\\\ y_{1} \\end{array} \\right) = \\mathcal{A}_{1}\\left( \\begin{array}{c}x_{1} \\\\ x_{2} \\\\ x_{3} \\\\ x_{1} \\end{array} \\right) + \\mathcal{A}_{1}\\left( \\begin{array}{c}y_{1} \\\\ y_{2} \\\\ y_{3} \\\\ y_{1} \\end{array} \\right),\n$$\n",
+        "text_format": "latex",
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}_{1}(k( \\begin{array}{c}x_{1} \\\\ x_{2} \\\\ x_{3} \\end{array} )) = \\mathcal{A}_{1}( \\begin{array}{c}k x_{1} \\\\ k x_{2} \\\\ k x_{3} \\end{array} )) = ( \\begin{array}{c}k x_{1} + k x_{2} \\\\ k x_{3} \\\\ k x_{1} \\end{array} ) = k( \\begin{array}{c}x_{1} + x_{2} \\\\ x_{3} \\\\ x_{1} \\end{array} ) = k\\mathcal{A}_{1}( \\begin{array}{c}x_{1} \\\\ x_{2} \\\\ x_{3} \\\\ x_{1} \\end{array} ),\n$$\n",
+        "text_format": "latex",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "故  $\\mathcal{A}_{1}$  是线性变换",
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}_{2}\\left(\\left( \\begin{array}{c}x_{1} \\\\ x_{2} \\\\ x_{3} \\end{array} \\right) + \\left( \\begin{array}{c}y_{1} \\\\ y_{2} \\\\ y_{3} \\end{array} \\right)\\right) = \\mathcal{A}_{2}\\left(\\left( \\begin{array}{c}x_{1} + y_{1} \\\\ x_{2} + y_{2} \\\\ x_{3} + y_{3} \\end{array} \\right)\\right) = \\left( \\begin{array}{c}1 \\\\ 0 \\\\ x_{3} + y_{3} \\end{array} \\right),\n$$\n",
+        "text_format": "latex",
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}_{2}\\left(\\left( \\begin{array}{c}x_{1} \\\\ x_{2} \\\\ x_{3} \\end{array} \\right)\\right) + \\mathcal{A}_{2}\\left(\\left( \\begin{array}{c}y_{1} \\\\ y_{2} \\\\ y_{3} \\end{array} \\right)\\right) = \\left( \\begin{array}{c}1 \\\\ 0 \\\\ x_{3} \\end{array} \\right) + \\left( \\begin{array}{c}1 \\\\ 0 \\\\ y_{3} \\end{array} \\right) + \\left( \\begin{array}{c}2 \\\\ 0 \\\\ x_{1} + y_{3} \\end{array} \\right),\n$$\n",
+        "text_format": "latex",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "上两式不等, 故  $\\mathcal{A}_{2}$  不是线性变换",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "当  $k \\neq 0$  且  $k \\neq 1$  时,",
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}_{3}\\left(k\\left( \\begin{array}{c}x_{1} \\\\ x_{2} \\\\ x_{3} \\end{array} \\right)\\right) = \\mathcal{A}_{3}\\left(\\left( \\begin{array}{c}k x_{1} \\\\ k x_{2} \\\\ k x_{3} \\end{array} \\right)\\right) = \\left( \\begin{array}{c}k^{2}x_{1}x_{2} \\\\ k^{2}x_{2}x_{3} \\\\ k^{2}x_{3}^{2} \\end{array} \\right) = k^{2}\\left( \\begin{array}{c}x_{1}x_{2} \\\\ x_{2}x_{3} \\\\ x_{3}^{2} \\end{array} \\right) \\neq k\\mathcal{A}_{3}\\left(\\left( \\begin{array}{c}x_{1} \\\\ x_{2} \\\\ x_{3} \\end{array} \\right)\\right),\n$$\n",
+        "text_format": "latex",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "故  $\\mathcal{A}_{3}$  不是线性变换.",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "7.1.2 线性变换的性质",
+        "text_level": 1,
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "命题7.1若  $\\mathcal{A}$  是数域  $P$  上线性空间  $V$  中的线性变换,那么:",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "(1)  $\\mathcal{A}(\\mathbf{0}) = \\mathbf{0};\\mathcal{A}(-\\pmb {\\alpha}) = -\\mathcal{A}(\\pmb {\\alpha}),\\forall \\pmb {\\alpha}\\in V;$",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "(2)线性变换保持线性关系不变,即  $\\forall \\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{m}\\in V,k_{1},k_{2},\\dots ,k_{m}\\in P$  有",
+        "page_idx": 17
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}(k_{1}\\pmb{\\alpha}_{1} + k_{2}\\pmb{\\alpha}_{2} + \\dots +k_{m}\\pmb{\\alpha}_{m}) = k_{1}\\mathcal{A}(\\pmb{\\alpha}_{1}) + k_{2}\\mathcal{A}(\\pmb{\\alpha}_{2}) + \\dots +k_{m}\\mathcal{A}(\\pmb{\\alpha}_{m}). \\tag{7.1}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "即",
+        "page_idx": 17
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}[(\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{m})\\pmb {k}] = (\\mathcal{A}\\pmb{\\alpha}_{1},\\mathcal{A}\\pmb{\\alpha}_{2},\\dots ,\\mathcal{A}\\pmb{\\alpha}_{m})\\pmb {k},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "其中  $\\pmb {k} = (k_{1},k_{2},\\dots ,k_{m})^{\\mathrm{T}}$",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "证(1)  $\\mathcal{A}(\\mathbf{0}) = \\mathcal{A}(0\\pmb {\\alpha}) = 0\\mathcal{A}(\\pmb {\\alpha}) = \\mathbf{0},$",
+        "page_idx": 17
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}(-\\pmb {\\alpha}) = \\mathcal{A}((-1)\\pmb {\\alpha}) = (-1)\\mathcal{A}(\\pmb {\\alpha}) = -\\mathcal{A}(\\pmb {\\alpha}).\n$$\n",
+        "text_format": "latex",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "(2)用归纳法证.当  $m = 1$  ,结论显然;设  $\\forall \\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{m - 1}\\in V,k_{1},k_{2},\\dots ,$ $k_{m - 1}\\in P$  ,有",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "$\\mathcal{A}(k_{1}\\pmb{\\alpha}_{1} + k_{2}\\pmb{\\alpha}_{2} + \\dots +k_{m - 1}\\pmb{\\alpha}_{m - 1}) = k_{1}\\mathcal{A}(\\pmb{\\alpha}_{1}) + k_{2}\\mathcal{A}(\\pmb{\\alpha}_{2}) + \\dots +k_{m - 1}\\mathcal{A}(\\pmb{\\alpha}_{m - 1}),$  那么  $\\forall \\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{m}\\in V,k_{1},k_{2},\\dots ,k_{m}\\in P$",
+        "page_idx": 17
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}(k_{1}\\pmb{\\alpha}_{1} + k_{2}\\pmb{\\alpha}_{2} + \\dots +k_{m - 1}\\pmb{\\alpha}_{m - 1} + k_{m}\\pmb{\\alpha}_{m})\n$$\n",
+        "text_format": "latex",
+        "page_idx": 17
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n= \\mathcal{A}(k_{1}\\pmb{\\alpha}_{1} + k_{2}\\pmb{\\alpha}_{2} + \\dots +k_{m - 1}\\pmb{\\alpha}_{m - 1}) + \\mathcal{A}(k_{m}\\pmb{\\alpha}_{m})\n$$\n",
+        "text_format": "latex",
+        "page_idx": 17
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n= k_{1}\\mathcal{A}(\\pmb{\\alpha}_{1}) + k_{2}\\mathcal{A}(\\pmb{\\alpha}_{2}) + \\dots +k_{m - 1}\\mathcal{A}(\\pmb{\\alpha}_{m - 1}) + k_{m}\\mathcal{A}(\\pmb{\\alpha}_{m}).\n$$\n",
+        "text_format": "latex",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "这样就证明了结论(2).",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "利用结论(1),有时可以很简捷地判定一个变换不是线性的,例如,例7.4中的 $\\mathcal{A}_{2}$  ,由",
+        "page_idx": 17
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}_{2}\\left[ \\begin{array}{l}{0}\\\\ {0}\\\\ {0} \\end{array} \\right] = \\left[ \\begin{array}{l}{1}\\\\ {0}\\\\ {0} \\end{array} \\right]\\neq \\left[ \\begin{array}{l}{0}\\\\ {0}\\\\ {0} \\end{array} \\right].\n$$\n",
+        "text_format": "latex",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "可知  $\\mathcal{A}_{2}$  不是线性变换",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "由命题7.1的结论(2),立刻得到下面的推论",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "推论线性变换  $\\mathcal{A}$  将  $V$  中线性相关的向量组  $\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{m}$  变换到线性相关的向量组  $\\mathcal{A}\\pmb{\\alpha}_{1},\\mathcal{A}\\pmb{\\alpha}_{2},\\dots ,\\mathcal{A}\\pmb{\\alpha}_{m}$",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "注意:由于线性变换  $\\mathcal{A}$  未必是一一对应的,因此,不能够从  $\\mathcal{A}\\pmb{\\alpha}_{1},\\mathcal{A}\\pmb{\\alpha}_{2},\\dots ,\\mathcal{A}\\pmb{\\alpha}_{m}$  线性相关得出  $\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{m}$  线性相关的结论.换言之,线性变换不能把线性无关的向量组变换到线性无关的向量组.例7.1的零变换  $\\mathcal{O}$  就可以说明这一点:若  $\\pmb{\\alpha}$  是  $V$  中非零向量,我们知道单个非零向量是线性无关的,然而  $\\mathcal{O}\\pmb {\\alpha} = \\mathbf{0}$  ,单个零向量是线性相关的.",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "7.2 线性变换与矩阵",
+        "text_level": 1,
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "线性空间  $V$  中的线性变换  $\\mathcal{A}$  将  $V$  中任意一个向量  $\\xi$  变换到它的像  $\\mathcal{A}\\xi$ ,而  $\\mathcal{A}\\xi$  仍是  $V$  中的向量.若  $\\alpha_{1},\\alpha_{2},\\dots ,\\alpha_{n}$  是  $V$  的一组基,则  $\\xi$  和  $\\mathcal{A}\\xi$  都可以由它们在这组基下的坐标来表示,很自然的一个问题是:它们的坐标之间有着什么关系?",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "7.2.1 线性变换的矩阵",
+        "text_level": 1,
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "设  $\\alpha_{1},\\alpha_{2},\\dots ,\\alpha_{n}$  是  $n$  维线性空间  $V$  的一组基,  $\\mathcal{A}$  是  $V$  中的线性变换,那么对  $V$  中的向量",
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\xi = x_{1}\\alpha_{1} + x_{2}\\alpha_{2} + \\dots +x_{n}\\alpha_{n}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "依线性变换的性质,有",
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}\\xi = x_{1}\\mathcal{A}\\alpha_{1} + x_{2}\\mathcal{A}\\alpha_{2} + \\dots +x_{n}\\mathcal{A}\\alpha_{n}, \\tag{7.2}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "这表明我们只要知道  $\\mathcal{A}\\alpha_{1},\\mathcal{A}\\alpha_{2},\\dots ,\\mathcal{A}\\alpha_{n}$ ,就可以由(7.2)式知道  $V$  中任何一个向量  $\\xi$  的像  $\\mathcal{A}\\xi$ .换句话说,这意味着只要确定了线性变换  $\\mathcal{A}$  在一组基下的像,就完全确定了  $\\mathcal{A}$ .",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "定义7.3设  $n$  维线性空间  $V$  的一组基  $\\alpha_{1},\\alpha_{2},\\dots ,\\alpha_{n}$  在线性变换  $\\mathcal{A}$  下的像为",
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r}{\\mathcal{A}\\pmb{\\alpha}_{1} = a_{11}\\pmb{\\alpha}_{1} + a_{21}\\pmb{\\alpha}_{2} + \\dots +a_{n1}\\pmb{\\alpha}_{n},}\\\\ {\\mathcal{A}\\pmb{\\alpha}_{2} = a_{12}\\pmb{\\alpha}_{1} + a_{22}\\pmb{\\alpha}_{2} + \\dots +a_{n2}\\pmb{\\alpha}_{n},} \\end{array} \\tag{7.3}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}\\pmb{\\alpha}_{n} = a_{1n}\\pmb{\\alpha}_{1} + a_{2n}\\pmb{\\alpha}_{2} + \\dots +a_{n n}\\pmb{\\alpha}_{n},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "或者写为",
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(\\mathcal{A}\\pmb{\\alpha}_{1},\\mathcal{A}\\pmb{\\alpha}_{2},\\dots ,\\mathcal{A}\\pmb{\\alpha}_{n}) = (\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n})A, \\tag{7.4}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "则称矩阵",
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA = (a_{ij})_{n\\times n} = \\left[ \\begin{array}{cccc}a_{11} & a_{12} & \\dots & a_{1n} \\\\ a_{21} & a_{22} & \\dots & a_{2n} \\\\ \\vdots & \\vdots & & \\vdots \\\\ a_{n1} & a_{n2} & \\dots & a_{nn} \\end{array} \\right]\n$$\n",
+        "text_format": "latex",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "为线性变换  $\\mathcal{A}$  在基  $\\alpha_{1},\\alpha_{2},\\dots ,\\alpha_{n}$  下的矩阵",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "若引进",
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}(\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n}) = (\\mathcal{A}\\pmb{\\alpha}_{1},\\mathcal{A}\\pmb{\\alpha}_{2},\\dots ,\\mathcal{A}\\pmb{\\alpha}_{n}),\n$$\n",
+        "text_format": "latex",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "则(7.4)式还可写为",
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}(\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n}) = (\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n})A. \\tag{7.5}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "注意到  $\\mathcal{A}\\pmb{\\alpha}_{i}(i = 1,2,\\dots ,n)$  在基  $\\alpha_{1},\\alpha_{2},\\dots ,\\alpha_{n}$  下的坐标是唯一的,从而  $\\mathcal{A}$  在基  $\\alpha_{1},\\alpha_{2},\\dots ,\\alpha_{n}$  下的矩阵也是唯一的.",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "例7.5 试求例7.4中的线性变换  $\\mathcal{A}_{1}$  在下面一组基下的矩阵  $A$ :",
+        "page_idx": 19
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\pmb{\\epsilon}_{1}=\\left[\\begin{array}{l}{1}\\\\ {0}\\\\ {0}\\end{array}\\right],\\quad\\pmb{\\epsilon}_{2}=\\left[\\begin{array}{l}{0}\\\\ {1}\\\\ {0}\\end{array}\\right],\\quad\\pmb{\\epsilon}_{3}=\\left[\\begin{array}{l}{0}\\\\ {0}\\\\ {1}\\end{array}\\right].\n$$\n",
+        "text_format": "latex",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "解由  $\\mathcal{A}_{1}$  的定义",
+        "page_idx": 19
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}_{1}\\left[\\left[ \\begin{array}{c}x_{1} \\\\ x_{2} \\\\ x_{3} \\end{array} \\right]\\right] = \\left[ \\begin{array}{c}x_{1} + x_{2} \\\\ x_{3} \\\\ x_{1} \\end{array} \\right],\n$$\n",
+        "text_format": "latex",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "得到",
+        "page_idx": 19
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}_{1}\\pmb{\\epsilon}_{1}=\\left[\\begin{array}{l}{1}\\\\ {0}\\\\ {1}\\end{array}\\right]=\\pmb{\\epsilon}_{1}+\\pmb{\\epsilon}_{3},\\quad\\mathcal{A}_{1}\\pmb{\\epsilon}_{2}=\\left[\\begin{array}{l}{1}\\\\ {0}\\\\ {0}\\end{array}\\right]=\\pmb{\\epsilon}_{1},\\quad\\mathcal{A}_{1}\\pmb{\\epsilon}_{3}=\\left[\\begin{array}{l}{0}\\\\ {1}\\\\ {0}\\end{array}\\right]=\\pmb{\\epsilon}_{2}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "于是  $\\mathcal{A}_{1}$  在  $\\pmb{\\epsilon}_{1}, \\pmb{\\epsilon}_{2}, \\pmb{\\epsilon}_{3}$  下的矩阵为",
+        "page_idx": 19
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA = \\left[ \\begin{array}{lll}1 & 1 & 0 \\\\ 0 & 0 & 1 \\\\ 1 & 0 & 0 \\end{array} \\right].\n$$\n",
+        "text_format": "latex",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "例7.6 试求实线性空间  $P[x]_{3}$  上微分变换  $\\mathcal{D}$",
+        "page_idx": 19
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{D}(\\boldsymbol {\\rho}(\\boldsymbol {x})) = \\boldsymbol {\\rho}'(\\boldsymbol {x}),\\quad \\forall \\boldsymbol {\\rho}(\\boldsymbol {x})\\in P[\\boldsymbol {x}]_{3}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "在基  $1, x, x^{2}$  下的矩阵.",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "解由  $\\mathcal{D}(1) = 0, \\mathcal{D}(x) = 1, \\mathcal{D}(x^{2}) = 2x$  可立即得到  $\\mathcal{D}$  在  $1, x, x^{2}$  下的矩阵为",
+        "page_idx": 19
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD = \\left[ \\begin{array}{lll}0 & 1 & 0 \\\\ 0 & 0 & 2 \\\\ 0 & 0 & 0 \\end{array} \\right].\n$$\n",
+        "text_format": "latex",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "由线性变换  $\\mathcal{A}$  在一组基下的矩阵,很容易得出  $V$  中向量  $\\pmb{\\xi}$  的坐标和它的像  $\\mathcal{A}$  的坐标之间的关系.",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "定理7.1设  $\\alpha_{1}, \\alpha_{2}, \\dots , \\alpha_{n}$  是  $n$  维线性空间  $V$  的一组基,  $V$  中的线性变换  $\\mathcal{A}$  在  $\\alpha_{1}, \\alpha_{2}, \\dots , \\alpha_{n}$  下的矩阵为  $A$ . 若向量  $\\pmb{\\xi}$  在  $\\alpha_{1}, \\alpha_{2}, \\dots , \\alpha_{n}$  下的坐标为  $\\pmb{x} = (x_{1}, x_{2}, \\dots , x_{n})^{\\mathrm{T}}$ ,那么  $\\pmb{\\xi}$  的像  $\\mathcal{A}$  在  $\\alpha_{1}, \\alpha_{2}, \\dots , \\alpha_{n}$  下的坐标为  $Ax$ .",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "证由  $\\pmb{\\xi}$  的坐标为  $\\pmb{x} = (x_{1}, x_{2}, \\dots , x_{n})^{\\mathrm{T}}$ ,即有  $\\pmb{\\xi} = (\\pmb{\\alpha}_{1}, \\pmb{\\alpha}_{2}, \\dots , \\pmb{\\alpha}_{n})x$ ,故",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "$\\mathcal{A}\\pmb{\\xi} = \\mathcal{A}[(\\pmb{\\alpha}_{1}, \\pmb{\\alpha}_{2}, \\dots , \\pmb{\\alpha}_{n})\\pmb {x}] = (\\mathcal{A}\\pmb{\\alpha}_{1}, \\mathcal{A}\\pmb{\\alpha}_{2}, \\dots , \\mathcal{A}\\pmb{\\alpha}_{n})\\pmb {x} = (\\pmb{\\alpha}_{1}, \\pmb{\\alpha}_{2}, \\dots , \\pmb{\\alpha}_{n})\\pmb {A}\\pmb {x},$  上面等式的第二步是根据线性变换  $\\mathcal{A}$  保持线性关系不变的性质,上式的结果就给出了定理的结论. 口",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "例7.7 已知  $\\mathbf{R}^{3}$  中的一组基为",
+        "page_idx": 19
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\pmb{\\alpha}_{1} = \\left[ \\begin{array}{c}1 \\\\ -1 \\\\ 0 \\end{array} \\right], \\quad \\pmb{\\alpha}_{2} = \\left[ \\begin{array}{c}0 \\\\ 2 \\\\ -1 \\end{array} \\right], \\quad \\pmb{\\alpha}_{3} = \\left[ \\begin{array}{c}0 \\\\ 1 \\\\ -1 \\end{array} \\right],\n$$\n",
+        "text_format": "latex",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "线性变换  $\\mathcal{A}$  将  $\\alpha_{1}, \\alpha_{2}, \\alpha_{3}$  分别变到",
+        "page_idx": 20
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\pmb{\\beta}_{1}=\\left[\\begin{array}{c}{1}\\\\ {1}\\\\ {1}\\\\ {1}\\end{array}\\right],\\quad\\pmb{\\beta}_{2}=\\left[\\begin{array}{c}{0}\\\\ {3}\\\\ {-2}\\end{array}\\right],\\quad\\pmb{\\beta}_{3}=\\left[\\begin{array}{c}{1}\\\\ {0}\\\\ {-1}\\end{array}\\right].\n$$\n",
+        "text_format": "latex",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "求:(1)  $\\mathcal{A}$  在  $\\alpha_{1}, \\alpha_{2}, \\alpha_{3}$  下的矩阵  $A$",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "(2)  $\\xi = (1, - 2,1)^{\\mathrm{T}}$  以及  $\\mathcal{A}\\xi$  在  $\\alpha_{1}, \\alpha_{2}, \\alpha_{3}$  下的坐标",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "解(1)由  $(\\pmb{\\beta}_{1},\\pmb{\\beta}_{2},\\pmb{\\beta}_{3}) = (\\mathcal{A}\\pmb{\\alpha}_{1},\\mathcal{A}\\pmb{\\alpha}_{2},\\mathcal{A}\\pmb{\\alpha}_{3}) = (\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\pmb{\\alpha}_{3})A$  知有矩阵方程",
+        "page_idx": 20
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left[{\\begin{array}{r r r}{1}&{0}&{1}\\\\ {1}&{3}&{0}\\\\ {-1}&{-2}&{-1}\\end{array}}\\right]={\\left[\\begin{array}{r r r}{1}&{0}&{0}\\\\ {-1}&{2}&{1}\\\\ {0}&{-1}&{-1}\\end{array}\\right]}A,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "利用初等变换易得",
+        "page_idx": 20
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA={\\left[\\begin{array}{l l l}{1}&{0}&{1}\\\\ {1}&{1}&{0}\\\\ {0}&{1}&{1}\\end{array}\\right]}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "(2)设  $\\xi$  在  $\\alpha_{1}, \\alpha_{2}, \\alpha_{3}$  下的坐标为  $\\mathbf{x} = (x_{1}, x_{2}, x_{3})^{\\mathrm{T}}$  ,那么",
+        "page_idx": 20
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(\\alpha_{1}, \\alpha_{2}, \\alpha_{3})x = \\xi ,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "即",
+        "page_idx": 20
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left[{\\begin{array}{r r r}{1}&{0}&{0}\\\\ {-1}&{2}&{1}\\\\ {0}&{-1}&{-1}\\end{array}}\\right]{\\left[\\begin{array}{l}{x_{1}}\\\\ {x_{2}}\\\\ {x_{3}}\\end{array}\\right]}={\\left[\\begin{array}{l}{1}\\\\ {-2}\\\\ {1}\\end{array}\\right]},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "可得",
+        "page_idx": 20
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\pmb{x}=\\left[\\begin{array}{c}{x_{1}}\\\\ {x_{2}}\\\\ {x_{3}}\\end{array}\\right]=\\left[\\begin{array}{c}{1}\\\\ {0}\\\\ {-1}\\end{array}\\right],\n$$\n",
+        "text_format": "latex",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "而  $\\mathcal{A}\\xi$  在  $\\alpha_{1}, \\alpha_{2}, \\alpha_{3}$  下的坐标为",
+        "page_idx": 20
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA\\pmb{x}=\\left[\\begin{array}{c c c}{1}&{0}&{1}\\\\ {1}&{1}&{0}\\\\ {0}&{1}&{1}\\end{array}\\right]\\left[\\begin{array}{c}{1}\\\\ {0}\\\\ {-1}\\end{array}\\right]=\\left[\\begin{array}{c}{0}\\\\ {1}\\\\ {-1}\\end{array}\\right].\n$$\n",
+        "text_format": "latex",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "由线性变换在一组基下的矩阵的定义可知,只要选定了  $V$  的一组基  $\\alpha_{1}$  , $\\alpha_{2}, \\dots , \\alpha_{n}, V$  中的任何一个线性变换  $\\mathcal{A}$  就对应了唯一的一个  $n$  阶方阵  $A$  ,即",
+        "page_idx": 20
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}\\xrightarrow{(\\alpha_{1},\\alpha_{2},\\cdots,\\alpha_{n})}A.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "那么,反过来,任给一个  $n$  阶方阵  $A$  ,能否唯一确定或者对应一个线性变换  $\\mathcal{A}$  ?也就是说,是否有",
+        "page_idx": 20
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}\\xrightarrow{(\\alpha_{1},\\alpha_{2},\\cdots,\\alpha_{n})}A,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "结论是肯定的.",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "定理7.2设  $\\alpha_{1},\\alpha_{2},\\dots ,\\alpha_{n}$  是数域  $P$  上的  $n$  维线性空间  $V$  的一组基, $A = (a_{ij})_{n\\times n}$  是一个  $n$  阶方阵,那么必定存在唯一的线性变换  $\\mathcal{A}$ ,它在基  $\\alpha_{1},\\alpha_{2},\\dots ,\\alpha_{n}$  下的矩阵为  $A$ .",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "证对  $V$  中任一向量  $\\pmb {\\xi} = x_{1}\\pmb{\\alpha}_{1} + x_{2}\\pmb{\\alpha}_{2} + \\dots +x_{n}\\pmb{\\alpha}_{n}$ ,定义变换  $\\mathcal{A}$  为",
+        "page_idx": 21
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}\\pmb {\\xi} = (\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n})\\left[ \\begin{array}{cccc}a_{11} & a_{12} & \\dots & a_{1n}\\\\ a_{21} & a_{22} & \\dots & a_{2n}\\\\ \\vdots & \\vdots & & \\vdots \\\\ a_{n1} & a_{n2} & \\dots & a_{nn} \\end{array} \\right]\\left[ \\begin{array}{c}x_{1}\\\\ x_{2}\\\\ \\vdots \\\\ x_{n} \\end{array} \\right]. \\tag{7.6}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "若记",
+        "page_idx": 21
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r}{x = (x_{1},x_{2},\\dots ,x_{n})^{\\mathrm{T}},} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "则(7.6)式可写为",
+        "page_idx": 21
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}\\pmb {\\xi} = (\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n})A\\pmb {x}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "显然  $\\mathcal{A}\\pmb {\\xi}\\in V$",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "下面我们先证明  $\\mathcal{A}$  是线性的.  $\\forall \\xi ,\\eta \\in V$  和  $k\\in P$ ,设",
+        "page_idx": 21
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r}{\\pmb {\\xi} = x_{1}\\pmb{\\alpha}_{1} + x_{2}\\pmb{\\alpha}_{2} + \\dots +x_{n}\\pmb{\\alpha}_{n},}\\\\ {\\pmb {\\eta} = y_{1}\\pmb{\\alpha}_{1} + y_{2}\\pmb{\\alpha}_{2} + \\dots +y_{n}\\pmb{\\alpha}_{n},} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "那么,由  $\\mathcal{A}$  的定义",
+        "page_idx": 21
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r}{\\mathcal{A}\\pmb {\\xi} = (\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n})A\\pmb {x},}\\\\ {\\mathcal{A}\\pmb {\\eta} = (\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n})A\\pmb {y},} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "其中  $\\mathbf{y} = (y_{1},y_{2}\\dots ,y_{n})^{\\mathrm{T}}$  .于是依照  $\\mathcal{A}$  的定义和矩阵运算的法则,就有",
+        "page_idx": 21
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {\\mathcal{A}(\\pmb {\\xi} + \\pmb {\\eta}) = (\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n})A(\\pmb {x} + \\pmb {y}) = (\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n})(A\\pmb {x} + A\\pmb {y})}\\\\ & {\\qquad = (\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n})A\\pmb {x} + (\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n})A\\pmb{y}}\\\\ & {\\qquad = \\mathcal{A}\\pmb {\\xi} + \\mathcal{A}\\pmb {\\eta},} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 21
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {\\mathcal{A}(k\\xi) = (\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n})A(k x) = (\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n})(k A x)}\\\\ & {\\qquad = k(\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n})A x}\\\\ & {\\qquad = k\\mathcal{A}\\xi ,} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "从而  $\\mathcal{A}$  是线性变换",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "其次,由于  $\\alpha_{i}$  在基  $\\alpha_{1},\\alpha_{2},\\dots ,\\alpha_{n}$  下的坐标的第  $i$  个分量为1,其余分量为零,那么依(7.6)式立即可得",
+        "page_idx": 21
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}\\pmb{\\alpha}_{i} = a_{1i}\\pmb{\\alpha}_{1} + a_{2i}\\pmb{\\alpha}_{2} + \\dots +a_{n i}\\pmb{\\alpha}_{n},\\quad i = 1,\\dots ,n.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "即",
+        "page_idx": 21
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(\\mathcal{A}\\pmb{\\alpha}_{1},\\mathcal{A}\\pmb{\\alpha}_{2},\\dots ,\\mathcal{A}\\pmb{\\alpha}_{n}) = (\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n})\\left[ \\begin{array}{cccc}a_{11} & a_{12} & \\dots & a_{1n}\\\\ a_{21} & a_{22} & \\dots & a_{2n}\\\\ \\vdots & \\vdots & & \\vdots \\\\ a_{n1} & a_{m2} & \\dots & a_{m} \\end{array} \\right]\n$$\n",
+        "text_format": "latex",
+        "page_idx": 21
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n= (\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n})A.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "这说明  $\\mathcal{A}$  在基  $\\alpha_{1},\\alpha_{2},\\dots ,\\alpha_{n}$  下的矩阵为  $A$",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "最后,证唯一性,若另有线性变换  $\\mathcal{B}$  在基  $\\alpha_{1},\\alpha_{2},\\dots ,\\alpha_{n}$  下的矩阵也为  $A$  ,则",
+        "page_idx": 22
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(\\mathcal{B}\\pmb{\\alpha}_{1},\\mathcal{B}\\pmb{\\alpha}_{2},\\dots ,\\mathcal{B}\\pmb{\\alpha}_{n}) = (\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n})A,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "那么  $\\forall \\xi = x_{1}\\pmb{\\alpha}_{1} + x_{2}\\pmb{\\alpha}_{2} + \\dots +x_{n}\\pmb{\\alpha}_{n}$  ,就有",
+        "page_idx": 22
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {\\mathcal{B}\\pmb {\\xi} = x_{1}\\mathcal{B}\\pmb{\\alpha}_{1} + x_{2}\\mathcal{B}\\pmb{\\alpha}_{2} + \\dots +x_{n}\\mathcal{B}\\pmb{\\alpha}_{n} = (\\mathcal{B}\\pmb{\\alpha}_{1},\\mathcal{B}\\pmb{\\alpha}_{2},\\dots ,\\mathcal{B}\\pmb{\\alpha}_{n})\\pmb{x}}\\\\ & {\\quad = (\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n})A\\pmb {x} = \\mathcal{A}\\pmb {\\xi},} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "从而变换  $\\mathcal{B}$  就是变换  $\\mathcal{A}$  ,这就证明了定理",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "根据定义7.3和定理7.2,立即得到如下定理",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "定理7.3设  $\\alpha_{1},\\alpha_{2},\\dots ,\\alpha_{n}$  是  $n$  维线性空间  $V$  的一组基,那么  $V$  中所有的线性变换与所有的  $n$  阶方阵之间存在一一对应的关系,这种关系由",
+        "page_idx": 22
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}(\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n}) = (\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n})A\n$$\n",
+        "text_format": "latex",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "确定.",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "定理7.2证明中的(7.6)式给出了如何由矩阵  $A$  式对应的线性变换  $\\mathcal{A}$  这样的定义方式是很自然的,因为如果线性变换  $\\mathcal{A}$  在基  $\\alpha_{1},\\alpha_{2},\\dots ,\\alpha_{n}$  下的矩阵为  $A$  ,则必定成立(7.6)式.",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "例7.8 已知  $\\mathbf{R}^{3}$  的一组基为",
+        "page_idx": 22
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\pmb{\\alpha}_{1}=\\left[\\begin{array}{c}{1}\\\\ {0}\\\\ {-1}\\end{array}\\right],\\quad\\pmb{\\alpha}_{2}=\\left[\\begin{array}{c}{0}\\\\ {2}\\\\ {1}\\end{array}\\right],\\quad\\pmb{\\alpha}_{3}=\\left[\\begin{array}{c}{-1}\\\\ {-1}\\\\ {0}\\end{array}\\right],\n$$\n",
+        "text_format": "latex",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "试给出一个线性变换,使得它在  $\\alpha_{1},\\alpha_{2},\\alpha_{3}$  下的矩阵为",
+        "page_idx": 22
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA={\\left[\\begin{array}{l l l}{0}&{-1}&{-2}\\\\ {1}&{0}&{-3}\\\\ {2}&{3}&{0}\\end{array}\\right]}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "解对任意的  $\\pmb {\\xi} = x_{1}\\pmb{\\alpha}_{1} + x_{2}\\pmb{\\alpha}_{2} + x_{3}\\pmb{\\alpha}_{3}\\in \\mathbf{R}^{3}$  ,定义",
+        "page_idx": 22
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}\\pmb {\\xi} = (\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\pmb{\\alpha}_{3})A\\left[ \\begin{array}{c}{x_{1}}\\\\ {x_{2}}\\\\ {x_{3}} \\end{array} \\right] = \\left[ \\begin{array}{c c c}{-2} & {-4} & {-2}\\\\ {0} & {-3} & {-6}\\\\ {1} & {1} & {-1} \\end{array} \\right]\\left[ \\begin{array}{c}{x_{1}}\\\\ {x_{2}}\\\\ {x_{3}} \\end{array} \\right],\n$$\n",
+        "text_format": "latex",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "则  $\\mathcal{A}$  就是所求的线性变换",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "在这个表达式中,注意  $(x_{1},x_{2},x_{3})^{\\mathrm{T}}$  是  $\\xi$  在  $\\alpha_{1},\\alpha_{2},\\alpha_{3}$  下的坐标.",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "7.2.2 线性变换在不同基下矩阵间的关系",
+        "text_level": 1,
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "线性变换的矩阵依赖于基的选取.一般说来,一个线性变换在两组不同的基下的矩阵是不同的,因此我们要讨论它们之间的关系.",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "定理7.4设  $\\alpha_{1},\\alpha_{2},\\dots ,\\alpha_{n}$  和  $\\beta_{1},\\beta_{2},\\dots ,\\beta_{n}$  是  $n$  维线性空间  $V$  的两组基,  $V$  中",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "的线性变换  $\\mathcal{A}$  在这两组基下的矩阵分别为  $A$  和  $B$  ,且从  $\\alpha_{1},\\alpha_{2},\\dots ,\\alpha_{n}$  到  $\\beta_{1},\\beta_{2},\\dots ,\\beta_{n}$  的过渡矩阵为  $C$  ,那么",
+        "page_idx": 23
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nB = C^{-1}A C. \\tag{7.7}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "证据定理的条件可知",
+        "page_idx": 23
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}(\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n}) = (\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n})A,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 23
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}(\\pmb{\\beta}_{1},\\pmb{\\beta}_{2},\\dots ,\\pmb{\\beta}_{n}) = (\\pmb{\\beta}_{1},\\pmb{\\beta}_{2},\\dots ,\\pmb{\\beta}_{n})B,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 23
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(\\pmb{\\beta}_{1},\\pmb{\\beta}_{2},\\dots ,\\pmb{\\beta}_{n}) = (\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n})C,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "于是由  $\\mathcal{A}$  的线性性质",
+        "page_idx": 23
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r}{\\mathcal{A}(\\pmb{\\beta}_{1},\\pmb{\\beta}_{2},\\dots ,\\pmb{\\beta}_{n}) = \\mathcal{A}[(\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n})C] = [\\mathcal{A}(\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n})]C}\\\\ {= (\\pmb{\\alpha}_{1},\\pmb{\\alpha}_{2},\\dots ,\\pmb{\\alpha}_{n})A C = (\\pmb{\\beta}_{1},\\pmb{\\beta}_{2},\\dots ,\\pmb{\\beta}_{n})C^{-1}A C.} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "因  $\\mathcal{A}$  在基  $\\beta_{1},\\beta_{2},\\dots ,\\beta_{n}$  下的矩阵是唯一的,故有",
+        "page_idx": 23
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nB = C^{-1}A C.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "定理7.4告诉我们,线性变换在不同基下的矩阵是相似的",
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "例7.9试求  $P[x]_{3}$  上微分变换  $\\mathcal{D}$  在基  $1 + x,2x + x^{2},3 - x^{2}$  下的矩阵",
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "解我们在例7.6已求出  $\\mathcal{D}$  在基  $1,x,x^{2}$  下的矩阵为",
+        "page_idx": 23
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nD={\\left[\\begin{array}{l l l}{0}&{1}&{0}\\\\ {0}&{0}&{2}\\\\ {0}&{0}&{0}\\end{array}\\right]}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "由基  $1,x,x^{2}$  到基  $1 + x,2x + x^{2},3 - x^{2}$  的过渡矩阵显然为",
+        "page_idx": 23
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nC={\\left[\\begin{array}{l l l}{1}&{0}&{3}\\\\ {1}&{2}&{0}\\\\ {0}&{1}&{-1}\\end{array}\\right]}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "故  $\\mathcal{D}$  在基  $1 + x,2x + x^{2},3 - x^{2}$  下的矩阵为",
+        "page_idx": 23
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\widetilde{D} = C^{-1}D C = \\left[ \\begin{array}{c c c}{1} & 0 & 3\\\\ 1 & 2 & 0\\\\ 0 & 1 & {-1} \\end{array} \\right]^{-1}\\left[ \\begin{array}{c c c}{0} & 1 & 0\\\\ 0 & 0 & 2\\\\ 0 & 0 & 0 \\end{array} \\right]\\left[ \\begin{array}{c c c}{1} & 0 & 3\\\\ 1 & 2 & 0\\\\ 0 & 1 & {-1} \\end{array} \\right] = \\left[ \\begin{array}{c c c}{-2} & 2 & {-6}\\\\ 1 & 0 & 2\\\\ 1 & 0 & 2 \\end{array} \\right].\n$$\n",
+        "text_format": "latex",
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "例7.10已知  $\\mathbf{R}^{2}$  中的线性变换  $\\mathcal{A}$  在基",
+        "page_idx": 23
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\pmb{\\alpha}_{1}=\\left[\\begin{array}{c}{1}\\\\ {0}\\\\ {-1}\\end{array}\\right],\\quad\\pmb{\\alpha}_{2}=\\left[\\begin{array}{c}{0}\\\\ {2}\\\\ {1}\\end{array}\\right],\\quad\\pmb{\\alpha}_{3}=\\left[\\begin{array}{c}{-1}\\\\ {-1}\\\\ {0}\\end{array}\\right]\n$$\n",
+        "text_format": "latex",
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "下的矩阵为",
+        "page_idx": 23
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA={\\left[\\begin{array}{l l l}{0}&{-1}&{-2}\\\\ {1}&{0}&{-3}\\\\ {2}&{3}&{0}\\end{array}\\right]}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "试求  $\\mathcal{A}$  在基",
+        "page_idx": 23
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\pmb{\\epsilon}_{1}=\\left[\\begin{array}{l}{1}\\\\ {0}\\\\ {0}\\end{array}\\right],\\quad\\pmb{\\epsilon}_{2}=\\left[\\begin{array}{l}{0}\\\\ {1}\\\\ {0}\\end{array}\\right],\\quad\\pmb{\\epsilon}_{3}=\\left[\\begin{array}{l}{0}\\\\ {0}\\\\ {1}\\end{array}\\right]\n$$\n",
+        "text_format": "latex",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "下的矩阵  $\\widetilde{A}$ .",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "解从基  $\\pmb{\\epsilon}_{1},\\pmb{\\epsilon}_{2},\\pmb{\\epsilon}_{3}$  到基  $\\alpha_{1},\\alpha_{2},\\alpha_{3}$  的过渡矩阵显然为",
+        "page_idx": 24
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nC=\\left[\\begin{array}{r r r}{{1}}&{{0}}&{{-1}}\\\\ {{0}}&{{2}}&{{-1}}\\\\ {{-1}}&{{1}}&{{0}}\\end{array}\\right],\n$$\n",
+        "text_format": "latex",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "于是有",
+        "page_idx": 24
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA = C^{-1}\\widetilde{A} C,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "即",
+        "page_idx": 24
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {\\widetilde{A} = C A C^{-1}}\\\\ & {\\quad = \\left[ \\begin{array}{r r r}{1} & 0 & {-1}\\\\ {0} & {2} & {-1}\\\\ {-1} & 1 & 0 \\end{array} \\right]\\left[ \\begin{array}{r r r}{0} & {-1} & {-2}\\\\ {1} & 0 & {-3}\\\\ {2} & 3 & 0 \\end{array} \\right]\\left[ \\begin{array}{r r r}{1} & 0 & {-1}\\\\ {0} & {2} & {-1}\\\\ {-1} & 1 & 0 \\end{array} \\right]^{-1} = \\left[ \\begin{array}{r r r}{10} & {-8} & {12}\\\\ {15} & {-9} & {15}\\\\ {0} & {1} & {-1} \\end{array} \\right].} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "$7.3^{*}$  欧氏空间的正交变换和对称变换",
+        "text_level": 1,
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "7.3.1 正交变换",
+        "text_level": 1,
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "定义7.4若欧氏空间  $V$  中的线性变换  $\\mathcal{A}$  满足",
+        "page_idx": 24
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(\\mathcal{A}\\pmb {\\alpha},\\mathcal{A}\\pmb {\\beta}) = (\\pmb {\\alpha},\\pmb {\\beta}),\\quad \\forall \\pmb {\\alpha},\\pmb {\\beta}\\in V, \\tag{7.8}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "则称  $\\mathcal{A}$  为正交变换",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "定义7.4表明正交变换是保持向量内积不变的线性变换",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "定理7.5欧氏空间  $V$  中的线性变换  $\\mathcal{A}$  为正交变换的充分必要条件是  $\\mathcal{A}$  保持向量长度不变,即",
+        "page_idx": 24
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left|\\mathcal{A}\\pmb {\\alpha}\\right| = \\left|\\pmb {\\alpha}\\right|,\\quad \\forall \\pmb {\\alpha}\\in V. \\tag{7.9}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "证必要性是显然的,我们来证充分性",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "$\\forall \\pmb {\\alpha},\\pmb {\\beta}\\in V$  ,则有",
+        "page_idx": 24
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left|\\mathcal{A}(\\pmb {\\alpha} + \\pmb {\\beta})\\right| = \\left|\\pmb {\\alpha} + \\pmb {\\beta}\\right|,\\quad \\left|\\mathcal{A}\\pmb {\\alpha}\\right| = \\left|\\pmb {\\alpha}\\right|,\\quad \\left|\\mathcal{A}\\pmb {\\beta}\\right| = \\left|\\pmb {\\beta}\\right|,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "也就有",
+        "page_idx": 24
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(\\mathcal{A}(\\pmb {\\alpha} + \\pmb {\\beta}),\\mathcal{A}(\\pmb {\\alpha} + \\pmb {\\beta})) = (\\pmb {\\alpha} + \\pmb {\\beta},\\pmb {\\alpha} + \\pmb {\\beta}) \\tag{7.10}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "和",
+        "page_idx": 24
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(\\mathcal{A}\\pmb {\\alpha},\\mathcal{A}\\pmb {\\alpha}) = (\\pmb {\\alpha},\\pmb {\\alpha}),\\quad (\\mathcal{A}\\pmb {\\beta},\\mathcal{A}\\pmb {\\beta}) = (\\pmb {\\beta},\\pmb {\\beta}). \\tag{7.11}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "利用线性变换和内积的性质可由(7.10)式得",
+        "page_idx": 25
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(\\mathcal{A}\\pmb {\\alpha},\\mathcal{A}\\pmb {\\alpha}) + 2(\\mathcal{A}\\pmb {\\alpha},\\mathcal{A}\\pmb {\\beta}) + (\\mathcal{A}\\pmb {\\beta},\\mathcal{A}\\pmb {\\beta}) = (\\pmb {\\alpha},\\pmb {\\alpha}) + 2(\\pmb {\\alpha},\\pmb {\\beta}) + (\\pmb {\\beta},\\pmb {\\beta}).\n$$\n",
+        "text_format": "latex",
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "再由(7.11)式得",
+        "page_idx": 25
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(\\mathcal{A}\\pmb {\\alpha},\\mathcal{A}\\pmb {\\beta}) = (\\pmb {\\alpha},\\pmb {\\beta}).\n$$\n",
+        "text_format": "latex",
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "注意因正交变换保持向量的内积和长度不变,从而它也保持向量的夹角不变",
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "例7.11 在  $\\mathbf{R}^{2}$  中考虑如下定义的线性变换:",
+        "page_idx": 25
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}\\left[ \\begin{array}{c}{x_{1}}\\\\ {x_{2}} \\end{array} \\right] = \\left( \\begin{array}{c c}{\\cos \\theta} & {\\sin \\theta}\\\\ {-\\sin \\theta} & {\\cos \\theta} \\end{array} \\right)\\left[ \\begin{array}{c}{x_{1}}\\\\ {x_{2}} \\end{array} \\right],\\quad \\forall \\pmb {x} = \\left[ \\begin{array}{c}{x_{1}}\\\\ {x_{2}} \\end{array} \\right]\\in \\mathbf{R}^{2}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "由于",
+        "page_idx": 25
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {\\left|\\mathcal{A}\\pmb {x}\\right| = \\sqrt{(x_{1}\\cos\\theta + x_{2}\\sin\\theta)^{2} + (-x_{1}\\sin\\theta + x_{2}\\cos\\theta)^{2}}}\\\\ & {\\qquad = \\sqrt{x_{1}^{2} + x_{2}^{2}} = \\left|\\pmb {x}\\right|,} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "因此  $\\mathcal{A}$  是正交变换.这是  $\\mathbf{R}^{2}$  平面上的旋转变换",
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "我们在第五章5.3.1节介绍过正交矩阵,它与正交变换有什么关系呢?",
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "定理7.6设  $\\pmb{\\epsilon}_{1},\\pmb{\\epsilon}_{2},\\dots ,\\pmb{\\epsilon}_{n}$  是欧氏空间  $V$  的一组标准正交基,则  $V$  中的线性变换  $\\mathcal{A}$  为正交变换的充分必要条件是  $\\mathcal{A}$  在  $\\pmb{\\epsilon}_{1},\\pmb{\\epsilon}_{2},\\dots ,\\pmb{\\epsilon}_{n}$  下的矩阵  $A$  为正交矩阵.",
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "证必要性设  $A = (a_{ij})_{n\\times n}$  .由于线性变换  $\\mathcal{A}$  在  $\\pmb{\\epsilon}_{1},\\pmb{\\epsilon}_{2},\\dots ,\\pmb{\\epsilon}_{n}$  下的矩阵为  $A$  故",
+        "page_idx": 25
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}(\\pmb{\\epsilon}_{1},\\pmb{\\epsilon}_{2},\\dots ,\\pmb{\\epsilon}_{n}) = (\\pmb{\\epsilon}_{1},\\pmb{\\epsilon}_{2},\\dots ,\\pmb{\\epsilon}_{n})A.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "因而",
+        "page_idx": 25
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}\\pmb{\\epsilon}_{i} = (\\pmb{\\epsilon}_{1},\\pmb{\\epsilon}_{2},\\dots ,\\pmb{\\epsilon}_{n})\\left[ \\begin{array}{c}{a_{1i}}\\\\ {a_{2i}}\\\\ \\vdots \\\\ {a_{ni}} \\end{array} \\right] = \\sum_{k = 1}^{n}a_{ki}\\pmb{\\epsilon}_{k},\\quad i = 1,2,\\dots ,n,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "即  $\\mathcal{A}\\pmb{\\epsilon}_{i}$  的坐标为矩阵  $A$  的第  $i$  个列向量.又因  $\\pmb{\\epsilon}_{1},\\pmb{\\epsilon}_{2},\\dots ,\\pmb{\\epsilon}_{n}$  是标准正交基,故向量的内积就是它们坐标向量的内积,即",
+        "page_idx": 25
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(\\mathcal{A}\\pmb{\\epsilon}_{i},\\mathcal{A}\\pmb{\\epsilon}_{j}) = (\\sum_{k = 1}^{n}a_{ki}\\pmb{\\epsilon}_{k},\\sum_{l = 1}^{n}a_{lj}\\pmb{\\epsilon}_{l}) = a_{1i}a_{1j} + a_{2i}a_{2j} + \\dots +a_{ni}a_{nj}. \\tag{7.12}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "若  $\\mathcal{A}$  为正交变换,则",
+        "page_idx": 25
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(\\mathcal{A}\\pmb{\\epsilon}_{i},\\mathcal{A}\\pmb{\\epsilon}_{j}) = (\\pmb{\\epsilon}_{i},\\pmb{\\epsilon}_{j}) = \\delta_{ij} = \\left\\{ \\begin{array}{ll}0, & i\\neq j,\\\\ 1, & i = j. \\end{array} \\right.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "这样",
+        "page_idx": 25
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\na_{1i}a_{1j} + a_{2i}a_{2j} + \\dots +a_{ni}a_{nj} = \\left\\{ \\begin{array}{ll}0, & i\\neq j,\\\\ 1, & i = j. \\end{array} \\right. \\tag{7.13}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "即",
+        "page_idx": 25
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA^{\\mathrm{T}}A = E,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "从而  $A$  是正交矩阵.",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "充分性若  $A$  是正交矩阵,那么对  $A$  的元素(7.13)式成立,从而依(7.12)式有",
+        "page_idx": 26
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(\\mathcal{A}\\pmb{\\epsilon}_{i},\\mathcal{A}\\pmb{\\epsilon}_{j}) = a_{1i}a_{1j} + a_{2i}a_{2j} + \\dots +a_{m}a_{nj} = \\left\\{ \\begin{array}{ll}0, & i\\neq j,\\\\ 1, & i = j. \\end{array} \\right.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "这说明  $\\mathcal{A}\\pmb{\\epsilon}_{1},\\mathcal{A}\\pmb{\\epsilon}_{2},\\dots ,\\mathcal{A}\\pmb{\\epsilon}_{n}$  也是  $V$  的一组标准正交基,因而,对任意的向量",
+        "page_idx": 26
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\pmb {\\alpha} = (\\pmb{\\epsilon}_{1},\\pmb{\\epsilon}_{2},\\dots ,\\pmb{\\epsilon}_{n})\\pmb {x} = (\\pmb{\\epsilon}_{1},\\pmb{\\epsilon}_{2},\\dots ,\\pmb{\\epsilon}_{n})\\left[ \\begin{array}{c}x_{1}\\\\ x_{2}\\\\ \\vdots \\\\ x_{n} \\end{array} \\right],\n$$\n",
+        "text_format": "latex",
+        "page_idx": 26
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\pmb {\\beta} = (\\pmb{\\epsilon}_{1},\\pmb{\\epsilon}_{2},\\dots ,\\pmb{\\epsilon}_{n})\\pmb {y} = (\\pmb{\\epsilon}_{1},\\pmb{\\epsilon}_{2},\\dots ,\\pmb{\\epsilon}_{n})\\left[ \\begin{array}{c}y_{1}\\\\ y_{2}\\\\ \\vdots \\\\ y_{n} \\end{array} \\right].\n$$\n",
+        "text_format": "latex",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "由  $\\mathcal{A}$  的线性性,可得",
+        "page_idx": 26
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r}\\mathcal{A}\\pmb {\\alpha} = (\\mathcal{A}\\pmb{\\epsilon}_{1},\\mathcal{A}\\pmb{\\epsilon}_{2},\\dots ,\\mathcal{A}\\pmb{\\epsilon}_{n})\\pmb {x},\\\\ \\mathcal{A}\\pmb {\\beta} = (\\mathcal{A}\\pmb{\\epsilon}_{1},\\mathcal{A}\\pmb{\\epsilon}_{2},\\dots ,\\mathcal{A}\\pmb{\\epsilon}_{n})\\pmb {y}. \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "于是",
+        "page_idx": 26
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(\\mathcal{A}\\pmb {\\alpha},\\mathcal{A}\\pmb {\\beta}) = (\\pmb {x},\\pmb {y}) = x_{1}y_{1} + x_{2}y_{2} + \\dots +x_{n}y_{n} = (\\pmb {\\alpha},\\pmb {\\beta}),\n$$\n",
+        "text_format": "latex",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "故  $\\mathcal{A}$  是正交变换",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "定理7.5表明了在一组标准正交基下正交变换与正交矩阵的一一对应,从而对正交变换的讨论常可转化为对应的正交矩阵的讨论.",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "7.3.2 对称变换",
+        "text_level": 1,
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "定义7.5若欧氏空间  $V$  中的线性变换  $\\mathcal{A}$  满足",
+        "page_idx": 26
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(\\mathcal{A}\\pmb {\\alpha},\\pmb {\\beta}) = (\\pmb {\\alpha},\\mathcal{A}\\pmb {\\beta}),\\quad \\forall \\pmb {\\alpha},\\pmb {\\beta}\\in V, \\tag{7.14}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "则称  $\\mathcal{A}$  为对称变换",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "对称变换与对称矩阵的关系反映在如下的定理中,",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "定理7.7设  $\\pmb{\\epsilon}_{1},\\pmb{\\epsilon}_{2},\\dots ,\\pmb{\\epsilon}_{n}$  是欧氏空间  $V$  的一组标准正交基,则  $V$  中线性变换  $\\mathcal{A}$  为对称变换的充分必要条件是  $\\mathcal{A}$  在  $\\pmb{\\epsilon}_{1},\\pmb{\\epsilon}_{2},\\dots ,\\pmb{\\epsilon}_{n}$  下的矩阵  $A$  为对称矩阵.",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "证设  $A = (a_{ij})_{n\\times n},\\alpha ,\\beta$  为  $V$  中任意向量,  $\\alpha ,\\beta$  在  $\\pmb{\\epsilon}_{1},\\pmb{\\epsilon}_{2},\\dots ,\\pmb{\\epsilon}_{n}$  下的坐标分别  $x,y$  ,即",
+        "page_idx": 26
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\pmb {\\alpha} = (\\pmb{\\epsilon}_{1},\\pmb{\\epsilon}_{2},\\dots ,\\pmb{\\epsilon}_{n})\\pmb {x},\\quad \\pmb {\\beta} = (\\pmb{\\epsilon}_{1},\\pmb{\\epsilon}_{2},\\dots ,\\pmb{\\epsilon}_{n})\\pmb {y}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "这样",
+        "page_idx": 26
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {\\mathcal{A}\\pmb {\\alpha} = \\mathcal{A}(\\pmb{\\epsilon}_{1},\\pmb{\\epsilon}_{2},\\dots ,\\pmb{\\epsilon}_{n})\\pmb {x} = (\\pmb{\\epsilon}_{1},\\pmb{\\epsilon}_{2},\\dots ,\\pmb{\\epsilon}_{n})A\\pmb {x},}\\\\ & {\\mathcal{A}\\pmb {\\beta} = \\mathcal{A}(\\pmb{\\epsilon}_{1},\\pmb{\\epsilon}_{2},\\dots ,\\pmb{\\epsilon}_{n})\\pmb {y} = (\\pmb{\\epsilon}_{1},\\pmb{\\epsilon}_{2},\\dots ,\\pmb{\\epsilon}_{n})A\\pmb {y}.} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "由于  $\\pmb{\\epsilon}_{1}, \\pmb{\\epsilon}_{2}, \\dots , \\pmb{\\epsilon}_{n}$  是标准正交基,故",
+        "page_idx": 27
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(\\mathcal{A}\\pmb {\\alpha}, \\pmb {\\beta}) = (A\\pmb {x}, \\pmb {y}) = (A\\pmb {x})^{\\mathrm{T}}\\pmb {y} = \\pmb{x}^{\\mathrm{T}}A^{\\mathrm{T}}\\pmb {y},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 27
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(\\pmb {\\alpha}, \\mathcal{A}\\pmb {\\beta}) = (\\pmb {x}, A\\pmb {y}) = \\pmb{x}^{\\mathrm{T}}A\\pmb {y}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "若  $\\mathcal{A}$  是对称变换,那么",
+        "page_idx": 27
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(\\mathcal{A}\\pmb {\\alpha}, \\pmb {\\beta}) = (\\pmb {\\alpha}, \\mathcal{A}\\pmb {\\beta}), \\quad \\forall \\pmb {\\alpha}, \\pmb {\\beta} \\in V. \\tag{7.15}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "这意味着",
+        "page_idx": 27
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\pmb{x}^{\\mathrm{T}}A^{\\mathrm{T}}\\pmb {y} = \\pmb{x}^{\\mathrm{T}}A\\pmb {y}, \\quad \\forall \\pmb {x}, \\pmb {y} \\in \\mathbb{R}^{n}. \\tag{7.16}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "即",
+        "page_idx": 27
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left[\\pmb{x}^{\\mathrm{T}}(A^{\\mathrm{T}} - A)\\right]\\pmb {y} = 0.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "由  $\\textbf{y}$  的任意性可得",
+        "page_idx": 27
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\pmb{x}^{\\mathrm{T}}(A^{\\mathrm{T}} - A) = \\mathbf{0},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "又因  $\\textbf{x}$  的任意性,知  $(A^{\\mathrm{T}} - A)$  为零矩阵,从而",
+        "page_idx": 27
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA^{\\mathrm{T}} = A,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "即  $A$  为对称矩阵",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "反之,若  $A$  为对称矩阵即",
+        "page_idx": 27
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA^{\\mathrm{T}} = A,\n$$\n",
+        "text_format": "latex",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "那么(7.16)式成立,从而(7.15)式成立,故  $\\mathcal{A}$  为对称变换",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "定理7.5表明在一组标准正交基下对称变换与对称矩阵的一一对应,从而对对称变换的讨论常可转化为对对应的对称矩阵的讨论.",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "例7.12设  $\\pmb{\\epsilon}_{1}, \\pmb{\\epsilon}_{2}, \\pmb{\\epsilon}_{3}$  是欧氏空间  $V$  的一组标准正交基,  $V$  的线性变换  $\\mathcal{A}$  满足",
+        "page_idx": 27
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}(\\pmb{\\epsilon}_{1} + \\pmb{\\epsilon}_{2}) = \\pmb{\\epsilon}_{1} + 3\\pmb{\\epsilon}_{2} - \\pmb{\\epsilon}_{3}, \\quad \\mathcal{A}(\\pmb{\\epsilon}_{2} + 2\\pmb{\\epsilon}_{3}) = -\\pmb{\\epsilon}_{1} + 2\\pmb{\\epsilon}_{2} + 6\\pmb{\\epsilon}_{3},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 27
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}(3\\pmb{\\epsilon}_{1} + \\pmb{\\epsilon}_{3}) = -\\pmb{\\epsilon}_{1} + 3\\pmb{\\epsilon}_{2}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "证明:  $\\mathcal{A}$  是对称变换",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "证设  $\\mathcal{A}$  在  $\\pmb{\\epsilon}_{1}, \\pmb{\\epsilon}_{2}, \\pmb{\\epsilon}_{3}$  的矩阵为  $A$ ,那么由  $\\mathcal{A}$  满足的条件可知",
+        "page_idx": 27
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA\\left[ \\begin{array}{c}1 \\\\ 1 \\\\ 0 \\end{array} \\right] = \\left[ \\begin{array}{c}1 \\\\ 3 \\\\ -1 \\end{array} \\right], \\quad A\\left[ \\begin{array}{c}0 \\\\ 1 \\\\ 2 \\end{array} \\right] = \\left[ \\begin{array}{c} - 1 \\\\ 2 \\\\ 6 \\end{array} \\right], \\quad A\\left[ \\begin{array}{c}3 \\\\ 0 \\\\ 1 \\end{array} \\right] = \\left[ \\begin{array}{c} - 1 \\\\ 3 \\\\ 0 \\end{array} \\right],\n$$\n",
+        "text_format": "latex",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "即有",
+        "page_idx": 27
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA\\left[ \\begin{array}{ccc}1 & 0 & 3 \\\\ 1 & 1 & 0 \\\\ 0 & 2 & 1 \\end{array} \\right] = \\left[ \\begin{array}{ccc}1 & -1 & -1 \\\\ 3 & 2 & 3 \\\\ -1 & 6 & 0 \\end{array} \\right],\n$$\n",
+        "text_format": "latex",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "从而",
+        "page_idx": 27
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA=\\left[\\begin{array}{r r r}{1}&{-1}&{-1}\\\\ {3}&{2}&{3}\\\\ {-1}&{6}&{0}\\end{array}\\right]\\left[\\begin{array}{r r r}{1}&{0}&{3}\\\\ {1}&{1}&{0}\\\\ {0}&{2}&{1}\\end{array}\\right]^{-1}=\\left[\\begin{array}{r r r}{0}&{1}&{-1}\\\\ {1}&{2}&{0}\\\\ {-1}&{0}&{3}\\end{array}\\right].\n$$\n",
+        "text_format": "latex",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "显然  $A$  为对称矩阵,故  $\\mathcal{A}$  是对称变换.",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "习题七",
+        "text_level": 1,
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "(一)",
+        "text_level": 1,
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "1. 试考察  $\\mathbf{R}^{3}$  中的下列变换是否是线性变换:",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "(1)  $\\mathcal{A}\\left[ \\begin{array}{c}x_{1} \\\\ x_{2} \\\\ x_{3} \\end{array} \\right] = \\left[ \\begin{array}{c}x_{1} \\\\ 3x_{2} + x_{1} \\\\ x_{3} - 1 \\end{array} \\right];$  \n(2)  $\\mathcal{A}\\left[ \\begin{array}{c}x_{1} \\\\ x_{2} \\\\ x_{3} \\end{array} \\right] = \\left[ \\begin{array}{c} - 2x_{2} \\\\ 0 \\\\ 0 \\end{array} \\right];$  \n(3)  $\\mathcal{A}\\left[ \\begin{array}{c}x_{1} \\\\ x_{2} \\\\ x_{3} \\end{array} \\right] = \\left[ \\begin{array}{c}x_{2} \\\\ x_{1}x_{3} \\\\ 0 \\end{array} \\right].$",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "2. 试考察下列线性空间所定义的变换是否是线性变换:",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "(1)  $V$  是一线性空间,  $\\alpha_{0}$  是  $V$  中非零向量, 定义",
+        "page_idx": 28
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}\\alpha = \\alpha +\\alpha_{0}, \\quad \\forall \\alpha \\in V;\n$$\n",
+        "text_format": "latex",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "(2)  $V$  是一线性空间,  $\\alpha_{0}$  是  $V$  中非零向量, 定义",
+        "page_idx": 28
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}\\alpha = \\alpha_{0}, \\quad \\forall \\alpha \\in V;\n$$\n",
+        "text_format": "latex",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "(3)  $V$  是一欧氏空间,  $\\alpha_{0}$  是  $V$  中非零向量, 定义",
+        "page_idx": 28
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}\\alpha = (\\alpha ,\\alpha_{0})\\alpha_{0}, \\quad \\forall \\alpha \\in V;\n$$\n",
+        "text_format": "latex",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "(4)  $P[x]$  中, 定义",
+        "page_idx": 28
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}(p(x)) = p(x + 1), \\quad \\forall p(x) \\in P[x]_{3}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "(5)  $P[x]$  中, 定义",
+        "page_idx": 28
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}(p(x)) = p(x_{0}), \\quad \\forall p(x) \\in P[x],\n$$\n",
+        "text_format": "latex",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "其中  $x_{0}$  是固定的数;",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "(6)  $P[x]$  中, 定义",
+        "page_idx": 28
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}(p(x)) = p(x + 1) - p(x), \\quad \\forall p(x) \\in P[x];\n$$\n",
+        "text_format": "latex",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "(7)  $P[x]$  中, 定义",
+        "page_idx": 28
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}(p(x)) = x p(x), \\quad \\forall p(x) \\in P[x];\n$$\n",
+        "text_format": "latex",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "(8)  $P[x]$  中, 定义",
+        "page_idx": 28
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}(p(x)) = p^{2}(x), \\quad \\forall p(x) \\in P[x];\n$$\n",
+        "text_format": "latex",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "(9)  $M^{n \\times s}$  中, 定义",
+        "page_idx": 28
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}A = AB, \\quad \\forall A \\in M^{n \\times s},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "其中  $B$  是一个固定的  $s \\times s$  矩阵;",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "(10)  $M^{n \\times n}$  中, 定义",
+        "page_idx": 28
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}A = A^{2}, \\quad \\forall A \\in M^{n \\times n}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "3.  $\\mathbf{R}^{3}$  中的投影变换  $\\mathcal{P}$  的定义为",
+        "page_idx": 28
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{P}\\left[ \\begin{array}{c}x_{1} \\\\ x_{2} \\\\ x_{3} \\end{array} \\right] = \\left[ \\begin{array}{c}x_{1} \\\\ x_{2} \\\\ 0 \\end{array} \\right], \\quad \\forall \\left[ \\begin{array}{c}x_{1} \\\\ x_{2} \\\\ x_{3} \\end{array} \\right] \\in \\mathbf{R}^{3}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "试证:  $\\mathcal{P}$  是  $\\mathbf{R}^{3}$  中的线性变换.",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "4. 对第 1 题中的那些线性变换:",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "(1)求出它们在基  $\\epsilon_{1}, \\epsilon_{2}, \\epsilon_{3}$  下的矩阵, 其中",
+        "page_idx": 29
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\pmb{\\epsilon}_{1}=\\left[\\begin{array}{l}{1}\\\\ {0}\\\\ {0}\\end{array}\\right],\\quad\\pmb{\\epsilon}_{2}=\\left[\\begin{array}{l}{0}\\\\ {1}\\\\ {0}\\end{array}\\right],\\quad\\pmb{\\epsilon}_{3}=\\left[\\begin{array}{l}{0}\\\\ {0}\\\\ {1}\\end{array}\\right];\n$$\n",
+        "text_format": "latex",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "(2)求出它们在基  $\\eta_{1}, \\eta_{2}, \\eta_{3}$  下的矩阵, 其中",
+        "page_idx": 29
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\pmb{\\eta}_{1}=\\left[\\begin{array}{c}{1}\\\\ {0}\\\\ {-1}\\end{array}\\right],\\quad\\pmb{\\eta}_{2}=\\left[\\begin{array}{c}{-1}\\\\ {1}\\\\ {0}\\end{array}\\right],\\quad\\pmb{\\eta}_{3}=\\left[\\begin{array}{c}{-2}\\\\ {2}\\\\ {-1}\\end{array}\\right].\n$$\n",
+        "text_format": "latex",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "5. 设  $V$  是实线性空间  $C\\left[0, \\frac{\\pi}{2}\\right]$  中由函数",
+        "page_idx": 29
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf_{1} = \\mathrm{e}^{2x} \\cos 3 x, \\quad f_{2} = \\mathrm{e}^{2x} \\sin 3 x, \\quad f_{3} = x \\mathrm{e}^{2x} \\cos 3 x, \\quad f_{4} = x \\mathrm{e}^{2x} \\sin 3 x\n$$\n",
+        "text_format": "latex",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "所生成的子空间.",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "(1)试证  $f_{1}, f_{2}, f_{3}, f_{4}$  为  $V$  的一组基",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "(2)求微分变换  $\\mathcal{D}$  在这组基下的矩阵",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "6. 已知  $\\mathbf{R}^{3}$  的两组基分别为",
+        "page_idx": 29
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\pmb{\\epsilon}_{1}=\\left[\\begin{array}{c}{1}\\\\ {0}\\\\ {0}\\end{array}\\right],\\pmb{\\epsilon}_{2}=\\left[\\begin{array}{c}{0}\\\\ {1}\\\\ {0}\\end{array}\\right],\\pmb{\\epsilon}_{3}=\\left[\\begin{array}{c}{0}\\\\ {0}\\\\ {1}\\end{array}\\right];\\pmb{\\beta}_{1}=\\left[\\begin{array}{c}{-1}\\\\ {1}\\\\ {1}\\end{array}\\right],\\pmb{\\beta}_{2}=\\left[\\begin{array}{c}{1}\\\\ {0}\\\\ {-1}\\end{array}\\right],\\pmb{\\beta}_{3}=\\left[\\begin{array}{c}{0}\\\\ {1}\\\\ {1}\\end{array}\\right].\n$$\n",
+        "text_format": "latex",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "线性变换  $\\mathcal{A}$  在基  $\\pmb{\\beta}_{1}, \\pmb{\\beta}_{2}, \\pmb{\\beta}_{3}$  下的矩阵为",
+        "page_idx": 29
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nB=\\left[\\begin{array}{r r r}{1}&{0}&{1}\\\\ {1}&{1}&{0}\\\\ {-1}&{2}&{1}\\end{array}\\right].\n$$\n",
+        "text_format": "latex",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "求  $\\mathcal{A}$  在基  $\\epsilon_{1}, \\epsilon_{2}, \\epsilon_{3}$  下的矩阵.",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "7.  $\\mathbf{R}^{3}$  中的线性变换  $\\mathcal{A}$  将一组基  $\\alpha_{1}, \\alpha_{2}, \\alpha_{3}$  变到  $\\mathcal{A} \\alpha_{1}, \\mathcal{A} \\alpha_{2}, \\mathcal{A} \\alpha_{3}$ , 这些向量分别是",
+        "page_idx": 29
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\pmb{\\alpha}_{1}=\\left[\\begin{array}{c}{-1}\\\\ {0}\\\\ {2}\\end{array}\\right],\\quad\\pmb{\\alpha}_{2}=\\left[\\begin{array}{c}{0}\\\\ {1}\\\\ {1}\\end{array}\\right],\\quad\\pmb{\\alpha}_{3}=\\left[\\begin{array}{c}{-3}\\\\ {-1}\\\\ {0}\\end{array}\\right];\n$$\n",
+        "text_format": "latex",
+        "page_idx": 29
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A} \\pmb{\\alpha}_{1}=\\left[\\begin{array}{c}{-5}\\\\ {0}\\\\ {3}\\end{array}\\right], \\mathcal{A} \\pmb{\\alpha}_{2}=\\left[\\begin{array}{c}{0}\\\\ {-1}\\\\ {6}\\end{array}\\right], \\mathcal{A} \\pmb{\\alpha}_{3}=\\left[\\begin{array}{c}{-5}\\\\ {-1}\\\\ {9}\\end{array}\\right].\n$$\n",
+        "text_format": "latex",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "求:(1)  $\\mathcal{A}$  在基  $\\alpha_{1}, \\alpha_{2}, \\alpha_{3}$  下的矩阵.",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "(2)  $\\mathcal{A}$  在基  $\\epsilon_{1}, \\epsilon_{2}, \\epsilon_{3}$  下的矩阵, 其中",
+        "page_idx": 29
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\pmb{\\epsilon}_{1}=\\left[\\begin{array}{c}{1}\\\\ {0}\\\\ {0}\\end{array}\\right], \\pmb{\\epsilon}_{2}=\\left[\\begin{array}{c}{0}\\\\ {1}\\\\ {0}\\end{array}\\right], \\pmb{\\epsilon}_{3}=\\left[\\begin{array}{c}{0}\\\\ {0}\\\\ {1}\\end{array}\\right].\n$$\n",
+        "text_format": "latex",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "(3)  $\\mathcal{A} \\mathbf{x}$  的表达式, 这里  $\\mathbf{x} = (x_{1}, x_{2}, x_{3})^{\\mathrm{T}}$ .",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "8.  $P[x]_{3}$  中的一组基为  $2 - x, 1 + 2 x - x^{2}, -1 + 2 x^{2}$ , 求微分变换  $\\mathcal{D}$  在这组基下的矩阵.",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "9. 在  $M^{2 \\times 2}$  中, 定义了线性变换",
+        "page_idx": 29
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}_{1}(M) = M M_{0}, \\quad \\mathcal{A}_{2}(M) = M_{0} M, \\quad \\forall M \\in M^{2 \\times 2},\n$$\n",
+        "text_format": "latex",
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "其中  $M_{0}$  是一个固定的矩阵",
+        "page_idx": 30
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nM_{0}={\\binom{a}{c}}\\quad d\\quad\n$$\n",
+        "text_format": "latex",
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "(1)分别求  $\\mathcal{A}_{1}, \\mathcal{A}_{2}$  在基",
+        "page_idx": 30
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nE_{11}={\\binom{1}{0}},\\quad E_{12}={\\binom{0}{0}},\\quad E_{21}={\\binom{0}{1}},\\quad E_{22}={\\binom{0}{0}},\\quad E_{23}={\\binom{0}{0}}.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "下的矩阵.",
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "(2)分别求  $\\mathcal{A}_{1}, \\mathcal{A}_{2}$  在基",
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "试证:  $\\mathcal{A}$  是反对称变换的充分必要条件为  $\\mathcal{A}$  在一组标准正交基下的矩阵是反对称矩阵。",
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "14. 已知  $\\mathbf{R}^{3}$  中的线性变换  $\\mathcal{A}$  在一组基  $\\alpha_{1}, \\alpha_{2}, \\alpha_{3}$  下的矩阵  $A$  是可逆的,试证:",
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "(1)  $\\mathcal{A}$  保持向量的平行性不变;",
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "(2)  $\\mathcal{A}$  保持向量的线性无关性不变。",
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "15. 设  $V$  是  $n$  维欧氏空间,  $\\pmb{\\eta}$  是  $V$  中一单位向量,定义",
+        "page_idx": 31
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\mathcal{A}\\pmb {\\alpha} = \\pmb {\\alpha} - 2(\\alpha , \\eta) \\eta , \\quad \\forall \\pmb {\\alpha} \\in V.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "试证明:",
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "(1)  $\\mathcal{A}$  是正交变换;",
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "(2)若  $\\mathcal{A}$  在  $V$  的一组标准正交基下的矩阵为  $A$ ,则  $|A| = -1$ 。",
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "第八章 数学软件与应用实例",
+        "text_level": 1,
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "线性代数的各部分内容都涉及运算,尤其重要的是行列式和矩阵的运算。在本书中所介绍的相关的例题和习题,是为了使读者了解和熟悉运算规则而编写的,所以行列式阶数比较低,矩阵的行数与列数也比较小,它们的元素中的数字也比较简单。然而,来源于实际问题的代数形式的数学模型中,情况就完全不同了:行列式的阶数可能很高,矩阵的行数与列数可能很大,其中的数字也可能相当大,甚至会出现多位小数。在这种情况下,仅用笔和纸靠手工运算无疑太费时费力了,而且有时几乎是不可能实现的,这时我们必须借助于计算机。早期我们采取编程加调用现成函数包(库函数)的方法,该方法要求使用者具有相当的计算机编程能力,而且也比较复杂。随着计算机软件的飞速发展,一些用于数学和科学计算的软件已相当成熟,而且功能也非常强大。比如用于符号计算的Mathematica和Maple,用于数值和科学计算的Matlab等。",
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "考虑到Matlab软件对矩阵的原生支持以及本书面向的对象主要为工程、经管类等应用型学科的学生,我们采用MathWorks公司的Matlab软件来介绍线性代数中的运算,并适当介绍一些需要运用线性代数知识来解决的典型实际问题。",
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "8.1 Matlab的基本使用",
+        "text_level": 1,
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "8.1.1 Matlab简介",
+        "text_level": 1,
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "Matlab名字由MATrix和LABoratory两词的前三个字母组合而成。那是20世纪70年代后期的事:时任美国新墨西哥大学计算机科学系主任的CleveMoler教授出于减轻学生编程负担的动机,为学生设计了一组调用LINPACK和EIS- PACK库程序的\"通俗易用\"的接口,此即用FORTRAN编写的萌芽状态的Matlab。",
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "经几年的校际流传,在Little的推动下,由Little、Moler、SteveBangert合作,于1984年成立了MathWorks公司,并把Matlab正式推向市场。从这时起,Matlab的内核采用C语言编写,而且除原有的数值计算能力外,还新增了数据图视功能。",
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "进入20世纪90年代以后,Matlab已经成为事实上的科学计算领域的标准软件。Matlab中的基本元素为无需定义维数的矩阵,按照IEEE的数值计算标准进行计算。",
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "除基本部分外, Matlab 还根据各专门领域中特殊需要提供了许多可选的工具箱, 这些工具箱的涵盖领域相当广泛, 如控制系统的设计和分析、通信和信号处理、图像处理、神经网络、数据采集、概率统计、优化算法、金融数学等等. 这些由专家编写的 Matlab 程序, 代表了某一领域内最先进的算法, 在很多时候能够给予我们极大的帮助.",
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "本章仅介绍 Matlab 最基本的使用方法, 并结合本书中的部分实验介绍相关的数值计算. 有关 Matlab 的更多产品及支持信息, 读者可以访问 Mathworks 官方网站:",
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "http://www.mathworks.com(英文)",
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "http://www.mathworks.cn(中文)",
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "8.1.2 Matlab 用户界面",
+        "text_level": 1,
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "用户在启动 Matlab 后, 首先看到的是如图 8.1 所示的用户界面 (以 Matlab R2013b 版为例, 其他版本用户界面可能会有差异):",
+        "page_idx": 33
+    },
+    {
+        "type": "image",
+        "img_path": "images/c38469eb07f52674bbbb552d57536fc1736ec1793b82899a4791dedcc9f70270.jpg",
+        "image_caption": [
+            "图 8.1"
+        ],
+        "image_footnote": [],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "Matlab 的用户界面主要包括三个部分: Command Window、Command History、Workspace. 其中的 Command Window 为我们工作的主要对象, 在  $\\Rightarrow$  提示符状态下输入 Matlab 的各种命令, 同时除图形外的各种结果也显示在该窗口中.",
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "Command History 中按日期存储了用户曾使用过的 Matlab 命令, 如果需要, 用户可以使用键盘上的  $\\uparrow$  或  $\\downarrow$  键像 DOS 命令提示符那样调出已使用过的命令, 或直接在 Command History 中双击所需的历史命令即可执行.",
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "Workspace 为 Matlab 的工作空间, 其中显示的是 Matlab 当前已经使用的所",
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "有变量名及其类型、值等，对于向量或矩阵，双击变量名可以在新打开的窗口中查看其值。用户也可以直接删除某个变量从而清除其在当前Matlab内存空间中的定义。",
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "对于Matlab界面的其他各项，限于篇幅，本章不再详细介绍。后续的内容也仅介绍部分涉及的菜单项。",
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "8.1.3 Matlab中的基本运算及变量定义",
+        "text_level": 1,
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "简单的数学运算符如下：",
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "$^+$  （加）一（减）  $\\ast$  （乘）／（右除）（左除）（幂）例如：",
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": ">>12+34/56- 3\\*26 ans  $=$  - 65.3929  $> > 23.7\\sim 5$  ans  $=$  7.4772e+006",
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "式中的  $\\mathrm{e} + 006$  代表  $10^{6}$ ，是Matlab中较常见的一种表示方式。我们也可以通过“File”菜单中的“Preferences...”来进行CommandWindow窗口中的显示方式设置，如图8.2：short格式是紧凑型显示，仅显示小数点后4位，而long格式可显示小数点后14或15位，shorte和longe分别为相应的指数显示格式。",
+        "page_idx": 34
+    },
+    {
+        "type": "image",
+        "img_path": "images/60074bc29e079a9e9340759cf75b685da23eff0d71e1a04998710beeb18e8d80.jpg",
+        "image_caption": [
+            "图8.2"
+        ],
+        "image_footnote": [],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "Matlab 中的变量使用及表达式等与 C 语言语法类似, 比如也区分变量的大小写, 但变量除符号变量外无需事先定义其类型, 系统会自动根据变量的赋值确定其类型. 但以下几个为系统保留的特殊变量 (注意区分大小写):",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "pi 圆周率",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "eps 计算机的最小正数",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "i和j  $\\mathrm{i} = \\mathrm{j} = \\sqrt{- 1}$  (用于复数的表示)",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "Inf 无穷大",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "NaN 不定量",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "例如:",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": ">>3/0",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "ans  $=$",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "Inf",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": ">>0/0",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "ans  $=$",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "NaN",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "Matlab 中函数的调用方式也与 C 语言类似, 用小括号加所需的参数即可. 例如常见的 sin 函数:",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": ">> sin(2)",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "ans  $=$",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "0.9093",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "常用数学函数:",
+        "page_idx": 35
+    },
+    {
+        "type": "table",
+        "img_path": "images/b6a323c1a5bed262c0c693415de10cbd536330dd3472c5718c7eb2dc55a0b97c.jpg",
+        "table_caption": [
+            "表8.1"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>基本三角函数</td><td>sin</td><td>cos</td><td>tan</td><td>sec</td><td>csc</td><td>cot</td></tr><tr><td>反三角函数</td><td>asin</td><td>acos</td><td>atan</td><td>asec</td><td>acsc</td><td>acot</td></tr><tr><td>双曲函数</td><td>sinh</td><td>cosh</td><td>tanh</td><td>sech</td><td>csch</td><td>coth</td></tr><tr><td>反双曲函数</td><td>asinh</td><td>acosh</td><td>atanh</td><td>asech</td><td>acsch</td><td>acoth</td></tr><tr><td>指数和对数</td><td>exp</td><td>log</td><td>log10</td><td>sqrt</td><td></td><td></td></tr><tr><td>复数运算</td><td>abs</td><td>angle</td><td>conj</td><td>real</td><td>imag</td><td></td></tr><tr><td>数值函数</td><td>fix</td><td>floor</td><td>ceil</td><td>round</td><td>mod</td><td>rem</td></tr><tr><td>整数函数</td><td>lcm</td><td>gcd</td><td></td><td></td><td></td><td></td></tr></table>",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "(1)上述三角函数的参数单位都是弧度, 如要以度数为单位则需在相应函数名后加 d, 如 sind(), cosd() 等.",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "(2)  $\\log (\\mathbf{x})$  求  $x$  的自然对数,  $\\log 10(\\mathbf{x})$  求  $x$  以 10 为底的对数.",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "(3) angle(x) 求复数  $x$  的辐角, conj(x) 求  $x$  的共轭复数, real(x) 和 imag(x)",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "分别求复数  $x$  的实部和虚部.",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "(4)fix(x)求实数  $x$  最接近0的整数值(即截尾取整),floor(x)求不超过  $x$  的最大整数,ceil(x)求大于  $x$  的最大整数,round(x)对  $x$  四舍五入取整;mod(x,y)和  $\\mathrm{rem}(\\mathbf{x},\\mathbf{y})$  都是求  $x$  除  $y$  的余数,但有所不同,其中  $\\mathrm{mod}(\\mathbf{x},\\mathbf{y}) = \\mathbf{x} - \\mathbf{y}$  .\\*floor $(\\mathbf{x}, / \\mathbf{y}),\\mathrm{rem}(\\mathbf{x},\\mathbf{y}) = \\mathbf{x} - \\mathbf{y}.$  \\*fix(x./y).",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "(5)  $\\operatorname {lcm}(a, b)$  返回正整数  $a$  和  $b$  的最小公倍数,  $\\gcd (a, b)$  返回  $a$  和  $b$  的最大公约数.",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "8.1.4 Matlab中的数组操作",
+        "text_level": 1,
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "Matlab中的所有对象都可以看成是矩阵(向量)对象,但此处仅以计算机中的数组概念进行介绍,有关数学中的矩阵和向量概念及运算将在下一节中介绍.",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "如下的格式定义了Matlab中的一个数组(向量):",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "$\\geq a = [2583]$ $\\frac{9}{10}$  可以使用空格,也可以使用逗号进行元素的分隔",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "a=",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "2 5 8 3",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "如下的格式定义了Matlab中的一个二维数组(矩阵):",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "$\\geq A = [123;456]$ $\\frac{9}{10}$  分号用于行与行之间的分隔",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "A=",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "1 2 3",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "4 5 6",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "1. 运算符",
+        "text_level": 1,
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "\": \"是Matlab中矩阵操作一个重要运算符,利用它我们可以按步长自动生成所需的向量.看两个例子:",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": ">>2:13",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "ans=",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "2 3 4 5 6 7 8 9 10 11 12",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "13",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": ">>2:3:13",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "ans=",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "2 5 8 11",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "当命令为a:b格式时默认步长为1,需要指定步长为  $h$  时:a:h:b",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "另一个和\":\"功能类似的有用函数是linspace(a,b,n),它以  $a$  为初始值,  $b$  为终止值产生  $n$  个等间距的元素.",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "2. 数组操作",
+        "text_level": 1,
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "对于Matlab中的数组或矩阵,我们可以方便的进行存取操作。例如:",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": ">> b=[1368]",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "$\\mathbf{b} =$",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "1 3 6 8",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "命令b(i)可以取出第  $i$  个位置上的元素:",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": ">> b(3)",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "ans=",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "6",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "需要指出的是,Matlab中数组的下标从1开始。同样,对b(i)赋值可以改变第  $i$  个位置元素的值:",
+        "page_idx": 37
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l}{> > }&{{}\\mathsf{b}(3)=4}\\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "$\\mathbf{b} =$",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "1 3 4 8",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "可以通过赋值操作来添加或删除元素:",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": ">> b(7)=22",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "$\\mathbf{b} =$",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "1 3 4 8 0 0 22",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": ">> b(4)=",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "$\\mathbf{b} =$",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "1 3 4 0 0 22",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "对于二维数组或矩阵,取元素的操作例子如下:",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": ">> A=[135;468]",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "$\\mathbf{A} =$",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "1 3 5",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "4 6 8",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": ">> A(2,3) 8 第一个参数为行号,第二个参数为列号",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "ans=",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "8",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": ">> A(:,2) 8 取所有的行和第二列(即取第二列)",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "ans=",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "3",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "6",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "取矩阵块(可用于计算代数余子式):",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": ">> A(1:2,2:3) % 取第1行至第2行,第2列至第3列",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "ans  $=$",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "3 5 6 8",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "增加或删除元素也可以通过赋值操作来实现,方法同上,不再举例",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "Matlab也支持高维数组的存取,例如把两个矩阵都存入高维数组C:",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": ">>  $\\mathbb{C}(:,\\mathbf{\\lambda};1) = [12;45];$  >>  $\\mathbb{C}(:,\\mathbf{\\lambda};2) = [36;97]$ $\\mathbb{C}(:,\\mathbf{\\lambda};1) =$  1 2 4 5  $\\mathbb{C}(:,\\mathbf{\\lambda};2) =$  3 6 9 7",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "8.1.5 Matlab中的脚本及程序",
+        "text_level": 1,
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "1. Matlab中的程序设计语言",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "Matlab和很多数学软件一样,也提供了基本的程序设计功能,通过用户的自编程,用户可以实现非常复杂的应用.",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "- 逻辑判断符:",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "$\\begin{array}{r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l} \\end{array}$ $\\begin{array}{r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l}{{\\mathrm{~\\sim~}}={\\mathrm{~\\sim~}}({\\mathrm{~\\sim~}}{\\mathrm{~\\sim~}}{\\mathrm{~\\sim~}}{\\mathrm{~\\sim~}}{\\mathrm{~\\sim~}}{\\mathrm{~\\sim~}}{\\mathrm{~\\sim~}}{\\mathrm{~\\sim~}}{\\mathrm{~\\sim~}}{\\mathrm{~\\sim~}}{\\mathrm{~\\sim~}}{\\mathrm{~\\sim~}}{\\mathrm{~\\sim~}}{\\mathrm{~}}{\\mathrm{~\\sim~}}{\\mathrm{~\\sim~}}{\\mathrm{~\\sim~}}{\\mathrm{~\\sim~}}{\\mathrm{~\\sim~}}{\\mathrm{~\\sim~}}{\\mathrm{~\\sim~}}{\\mathrm{~\\sim~}}{\\mathrm{~\\sim~}}{\\mathrm{~\\sim~}}{\\mathrm{~\\sim~}}{\\mathrm{~\\sim~}}{\\sim}}\\end{array}$  (不等于)",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "- 逻辑运算符",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "&(and) |(或)  $\\sim$  (取反)",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "- 条件语句",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "$①$  if- elseif- else- end",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "$②$  switch- case- end",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "例如:if(math<60)&(failcount>=4)pass  $= 0$  elsepass  $= 1$  end",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "- 循环语句",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "$①$  for  $\\mathbf{n} =$  array(array为Matlab向量或数组)……(运行语句)",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "end",
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "$②$  while expression (expression 为逻辑表达式)",
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "(运行语句)",
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "end",
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "2. M 文件的使用",
+        "text_level": 1,
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "Matlab 中程序及脚本文件的编写都必须依赖于 m 文件, 通过工具栏上的 \"new\" 按钮, 我们可以很方便的打开如图 8.3 所示的 Matlab 的 m 文件编辑窗口:",
+        "page_idx": 39
+    },
+    {
+        "type": "image",
+        "img_path": "images/537fce011245203a307c1ebe026850a006560f0e561d27fd0a2881c47e9dc3c1.jpg",
+        "image_caption": [
+            "图8.3"
+        ],
+        "image_footnote": [],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "Matlab 中 m 的编写有两种形式: 函数文件和脚本文件. 这两种方式形式上的区别是第一行是否包含以 \"function\" 关键词开头的函数名, 例如以下两段代码:",
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "$\\mathrm{A} = \\mathrm{rand}(3,3)$ $\\mathrm{B} = \\mathrm{rand}(3,2)$ $\\mathrm{C} = \\mathrm{A} * \\mathrm{B}$",
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "function test  $\\mathrm{A} = \\mathrm{rand}(3,3)$ $\\mathrm{B} = \\mathrm{rand}(3,2)$ $\\mathrm{C} = \\mathrm{A} * \\mathrm{B}$",
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "代码 A 我们称为脚本文件, 代码 B 称为函数文件. 两者都通过在 Command Window 窗口中输入 m 文件的文件名 (不含扩展名. m) 进行调用, 但在功能和使用场合上存在如下不同:",
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "脚本文件的执行相当于在 Command Window 窗口中逐步执行每行程序语句, 因此脚本文件将和 Command Window 使用相同的 Workspace, 两者的变量定",
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "义是相通的, 即在脚本文件中定义或使用的变量在 Command Window 窗口中也同样访问, 反之也一样. 但函数文件则完全不同, 两者使用不同的 Workspace, 两者之间定义或使用的变量也互相不可访问.",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "其次, 函数文件可以定义输入和输出参数, 且参数可以为多个, 例如:",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "function  $\\left[\\mathbf{y}1,\\mathbf{y}2,\\mathbf{y}3,\\ldots \\right] = \\mathbf{test}\\left(\\mathbf{x}1,\\mathbf{x}2,\\mathbf{x}3,\\ldots\\right)$  而脚本则无法定义输入输出参数. 但对于函数文件必须注意, 无论\"function\"之后的函数名如何, Matlab 对函数的调用都是以  $\\mathbf{m}$  文件名为准. 一般我们建议用户把  $\\mathbf{m}$  文件名和函数名取成相同的名称.",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "需要指出的是,  $\\mathbf{m}$  文件必须放在系统的搜索路径或当前工作目录之下, 否则 Matlab 会找不到该  $\\mathbf{m}$  文件而无法调用.",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "8.1.6 使用 Matlab 绘图",
+        "text_level": 1,
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "绘图是诸多数学软件提供的必需功能, Matlab 也提供了许多功能强大的绘图函数, 限于篇幅, 本章仅提及 Matlab 中最基本的绘图函数以及本书前面的实验中可能用到的绘图函数进行讲解举例.",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "1. plot 函数",
+        "text_level": 1,
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "plot 函数是 Matlab 中最基本也是最重要的二维绘图函数, 其基本做法是对输入的参数向量表示的点进行描点绘图. 第一个参数为 X 轴上的点 (该参数可省略, 则依据 Y 的长度依次取 1, 2, ……), 第二个参数为 Y 轴上的点, 例如:",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": ">> x=0:0.1:2*pi;",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": ">> plot(x,sin(x))",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "上述命令给出了  $\\sin (x)$  在  $[0,2\\pi ]$  上的图像 (图 8.4).",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "在 Matlab 给出的图形窗口中, 我们可以进行编辑, 改变包括坐标轴在内的图像的颜色、线型、粗细、数据点等等. 用户可以点击\"Tools\"菜单下的\"Edit Plot\"后, 再在图像上点击选取想要编辑的对象, 在弹出的窗口中编辑图像的属性. 也可以在\"Insert\"菜单中插入所需的对象.",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "我们也可以把多个图形绘制在同一个坐标系下, 例如:",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": ">> plot(x,sin(x),x,cos(x),x,sqrt(x))",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "同时绘出了  $\\sin (x), \\cos (x), \\sqrt{x}$  三个函数的图形, Matlab 会自动给图像分配不同的颜色进行区分 (图 8.5).",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "2. polar 函数",
+        "text_level": 1,
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "polar 函数用于极坐标系下图形的绘制, 其用法和 plot 函数基本相似. 第一个参数为角度变量  $\\theta$ , 第二个为距离变量  $\\mathbf{r}$ , 例如:",
+        "page_idx": 40
+    },
+    {
+        "type": "image",
+        "img_path": "images/ba6cc20d7dbc976ca212792efc6a517dbae91adab6f4d4b8c72474a11390adcf.jpg",
+        "image_caption": [
+            "图8.4"
+        ],
+        "image_footnote": [],
+        "page_idx": 41
+    },
+    {
+        "type": "image",
+        "img_path": "images/341e2a3b4649903f4ee19de32f603ae816ced0e19ea0aa9c476b01815b8151a8.jpg",
+        "image_caption": [
+            "图8.5"
+        ],
+        "image_footnote": [],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": ">> t=0:.01:2*pi;  >> polar(t,sin(3*t).*cos(2*t),'- - r')",
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "绘出了函数  $r = \\sin (3t)\\cos (2t)$  的极坐标图形,如图8.6所示.命令中的第三",
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "个参数用来指定上述的图形选项,\"一一\"指定为虚线,\"r\"指定为红色。",
+        "page_idx": 42
+    },
+    {
+        "type": "image",
+        "img_path": "images/4c75e76cea5cc53bf4049ce7a6949438558dcbe47062dbece8df48a6247ea107.jpg",
+        "image_caption": [
+            "图8.6"
+        ],
+        "image_footnote": [],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "3. plot3 函数",
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "该函数用来绘制三维线图,用法同 plot 函数,只是多了第三个参数,即  $Z$  轴上的点,此处不再举例。",
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "4. mesh 函数和 surf 函数",
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "分别用来绘制三维网线图和三维表面图。这两种图形的绘制要比三维线图复杂很多,主要表现在数据准备、三维图形的视点、色彩和光照等。但两个函数的语法调用基本类似,只是绘出的图形在效果上略有差别,以下以 surf 函数为例进行说明。",
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "三维网线图和曲面图在绘图前首先要进行数据准备,方法是使用 meshgrid 函数产生所需的格点矩阵。例如要绘制函数  $z = x^{2} + y^{2}$  在  $x \\in [- 4, 4]$ , $y \\in [- 4, 4]$  的表面图,首先要产生格点矩阵  $X, Y$ :",
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": ">>x=- 4:0.1:4;",
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": ">>y=x;",
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": ">>[X,Y]=meshgrid(x,y);",
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "然后再调用 surf 函数:",
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": ">>surf(X,Y,X.^2+Y.^2) 注意X,Y为矩阵,必须用数组运算",
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "即得到如图 8.7 的三维网线图.",
+        "page_idx": 43
+    },
+    {
+        "type": "image",
+        "img_path": "images/59d0e0daa0b2512109b0d7896728fdf5384cadfc061aaa313ae829d8150e93ea.jpg",
+        "image_caption": [
+            "图8.7"
+        ],
+        "image_footnote": [],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "对于三维图形,Matlab还提供了强大的三维视图功能,我们可以通过\"Tools\"菜单中的\"Rotate3D\"命令或相应的快捷按钮直接在图形窗口中拖动产生的三维图形,从而可以从不同的视角查看该图形.",
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "8.2 线性代数基本运算",
+        "text_level": 1,
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "8.2.1 基本矩阵运算",
+        "text_level": 1,
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "Matlab中的所有对象都是矩阵对象,因此在Matlab中进行矩阵的运算非常方便.例如,定义矩阵  $A$  和  $B$",
+        "page_idx": 43
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n> > \\mathsf{A} = [123;456];\n$$\n",
+        "text_format": "latex",
+        "page_idx": 43
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n> > \\mathsf{B} = [356;947;018];\n$$\n",
+        "text_format": "latex",
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "%此处语句后的\";\"可以让Matlab不%输出该行的运行结果",
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "我们可以做矩阵的乘法:",
+        "page_idx": 43
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n> > \\mathsf{C} = \\mathsf{A}^{\\star}\\mathsf{B}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "C=",
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "21 16 44",
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "57 46 107",
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "需要特别指出的是,上面提到的Matlab的所有运算符如:  $+\\mathrm{~ - ~} * \\mathrm{~ / ~}$  等都是针对矩阵运算的,也就是说运算规则都是矩阵的运算方法。但Matlab中还存在另外一种定义于数组方式的运算符:  $* \\mathrm{~ / ~}$  (加减法无区别),即在相应的运算符前加\"。这也是Matlab中非常重要的概念之一。下面我们重新定义  $A$  和  $B$  的值来看一下两者的区别:",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": ">>A=[12;34];",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": ">>B=[56;78];",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": ">>A\\*B",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "ans=",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "19 22",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "43 50",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": ">>A.\\*B",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "ans=",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "5 12",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "21 32",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "由此我们可以看出,\"运算仅仅把对应位置的元素进行(乘法)运算,这就是Matlab中数组运算的概念。/和与此相似,不再赘述。",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "常用矩阵运算函数如下:",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "zeros(m,n),eye(m,n),ones(m,n)分别生成  $m \\times n$  阶全零、单位、全1矩阵",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "diag(V) 以向量  $\\mathbf{V}$  为对角线元素创建对角阵",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "det(A) 求矩阵  $A$  的行列式值",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "inv(A) 求矩阵  $A$  的逆",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "$[\\mathrm{V}, \\mathrm{D}] = \\mathrm{eig}(\\mathrm{A})$  返回矩阵  $A$  的特征值构成对角阵  $D$  与特征向量构成  $V$  的列向量",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "rref(A) 用高斯消元法化成阶梯形矩阵",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "A' A的转置",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "norm(A,p) 矩阵  $A$  的  $(p)$  范数",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "例8.1 求矩阵  $A = \\left[ \\begin{array}{cc}1 & 2 \\\\ 2 & - 1 \\end{array} \\right]$  的行列式。",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "解  $> > \\mathrm{~A} = \\left[1 2; 2 - 1\\right]$",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": ">> det(A)",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "ans=",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "- 5",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "例8.2 已知  $A = \\left[ \\begin{array}{ccc}1 & 2 & - 5 \\\\ 1 & 0 & 3 \\end{array} \\right], B = \\left[ \\begin{array}{ccc}3 & 1 & 4 \\\\ - 1 & - 2 & 1 \\end{array} \\right]$ , 求  $A + 2B, A B^{\\mathrm{T}}$",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "$(A B^{\\mathrm{T}})^{2}$ .",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "解  $> > \\mathrm{~A} = \\left[ \\begin{array}{l l l}{1} & {2} & {- 5;} \\end{array} \\right.$  103];",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": ">>B=[314;- 1- 21];",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": ">>A+2\\*B",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "ans=",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "7 4 3 - 1 - 4 5 >>A\\*B' ans= - 15 - 10 15 2",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": ">>(A\\*B')^2",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "ans=",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "75 130 - 195 - 146",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "例8.3用初等行变换将矩阵  $A = \\left[ \\begin{array}{rrrr}0 & 1 & 1 & 0 & 1 \\\\ - 1 & 3 & 1 & 1 & - 3 \\\\ 1 & 0 & 2 & - 1 & 6 \\\\ - 1 & 5 & 3 & 0 & - 1 \\end{array} \\right]$  化为简化的阶梯形矩阵.",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "形矩阵.",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "解  $> > \\mathrm{~A} = \\left[ \\begin{array}{l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l \\end{array} \\right]$",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": ">> rref(A)",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "ans=",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "1 0 2 0 6 0 1 1 0 1 0 0 0 1 0 0 0 0 0 0",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "例8.4已知  $A = \\left[ \\begin{array}{rrr}1 & 2 & 1 \\\\ 1 & 0 & 2 \\\\ - 1 & 3 & 0 \\end{array} \\right]$ , 求  $A^{- 1}$  与  $A^{*}$ .",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "解  $> > \\mathrm{~A} = \\left[ \\begin{array}{l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l l \\end{array} \\right]$",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": ">>inv(A)",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "ans=",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "0.8571 - 0.4286 - 0.5714",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "0.2857 - 0.1429 0.1429",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "- 0.4286 0.7143 0.2857",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "说明 在Matlab中,如没有特殊声明,所有的运算都是进行数值计算,结果会自动以近似值的形式给出。若需要得到精确解的表达式,一种方法是声明为symbolic对象(符号对象,需要有Symbolic Math Toolbox工具箱的支持)。求  $A^{- 1}$  精确解的求解方式如下:",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": ">> A=sym([1 2 1;1 0 2;- 1 3 0])",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "A=",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "[1,2,1]",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "[1,0,2]",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "[- 1,3,0]",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": ">>inv(A)",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "ans=",
+        "page_idx": 46
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {\\left[ \\begin{array}{l l}{6 / 7, - 3 / 7, - 4 / 7} \\end{array} \\right]}\\\\ & {\\left[ \\begin{array}{l l}{2 / 7, - 1 / 7,} & {1 / 7} \\end{array} \\right]}\\\\ & {\\left[ \\begin{array}{l l}{-3 / 7,} & {5 / 7,} \\end{array} \\right]} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "求解伴随矩阵  $A^{*}$",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": ">>A=sym([1 2 1;1 0 2;- 1 3 0]);",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": ">>adjoint(A)",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "ans=",
+        "page_idx": 46
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {\\left[ \\begin{array}{l l l}{-6,} & {3,} & {4} \\end{array} \\right]}\\\\ & {\\left[ \\begin{array}{l l l}{-2,} & {1, - 1} \\end{array} \\right]}\\\\ & {\\left[ \\begin{array}{l l l}{3, - 5, - 2} \\end{array} \\right]} \\end{array}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "注意adjoint函数也是SymbolicMathToolbox工具箱中的函数",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "若无SymbolicMathToolbox工具箱,也可将输出结果设为有理数(\"rational\")的表示形式,或者采用计算代数余子式的方法求解,读者可以参照8.1.4节中介绍的取矩阵块的方法求出各代数余子式然后求解,此处不再展开。",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "例8.5 求矩阵",
+        "page_idx": 46
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nA = \\left[ \\begin{array}{rrrr}1 & -2 & -2 & -2 \\\\ -2 & 1 & -2 & -2 \\\\ -2 & -2 & 1 & -2 \\\\ -2 & -2 & -2 & 1 \\end{array} \\right]\n$$\n",
+        "text_format": "latex",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "的特征值与特征向量。",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "解 为与初学者的习惯保持一致,依然采用Symbolic符号求解的方式:",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": ">>A=sym([1,- 2,- 2,- 2;- 2,1,- 2,- 2;- 2,- 2,1,- 2;- 2,- 2,- 2, 1]);",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": ">>[V,D]=eig(A)",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "V=",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "[1,- 1,- 1,- 1]",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "[1,1,0,0]",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "[1,0,1,0]",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "[1,0,0,1]",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "D=",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "[- 5,0,0,0]",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "[0,3,0,0]",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "[0,0,3,0]",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "[0,0,0,3]",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "结果矩阵  $D$  中对角线上的元素为  $A$  的特征值,矩阵  $V$  中的列为特征值所对应的特征向量.",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "读者可以尝试定义矩阵  $A$  为普通的数值矩阵,从而求解特征值与特征向量.",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "8.2.2 求解线性方程组",
+        "text_level": 1,
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "求解线性方程组是线性代数中的基本问题,在介绍Matlab求解各类线性方程组之前,先看几个有用的命令函数:",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "rank(A) 给出矩阵  $A$  的秩",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "pinv(A) 求矩阵  $A$  的广义逆",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "null(A) 用奇异值分解得到矩阵  $A$  的一组正交基",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "null(A,'r') 用高斯消元法得到矩阵  $A$  的一组\"有理数\"的基",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "例8.6 解线性方程组",
+        "page_idx": 47
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left\\{ \\begin{array}{l l}{2x_{1} - x_{2} + 3x_{3} - 2x_{4} = 1,}\\\\ {4x_{1} - 2x_{2} + 5x_{3} - 3x_{4} = 4,}\\\\ {2x_{1} - x_{2} + 4x_{3} - 3x_{4} = -1,}\\\\ {6x_{1} - 3x_{2} + 5x_{3} - 2x_{4} = 11.} \\end{array} \\right.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "解  $> > \\mathrm{~A} = \\left[2 - 1 3 - 2;4 - 2 5 - 3;2 - 1 4 - 3;6 - 3 5 - 2\\right]$",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "$> > \\mathrm{~b} = \\left[1 4 - 1 1\\right]$",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "再分别给出系数矩阵  $A$  和增广矩阵  $[A,b]$  的秩:",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": ">> rank(A)",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "ans=",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "2",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": ">> rank([A,b])",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "ans=",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "两者的秩相等,因此方程组有解。又  $2< 4$ ,所以方程组有无穷多组解。先由如下方式求出一组特解:",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": ">> format rat % 结果以有理数形式表示,也可通过图8.2所示方法更改",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": ">>pinv(A)\\*b",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "ans=",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "24/11",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "- 12/11",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "- 5/11",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "17/11",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "再由null函数求出方程组的齐次解:",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": ">>null(A,'r')",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "ans=",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "1/2 - 1/2",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "1 0",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "0 1",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "0 1",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "由此,我们可以得到原方程组的通解为",
+        "page_idx": 48
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nc_{1}\\left[ \\begin{array}{c}1 / 2 \\\\ 1 \\\\ 0 \\\\ 0 \\end{array} \\right] + c_{2}\\left[ \\begin{array}{c} - 1 / 2 \\\\ 0 \\\\ 1 \\\\ 1 \\end{array} \\right] + \\left[ \\begin{array}{c}24 / 11 \\\\ -12 / 11 \\\\ -5 / 11 \\\\ 17 / 11 \\end{array} \\right],\n$$\n",
+        "text_format": "latex",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "其中  $c_{1}, c_{2}$  为任意常数。",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "注 若系数矩阵的秩  $\\operatorname {rank}(A) = n$  (未知数个数),则可由左除命令A\\b直接得到方程组的唯一解。",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "例8.7 求解方程组",
+        "page_idx": 48
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\left\\{ \\begin{array}{l}2x_{1} - x_{2} + 3x_{3} = 1, \\\\ 4x_{1} - 2x_{2} + 5x_{3} = 4, \\\\ 6x_{1} - 3x_{2} + 8x_{3} = 4. \\end{array} \\right.\n$$\n",
+        "text_format": "latex",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "解  $> > \\mathrm{~A} = \\left[2 - 1 3;4 - 2 5;6 - 3 8\\right]$",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": ">>b=[144]';",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": ">>rank(A)",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "ans=",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "2 >>rank([A,b])",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "ans=",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "因此方程组无解.",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "如有需要,可以通过如下的命令求出最小二乘解:",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": ">>pinv(A)\\*b",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "ans=",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "46/15",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "- 23/15",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "- 7/3",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "最小二乘解的定义请参阅相关书籍,此处不再展开",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "8.3 应用实例",
+        "text_level": 1,
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "本节我们介绍线性代数的若干应用实例",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "8.3.1 确定比赛的胜负",
+        "text_level": 1,
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "1. 问题和分析",
+        "text_level": 1,
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "设有5个球队进行单循环赛,已知他们的比赛结果为:",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "1队胜2,3队;2队胜3,4,5队;4队胜1,3,5队;5队胜1,3队,设按胜的次数多少排名次,若两队胜的次数相同,则按直接胜与间接胜的次数之和的多少排名次,所谓间接胜,即若1队胜2队,2队胜3队,则称1队间接胜3队.试为这5个队排出比赛名次.",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "按照上述排名次的原则,不难排出,2队为冠军,4队为亚军,3,4,5名分别为1,5,3队,问题是,如果参加比赛的队比较多,应如何解决这个问题.",
+        "page_idx": 49
+    },
+    {
+        "type": "image",
+        "img_path": "images/3476dda1841fc4e00c91feb0af6361d4d5e44cbe20c60334ee360c7a4194108b.jpg",
+        "image_caption": [
+            "图8.8"
+        ],
+        "image_footnote": [],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "我们可以用图论的方法排出比赛的名次,用平面上的5个点  $v_{1},v_{2},v_{3},v_{4},v_{5}$  表示这5个队,称这5个点所表示的集合为顶点集,记为  $V = \\{v_{1},v_{2},v_{3},v_{4},v_{5}\\}$  ,如果  $i$  队胜  $j$  队,就画一条连接  $v_{i}$  与  $v_{j}$  并由  $i$  到  $j$  的有向弧,在图论中称为弧.也可将弧记为有序对  $(v_{i},v_{j})$  ,记弧的集合为  $A$  ,称  $V$  与  $A$  为图,记为  $G = (V,A)$  .例中5个队的比赛结果可用图8.8表示.",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "在图论中,如果两个顶点之间有一条弧,则称这两个顶点相邻.若  $v_{1},v_{2},\\dots ,v_{k}$  为  $V$  中互异的  $k$  个顶",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "点,且  $v_{i}$  与  $v_{i + 1}$  之间有一条弧,即  $(v_{i},v_{i + 1})\\in A(i = 1,2,\\dots ,k - 1)$  ,则称  $v_{1},v_{2},\\dots ,v_{k}$  为长为  $k - 1$  的路,其中  $v_{1}$  称为起点,  $v_{k}$  称为终点,起点与终点重合的路称为回",
+        "page_idx": 49
+    }
+]

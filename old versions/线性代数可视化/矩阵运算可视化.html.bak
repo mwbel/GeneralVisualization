@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>矩阵运算可视化 - 一图胜千言</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.26.0/plotly.min.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            },
+            startup: {
+                ready: function () {
+                    MathJax.startup.defaultReady();
+                    console.log('MathJax is ready!');
+                }
+            }
+        };
+    </script>
+    <script src="../frontend/global-mathjax.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 280px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 2px 0 15px rgba(0,0,0,0.1);
+            padding: 20px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+
+        .sidebar-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 15px;
+        }
+
+        .nav-item {
+            display: block;
+            padding: 12px 15px;
+            margin: 8px 0;
+            color: #4a5568;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s;
+            font-weight: 500;
+            border-left: 4px solid transparent;
+        }
+
+        .nav-item:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: translateX(5px);
+            border-left-color: #667eea;
+        }
+
+        .nav-item.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-left-color: #667eea;
+        }
+
+        .page-content {
+            margin-left: 280px;
+            flex: 1;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .operation-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 10px;
+        }
+
+        .tab-button {
+            background: rgba(255,255,255,0.9);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #4a5568;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .tab-button.active {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .tab-button:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .controls-section, .visualization-section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #4a5568;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .matrix-input {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .matrix-input h4 {
+            color: #4a5568;
+            margin-bottom: 15px;
+        }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            max-width: 200px;
+        }
+
+        .matrix-grid.three-by-three {
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 300px;
+        }
+
+        .matrix-input input {
+            padding: 8px;
+            border: 2px solid #e2e8f0;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .matrix-input input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .result-display {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .result-matrix {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            max-width: 200px;
+            margin: 15px auto;
+        }
+
+        .result-matrix.three-by-three {
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 300px;
+        }
+
+        .result-cell {
+            background: rgba(255,255,255,0.2);
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .plot-container {
+            height: 500px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .geometric-meaning {
+            background: #e6fffa;
+            border: 2px solid #38b2ac;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .geometric-meaning h4 {
+            color: #2c7a7b;
+            margin-bottom: 10px;
+        }
+
+        .preset-buttons {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .preset-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background 0.3s;
+        }
+
+        .preset-btn:hover {
+            background: #5a67d8;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            color: #4a5568;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .back-button:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .examples-section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-top: 30px;
+        }
+
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .example-card {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .example-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .formula {
+            font-size: 1.1em;
+            text-align: center;
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 2px solid #e9ecef;
+        }
+
+        .animation-controls {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+            justify-content: center;
+        }
+
+        .animation-btn {
+            background: #38a169;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background 0.3s;
+        }
+
+        .animation-btn:hover {
+            background: #2f855a;
+        }
+
+        @media (max-width: 1200px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .operation-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-title">线性代数模块</div>
+        <a href="linear-algebra-module.html" class="nav-item">模块概览</a>
+        <a href="二阶行列式可视化.html" class="nav-item">二阶行列式</a>
+        <a href="三阶行列式可视化.html" class="nav-item">三阶行列式</a>
+        <a href="矩阵运算可视化.html" class="nav-item active">矩阵运算</a>
+        <a href="向量空间可视化.html" class="nav-item">向量空间</a>
+        <a href="../index.html" class="nav-item" style="margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 20px;">← 返回主页</a>
+    </div>
+    
+    <div class="page-content">
+        <div class="header">
+            <h1>矩阵运算可视化</h1>
+            <p>探索矩阵加法、乘法的几何意义与线性变换</p>
+        </div>
+
+        <div class="operation-tabs">
+            <button class="tab-button active" onclick="switchTab('addition')">矩阵加法</button>
+            <button class="tab-button" onclick="switchTab('multiplication')">矩阵乘法</button>
+            <button class="tab-button" onclick="switchTab('transformation')">线性变换</button>
+        </div>
+
+        <!-- Matrix Addition Tab -->
+        <div id="addition-tab" class="tab-content active">
+            <div class="main-content">
+                <div class="controls-section">
+                    <h2 class="section-title">矩阵加法</h2>
+                    
+                    <div class="geometric-meaning">
+                        <h4>几何意义</h4>
+                        <p>矩阵加法对应向量的<strong>向量加法</strong>。当我们将矩阵的列（或行）视为向量时，矩阵加法就是对应向量的逐个相加。</p>
+                    </div>
+
+                    <div class="preset-buttons">
+                        <button class="preset-btn" onclick="setAdditionPreset('example1')">例1</button>
+                    <button class="preset-btn" onclick="setAdditionPreset('example2')">例2</button>
+                        <button class="preset-btn" onclick="setAdditionPreset('zero')">零矩阵</button>
+                        <button class="preset-btn" onclick="setAdditionPreset('identity')">单位矩阵</button>
+                    </div>
+
+                    <div class="matrix-input">
+                        <h4>矩阵 A</h4>
+                        <div class="matrix-grid" id="matrix-a-add">
+                            <input type="number" id="a11_add" value="2" step="0.1">
+                            <input type="number" id="a12_add" value="1" step="0.1">
+                            <input type="number" id="a21_add" value="1" step="0.1">
+                            <input type="number" id="a22_add" value="3" step="0.1">
+                        </div>
+                    </div>
+
+                    <div class="matrix-input">
+                        <h4>矩阵 B</h4>
+                        <div class="matrix-grid" id="matrix-b-add">
+                            <input type="number" id="b11_add" value="1" step="0.1">
+                            <input type="number" id="b12_add" value="2" step="0.1">
+                            <input type="number" id="b21_add" value="2" step="0.1">
+                            <input type="number" id="b22_add" value="1" step="0.1">
+                        </div>
+                    </div>
+
+                    <div class="result-display">
+                        <h3>A + B =</h3>
+                        <div class="result-matrix" id="result-add">
+                            <div class="result-cell">3</div>
+                            <div class="result-cell">3</div>
+                            <div class="result-cell">3</div>
+                            <div class="result-cell">4</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visualization-section">
+                    <h2 class="section-title">向量加法可视化</h2>
+                    <div id="addition-plot" class="plot-container"></div>
+                    
+                    <div class="animation-controls">
+                        <button class="animation-btn" onclick="animateAddition()">播放动画</button>
+                        <button class="animation-btn" onclick="resetAdditionView()">重置视图</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Matrix Multiplication Tab -->
+        <div id="multiplication-tab" class="tab-content">
+            <div class="main-content">
+                <div class="controls-section">
+                    <h2 class="section-title">矩阵乘法</h2>
+                    
+                    <div class="geometric-meaning">
+                        <h4>几何意义</h4>
+                        <p>矩阵乘法表示<strong>线性变换的复合</strong>。矩阵A乘以矩阵B，相当于先应用B变换，再应用A变换。</p>
+                    </div>
+
+                    <div class="preset-buttons">
+                        <button class="preset-btn" onclick="setMultiplicationPreset('rotation')">旋转矩阵</button>
+                        <button class="preset-btn" onclick="setMultiplicationPreset('scaling')">缩放矩阵</button>
+                        <button class="preset-btn" onclick="setMultiplicationPreset('shear')">剪切矩阵</button>
+                        <button class="preset-btn" onclick="setMultiplicationPreset('reflection')">反射矩阵</button>
+                    </div>
+
+                    <div class="matrix-input">
+                        <h4>矩阵 A ($2 \times 2$)</h4>
+                        <div class="matrix-grid" id="matrix-a-mult">
+                            <input type="number" id="a11_mult" value="1" step="0.1">
+                            <input type="number" id="a12_mult" value="0" step="0.1">
+                            <input type="number" id="a21_mult" value="0" step="0.1">
+                            <input type="number" id="a22_mult" value="1" step="0.1">
+                        </div>
+                    </div>
+
+                    <div class="matrix-input">
+                        <h4>矩阵 B ($2 \times 2$)</h4>
+                        <div class="matrix-grid" id="matrix-b-mult">
+                            <input type="number" id="b11_mult" value="2" step="0.1">
+                            <input type="number" id="b12_mult" value="0" step="0.1">
+                            <input type="number" id="b21_mult" value="0" step="0.1">
+                            <input type="number" id="b22_mult" value="2" step="0.1">
+                        </div>
+                    </div>
+
+                    <div class="result-display">
+                        <h3>A × B =</h3>
+                        <div class="result-matrix" id="result-mult">
+                            <div class="result-cell">2</div>
+                            <div class="result-cell">0</div>
+                            <div class="result-cell">0</div>
+                            <div class="result-cell">2</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visualization-section">
+                    <h2 class="section-title">线性变换可视化</h2>
+                    <div id="multiplication-plot" class="plot-container"></div>
+                    
+                    <div class="animation-controls">
+                        <button class="animation-btn" onclick="animateTransformation()">播放变换</button>
+                        <button class="animation-btn" onclick="resetTransformationView()">重置视图</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Linear Transformation Tab -->
+        <div id="transformation-tab" class="tab-content">
+            <div class="main-content">
+                <div class="controls-section">
+                    <h2 class="section-title">线性变换</h2>
+                    
+                    <div class="geometric-meaning">
+                        <h4>几何意义</h4>
+                        <p>$2 \times 2$矩阵定义了平面上的<strong>线性变换</strong>。矩阵的列向量表示标准基向量变换后的位置。</p>
+                    </div>
+
+                    <div class="preset-buttons">
+                        <button class="preset-btn" onclick="setTransformationPreset('rotation90')">旋转90°</button>
+                        <button class="preset-btn" onclick="setTransformationPreset('reflection_x')">关于x轴反射</button>
+                        <button class="preset-btn" onclick="setTransformationPreset('shear_x')">x方向剪切</button>
+                        <button class="preset-btn" onclick="setTransformationPreset('projection')">投影变换</button>
+                    </div>
+
+                    <div class="matrix-input">
+                        <h4>变换矩阵 T</h4>
+                        <div class="matrix-grid" id="matrix-transform">
+                            <input type="number" id="t11" value="0.8" step="0.1">
+                            <input type="number" id="t12" value="-0.6" step="0.1">
+                            <input type="number" id="t21" value="0.6" step="0.1">
+                            <input type="number" id="t22" value="0.8" step="0.1">
+                        </div>
+                    </div>
+
+                    <div class="result-display">
+                        <h3>变换信息</h3>
+                        <div id="transform-info">
+                            <p>行列式: <span id="det-value">1.00</span></p>
+                            <p>面积缩放因子: <span id="area-factor">1.00</span></p>
+                            <p>变换类型: <span id="transform-type">旋转</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visualization-section">
+                    <h2 class="section-title">网格变换可视化</h2>
+                    <div id="transformation-plot" class="plot-container"></div>
+                    
+                    <div class="animation-controls">
+                        <button class="animation-btn" onclick="animateGridTransformation()">播放网格变换</button>
+                        <button class="animation-btn" onclick="resetGridView()">重置网格</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="examples-section">
+            <h2 class="section-title">典型例题与应用</h2>
+            <div class="example-grid">
+                <div class="example-card">
+                    <h4>• 矩阵加法的性质</h4>
+                    <p><strong>交换律：</strong> $A + B = B + A$</p>
+                    <p><strong>结合律：</strong> $(A + B) + C = A + (B + C)$</p>
+                    <p><strong>零矩阵：</strong> $A + O = A$</p>
+                    <div class="formula">
+                        $$\begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} + \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix} = \begin{pmatrix} 6 & 8 \\ 10 & 12 \end{pmatrix}$$
+                    </div>
+                </div>
+                
+                <div class="example-card">
+                    <h4>• 矩阵乘法的几何意义</h4>
+                    <p>旋转矩阵 × 缩放矩阵 = 先缩放后旋转</p>
+                    <div class="formula">
+                        $$\begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix} \begin{pmatrix} k & 0 \\ 0 & k \end{pmatrix}$$
+                    </div>
+                    <p>结果：先将图形缩放k倍，再逆时针旋转θ角度。</p>
+                </div>
+                
+                <div class="example-card">
+                    <h4>• 线性变换的应用</h4>
+                    <p><strong>计算机图形学：</strong>物体的旋转、缩放、平移</p>
+                    <p><strong>数据分析：</strong>主成分分析(PCA)中的降维</p>
+                    <p><strong>物理学：</strong>坐标系变换、应力张量</p>
+                    <p><strong>机器学习：</strong>特征变换、神经网络权重</p>
+                </div>
+                
+                <div class="example-card">
+                    <h4>• 特殊矩阵的变换效果</h4>
+                    <p><strong>单位矩阵：</strong>恒等变换（不变）</p>
+                    <p><strong>零矩阵：</strong>将所有点映射到原点</p>
+                    <p><strong>对角矩阵：</strong>沿坐标轴的缩放</p>
+                    <p><strong>正交矩阵：</strong>保持长度和角度的变换</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // MathJax configuration
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+
+        let currentTab = 'addition';
+
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName + '-tab').classList.add('active');
+            event.target.classList.add('active');
+            
+            currentTab = tabName;
+            
+            // Update visualization based on current tab
+            if (tabName === 'addition') {
+                updateAdditionVisualization();
+            } else if (tabName === 'multiplication') {
+                updateMultiplicationVisualization();
+            } else if (tabName === 'transformation') {
+                updateTransformationVisualization();
+            }
+        }
+
+        // Matrix Addition Functions
+        function setAdditionPreset(type) {
+            const presets = {
+                example1: { a: [2, 1, 1, 3], b: [1, 2, 2, 1] },
+                example2: { a: [3, -1, 2, 4], b: [-1, 3, 1, -2] },
+                zero: { a: [1, 2, 3, 4], b: [0, 0, 0, 0] },
+                identity: { a: [1, 0, 0, 1], b: [1, 0, 0, 1] }
+            };
+            
+            const preset = presets[type];
+            if (preset) {
+                ['a11_add', 'a12_add', 'a21_add', 'a22_add'].forEach((id, i) => {
+                    document.getElementById(id).value = preset.a[i];
+                });
+                ['b11_add', 'b12_add', 'b21_add', 'b22_add'].forEach((id, i) => {
+                    document.getElementById(id).value = preset.b[i];
+                });
+                updateAdditionVisualization();
+            }
+        }
+
+        function updateAdditionVisualization() {
+            // Get matrix values
+            const a = [
+                [parseFloat(document.getElementById('a11_add').value) || 0, parseFloat(document.getElementById('a12_add').value) || 0],
+                [parseFloat(document.getElementById('a21_add').value) || 0, parseFloat(document.getElementById('a22_add').value) || 0]
+            ];
+            const b = [
+                [parseFloat(document.getElementById('b11_add').value) || 0, parseFloat(document.getElementById('b12_add').value) || 0],
+                [parseFloat(document.getElementById('b21_add').value) || 0, parseFloat(document.getElementById('b22_add').value) || 0]
+            ];
+
+            // Calculate result
+            const result = [
+                [a[0][0] + b[0][0], a[0][1] + b[0][1]],
+                [a[1][0] + b[1][0], a[1][1] + b[1][1]]
+            ];
+
+            // Update result display
+            const resultCells = document.querySelectorAll('#result-add .result-cell');
+            resultCells[0].textContent = result[0][0].toFixed(1);
+            resultCells[1].textContent = result[0][1].toFixed(1);
+            resultCells[2].textContent = result[1][0].toFixed(1);
+            resultCells[3].textContent = result[1][1].toFixed(1);
+
+            // Update plot
+            updateAdditionPlot(a, b, result);
+        }
+
+        function updateAdditionPlot(a, b, result) {
+            // Extract column vectors
+            const va1 = [a[0][0], a[1][0]];
+            const va2 = [a[0][1], a[1][1]];
+            const vb1 = [b[0][0], b[1][0]];
+            const vb2 = [b[0][1], b[1][1]];
+            const vr1 = [result[0][0], result[1][0]];
+            const vr2 = [result[0][1], result[1][1]];
+
+            const traces = [
+                // Matrix A vectors
+                {
+                    x: [0, va1[0]],
+                    y: [0, va1[1]],
+                    mode: 'lines+markers',
+                    line: { color: '#e53e3e', width: 4 },
+                    marker: { size: 8 },
+                    name: 'A列1',
+                    type: 'scatter'
+                },
+                {
+                    x: [0, va2[0]],
+                    y: [0, va2[1]],
+                    mode: 'lines+markers',
+                    line: { color: '#e53e3e', width: 4, dash: 'dash' },
+                    marker: { size: 8 },
+                    name: 'A列2',
+                    type: 'scatter'
+                },
+                // Matrix B vectors
+                {
+                    x: [0, vb1[0]],
+                    y: [0, vb1[1]],
+                    mode: 'lines+markers',
+                    line: { color: '#3182ce', width: 4 },
+                    marker: { size: 8 },
+                    name: 'B列1',
+                    type: 'scatter'
+                },
+                {
+                    x: [0, vb2[0]],
+                    y: [0, vb2[1]],
+                    mode: 'lines+markers',
+                    line: { color: '#3182ce', width: 4, dash: 'dash' },
+                    marker: { size: 8 },
+                    name: 'B列2',
+                    type: 'scatter'
+                },
+                // Result vectors
+                {
+                    x: [0, vr1[0]],
+                    y: [0, vr1[1]],
+                    mode: 'lines+markers',
+                    line: { color: '#38a169', width: 6 },
+                    marker: { size: 10 },
+                    name: '(A+B)列1',
+                    type: 'scatter'
+                },
+                {
+                    x: [0, vr2[0]],
+                    y: [0, vr2[1]],
+                    mode: 'lines+markers',
+                    line: { color: '#38a169', width: 6, dash: 'dash' },
+                    marker: { size: 10 },
+                    name: '(A+B)列2',
+                    type: 'scatter'
+                }
+            ];
+
+            const layout = {
+                title: '矩阵加法的向量表示',
+                xaxis: { title: 'X', range: [-6, 6], zeroline: true },
+                yaxis: { title: 'Y', range: [-6, 6], zeroline: true },
+                showlegend: true,
+                legend: { x: 0.02, y: 0.98 },
+                margin: { l: 50, r: 50, t: 50, b: 50 },
+                plot_bgcolor: '#f8f9fa',
+                paper_bgcolor: 'white'
+            };
+
+            Plotly.newPlot('addition-plot', traces, layout, { responsive: true });
+        }
+
+        // Matrix Multiplication Functions
+        function setMultiplicationPreset(type) {
+            const presets = {
+                rotation: { a: [Math.cos(Math.PI/4), -Math.sin(Math.PI/4), Math.sin(Math.PI/4), Math.cos(Math.PI/4)], b: [1, 0, 0, 1] },
+                scaling: { a: [1, 0, 0, 1], b: [2, 0, 0, 2] },
+                shear: { a: [1, 0.5, 0, 1], b: [1, 0, 0, 1] },
+                reflection: { a: [1, 0, 0, -1], b: [1, 0, 0, 1] }
+            };
+            
+            const preset = presets[type];
+            if (preset) {
+                ['a11_mult', 'a12_mult', 'a21_mult', 'a22_mult'].forEach((id, i) => {
+                    document.getElementById(id).value = preset.a[i].toFixed(2);
+                });
+                ['b11_mult', 'b12_mult', 'b21_mult', 'b22_mult'].forEach((id, i) => {
+                    document.getElementById(id).value = preset.b[i].toFixed(2);
+                });
+                updateMultiplicationVisualization();
+            }
+        }
+
+        function updateMultiplicationVisualization() {
+            // Get matrix values
+            const a = [
+                [parseFloat(document.getElementById('a11_mult').value) || 0, parseFloat(document.getElementById('a12_mult').value) || 0],
+                [parseFloat(document.getElementById('a21_mult').value) || 0, parseFloat(document.getElementById('a22_mult').value) || 0]
+            ];
+            const b = [
+                [parseFloat(document.getElementById('b11_mult').value) || 0, parseFloat(document.getElementById('b12_mult').value) || 0],
+                [parseFloat(document.getElementById('b21_mult').value) || 0, parseFloat(document.getElementById('b22_mult').value) || 0]
+            ];
+
+            // Calculate result (A × B)
+            const result = [
+                [a[0][0]*b[0][0] + a[0][1]*b[1][0], a[0][0]*b[0][1] + a[0][1]*b[1][1]],
+                [a[1][0]*b[0][0] + a[1][1]*b[1][0], a[1][0]*b[0][1] + a[1][1]*b[1][1]]
+            ];
+
+            // Update result display
+            const resultCells = document.querySelectorAll('#result-mult .result-cell');
+            resultCells[0].textContent = result[0][0].toFixed(2);
+            resultCells[1].textContent = result[0][1].toFixed(2);
+            resultCells[2].textContent = result[1][0].toFixed(2);
+            resultCells[3].textContent = result[1][1].toFixed(2);
+
+            // Update plot
+            updateMultiplicationPlot(a, b, result);
+        }
+
+        function updateMultiplicationPlot(a, b, result) {
+            // Create unit square
+            const unitSquare = [[0, 1, 1, 0, 0], [0, 0, 1, 1, 0]];
+            
+            // Transform unit square by B
+            const transformedByB = [[], []];
+            for (let i = 0; i < unitSquare[0].length; i++) {
+                const x = unitSquare[0][i];
+                const y = unitSquare[1][i];
+                transformedByB[0].push(b[0][0]*x + b[0][1]*y);
+                transformedByB[1].push(b[1][0]*x + b[1][1]*y);
+            }
+            
+            // Transform by A (A × B)
+            const finalTransformed = [[], []];
+            for (let i = 0; i < transformedByB[0].length; i++) {
+                const x = transformedByB[0][i];
+                const y = transformedByB[1][i];
+                finalTransformed[0].push(a[0][0]*x + a[0][1]*y);
+                finalTransformed[1].push(a[1][0]*x + a[1][1]*y);
+            }
+
+            const traces = [
+                // Original unit square
+                {
+                    x: unitSquare[0],
+                    y: unitSquare[1],
+                    mode: 'lines',
+                    line: { color: '#718096', width: 2 },
+                    name: '原始单位正方形',
+                    type: 'scatter'
+                },
+                // Transformed by B
+                {
+                    x: transformedByB[0],
+                    y: transformedByB[1],
+                    mode: 'lines',
+                    line: { color: '#3182ce', width: 3 },
+                    name: '经B变换',
+                    type: 'scatter'
+                },
+                // Final transformation (A × B)
+                {
+                    x: finalTransformed[0],
+                    y: finalTransformed[1],
+                    mode: 'lines',
+                    line: { color: '#e53e3e', width: 4 },
+                    name: '经A×B变换',
+                    type: 'scatter'
+                }
+            ];
+
+            const layout = {
+                title: '矩阵乘法的几何效果',
+                xaxis: { title: 'X', range: [-4, 4], zeroline: true },
+                yaxis: { title: 'Y', range: [-4, 4], zeroline: true },
+                showlegend: true,
+                legend: { x: 0.02, y: 0.98 },
+                margin: { l: 50, r: 50, t: 50, b: 50 },
+                plot_bgcolor: '#f8f9fa',
+                paper_bgcolor: 'white'
+            };
+
+            Plotly.newPlot('multiplication-plot', traces, layout, { responsive: true });
+        }
+
+        // Linear Transformation Functions
+        function setTransformationPreset(type) {
+            const presets = {
+                rotation90: [0, -1, 1, 0],
+                reflection_x: [1, 0, 0, -1],
+                shear_x: [1, 1, 0, 1],
+                projection: [1, 0, 0, 0]
+            };
+            
+            const preset = presets[type];
+            if (preset) {
+                ['t11', 't12', 't21', 't22'].forEach((id, i) => {
+                    document.getElementById(id).value = preset[i];
+                });
+                updateTransformationVisualization();
+            }
+        }
+
+        function updateTransformationVisualization() {
+            // Get transformation matrix
+            const t = [
+                [parseFloat(document.getElementById('t11').value) || 0, parseFloat(document.getElementById('t12').value) || 0],
+                [parseFloat(document.getElementById('t21').value) || 0, parseFloat(document.getElementById('t22').value) || 0]
+            ];
+
+            // Calculate determinant and other properties
+            const det = t[0][0] * t[1][1] - t[0][1] * t[1][0];
+            const areaFactor = Math.abs(det);
+            
+            // Determine transformation type
+            let transformType = '一般线性变换';
+            if (Math.abs(det - 1) < 0.01) transformType = '保面积变换';
+            else if (Math.abs(det) < 0.01) transformType = '奇异变换';
+            else if (det < 0) transformType = '反向变换';
+
+            // Update display
+            document.getElementById('det-value').textContent = det.toFixed(2);
+            document.getElementById('area-factor').textContent = areaFactor.toFixed(2);
+            document.getElementById('transform-type').textContent = transformType;
+
+            // Update plot
+            updateTransformationPlot(t);
+        }
+
+        function updateTransformationPlot(t) {
+            // Create grid
+            const gridSize = 5;
+            const gridLines = [];
+            
+            // Vertical lines
+            for (let i = -gridSize; i <= gridSize; i++) {
+                const originalLine = [[i, i], [-gridSize, gridSize]];
+                const transformedLine = [[], []];
+                
+                for (let j = 0; j < originalLine[0].length; j++) {
+                    const x = originalLine[0][j];
+                    const y = originalLine[1][j];
+                    transformedLine[0].push(t[0][0]*x + t[0][1]*y);
+                    transformedLine[1].push(t[1][0]*x + t[1][1]*y);
+                }
+                
+                gridLines.push({
+                    x: originalLine[0],
+                    y: originalLine[1],
+                    mode: 'lines',
+                    line: { color: 'rgba(0,0,0,0.2)', width: 1 },
+                    showlegend: false,
+                    type: 'scatter'
+                });
+                
+                gridLines.push({
+                    x: transformedLine[0],
+                    y: transformedLine[1],
+                    mode: 'lines',
+                    line: { color: '#e53e3e', width: 2 },
+                    showlegend: false,
+                    type: 'scatter'
+                });
+            }
+            
+            // Horizontal lines
+            for (let i = -gridSize; i <= gridSize; i++) {
+                const originalLine = [[-gridSize, gridSize], [i, i]];
+                const transformedLine = [[], []];
+                
+                for (let j = 0; j < originalLine[0].length; j++) {
+                    const x = originalLine[0][j];
+                    const y = originalLine[1][j];
+                    transformedLine[0].push(t[0][0]*x + t[0][1]*y);
+                    transformedLine[1].push(t[1][0]*x + t[1][1]*y);
+                }
+                
+                gridLines.push({
+                    x: originalLine[0],
+                    y: originalLine[1],
+                    mode: 'lines',
+                    line: { color: 'rgba(0,0,0,0.2)', width: 1 },
+                    showlegend: false,
+                    type: 'scatter'
+                });
+                
+                gridLines.push({
+                    x: transformedLine[0],
+                    y: transformedLine[1],
+                    mode: 'lines',
+                    line: { color: '#3182ce', width: 2 },
+                    showlegend: false,
+                    type: 'scatter'
+                });
+            }
+
+            // Add basis vectors
+            const basisTraces = [
+                // Original basis vectors
+                {
+                    x: [0, 1],
+                    y: [0, 0],
+                    mode: 'lines+markers',
+                    line: { color: '#718096', width: 4 },
+                    marker: { size: 8 },
+                    name: '原始 e₁',
+                    type: 'scatter'
+                },
+                {
+                    x: [0, 0],
+                    y: [0, 1],
+                    mode: 'lines+markers',
+                    line: { color: '#718096', width: 4 },
+                    marker: { size: 8 },
+                    name: '原始 e₂',
+                    type: 'scatter'
+                },
+                // Transformed basis vectors
+                {
+                    x: [0, t[0][0]],
+                    y: [0, t[1][0]],
+                    mode: 'lines+markers',
+                    line: { color: '#e53e3e', width: 6 },
+                    marker: { size: 10 },
+                    name: '变换后 e₁',
+                    type: 'scatter'
+                },
+                {
+                    x: [0, t[0][1]],
+                    y: [0, t[1][1]],
+                    mode: 'lines+markers',
+                    line: { color: '#3182ce', width: 6 },
+                    marker: { size: 10 },
+                    name: '变换后 e₂',
+                    type: 'scatter'
+                }
+            ];
+
+            const traces = [...gridLines, ...basisTraces];
+
+            const layout = {
+                title: '线性变换的网格效果',
+                xaxis: { title: 'X', range: [-6, 6], zeroline: true },
+                yaxis: { title: 'Y', range: [-6, 6], zeroline: true },
+                showlegend: true,
+                legend: { x: 0.02, y: 0.98 },
+                margin: { l: 50, r: 50, t: 50, b: 50 },
+                plot_bgcolor: '#f8f9fa',
+                paper_bgcolor: 'white'
+            };
+
+            Plotly.newPlot('transformation-plot', traces, layout, { responsive: true });
+        }
+
+        // Animation functions
+        function animateAddition() {
+            // Implementation for addition animation
+            console.log('Addition animation');
+        }
+
+        function resetAdditionView() {
+            updateAdditionVisualization();
+        }
+
+        function animateTransformation() {
+            // Implementation for transformation animation
+            console.log('Transformation animation');
+        }
+
+        function resetTransformationView() {
+            updateMultiplicationVisualization();
+        }
+
+        function animateGridTransformation() {
+            // Implementation for grid transformation animation
+            console.log('Grid transformation animation');
+        }
+
+        function resetGridView() {
+            updateTransformationVisualization();
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        // Add event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ensure correct navigation state
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Add active class to current page nav item
+            const currentPageNav = document.querySelector('a[href="矩阵运算可视化.html"]');
+            if (currentPageNav) {
+                currentPageNav.classList.add('active');
+            }
+            
+            // Addition inputs
+            ['a11_add', 'a12_add', 'a21_add', 'a22_add', 'b11_add', 'b12_add', 'b21_add', 'b22_add'].forEach(id => {
+                document.getElementById(id).addEventListener('input', updateAdditionVisualization);
+            });
+
+            // Multiplication inputs
+            ['a11_mult', 'a12_mult', 'a21_mult', 'a22_mult', 'b11_mult', 'b12_mult', 'b21_mult', 'b22_mult'].forEach(id => {
+                document.getElementById(id).addEventListener('input', updateMultiplicationVisualization);
+            });
+
+            // Transformation inputs
+            ['t11', 't12', 't21', 't22'].forEach(id => {
+                document.getElementById(id).addEventListener('input', updateTransformationVisualization);
+            });
+
+            // Initialize first tab
+            updateAdditionVisualization();
+        });
+    </script>
+</body>
+</html>

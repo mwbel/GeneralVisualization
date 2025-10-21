@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三阶行列式可视化 - 一图胜千言</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.26.0/plotly.min.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            },
+            startup: {
+                ready: function () {
+                    MathJax.startup.defaultReady();
+                    console.log('MathJax is ready!');
+                }
+            }
+        };
+    </script>
+    <script src="../frontend/global-mathjax.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 280px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 2px 0 15px rgba(0,0,0,0.1);
+            padding: 20px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+
+        .sidebar-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 15px;
+        }
+
+        .nav-item {
+            display: block;
+            padding: 12px 15px;
+            margin: 8px 0;
+            color: #4a5568;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s;
+            font-weight: 500;
+            border-left: 4px solid transparent;
+        }
+
+        .nav-item:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: translateX(5px);
+            border-left-color: #667eea;
+        }
+
+        .nav-item.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-left-color: #667eea;
+        }
+
+        .page-content {
+            margin-left: 280px;
+            flex: 1;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .theory-section, .visualization-section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #4a5568;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .definition-box {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-left: 5px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .formula {
+            font-size: 1.1em;
+            text-align: left;
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 2px solid #e9ecef;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+            overflow: visible;
+            display: block;
+            word-wrap: break-word;
+        }
+        
+        /* 例题卡片中最后一行“结果”明确左对齐 */
+        .example-card .formula:last-of-type {
+            text-align: left !important;
+        }
+        
+        .formula mjx-container {
+            max-width: 100% !important;
+            overflow: visible !important;
+        }
+
+        .controls {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .control-group label {
+            font-weight: 600;
+            color: #4a5568;
+            font-size: 0.9em;
+        }
+
+        .control-group input {
+            padding: 6px 8px;
+            border: 2px solid #e2e8f0;
+            border-radius: 4px;
+            font-size: 0.9em;
+            transition: border-color 0.3s;
+        }
+
+        .control-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .result-display {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .result-display h3 {
+            margin-bottom: 10px;
+        }
+
+        .result-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .geometric-meaning {
+            background: #e6fffa;
+            border: 2px solid #38b2ac;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .geometric-meaning h4 {
+            color: #2c7a7b;
+            margin-bottom: 10px;
+        }
+
+        .plot-container {
+            height: 600px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .calculation-steps {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .calculation-steps h4 {
+            color: #4a5568;
+            margin-bottom: 15px;
+        }
+
+        .step {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+            color: #333;
+        }
+
+        .step * {
+            color: #333 !important;
+        }
+
+        .examples-section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-top: 30px;
+        }
+
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .example-card {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            min-width: 0;        /* 必需：防止被内容撑破 */
+            overflow: visible;   /* 允许内容正常显示 */
+        }
+
+        .example-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        /* 让"公式所在容器"和 MathJax 容器不越界，必要时横向滚动 */
+        .example-card .formula {
+            max-width: 100%;
+            overflow-x: auto;       /* 超宽时出现横向滚动条 */
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 4px;           /* 给滚动条留点空间（可选） */
+            scrollbar-gutter: stable both-edges; /* 可选：滚动条常驻不抖动 */
+        }
+
+        .example-card .formula mjx-container{
+            display: inline-block !important;
+            min-width: max-content;        /* 关键：内容多宽就多宽 */
+            max-width: 100%;               /* 但外层仍会限制并触发滚动 */
+            overflow: visible;             /* 由外层控制滚动，不在这里裁剪 */
+            text-align: left;              /* 可选：左对齐 */
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            color: #4a5568;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .back-button:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .preset-buttons {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .preset-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background 0.3s;
+        }
+
+        .preset-btn:hover {
+            background: #5a67d8;
+        }
+
+        @media (max-width: 1200px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .controls {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .formula {
+                font-size: 0.9em;
+                padding: 10px;
+            }
+            
+            .example-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .example-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-title">线性代数模块</div>
+        <a href="linear-algebra-module.html" class="nav-item">模块概览</a>
+        <a href="二阶行列式可视化.html" class="nav-item">二阶行列式</a>
+        <a href="三阶行列式可视化.html" class="nav-item active">三阶行列式</a>
+        <a href="矩阵运算可视化.html" class="nav-item">矩阵运算</a>
+        <a href="向量空间可视化.html" class="nav-item">向量空间</a>
+        <a href="../index.html">返回 “线性代数可视化世界”首页</a>
+<a href="../../../index.html" class="nav-item">返回 “万物可视化”首页</a>
+    </div>
+    
+    <div class="page-content">
+        <div class="header">
+            <h1>三阶行列式可视化</h1>
+            <p>探索三阶行列式的数学定义与三维几何意义</p>
+        </div>
+
+        <div class="main-content">
+            <div class="theory-section">
+                <h2 class="section-title">数学理论</h2>
+                
+                <div class="definition-box">
+                    <h3>定义</h3>
+                    <p>以数 \(a_{ij}(i,j = 1,2,3)\) 为元素的三阶行列式为：</p>
+                    <div class="formula">
+                        $$\begin{vmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{vmatrix}$$
+                    </div>
+                </div>
+
+                <div class="preset-buttons">
+                    <button class="preset-btn" onclick="setPreset('identity')">单位矩阵</button>
+                    <button class="preset-btn" onclick="setPreset('example1')">例1</button>
+                <button class="preset-btn" onclick="setPreset('example2')">例2</button>
+                    <button class="preset-btn" onclick="setPreset('zero')">零行列式</button>
+                </div>
+
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="a11">a₁₁</label>
+                        <input type="number" id="a11" value="1" step="0.1">
+                    </div>
+                    <div class="control-group">
+                        <label for="a12">a₁₂</label>
+                        <input type="number" id="a12" value="2" step="0.1">
+                    </div>
+                    <div class="control-group">
+                        <label for="a13">a₁₃</label>
+                        <input type="number" id="a13" value="-4" step="0.1">
+                    </div>
+                    <div class="control-group">
+                        <label for="a21">a₂₁</label>
+                        <input type="number" id="a21" value="-2" step="0.1">
+                    </div>
+                    <div class="control-group">
+                        <label for="a22">a₂₂</label>
+                        <input type="number" id="a22" value="2" step="0.1">
+                    </div>
+                    <div class="control-group">
+                        <label for="a23">a₂₃</label>
+                        <input type="number" id="a23" value="1" step="0.1">
+                    </div>
+                    <div class="control-group">
+                        <label for="a31">a₃₁</label>
+                        <input type="number" id="a31" value="3" step="0.1">
+                    </div>
+                    <div class="control-group">
+                        <label for="a32">a₃₂</label>
+                        <input type="number" id="a32" value="-4" step="0.1">
+                    </div>
+                    <div class="control-group">
+                        <label for="a33">a₃₃</label>
+                        <input type="number" id="a33" value="-2" step="0.1">
+                    </div>
+                </div>
+
+                <div class="result-display">
+                    <h3>计算结果</h3>
+                    <div class="result-value" id="determinant-result">-10</div>
+                    <div>平行六面体体积: <span id="volume-display">10</span></div>
+                </div>
+
+                <div class="calculation-steps">
+                    <h4>计算步骤（对角线法）</h4>
+                    <div class="step" id="step1">
+                        正对角线项：<span id="positive-terms"></span>
+                    </div>
+                    <div class="step" id="step2">
+                        负对角线项：<span id="negative-terms"></span>
+                    </div>
+                    <div class="step" id="step3">
+                        最终结果：<span id="final-calculation"></span>
+                    </div>
+                </div>
+
+                <div class="geometric-meaning">
+                    <h4>几何意义</h4>
+                    <p>三阶行列式的值等于由三个列向量张成的<strong>平行六面体的有向体积</strong>：</p>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li><strong> $$v_1 = (a_{11}, a_{21}, a_{31})$$</strong></li>
+                        <li><strong>$$v_2 = (a_{12}, a_{22}, a_{32})$$</strong></li>
+                        <li><strong>$$v_3= (a_{13}, a_{23}, a_{33})$$</strong></li>
+                    </ul>
+                    <p style="margin-top: 10px;">当行列式值为正时，三个向量构成右手坐标系；为负时构成左手坐标系；为零时三向量共面。</p>
+                </div>
+            </div>
+
+            <div class="visualization-section">
+                <h2 class="section-title">三维可视化</h2>
+                <div id="plot" class="plot-container"></div>
+                
+                <div style="margin-top: 20px;">
+                    <h4>向量信息</h4>
+                    <p><strong>向量 $v_1$:</strong> (<span id="v1-display">$1, -2, 3$</span>)</p>
+                    <p><strong>向量 $v_2$:</strong> (<span id="v2-display">$2, 2, -4$</span>)</p>
+                    <p><strong>向量 $v_3$:</strong> (<span id="v3-display">$-4, 1, -2$</span>)</p>
+                    <p><strong>行列式值:</strong> <span id="det-display">-10</span></p>
+                    <p><strong>体积:</strong> <span id="abs-volume-display">10</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="examples-section">
+            <h2 class="section-title">典型例题与应用</h2>
+            <div class="example-grid">
+                <div class="example-card">
+                    <h4>• 例 1：基本计算</h4>
+                    <div class="formula">
+                        $$\begin{vmatrix} 1 & 2 & -4 \\ -2 & 2 & 1 \\ 3 & -4 & -2 \end{vmatrix} = -10$$
+                    </div>
+                    <p><strong>对角线法计算：</strong></p>
+                    <div class="formula">$$\text{正项： }1 \times 2 \times (-2) + 2 \times 1 \times 3 + (-4) \times (-2) \times (-4) = -4 + 6 - 32 = -30$$</div>
+                    <div class="formula">$$\text{负项： }(-4) \times 2 \times 3 + 2 \times (-2) \times (-2) + 1 \times 1 \times (-4) = -24 + 8 - 4 = -20$$</div>
+                    <div class="formula">$$\text{结果： }-30 - (-20) = -10$$</div>
+                </div>
+                
+                <div class="example-card">
+                    <h4>• 几何应用：体积计算</h4>
+                    <p>三个向量 $v_1=(1,0,0)$, $v_2=(0,2,0)$, $v_3=(0,0,3)$ 构成的平行六面体：</p>
+                    <div class="formula">
+                        $$\begin{vmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 3 \end{vmatrix} = 6$$
+                    </div>
+                    <p>体积为 6 个立方单位，这是一个长方体。</p>
+                </div>
+                
+                <div class="example-card">
+                    <h4>• 线性方程组应用</h4>
+                    <p>对于三元线性方程组，当系数行列式不为零时，方程组有唯一解：</p>
+                    <div class="formula">
+                        $$x_i = \frac{D_i}{D}, \quad i = 1,2,3$$
+                    </div>
+                    <p>其中 $D$ 是系数行列式，$D_i$ 是将第 $i$ 列替换为常数项得到的行列式。</p>
+                </div>
+                
+                <div class="example-card">
+                    <h4>• 向量共面判定</h4>
+                    <p>三个向量共面的充要条件是它们构成的行列式为零：</p>
+                    <div class="formula">
+                        $$\begin{vmatrix} a_1 & b_1 & c_1 \\ a_2 & b_2 & c_2 \\ a_3 & b_3 & c_3 \end{vmatrix} = 0$$
+                    </div>
+                    <p>这意味着三个向量线性相关，无法张成三维空间。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // MathJax configuration
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+
+        // Ensure correct navigation state
+        document.addEventListener('DOMContentLoaded', function() {
+            // Remove active class from all nav items
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Add active class to current page nav item
+            const currentPageNav = document.querySelector('a[href="三阶行列式可视化.html"]');
+            if (currentPageNav) {
+                currentPageNav.classList.add('active');
+            }
+            
+            // 本地公式缩放解决方案
+            function fixFormulaScaling() {
+                console.log('🔧 开始修复公式缩放...');
+                
+                // 等待MathJax渲染完成
+                setTimeout(() => {
+                    const formulas = document.querySelectorAll('.formula');
+                    console.log(`找到 ${formulas.length} 个公式容器`);
+                    
+                    formulas.forEach((formula, index) => {
+                        const containers = formula.querySelectorAll('mjx-container');
+                        containers.forEach((container, cIndex) => {
+                            try {
+                                // 重置样式
+                                container.style.transform = '';
+                                container.style.transformOrigin = '';
+                                
+                                // 获取尺寸
+                                const formulaWidth = formula.clientWidth;
+                                const containerWidth = container.scrollWidth;
+                                
+                                console.log(`公式 ${index}-${cIndex}: 容器=${formulaWidth}px, 内容=${containerWidth}px`);
+                                
+                                if (containerWidth > formulaWidth && formulaWidth > 100) {
+                                    const scale = Math.max(0.4, (formulaWidth - 20) / containerWidth);
+                                    console.log(`应用缩放: ${scale.toFixed(3)}`);
+                                    
+                                    container.style.transformOrigin = 'left center';
+                                    container.style.transform = `scale(${scale})`;
+                                    container.style.display = 'inline-block';
+                                    
+                                    // 调整父容器
+                                    formula.style.overflow = 'visible';
+                                    formula.style.whiteSpace = 'nowrap';
+                                }
+                            } catch (error) {
+                                console.warn(`缩放公式时出错:`, error);
+                            }
+                        });
+                    });
+                }, 200);
+            }
+            
+            // 强制触发公式缩放（等待MathJax渲染完成）
+            setTimeout(() => {
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise().then(() => {
+                        console.log('🔄 页面加载完成，开始强制缩放公式');
+                        fixFormulaScaling();
+                        
+                        // 也触发全局缩放作为备用
+                        const event = new Event('resize');
+                        window.dispatchEvent(event);
+                    });
+                } else {
+                    // 如果MathJax还没准备好，直接尝试缩放
+                    fixFormulaScaling();
+                }
+            }, 800);
+        });
+
+        // Get input elements
+        const inputs = {
+            a11: document.getElementById('a11'),
+            a12: document.getElementById('a12'),
+            a13: document.getElementById('a13'),
+            a21: document.getElementById('a21'),
+            a22: document.getElementById('a22'),
+            a23: document.getElementById('a23'),
+            a31: document.getElementById('a31'),
+            a32: document.getElementById('a32'),
+            a33: document.getElementById('a33')
+        };
+
+        // Add event listeners
+        Object.values(inputs).forEach(input => {
+            input.addEventListener('input', updateVisualization);
+        });
+
+        function setPreset(type) {
+            const presets = {
+                identity: [1, 0, 0, 0, 1, 0, 0, 0, 1],
+                example1: [1, 2, -4, -2, 2, 1, 3, -4, -2],
+                example2: [2, -1, 3, 1, 4, -2, -1, 2, 1],
+                zero: [1, 2, 3, 2, 4, 6, 1, 2, 3]
+            };
+            
+            const values = presets[type];
+            if (values) {
+                const keys = Object.keys(inputs);
+                values.forEach((value, index) => {
+                    inputs[keys[index]].value = value;
+                });
+                updateVisualization();
+            }
+        }
+
+        function calculateDeterminant3x3(matrix) {
+            const [[a11, a12, a13], [a21, a22, a23], [a31, a32, a33]] = matrix;
+            
+            // 对角线法
+            const positive = a11*a22*a33 + a12*a23*a31 + a13*a21*a32;
+            const negative = a13*a22*a31 + a12*a21*a33 + a11*a23*a32;
+            
+            return {
+                determinant: positive - negative,
+                positive: positive,
+                negative: negative,
+                positiveTerms: `${a11}×${a22}×${a33} + ${a12}×${a23}×${a31} + ${a13}×${a21}×${a32} = ${positive}`,
+                negativeTerms: `${a13}×${a22}×${a31} + ${a12}×${a21}×${a33} + ${a11}×${a23}×${a32} = ${negative}`
+            };
+        }
+
+        function updateVisualization() {
+            // Get matrix values
+            const matrix = [
+                [parseFloat(inputs.a11.value) || 0, parseFloat(inputs.a12.value) || 0, parseFloat(inputs.a13.value) || 0],
+                [parseFloat(inputs.a21.value) || 0, parseFloat(inputs.a22.value) || 0, parseFloat(inputs.a23.value) || 0],
+                [parseFloat(inputs.a31.value) || 0, parseFloat(inputs.a32.value) || 0, parseFloat(inputs.a33.value) || 0]
+            ];
+
+            // Calculate determinant
+            const result = calculateDeterminant3x3(matrix);
+            const det = result.determinant;
+
+            // Update display values
+            document.getElementById('determinant-result').textContent = det.toFixed(2);
+            document.getElementById('volume-display').textContent = Math.abs(det).toFixed(2);
+            document.getElementById('det-display').innerHTML = `\\(${det.toFixed(2)}\\)`;
+            document.getElementById('abs-volume-display').textContent = Math.abs(det).toFixed(2);
+            
+            // Update vector displays
+            // 将向量内容改为 LaTeX 行内公式，便于统一渲染与缩放
+            document.getElementById('v1-display').innerHTML = `\\(${matrix[0][0]}, ${matrix[1][0]}, ${matrix[2][0]}\\)`;
+            document.getElementById('v2-display').innerHTML = `\\(${matrix[0][1]}, ${matrix[1][1]}, ${matrix[2][1]}\\)`;
+            document.getElementById('v3-display').innerHTML = `\\(${matrix[0][2]}, ${matrix[1][2]}, ${matrix[2][2]}\\)`;
+
+            // Update calculation steps
+            // === Update calculation steps（3×3 对角线法）：负数自动加括号 ===
+            const fmt = v => (Number(v) < 0 ? `(${v})` : `${v}`);
+
+            // 拆出元素，便于书写
+            const [a11, a12, a13] = matrix[0];
+            const [a21, a22, a23] = matrix[1];
+            const [a31, a32, a33] = matrix[2];  
+
+            // 正对角线三项
+            const posStr =
+              `${fmt(a11)} × ${fmt(a22)} × ${fmt(a33)}`
+            + ` + ${fmt(a12)} × ${fmt(a23)} × ${fmt(a31)}`
+            + ` + ${fmt(a13)} × ${fmt(a21)} × ${fmt(a32)}`;
+
+            // 负对角线三项
+            const negStr =
+              `${fmt(a13)} × ${fmt(a22)} × ${fmt(a31)}`
+            + ` + ${fmt(a11)} × ${fmt(a23)} × ${fmt(a32)}`
+            + ` + ${fmt(a12)} × ${fmt(a21)} × ${fmt(a33)}`;
+
+            // 写入页面（使用 LaTeX 保留符号，如 (-4)）
+            document.getElementById('positive-terms').innerHTML = `\\( ${fmt(a11)} \\times ${fmt(a22)} \\times ${fmt(a33)} + ${fmt(a12)} \\times ${fmt(a23)} \\times ${fmt(a31)} + ${fmt(a13)} \\times ${fmt(a21)} \\times ${fmt(a32)} \\)`;
+            document.getElementById('negative-terms').innerHTML = `\\( ${fmt(a13)} \\times ${fmt(a22)} \\times ${fmt(a31)} + ${fmt(a11)} \\times ${fmt(a23)} \\times ${fmt(a32)} + ${fmt(a12)} \\times ${fmt(a21)} \\times ${fmt(a33)} \\)`;
+            document.getElementById('final-calculation').innerHTML = `\\( ${result.positive.toFixed(2)} - (${result.negative.toFixed(2)}) = ${det.toFixed(2)} \\)`;
+            
+            // 局部排版与自适应缩放（依赖全局脚本提供的函数）
+            if (window.MathJax && window.MathJax.typesetPromise) {
+              window.MathJax.typesetPromise([
+                document.querySelector('.calculation-steps'),
+                document.querySelector('.visualization-section')
+              ]).then(() => {
+                // 缩放由全局脚本的 fitAllMath 负责；若不存在则兜底做一次局部缩放
+                if (typeof fitAllMath === 'function') {
+                  fitAllMath(document.querySelector('.calculation-steps'));
+                  fitAllMath(document.querySelector('.visualization-section'));
+                } else {
+                  const scope = document.querySelector('.calculation-steps');
+                  (scope?.querySelectorAll('mjx-container') || []).forEach(eq => {
+                    const parent = eq.parentElement;
+                    if (!parent) return;
+                    const parentWidth = parent.clientWidth || 1;
+                    const actualWidth = eq.scrollWidth || eq.getBoundingClientRect().width || 1;
+                    const scale = Math.min(1, parentWidth / actualWidth);
+                    eq.style.transformOrigin = 'left top';
+                    eq.style.transform = (scale < 1) ? `scale(${scale})` : '';
+                    parent.style.overflowX = parent.style.overflowX || 'auto';
+                  });
+                }
+              }).catch(err => console.log('MathJax typeset error:', err.message));
+            }
+
+            // Update 3D plot
+            updatePlot3D(matrix, det);
+        }
+
+        function updatePlot3D(matrix, det) {
+            // Extract column vectors
+            const v1 = [matrix[0][0], matrix[1][0], matrix[2][0]];
+            const v2 = [matrix[0][1], matrix[1][1], matrix[2][1]];
+            const v3 = [matrix[0][2], matrix[1][2], matrix[2][2]];
+
+            // Create traces for vectors
+            const traces = [
+                // Vector v1
+                {
+                    x: [0, v1[0]],
+                    y: [0, v1[1]],
+                    z: [0, v1[2]],
+                    mode: 'lines+markers',
+                    line: { color: '#e53e3e', width: 6 },
+                    marker: { size: 6 },
+                    name: 'v₁',
+                    type: 'scatter3d'
+                },
+                // Vector v2
+                {
+                    x: [0, v2[0]],
+                    y: [0, v2[1]],
+                    z: [0, v2[2]],
+                    mode: 'lines+markers',
+                    line: { color: '#3182ce', width: 6 },
+                    marker: { size: 6 },
+                    name: 'v₂',
+                    type: 'scatter3d'
+                },
+                // Vector v3
+                {
+                    x: [0, v3[0]],
+                    y: [0, v3[1]],
+                    z: [0, v3[2]],
+                    mode: 'lines+markers',
+                    line: { color: '#38a169', width: 6 },
+                    marker: { size: 6 },
+                    name: 'v₃',
+                    type: 'scatter3d'
+                }
+            ];
+
+            // Add parallelepiped edges if determinant is not too large
+            if (Math.abs(det) < 1000) {
+                const vertices = [
+                    [0, 0, 0],                                    // Origin
+                    v1,                                           // v1
+                    v2,                                           // v2
+                    v3,                                           // v3
+                    [v1[0] + v2[0], v1[1] + v2[1], v1[2] + v2[2]], // v1 + v2
+                    [v1[0] + v3[0], v1[1] + v3[1], v1[2] + v3[2]], // v1 + v3
+                    [v2[0] + v3[0], v2[1] + v3[1], v2[2] + v3[2]], // v2 + v3
+                    [v1[0] + v2[0] + v3[0], v1[1] + v2[1] + v3[1], v1[2] + v2[2] + v3[2]] // v1 + v2 + v3
+                ];
+
+                // Define the 12 edges of the parallelepiped
+                const edges = [
+                    [0, 1], [0, 2], [0, 3],           // From origin
+                    [1, 4], [1, 5],                   // From v1
+                    [2, 4], [2, 6],                   // From v2
+                    [3, 5], [3, 6],                   // From v3
+                    [4, 7], [5, 7], [6, 7]            // To opposite vertex
+                ];
+
+                edges.forEach((edge, index) => {
+                    const [start, end] = edge;
+                    traces.push({
+                        x: [vertices[start][0], vertices[end][0]],
+                        y: [vertices[start][1], vertices[end][1]],
+                        z: [vertices[start][2], vertices[end][2]],
+                        mode: 'lines',
+                        line: { 
+                            color: det >= 0 ? 'rgba(72, 187, 120, 0.6)' : 'rgba(245, 101, 101, 0.6)', 
+                            width: 3 
+                        },
+                        showlegend: false,
+                        type: 'scatter3d',
+                        hoverinfo: 'skip'
+                    });
+                });
+            }
+
+            // Add coordinate axes
+            const axisLength = 5;
+            traces.push(
+                // X-axis
+                {
+                    x: [0, axisLength],
+                    y: [0, 0],
+                    z: [0, 0],
+                    mode: 'lines',
+                    line: { color: 'rgba(0,0,0,0.3)', width: 2 },
+                    showlegend: false,
+                    type: 'scatter3d',
+                    hoverinfo: 'skip'
+                },
+                // Y-axis
+                {
+                    x: [0, 0],
+                    y: [0, axisLength],
+                    z: [0, 0],
+                    mode: 'lines',
+                    line: { color: 'rgba(0,0,0,0.3)', width: 2 },
+                    showlegend: false,
+                    type: 'scatter3d',
+                    hoverinfo: 'skip'
+                },
+                // Z-axis
+                {
+                    x: [0, 0],
+                    y: [0, 0],
+                    z: [0, axisLength],
+                    mode: 'lines',
+                    line: { color: 'rgba(0,0,0,0.3)', width: 2 },
+                    showlegend: false,
+                    type: 'scatter3d',
+                    hoverinfo: 'skip'
+                }
+            );
+
+            const layout = {
+                title: {
+                    text: `三阶行列式的几何意义 (det = ${det.toFixed(2)})`,
+                    font: { size: 16 }
+                },
+                scene: {
+                    xaxis: { title: 'X', range: [-6, 6] },
+                    yaxis: { title: 'Y', range: [-6, 6] },
+                    zaxis: { title: 'Z', range: [-6, 6] },
+                    aspectmode: 'cube',
+                    camera: {
+                        eye: { x: 1.5, y: 1.5, z: 1.5 }
+                    }
+                },
+                showlegend: true,
+                legend: {
+                    x: 0.02,
+                    y: 0.98,
+                    bgcolor: 'rgba(255, 255, 255, 0.8)',
+                    bordercolor: '#4a5568',
+                    borderwidth: 1
+                },
+                margin: { l: 0, r: 0, t: 50, b: 0 },
+                plot_bgcolor: '#f8f9fa',
+                paper_bgcolor: 'white'
+            };
+
+            const config = {
+                responsive: true,
+                displayModeBar: true,
+                modeBarButtonsToRemove: ['pan2d', 'lasso2d', 'select2d']
+            };
+
+            Plotly.newPlot('plot', traces, layout, config);
+        }
+
+        function goBack() {
+            window.location.href = '../index.html';
+        }
+
+        // Initialize visualization
+        updateVisualization();
+    </script>
+</body>
+</html>

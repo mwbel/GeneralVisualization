@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一图胜千言 - AI可视化生成器</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+            background-size: 200% 100%;
+            animation: gradient 3s ease infinite;
+        }
+        
+        @keyframes gradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            color: #333;
+            font-size: 2.5em;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        
+        .header .description {
+            color: #888;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .input-section {
+            margin-bottom: 30px;
+        }
+        
+        .input-label {
+            display: block;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .input-container {
+            position: relative;
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            resize: vertical;
+            min-height: 120px;
+            font-family: inherit;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .input-field::placeholder {
+            color: #aaa;
+        }
+        
+        .examples {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .examples h4 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+        
+        .example-item {
+            color: #666;
+            font-size: 0.85em;
+            margin-bottom: 5px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+            transition: background 0.2s ease;
+        }
+        
+        .example-item:hover {
+            background: #e9ecef;
+            color: #333;
+        }
+        
+        .options-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .option-group {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .option-label {
+            display: block;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .option-select {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.9em;
+            background: white;
+        }
+        
+        .generate-button {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .generate-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .generate-button:active {
+            transform: translateY(0);
+        }
+        
+        .generate-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .loading-text {
+            color: #666;
+            font-size: 1em;
+        }
+        
+        .result-section {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 2px solid #28a745;
+        }
+        
+        .result-title {
+            color: #28a745;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .result-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .action-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.9em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5a6fd8;
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+        
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: #218838;
+        }
+        
+        .error-section {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 8px;
+            color: #721c24;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .options-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .result-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎨 一图胜千言</h1>
+            <p class="subtitle">基于AI的交互式数据可视化创建工具</p>
+            <p class="description">
+                输入您的可视化需求，我们的AI将为您生成专业的交互式图表。
+                支持统计分布、数据分析、科学计算等多种可视化场景。
+            </p>
+        </div>
+        
+        <form id="visualizationForm">
+            <div class="input-section">
+                <label for="prompt" class="input-label">📝 描述您的可视化需求</label>
+                <div class="input-container">
+                    <textarea 
+                        id="prompt" 
+                        class="input-field" 
+                        placeholder="例如：创建一个二项分布B(20,0.3)的可视化，包含概率质量函数和统计信息..."
+                        required
+                    ></textarea>
+                </div>
+                
+                <div class="examples">
+                    <h4>💡 示例提示词（点击使用）：</h4>
+                    <div class="example-item" onclick="setPrompt('创建二项分布B(n,p)的交互式可视化，包含参数滑动条')">
+                        • 创建二项分布B(n,p)的交互式可视化，包含参数滑动条
+                    </div>
+                    <div class="example-item" onclick="setPrompt('绘制正态分布的概率密度函数，比较不同均值和方差的影响')">
+                        • 绘制正态分布的概率密度函数，比较不同均值和方差的影响
+                    </div>
+                    <div class="example-item" onclick="setPrompt('创建3D散点图展示三个变量之间的关系')">
+                        • 创建3D散点图展示三个变量之间的关系
+                    </div>
+                    <div class="example-item" onclick="setPrompt('可视化泊松分布的概率质量函数，展示参数λ的影响')">
+                        • 可视化泊松分布的概率质量函数，展示参数λ的影响
+                    </div>
+                    <div class="example-item" onclick="setPrompt('创建热力图显示相关性矩阵')">
+                        • 创建热力图显示相关性矩阵
+                    </div>
+                </div>
+            </div>
+            
+            <div class="options-section">
+                <div class="option-group">
+                    <label for="visualizationType" class="option-label">📊 可视化类型</label>
+                    <select id="visualizationType" class="option-select">
+                        <option value="custom">自定义</option>
+                        <option value="scatter_3d">3D散点图</option>
+                        <option value="surface_3d">3D表面图</option>
+                        <option value="mesh_3d">3D网格图</option>
+                        <option value="volume_3d">3D体积图</option>
+                        <option value="network_3d">3D网络图</option>
+                        <option value="molecular">分子结构图</option>
+                    </select>
+                </div>
+                
+                <div class="option-group">
+                    <label for="complexity" class="option-label">🎯 复杂度级别</label>
+                    <select id="complexity" class="option-select">
+                        <option value="simple">简单</option>
+                        <option value="medium">中等</option>
+                        <option value="complex">复杂</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button type="submit" class="generate-button" id="generateBtn">
+                🚀 生成可视化
+            </button>
+        </form>
+        
+        <div class="loading" id="loading">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">AI正在为您生成可视化...</div>
+        </div>
+        
+        <div class="result-section" id="resultSection">
+            <div class="result-title">✅ 可视化生成成功！</div>
+            <div class="result-actions">
+                <button class="action-button btn-primary" onclick="openVisualization()">
+                    🔍 在新窗口中查看
+                </button>
+                <button class="action-button btn-secondary" onclick="downloadVisualization()">
+                    💾 下载HTML文件
+                </button>
+                <button class="action-button btn-success" onclick="generateAnother()">
+                    🔄 生成另一个
+                </button>
+            </div>
+        </div>
+        
+        <div class="error-section" id="errorSection">
+            <strong>❌ 生成失败：</strong>
+            <span id="errorMessage"></span>
+        </div>
+    </div>
+
+    <script>
+        let currentVisualizationData = null;
+        
+        // 设置示例提示词
+        function setPrompt(text) {
+            document.getElementById('prompt').value = text;
+        }
+        
+        // 表单提交处理
+        document.getElementById('visualizationForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const prompt = document.getElementById('prompt').value.trim();
+            const visualizationType = document.getElementById('visualizationType').value;
+            const complexity = document.getElementById('complexity').value;
+            
+            if (!prompt) {
+                alert('请输入可视化需求描述');
+                return;
+            }
+            
+            // 显示加载状态
+            showLoading();
+            
+            try {
+                const response = await fetch('http://localhost:8000/api/v1/visualization/generate-html', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        prompt: prompt,
+                        visualization_type: visualizationType,
+                        complexity: complexity
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                currentVisualizationData = data;
+                
+                // 显示成功结果
+                showResult();
+                
+            } catch (error) {
+                console.error('生成可视化时出错:', error);
+                showError(error.message);
+            }
+        });
+        
+        // 显示加载状态
+        function showLoading() {
+            document.getElementById('generateBtn').disabled = true;
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('resultSection').style.display = 'none';
+            document.getElementById('errorSection').style.display = 'none';
+        }
+        
+        // 显示成功结果
+        function showResult() {
+            document.getElementById('generateBtn').disabled = false;
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('resultSection').style.display = 'block';
+            document.getElementById('errorSection').style.display = 'none';
+        }
+        
+        // 显示错误信息
+        function showError(message) {
+            document.getElementById('generateBtn').disabled = false;
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('resultSection').style.display = 'none';
+            document.getElementById('errorSection').style.display = 'block';
+            document.getElementById('errorMessage').textContent = message;
+        }
+        
+        // 在新窗口中打开可视化
+        function openVisualization() {
+            if (!currentVisualizationData || !currentVisualizationData.html_content) {
+                alert('没有可用的可视化数据');
+                return;
+            }
+            
+            const newWindow = window.open('', '_blank', 'width=1200,height=800,scrollbars=yes,resizable=yes');
+            newWindow.document.write(currentVisualizationData.html_content);
+            newWindow.document.close();
+        }
+        
+        // 下载可视化HTML文件
+        function downloadVisualization() {
+            if (!currentVisualizationData || !currentVisualizationData.html_content) {
+                alert('没有可用的可视化数据');
+                return;
+            }
+            
+            const blob = new Blob([currentVisualizationData.html_content], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `visualization_${Date.now()}.html`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+        
+        // 生成另一个可视化
+        function generateAnother() {
+            document.getElementById('prompt').value = '';
+            document.getElementById('resultSection').style.display = 'none';
+            document.getElementById('errorSection').style.display = 'none';
+            currentVisualizationData = null;
+        }
+    </script>
+</body>
+</html>

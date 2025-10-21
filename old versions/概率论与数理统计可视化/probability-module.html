@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>概率论与数理统计可视化 - 一图胜千言</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 280px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 2px 0 15px rgba(0,0,0,0.1);
+            padding: 20px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+
+        .sidebar-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 15px;
+        }
+
+        .search-container {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 10px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 25px;
+            font-size: 0.9em;
+            outline: none;
+            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .search-box:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .search-box::placeholder {
+            color: #a0aec0;
+        }
+
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1001;
+            display: none;
+        }
+
+        .search-result-item {
+            padding: 10px 15px;
+            cursor: pointer;
+            border-bottom: 1px solid #f7fafc;
+            transition: background 0.2s;
+        }
+
+        .search-result-item:hover {
+            background: #f7fafc;
+        }
+
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+
+        .nav-item {
+            display: block;
+            padding: 12px 15px;
+            margin: 8px 0;
+            color: #4a5568;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s;
+            font-weight: 500;
+            border-left: 4px solid transparent;
+        }
+
+        .nav-item:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: translateX(5px);
+            border-left-color: #667eea;
+        }
+
+        .nav-item.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-left-color: #667eea;
+        }
+
+        .main-content {
+            margin-left: 280px;
+            flex: 1;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 30px 0;
+        }
+
+
+
+        .header h1 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .distributions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .distribution-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .distribution-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .distribution-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .distribution-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .distribution-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+            text-align: center;
+        }
+
+        .distribution-subtitle {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 15px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .distribution-description {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .distribution-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .distribution-features li {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .distribution-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .distribution-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .distribution-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+        }
+
+        .info-section {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+            color: white;
+        }
+
+        .info-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .info-section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: center;
+            opacity: 0.9;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            color: rgba(255,255,255,0.8);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .distributions-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .distribution-card {
+                padding: 25px;
+            }
+            
+            .back-button {
+                position: relative;
+                top: 0;
+                left: 0;
+                margin-bottom: 20px;
+            }
+        }
+
+        .binomial-icon { color: #e74c3c; }
+        .poisson-icon { color: #f39c12; }
+        .normal-icon { color: #3498db; }
+        .exponential-icon { color: #9b59b6; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h3 class="sidebar-title">概率论与数理统计</h3>
+        <div class="search-container">
+            <input type="text" class="search-box" placeholder="搜索分布（如：二项分布）" id="searchBox" oninput="searchDistributions()">
+            <div class="search-results" id="searchResults"></div>
+        </div>
+        <div class="nav-item" onclick="scrollToSection('overview')">模块概览</div>
+        <div class="nav-item" onclick="openDistribution('binomial')">二项分布</div>
+        <div class="nav-item" onclick="openDistribution('poisson')">泊松分布</div>
+        <div class="nav-item" onclick="openDistribution('exponential')">指数分布</div>
+        <div class="nav-item" onclick="openDistribution('normal')">正态分布</div>
+        <div class="nav-item" onclick="goBack()">返回主页</div>
+    </div>
+    
+    <div class="main-content">
+        <div class="container">
+        <header class="header">
+            <h1>概率论与数理统计可视化</h1>
+            <p>通过交互式图表深入理解概率分布的特性，实时调节参数观察分布形状变化</p>
+        </header>
+
+        <div class="info-section">
+            <h2>🎯 学习目标</h2>
+            <p>
+                掌握常见概率分布的特征和应用场景，理解参数对分布形状的影响，
+                培养统计思维和数据分析能力。每个可视化工具都提供了丰富的交互功能，
+                帮助您从直观的角度理解抽象的数学概念。
+            </p>
+        </div>
+
+        <div class="distributions-grid">
+            <div class="distribution-card" onclick="openDistribution('binomial')">
+                <div class="distribution-icon binomial-icon">🎲</div>
+                <h3 class="distribution-title">二项分布</h3>
+                <p class="distribution-subtitle">Binomial Distribution</p>
+                <p class="distribution-description">
+                    描述在n次独立的伯努利试验中成功次数的概率分布。
+                    广泛应用于质量控制、市场调研等领域。
+                </p>
+                <ul class="distribution-features">
+                    <li>参数调节：试验次数n和成功概率p</li>
+                    <li>实时显示概率质量函数和累积分布函数</li>
+                    <li>统计量计算：均值、方差、标准差</li>
+                    <li>现代化离线版本，无需网络连接</li>
+                </ul>
+                <button class="distribution-button">开始探索</button>
+            </div>
+
+            <div class="distribution-card" onclick="openDistribution('poisson')">
+                <div class="distribution-icon poisson-icon">⚡</div>
+                <h3 class="distribution-title">泊松分布</h3>
+                <p class="distribution-subtitle">Poisson Distribution</p>
+                <p class="distribution-description">
+                    描述单位时间内随机事件发生次数的概率分布。
+                    常用于排队论、可靠性分析等场景。
+                </p>
+                <ul class="distribution-features">
+                    <li>参数调节：平均发生率λ</li>
+                    <li>交互式图表展示PMF和CDF</li>
+                    <li>预设常用参数值快速切换</li>
+                    <li>完整离线版本，功能齐全</li>
+                </ul>
+                <button class="distribution-button">开始探索</button>
+            </div>
+
+            <div class="distribution-card" onclick="openDistribution('normal')">
+                <div class="distribution-icon normal-icon">📊</div>
+                <h3 class="distribution-title">正态分布</h3>
+                <p class="distribution-subtitle">Normal Distribution</p>
+                <p class="distribution-description">
+                    最重要的连续概率分布，具有钟形曲线特征。
+                    是统计学的基础，广泛应用于各个领域。
+                </p>
+                <ul class="distribution-features">
+                    <li>双参数控制：均值μ和标准差σ</li>
+                    <li>固定坐标轴，观察分布形状变化</li>
+                    <li>PDF和CDF同时显示</li>
+                    <li>参数比较功能，直观理解影响</li>
+                </ul>
+                <button class="distribution-button">开始探索</button>
+            </div>
+
+            <div class="distribution-card" onclick="openDistribution('exponential')">
+                <div class="distribution-icon exponential-icon">📈</div>
+                <h3 class="distribution-title">指数分布</h3>
+                <p class="distribution-subtitle">Exponential Distribution</p>
+                <p class="distribution-description">
+                    描述事件间隔时间的概率分布，具有无记忆性。
+                    常用于可靠性工程和排队系统分析。
+                </p>
+                <ul class="distribution-features">
+                    <li>参数调节：速率参数λ</li>
+                    <li>学术蓝色主题设计</li>
+                    <li>实时统计信息显示</li>
+                    <li>多参数对比分析功能</li>
+                </ul>
+                <button class="distribution-button">开始探索</button>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>💡 使用建议</h2>
+            <p>
+                建议按照二项分布 → 泊松分布 → 正态分布 → 指数分布的顺序学习，
+                从离散分布到连续分布，逐步建立完整的概率论知识体系。
+                每个工具都支持参数实时调节，请充分利用交互功能加深理解。
+            </p>
+        </div>
+
+        <footer class="footer">
+            <p>© 2024 一图胜千言 - 概率论与数理统计可视化模块</p>
+        </footer>
+    </div>
+
+    <script>
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+
+        function openDistribution(type) {
+            // 保存当前选中的分布到localStorage
+            localStorage.setItem('selectedDistribution', type);
+            
+            // 移除所有导航项的active类
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => item.classList.remove('active'));
+            
+            // 为当前选中的分布添加active类
+            const distributionMap = {
+                'binomial': '二项分布',
+                'poisson': '泊松分布', 
+                'exponential': '指数分布',
+                'normal': '正态分布'
+            };
+            
+            navItems.forEach(item => {
+                if (item.textContent.trim() === distributionMap[type]) {
+                    item.classList.add('active');
+                }
+            });
+            
+            const distributionFiles = {
+                'binomial': '概率论与数理统计可视化/二项分布现代化可视化_离线版.html',
+                'poisson': '概率论与数理统计可视化/泊松分布交互式可视化_完整离线版.html',
+                'normal': '概率论与数理统计可视化/正态分布交互式可视化.html',
+                'exponential': '概率论与数理统计可视化/指数分布交互式可视化.html'
+            };
+
+            const fileName = distributionFiles[type];
+            if (fileName) {
+                window.location.href = fileName;
+            } else {
+                alert('该分布可视化工具暂未开放，敬请期待！');
+            }
+        }
+
+        // 页面加载时恢复高亮状态
+        function restoreActiveState() {
+            const selectedDistribution = localStorage.getItem('selectedDistribution');
+            if (selectedDistribution) {
+                const distributionMap = {
+                    'binomial': '二项分布',
+                    'poisson': '泊松分布', 
+                    'exponential': '指数分布',
+                    'normal': '正态分布'
+                };
+                
+                const navItems = document.querySelectorAll('.nav-item');
+                navItems.forEach(item => {
+                    if (item.textContent.trim() === distributionMap[selectedDistribution]) {
+                        item.classList.add('active');
+                    }
+                });
+            }
+        }
+
+        // 页面加载完成后恢复状态
+        document.addEventListener('DOMContentLoaded', restoreActiveState);
+
+        // 搜索功能
+        function searchDistributions() {
+            const searchBox = document.getElementById('searchBox');
+            const searchResults = document.getElementById('searchResults');
+            const query = searchBox.value.toLowerCase().trim();
+
+            // 定义可搜索的分布
+            const distributions = [
+                { name: '二项分布', type: 'binomial', keywords: ['二项', 'binomial', '伯努利', 'bernoulli'] },
+                { name: '泊松分布', type: 'poisson', keywords: ['泊松', 'poisson', '泊'] },
+                { name: '正态分布', type: 'normal', keywords: ['正态', 'normal', '高斯', 'gaussian'] },
+                { name: '指数分布', type: 'exponential', keywords: ['指数', 'exponential', '指'] }
+            ];
+
+            if (query === '') {
+                searchResults.style.display = 'none';
+                return;
+            }
+
+            // 搜索匹配的分布
+            const matches = distributions.filter(dist => 
+                dist.name.toLowerCase().includes(query) || 
+                dist.keywords.some(keyword => keyword.toLowerCase().includes(query))
+            );
+
+            if (matches.length > 0) {
+                searchResults.innerHTML = matches.map(match => 
+                    `<div class="search-result-item" onclick="selectDistribution('${match.type}')">${match.name}</div>`
+                ).join('');
+                searchResults.style.display = 'block';
+            } else {
+                searchResults.innerHTML = '<div class="search-result-item">未找到匹配的分布</div>';
+                searchResults.style.display = 'block';
+            }
+        }
+
+        function selectDistribution(type) {
+            const searchBox = document.getElementById('searchBox');
+            const searchResults = document.getElementById('searchResults');
+            
+            // 清空搜索框并隐藏结果
+            searchBox.value = '';
+            searchResults.style.display = 'none';
+            
+            // 打开对应的分布页面
+            openDistribution(type);
+        }
+
+        // 点击页面其他地方时隐藏搜索结果
+        document.addEventListener('click', function(e) {
+            const searchContainer = document.querySelector('.search-container');
+            if (!searchContainer.contains(e.target)) {
+                document.getElementById('searchResults').style.display = 'none';
+            }
+        });
+
+        // 页面加载动画
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.distribution-card');
+            
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 150 + 300);
+            });
+        });
+
+        // 卡片悬停效果
+        document.addEventListener('mousemove', function(e) {
+            const cards = document.querySelectorAll('.distribution-card');
+            
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = (y - centerY) / 15;
+                    const rotateY = (centerX - x) / 15;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+                } else {
+                    card.style.transform = '';
+                }
+            });
+        });
+    </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "general-visualization",
+  "version": "1.0.0",
+  "description": "Multi-module visualization application for Linear Algebra, Probability & Statistics, and Differential Geometry",
+  "type": "module",
+  "scripts": {
+    "dev:la": "vite --port 5173 --root app/modules/linear_algebra",
+    "dev:ps": "vite --port 5174 --root app/modules/probability_statistics",
+    "dev:dg": "vite --port 5175 --root app/modules/differential_geometry",
+    "build:la": "vite build --root app/modules/linear_algebra",
+    "build:ps": "vite build --root app/modules/probability_statistics",
+    "build:dg": "vite build --root app/modules/differential_geometry",
+    "preview:la": "vite preview --port 4173 --root app/modules/linear_algebra",
+    "preview:ps": "vite preview --port 4174 --root app/modules/probability_statistics",
+    "preview:dg": "vite preview --port 4175 --root app/modules/differential_geometry"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "plotly.js": "^2.27.0",
+    "d3": "^7.8.5"
+  }
+}

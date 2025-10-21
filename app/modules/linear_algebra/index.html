@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>线性代数可视化</title>
+    <link rel="stylesheet" href="../../lib/global-styles.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header class="module-header">
+            <h1>线性代数可视化</h1>
+            <nav class="module-nav">
+-                <a href="../../index.html" class="back-link">返回主页</a>
++                <a href="../../../index.html" class="back-link">返回 “万物可视化”首页</a>
+                 <a href="./pages/线性变换可视化.html">线性变换可视化</a>
+                 <a href="./pages/向量空间可视化.html">向量空间可视化</a>
+                 <a href="./pages/特征值分解可视化.html">特征值分解可视化</a>
+                 <a href="./pages/正交分解可视化.html">正交分解可视化</a>
+                 <a href="./pages/二阶行列式可视化.html">二阶行列式可视化</a>
+                 <a href="./pages/线性方程组可视化.html">线性方程组可视化</a>
+ 
+            </nav>
+        </header>
+        
+        <main class="main-content">
+            <aside class="sidebar">
+                <h3>可视化页面</h3>
+                <ul class="nav-list">
+                    <li><a href="./pages/二阶行列式可视化.html">二阶行列式</a></li>
+                    <li><a href="./pages/三阶行列式可视化.html">三阶行列式</a></li>
+                    <li><a href="./pages/矩阵运算可视化.html">矩阵运算</a></li>
+                    <li><a href="./pages/向量空间可视化.html">向量空间</a></li>
+                    <li><a href="./pages/线性变换可视化.html">线性变换</a></li>
+                    <li><a href="./pages/矩阵高斯消元法可视化.html">高斯消元法</a></li>
+                    <li><a href="./pages/特征值分解可视化.html">特征值分解</a></li>
+                    <li><a href="./pages/旋转矩阵可视化.html">旋转矩阵</a></li>
+                    <li><a href="./pages/正交分解可视化.html">正交分解</a></li>
+                </ul>
+            </aside>
+            
+            <div class="content-area">
+                <div class="welcome-section">
+                    <h2>欢迎使用线性代数可视化世界</h2>
+                    <p>本模块提供了丰富的线性代数概念可视化工具，帮助您更好地理解矩阵、向量、线性变换等核心概念。</p>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h3>行列式计算</h3>
+                            <p>可视化二阶和三阶行列式的几何意义和计算过程</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h3>矩阵运算</h3>
+                            <p>交互式矩阵加法、乘法和转置运算演示</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h3>向量空间</h3>
+                            <p>向量的线性组合、基和维数的可视化展示</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h3>线性变换</h3>
+                            <p>矩阵作为线性变换的几何解释和动态演示</p>
+                        </div>
+                    </div>
+                </div>
++
++                <section class="chapter-section">
++                    <h2>章节导览</h2>
++                    <div class="feature-grid">
++                        <div class="feature-card">
++                            <h3>第一章 行列式</h3>
++                            <div class="chip-list">
++                                <a href="./pages/二阶行列式可视化.html">二阶行列式</a>
++                                <a href="./pages/三阶行列式可视化.html">三阶行列式</a>
++                            </div>
++                        </div>
++                        <div class="feature-card">
++                            <h3>第二章 矩阵</h3>
++                            <div class="chip-list">
++                                <a href="./pages/矩阵运算可视化.html">矩阵运算</a>
++                                <a href="./pages/矩阵高斯消元法可视化.html">高斯消元法</a>
++                            </div>
++                        </div>
++                        <div class="feature-card">
++                            <h3>第三章 n维向量与线性方程组</h3>
++                            <div class="chip-list">
++                                <a href="./pages/线性方程组可视化.html">线性方程组</a>
++                                <a href="./pages/向量投影可视化.html">向量投影</a>
++                            </div>
++                        </div>
++                        <div class="feature-card">
++                            <h3>第四章 线性空间</h3>
++                            <div class="chip-list">
++                                <a href="./pages/向量空间可视化.html">向量空间</a>
++                            </div>
++                        </div>
++                        <div class="feature-card">
++                            <h3>第五章 矩阵的对角化</h3>
++                            <div class="chip-list">
++                                <a href="./pages/特征值分解可视化.html">特征值分解</a>
++                                <a href="./pages/正交分解可视化.html">正交分解</a>
++                                <a href="./pages/旋转矩阵可视化.html">旋转矩阵</a>
++                            </div>
++                        </div>
++                        <div class="feature-card">
++                            <h3>第六章 实二次型</h3>
++                            <p>敬请期待</p>
++                        </div>
++                        <div class="feature-card">
++                            <h3>第七章 线性变换</h3>
++                            <div class="chip-list">
++                                <a href="./pages/线性变换可视化.html">线性变换</a>
++                            </div>
++                        </div>
++                        <div class="feature-card">
++                            <h3>第八章 数学软件与应用实例</h3>
++                            <p>敬请期待</p>
++                        </div>
++                    </div>
++                </section>
+            </div>
+        </main>
+    </div>
+    
+    <script type="module" src="./main.js"></script>
+</body>
+</html>

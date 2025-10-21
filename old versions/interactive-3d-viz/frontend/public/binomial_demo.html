@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二项分布B(n,p)可视化示例</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        .description {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        .controls {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .control-group {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 5px;
+        }
+        .control-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .control-group input, .control-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+        }
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        .plot-container {
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .stats-info {
+            background: #e8f5e8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎲 二项分布 B(n,p) 可视化示例</h1>
+        
+        <div class="description">
+            <h3>📚 二项分布简介</h3>
+            <p><strong>二项分布 B(n,p)</strong> 描述了在n次独立的伯努利试验中，成功次数X的概率分布。</p>
+            <ul>
+                <li><strong>参数n</strong>：试验次数</li>
+                <li><strong>参数p</strong>：每次试验成功的概率</li>
+                <li><strong>期望值</strong>：E[X] = n × p</li>
+                <li><strong>方差</strong>：Var[X] = n × p × (1-p)</li>
+            </ul>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="visualization-type">可视化类型：</label>
+                <select id="visualization-type">
+                    <option value="fixed-n">固定n，变化p</option>
+                    <option value="fixed-p">固定p，变化n</option>
+                    <option value="3d-surface">3D参数表面</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="n-value">n值：</label>
+                <input type="number" id="n-value" value="20" min="1" max="100">
+            </div>
+            <div class="control-group">
+                <label for="p-value">p值：</label>
+                <input type="number" id="p-value" value="0.5" min="0.01" max="0.99" step="0.01">
+            </div>
+            <button onclick="generateVisualization()">生成可视化</button>
+            <button onclick="showExample()">显示示例</button>
+        </div>
+
+        <div id="plot1" class="plot-container"></div>
+        <div id="stats" class="stats-info"></div>
+        <div id="plot2" class="plot-container"></div>
+    </div>
+
+    <script>
+        // 二项分布概率质量函数
+        function binomialPMF(k, n, p) {
+            function factorial(num) {
+                if (num <= 1) return 1;
+                return num * factorial(num - 1);
+            }
+            
+            function combination(n, k) {
+                if (k > n) return 0;
+                return factorial(n) / (factorial(k) * factorial(n - k));
+            }
+            
+            return combination(n, k) * Math.pow(p, k) * Math.pow(1 - p, n - k);
+        }
+
+        // 生成固定n，变化p的可视化
+        function generateFixedN() {
+            const n = 20;
+            const pValues = [0.1, 0.3, 0.5, 0.7, 0.9];
+            const colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd'];
+            
+            const traces = [];
+            
+            pValues.forEach((p, index) => {
+                const k = Array.from({length: n + 1}, (_, i) => i);
+                const pmf = k.map(ki => binomialPMF(ki, n, p));
+                
+                traces.push({
+                    x: k,
+                    y: pmf,
+                    type: 'scatter',
+                    mode: 'lines+markers',
+                    name: `p = ${p}`,
+                    line: { color: colors[index], width: 3 },
+                    marker: { size: 8, color: colors[index] }
+                });
+            });
+
+            const layout = {
+                title: '二项分布 B(20,p) - 固定n=20，p变化',
+                xaxis: { title: '成功次数 k' },
+                yaxis: { title: '概率 P(X=k)' },
+                height: 500,
+                showlegend: true
+            };
+
+            Plotly.newPlot('plot1', traces, layout);
+            
+            // 显示统计信息
+            let statsHTML = '<h4>📊 统计信息</h4>';
+            pValues.forEach(p => {
+                const mean = n * p;
+                const variance = n * p * (1 - p);
+                const std = Math.sqrt(variance);
+                statsHTML += `<p><strong>p=${p}</strong>: μ=${mean.toFixed(1)}, σ²=${variance.toFixed(1)}, σ=${std.toFixed(2)}</p>`;
+            });
+            document.getElementById('stats').innerHTML = statsHTML;
+        }
+
+        // 生成固定p，变化n的可视化
+        function generateFixedP() {
+            const p = 0.3;
+            const nValues = [5, 10, 20, 30, 50];
+            const colors = ['#e377c2', '#7f7f7f', '#bcbd22', '#17becf', '#ff7f0e'];
+            
+            const traces = [];
+            
+            nValues.forEach((n, index) => {
+                const kMax = Math.min(n, Math.floor(n + 3 * Math.sqrt(n * p * (1 - p))));
+                const k = Array.from({length: kMax + 1}, (_, i) => i);
+                const pmf = k.map(ki => binomialPMF(ki, n, p));
+                
+                traces.push({
+                    x: k,
+                    y: pmf,
+                    type: 'scatter',
+                    mode: 'lines+markers',
+                    name: `n = ${n}`,
+                    line: { color: colors[index], width: 3 },
+                    marker: { size: 6, color: colors[index] }
+                });
+            });
+
+            const layout = {
+                title: '二项分布 B(n,0.3) - 固定p=0.3，n变化',
+                xaxis: { title: '成功次数 k' },
+                yaxis: { title: '概率 P(X=k)' },
+                height: 500,
+                showlegend: true
+            };
+
+            Plotly.newPlot('plot1', traces, layout);
+            
+            // 显示统计信息
+            let statsHTML = '<h4>📊 统计信息</h4>';
+            nValues.forEach(n => {
+                const mean = n * p;
+                const variance = n * p * (1 - p);
+                const std = Math.sqrt(variance);
+                statsHTML += `<p><strong>n=${n}</strong>: μ=${mean.toFixed(1)}, σ²=${variance.toFixed(1)}, σ=${std.toFixed(2)}</p>`;
+            });
+            document.getElementById('stats').innerHTML = statsHTML;
+        }
+
+        // 生成3D参数表面
+        function generate3DSurface() {
+            const nRange = Array.from({length: 21}, (_, i) => i + 5); // 5到25
+            const pRange = Array.from({length: 19}, (_, i) => (i + 1) * 0.05); // 0.05到0.95
+            
+            // 计算期望值表面
+            const zMean = [];
+            const zVar = [];
+            
+            pRange.forEach(p => {
+                const meanRow = [];
+                const varRow = [];
+                nRange.forEach(n => {
+                    meanRow.push(n * p);
+                    varRow.push(n * p * (1 - p));
+                });
+                zMean.push(meanRow);
+                zVar.push(varRow);
+            });
+
+            // 期望值表面图
+            const trace1 = {
+                x: nRange,
+                y: pRange,
+                z: zMean,
+                type: 'surface',
+                colorscale: 'Viridis',
+                name: '期望值'
+            };
+
+            const layout1 = {
+                title: '二项分布期望值 E[X] = n×p',
+                scene: {
+                    xaxis: { title: '试验次数 n' },
+                    yaxis: { title: '成功概率 p' },
+                    zaxis: { title: '期望值 E[X]' }
+                },
+                height: 500
+            };
+
+            Plotly.newPlot('plot1', [trace1], layout1);
+
+            // 方差表面图
+            const trace2 = {
+                x: nRange,
+                y: pRange,
+                z: zVar,
+                type: 'surface',
+                colorscale: 'Plasma',
+                name: '方差'
+            };
+
+            const layout2 = {
+                title: '二项分布方差 Var[X] = n×p×(1-p)',
+                scene: {
+                    xaxis: { title: '试验次数 n' },
+                    yaxis: { title: '成功概率 p' },
+                    zaxis: { title: '方差 Var[X]' }
+                },
+                height: 500
+            };
+
+            Plotly.newPlot('plot2', [trace2], layout2);
+            
+            document.getElementById('stats').innerHTML = `
+                <h4>📊 3D分析说明</h4>
+                <p><strong>期望值特征</strong>：E[X] = n×p 随n和p线性增长</p>
+                <p><strong>方差特征</strong>：Var[X] = n×p×(1-p) 在p=0.5时达到最大值</p>
+                <p><strong>实际意义</strong>：方差表示分布的离散程度，p=0.5时不确定性最大</p>
+            `;
+        }
+
+        // 生成可视化
+        function generateVisualization() {
+            const type = document.getElementById('visualization-type').value;
+            
+            // 清空之前的图表
+            document.getElementById('plot2').innerHTML = '';
+            
+            switch(type) {
+                case 'fixed-n':
+                    generateFixedN();
+                    break;
+                case 'fixed-p':
+                    generateFixedP();
+                    break;
+                case '3d-surface':
+                    generate3DSurface();
+                    break;
+            }
+        }
+
+        // 显示示例
+        function showExample() {
+            generateFixedN();
+            
+            // 添加示例说明
+            setTimeout(() => {
+                document.getElementById('stats').innerHTML += `
+                    <div style="margin-top: 20px; padding: 15px; background: #fff3cd; border-radius: 8px;">
+                        <h4>🎯 观察要点</h4>
+                        <ul>
+                            <li><strong>p=0.1</strong>: 分布右偏，大部分概率集中在小的k值</li>
+                            <li><strong>p=0.3</strong>: 分布仍然右偏，但峰值向右移动</li>
+                            <li><strong>p=0.5</strong>: 分布对称，峰值在k=10附近</li>
+                            <li><strong>p=0.7</strong>: 分布左偏，峰值在k=14附近</li>
+                            <li><strong>p=0.9</strong>: 分布明显左偏，大部分概率集中在大的k值</li>
+                        </ul>
+                    </div>
+                `;
+            }, 500);
+        }
+
+        // 页面加载时显示默认示例
+        window.onload = function() {
+            showExample();
+        };
+    </script>
+</body>
+</html>

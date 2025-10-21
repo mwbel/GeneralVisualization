@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>矩阵高斯消元法可视化</title>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <style>
+    :root {
+      --bg: #0f0f14; --panel: #181824; --accent: #8a7bd1; --accent-2: #b39ddb; --text: #e6e6f0; --muted: #a9a9b8; --border: #2a2a3b;
+    }
+    body { margin:0; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+    .page[data-autolatex="true"] { display:flex; flex-direction:column; min-height:100vh; }
+    header.page-header { border-bottom: 1px solid var(--border); background: linear-gradient(90deg, #151522, #141321); }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: 20px 16px; display:flex; align-items:baseline; gap:16px; }
+    .title { font-size:20px; font-weight:600; color: var(--text); }
+    .subtitle { font-size:14px; color: var(--muted); }
+    .content { max-width:1200px; margin:0 auto; padding:20px 16px; display:grid; grid-template-columns: 1fr 1fr; gap:20px; }
+    .card { background: var(--panel); border:1px solid var(--border); border-radius:12px; padding:16px; }
+    .card h3 { margin:0 0 12px; font-size:16px; color: var(--accent); }
+    .section-title { font-size:14px; color: var(--muted); margin: 8px 0 12px; }
+
+    .grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:8px; }
+    .control { display:flex; flex-direction:column; gap:6px; background:#1e1e2b; border:1px solid var(--border); border-radius:8px; padding:8px; }
+    .control label { font-size:12px; color: var(--muted); }
+    .control input { background:#12121a; color: var(--text); border:1px solid var(--border); border-radius:6px; padding:6px 8px; font-size:13px; }
+    .controls-row { display:grid; grid-template-columns: repeat(3, 1fr); gap:8px; margin-bottom: 8px; }
+    .btn-row { display:flex; gap:8px; }
+    button { background: var(--accent); color: #0f0f14; border:none; border-radius:6px; padding:6px 10px; font-weight:600; cursor:pointer; }
+
+    .mathjax-block { background:#1c1c29; border:1px dashed var(--border); border-radius:10px; padding:10px 12px; margin:10px 0; }
+    .formula { color: var(--text); text-align:left; line-height:1.6; }
+    mjx-container { overflow-x:auto; overflow-y:hidden; white-space:normal; }
+
+    .viz { height: 480px; }
+    .legend { font-size:12px; color: var(--muted); margin-top:8px; }
+    .steps { font-size: 13px; color: var(--muted); }
+    /* —— 统一线性代数模块的浅色风格与侧栏导航 —— */
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; color: #333; display: flex; }
+    .sidebar { width: 280px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 2px 0 15px rgba(0,0,0,0.1); padding: 20px; position: fixed; height: 100vh; overflow-y: auto; z-index: 1000; }
+    .sidebar-title { font-size: 1.4em; font-weight: 700; color: #2d3748; margin-bottom: 20px; text-align: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px; }
+    .nav-item { display: block; padding: 12px 15px; margin: 8px 0; color: #4a5568; text-decoration: none; border-radius: 10px; transition: all 0.3s; font-weight: 500; border-left: 4px solid transparent; }
+    .nav-item:hover { background: linear-gradient(135deg, #667eea, #764ba2); color: white; transform: translateX(5px); border-left-color: #667eea; }
+    .nav-item.active { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-left-color: #667eea; }
+    .page-content { margin-left: 280px; flex: 1; padding: 20px; }
+    .card { background: white; border-radius: 15px; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); border: none; }
+    .card h3 { color: #4a5568; font-size: 18px; }
+    .section-title { font-size: 1.5em; color: #4a5568; margin-bottom: 12px; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+    .content { gap: 30px; }
+    .mathjax-block { background: #f8f9fa; border: 2px solid #e9ecef; border-radius: 10px; padding: 15px; }
+    .formula { color: #333; }
+    header.page-header { display: none; }
+    .step-slider-row { display:flex; align-items:center; gap:10px; margin:8px 0 12px; }
+    .step-slider-row label { font-size:12px; color: var(--muted); }
+    .matrix-preview { display:grid; grid-template-columns: repeat(3, 1fr); gap:6px; margin-top:10px; }
+    .matrix-cell { background:#12121a; border:1px solid var(--border); border-radius:6px; padding:8px; text-align:center; font-size:13px; color: var(--text); }
+  </style>
+</head>
+<body>
++  <div class="sidebar">
++    <div class="sidebar-title">线性代数模块</div>
++    <a href="linear-algebra-module.html" class="nav-item">模块概览</a>
++    <a href="二阶行列式可视化.html" class="nav-item">二阶行列式</a>
++    <a href="三阶行列式可视化.html" class="nav-item">三阶行列式</a>
++    <a href="矩阵运算可视化.html" class="nav-item">矩阵运算</a>
++    <a href="向量空间可视化.html" class="nav-item">向量空间</a>
++    <a href="线性变换可视化.html" class="nav-item">线性变换</a>
++    <a href="矩阵高斯消元法可视化.html" class="nav-item active">高斯消元法</a>
++    <a href="特征值分解可视化.html" class="nav-item">特征值分解</a>
++    <a href="旋转矩阵可视化.html" class="nav-item">旋转矩阵</a>
++    <a href="正交分解可视化.html" class="nav-item">正交分解</a>
++    <a href="../index.html" class="nav-item" style="margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 20px;">← 返回主页</a>
++  </div>
++  <div class="page-content">
++   <div class="page" data-autolatex="true">
++     <main class="content">
+      <!-- 左栏：定义与过程 -->
+      <section class="card">
+        <h3>代数定义与算法</h3>
+        <div class="mathjax-block"><div class="formula">\text{行初等变换：}\; R_i \leftrightarrow R_j,\; R_i \to k R_i,\; R_i \to R_i + k R_j</div></div>
+        <div class="mathjax-block"><div class="formula">\text{目标：经行变换将矩阵化为行阶梯形（或简化行阶梯形）}</div></div>
+
+        <div class="section-title">参数设置（3×3 矩阵）</div>
+        <div class="controls-row">
+          <div class="control"><label>a11</label><input id="a11" type="number" step="0.1" value="2"></div>
+          <div class="control"><label>a12</label><input id="a12" type="number" step="0.1" value="1"></div>
+          <div class="control"><label>a13</label><input id="a13" type="number" step="0.1" value="-1"></div>
+        </div>
+        <div class="controls-row">
+          <div class="control"><label>a21</label><input id="a21" type="number" step="0.1" value="-1"></div>
+          <div class="control"><label>a22</label><input id="a22" type="number" step="0.1" value="3"></div>
+          <div class="control"><label>a23</label><input id="a23" type="number" step="0.1" value="2"></div>
+        </div>
+        <div class="controls-row">
+          <div class="control"><label>a31</label><input id="a31" type="number" step="0.1" value="0"></div>
+          <div class="control"><label>a32</label><input id="a32" type="number" step="0.1" value="1"></div>
+          <div class="control"><label>a33</label><input id="a33" type="number" step="0.1" value="1"></div>
+        </div>
+        <div class="btn-row"><button id="do-elim">执行消元</button><button id="reset">重置示例</button></div>
+
+        <div class="mathjax-block"><div class="formula" id="step-formula">\text{步骤显示：点击“执行消元”以查看每步行变换}</div></div>
+        <div class="steps" id="text-steps"></div>
+      </section>
+
+      <!-- 右栏：几何/矩阵状态可视化 -->
+      <section class="card">
+        <h3>矩阵状态可视化</h3>
+        <div class="step-slider-row">
+          <label>步骤</label>
+          <input id="step-slider" type="range" min="1" max="1" value="1">
+          <span id="step-label">1/1</span>
+        </div>
+        <div id="heat" class="viz"></div>
+        <div class="legend">颜色条以 0 为中心：蓝色为负、红色为正，白色为 0。</div>
+        <div class="section-title">当前矩阵预览</div>
+        <div id="matrix-preview" class="matrix-preview"></div>
+      </section>
+      </main>
+    </div>
+  </div>
+
+  <script type="module">
+    import { configureMathJax, ensureMathJaxScript, typesetPage } from '/app/lib/mathjax.js';
+    import { enableAutoMath } from '/app/lib/autoMath.js';
+    import { attachFormulaResizer } from '/app/lib/responsive-math.js';
+
+    configureMathJax();
+    ensureMathJaxScript();
+    const pageEl = document.querySelector('.page');
+    enableAutoMath(pageEl);
+    let currentSteps = [];
+
+    function matrixFromInputs() {
+      const ids = ['a11','a12','a13','a21','a22','a23','a31','a32','a33'];
+      const vals = ids.map(id => parseFloat(document.getElementById(id).value));
+      return [vals.slice(0,3), vals.slice(3,6), vals.slice(6,9)];
+    }
+
+    function clone(M){ return M.map(row => row.slice()); }
+
+    // 简化的高斯消元（不考虑交换列，仅行操作；生成步骤）
+    function gaussianEliminationSteps(M) {
+      const A = clone(M);
+      const steps = [{ label: '初始矩阵', mat: clone(A) }];
+      let row = 0, col = 0;
+      while (row < 3 && col < 3) {
+        // 选主元：找到最大绝对值行
+        let pivotRow = row; let maxAbs = Math.abs(A[row][col]);
+        for (let r = row+1; r < 3; r++) { const abs = Math.abs(A[r][col]); if (abs > maxAbs) { maxAbs = abs; pivotRow = r; } }
+        if (Math.abs(A[pivotRow][col]) < 1e-8) { col++; continue; }
+        if (pivotRow !== row) { // 交换行
+          const tmp = A[row]; A[row] = A[pivotRow]; A[pivotRow] = tmp;
+          steps.push({ label: `交换 R_${row+1} 与 R_${pivotRow+1}`, mat: clone(A) });
+        }
+        // 归一化主元行
+        const piv = A[row][col];
+        for (let c = col; c < 3; c++) A[row][c] /= piv;
+        steps.push({ label: `R_${row+1} \to (1/${piv.toFixed(3)}) R_${row+1}`, mat: clone(A) });
+        // 消去下面行该列
+        for (let r = row+1; r < 3; r++) {
+          const factor = A[r][col];
+          for (let c = col; c < 3; c++) A[r][c] -= factor * A[row][c];
+          steps.push({ label: `R_${r+1} \to R_${r+1} - (${factor.toFixed(3)}) R_${row+1}`, mat: clone(A) });
+        }
+        row++; col++;
+      }
+      // 回代消上方（可选，简单展示）
+      for (let i = 2; i >= 0; i--) {
+        // 找到该行首个非零的列
+        let lead = -1; for (let j = 0; j < 3; j++) { if (Math.abs(A[i][j]) > 1e-8) { lead = j; break; } }
+        if (lead === -1) continue;
+        for (let r = 0; r < i; r++) {
+          const factor = A[r][lead];
+          for (let c = lead; c < 3; c++) A[r][c] -= factor * A[i][c];
+          steps.push({ label: `R_${r+1} \to R_${r+1} - (${factor.toFixed(3)}) R_${i+1}`, mat: clone(A) });
+        }
+      }
+      steps.push({ label: '行阶梯形', mat: clone(A) });
+      return steps;
+    }
+
+    function renderHeat(mat) {
+      const z = mat.map(row => row.map(v => +v.toFixed(3)));
+      const data = [{ z, type: 'heatmap', colorscale: 'RdBu', zmid: 0, reversescale: true, colorbar: { title: '值' }, showscale: true }];
+      const layout = { paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)', margin:{l:40,r:20,t:20,b:40}, xaxis:{color:'#a9a9b8'}, yaxis:{color:'#a9a9b8'} };
+      Plotly.react('heat', data, layout, { displayModeBar:false });
+    }
+
+    function renderMatrixPreview(mat){
+      const container = document.getElementById('matrix-preview');
+      if (!container) return;
+      container.style.display = 'grid';
+      container.style.gridTemplateColumns = `repeat(${mat[0].length}, 1fr)`;
+      container.innerHTML = mat.flat().map(v => `<div class="matrix-cell">${(+v).toFixed(3)}</div>`).join('');
+    }
+
+    function applyStep(index){
+      if (!currentSteps.length) return;
+      const idx = Math.max(1, Math.min(index, currentSteps.length));
+      const s = currentSteps[idx-1];
+      document.getElementById('step-label').textContent = `${idx}/${currentSteps.length}`;
+      renderHeat(s.mat);
+      renderMatrixPreview(s.mat);
+      const stepEl = document.getElementById('step-formula');
+      stepEl.innerHTML = `\\[ \\text{当前步骤： } ${idx}.\\; ${s.label} \\]`;
+      typesetPage(pageEl).then(()=> attachFormulaResizer(pageEl));
+    }
+
+    function update() {
+      const M = matrixFromInputs();
+      const steps = gaussianEliminationSteps(M);
+      const textSteps = document.getElementById('text-steps');
+      textSteps.textContent = steps.map((s,i)=>`${i+1}. ${s.label}`).join('\n');
+      currentSteps = steps;
+      const slider = document.getElementById('step-slider');
+      slider.max = String(steps.length);
+      slider.value = String(steps.length);
+      applyStep(steps.length);
+    }
+
+    document.getElementById('do-elim').addEventListener('click', update);
+    document.getElementById('reset').addEventListener('click', () => {
+      const defaults = { a11:2,a12:1,a13:-1,a21:-1,a22:3,a23:2,a31:0,a32:1,a33:1 };
+      Object.entries(defaults).forEach(([id,val])=>{ document.getElementById(id).value = val; });
+      update();
+    });
+    document.getElementById('step-slider').addEventListener('input', (e) => {
+      applyStep(parseInt(e.target.value));
+    });
+
+    // 初始渲染
+    update();
+  </script>
+</body>
+</html>

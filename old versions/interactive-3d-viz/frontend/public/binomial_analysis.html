@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二项分布B(n,p)参数影响分析</title>
+    <script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .section h2 {
+            color: #333;
+            margin-top: 0;
+            font-size: 1.8em;
+            font-weight: 500;
+        }
+        
+        .section p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .plot-container {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .controls {
+            background: #e9ecef;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .controls label {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .controls select, .controls input {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-right: 15px;
+        }
+        
+        .slider-container {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid #667eea;
+        }
+        
+        .slider-group {
+            margin-bottom: 20px;
+        }
+        
+        .slider-group:last-child {
+            margin-bottom: 0;
+        }
+        
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .slider-value {
+            background: #667eea;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            min-width: 60px;
+            text-align: center;
+        }
+        
+        .slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #667eea;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #667eea;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .slider:hover::-webkit-slider-thumb {
+            background: #5a6fd8;
+            transform: scale(1.1);
+        }
+        
+        .slider:hover::-moz-range-thumb {
+            background: #5a6fd8;
+            transform: scale(1.1);
+        }
+        
+        .interactive-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 3px solid #667eea;
+        }
+        
+        .interactive-title {
+            color: #667eea;
+            font-size: 2em;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .stats-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .stat-item {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        
+        .explanation {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .explanation h3 {
+            color: #856404;
+            margin-top: 0;
+        }
+        
+        .explanation ul {
+            color: #856404;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>二项分布 B(n,p) 参数影响分析</h1>
+            <p>探索试验次数n和成功概率p对二项分布的影响</p>
+        </div>
+        
+        <div class="content">
+            <!-- 交互式滑动条部分 -->
+            <div class="interactive-section">
+                <h2 class="interactive-title">🎛️ 交互式参数控制</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 30px;">
+                    使用滑动条实时调整参数n和p，观察二项分布的动态变化
+                </p>
+                
+                <div class="slider-container">
+                    <div class="slider-group">
+                        <div class="slider-label">
+                            <span>试验次数 n</span>
+                            <span class="slider-value" id="nValue">20</span>
+                        </div>
+                        <input type="range" id="nSlider" class="slider" min="5" max="100" value="20" 
+                               oninput="updateInteractivePlot()">
+                    </div>
+                    
+                    <div class="slider-group">
+                        <div class="slider-label">
+                            <span>成功概率 p</span>
+                            <span class="slider-value" id="pValue">0.50</span>
+                        </div>
+                        <input type="range" id="pSlider" class="slider" min="0.01" max="0.99" step="0.01" value="0.50" 
+                               oninput="updateInteractivePlot()">
+                    </div>
+                </div>
+                
+                <div class="plot-container">
+                    <div id="interactivePlot"></div>
+                </div>
+                
+                <div class="stats-box">
+                    <h3>📊 实时统计特性</h3>
+                    <div id="interactiveStats" class="stats-grid"></div>
+                </div>
+                
+                <div class="explanation">
+                    <h3>🎯 实时观察要点</h3>
+                    <ul>
+                        <li><strong>分布形状</strong>: 观察p值如何影响分布的对称性和偏度</li>
+                        <li><strong>期望值位置</strong>: 红色虚线显示期望值μ = n×p的位置</li>
+                        <li><strong>分布宽度</strong>: 方差在p=0.5时最大，分布最宽</li>
+                        <li><strong>正态近似</strong>: n增大时分布趋向正态分布</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 第一部分：固定n，变化p -->
+            <div class="section">
+                <h2>📊 固定试验次数n，变化成功概率p</h2>
+                <p>观察当试验次数固定时，成功概率p的变化如何影响分布形状和统计特性。</p>
+                
+                <div class="controls">
+                    <label for="fixedN">固定试验次数 n:</label>
+                    <select id="fixedN" onchange="updateFixedNPlot()">
+                        <option value="10">10</option>
+                        <option value="20" selected>20</option>
+                        <option value="30">30</option>
+                        <option value="50">50</option>
+                    </select>
+                </div>
+                
+                <div class="plot-container">
+                    <div id="fixedNPlot"></div>
+                </div>
+                
+                <div class="stats-box">
+                    <h3>📈 统计特性对比</h3>
+                    <div id="fixedNStats" class="stats-grid"></div>
+                </div>
+                
+                <div class="explanation">
+                    <h3>🔍 观察要点</h3>
+                    <ul>
+                        <li><strong>p = 0.1</strong>: 分布右偏，大部分概率集中在小的k值</li>
+                        <li><strong>p = 0.5</strong>: 分布对称，峰值在期望值位置</li>
+                        <li><strong>p = 0.9</strong>: 分布左偏，大部分概率集中在大的k值</li>
+                        <li><strong>方差</strong>: 在p=0.5时达到最大值 n×0.25</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 第二部分：固定p，变化n -->
+            <div class="section">
+                <h2>📈 固定成功概率p，变化试验次数n</h2>
+                <p>观察当成功概率固定时，试验次数n的变化如何影响分布形状（中心极限定理的体现）。</p>
+                
+                <div class="controls">
+                    <label for="fixedP">固定成功概率 p:</label>
+                    <select id="fixedP" onchange="updateFixedPPlot()">
+                        <option value="0.1">0.1</option>
+                        <option value="0.3" selected>0.3</option>
+                        <option value="0.5">0.5</option>
+                        <option value="0.7">0.7</option>
+                        <option value="0.9">0.9</option>
+                    </select>
+                </div>
+                
+                <div class="plot-container">
+                    <div id="fixedPPlot"></div>
+                </div>
+                
+                <div class="stats-box">
+                    <h3>📊 统计特性变化</h3>
+                    <div id="fixedPStats" class="stats-grid"></div>
+                </div>
+                
+                <div class="explanation">
+                    <h3>🔍 观察要点</h3>
+                    <ul>
+                        <li><strong>小n值</strong>: 分布离散，形状不规则</li>
+                        <li><strong>中等n值</strong>: 分布开始显现钟形特征</li>
+                        <li><strong>大n值</strong>: 分布趋向正态分布（中心极限定理）</li>
+                        <li><strong>标准差</strong>: 随√n增长，相对变异系数减小</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 第三部分：3D参数表面 -->
+            <div class="section">
+                <h2>🌐 3D参数表面分析</h2>
+                <p>通过3D可视化同时观察n和p对期望值和方差的影响。</p>
+                
+                <div class="controls">
+                    <label for="surfaceType">选择表面类型:</label>
+                    <select id="surfaceType" onchange="update3DSurface()">
+                        <option value="mean" selected>期望值 E[X] = n×p</option>
+                        <option value="variance">方差 Var[X] = n×p×(1-p)</option>
+                        <option value="std">标准差 σ = √(n×p×(1-p))</option>
+                        <option value="cv">变异系数 CV = σ/μ</option>
+                    </select>
+                </div>
+                
+                <div class="plot-container">
+                    <div id="surface3DPlot"></div>
+                </div>
+                
+                <div class="explanation">
+                    <h3>🔍 3D表面特征</h3>
+                    <ul>
+                        <li><strong>期望值表面</strong>: 线性平面，随n和p同时增大</li>
+                        <li><strong>方差表面</strong>: 山脊状，在p=0.5时达到峰值</li>
+                        <li><strong>标准差表面</strong>: 类似方差但增长更缓慢</li>
+                        <li><strong>变异系数表面</strong>: 随n增大而减小，体现大数定律</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 二项分布概率质量函数
+        function binomialPMF(k, n, p) {
+            if (k < 0 || k > n) return 0;
+            
+            // 计算组合数 C(n,k)
+            let logComb = 0;
+            for (let i = 1; i <= k; i++) {
+                logComb += Math.log(n - i + 1) - Math.log(i);
+            }
+            
+            // 计算概率
+            if (p === 0) return k === 0 ? 1 : 0;
+            if (p === 1) return k === n ? 1 : 0;
+            
+            const logProb = logComb + k * Math.log(p) + (n - k) * Math.log(1 - p);
+            return Math.exp(logProb);
+        }
+        
+        // 计算二项分布统计量
+        function binomialStats(n, p) {
+            const mean = n * p;
+            const variance = n * p * (1 - p);
+            const std = Math.sqrt(variance);
+            const cv = mean > 0 ? std / mean : 0;
+            return { mean, variance, std, cv };
+        }
+        
+        // 更新固定n的图表
+        function updateFixedNPlot() {
+            const n = parseInt(document.getElementById('fixedN').value);
+            const pValues = [0.1, 0.3, 0.5, 0.7, 0.9];
+            const colors = ['#e74c3c', '#f39c12', '#2ecc71', '#3498db', '#9b59b6'];
+            
+            const traces = [];
+            const statsData = [];
+            
+            pValues.forEach((p, i) => {
+                const kValues = Array.from({length: n + 1}, (_, k) => k);
+                const probabilities = kValues.map(k => binomialPMF(k, n, p));
+                const stats = binomialStats(n, p);
+                
+                traces.push({
+                    x: kValues,
+                    y: probabilities,
+                    type: 'scatter',
+                    mode: 'lines+markers',
+                    name: `p=${p}`,
+                    line: { color: colors[i], width: 3 },
+                    marker: { size: 6, color: colors[i] }
+                });
+                
+                // 添加期望值垂直线
+                traces.push({
+                    x: [stats.mean, stats.mean],
+                    y: [0, Math.max(...probabilities)],
+                    type: 'scatter',
+                    mode: 'lines',
+                    name: `μ=${stats.mean.toFixed(1)}`,
+                    line: { color: colors[i], width: 2, dash: 'dash' },
+                    showlegend: false
+                });
+                
+                statsData.push({
+                    p: p,
+                    mean: stats.mean,
+                    variance: stats.variance,
+                    std: stats.std,
+                    cv: stats.cv,
+                    color: colors[i]
+                });
+            });
+            
+            const layout = {
+                title: `二项分布 B(${n}, p) - 固定n=${n}，变化p`,
+                xaxis: { title: '成功次数 k' },
+                yaxis: { title: '概率 P(X=k)' },
+                showlegend: true,
+                legend: { x: 0.02, y: 0.98 },
+                template: 'plotly_white',
+                height: 500
+            };
+            
+            Plotly.newPlot('fixedNPlot', traces, layout);
+            
+            // 更新统计信息
+            updateStatsDisplay('fixedNStats', statsData, 'p');
+        }
+        
+        // 更新固定p的图表
+        function updateFixedPPlot() {
+            const p = parseFloat(document.getElementById('fixedP').value);
+            const nValues = [5, 10, 20, 30, 50];
+            const colors = ['#e74c3c', '#f39c12', '#2ecc71', '#3498db', '#9b59b6'];
+            
+            const traces = [];
+            const statsData = [];
+            
+            nValues.forEach((n, i) => {
+                const kValues = Array.from({length: n + 1}, (_, k) => k);
+                const probabilities = kValues.map(k => binomialPMF(k, n, p));
+                const stats = binomialStats(n, p);
+                
+                traces.push({
+                    x: kValues,
+                    y: probabilities,
+                    type: 'scatter',
+                    mode: 'lines+markers',
+                    name: `n=${n}`,
+                    line: { color: colors[i], width: 3 },
+                    marker: { size: 4, color: colors[i] }
+                });
+                
+                // 添加期望值垂直线
+                traces.push({
+                    x: [stats.mean, stats.mean],
+                    y: [0, Math.max(...probabilities)],
+                    type: 'scatter',
+                    mode: 'lines',
+                    name: `μ=${stats.mean.toFixed(1)}`,
+                    line: { color: colors[i], width: 2, dash: 'dash' },
+                    showlegend: false
+                });
+                
+                statsData.push({
+                    n: n,
+                    mean: stats.mean,
+                    variance: stats.variance,
+                    std: stats.std,
+                    cv: stats.cv,
+                    color: colors[i]
+                });
+            });
+            
+            const layout = {
+                title: `二项分布 B(n, ${p}) - 固定p=${p}，变化n`,
+                xaxis: { title: '成功次数 k' },
+                yaxis: { title: '概率 P(X=k)' },
+                showlegend: true,
+                legend: { x: 0.02, y: 0.98 },
+                template: 'plotly_white',
+                height: 500
+            };
+            
+            Plotly.newPlot('fixedPPlot', traces, layout);
+            
+            // 更新统计信息
+            updateStatsDisplay('fixedPStats', statsData, 'n');
+        }
+        
+        // 更新3D表面图
+        function update3DSurface() {
+            const surfaceType = document.getElementById('surfaceType').value;
+            
+            const nRange = Array.from({length: 20}, (_, i) => 5 + i * 2.5); // 5 to 52.5
+            const pRange = Array.from({length: 20}, (_, i) => 0.05 + i * 0.045); // 0.05 to 0.905
+            
+            const zData = [];
+            let title, zTitle;
+            
+            for (let i = 0; i < pRange.length; i++) {
+                const row = [];
+                for (let j = 0; j < nRange.length; j++) {
+                    const n = nRange[j];
+                    const p = pRange[i];
+                    const stats = binomialStats(n, p);
+                    
+                    switch (surfaceType) {
+                        case 'mean':
+                            row.push(stats.mean);
+                            title = '期望值表面 E[X] = n×p';
+                            zTitle = '期望值';
+                            break;
+                        case 'variance':
+                            row.push(stats.variance);
+                            title = '方差表面 Var[X] = n×p×(1-p)';
+                            zTitle = '方差';
+                            break;
+                        case 'std':
+                            row.push(stats.std);
+                            title = '标准差表面 σ = √(n×p×(1-p))';
+                            zTitle = '标准差';
+                            break;
+                        case 'cv':
+                            row.push(stats.cv);
+                            title = '变异系数表面 CV = σ/μ';
+                            zTitle = '变异系数';
+                            break;
+                    }
+                }
+                zData.push(row);
+            }
+            
+            const trace = {
+                x: nRange,
+                y: pRange,
+                z: zData,
+                type: 'surface',
+                colorscale: surfaceType === 'variance' ? 'Plasma' : 'Viridis'
+            };
+            
+            const layout = {
+                title: title,
+                scene: {
+                    xaxis: { title: '试验次数 n' },
+                    yaxis: { title: '成功概率 p' },
+                    zaxis: { title: zTitle }
+                },
+                height: 600
+            };
+            
+            Plotly.newPlot('surface3DPlot', [trace], layout);
+        }
+        
+        // 更新交互式图表
+        function updateInteractivePlot() {
+            const n = parseInt(document.getElementById('nSlider').value);
+            const p = parseFloat(document.getElementById('pSlider').value);
+            
+            // 更新显示值
+            document.getElementById('nValue').textContent = n;
+            document.getElementById('pValue').textContent = p.toFixed(2);
+            
+            // 生成数据
+            const kValues = Array.from({length: n + 1}, (_, k) => k);
+            const probabilities = kValues.map(k => binomialPMF(k, n, p));
+            const stats = binomialStats(n, p);
+            
+            // 创建主要分布图
+            const mainTrace = {
+                x: kValues,
+                y: probabilities,
+                type: 'scatter',
+                mode: 'lines+markers',
+                name: `B(${n}, ${p.toFixed(2)})`,
+                line: { color: '#667eea', width: 4 },
+                marker: { size: 8, color: '#667eea' },
+                fill: 'tonexty',
+                fillcolor: 'rgba(102, 126, 234, 0.1)'
+            };
+            
+            // 期望值线
+            const meanLine = {
+                x: [stats.mean, stats.mean],
+                y: [0, Math.max(...probabilities) * 1.1],
+                type: 'scatter',
+                mode: 'lines',
+                name: `期望值 μ=${stats.mean.toFixed(1)}`,
+                line: { color: '#e74c3c', width: 3, dash: 'dash' }
+            };
+            
+            // 标准差范围
+            const stdRange1 = {
+                x: [Math.max(0, stats.mean - stats.std), Math.max(0, stats.mean - stats.std)],
+                y: [0, Math.max(...probabilities) * 0.8],
+                type: 'scatter',
+                mode: 'lines',
+                name: `μ-σ`,
+                line: { color: '#f39c12', width: 2, dash: 'dot' },
+                showlegend: false
+            };
+            
+            const stdRange2 = {
+                x: [Math.min(n, stats.mean + stats.std), Math.min(n, stats.mean + stats.std)],
+                y: [0, Math.max(...probabilities) * 0.8],
+                type: 'scatter',
+                mode: 'lines',
+                name: `μ+σ`,
+                line: { color: '#f39c12', width: 2, dash: 'dot' },
+                showlegend: false
+            };
+            
+            // 正态近似（当条件满足时）
+            let normalTrace = null;
+            if (n >= 20 && n * p >= 5 && n * (1 - p) >= 5) {
+                const normalX = [];
+                const normalY = [];
+                for (let k = 0; k <= n; k++) {
+                    const z = (k - stats.mean) / stats.std;
+                    const normalProb = (1 / (stats.std * Math.sqrt(2 * Math.PI))) * 
+                                     Math.exp(-0.5 * z * z);
+                    normalX.push(k);
+                    normalY.push(normalProb);
+                }
+                
+                normalTrace = {
+                    x: normalX,
+                    y: normalY,
+                    type: 'scatter',
+                    mode: 'lines',
+                    name: '正态近似',
+                    line: { color: '#2ecc71', width: 2, dash: 'dashdot' },
+                    opacity: 0.7
+                };
+            }
+            
+            const traces = [mainTrace, meanLine, stdRange1, stdRange2];
+            if (normalTrace) traces.push(normalTrace);
+            
+            const layout = {
+                title: `二项分布 B(${n}, ${p.toFixed(2)}) - 交互式可视化`,
+                xaxis: { 
+                    title: '成功次数 k',
+                    range: [-0.5, n + 0.5]
+                },
+                yaxis: { 
+                    title: '概率 P(X=k)',
+                    range: [0, Math.max(...probabilities) * 1.2]
+                },
+                showlegend: true,
+                legend: { x: 0.02, y: 0.98 },
+                template: 'plotly_white',
+                height: 500,
+                annotations: [
+                    {
+                        x: stats.mean,
+                        y: Math.max(...probabilities) * 1.15,
+                        text: `μ = ${stats.mean.toFixed(1)}`,
+                        showarrow: true,
+                        arrowhead: 2,
+                        arrowcolor: '#e74c3c',
+                        font: { color: '#e74c3c', size: 12 }
+                    }
+                ]
+            };
+            
+            Plotly.newPlot('interactivePlot', traces, layout);
+            
+            // 更新统计信息
+            updateInteractiveStats(n, p, stats);
+        }
+        
+        // 更新交互式统计信息
+        function updateInteractiveStats(n, p, stats) {
+            const container = document.getElementById('interactiveStats');
+            
+            // 计算额外统计量
+            const skewness = (1 - 2 * p) / Math.sqrt(n * p * (1 - p));
+            const kurtosis = (1 - 6 * p * (1 - p)) / (n * p * (1 - p));
+            const mode = Math.floor((n + 1) * p);
+            
+            container.innerHTML = `
+                <div class="stat-item">
+                    <div class="stat-value">n = ${n}</div>
+                    <div class="stat-label">试验次数</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">p = ${p.toFixed(2)}</div>
+                    <div class="stat-label">成功概率</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${stats.mean.toFixed(1)}</div>
+                    <div class="stat-label">期望值 μ</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${stats.variance.toFixed(1)}</div>
+                    <div class="stat-label">方差 σ²</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${stats.std.toFixed(2)}</div>
+                    <div class="stat-label">标准差 σ</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${stats.cv.toFixed(3)}</div>
+                    <div class="stat-label">变异系数</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${mode}</div>
+                    <div class="stat-label">众数</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${skewness.toFixed(3)}</div>
+                    <div class="stat-label">偏度</div>
+                </div>
+            `;
+        }
+        
+        // 更新统计信息显示
+        function updateStatsDisplay(containerId, statsData, paramName) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+            
+            statsData.forEach(data => {
+                const statItem = document.createElement('div');
+                statItem.className = 'stat-item';
+                statItem.style.borderLeft = `4px solid ${data.color}`;
+                
+                const paramValue = paramName === 'p' ? data.p : data.n;
+                
+                statItem.innerHTML = `
+                    <div class="stat-value">${paramName}=${paramValue}</div>
+                    <div class="stat-label">μ=${data.mean.toFixed(1)}</div>
+                    <div class="stat-label">σ²=${data.variance.toFixed(1)}</div>
+                    <div class="stat-label">σ=${data.std.toFixed(2)}</div>
+                    <div class="stat-label">CV=${data.cv.toFixed(3)}</div>
+                `;
+                
+                container.appendChild(statItem);
+            });
+        }
+        
+        // 初始化所有图表
+        document.addEventListener('DOMContentLoaded', function() {
+            updateInteractivePlot();
+            updateFixedNPlot();
+            updateFixedPPlot();
+            update3DSurface();
+        });
+    </script>
+</body>
+</html>

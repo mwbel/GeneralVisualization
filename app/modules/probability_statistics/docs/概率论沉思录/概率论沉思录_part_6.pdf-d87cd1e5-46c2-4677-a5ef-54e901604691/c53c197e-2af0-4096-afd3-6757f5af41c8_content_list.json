@@ -1,0 +1,3123 @@
+[
+    {
+        "type": "text",
+        "text": "7.27 评注",
+        "text_level": 1,
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "再论术语",
+        "text_level": 1,
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "正如我们不得不经常指出的那样,概率论领域似乎比其他领域有更多误导性的术语,似乎不可能消除,电气工程领域非常有效地解决了这个问题,每隔几年,官方委员会都会发布经修订的标准术语,然后强制该领域的期刊编辑使用[几年前,我们见证了人们几乎在一夜之间就接受了从\"兆周\"(megacycle)到\"兆赫\"(megahertz)的转变].",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "在概率论中,没有一个权威机构来进行数十项必要的改革,而任何尝试这样做的作者都会碰一鼻子灰,损失一部分读者,但是我们可以提供尝试性的建议,希望其他人能从中受益.",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "关于\"正态分布\"(normal distribution)一词的起源,各种文献提供的证据相互矛盾.卡尔·皮尔逊(KarlPearson,1920)声称它是在\"很多年前\"引入的,以避免高斯和勒让德之间关于优先发现权的争论,但没有提供参考文献.希拉里·西尔(HilarySeal,1967)将其归功于高尔顿,同样没有提供参考文献,因此需要一项新的历史研究来评判,但是,长期以来,该术语一直与以下主题相关:给定线性模型  $y = X\\beta +e$  ,其中向量  $y$  和矩阵  $X$  已知,向量参数  $\\beta$  和噪声向量  $e$  未知,高斯(Gauss,1823)称方程组  $X^{\\prime}X\\hat{\\beta} = X^{\\prime}y$  (它能给出最小二乘参数估计值  $\\hat{\\beta}$  )为\"法线方程组\"(normalequations),称恒定概率密度的椭球为\"法线表面\"(normalsurface).似乎\"normal\"这个名称是从方程组以某种方式转移到导致这些方程组的抽样分布的.",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "高斯使用\"normal\"一词是为了表达这些方程的几何意义,表示数学上的\"垂直\"从点(估计值)到平面(约束)的最小距离就是垂线的长度,但是,正如皮尔逊本人所观察到的那样,使用术语\"正态分布\"(normaldistribution)并不妥当,因为\"正态\"(normal)的通俗意义是标准的(standard)或正常的(sane),暗示着一种价值判断,这导致许多人有意无意地认为,所有其他分布在某种程度上都是不正常的.",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "实际却完全相反.所谓的\"正态\"分布在某种意义上是不正常的,因为它具有许多其他分布所没有的独特性质,我们几乎所有关于推断的经验都来自跟这种不正常的分布打交道,我们在这里必须反驳的传统信念也由此而得,数十年来,统计推断工作者一直被这种不正常的经验所误导,认为诸如置信区间之类的方法既然在正态分布上可以令人满意,对其他分布也应该有效.",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "它的另一个名称\"高斯分布\"出于其他原因也很糟糕,尽管其起源并没有奥",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "秘. 施蒂格勒（Stigler，1980）认为，没有任何发现是以其原始发现者的名字命名的，这是命名学的一般定律．术语“高斯分布”完全符合该定律，因为拉普拉斯在高斯6岁时就注意到了这种分布的基本性质及其主要特征．在拉普拉斯出生之前，棣莫弗就发现了这一分布．但是，正如我们指出的那样，该分布由于高斯的著作（Gauss，1809）而闻名．高斯提出了比以前更简单的推导方法，在当时看起来很直观，就是我们前面给出的(7.16)，这也导致该分布以他冠名.",
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "术语“中心分布”避免了使用以上两个词时遭到的反对意见，传达了正确的印象：它是最终“稳定”或“平衡”的分布，所有其他分布在各种各样操作（大数极限、卷积、随机变换，等等）的作用下趋于这种分布，并且一旦达到该分布，便可以对更大量的变换（统计人员尚不知道其中的某些变换，因为它们没有在他们的问题中出现）保持不变.",
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "例如，在19 世纪70 年代，玻尔兹曼给出一个强有力的（虽然是启发式的）论证，表明气体中的碰撞往往会导致速度的“麦克斯韦”（或高斯）频率分布．肯纳德（Kennard，1938，第3 章）证明，一旦达到该分布，就会自动维持这种分布，不受到碰撞的影响，尽管分子会在任何保守力场［也就是说，力  $\\mathbf{\\nabla}f(\\mathbf{\\nabla}x)$  可通过梯度从势能  $\\phi (x)$  得出：  $\\mathbf{\\nabla}f(\\mathbf{\\nabla}x) = - \\nabla \\phi (\\mathbf{\\nabla}x)$  ］中运动，并不断改变其速度．因此，这种分布具有的稳定性远远超出了统计学家当前使用或证明的稳定性.",
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "在尝试谨慎地使用术语“中心分布”的同时，我们也继续使用另两个不太好但习惯的词，但出于两个原因而更偏爱“高斯分布”．第一，古老的优先权问题不再引起人们的兴趣，在今天更为重要的是，“高斯分布”并不意味着任何价值判断．在我们看来，使用充满感情色彩的用词似乎是造成概率论领域混乱的主要原因，造成该领域的工作者仍然坚持一些冠冕堂皇的原则，像“无偏”（unbiased）、“容许”（admissible）和“一致最大功效”（uniformly most powerful）之类，尽管它们在实践中产生了荒谬的结果．第二，我们是在为包括统计学家和科学家在内的读者写作．每个人都了解“高斯分布”的含义，但只有统计学家才熟悉术语“正态分布”",
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "统计力学的玻尔兹曼分布以能量为指数，当然在粒子速度上是高斯分布或麦克斯韦分布．现在我们明白，概率分布之所以趋于最终的总体中心分布，是因为其最大熵性质（第11 章）．如果概率分布经受某种舍弃某些信息但保持一定量不变的变换，那么在非常一般的条件下，如果重复进行该变换，则受那些保持量的约束，分布趋于具有最大熵",
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "这就引出了术语“中心极限定理”（central limit theorem），我们将其作为刚才提到现象（保持一阶矩和二阶矩的重复卷积下的概率分布行为）的特例而推导",
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "出. 此名称由乔治·波利亚(George Pólya, 1920)引入, 形容词\"中心\"(central)用于修饰名词\"定理\"(theorem), 也就是说, 这一极限定理是概率论的中心. 如今, 几乎所有学生都认为\"中心\"修饰了\"极限\", 因此它是关于\"中心极限\"的定理, 不管那意味着什么. ①",
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "鉴于平衡现象的存在, 看来波利亚的用词选择是幸运的, 这是他没有预见到的. 我们建议的术语也充分利用了这一点. 从这个角度来看, 对于第一次听到\"中心分布\"和\"中心极限定理\"这两个术语的人来说, 它们都传达了正确的含义. 将\"中心极限\"理解为趋于中心分布的极限, 也会让人们产生正确的直观印象.",
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "第8章 充分性与辅助性",
+        "text_level": 1,
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "在前面五章中,我们研究了概率论在一些问题中的应用。这些应用很基础,却很典型。现在,我们来回顾这些例子并注意它们揭示的一些有趣性质。出于策略性的原因,了解这些性质很有用。过去很多时候,当人们尝试通过使用直观的特定工具而不是概率论来进行推理时,除非有某些特殊情况,否则难以得到令人满意的结果。因此,这些性质在正统统计学中具有重要的理论价值。",
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "然而,本章的内容在应用中并不是真正需要的。对于我们来说,只要遵守概率论规则,这些都是顺理成章会获得的细节。也就是说,只要我们在每个问题中严格且一致地应用第2章导出的规则,就自然会对问题做出最优推断,而无须特别注意这些方面。对我们而言,它们在帮助我们更好地理解概率论内在运作机制方面具有\"普遍的文化价值\"。人们可以更清楚地明白为什么要遵守第2章中的规则,以及不遵守这些规则的预期后果。",
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "8.1 充分性",
+        "text_level": 1,
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "在我们的参数估计示例中,概率论有时似乎没有使用我们提供的所有数据。在第6章中,当我们根据  $n$  次试验数据估计二项分布的参数  $\\theta$  时, $\\theta$  的后验PDF仅取决于试验次数  $n$  和成功次数  $r$ ,所有有关成功和失败顺序的信息都被忽略了。",
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "对于在  $\\alpha \\leqslant x \\leqslant \\beta$  中的矩形分布, $\\alpha$  和  $\\beta$  的联合后验PDF仅使用极大值和极小值  $(x_{\\min}, x_{\\max})$ ,而忽略了其他中间数据。",
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "同样,在第7章中,对于高斯抽样分布和数据集  $D \\equiv \\{x_{1}, \\dots , x_{n}\\}$ ,参数  $\\mu$  和  $\\sigma$  的后验PDF仅依赖于  $n$  和前二阶矩  $(\\overline{\\sigma}, \\overline{x^{2}})$ 。数据中的其他  $n - 2$  个特征传达了大量其他信息,我们在使用概率论时却忽略了它们。",
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "难道概率论在这里没有做它所能做的所有事情吗?不是这样的。第2章的证明排除了这种可能性。在满足合理性和一致性的合情条件下,我们所使用的法则只会产生唯一的结果。那么看起来,没有使用的数据一定与我们所问的问题无关。但是概率论本身能更直接地证实这种猜想吗?",
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "这为我们引入了一个关于推断的非常微妙的理论性质。拉普拉斯(Laplace, 1812, 1824 edn, Supp. V)注意到过这种现象的一些特殊情况。100年后,费希尔",
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "(Fisher, 1922) 对其进行总结并赋予了它现在的名称, 杰弗里斯 (Jeffreys, 1939) 指出了它对贝叶斯推断的重要性. 直到最近, 我们在解决第 15 章中讨论的\"边缘化悖论\"时, 才对它在推断中的作用有了进一步的理解.",
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "如果知道却没有使用数据的某些方面, 那么我们应该可以得出结论: 这些方面即使不知道也无所谓. 这样, 如果参数  $\\theta$  的后验 PDF 只通过函数  $r(x_{1}, \\dots , x_{n})$  (称为\"性质  $\\mathbb{R}$  \")依赖于数据  $D = \\{x_{1}, \\dots , x_{n}\\}$ , 那么只要给定  $r$ , 我们就能对  $\\theta$  做出同样的推断, 这似乎是合情的. 这将证明: 正如前面猜测的那样, 数据的未使用部分确实是无关的.",
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "给定抽样概率密度函数  $p(x_{1}, \\dots , x_{n}|\\theta)$  和先验分布  $p(\\theta |I) = f(\\theta)$ , 使用所有数据的后验 PDF 是",
+        "page_idx": 4
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(\\theta |D I) = h(\\theta |D) = \\frac{f(\\theta)p(x_{1}, \\cdots, x_{n}|\\theta)}{\\int \\mathrm{d}\\theta^{\\prime} f(\\theta^{\\prime}) p(x_{1}, \\cdots, x_{n}|\\theta^{\\prime})}. \\tag{8.1}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "注意, 这里我们并没有假定抽样是独立或可交换的. 抽样 PDF 没有必要能以  $p(x_{1}, \\dots , x_{n}|\\theta) = \\prod_{i} p(x_{i}|\\theta)$  形式分解, 边缘概率  $p(x_{i}|\\theta) = k_{i}(x_{i}, \\theta)$  和  $p(x_{j}|\\theta) = k_{j}(x_{j}, \\theta)$  没有必要是相同的函数. 现在, 我们在样本空间  $S_{x}$  中进行变量变换  $(x_{1}, \\dots , x_{n}) \\rightarrow (y_{1}, \\dots , y_{n})$ , 使得  $y_{1} = r(x_{1}, \\dots , x_{n})$ . 然后, 选择  $(y_{2}, \\dots , y_{n})$  使得雅可比矩阵",
+        "page_idx": 4
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nJ = \\frac{\\partial(y_{1}, \\cdots, y_{n})}{\\partial(x_{1}, \\cdots, x_{n})} \\tag{8.2}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "有界且在  $S_{x}$  上处处存在. 那么, 变量变换是  $S_{x}$  到  $S_{y}$  的一一映射, 抽样密度",
+        "page_idx": 4
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\ng(y_{1}, \\dots , y_{n}|\\theta) = |J|^{-1} p(x_{1}, \\dots , x_{n}|\\theta) \\tag{8.3}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "可以代替  $p(x_{1}, \\dots , x_{n}|\\theta)$  在后验 PDF 公式中使用:",
+        "page_idx": 4
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nh(\\theta |D) = \\frac{f(\\theta) g(y_{1}, \\cdots, y_{n}|\\theta)}{\\int \\mathrm{d}\\theta^{\\prime} f(\\theta^{\\prime}) g(y_{1}, \\cdots, y_{n}|\\theta^{\\prime})}, \\tag{8.4}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "其中的雅可比矩阵因子由于跟  $\\theta$  无关, 在分子和分母中消去了.",
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "性质  $\\mathbb{R}$  表明, 对于所有  $\\theta \\in S_{\\theta}$ , (8.4) 独立于  $(y_{2}, \\dots , y_{n})$ . 将此条件写为导数形式并置为 0 , 我们发现它定义了先验  $f(\\theta)$  必须满足的  $n - 1$  个联立积分方程组 (实际上, 这只是正交条件):",
+        "page_idx": 4
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\int_{S_{\\theta}} \\mathrm{d}\\theta^{\\prime} K_{i}(\\theta , \\theta^{\\prime}) f(\\theta^{\\prime}) = 0, \\quad \\theta \\in S_{\\theta}, \\quad 2 \\leqslant i \\leqslant n, \\tag{8.5}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "其中第  $i$  个核是",
+        "page_idx": 4
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nK_{i}(\\theta , \\theta^{\\prime}) \\equiv g(y|\\theta) \\frac{\\partial g(y|\\theta^{\\prime})}{\\partial y_{i}} - g(y|\\theta^{\\prime}) \\frac{\\partial g(y|\\theta)}{\\partial y_{i}}, \\tag{8.6}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "我们使用了缩写  $y \\equiv (y_{1}, \\dots , y_{n})$  等. 它是反对称的:  $K_{i}(\\theta , \\theta^{\\prime}) = - K_{i}(\\theta^{\\prime}, \\theta)$ .",
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "8.2 费希尔充分性",
+        "text_level": 1,
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "如果方程组(8.5)只对某个特定的先验  $f(\\theta)$  成立,那么  $K_{i}(\\theta ,\\theta^{\\prime})$  可能不会消去,它由于依赖于  $\\theta^{\\prime}$  ,只需与该特定函数正交.如果方程组(8.5)对所有  $f(\\theta)$  都成立[正如费希尔(Fisher,1922)所暗示的那样,但他没有提及  $f(\\theta)$  ],那么 $K_{i}(\\theta ,\\theta^{\\prime})$  必须与函数  $f(\\theta^{\\prime})$  的完整集合正交,因此对于  $2\\leqslant i\\leqslant n$  几乎处处为0. 注意到核函数可以写成",
+        "page_idx": 5
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nK_{i}(\\theta ,\\theta^{\\prime}) = g(y|\\theta)g(y|\\theta^{\\prime})\\frac{\\partial}{\\partial y_{i}}\\ln \\frac{g(y|\\theta^{\\prime})}{g(y|\\theta)}, \\tag{8.7}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "这个条件可以表述为:给定任意  $(\\theta ,\\theta^{\\prime})$  ,对于所有可能的样本(也就是,对于使得  $g(y|\\theta)g(y|\\theta^{\\prime})\\neq 0$  的所有  $\\{y_{1},\\dots ,y_{n};\\theta ;\\theta^{\\prime}\\}$  值),比值  $[g(y|\\theta^{\\prime}) / g(y|\\theta)]$  必须独立于分量  $y_{2},\\dots ,y_{n}$  .因此,要不依赖于任何先验而拥有性质R,  $g(y|\\theta)$  必须具有函数形式",
+        "page_idx": 5
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\ng(y_{1},\\dots ,y_{n}|\\theta) = q(y_{1}|\\theta)m(y_{2},\\dots ,y_{n}). \\tag{8.8}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "对(8.8)中的  $y_{2},\\dots ,y_{n}$  积分,我们看到,  $q(y_{1}|\\theta)$  表示的函数与  $y_{1}$  的边缘抽样PDF只相差一个归一化常数.",
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "转换回原始变量,费希尔充分性要求抽样PDF的形式为",
+        "page_idx": 5
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(x_{1},\\dots ,x_{n}|\\theta) = p(r|\\theta)b(x_{1},\\dots ,x_{n}), \\tag{8.9}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "其中  $p(r|\\theta)$  是  $r(x_{1},\\dots ,x_{n})$  的边缘密度.",
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "(8.9)由费希尔(Fisher,1922)给出.如果抽样分布能以形式(8.8)和(8.9)分解,则  $y_{2},\\dots ,y_{n}$  的抽样PDF与  $\\theta$  无关.在这种情况下,他凭直觉感到  $y_{2},\\dots ,y_{n}$  的值不能包含有关  $\\theta$  的任何信息.所有信息都应该包含在单个量  $r$  中,他称其为充分统计量.费希尔的推理只是在抽样论场景下的一种猜想.哪怕只是在这种场景下,我们也不知道,不使用先验和后验概率概念如何才能证明这一猜想.",
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "作为逻辑的概率论不需要任何猜想就可以直接证明这一性质.事实上,在模型(8.1)中使用(8.9),函数  $b(x)$  在分子和分母中消去了,我们马上得到",
+        "page_idx": 5
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nh(\\theta |D)\\propto f(\\theta)p(r|\\theta). \\tag{8.10}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "因此,如果(8.10)成立,那么  $r(x_{1},\\dots ,x_{n})$  就是费希尔意义上的充分统计量.在使用假设模型(8.1)进行贝叶斯推断时,量  $r$  的知识的确可以告诉我们整个数据集  $\\{x_{1},\\dots ,x_{n}\\}$  中包含的关于  $\\theta$  的所有信息,而且这对于所有先验  $f(\\theta)$  都是成立的.",
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "这个想法马上可以推广到更多变量上.如果形为  $g(y_{1},\\dots ,y_{n}|\\theta)$  的抽样分布能以形式  $h(y_{1},y_{2}|\\theta)m(y_{3},\\dots ,y_{n})$  分解,我们就说  $y_{1}(x_{1},\\dots ,x_{n})$  和  $y_{2}(x_{1},\\dots ,x_{n})$",
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "是  $\\theta$  的联合充分统计量,其中  $\\theta$  可以是多维的.如果存在两个参数  $\\theta_{1}$  和  $\\theta_{2}$  ,使得在坐标系统  $\\{y_{i}\\}$  中有",
+        "page_idx": 6
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\ng(y_{1},\\dots ,y_{n}|\\theta_{1}\\theta_{2}) = h(y_{1}|\\theta_{1})k(y_{2}|\\theta_{2})m(y_{3},\\dots ,y_{n}), \\tag{8.11}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "那么,  $y_{1}(x_{1},\\dots ,x_{n})$  是  $\\theta_{1}$  的充分统计量,  $y_{2}$  是  $\\theta_{2}$  的充分统计量,依此类推.",
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "8.2.1 示例",
+        "text_level": 1,
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "我们在第7章对高斯分布的讨论已经证明,它具有充分统计量[(7.25)~(7.30)].如果数据  $D = \\{y_{1},\\dots ,y_{n}\\}$  由  $n$  个独立观测值  $y_{i}$  组成,那么,根据(7.28)和(7.29),均值为  $\\mu$  、方差为  $\\sigma^{2}$  的抽样分布可写成",
+        "page_idx": 6
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(D|\\mu \\sigma I) = \\left(\\frac{1}{2\\pi\\sigma^{2}}\\right)^{n / 2}\\exp \\left\\{-\\frac{n}{2\\sigma^{2}}\\left[(\\mu -\\overline{y})^{2} + s^{2}\\right]\\right\\} , \\tag{8.12}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "其中  $\\overline{y}$  和  $s^{2}$  是观察到的样本均值和方差,见(7.30).由于它们是在抽样分布(8.12)中关于数据的唯一属性,也是在联合后验分布  $p(\\mu \\sigma |DI)$  中关于数据的唯一属性,所以它们是估计  $\\mu$  和  $\\sigma$  的联合充分统计量.尽管是一回事,但是通过贝叶斯定理进行充分性检验,常常比通过分解式(8.11)进行检验容易.",
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "现在我们分开研究各个参数的充分性.如果  $\\sigma$  已知,可以求得只针对  $\\mu$  的后验分布:",
+        "page_idx": 6
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(\\mu |\\sigma D I) = A\\frac{p(\\mu|I)p(D|\\mu\\sigma I)}{\\int\\mathrm{d}\\mu p(\\mu|I)p(D|\\mu I)}, \\tag{8.13}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 6
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{l}{{p(x_{1},\\cdots,x_{n}|\\mu\\sigma I)=A\\exp\\left\\{-\\frac{1}{\\sigma^{2}}\\sum_{i=1}^{n}(x_{i}-\\mu)^{2}\\right\\}}}\\\\ {{=A\\exp\\left\\{-\\frac{n s^{2}}{2\\sigma^{2}}\\right\\}\\times\\exp\\left\\{-\\frac{n}{2\\sigma^{2}}(\\overline{{x}}-\\mu)^{2}\\right\\},}}\\end{array} \\tag{8.14}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "其中",
+        "page_idx": 6
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\overline{{x}}\\equiv \\frac{1}{n}\\sum_{i = 1}^{n}x_{i},\\qquad \\overline{{x}}^{2}\\equiv \\frac{1}{n}\\sum_{i = 1}^{n}x_{i}^{2},\\qquad s^{2}\\equiv \\overline{{x^{2}}} -\\overline{{x}}^{2}, \\tag{8.15}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 6
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(\\mu |\\sigma D I)\\propto p(u|I)\\exp \\left\\{-\\frac{n}{2\\sigma^{2}} (\\overline{{x}} -\\mu)\\right\\} \\tag{8.16}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "分别是样本均值、均方和方差.因子  $\\exp \\{- ns^{2} / 2\\overline{{s}}^{2}\\}$  同时出现在分子和分母中,因此消去了.",
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "同样,如果  $\\mu$  已知,则可以得到只针对  $\\sigma$  的后验PDF是",
+        "page_idx": 6
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(\\sigma |\\mu D I)\\propto p(\\sigma |I)\\sigma^{-n}\\exp \\left\\{-\\frac{n}{2\\sigma^{2}}\\left(\\overline{{x^{2}}} -2\\mu \\overline{{x}} +\\mu^{2}\\right)\\right\\} . \\tag{8.17}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "因为正统(非贝叶斯)统计中选择估计量的标准很少,所以费希尔充分性在正统统计中极其重要.此外,费希尔充分性还有其他标准缺乏的重要性质:这是信息",
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "概念首次出现在正统观念中。如果存在  $\\theta$  的充分统计量, 则很难不使用它而使用其他统计量来对  $\\theta$  做推断。从贝叶斯的角度来看, 这相当于有意抛弃与问题有关的数据中的一些信息。①",
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "8.2.2 布莱克韦尔-拉奥定理",
+        "text_level": 1,
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "使用信息的论证在正统理论中不太流行, 但是戴维·布莱克韦尔和卡利亚姆普遍·拉奥在20世纪40年代给出了一个定理, 确实为在正统统计中使用充分统计量提供了一种理论上的支持。令  $r(x_{1},\\dots ,x_{n})$  是  $\\theta$  的费希尔充分统计量, 令  $\\beta (x_{1},\\dots ,x_{n})$  是  $\\theta$  的任意其他参考估计量。根据(8.9), 以  $r$  为条件的数据联合PDF为",
+        "page_idx": 7
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(x_{1},\\dots ,x_{n}|r\\theta) = b(x)p(r|x\\theta) = b(x)\\delta (r - r(x)), \\tag{8.18}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "与  $\\theta$  无关。这样, 条件期望",
+        "page_idx": 7
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\beta_{0}(r)\\equiv \\langle \\beta |r\\theta \\rangle = E(\\beta |r\\theta) \\tag{8.19}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "也与  $\\theta$  无关, 所以  $\\beta_{0}$  仅是  $x_{i}$  的函数, 本身就是  $\\theta$  的可信估计量, 并且仅通过充分统计量  $r$  依赖于观测值:  $\\beta_{0} = E(\\beta |r)$  。该定理是说, 对于所有  $\\theta$ , \"二次风险\"",
+        "page_idx": 7
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nR(\\theta ,\\beta)\\equiv E\\left[(\\beta -\\theta)^{2}|\\theta \\right] = \\int \\mathrm{d}x_{1}\\cdot \\cdot \\cdot \\mathrm{d}x_{n}[\\beta (x_{1},\\cdot \\cdot \\cdot ,x_{n}) - \\theta ]^{2} \\tag{8.20}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "满足不等式",
+        "page_idx": 7
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nR(\\theta ,\\beta_{0})\\leqslant R(\\theta ,\\beta). \\tag{8.21}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "如果  $R(\\theta ,\\beta)$  有界, 当且仅当  $\\beta_{0} = \\beta$  时, 上式中的等号成立, 也就是说, 只有当  $\\beta$  本身通过充分统计量  $r$  依赖于数据时等号成立。",
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "换句话说, 给定  $\\theta$  的任意估计量  $\\beta$ , 如果充分统计量  $r$  存在, 那么, 我们可以找到另一个估计量  $\\beta_{0}$ , 它具有较低或相等的风险, 且仅依赖于  $r$  。因此, 通过二次风险准则所能找到的最优估计量, 总是仅仅通过  $r$  依赖于数据。德格罗特[de Groot, 1975, 1986(第2版), 第373页]对此提供了一个证明。第13章和第14章将进一步讨论正统统计中的风险概念。但是, 如果不存在充分统计量, 那么, 由于浪费信息, 正统估计理论确实会存在问题。没有任何一个估计量能记录数据中的所有相关信息。",
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "因为风险准则是忽略先验信息的纯抽样论概念, 布莱克韦尔和拉奥的论证并不能说服贝叶斯主义者。但是, 贝叶斯主义者拥有使用充分统计量的更好理由: 在",
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "数学上简单明了的是,从(8.9)和(8.10)可以看出,如果存在充分统计量,则贝叶斯定理将自动得到它,无须我们特别注意该概念.事实确实如此:根据第2章的证明,无论充分统计量是否存在,贝叶斯定理都将使我们得出最优推断结果.因此,从贝叶斯推断的角度来看:充分性是一个有效的概念,但是它没有基本的理论价值,只能方便计算,而不会影响推断的质量.",
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "我们已经看到,对于二项抽样分布、矩形抽样分布和高斯抽样分布,都存在充分统计量.但是,考虑柯西分布",
+        "page_idx": 8
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(x_{1},\\dots ,x_{n}|\\theta I) = \\prod_{i = 1}^{n}{\\frac{1}{\\pi}}{\\frac{1}{1 + (x_{i} - \\theta)^{2}}}, \\tag{8.22}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "它无法以形式(8.9)分解,因此没有充分统计量.对于柯西分布,似乎没有任何数据是无关紧要的.贝叶斯推断会使用它的每一份数据,并使我们对  $\\theta$  的推断(即关于  $\\theta$  的后验PDF的详细信息)有所不同.这样,对于正统统计,就没有一个令人满意的  $\\theta$  估计量.单个函数仅传达数据的一条信息,而遗漏了  $n - 1$  条其他信息.所有这些信息都是相关的,并且会被贝叶斯方法使用.",
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "8.3 广义充分性",
+        "text_level": 1,
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "由于没有使用先验,费希尔无法意识到的是,对于所有先验成立的附加条件至关重要.费希尔充分性公式(8.9)是独立于先验而获得性质R的强必要条件.但是,我们直到最近才意识到,性质R可能在依赖于先验的更弱条件下成立.因此,起源于拉普拉斯的贝叶斯思想充分性概念,实际上在贝叶斯推断中比在抽样论中具有更广泛的意义.",
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "要明白这一点,注意到积分方程组(8.5)是线性的,我们可以从线性向量空间的角度思考.令所有先验类在参数空间  $S_{\\theta}$  上张成函数空间(希尔伯特空间)  $H$  如果性质R仅对张成子空间  $H^{\\prime}\\subset H$  的先验的某些子类  $f(\\theta)\\in H^{\\prime}$  成立,那么在(8.5)中,仅要求  $K_{i}(\\theta ,\\theta^{\\prime})$  在该子空间上的投影能消去.这样,  $K_{i}(\\theta ,\\theta^{\\prime})$  可以是正交于  $H^{\\prime}$  的函数的补函数空间  $(H - H^{\\prime})$  上的任意函数.",
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "新的理解是,尽管不存在费希尔意义上的充分统计量,但是对于某些先验可能存在\"有效充分统计量\"任意给定函数  $r(x_{1},\\dots ,x_{n})$  和抽样密度函数  $p(x_{1},\\dots ,x_{n}|$ $\\theta)$  ,可以用(8.6)构造核函数  $K_{i}(\\theta ,\\theta^{\\prime})$  .如果该核函数是不完全的[也就是说,当 $(\\theta ,\\theta^{\\prime},i)$  在取值范围内变化时,该核函数(可以认为是以  $(\\theta ,i)$  为参数的  $\\theta^{\\prime}$  的一组函数)不足以张成整个函数空间  $H$  ],那么,积分方程组(8.5)具有非零解  $f(\\theta)$  如果存在非负解,则它们将确定先验函数  $f(\\theta)$  的一个子类,  $r$  对于该子类是充分统计量.",
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "如此就存在这样的可能性:对于不同的先验,数据的不同函数  $r(x_{1},\\dots ,x_{n})$  都可能充当充分统计量的角色。这意味着:使用特定的先验可能会使数据的某些特定方面无关,使用不同的先验可能会使数据的不同方面无关。对此没有心理准备的人可能会认为发现了矛盾或悖论。",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "这种现象只在那些从频率角度考虑概率的人眼中是神秘的,只要我们将概率分布视为信息的载体,其原因就会马上变得简单明了。实际上,它只不过是布尔代数  $AA = A$  的原理:冗余信息不会被计算两次。只有在传达数据中没有的信息时,先验中的信息才对结论有影响。同样,只有在传达先验中没有的信息时,数据中的信息才对结论有影响。先验和数据中都有的信息是冗余的,在任何一个地方删除它不会影响我们的结论。因此,在贝叶斯推断中,先验只需传达数据中也存在的某些信息,就可以使数据的某些方面变得无关。",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "这种新的自由,对于贝叶斯推断来说是细枝末节,还是提供了费希尔和杰弗里斯从未想到过的新力量呢?为了表明我们不是在讨论一种不可能存在的情况,请注意,我们已经看到了这种现象的一个极端例子,它就是以前使用二项式猴子先验分布在坛子抽样问题中所显示的奇怪特性(第6章)。尽管对于其他先验而言所有数据都是相关的,但是这种特殊先验使得所有数据都不相关。",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "8.4 带冗余参数的充分性",
+        "text_level": 1,
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "在8.2节中,参数  $\\theta$  可能是多维的,同样的一般论证也会以同样的方式进行。现在,如果我们假设问题中有两个参数  $\\theta$  和  $\\eta$ ,则问题将变得更困难。但是,如果我们对  $\\eta$  不感兴趣,那么充分性问题仅涉及  $\\theta$  的边缘后验PDF。用乘法规则分解先验  $p(\\theta \\eta |I) = f(\\theta)g(\\eta |\\theta)$ ,我们可以将所需的后验PDF写成",
+        "page_idx": 9
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nh(\\theta |D) = \\frac{\\int\\mathrm{d}\\eta p(\\theta\\eta)f(x_{1},\\cdots,x_{n}|\\theta\\eta)}{\\int\\int\\mathrm{d}\\theta\\mathrm{d}\\eta p(\\theta\\eta)f(x_{1},\\cdots,x_{n}|\\theta\\eta)} = \\frac{f(\\theta)F(x_{1},\\cdots,x_{n}|\\theta)}{\\int\\mathrm{d}\\theta f(\\theta)F(x_{1},\\cdots,x_{n}|\\theta)}, \\tag{8.23}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "其中",
+        "page_idx": 9
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nF(x_{1},\\dots ,x_{n}|\\theta)\\equiv \\int \\mathrm{d}\\eta p(\\eta |\\theta I)f(x_{1},\\dots ,x_{n}|\\theta \\eta). \\tag{8.24}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "由于这与(8.1)有相同的数学形式,可以重复步骤(8.5)~(8.9),得到相同的结果。给定任意使得积分(8.24)收敛的  $p(\\eta |\\theta I)$ ,我们发现, $\\theta$  的边缘分布对于所有先验  $f(\\theta)$  都具有性质  $\\mathbb{R}$ ,这样, $F(x_{1},\\dots ,x_{n}|\\theta)$  一定能分解为形式",
+        "page_idx": 9
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nF(x_{1},\\dots ,x_{n}|\\theta) = F^{*}(\\eta |\\theta)B(x_{1},\\dots ,x_{n}). \\tag{8.25}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "但是,由于  $F(x_{1},\\dots ,x_{n}|\\theta)$  不再是抽样密度函数(对于不同的先验  $p(\\eta |\\theta I)$ ,它是",
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "不同的函数),情况变得完全不同。现在, $\\{F, F^{*}, B\\}$  都是  $p(\\eta | \\theta I)$  的泛函。因此,冗余参数的存在改变了细节,但是充分性的一般现象仍然存在。",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "8.5 似然原理",
+        "text_level": 1,
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "在应用贝叶斯定理时,参数  $\\theta$  的后验PDF始终是先验  $p(\\theta |I)$  和似然函数  $L(\\theta) \\propto p(D| \\theta I)$  的乘积,数据只出现在似然函数中。因此很明显:",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "在指定模型的情况下,数据  $D$  的似然函数  $L(\\theta)$  包含  $D$  中所有有关  $\\theta$  的信息。",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "对我们来说,这只是概率论乘法规则的直接结果,在数学上微不足道,就像乘法表一样毋庸置疑。换句话说,如果两个数据集  $D$  和  $D'$  的似然函数只相差一个归一化常数: $L(\\theta) = a L'(\\theta)$ ,其中  $a$  是与  $\\theta$  无关的常数,那么它们对于  $\\theta$  的推断(无论是点估计、区间估计还是假设检验)有相同的作用。但是,对于那些认为概率分布是由于\"随机性\"产生的物理现象而非不完全信息载体的人来说,上述陈述因为仅涉及抽样分布而具有独立于乘法规则和贝叶斯定理的意义。他们称之为\"似然原理\",它作为有效推断原理的地位长期以来一直是争论的主题,至今仍在继续。",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "乔治·巴纳德(George Barnard,1947)提出该原理的基本论据是,无关数据应从推断中消去。假设除了获得数据  $D$  外,我们抛硬币并记录结果  $Z = \\mathrm{H}$  或  $\\mathrm{T}$  这样,正如巴纳德所写的那样,我们所有数据的抽样概率变为",
+        "page_idx": 10
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(D Z|\\theta) = p(D|\\theta)p(Z). \\tag{8.26}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "然后他这样推理:抛硬币的结果显然不能告诉我们数据  $D$  之外关于参数  $\\theta$  的信息,因此基于  $D Z$  的对  $\\theta$  的推断应该与仅基于  $D$  的推断完全相同。他由此得出结论:似然中的常数因子一定与推断无关。也就是说,关于  $\\theta$  的推断仅取决于不同  $\\theta$  值的似然比:",
+        "page_idx": 10
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\frac{L_{1}}{L_{2}} = \\frac{p(D Z|\\theta_{1}I)}{p(D Z|\\theta_{2}I)} = \\frac{p(D|\\theta_{1}I)}{p(D|\\theta_{2}I)}, \\tag{8.27}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "无论是否包含  $Z$ ,它们都是相同的。这通常被认为是正统统计学家对似然原理的第一个陈述。这正是我们在第4章中已经认为非常显而易见的东西,当时我们注意到似然不是概率,因为它的归一化是任意的。但并非所有正统统计学家都认为巴纳德的论证令人信服。",
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "艾伦·伯恩鲍姆(Allan Birnbaum,1962)尝试给出了似然原理的首个证明,这一证明为正统统计学家普遍接受。从他发表论文之后引发的热烈讨论中,我们看到许多人将此原理的证明视为统计学中的一个重大历史事件。他通过另一种方式再次诉诸抛硬币,利用了费希尔充分性原理以及对他来说更原始的条件原理。",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "条件原理",
+        "text_level": 1,
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "假设我们可以通过实验  $E_{1}$  或  $E_{2}$  来估计  $\\theta$ 。如果通过抛硬币决定进行哪个实验,那么,我们获得的关于  $\\theta$  的信息应该仅仅取决于实际做的实验。也就是说,可能做但未真正做的实验无法告诉我们有关  $\\theta$  的任何信息。",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "但是伯恩鲍姆的论证并未为所有正统统计学家所接受,而且伯恩鲍姆自己后来似乎也有疑虑。人们可以通过询问\"你是如何选定实验  $E_{1}$  和  $E_{2}$  的\"来质疑条件原理。也许,我们是在对它们的性质有一定了解的情况下做出选择的。例如,我们可能知道,一种实验对小  $\\theta$  非常适合,另一种实验适合大  $\\theta$ 。假设实验  $E_{1}$  和  $E_{2}$  都对小  $\\theta$  准确,实验  $E_{3}$  对大  $\\theta$  更准确;我们选择实验  $E_{1}$  和  $E_{2}$ ,然后抛硬币选择了  $E_{1}$ 。这样,所抛硬币未选择  $E_{2}$  的事实就不必使  $E_{2}$  与推断无关。我们将其作为备选实验的事实就隐含了一些倾向于小  $\\theta$  的先验知识。",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "无论如何,肯普索恩和福克斯(Kempthorne & Folks,1971)以及弗雷泽(Fraser,1980)都继续抨击似然原理并否认其有效性。费希尔几乎攻击了所有其他推断原理而没有攻击似然原理,我们可以由此推断他很可能接受了该原理,尽管他自己的推断流程并不重视它。但是,他持续基于其他理念公然抨击贝叶斯定理的使用。有关这方面的进一步讨论,请参阅安东尼·爱德华兹的论文(A.W.F.Edwards,1974)或伯杰和沃尔珀特的著作(Berger & Wolpert,1988)。与后面要讨论的辅助性概念联系起来,问题会变得更加复杂和混乱。",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "出于以下三个原因,正统统计不得不违反似然原理:(1)核心教义\"估计量的优劣取决于其长期抽样性质\"未提及似然函数;(2)第二条教义\"估计的准确性由估计量抽样分布的宽度决定\"又涉及似然原理;(3)其中包含进行\"随机化\"以生成推断中使用的概率分布的流程。人们仍在教导并热情地捍卫这些教义,他们似乎仍不理解,自己的结论不是由数据中的相关证据确定的,而是由无关的随机化假象确定的。在第17章中,我们将研究正统统计的所谓\"随机化检验\",了解贝叶斯分析如何处理同样的问题。",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "的确,如果按字面意义理解,甚至连抛硬币论证也不能被无条件地接受,对于了解真实抛硬币过程中的复杂原理的物理学家(如第10章所述)来说尤其如",
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "此. 如果  $\\theta$  与硬币之间存在任意逻辑关系, 知道  $\\theta$  能告诉我们有关抛硬币的信息, 那么知道抛硬币的结果就能告诉我们有关  $\\theta$  的信息. 例如, 我们通过测量单摆周期来测量重力场, 而硬币又被抛在相同的重力场中, 那么两者之间显然存在逻辑关系. 巴纳德的论证和伯恩鲍姆的条件原理都隐含着一种假设, 那就是两者之间不存在逻辑关系. 他们大概会回应, 自己实际上是在某种更抽象的意义上谈\"抛硬币\", 指的是与  $\\theta$  及其测量方法完全无关的某种二元实验, 只是没有明言. 那么, 他们应该有责任确切地定义该二元实验是什么, 但他们似乎从来没有这样做过.",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "我们认为, 这种思路会使我们陷入无穷无尽的对无关细节的回溯中. 在我们的概率论系统中, 似然原理作为乘法规则的直接结果已经被证明, 而与抛硬币或任何其他辅助实验无关. 但是对于那些忽略考克斯定理的人来说, 特定工具还是优先于概率论法则, 正统统计的一个派别仍然从策略上否定似然原理的有效性.",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "重要的是要注意到, 似然原理与似然函数一样, 仅适用于不受怀疑的指定模型. 从更广泛的角度来看, 对于对  $\\theta$  做最优估计, 或者决定是需要更多数据还是现在停止实验, 它可能包含也可能不包含我们所需数据中的所有信息. 是否有其他外部证据表明使用该工具的效果正在变糟? 是否有理由怀疑我们的模型可能不正确? 也许需要一个新参数  $\\lambda$ . 但是, 声称需要这样的附加信息是对似然原理的否定, 只表明对\"似然原理是什么\"存在误解. 似然原理是一个\"局部\"最优原理, 而不是\"全局\"最优原理.",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "8.6 辅助性",
+        "text_level": 1,
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "考虑根据抽样分布  $p(x|\\theta I) = f(x - \\theta |I)$  估计位置参数  $\\theta$  的问题. 费希尔(Fisher, 1934)意识到正统统计方法中存在一个奇怪的困难. 选择数据的某个函数  $\\theta^{*}(x_{1},\\dots ,x_{n})$  作为估计量, 两个不同的数据集可能会产生相同的  $\\theta$  估计, 但这两个数据集的结构(例如取值范围、第四中心矩等)可能大相径庭, 因此应该使我们对于  $\\theta$  有非常不同的认识. 尤其是, 取值范围很广或高度聚集的两个数据集似乎可能使我们得出相同的实际估计值, 但是, 对于估计值的准确性, 它们应该得出截然不同的结论才对. 如果我们认为估计的准确性由估计量的抽样分布宽度决定, 则不得不得出结论: 对给定估计量的所有估计都具有相同的准确性, 与样本的结构无关.",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "费希尔没有质疑造成这种异常的正统统计推断方法, 而是又发明了一种特定工具来进行补救: 使用以某些\"辅助\"统计量  $z(x_{1},\\dots ,x_{n})$  为条件的抽样分布来",
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "提供未包含在估计量中的一些数据分布相关信息。通常,单个统计量无法完全描述数据分布,因此可能需要多达  $n - 1$  个辅助统计量。但是费希尔不是总能提供它们。它们通常不存在,因为他还要求辅助统计量的抽样分布必须与  $\\theta$  无关,也就是  $p(z|\\theta I) = p(z|I)$ 。我们不知道费希尔施加这种独立性条件的原因,但是,从贝叶斯的观点来看,我们可以轻松地明白它所能达到的目标。",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "费希尔使用的数据的条件抽样分布为  $p(D|z\\theta I)$ 。在正统统计中,这种变化的抽样分布通常会得出有关  $\\theta$  的不同结论。然而,通过贝叶斯定理,我们可以得到",
+        "page_idx": 13
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(D|z\\theta I) = \\frac{p(zD|\\theta I)}{p(z|\\theta I)} = p(D|\\theta I)\\frac{p(z|D\\theta I)}{p(z|\\theta I)}. \\tag{8.28}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "现在,如果  $z = z(D)$  只是数据的函数,那么  $p(z|D\\theta I)$  就是狄拉克德尔塔函数  $\\delta [z - z(D)]$ 。因此,如果  $p(z|\\theta I)$  与  $\\theta$  无关,则条件抽样分布  $p(D|z\\theta I)$  与无条件抽样分布  $p(D|\\theta I)$  对  $\\theta$  有相同的依赖性(即产生相同的似然函数)。换句话说,从贝叶斯的观点来看,费希尔的程序什么也没做:似然  $L(\\theta)$  没有变,无论我们是否以辅助统计量为条件,任何遵循似然原理的推断方法(无论是点估计、区间估计还是假设检验)都将导致对  $\\theta$  的相同推断。确实,在贝叶斯分析中,如果  $z$  只是数据的函数,则可以从数据中得知  $z$  的值,因此它是冗余信息,先验信息中是否包含该信息无关紧要。这同样只是基本逻辑原理  $AA = A$ ,我们不得不经常强调它,因为正统统计学家似乎不理解其含义。",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "费希尔根据是否使用辅助统计量得出了不同的估计值,这只能表明他的程序背离了似然原理。此外,如果我们以不只是数据的函数的量  $Z$  为条件,则  $Z$  会传达不在数据中的其他信息。我们定会预期到,一般来说,这必将改变我们对  $\\theta$  的推断。",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "当被要求提供估计的准确性时,正统统计方法再一次背离了似然原理,它不诉诸数据集中似然函数的任何性质,而是诉诸估计量的抽样分布宽度,即我们可能观察到却没有实际观察到的想象数据集。对我们来说,坚持似然原理,正是实际所拥有数据集的似然函数的宽度,让我们得到估计的准确性。没有实际观察到的想象数据集与我们提出的问题无关。因此,对于贝叶斯主义者而言,根本没有辅助性的问题:我们直接从对问题的陈述得到遵循似然原理的答案。",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "8.7 广义辅助信息",
+        "text_level": 1,
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "现在,让我们以更广泛的视角看待辅助信息的概念:不是费希尔辅助性(其中辅助统计量  $z$  是数据的一部分),而是不被视为现有数据或先验信息一部分的",
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "其他量  $Z$ . 和以前一样, 我们定义",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "$\\theta =$  (我们感兴趣的或不感兴趣的)参数,",
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r l} & {E = e_{1},\\dots ,e_{n},}\\\\ & {D = d_{1},\\dots ,d_{n},} \\end{array} \\tag{8.29}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "但是现在加上",
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nZ = z_{1},\\dots ,z_{m}, \\tag{8.30}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "我们想根据后验PDF  $p(\\theta |D Z I)$  估计  $\\theta$ . 直接应用贝叶斯定理得到",
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(\\theta |D Z I) = p(\\theta |I)\\frac{p(D Z|\\theta I)}{p(D Z|I)}, \\tag{8.31}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "其中  $Z$  作为数据的一部分出现. 但是, 现在我们假设  $Z$  本身与  $\\theta$  不直接相关:",
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(\\theta |Z I) = p(\\theta |I). \\tag{8.32}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "这是费希尔所说的\"辅助\"一词的实质, 尽管他的观念不允许他这样说 (因为他只接受抽样分布, 所以必须根据抽样分布来定义所有的性质). 他会说辅助数据有与  $\\theta$  无关的抽样分布:",
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(Z|\\theta I) = p(Z|I). \\tag{8.33}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "他将其解释为:  $\\theta$  对  $Z$  没有任何物理因果作用. 但是, 根据乘法规则,",
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(\\theta Z|I) = p(\\theta |Z I)p(Z|I) = p(Z|\\theta I)p(\\theta |I), \\tag{8.34}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "从作为逻辑的概率论观点来看, (8.32) 和 (8.33) 是等价的, 两者互相蕴涵. 使用 (8.33), 根据乘法规则展开似然比, 我们有",
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\frac{p(D Z|\\theta I)}{p(D Z|I)} = \\frac{p(D|\\theta Z I)}{p(D|Z I)}. \\tag{8.35}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "然后, 考虑到 (8.32), 同样可以把 (8.31) 重写为",
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(\\theta |D Z I) = p(\\theta |Z I)\\frac{p(D|\\theta Z I)}{p(D|Z I)}. \\tag{8.36}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "现在, 广义辅助信息似乎已成为先验信息的一部分.",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "广义辅助信息的一个特殊性质是,  $\\theta$  和  $Z$  之间的关系是互逆的. 如果我们知道  $\\theta$ , 要估计  $Z$ , 则  $\\theta$  会变为\"广义辅助统计量\". 要清楚地看到这一点, 请注意辅助统计量的定义式 (8.32) 和 (8.33) 等同于分解式",
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(\\theta Z|I) = p(\\theta |I)p(Z|I). \\tag{8.37}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "现在回顾一下我们以前是如何处理的, 当时我们的似然只是",
+        "page_idx": 14
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nL_{0}(\\theta)\\propto p(D|\\theta I). \\tag{8.38}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "根据模型 (8.29),如果  $\\theta$  已知,则获取任何数据  $d_{i}$  的概率就是噪声弥补差值的概率:",
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\ne_{i} = d_{i} - f(t_{i},\\theta). \\tag{8.39}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "因此,如果噪声的先验PDF是函数",
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(E|\\theta I) = u(e_{1},\\dots ,e_{n},\\theta) = u(\\{e_{i}\\} ,\\theta), \\tag{8.40}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "则我们有",
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(D|\\theta I) = u(\\{d_{i} - f(t_{i},\\theta)\\} ,\\theta), \\tag{8.41}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "它是  $\\{d_{i} - f(t_{i},\\theta)\\}$  的相同函数。在高斯白噪声PDF与  $\\theta$  无关的特殊情况下,这将导出 (7.28)。",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "新的似然函数 (8.35) 可以用相同的方式处理,只是在 (8.41) 处有所不同:我们有一个以  $Z$  为条件的不同的噪声PDF。因此,辅助数据的作用只是更新原始噪声PDF:",
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(E|\\theta I)\\to p(E|\\theta Z I). \\tag{8.42}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "通常,与噪声相关的辅助数据会通过这种影响噪声估计的方式来影响我们对所有参数的估计。",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "在 (8.40)~(8.42)中,我们在条件中包括  $\\theta$  以指示最一般的情况。但是,在正统统计文献中, $\\theta$  都与估计噪声无关,因此实际所做的是如下替换:",
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(E|I)\\to p(E|Z I), \\tag{8.43}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "而不是 (8.42)。",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "同样,在我们已经分析的情况下,这种替换被自然地认为是由联合抽样分布引起的,它是函数",
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(D Z|I) = w(e_{1},\\dots ,e_{n},z_{1},\\dots ,z_{m}). \\tag{8.44}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "这样,先前的噪声PDF (8.40)是函数 (8.44)的边缘分布:",
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(D|I) = u(e_{1},\\dots ,e_{n}) = \\int \\mathrm{d}z_{1}\\dots \\mathrm{d}z_{m}w(e_{1},\\dots ,e_{n},z_{1},\\dots ,z_{m}). \\tag{8.45}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "辅助数据的先验PDF是另一个边缘分布:",
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(Z|I) = \\int \\mathrm{d}e_{1}\\dots \\mathrm{d}e_{n}w(e_{1},\\dots ,e_{n},z_{1},\\dots ,z_{m}). \\tag{8.46}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "条件分布是",
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(D|Z I) = \\frac{p(D Z|I)}{p(Z|I)} = \\frac{w(e_{i},z_{j})}{v(z_{j})}. \\tag{8.47}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "费希尔的原始应用,以及它对贝叶斯方法和抽样论方法之间的关系所提供的有讽刺意义的教训,将在本章末尾的评注 (8.12节) 中说明。",
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "8.8 渐近似然:费希尔信息",
+        "text_level": 1,
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "给定数据集  $D \\equiv \\{x_{1}, \\dots , x_{n}\\}$ ,对数似然为",
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\frac{1}{n} \\ln L(\\theta) = \\frac{1}{n} \\sum_{i = 1}^{n} \\ln p(x_{i} | \\theta). \\tag{8.48}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "随着我们积累的数据越来越多,该函数将如何变化?通常的假设是,当  $n \\to +\\infty$  时,抽样分布  $p(x | \\theta)$  实际上等于各种数据值  $x_{i}$  的相对频率的极限。我们知道,在实际问题中,没有人真正知道这是否为真,因此,以下启发式论证是唯一合理的回答。如果假设是正确的,那么,当  $n \\to +\\infty$  时,我们渐近地有",
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\frac{1}{n} \\ln L(\\theta) \\to \\int \\mathrm{d}x p(x | \\theta_{0}) \\ln p(x | \\theta), \\tag{8.49}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "其中  $\\theta_{0}$  是\"真实\"值,假定我们还不知道,定义\"真实\"概率密度的熵为",
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nH_{0} = -\\int \\mathrm{d}x p(x | \\theta_{0}) \\ln p(x | \\theta_{0}), \\tag{8.50}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "对于渐近似然函数,我们有",
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\frac{1}{n} \\ln L(\\theta) + H_{0} = \\int \\mathrm{d}x p(x | \\theta_{0}) \\ln \\frac{p(x | \\theta)}{p(x | \\theta_{0})} \\leqslant 0, \\tag{8.51}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "令  $q \\equiv p(x | \\theta_{0}) / p(x | \\theta)$ ,我们运用了这样的事实:对于正实数  $q$  有  $\\ln q \\leqslant q - 1$  当且仅当  $q = 1$  时等号成立,因此,当且仅当对使得  $p(x | \\theta_{0}) > 0$  的所有  $x$  有  $p(x | \\theta) = p(x | \\theta_{0})$  时,(8.51)最后的等号才成立,如果参数  $\\theta$  与  $\\theta_{0}$  的不同值有相同的抽样分布,那么它们将被混淆:数据无法区分它们,如果参数始终是可识别的,也就是说, $\\theta$  的不同值总是导致数据的抽样分布不同,则当且仅当  $\\theta = \\theta_{0}$  时,(8.51)最后的等号才成立,使得渐近似然函数  $L(\\theta)$  只在点  $\\theta = \\theta_{0}$  处达到最大值。",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "假设参数是多维的: $\\theta \\equiv \\{\\theta_{1}, \\dots , \\theta_{m}\\}$ ,围绕这一最大值展开,我们有",
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\ln p(x | \\theta) = \\ln p(x | \\theta_{0}) - \\frac{1}{2} \\sum_{i,j = 1}^{m} \\frac{\\partial^{2} \\ln p(x | \\theta)}{\\partial \\theta_{i} \\partial \\theta_{j}} \\delta \\theta_{i} \\delta \\theta_{j}, \\tag{8.52}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "或者",
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\frac{1}{n} \\ln \\frac{L(\\theta)}{L(\\theta_{0})} = -\\frac{1}{2} \\sum_{i,j} I_{ij} \\delta \\theta_{i} \\delta \\theta_{j}, \\tag{8.53}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "其中",
+        "page_idx": 16
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nI_{ij} \\equiv \\int \\mathrm{d}^{n} x p(x | \\theta_{0}) \\frac{\\partial^{2} \\ln p(x | \\theta)}{\\partial \\theta_{i} \\partial \\theta_{j}}. \\tag{8.54}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "$(I_{ij})$  称为费希尔信息矩阵,它是对实验\"分辨力\"的有用度量:考虑两个接近的值  $\\theta$  和  $\\theta '$ ,间距  $|\\theta - \\theta '|$  需要有多大,实验才可以区分它们?",
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "8.9 结合不同来源的证据",
+        "text_level": 1,
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "我们都知道有好实验和坏实验, 无论做一百次还是一千次, 坏实验都没有用处. 真正的大师——比如巴斯德①——完成的一次实验, 就足以使它们全部被人们忘记.",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "——亨利·庞加莱（Henri Poincaré, 1904, 第 141 页）",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "我们都凭直觉感到, 从多个实验中得出的全部证据应该能比任何单个实验中的证据让我们更好地推断某个参数. 但是直觉不能告诉我们这在什么时候成立. 有人可能会天真地觉得, 如果我们有 25 个实验, 每个实验结果的准确度为  $\\pm 10\\%$ , 那么, 对结果取平均, 我们可以得到的准确度为  $\\pm 10 / \\sqrt{25} = \\pm 2\\%$ . 心理学与社会学中目前使用的元分析方法（Hedges & Olkin, 1985）似乎以此为基础. 作为逻辑的概率论清楚地表明了, 在何种情况下以及如何结合这些证据才是安全的.",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "一个关于皇帝身高的古老寓言, 是显示非批判性推理错误的经典例子. 假设国家里的每个居民都以至少  $\\pm 1$  米的准确度知道皇帝的身高, 如果有  $N = 100000000$  个居民, 那么只需询问每个人的看法并对结果取平均就可以确定皇帝身高的准确度似乎至少能达到",
+        "page_idx": 17
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\frac{1}{\\sqrt{1000000000}}\\mathrm{m} = 3\\times 10^{-9}\\mathrm{m} = 0.03\\mathrm{mm}. \\tag{8.55}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "结论的荒谬性有力地告诉我们, 即使不同的数据值因果独立,  $\\sqrt{N}$  规则也并不总是有效的——它们必须在逻辑上相互独立. 在这种情况下, 我们知道绝大多数居民从未见过皇帝, 但他们一直在讨论皇帝, 而关于皇帝的某种心理形象也随着民间传言而演变. 这样, 一个人的答案确实能告诉我们关于其他人答案的信息, 因此它们在逻辑上不是独立的. 的确, 民间传言几乎肯定会产生系统误差, 使得平均不再有效. 因此, 上述估计将告诉我们民间流传的某些信息, 但几乎肯定不会告诉我们皇帝的真正身高.",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "我们可以大致写出估计误差的公式:",
+        "page_idx": 17
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\text{估计误差} = S \\pm \\frac{R}{\\sqrt{N}}, \\tag{8.56}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "其中  $S$  是每个数据的共同系统误差,  $R$  是各个数据值的均方根\"随机\"误差. 尽管无知的观点可能非常一致, 但是它们作为证据几乎毫无价值. 因此, 合理的科学推断要求, 在可能的情况下, 我们应该使用概率论的足够复杂的形式（即概率模型）以检测并考虑以上情况.",
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "作为一个好的开始,(8.56)为我们提供了粗略但有用的经验法则.它表明,除非我们知道系统误差小于随机误差的大约1/3,否则我们无法肯定100万个数据的平均值比10个数据的平均值更准确或更可靠.正如亨利·庞加莱所说:\"物理学家相信一次好的测量胜过多次坏的测量.\"的确,这个道理很久之前就已经被实验物理学家意识到并代代相传.然而,在统计学家写的教科书中明显缺乏关于它的警告,因此在那些通过这些统计教科书学习的\"软\"科学实践人员中,它还没有得到充分的认识.",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "让我们使用作为逻辑的概率论对此进行更仔细的研究.首先,回顾一下贝叶斯定理的链式一致性性质.假设我们试图判断假设  $H$  的真假,并且有两个实验分别得出数据集  $A$  和  $B$  ,在先验信息为  $I$  的情况下,从第一个数据集  $A$  我们可以得出结论",
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(H|A I) = p(H|I)\\frac{p(A|H I)}{p(A|I)}. \\tag{8.57}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "然后,在我们获得新数据集  $B$  后,这可以作为先验概率:",
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(H|A B I) = p(H|A I)\\frac{p(B|A H I)}{p(B|A I)} = p(H|I)\\frac{p(A|H I)p(B|A H I)}{p(A|I)p(B|A I)}. \\tag{8.58}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "但是",
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{c}{{p(A|H I)p(B|A H I)=p(A B|H I),}}\\\\ {{p(A|I)p(B|A I)=p(A B|I),}}\\end{array} \\tag{8.59}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "所以,(8.58)简化为",
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(H|A B I) = p(H|I)\\frac{p(A B|H I)}{p(A B|I)}, \\tag{8.60}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "正是我们在贝叶斯定理的应用中使用总证据  $C = A B$  时会得到的结果.这就是链式一致性性质.由此可以看出,如果",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "(1)先验信息  $I$  全都相同,",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "(2)每个实验的先验还包括较早实验的结果,那么,合并来自多个实验的证据是有效的,",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "为了一次研究一个条件,我们将其作为练习,让读者研究违反条件(1)的后果;另外假设现在我们有条件(1)而不能保证条件(2),但是单独从第二个实验中得出了结论",
+        "page_idx": 18
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(H|B I) = p(H|I)\\frac{p(B|H I)}{p(B|I)}. \\tag{8.61}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "能否将两个实验结论(8.57)和(8.61)合并为一个更可靠的结论呢?从(8.58)明",
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "显可以看出, 这通常不成立: 不可能通过形如",
+        "page_idx": 19
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(H|ABI) = f[p(H|AI), p(H|BI)] \\tag{8.62}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "的函数获得  $p(H|ABI)$ , 因为这需要该函数的两个参数都不包含的信息. 但是, 如果  $p(B|AHI) = p(B|HI)$ , 那么, 根据乘法规则",
+        "page_idx": 19
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(AB|I) = p(A|BH|)p(B|HI) = p(B|AHI)p(A|HI) \\tag{8.63}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "可以得到  $p(A|BH|) = p(A|HI)$ , 上述结论成立. 为此, 数据集  $A$  和  $B$  必须在逻辑上独立, 也就是说, 给定  $H$  和  $I$ , 知道某一个数据集不会告诉我们关于另一个数据集的任何信息.",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "如果确实有这种逻辑独立性, 那么通过以上述朴素方式组合实验结果是有效的, 而且这样做通常会改善我们的推断. 不考虑这些必要条件而进行的元分析可能完全是误导性的.",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "在这一点上, 我们看到了不区分因果独立性和逻辑独立性可能产生的危险. 但是, 假如有人试图在分析之前使用 (8.60) 合并所有数据以回避该问题, 情况可能更加微妙和危险. 让我们看看这样做会发生什么.",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "8.10 合并数据",
+        "text_level": 1,
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "以下数据是真实的, 但是实际情况比以下场景中的假设还要复杂. 给予患者两种治疗方法, 分别是旧疗法和新疗法, 并记录成功 (康复) 和失败 (死亡) 的次数. 在实验 A 中, 数据如表 8- 1 所示. 最后一列的格式为  $100 \\times \\left[p \\pm \\sqrt{p(1 - p) / n}\\right]$ , 表示二项抽样的期望标准差. 两年后进行的实验 B 获得了表 8- 2 中给出的数据. 在每个实验中, 旧疗法都似乎明显更好 (也就是说,  $p$  的差异大于标准差). 对于研究者来说, 结果非常令人沮丧.",
+        "page_idx": 19
+    },
+    {
+        "type": "table",
+        "img_path": "images/9d1cdd6cd7ec663833d4c0c01b6b45627d07050d8724b316fbe1de59c4c1e0a3.jpg",
+        "table_caption": [
+            "表8-1 实验A"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td>失败数</td><td>成功数</td><td>成功数(%)</td></tr><tr><td>旧疗法</td><td>16 519</td><td>4 343</td><td>20.8 ± 0.28</td></tr><tr><td>新疗法</td><td>742</td><td>122</td><td>14.1 ± 1.10</td></tr></table>",
+        "page_idx": 19
+    },
+    {
+        "type": "table",
+        "img_path": "images/48e07a442c53f886f299cc593d43b06c7de96f08ddf3ed4af9baaafe7e3b30e8.jpg",
+        "table_caption": [
+            "表8-2 实验B"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td>失败数</td><td>成功数</td><td>成功数(%)</td></tr><tr><td>旧疗法</td><td>3 876</td><td>14 488</td><td>78.9 ± 0.30</td></tr><tr><td>新疗法</td><td>1 233</td><td>3 907</td><td>76.0 ± 0.60</td></tr></table>",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "这时一名研究者想到了一个绝妙的主意: 让我们合并数据, 简单相加. 例如:",
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "$4343 + 14488 = 18831$ , 依此类推. 这样就得到了列联表 8- 3. 现在新疗法看起来好了很多, 具有非常高的显著性. (  $p$  的差异超过标准差总和的 20 倍!) 他们急切地发表了这一可喜的结论, 仅显示合并的数据, 在短时间内成为著名的伟大发现者.",
+        "page_idx": 20
+    },
+    {
+        "type": "table",
+        "img_path": "images/0dfb9fa5a8e3ace6020a5a2af316d424428bed60b0fddaf832b573ed3bebe82b.jpg",
+        "table_caption": [
+            "表8-3 合并的数据"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td>失败数</td><td>成功数</td><td>成功数(%)</td></tr><tr><td>旧疗法</td><td>20 395</td><td>18 831</td><td>48.0 ± 0.25</td></tr><tr><td>新疗法</td><td>1 975</td><td>4 029</td><td>67.1 ± 0.61</td></tr></table>",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "如此简单的数据怎么可能导致这种异常? 支持相同结论的两个数据集合并后怎么会支持相反的结论? 在继续之前, 请读者仔细思考这些表中的数据, 并对正在发生的事情形成自己的看法.",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "关键在于显然存在一个额外的参数. 两年后的两种方法均产生了更好的结果. 显然, 这个令人意外的事实比治疗方法之间相对较小的差异重要得多. 数据本身并没有告诉我们发生这一现象的原因 (更好地控制流程, 选择更有希望康复的患者进行测试, 等等), 只有有关实验详细情况的先验信息才能说明原因.",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "在这种条件下合并数据会产生非常有误导性的偏差. 新疗法之所以看起来更好, 原因仅仅是, 实验 B 中接受新疗法的患者是实验 A 中的 6 倍, 接受旧疗法的患者则变得更少. 根据这些数据得出的正确结论应该是: 旧疗法仍然明显优于新疗法, 但存在另一个比治疗方法重要得多的因素.",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "我们从该示例得出结论: 如果实验涉及其他参数  $(\\alpha , \\beta , \\dots)$ , 而这些参数在不同的实验中不同, 则不允许合并数据来估计参数  $\\theta$ . 在 (8.61)~(8.63) 中, 我们假定不存在这样的参数, 但是实际实验中几乎总是有冗余参数, 这些参数在得出结论时被消除了.",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "综上所述, 元分析流程未必是错误的, 但是, 不考虑限制条件的应用可能会带来灾难. 没有人能凭直觉找到所有这些限制条件. 没有贝叶斯分析, 几乎不可能安全地进行元分析. 安全的流程应该把元分析当成一个新原理, 压根不提, 只严格按照第 2 章中的规则来应用概率论即可. 只要适合进行元分析, 完整的贝叶斯流程便会自动简化为元分析.",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "细粒度命题",
+        "text_level": 1,
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "作为逻辑的概率论的反对者注意到在构建问题时存在一个技术难题. 实际上, 许多人似乎对此感到困惑, 因此让我们研究一下此问题及其解决方案.",
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "在第2章结尾提到的维恩图思想方法,认为每个概率都必须表示为某个集合的可加测度,或者等价地,我们分配概率的每个命题都必须分解为基本\"原子\"命题的析取,将这一思想方法带入贝叶斯领域已导致一些人拒绝使用贝叶斯方法,其理由是,为了给诸如\"  $W \\equiv$  狗走路\"这样的命题分配有意义的先验概率,我们不得不将其分解为多个可能的子命题的析取  $W = W_{1} + W_{2} + \\dots$ ,例如",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "$W_{1} \\equiv$  先移动右前腿,然后移动左后腿,然后……",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "$W_{2} \\equiv$  先移动右前腿,然后移动右后腿,然后……",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "可以通过许多不同的方式来完成分解,没有原理可以告诉我们哪种分解是\"正确的\"。以某种方式定义这些子命题之后,没有显然的对称性可以告诉我们应该为哪些子命题分配相等的先验概率。连自称贝叶斯主义者的吉米·萨维奇(L. J. Savage,1954,1961,1962)都提出反对意见,认为不可能以无差别原则分配先验概率。奇怪的是,那些以这种方式推理的人似乎从来没有担心过正统概率学家是如何定义其原子命题的\"通用集合\"的,该集合的功能与对狗走路做无限细粒度分解的作用相同。",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "8.11 萨姆的环温度计",
+        "text_level": 1,
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "如果萨姆为了分析数据以检验其偏爱的理论,想评估温度计损坏的可能性,他是否需要列举出温度计所有可能的损坏方法呢?答案并不显而易见,所以让我们定义",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "$A \\equiv$  萨姆偏爱的理论,",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "$H_{0} \\equiv$  温度计正常,",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "$H_{i} \\equiv$  温度计以第  $i$  种方式损坏,  $1 \\leqslant i \\leqslant n$",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "其中,也许  $n = 1000$ 。尽管萨姆真正想要做的贝叶斯计算是",
+        "page_idx": 21
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(A|DH_{0}I) = p(A|H_{0}I)\\frac{p(D|AH_{0}I)}{p(D|H_{0}I)}, \\tag{8.64}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "但他诚实地注意到另外1000种可能性  $\\{H_{1}, \\dots , H_{n}\\}$ ,因此他必须计算",
+        "page_idx": 21
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(A|DI) = \\sum_{i = 0}^{n} p(AH_{i}|DI) = p(A|H_{0}DI)p(H_{0}|I) + \\sum_{i = 1}^{n} p(A|H_{i}DI)p(H_{i}|I). \\tag{8.65}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "根据贝叶斯定理展开最后一项:",
+        "page_idx": 21
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(A|H_{i}DI) = p(A|H_{i}I)\\frac{p(D|AH_{i}I)}{p(D|H_{i}I)}, \\tag{8.66}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 21
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(H_{i}|D I) = p(H_{i}|I)\\frac{p(D|H_{i}I)}{p(D|I)}. \\tag{8.67}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "可以假定,知道温度计的状况本身并不能告诉萨姆关于他偏爱的理论的任何事情,所以",
+        "page_idx": 22
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(A|H_{i}I) = p(A|I),\\quad 0\\leqslant i\\leqslant n. \\tag{8.68}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "如果他知道温度计坏了,那么数据不会告诉他有关其偏爱理论的任何信息(可以认为所有这些都包含在先验信息  $I$  中):",
+        "page_idx": 22
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(A|H_{i}D I) = p(A|H_{i}I) = p(A|I),\\quad 1\\leqslant i\\leqslant n. \\tag{8.69}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "根据(8.66)、(8.68)和(8.69),可以得到",
+        "page_idx": 22
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(D|A H_{i}I) = p(D|H_{i}I),\\quad 1\\leqslant i\\leqslant n. \\tag{8.70}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "也就是说,如果他知道温度计坏了,结果是数据不会告诉他有关其偏爱理论的任何信息,那么,他获得这些数据的概率就不能依赖于他偏爱的理论是否正确.这样,(8.65)可以简化为",
+        "page_idx": 22
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(A|D I) = \\frac{p(A|I)}{p(D|I)}\\left[p(D|A H_{0}I)p(H_{0}I) + \\sum_{i = 1}^{n}p(D|A H_{i}I)p(H_{i}I)\\right]. \\tag{8.71}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "由此可见,如果温度计的不同损坏方式本身并不能告诉他关于数据的不同信息,",
+        "page_idx": 22
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(D|H_{i}I) = p(D|H_{1}I),\\quad 1\\leqslant i\\leqslant n, \\tag{8.72}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "则不需要列举  $n$  种不同的损坏方式,只需要计算似然",
+        "page_idx": 22
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nL\\equiv p(D|A H_{0}I)p(H_{0}I) + p(D|H_{1}I)[1 - p(H_{0}I)], \\tag{8.73}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "只有温度计损坏的总概率",
+        "page_idx": 22
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(\\overline{{H_{0}}}|I) = \\sum_{i = 1}^{n}p(H_{i}|I) = 1 - p(H_{0}|I) \\tag{8.74}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "是相关的.萨姆不需要列举出所有1000种可能性.但是,如果  $p(D|H_{i}I)$  依赖于  $i$  ,则(8.71)中的求和应该对不同  $p(D|H_{i}I)$  的那些  $H_{i}$  执行.也就是说,不同 $p(D|H_{i}I)$  包含的信息将与他的推断有关,因此应该在完整计算中考虑.",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "思考以上论证过程,常识告诉我们,这个结论从一开始就应该是\"显而易见\"的.一般来说,枚举大量\"细粒度\"命题并为这些命题分配先验概率,只有在这种分解包含与问题相关的信息时才是必要的.否则,只有所有命题的合取才与我们的问题有关,只需要直接为其分配先验概率即可.",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "这意味着,在实际问题中,引入更细粒度的子命题的过程会适可而止.不是因为引入它们是错误的,而是因为它们对解决问题没有任何帮助.吉米·萨维奇",
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "担心的难题并不是真正的问题。我们在有限集合上分配概率的策略能在现实世界中取得成功,这就是原因之一。",
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "8.12 评注",
+        "text_level": 1,
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "还有许多技术上不那么重要但有趣的特殊情况需要简单地讨论。",
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "尝试通过发明直观的特定工具而不是应用概率论来进行推断,已经成为那些接受正统教育的人根深蒂固的习惯。即使在看到考克斯定理和作为逻辑的概率论的诸多应用后,许多人仍然无法理解其中所展示的东西。在没有更多信息的情况下,他们还是试图通过向概率论规则中添加更多特定工具来改善结果。这里会通过指出我们的方程中包含和不包含哪些信息,给出三方面的观察以阻止这种尝试。",
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "8.12.1 样本重复使用的错误",
+        "text_level": 1,
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "考克斯定理表明,给定数据  $D$  和先验信息  $I$ ,任何方法得出的结论如果与根据贝叶斯定理得出的不同,则必然违反某个基本的一致性与合理性条件。这意味着在给定  $D$  和  $I$  的情况下,只需应用贝叶斯定理,就可以提取出  $D$  和  $I$  中与问题有关的所有信息。此外,我们已经强调,如果正确使用概率论,就无须检查所使用的不同信息在逻辑上是否独立。任何多余的信息都会自动消去,不会被重复使用。",
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "但是,我们总感觉可以通过某种方式重复使用数据,从中获取贝叶斯定理错过的信息,以改进我们从  $D$  中得出的最终结论。由于可能发明的特定工具无穷无尽,除了指出考克斯定理外,我们无法一劳永逸地证明这样的尝试一定不会成功。然而,对于任意的特定工具,我们总是可以找到直接证据证明它不起作用。也就是说,除非它也违反了第2章提出的合理性条件之一,否则不会改变我们的结论。我们考虑一个常见的例子。",
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "给定  $D$  和  $I$ ,应用贝叶斯定理对于某个参数  $\\theta$  求后验概率",
+        "page_idx": 23
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(\\theta |DI) = p(\\theta |I) \\frac{p(D| \\theta I)}{p(D|I)}. \\tag{8.75}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "假设我们决定引入某个其他证据  $E$ ,那么,再次应用贝叶斯定理将结论更新为",
+        "page_idx": 23
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(\\theta |EDI) = p(\\theta |DI) \\frac{p(E| \\theta DI)}{p(E|DI)}. \\tag{8.76}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "因此,新信息改变结论的充分必要条件是,在正测度参数空间的某些区域中,(8.76)",
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "中的似然比不等于 1:",
+        "page_idx": 24
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(E|\\theta D I) \\neq p(E|D I). \\tag{8.77}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "如果证据  $E$  是数据和先验信息已经暗示的东西, 那么",
+        "page_idx": 24
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(E|\\theta D I) = p(E|D I) = 1, \\tag{8.78}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "贝叶斯定理表明, 重复使用冗余信息不会改变结果. 这实际上只是基本逻辑原理:  $A A = A$ .",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "有一个著名的例子, 其中乍一看, 似乎有人确实使用这种方式对结果做了重要的改进. 这使我们认识到\"逻辑独立性\"的含义是微妙的, 而且至关重要. 假设我们取  $E = D$ , 其实只是两次使用了相同的数据集. 然而, 我们的行为就像两个  $D$  在逻辑上是独立的一样. 也就是说, 尽管它们是相同的数据, 但第二次使用时将它称为  $D^{*}$ . 那么, 我们忽略了  $D$  和  $D^{*}$  是相同数据集的事实, 不是应用  $(8.76) \\sim (8.78)$ , 而是违反概率论的规则使用",
+        "page_idx": 24
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(D^{*}|D I) = p(D^{*}|I) \\quad \\Leftrightarrow \\quad p(D^{*}|\\theta D I) = p(D^{*}|\\theta I). \\tag{8.79}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "这样, (8.76) 中的似然比与第一次应用贝叶斯定理的结果 (8.75) 中的似然比相同. 我们已经对似然函数做了平方, 从而得到更尖锐的后验分布, 表面上似乎得到了对  $\\theta$  更准确的估计.",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "很显然, 这里有欺诈行为. 根据相同的论证, 我们可以无限多次重复使用相同的数据, 从而将似然函数提高任意次幂, 似乎可以获得任意精度的  $\\theta$  估计值——所有这些都来自相同的原始数据集  $D$ , 而它可能仅包含一两条数据.",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "如果我们确实有两个逻辑独立的不同数据集  $D$  和  $D^{*}$ , 知道其中一个不会告诉我们另一个的信息, 但碰巧两者在数值上是相同的, 那么 (8.79) 确实是成立的, 两个数据集的正确似然函数会是其中一个的似然的平方. 因此, 作弊流程实际上是声称拥有实际观察数据两倍的数据量. 可以在相关文献 (Akaike, 1980) 中发现, 该流程实际上是以\"数据依赖先验\"的名义使用和提倡的. 这与前面讨论的\"元分析\"很相似, 没有觉察到因果独立的不同数据集的逻辑相关性可能导致荒唐的错误.",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "尝试重复使用样本的最令人震惊的例子是前面提到的\"随机化检验\", 其中  $n!$  个数据排列中的每一个都被认为包含与问题有关的新信息. 我们将在第 17 章中研究这种惊人的观点及其后果.",
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "8.12.2 民间定理",
+        "text_level": 1,
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "在普通代数中, 假设我们在域  $X$  中有许多待确定的未知数  $\\{x_{1}, \\dots , x_{n}\\}$ , 并且给定这些未知数的  $m$  个函数的值:",
+        "page_idx": 25
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{c}{{y_{1}=f_{1}(x_{1},\\cdots,x_{n}),}}\\\\ {{y_{2}=f_{2}(x_{1},\\cdots,x_{n}),}}\\\\ {{\\cdots}}\\\\ {{y_{m}=f_{m}(x_{1},\\cdots,x_{n}).}}\\end{array} \\tag{8.80}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "(8.80)",
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "如果  $m = n$ , 并且雅可比行列式  $\\partial (y_{1}, \\dots , y_{n}) / \\partial (x_{1}, \\dots , x_{n})$  不为 0, 那么原则上可以唯一确定  $x_{i}$ . 但是, 如果  $m < n$ , 则方程组是欠定的, 因为信息不足, 我们无法确定所有的  $x_{i}$ .",
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "这个众所周知的代数定理似乎已经演变成流行的民间概率论定理. 许多作者声称 (似乎这是很显然的事实), 根据  $m$  个观察值估计的参数不能超过  $m$  个. 在其他问题上有着很大分歧的许多作者似乎在这一点上保持一致. 因此, 我们在指出如下显而易见的事实时甚至有些犹豫: 概率论中实际上没有任何东西对我们做这种限制. 在概率论中, 当我们拥有的数据趋于 0 时, 其效果不是只能估计越来越少的参数. 哪怕只有一条观测数据, 我们也可以估计 100 万个不同的参数. 当我们拥有的数据趋于 0 时, 只是回到根据先验信息所进行的估计. 常识告诉我们一定会是这样.",
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "如果考虑一个稍微不同的场景, 那么这个民间定理可能有些许真理的成分: 假设我们固定数据量而改变参数数量, 而不是固定参数数量而改变数据量. 这时我们对一个参数进行估计的准确性依赖于我们估计的其他参数数量吗? 在这里我们只简单地用文字记录所发现的内容, 请读者写出详细的公式作为练习. 答案取决于添加新参数时抽样分布的变化方式, 以及参数的后验 PDF 是否独立. 如果后验 PDF 是相互独立的, 那么, 我们对一个参数的估计就不会依赖于存在多少其他参数.",
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "如果在添加新参数后, 它们在后验 PDF 中相互关联, 那么, 对一个参数  $\\theta$  进行估计的准确性可能会因其他参数的存在而大大降低 (其他参数值的不确定性可能会\"泄漏\"到  $\\theta$  上, 增加  $\\theta$  的不确定性). 在这种情况下, 估计这些参数的某个函数可能比估计任一参数更准确. 比如, 如果两个参数的后验 PDF 有很高的负相关性, 那么估计它们之和比估计它们之差更准确. 所有这些细微之处在正",
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "统统计学中都丢失了,正统统计甚至意识不到后验 PDF 相关性概念的存在.",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "8.12.3 先验信息的作用",
+        "text_level": 1,
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "如上文所述,很显然,根据不使用冗余信息的一般原则  $AA = A$ ,数据只有在告诉我们先验信息之外的信息时才有用.同样应该(但表面上并不)很显然的是,先验信息只有在能告诉我们某些数据没有告诉我们的信息时才有用.因此,我们的先验信息是否重要取决于我们获得的数据集.例如,假设我们要估计一个通用参数  $\\theta$ ,并且事先知道  $\\theta < 6$ .如果数据表明  $\\theta >6$  的可能性很小,那么先验信息对我们的结论没有影响.仅当数据表明  $\\theta >6$  有很大可能性时,先验信息才有意义.",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "考虑相反的情况:如果数据表明参数实际上就在  $\\theta >6$  的区域中,那么先验信息将具有极大的重要性,机器人将给出几乎完全是由先验信息决定的非常接近  $\\theta^{*} = 6$  的估计值.但是,在数据与先验信息发生强烈矛盾时,我们将对先验信息、模型或数据的正确性持怀疑态度.这是当令人惊讶的新信息出现时可能\"复活\"潜在的备择假设的另一种情况.",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "根据设计,我们的推理机器人没有创造力,只是简单地相信我们的话.因此,如果我们不对备择假设做任何说明,它将继续全然接受我们给出的假设空间,并为我们提供最优估计——直到数据和先验信息在逻辑上矛盾.这时,如第2章末尾所述,机器人崩溃了.",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "原则上,单个数据点可以确定100万个参数的准确值.例如,如果100万个变量的函数  $f(x_{1},x_{2},\\dots)$  仅在100万维空间的一个数据点上取值  $\\sqrt{2}$ ,而我们又确切地知道  $f = \\sqrt{2}$ ,那么,我们就准确地确定了100万个变量的值.又例如,如果要确定精度为12位数字的一个参数,那么简单的映射可以将其转换为对6个参数的估计,每个参数2位数字.但是,这将进入\"算法复杂性\"的话题,不是我们目前的主题.",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "8.12.4 技巧和花招",
+        "text_level": 1,
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "在文献中能看到不同的作者对数学技巧有两种截然不同的态度.1761年,欧拉抱怨孤立的结果\"没有基于系统方法\",因此其\"内在基础似乎被隐藏了\".而在20世纪,像费勒和德菲内蒂这样观点各异的作者却一致认为,直接应用概率论的系统规则是单调乏味和缺乏想象力的,并陶醉于寻找一些无须计算就能得到答案的技巧.",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "例如,彼得和保罗两人交替抛硬币.从彼得开始,第一次抛得\"正面\"的人获胜,那么彼得和保罗获胜的概率  $p$  和  $p^{\\prime}$  各是多少?直接、系统的计算方法是,",
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "分别将  $(1 / 2)^{n}$  针对偶数和奇数相加, 可以得到",
+        "page_idx": 27
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np = \\sum_{n = 0}^{\\infty} \\frac{1}{2^{2n + 1}} = \\frac{2}{3}, \\quad p' = \\sum_{n = 1}^{\\infty} \\frac{1}{2^{2n}} = \\frac{1}{3}. \\tag{8.81}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "技巧是注意到, 如果彼得第一次抛掷后没有赢, 保罗将处在与彼得同样的地位, 也就是  $p' = p / 2$ , 所以  $p = 2 / 3$ ,  $p' = 1 / 3$ .",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "费勒的洞察力非常敏锐, 几乎在每一个问题中, 他都能找到技巧, 并且只给出使用技巧的解答. 因此, 他给读者留下了以下印象.",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "(1) 概率论中没有系统方法, 只有孤立无关的技巧的集合, 每一种技巧只可以解决一个问题而不适用于其他问题.",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "(2) 费勒具有超人的聪明才智.",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "(3) 只有像他那样聪明的人才能在概率论中发现新的有用结果.",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "这些技巧的确具有我们都能欣赏的美学性质. 但是我们怀疑, 费勒或任何其他人在第一次看到问题时并不能看出这些技巧.",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "我们第一次解决问题时总是直接使用系统规则——某些人可能会觉得乏味. 在得到答案之后, 我们可能会沉思, 并得到一个能更快找到答案的技巧. 然后, 我们当然可以耍花招, 只向人们展示这种技巧, 并嘲笑我们最初用来找到答案的基本方法. 这或许能提升我们的自尊, 对其他人却没有帮助.",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "因此, 我们将继续阐述系统的计算方法, 因为这是保证找到解的唯一方法. 另外, 我们试图强调一般的数学技巧, 这些技巧不仅适用于当前问题, 也适用于数百种其他问题. 即使当前问题很简单, 其实不需要这些通用技巧, 我们也会这样做. 因此, 我们发展了涉及群不变性、分拆函数、熵和贝叶斯定理的非常强大的算法, 这些算法在费勒的著作中根本没有出现. 对我们而言, 对欧拉而言也是一样, 这些都是所谈论主题的基础方法. 有了这些基础方法, 就不必为每个新问题寻找不同的新技巧了.",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "我们从波利亚那里学到了该原则. 一个世纪以来, 数学家们似乎一直在竭力掩盖一个事实: 他们是首先通过合情猜想的基本方法找到定理, 然后才找到毫不费力、有严格证明的\"聪明的技巧\"的. 波利亚在他的著作《数学与猜想》(Pólya, 1954) 中揭露了这个秘密. 这本著作是本书的主要思想来源之一.",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "当我们想尽快说服某人时, 采用聪明的技巧总是暂时有用、令人愉悦的途径. 而且, 对于结果的理解, 它们可能很有价值. 通过烦琐的计算得到答案后, 如果我们能以一种简单的方式看待它, 能用短短的几步计算得到相同的结果, 那么就会对结果的正确性有更大的信心, 会对如何扩展它有直观的理解. 我们在本书中多",
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "次指出了这一点. 要在概率论上获得成功, 就必须首先掌握通用的、系统的、具有永恒价值的方法. 因此, 对于教师而言, 成熟在很大程度上意味着克制追求奇技淫巧之心.",
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "第9章 重复实验：概率与频率",
+        "text_level": 1,
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "概率论的精髓是：概率，无论是直接概率、先验概率还是后验概率，都不是简单的频率。",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "哈罗德·杰弗里斯（H.Jeffreys，1939）",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "我们已经建立起了作为合情推理的广义逻辑的概率论，原则上可以将其应用于没有充分信息可供演绎推理的任何情况。我们看到它已成功应用于几乎所有推断问题（包括抽样论、假设检验和参数估计）的简单原型示例中。",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "在过去100年中，概率论大多将注意力局限在一种特殊情况上，在这种情况下，人们试图根据无限重复实验预测结果或做出推断，这种实验可以在条件似乎相同的情况下无限重复，但每次仍会得出不同的结果，事实上，几乎所有以应用为导向的阐述都将概率定义为“独立重复随机试验的极限频率”，而不包含任何逻辑元素，以数学为导向的阐述对概率的定义则更抽象，将其视为一种可加测度，不与现实世界有任何特定的联系，但是，在应用时，他们也倾向于根据频率来考虑概率，理解这些常规处理方法与本书中理论之间的确切关系很重要。",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "一些关系已经很明了了，在前面5章中，我们已经表明，作为逻辑的概率论能一致地应用于不符合频率派观念的许多推断问题，而这些问题通常被认为超出了概率论的范畴，显然，频率派概率理论可以解决的问题是作为逻辑的概率论所能解决问题的子类，但尚不清楚该子类确切是什么，本章试图澄清这一点，其中有一些令人震惊的结果，能帮助我们更好地理解归纳在科学中的作用。",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "此外，在许多问题中尝试使用频率派概率理论进行推断，会导致无意义甚至灾难性的结果。我们将这种病态情况推迟到以后的章节中讨论，尤其是第17章。",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "9.1 物理实验",
+        "text_level": 1,
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "第一个重复实验的例子出现在第3章，其中我们考虑了从坛子中进行有放回抽样的问题，并且注意到，即使在这种情况下也有很高的复杂性，最终，我们通过“随机化”的概念工具应付了过去，尽管“随机化”概念的定义不明确，但是它足够直观，可以克服缺乏逻辑合理性的根本不足。",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "现在我们考虑一般的重复实验，这些实验无须与从坛子中抽取球有任何相似性，复杂性和多样性都可能更高，不过我们至少知道，这类实验都遵守物理定律，",
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "如果实验中包含抛硬币或掷骰子,那么它肯定遵守牛顿力学定律,这一定律已经有300多年的历史。如果它是为患者提供一种新药,那么生物化学与生理学原理(这些原理目前只得到了部分了解)肯定会决定可能观察到的效果。高能基本粒子物理学的实验结果也受制于我们几乎同样一无所知的物理定律,即便如此,公认的一般性原理(电荷守恒、角动量守恒等)也会限制结果的可能性。",
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "显然,对于此类实验的有效推断都必须考虑适用于相应场景的已知物理定律。通常,这些知识将确定我们应用于此问题的\"模型\"。如果不考虑实际的物理状况和适用的已知物理定律,那么此后,再严格的数学推导也无法避免得到无意义甚至更糟的结论。很多文献可以充分说明这一点。",
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "在任何重复实验或测量中,都会有某些因素在每次试验中相同(无论实验者是否有意识地使其保持不变),其他一些因素则不受实验者控制而变化。那些相同的因素(无论实验者是控制了条件,还是条件根本不受实验者控制)称为系统因素,以不受控制的方式变化的因素通常称为随机因素。但是\"随机\"一词应该避免使用,因为它带有一些错误的暗示。①我们应该把这些因素描述为通过当前使用的实验技术不可再现的。通过改进的技术则有可能再现它们。实际上,实验科学所有领域的进步都涉及不断发展更强大的技术,这些技术可以更好地控制条件,从而可以再现更多的因素。一旦某个现象可以再现,就像分子生物学中发生的那样,它就会从猜测与幻想的云雾中浮现出来,成为\"硬\"科学的一部分。",
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "本章将详细研究推理机器人如何对重复实验进行推理。我们的目标是找到它所拥有的信息与所能做出的预测之间的逻辑关系。假设我们的实验包括  $n$  次试验,每次试验有  $m$  种可能结果。如果是抛硬币,  $m = 2$ ;如果是掷骰子,  $m = 6$ 。如果我们要让一批患者接种疫苗,那么  $m$  是可区分的不同反应的数量,  $n$  是患者数,等等。",
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "在这一点上,人们通常会说:\"每次试验都能得到  $m$  种可能结果中的任意一种,因此在  $n$  次试验中,有  $N = m^n$  种不同的可能结果。\"但是,这句话的确切含义是不明确的:它是对物理事实的陈述或假设,还是只是对机器人所拥有信息的描述?我们所做事情的有效性的内容与范围取决于该问题的答案。",
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "数值  $m$  总是可以被看作对我们进行概率分析时所拥有的知识状态的描述。它可能与客观世界中实际存在的不同可能结果数相同,也可能与之不同。在检验一个正方体骰子时,我们非常有信心地取  $m = 6$ ,但是总的来说,我们无法预先知",
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "道  $m$  实际是多少. 一些最重要的推理问题通常是\"查尔斯·达尔文\"类型的.",
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "练习9.1 当查尔斯·达尔文于1835年9月首次登上加拉帕戈斯群岛时,他不知道自己会在那里发现多少种植物. 在检查了  $n = 122$  个样本后,他发现它们可以分为  $m = 19$  个不同的物种,那么还有尚未发现的更多物种的可能性是多少?什么时候可以停止采集标本,因为已经不太可能获取更多物种?这个问题很像第4章中的序列检测,但我们问的是不同的问题. 在建立数学模型(即根据先验信息选择合适的假设空间)时,需要对现实世界做出判断,但是具有良好判断力的人将得出基本相同的结论.",
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "一般而言,  $m$  不是已知的物理事实,而应该理解为当前计算中考虑的每次试验的不同结果数. 因此,更令人信服的说法是:我们在指定  $m$  时,实际上是在定义一种需要验证结果的试探性工作假设. 无论如何,我们关心的都是两个不同的样本空间:一个是一次试验的空间  $S$ ,由  $m$  个点组成;另一个是扩展空间",
+        "page_idx": 31
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nS^{n} = S\\otimes S\\otimes \\dots \\otimes S, \\tag{9.1}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "它是  $n$  个  $S$  的直积,是实验作为整体的样本空间. 为了进行区别,我们用\"试验结果\"指空间  $S$  上单次试验的结果,用\"实验结果\"指定义在空间  $S^{n}$  上  $n$  次试验作为一个实验的(总体)结果. 因此,一次实验结果包含  $n$  个单次试验结果的组合(如果进行实验时定义了顺序,则包括它们的顺序). 我们可以说单次试验中考虑的不同结果数是  $m$ ,而考虑的不同实验(总体)结果数  $N = m^{n}$ .",
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "如果用  $r_{i}$  表示第  $i$  次试验的结果(  $1\\leqslant r_{i}\\leqslant m,1\\leqslant i\\leqslant n$  ),那么一次实验结果可以通过数列  $\\{r_{1},\\dots ,r_{n}\\}$  来表示,这些数列构成可能数据集  $D$ . 由于不同的实验结果是互斥且穷尽的,因此如果给推理机器人关于该实验的任何信息  $I$ ,它所能做出的最一般的概率分配是  $r_{i}$  的函数:",
+        "page_idx": 31
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nP(D|I) = p(r_{1},\\dots ,r_{n}), \\tag{9.2}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "这种概率分配对于所有的可能数据集满足归一化条件",
+        "page_idx": 31
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\sum_{r_{1} = 1}^{m}\\sum_{r_{2} = 1}^{m}\\dots \\sum_{r_{n} = 1}^{m}p(r_{1},\\dots ,r_{n}) = 1. \\tag{9.3}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "为了方便起见,由于  $r_{i}$  是非负整数,因此我们可以将它们视为  $m$  进制数  $R$  (模  $m$ ),  $0\\leqslant R\\leqslant N - 1$ . 尽管我们的机器人对真实世界知之甚少,却是一个数学高手,因此我们可以指示它以  $m$  进制而不是10进制与我们通信. 10进制系",
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "统只是人类由于解剖学特性而习惯使用的。",
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "比如,假设我们的实验包括4次掷骰子,每次有  $m = 6$  种可能的试验结果,那么有  $N = 6^{4} = 1296$  种可能的实验结果,可以对其编号(1到1296).那么,为了表示在10进制系统中编号为836的实验结果,机器人会注意到:",
+        "page_idx": 32
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n836 = (3\\times 6^{3}) + (5\\times 6^{2}) + (1\\times 6^{1}) + (2\\times 6^{0}). \\tag{9.4}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "因此,在6进制系统中,机器人将该实验结果展示为3512.",
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "机器人不知道的是,这对我们人类有更深的意义.在我们来说,这表示第1次掷出了3点,第2次掷出了5点,第3次掷出了1点,第4次掷出了2点(由于在6进制系统中,单个数字  $r_{i}$  仅在对6取模时有意义,结果  $5024\\equiv 5624$  就表示第2次掷出了6点)",
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "更一般而言,对于每次有  $m$  种可能的试验结果、重复  $n$  次的实验,我们通过  $m$  进制与机器人进行通信,显示的实验结果将恰好有  $n$  位数字.对我们而言,第  $i$  位数字将以模  $m$  表示第  $i$  次试验的结果.通过这种方式,我们诱使机器人接受指令并给出对我们来说具有完全不同含义的结论.现在,我们可以向机器人询问关于实验结果的任何问题的答案,而这绝不会向机器人透露它实际是在对重复物理实验做出预测(对于机器人来说,正如第4章所述,它只是简单地接受了我们所说的事实)",
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "在尽量小心地定义了概念问题后,我们终于可以转向实际的计算了.我们在(2.86)之后的讨论中提到,根据先验信息  $I$  的不同细节,许多种不同的概率分配方式(9.2)都可能是合理的.我们先来考虑最简单的情况",
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "9.2 孤陋寡闻的机器人",
+        "text_level": 1,
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "假设我们只告诉机器人有  $N$  种可能性,而不提供其他信息.也就是说,机器人不仅不了解相关的物理定律,甚至也不知道整个实验是由  $n$  次简单重复试验组成的.对它来说,就像只存在一次试验,它有  $N$  种可能的试验结果,而试验机制完全未知.",
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "你可能会对此表示反对:我们对机器人隐瞒了一些对于实验的合理推断而言至关重要的信息.事实的确如此.然而,重要的是理解忽略这些信息的惊人后果",
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "当机器人处在这样一种原始的无知状态,甚至不知道存在重复性实验时,它能对实验结果做出什么有意义的预测呢?事实上,孤陋寡闻的机器人一点儿也不会感到无助.尽管它在某些方面无比天真,但是基于简单的排列组合,它已经能做出大量惊人的正确预测(这应该使我们认识到排列组合的威力,它可以掩盖很多无知之处).",
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "首先看看机器人在信息不足时能做哪些预测,然后我们可以为机器人提供其他相关信息,看看随着对实验的了解越来越多,它会如何修正其预测结果。通过这种方式,我们可以逐步跟踪机器人的受教育过程,直到它能达到(有时甚至会超过)科学家与统计学家在讨论实际实验时显示的水平。",
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "我们用  $I_{0}$  表示这种初始无知状态(机器人只知道有  $N$  种可能性,对其他的一无所知)。这时无差别原则(2.95)适用:机器人的\"样本空间\"或\"假设空间\"由  $N = m^{n}$  个离散点组成,对于其中每一个点,它会赋予概率  $N^{- 1}$ 。根据规则(2.99),任何在子集  $S^{\\prime} \\subset S^{n}$  上定义为真而在互补子集  $S^{n} - S^{\\prime}$  上定义为假的命题  $A$  将被赋予概率",
+        "page_idx": 33
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nP(A|I_{0}) = \\frac{M(n,A)}{N}, \\tag{9.5}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "其中  $M(n,A)$  是  $A$  的重数( $S_{n}$  中  $A$  为真的点数)。这个看似简单的结果概括了机器人在已知先验信息  $I_{0}$  时所能预测的一切。这也再次说明,只要与问题相关,概率和频率之间的联系就会自动出现,这是我们的概率论法则的自然数学结果。",
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "考虑  $m = 6$  的  $n$  次掷骰子的实验,任一特定实验结果的概率(9.2)是",
+        "page_idx": 33
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(r_{1},\\dots ,r_{n}|I_{0}) = \\frac{1}{6^{n}}, \\qquad 1 \\leqslant r_{i} \\leqslant 6, \\qquad 1 \\leqslant i \\leqslant n. \\tag{9.6}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "那么,无论以后发生什么,第一次抛出3点的概率是多少?这是在问机器人第1位数字  $r_{1} = 3$  的概率。由于  $6^{n - 1}$  个命题",
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "是互斥的,因此(2.85)适用:",
+        "page_idx": 33
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nP(r_{1} = 3|I_{0}) = \\sum_{r_{2} = 1}^{6} \\dots \\sum_{r_{n} = 1}^{6} p(3r_{2} \\dots r_{n}|I_{0}) = 6^{n - 1} p(r_{1} \\dots r_{n}|I_{0}) = 1 / 6. \\tag{9.8}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "(注意,\"  $r_{1} = 3$  \"是一个命题,因此根据附录B中的记号规则,我们可以给它一个正式的概率符号  $P$ 。)由于对称性,如果我们要求任何指定第  $i$  次抛掷给出结果  $k$  的概率,那么结果是相同的:",
+        "page_idx": 33
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nP(r_{i} = k|I_{0}) = 1 / 6, \\qquad 1 \\leqslant k \\leqslant 6, \\qquad 1 \\leqslant i \\leqslant n. \\tag{9.9}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "现在,第1次抛掷产生  $k$  点,第2次抛掷产生  $j$  点的概率是多少?机器人的计算方法与前面是类似的,剩下的抛掷结果有  $6^{n - 2}$  种互斥的可能性,因此",
+        "page_idx": 33
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{l}{{P(r_{1}=k,r_{2}=j|I_{0})=\\sum_{r_{3}=1}^{6}\\cdots\\sum_{r_{n}=1}^{6}p(k,j,r_{3}\\cdots r_{n}|I_{0})}}\\\\ {{=6^{n-2}p(r_{1}\\cdots r_{n}|I_{0})=1/6^{2}}}\\\\ {{=1/36.}}\\end{array} \\tag{9.10}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "根据对称性, 答案对于任意两次不同的投掷都是相同的. 类似地, 机器人可以告诉我们, 任意 3 次不同的投掷都得到指定结果的概率为",
+        "page_idx": 34
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(r_{i}r_{j}r_{k}|I_{0}) = 1 / 6^{3} = 1 / 216, \\tag{9.11}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "等等.",
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "现在让我们尝试对机器人进行教育. 假设我们要为其提供第 1 次掷出 3 点的额外信息, 这意味着以如下方式告知机器人: 在最初  $N$  个可能结果中, 正确的结果属于第 1 个数字  $r_{1} = 3$  的子类. 有了这个额外信息, 机器人将为命题  $r_{2} = j$  分配多大的概率呢? 此条件概率可以由乘法规则 (2.63) 得出",
+        "page_idx": 34
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(r_{2}|r_{1}I_{0}) = \\frac{p(r_{1}r_{2}|I_{0})}{p(r_{1}|I_{0})}, \\tag{9.12}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "使用 (9.9) 和 (9.10), 可以得到",
+        "page_idx": 34
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(r_{2}|r_{1}I_{0}) = \\frac{1 / 36}{1 / 6} = 1 / 6 = p(r_{2}|I_{0}). \\tag{9.13}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "机器人的预测没有变. 如果我们告诉它前两次抛掷的结果并让对它对第 3 次抛掷进行预测, 那么根据 (9.11), 我们会得到相同的结果:",
+        "page_idx": 34
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(r_{3}|r_{1}r_{2}I_{0}) = \\frac{p(r_{3}r_{1}r_{2}|I_{0})}{p(r_{1}r_{2}|I_{0})} = \\frac{1 / 216}{1 / 36} = 1 / 6 = p(r_{3}|I_{0}). \\tag{9.14}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "以这种方式继续下去就会发现, 无论我们告诉机器人多少次抛掷结果, 也不会影响它对其余次抛掷的预测. 似乎机器人在  $I_{0}$  状态下如此愚昧无知, 以至于无法对其进行教育. 但是, 它即使对一种指令没有响应, 也可能对另一种指令产生响应. 我们首先需要了解造成该问题的原因.",
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "9.3 归纳推理",
+        "text_level": 1,
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "机器人的行为为什么让我们感到震惊呢? 机器人这里的推理方式与我们人类不同, 因为它似乎没有从过去学到东西. 如果我们被告知前面 12 位数字全是 3, 那么我们会得到暗示, 开始猜测下一位数字也是 3. 但是, 孤陋寡闻的机器人无论给出多少次抛掷结果都不会接受暗示.",
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "一般来说, 如果在以前的结果中看到任何有规律的模式, 我们或多或少会预期它继续存在下去, 这就是被称为归纳的推理过程. 机器人还没有学会如何进行归纳推理. 但是, 机器人必须定量地处理所有事情, 我们也不得不承认我们也不确定所发现的规则是否会继续有效. 这似乎只是有可能, 但直觉并没有告诉我们可能性有多大. 因此, 正如第 1 章和第 2 章所述, 我们的直觉仅给我们带来定性的\"方向感\", 并且认为机器人应该以这种定性的方向进行定量推理.",
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "请注意, 这里所说的归纳与所谓的\"数学归纳法\"是截然不同的两种过程. 后者是一种严格的演绎过程, 我们在此并不关心.",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "对于概率论的传统公式而言, \"归纳辩护\" 问题一直是一个难题, 也是 18 世纪以来从大卫·休谟 (David Hume, 1739, 1777) 开始的一些哲学家探讨的主要问题. 例如, 哲学家卡尔·波普尔 (Karl Popper, 1974) 甚至断然否定了归纳的可能性. 他反问道: \"我们将从重复实例中学到的经验应用于对没有经验的实例进行推理合理吗?\" 孤陋寡闻的机器人给我们的答案是: \"不合理!\" 但我们想证明, 一个见多识广的机器人会回答: \"合理, 只要我们拥有能提供不同试验之间逻辑关系的先验信息, 并且给出可以进行归纳的特定情况就行.\"",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "这个问题在抽样调查理论中似乎尤为突出, 与我们上面的方程式相互呼应. 在对 1000 人进行询问之后, 发现其中有 672 人在下届选举中赞成提案 A, 而民意调查专家凭什么得出结论: 在没有接受调查的数百万人中, 也会有  $67 \\pm 3\\%$  的人赞成提案 A? 对于孤陋寡闻的机器人 (显然也对于波普尔而言), 无论了解多少人的意见都不会让我们知道其他任何人的意见.",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "在许多其他情况下也会出现相同的逻辑问题. 在物理学中, 假设我们测量了 1000 个原子的能级, 发现其中有 672 个处于激发态, 其他的处于基态. 我们是否有理由得出结论: 在未测量的  $10^{25}$  个其他原子中约有  $67\\%$  也处于激发态? 或者假设 1000 名癌症患者使用了新的治疗方法, 其中 672 名康复了, 那么人们在什么意义上有理由预测这种治疗方法在未来也会使大约  $67\\%$  的患者康复? 根据先验信息  $I_{0}$ , 完全没有理由进行此类推断.",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "这些例子表明, 归纳的逻辑辩护问题 (即澄清命题的确切含义以及能为逻辑分析所支持的确切含义) 非常重要, 但也很困难.",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "9.4 是否有一般性归纳法则?",
+        "text_level": 1,
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "(9.13) 和 (9.14) 表明: 根据先验信息  $I_{0}$ , 不同次抛掷的结果是完全逻辑独立的. 向机器人提供任何特定抛掷结果的信息都不会告诉它有关其他次抛掷的信息. 上面已经强调了其中的原因: 机器人还不知道连续数字  $\\{r_{1}, r_{2}, \\dots \\}$  代表着同一实验的重复. 只有通过向机器人提供某种与所有抛掷相关的信息才能教育它摆脱这种状态. 例如, 我们可以告诉它一些对于所有试验而言都相同的某一物理或逻辑属性信息.",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "也许我们可以通过反思来学习: 在进行归纳推理时, 我们无意识使用的对所有试验都相同的\"隐藏\" 信息是什么? 然后, 可以尝试将这些隐藏信息告诉机器人 (即将其融入方程).",
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "只需要稍微反思我们就可以意识到:不是只有一种隐藏的信息,而是有很多不同种类的信息。的确,由于对实验的了解程度不同,即使对于相同的数据,我们进行的归纳推理也会有很大差别。我们有时能立即得到启示,有时则会跟孤陋寡闻的机器人一样反应迟钝。",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "假设数据是前3次抛掷都得到\"正面\",即  $D = H_{1}H_{2}H_{3}$ ,那么对第4次抛掷,我们直觉的概率  $P(H_{4}|DI)$  是多少?这个问题的答案在很大程度上取决于我们的先验信息。如果先验信息是  $I_{0}$ ,那么不管数据如何,答案始终是  $p(H_{4}|DI_{0}) = 1 / 2$ 。另外两种可能的先验信息如下。",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "$I_{1} \\equiv$  我们能仔细检查硬币并观察抛掷的过程,知道硬币的正反面是完全对称的,其重心位于正确的位置,而且在抛掷硬币的过程中也没有看到任何异常。",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "$I_{2} \\equiv$  我们不能检查硬币,非常怀疑硬币的对称性和抛掷者的诚实性。基于信息  $I_{1}$ ,直觉可能会告诉我们:硬币均匀的先验可靠性要远远超过3次抛掷给出的否定证据。因此我们将忽略数据。并再次指定  $P(H_{4}|DI_{1}) = 1 / 2$ 。",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "但是基于信息  $I_{2}$ ,我们认为数据具有一定的说服力:前3次都是正面而没有反面的事实构成了倾向于正面的证据(尽管肯定不能证明)。因此我们将分配  $P(H_{4}|DI_{2}) > 1 / 2$ 。这样,我们就在进行真正的归纳推理。",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "我们现在似乎面临一个悖论: $I_{1}$  比  $I_{2}$  有更多的信息,但是我们得出的  $P(H_{4}|DI_{1})$  与孤陋寡闻的机器人的结论是一致的!实际上,容易看出:只要先验的硬币均匀的证据胜过数据提供的证据,所有基于  $I_{1}$  的推断结论都与孤陋寡闻的机器人的推断结论一致。",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "我们肯定在其他场景下注意到过这种情况。两个人的知识状态不同并不意味着他们的结论必然不一致,白痴也可能会猜出一位学者通过多年努力才发现的真理。尽管如此,确实需要深入思考才能理解,为什么完全对称的知识会让我们做出与孤陋寡闻的机器人相同的推断。",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "首先请注意,除非更明确地指定模糊信息  $I_{2}$ ,我们并不能为  $P(H_{4}|DI_{3})$  分配确定的数值。例如,考虑如下极端情况。",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "$I_{3} \\equiv$  我们知道硬币是伪造的:两面都是正面或反面,但不知道到底是哪一面。那么,我们当然可以确定  $P(H_{4}|DI_{3}) = 1$ 。基于这种先验知识,一次抛掷就可以得出结论。不可能有比这更强的暗示。",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "其次请注意,我们的机器人乍一看似乎确实在进行某种归纳推理。像(3.14)一样,我们检查了超几何分布。但是仔细想来,它实际上是在做\"反向归纳\":抽",
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "出的红球越多,将来出现红球的概率就越低。这种反向归纳在我们达到二项分布的极限时消失了。",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "但是,我们也可以在抛硬币时进行反向归纳。例如考虑如下先验信息。",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "$I_{4} \\equiv$  硬币具有隐藏的内部机制,可以在接下来的100次抛掷中准确地出现",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "50次正面和50次反面",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "基于这一先验信息,可以说100次抛硬币等价于从最初有50个红球和50个白球的坛子中无放回地抽取球。那么我们可以对于(3.22)所示的超几何分布  $h(r|N,M,n)$  运用(9.12)中的乘法规则:",
+        "page_idx": 37
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nP(H_{4}|DI_{4}) = \\frac{h(4|100,50,4)}{h(3|100,50,3)} \\approx \\frac{0.05873}{0.12121} \\approx 0.4845 < \\frac{1}{2}. \\tag{9.15}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "但是在这种情况下,更容易通过以下方法直接做出推断:  $P(H_{4}|DI_{4}) = (M - 3) / (N - 3) = 47 / 97 \\approx 0.4845$ 。",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "从以上分析可以看出,根据同样的数据可以得出不同的结论。这清楚地表明,不存在唯一的一般性归纳法则。鉴于可以想象的各种先验信息千差万别,也让人怀疑是否可以通过某些参数对所有的归纳法则进行分类。",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "然而,哲学家卡尔纳普(1891—1970)(Carnap,1952)尝试对归纳法则进行这种分类,他发现了由单个参数  $\\lambda (0 < \\lambda < +\\infty)$  标识的法则连续体。但是具有讽刺意味的是,卡尔纳普的法则与18世纪拉普拉斯根据完全不同的推理给出的法则(\"拉普拉斯连续法则\"及其推广)完全相同,而拉普拉斯法则却被统计学家和哲学家拒绝,被其视为形而上学的胡说。",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "拉普拉斯并没有考虑一般的归纳问题,只是在寻求某种先验信息的后果。因此他并没有得到所有可能的归纳法则,这也并不是他关心的。同时,约翰逊(W.E. Johnson,1932)、德菲内蒂(de Finetti,1937)和杰弗里斯(Harold Jeffreys,1939)对拉普拉斯问题进行了出色的分析,但卡尔纳普似乎对此并不了解。",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "卡尔纳普寻求的是一般性归纳法则(即根据过去的结果可以对未来的结果进行最佳可能预测的法则)。但是他同样患有哲学家的职业病。他的论述中只有抽象的符号逻辑,没有任何具体示例。因此,他从没有明白不同的归纳法则对应于不同的先验信息。对于我们来说,这似乎显而易见。根据以上论证,这是有关归纳的基本事实。没有这一点,甚至不能谈论问题,更不用说解决问题了。并没有所谓的\"一般性归纳法则\"。但是,\"先验信息\"一词及概念从未出现在卡尔纳普的论述中。",
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "及包含其余  $m - s$  次的互补子集  $\\overline{S^{\\prime}}$  ,其中  $1< s< m$  ,将子集  $S^{\\prime}$  中的任意一次结果称为一次\"成功\",而将子集  $\\overline{S^{\\prime}}$  中的任意一次结果称为一次\"失败\"。这样,我们将(9.28)替换为",
+        "page_idx": 38
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\ng_{j}=\\left\\{\\begin{array}{l l}{{1,}}&{{j\\in S^{\\prime},}}\\\\ {{0,}}&{{\\mathbb{H}\\backslash\\mathbb{H},}}\\end{array}\\right. \\tag{9.33}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "同样,(9.29)~(9.32)可以如下推广。  $G$  现在是成功总次数,一般称为  $r$",
+        "page_idx": 38
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nG=\\sum_{j=1}^{m}n_{j}g_{j}\\equiv r. \\tag{9.34}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "分拆函数现在变为",
+        "page_idx": 38
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nZ(\\lambda)=s\\mathrm{e}^{-\\lambda}+m-s. \\tag{9.35}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "从中可以得到",
+        "page_idx": 38
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nZ^{n}(\\lambda)=\\sum_{r=0}^{n}{\\binom{n}{r}}s^{r}\\mathrm{e}^{-\\lambda r}(m-s)^{n-r}. \\tag{9.36}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "因此  $\\mathrm{e}^{- \\lambda r}$  的系数是",
+        "page_idx": 38
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nM(n,G)=M(n,r)=\\binom{n}{r}s^{r}(m-s)^{n-r}. \\tag{9.37}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "根据(9.18),孤陋寡闻的机器人得出的成功概率为",
+        "page_idx": 38
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nP(G=r|I_{0})=\\binom{n}{r}p^{r}(1-p)^{n-r},\\quad 0\\leqslant r\\leqslant n, \\tag{9.38}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "其中  $p = s / m$  ,但这正是二项分布  $b(r|n,p)$  ,在第3章中其推导过程让我们在概念上感到困惑,当时我们发现二项分布(3.86)是从一个包含无限多个球的坛子中进行抽取的极限形式,也是对一个包含有限个球的坛子进行有放回随机抽样的近似形式(3.92)。但是无论在哪种情况下,结果都不是精确的,现在我们发现了二项分布出于不同原因而出现的一种情况,对于有限样本空间来说,结果是精确的。",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "这种精确性是我们使问题更加抽象的结果,在先验信息  $I_{0}$  中,没有提及坛子、球、伸手进去等复杂的物理性质,但是更重要和令人惊讶的是:二项分布显然是由重复抽样产生的,已经出现在了甚至没有重复概念的机器人的推论中!换句话说,二项分布具有组合基础,完全独立于\"重复抽样\"的概念。",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "这为我们理解孤陋寡闻的机器人的输出结果函数提供了一条线索,在传统概率论中,从詹姆斯·伯努利(James Bernoulli,1713)开始,二项分布总是根据如下假设推导出的:每次试验结果的概率都相同,且严格独立于其他试验的结果。但是正如我们已经指出的,这也正是孤陋寡闻的机器人得到的结果——不是出于对实验物理条件的了解,而是出于对所发生事件的完全无知。",
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "现在我们可以以许多其他方式进行推导, 并会发现这种一致性仍然存在: 孤陋寡闻的机器人不仅会发现二项分布, 而且会发现其推广形式: 多项分布, 作为组合定理.",
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "练习 9.2 推广 (9.38) 的推导方法, 推导出第 3 章发现的多项分布 (3.77).",
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "这样, 抽样论的所有常见概率分布 (泊松分布、伽马分布、高斯分布、卡方分布等) 都将作为这种方法的极限形式得出. 传统概率论根据频率定义和不同试验之间的严格独立性假设获得的所有结果, 都是孤陋寡闻的机器人在同样的问题中会得到的结果. 换句话说, 频率派概率论从功能上来说只是孤陋寡闻的机器人所进行的推理.",
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "由于孤陋寡闻的机器人无法进行归纳推理, 我们就能理解为什么传统概率论会存在问题. 除非我们学会在不同的试验结果之间引入某种逻辑关系, 否则任何试验结果都无法告诉我们其他试验的信息, 因此我们不可能\"得到暗示\".",
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "频率派概率论似乎完全为独立试验所困, 因此对极限定理有很大的依赖, 其推导过程完全依赖于不同试验的严格独立性. 即使不同试验结果之间只有稍微的正相关, 也将使得导出的定理在定性上是错误的. 确实, 没有严格的独立性, 不仅是极限定理, 正统统计估计所依赖的所有抽样分布也都是不正确的.",
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "孤陋寡闻的机器人在这里似乎具有战术优势: 对于所有这些极限定理, 估计量的抽样分布根据信息  $I_{0}$  完全有效. 二者还有一个重要的区别. 在传统概率论中, \"独立\"是指物理因果独立性, 但是如何判断这是现实世界的性质呢? 在传统概率文献中, 我们没有看到有关此问题的讨论. 对于机器人来说, 这意味着逻辑独立性. 这虽然是一个更强的条件, 但是会使得计算更加简洁.",
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "通过观察  $Z_{n}(\\lambda)$  得到的解, 优势在于可以产生精确的结果. 但是, 这种方式只能解决相对简单的问题. 现在我们介绍一种更强大的代数方法.",
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "9.7 熵算法",
+        "text_level": 1,
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "我们回到 (9.18)~(9.37) 中计算重数的问题, 不过这次使用更一般的表述. 考虑命题  $A(n_{1}, \\dots , n_{m})$ , 它是样本数  $n_{j}$  的函数, 当  $(n_{1}, \\dots , n_{m})$  在某个子集  $R \\in U$  中时为真, 在补集  $\\overline{R} = U - R$  中为假, 其中  $U$  是通用集合 (9.26). 如果  $A$  在  $n_{j}$  中是线性的, 那么它与 (9.17) 中的  $G$  相同.  $A$  的重数 (值为真的结果数) 为",
+        "page_idx": 39
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nM(n, A) = \\sum_{n_{j} \\in R} W(n_{1}, \\dots , n_{m}), \\tag{9.39}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "其中多项式系数  $W$  由 (9.24) 定义.",
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "(9.39)中的项数  $T(n,m)$  是多少?这是一个众所周知的组合问题,可以轻松得到答案:",
+        "page_idx": 40
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nT(n,m)={\\binom{n+m-1}{n}}={\\frac{(n+m-1)!}{n!(m-1)!}}. \\tag{9.40}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "我们注意到,当  $n\\rightarrow +\\infty$  时,",
+        "page_idx": 40
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nT(n,m)\\sim \\frac{n^{m - 1}}{(m - 1)!} \\tag{9.41}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "项的数量以  $n$  的有限次幂(  $m - 1$  次幂)增长(通过将  $n_{j}$  视为  $m$  维空间中的笛卡儿坐标,并注意到条件(9.26)定义  $U$  的几何意义,就可以直观地看出).区域  $R$  中的最大项定义为",
+        "page_idx": 40
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nW_{\\mathrm{max}}\\equiv \\mathrm{Max}_{R}W(n_{1},\\cdot \\cdot \\cdot ,n_{m}), \\tag{9.42}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "那么(9.39)不会小于  $W_{\\mathrm{max}}$  且其项数不会大于  $T(n,m)$  ,所以",
+        "page_idx": 40
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nW_{\\mathrm{max}}\\leqslant M(n,A)\\leqslant W_{\\mathrm{max}}T(n,m), \\tag{9.43}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "或者",
+        "page_idx": 40
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\frac{1}{n}\\ln W_{\\mathrm{max}}\\leqslant \\frac{1}{n}\\ln M(n,A)\\leqslant \\frac{1}{n}\\ln W_{\\mathrm{max}} + \\frac{1}{n}\\ln T(n,m). \\tag{9.44}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "但是当  $n\\rightarrow +\\infty$  时,根据(9.41),我们有",
+        "page_idx": 40
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\frac{1}{n}\\ln T(n,m)\\to 0, \\tag{9.45}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "因此",
+        "page_idx": 40
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\frac{1}{n}\\ln M(n,A)\\to \\frac{1}{n}\\ln W_{\\mathrm{max}}. \\tag{9.46}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "多项式系数  $W$  随着  $n$  增大的速度如此之快,以至于在到达极限时,(9.39)中的最大项占主导地位.  $T$  的对数不及  $n$  增大得快,因此在到达极限时它在(9.44)中并不会造成差别.",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "那么  $(\\ln W) / n$  在到达极限时会怎样?我们想要的极限是抽样频率  $f_{j} = n_{j} / n$  趋于常数时的极限,换句话说,是当  $f_{j}$  为常数、  $n\\rightarrow +\\infty$  时,",
+        "page_idx": 40
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\frac{1}{n}\\ln \\left[\\frac{n!}{(n f_{1})!\\cdots(n f_{m})!}\\right] \\tag{9.47}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "的极限,根据斯特林渐近逼近公式",
+        "page_idx": 40
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\ln (n!) \\sim n\\ln n - n + \\ln \\sqrt{2\\pi n} +O\\left(\\frac{1}{n}\\right), \\tag{9.48}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "我们发现,在到达极限时,  $(\\ln W) / n$  趋于一个独立于  $n$  的有限常数:",
+        "page_idx": 41
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\frac{1}{n}\\ln W\\to H\\equiv -\\sum_{j = 1}^{m}f_{j}\\ln f_{j}. \\tag{9.49}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "这正是我们所说的频率分布  $\\{f_{1},\\dots ,f_{m}\\}$  的熵.我们得到的结论是,对于非常大的  $n$ ,如果样本频率趋于常数,那么  $A$  的重数会变成一个极其简单的表达式:",
+        "page_idx": 41
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nM(n,A)\\sim \\mathrm{e}^{n H}. \\tag{9.50}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "这是在(9.50)中的两侧比会趋于1的意义上说的(尽管它们的差值不会趋于0,但是它们增长得如此之快,以至于在到达极限时不会影响最终的比例).根据(9.46),在(9.50)的  $H$  中使用的频率  $f_{j} = n_{j} / n$  是在  $A$  有定义时对区域  $R$  最大化  $H$  的频率.我们现在看到了以前并不明显的东西,重数可以通过确定定义  $R$  的任何约束的最大熵频率分布  $\\{f_{1},\\dots ,f_{m}\\}$  来确定.①",
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "我们需要进行一些思考和分析才能理解(9.50)的意义.首先请注意,我们现在有了完成计算的方法,该方法需要对重数  $M(n,G)$  给出明确的值.在计算熵之前,让我们简要说明一下计算方法.如果  $A$  对于  $n_{j}$  是线性的,则重数(9.50)渐近地等于",
+        "page_idx": 41
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nM(n,G) = \\mathrm{e}^{n H}, \\tag{9.51}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "因此根据(9.18),达到  $G$  的概率是",
+        "page_idx": 41
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(G|n,I_{0}) = m^{-n}\\mathrm{e}^{n H} = \\mathrm{e}^{-n(H_{0} - H)}, \\tag{9.52}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "其中  $H_{0} = \\ln m$  是熵的绝对最大值,这将在后面的(9.74)中导出.通常,最直接相关的量不是熵,而是熵与其最大可能值之间的差.在很多情况下,最好将熵定义为该差值.但是历史已经很难改变了.总之,(9.52)具有很深的直觉意义,我们将在后面的章节中进一步揭示.",
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "此外,让我们注意获取新信息的效果:现在我们了解到指定的试验得到了量  $g_{j}$ ,这一新信息会改变  $A$  的重数,因为现在剩余的  $n - 1$  次试验必须得出总数  $G - g_{j}$ ,并且可能导致这种情况发生的方式数量是  $M(n - 1,G - g_{j})$ .而且,由于没有计入得到  $g_{j}$  的一次试验,频率会略有变化.与(9.18)中的  $f_{k} = n_{k} / n$  不同,我们现在有频率  $\\{f_{1}^{\\prime},\\dots ,f_{m}^{\\prime}\\}$ ,其中",
+        "page_idx": 41
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nf_{k}^{\\prime} = \\frac{n_{k} - \\delta_{jk}}{n - 1},\\quad 1\\leqslant k\\leqslant m, \\tag{9.53}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "或者写为  $f_{k}^{\\prime} = f_{k} + \\delta f_{k}$ ,发生的变化是",
+        "page_idx": 41
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\delta f_{k} = \\frac{f_{k} - \\delta_{jk}}{n - 1}, \\tag{9.54}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "这是精确的. 作为验证, 注意到  $\\sum f_{k}^{\\prime} = 1$  且  $\\sum \\delta f_{k} = 0$ , 正应该是这样的.",
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "频率的这种小变化会引起熵的小变化. 将新值写成  $H^{\\prime} = H + \\delta H$ , 可以得到",
+        "page_idx": 42
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\delta H = \\sum \\frac{\\partial H}{\\partial f_{k}}\\delta f_{k} + O\\left(\\frac{1}{n^{2}}\\right) = \\left[\\frac{H + \\ln f_{j}}{n - 1}\\right] + O\\left(\\frac{1}{n^{2}}\\right), \\tag{9.55}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "因此,",
+        "page_idx": 42
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nH^{\\prime} = \\frac{n H + \\ln f_{j}}{n - 1} +O\\left(\\frac{1}{n^{2}}\\right). \\tag{9.56}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "这样, 新的重数渐近地是",
+        "page_idx": 42
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nM(n - 1,G - g_{j}) = \\mathrm{e}^{(n - 1)H^{\\prime}} = f_{j}\\mathrm{e}^{n H}\\left[1 + O\\left(\\frac{1}{n}\\right)\\right]. \\tag{9.57}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "与精确表达式相比, 重数的这种渐近形式非常简单. 这意味着, 与我们最初注意到的扩展集合  $S^{n}$  中天文数字般的可能结果数不同, 当我们拥有正确的数学工具时, 非常大的  $n$  的极限是最容易计算的. 实际上, 集合  $S^{n}$  已经从我们的结果中消失, 剩下的问题是计算在域  $R$  上最大化熵 (9.49) 的  $f_{k}$ . 但这是在单个试验的样本空间  $S$  上能解决的问题!",
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "获得总收益  $G$  的概率从 (9.52) 变为",
+        "page_idx": 42
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(G|r_{i} = j,n I_{0}) = \\frac{M(n - 1,G - g_{j})}{m^{n - 1}}, \\tag{9.58}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "并且, 只给定  $I_{0}$ , 事件  $r_{i} = j$  的先验概率根据 (9.5) 是",
+        "page_idx": 42
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(r_{i} = j|n I_{0}) = \\frac{1}{m}. \\tag{9.59}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "这为我们提供了以  $G$  为条件应用贝叶斯定理所需的一切:",
+        "page_idx": 42
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(r_{i} = j|G n I_{0}) = p(r_{i} = j|n I_{0})\\frac{p(G|r_{i} = j,n I_{0})}{p(G|n I_{0})}, \\tag{9.60}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "或者",
+        "page_idx": 42
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(r_{i} = j|G n I_{0}) = \\frac{1}{m}\\frac{\\left[M(n - 1,G - g_{j}) / m^{n - 1}\\right]}{\\left[M(n,G) / m^{n}\\right]} = \\frac{M(n - 1,G - g_{j})}{M(n,G)} = f_{j}. \\tag{9.61}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "因此, 对  $G$  的了解使得机器人对第  $j$  次结果预测的概率从均匀先验概率  $1 / m$  变为该结果的观测频率  $f_{j}$ . 虽然我们凭直觉可能会预料到概率和频率之间的这种联系最终会出现, 但是机器人只需要知道总和  $G$  似乎令人惊讶. 请注意, 指定  $G$  会决定最大熵频率分布  $\\{f_{1},\\dots ,f_{m}\\}$ , 因此这里并不存在矛盾.",
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "练习9.3 推广此结果,导出联合概率",
+        "page_idx": 43
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(r_{i} = j,r_{s} = t|G n I_{0}) = M(n - 2,G - g_{j} - g_{t}) / M(n,G) \\tag{9.62}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "作为重数比,并给出结果概率。这些试验是否仍然是独立的?或者说,对  $G$  的了解会导致不同的试验之间具有相关性吗?",
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "这些结果显示了孤陋寡闻的机器人能完成的简单、合情的工作是令人满意的。在传统频率派概率论中,这些联系是随意假定的。而孤陋寡闻的机器人则根据概率论法则推导出了结果。",
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "现在,我们回头看看如何通过熵最大化得到熵  $H$  和频率  $f_{j}$  之间的明确表达式。",
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "9.8 另一种视角",
+        "text_level": 1,
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "以下观察能让我们对分拆函数方法获得更好的直观理解。遗憾的是,这只是一种数论技巧,在实践中毫无用处。根据(9.28)和(9.29)可以看出,实现总和  $G$  的方法重数可以写成",
+        "page_idx": 43
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nM(n,G) = \\sum_{\\{n_{j}\\}}W(n_{1},\\dots,n_{m}), \\tag{9.63}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "我们要对所有满足以下条件的所有非负整数集合  $\\{n_{j}\\}$  求和:",
+        "page_idx": 43
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\sum n_{j} = n,\\qquad \\sum n_{j}g_{j} = G. \\tag{9.64}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "令  $\\{n_{j}\\}$  和  $\\{n_{j}^{\\prime}\\}$  为两个得出相同总和的不同集合:  $\\sum n_{j}g_{j} = \\sum n_{j}^{\\prime}g_{j} = G$ 。那么可以得到",
+        "page_idx": 43
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\sum_{j = 1}^{m}k_{j}g_{j} = 0, \\tag{9.65}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "根据假设,整数  $k_{j}\\equiv n_{j} - n_{j}^{\\prime}$  不能全部为0.",
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "如果两个数  $f$  和  $g$  之比不是有理数,即如果  $f / g$  不能写为  $r / s$  的形式,其中  $r$  和  $s$  是整数(但是通过选择足够大的  $r$  和  $s$ ,总是能以任意精度近似任何比率),则称它们是不可通约的。同样,如果没有一个数可以写成其他数的具有有理系数的线性组合,则我们将这些数  $\\{g_{1},\\dots,g_{m}\\}$  称为联合不可通约的。如果是这样,则(9.65)意味着所有  $k_{j} = 0$ :",
+        "page_idx": 43
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nn_{j} = n_{j}^{\\prime},\\qquad 1\\leqslant j\\leqslant m. \\tag{9.66}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "因此,如果  $\\{g_{1},\\dots,g_{m}\\}$  联合不可通约,那么原则上马上可以得到解。这是因为给定的  $G = \\sum n_{j}g_{j}$  只能有一组样本数  $n_{j}$  能满足上述等式,即如果指定  $G$ ,则",
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "可以确定所有  $\\{n_{j}\\}$  的值. 那么在 (9.63) 中只有一项:",
+        "page_idx": 44
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nM(n,G) = W(n_{1},\\dots ,n_{m}), \\tag{9.67}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 44
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nM(n - 1,G - g_{j}) = W(n_{1}^{\\prime},\\dots ,n_{m}^{\\prime}), \\tag{9.68}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "其中必然有  $n_{i}^{\\prime} = n_{i} - \\delta_{i j}$  .然后(9.61)的精确结果可简化为",
+        "page_idx": 44
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(r_{k} = j|G n I_{0}) = \\frac{W(n_{1}^{\\prime},\\cdots,n_{m}^{\\prime})}{W(n_{1},\\cdots,n_{m})} = \\frac{(n - 1)!}{n!}\\frac{n_{j}!}{(n_{j} - 1)!} = \\frac{n_{j}}{n}. \\tag{9.69}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "在此情况下,可以用另一种方式得到结果:无论机器人以什么方式知道样本数  $n_{j}$  (即  $\\{r_{1},\\dots ,r_{n}\\}$  等于  $j$  的个数),只要它不知道第  $j$  种结果具体发生在哪次试验中(即不知道哪些数字等于  $j$  ),就可以直接应用伯努利规则(9.18)得到:",
+        "page_idx": 44
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nP(r_{k} = j|n_{j}I_{0}) = \\frac{n_{j}}{数字的总数}. \\tag{9.70}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "同样,任何命题  $A$  的概率均等于该命题在可能性相同的假设的相关集合中为真的频率.我们的机器人尽管孤陋寡闻,但仍会产生传统概率论可以确保正确的标准结果.传统概率论学者似乎将其视为一种物理定律,但我们无须援引任何\"定律\"就能解释这样一个事实:测得的频率通常近似于指定的概率(相对准确度约为  $1 / \\sqrt{n}$  ,其中  $n$  是试验次数).如果用来分配概率的信息包含实验中所有起作用的系统因素,那么实验可能发生的概率绝大部分会集中在一个很小的频率区间内.这只是一个组合数学定理,本质上是棣莫弗和拉普拉斯在18世纪以渐近公式的方式给出的.实际上,当前的几乎所有概率理论都将概率和频率之间的这种紧密联系视为理所当然的,却不对产生这种关联的机制做任何解释.但是对我们来说,这种关联只是一种特例.",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "9.9 熵最大化",
+        "text_level": 1,
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "$M(n,A)$  的推导结果(9.50)对于样本数为  $n_{j}$  的任意函数定义的命题  $A$  都成立.通常,可能需要许多不同的算法来实现这一最大化.但是在  $A = G$  的情况下,我们关心的是线性函数  $G = n_{j}g_{j}$  ,所以仅通过指定  $n$  次试验中  $G$  的平均值",
+        "page_idx": 44
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nG = \\frac{G}{n} = \\sum_{j = 1}^{m}f_{j}g_{j}, \\tag{9.71}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "这也是频率分布的平均值.最大化问题由吉布斯在其关于统计力学的著作(J. Willard Gibbs,1902)中一劳永逸地给出了答案.",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "然而,接受吉布斯的算法花了一辈人的时间.75年以来,这一算法一直被某些人拒绝和攻击.因为对于那些认为概率是一种实际物理现象的人来说,这显得很随意.只有通过香农的文章(Claude Shannon,1948)才能理解吉布斯算法的",
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "作用. 这一看法首先由我在 1957 年的文章 (Jaynes, 1957a) 中提出, 其中我建议对统计力学进行新的解释 (作为逻辑推断而不是物理理论的示例). 这很快导致吉布斯的平衡理论被推广为非平衡统计力学.",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "在第 11 章中, 我们将建立由最大熵原理生成的完整数学工具. 就目前而言, 为手头问题提供解就足够了. 吉布斯给出的一个不等式为我们的熵最大化问题提供一个优雅的解.",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "假设  $\\{f_{1},\\dots ,f_{m}\\}$  是  $m$  个点上满足条件  $\\begin{array}{r}{(f_{j}\\geqslant 0,\\sum_{j}f_{j} = 1)} \\end{array}$  的任何可能的频率分布,令  $\\{u_{1},\\dots ,u_{m}\\}$  是满足相同条件的其他分布.那么由在正实数轴上 $\\ln x\\leqslant x - 1$  ,当且仅当  $x = 1$  时等号成立,可以得到",
+        "page_idx": 45
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\sum_{j = 1}^{m}f_{j}\\ln \\left(\\frac{u_{j}}{f_{j}}\\right)\\leqslant 0, \\tag{9.72}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "当且仅当对于所有  $j$  有  $f_{j} = u_{j}$  时等号成立. 我们可以在其中认出熵表达式 (9.49), 因此吉布斯不等式变为",
+        "page_idx": 45
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nH(f_{1},\\dots ,f_{m})< -\\sum_{j = 1}^{m}f_{j}\\ln u_{j}, \\tag{9.73}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "从中可以得出各种结论. 对所有  $j$  选择  $u_{j} = 1 / m$ , 上述不等式变成",
+        "page_idx": 45
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nH\\leqslant \\ln m, \\tag{9.74}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "因此  $H$  的最大可能值为  $\\ln m$ , 当且仅当  $f_{j}$  对于所有  $j$  都为均匀分布  $f_{j} = 1 / m$  时达到该值. 现在选择",
+        "page_idx": 45
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nu_{j} = \\frac{\\mathrm{e}^{-\\lambda g_{j}}}{Z(\\lambda)}, \\tag{9.75}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "其中归一化因子  $Z(\\lambda)$  只是分拆函数 (9.21). 选择常数  $\\lambda$  以便达到某个指定的平均值  $\\overline{G} = \\sum u_{j}g_{j}$ , 后面我们将展示如何实现这一点. 这样, 吉布斯不等式变为",
+        "page_idx": 45
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nH\\leqslant \\sum f_{j}g_{j} + \\ln Z(\\lambda). \\tag{9.76}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "现在让  $f_{j}$  在所有可能的分布上变化, 以产生所需的平均值 (9.71). 则 (9.76) 的右侧保持不变, 而  $H$  在  $R$  上达到最大值:",
+        "page_idx": 45
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nH_{\\max} = \\overline{G} +\\ln Z, \\tag{9.77}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "当且仅当  $f_{j} = u_{j}$  时等号成立. 仅需选择  $\\lambda$  即可达到平均值  $\\overline{G}$ . 但根据 (9.75) 可以明显看出",
+        "page_idx": 45
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\overline{G} = -\\frac{\\partial}{\\ln(Z)\\partial\\lambda}, \\tag{9.78}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "因此这将对  $\\lambda$  进行求解. 容易看出, 它只有一个实根 (在实数轴上, (9.78) 的右侧是  $\\lambda$  的连续且严格单调递减的函数), 因此解是唯一的.",
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "我们刚刚得出了“吉布斯正则系综”形式体系，该形式体系在量子统计中能够确定封闭系统（即没有粒子进入或离开该系统）的所有平衡热力学性质。现在显然可以看出，其通用性已经远远超过了该应用。",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "9.10 概率和频率",
+        "text_level": 1,
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "在我们的术语中，概率是我们为表示知识状态而分配的东西，或者是我们根据概率论法则从先前分配的概率中计算出来的东西；频率是我们测量或估计的现实世界的事实属性。“估计概率”一词与“分配频率”或“画一个方形的圆”一样不合逻辑.",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "概率和频率之间的根本区别在于以下相对性原则：当我们改变知识状态时，概率就会改变；而频率则不然．因此，我们分配给事件  $E$  的概率  $p(E)$  仅在某种特定的知识状态下才等于其频率  $f(E)$  ．我们会在直觉上认为，当我们掌握的关于 $E$  的唯一信息是它的观测频率时就会是这样的．概率论的数学法则通过以下方式证实了这一点.",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "我们注意到概率和频率之间有两种最常见的联系．其一，在可交换性与某些其他先验信息的假设下，将二元实验中的观测频率转换为概率的规则是拉普拉斯连续法则（Jaynes，1968）．我们已经在第6章的坛子抽样问题中碰到了这种联系，并将在第18章中对此进行详细分析．其二，在独立性假设下，将概率转换为估计频率的规则是伯努利弱大数定律（或者为了得到估计误差，使用棣莫弗- 拉普拉斯极限定理）",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "但是概率与频率还有许多其他联系，例如它们存在于最大原理（第11章）变换群原理（第12章）以及可交换序列涨落理论（Jaynes，1978）中.",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "如果有人希望研究此事，还可能在各种应用中找到概率与频率之间的许多不同的逻辑关系。但是，只要与问题相关，这些联系总是会作为作为扩展逻辑的概率论的数学结果自动出现，不需要将概率定义为频率。事实上，贝叶斯理论可能有理由声称自己能比“频率”理论更有效地使用频率的概念。因为频率理论只承认概率与频率之间的一种联系，在适合使用其他联系时会遇到麻烦。",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "事实上，费希尔、奈曼、冯·米泽斯、费勒和萨维奇都强烈地否认了概率论是逻辑的扩展，并指责拉普拉斯和杰弗里斯认为概率论是扩展逻辑的说法是形而上学的胡说。在我们看来，如果A 先生想研究随机试验的频率特性，发表结果，并将结论教给下一代，那么他有权这样做，我们也祝他一切顺利。但是，B 先生也有权研究与频率或随机试验没有必然联系的逻辑推断问题，发表结果，并将结论教给下一代。这个世界有足够的空间容纳两种不同的视角。",
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "那么,为什么持续一个多世纪的激烈辩论仍然没有解决频率与概率之间的这种冲突呢?为什么它们不能和平共处呢?我们无法理解的是:如果A先生想谈论频率,他为什么不直接使用\"频率\"一词呢?为什么要坚持使用有着既定历史和日常口语含义的\"概率\"一词呢?如果他直接使用\"频率\"一词,就肯定不会让不属于自己小团体的读者误解他的意思.在我们看来,他很容易(完全出于自己的利益)直接说出自己的意思以避免这些误解.[克拉默(Cramér,1946)就经常这样做,尽管并不是  $100\\%$  这样,所以他的著作至今仍很容易阅读和理解.」",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "当然,冯·米泽斯、费勒、费希尔和奈曼也不是在什么事情上都保持一致.但是,当他们中的任何一位使用\"概率\"一词时,只要我们将其替换为\"频率\",就更能表达他们的思想并且避免混乱.",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "我们认为,科学中的绝大多数实际问题明显属于B先生的范畴,因此未来科学将不得不越来越多地转向这种视角和结果.此外,B先生使用\"概率\"一词来表达人类信息,不仅从历史上可以追溯至詹姆斯·伯努利(JamesBernoulli,1713)对这一词语的使用先例,而且更接近其现代口语含义.",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "9.11 显著性检验",
+        "text_level": 1,
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "概率和频率概念之间的微妙相互作用也出现在显著性检验或\"拟合优度检验\"问题中.在第5章中,我们讨论了诸如评估牛顿力学的有效性之类的问题,并指出正统显著性检验旨在接受和拒绝某一假设,却不考虑任何备择假设.我们阐明了为什么除非说明  $H$  针对的特定备择假设,否则无法说观察到的事实如何影响了某个假设  $H$  的状态.常识告诉所有科学家,某个给定的观测证据  $E$  可能会彻底否定牛顿理论,也可能完全确认它,还可能在其他程度上削弱或提升可信度.这完全取决于针对哪种备择假设进行检验.贝叶斯定理也告诉了我们同样的道理.假设我们只考虑两种假设  $H$  和  $H^{\\prime}$  ,那么根据任何数据  $D$  和先验信息  $I$  ,我们始终有  $P(H|DI) + P(H^{\\prime}|DI) = 1$  ,按照第4章中讨论的以分贝为单位的对数合情性度量,贝叶斯定理变成",
+        "page_idx": 47
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\ne(H|DI) = e(H|I) + 10\\log_{10}\\left[\\frac{P(D|H)}{P(D|H^{\\prime})}\\right], \\tag{9.79}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "我们可以将其描述为\"数据  $D$  以  $10\\log_{10}[P(D|H) / P(D|H^{\\prime})]$  分贝支持相对于  $H^{\\prime}$  的假设  $H^{\\prime \\prime}$  .这里的\"相对于  $H^{\\prime \\prime}$  \"是至关重要的,因为相对于其他假设  $H^{\\prime \\prime}$  而言,证据的变化  $[e(H|DI) - e(H|I)]$  可能会完全不同.询问观察到的事实\"本身\"在多大程度上肯定或否定  $H$  是没有意义的(当然,在假设  $H$  不可能产生数据  $D$  时例外,这时演绎推理可以\"挺身而出\").",
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "只要仅做一般性的讨论,我们的常识就很容易认可这种对备择假设的需求。但是,如果我们考虑特定的问题,就可能会存在一些疑惑。例如,在第6章的粒子计数器问题中,我们碰到了一种情况(已知源强度和计数器效率  $s, \\phi$ ),其中在任意一秒内获得  $c$  次计数的概率是平均值为  $\\lambda = s\\phi$  的泊松分布:",
+        "page_idx": 48
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np(c|s\\phi) = \\mathrm{e}^{-\\lambda}\\frac{\\lambda^{c}}{c!},\\qquad 0\\leqslant c\\leqslant +\\infty . \\tag{9.80}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "尽管对于我们考虑的问题并非必要,我们仍然可以问:如果在不同秒中重复测量并得到结果数据  $D\\equiv \\{c_{1},\\dots ,c_{n}\\}$ ,我们可以从中推断出产生  $c$  次计数的相对频率是多少?如果在每次试验中为任意特定事件(例如事件  $c = 12$ )分配的概率独立地等于",
+        "page_idx": 48
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\np = \\mathrm{e}^{-\\lambda}\\frac{\\lambda^{12}}{12!}, \\tag{9.81}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "那么这个事件在  $n$  次试验中恰好发生  $r$  次的概率为二项分布(9.38):",
+        "page_idx": 48
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\nb(r|n,p)=\\binom{n}{r}p^{r}(1-p)^{n-r}. \\tag{9.82}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "有几种方法可以计算这种分布的矩。一种容易记住的一阶矩是",
+        "page_idx": 48
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{l}{{\\langle r\\rangle=E(r)}}\\\\ {{=\\sum_{r=0}^{n}r b(r|n,p)}}\\\\ {{=\\left[p\\frac{\\mathrm{d}}{\\mathrm{d}p}\\sum_{r}\\binom{n}{r}p^{r}q^{n-r}\\right]_{q=1-p}}}\\\\ {{=\\left(p\\frac{\\mathrm{d}}{\\mathrm{d}p}\\right)\\times(p+q)^{n}}}\\\\ {{=n p.}}\\end{array} \\tag{9.83}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "类似地,",
+        "page_idx": 48
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{l}{{\\langle r^{2}\\rangle=\\left(p\\frac{\\mathrm{d}}{\\mathrm{d}p}\\right)^{2}(p+q)^{n}=n p+n(n-1)p^{2},}}\\\\ {{\\langle r^{3}\\rangle=\\left(p\\frac{\\mathrm{d}}{\\mathrm{d}p}\\right)^{3}(p+q)^{n}=n p+2n(n-1)p^{2}+n(n-1)(n-2)p^{3},}}\\end{array} \\tag{9.84}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "等等!对于每一个更高阶矩,仅再应用一次运算符  $(p\\mathrm{d} / \\mathrm{d}p)$ ,最后令  $p + q = 1$",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "我们在抽样分布上的  $r$  的(均值)  $\\pm$  (标准差)估计为",
+        "page_idx": 48
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\begin{array}{r}{(r)_{\\mathrm{est}} = \\langle r\\rangle \\pm \\sqrt{\\langle r^{2}\\rangle - \\langle r\\rangle^{2}}}\\\\ {= n p\\pm \\sqrt{n p(1 - p)},} \\end{array} \\tag{9.85}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "我们对事件  $c = 12$  在  $n$  次试验中发生的频率  $f = r / n$  的估计是",
+        "page_idx": 49
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n(f)_{\\mathrm{est}} = p \\pm \\sqrt{\\frac{p(1 - p)}{n}}. \\tag{9.86}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "这些关系及其推广给出了概率和频率之间最常见的联系。这是詹姆斯·伯努利(James Bernoulli,1713)给出的原始联系。",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "因此,长期来看,我们期望各种计数的实际频率将以近似于(9.80)的泊松分布落在(9.86)所示的误差范围内。现在我们可以进行实验,实验频率可能与预测频率相符,也可能不相符。如果到我们观察到数千个计数时,观察到的频率与泊松分布有很大的不同(即远远超出了(9.86)的范围),那么直觉将告诉我们导致泊松分布预测的论证一定是错误的:或者是(9.80)的函数形式,或者是不同试验中的独立性假设跟实验中的真实条件不一致。但是到目前为止,我们没有提到任何备择假设!我们的直觉错了吗?还是可以通过某种方式与概率论调和?这个问题不是概率论问题,而是心理学问题。它关系到我们的直觉在这里起到什么作用。",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "隐含备择假设",
+        "text_level": 1,
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "让我们再看看(9.79)。不管  $H'$  是什么,必须有  $p(D|H') \\leqslant 1$ ,因此对于任何备择假设都有",
+        "page_idx": 49
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\ne(H|DI) \\geqslant e(H|I) + 10 \\log_{10} p(D|H) = e(H|I) - \\psi_{\\infty}, \\tag{9.87}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "其中",
+        "page_idx": 49
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\psi_{\\infty} \\equiv -10 \\log_{10} p(D|H) \\geqslant 0. \\tag{9.88}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "因此,无论是什么备择假设,数据  $D$  相对于  $H$  的支持证据都不可能超过  $\\psi_{\\infty} \\mathrm{~dB}$ 。",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "这显示了前面提到的悖论的答案。在判断理论与观测之间是否一致时,恰当的问题不是不提及任何备择假设就问:\"数据  $D$  对假设  $H$  的支持度如何?\"最好是问:\"相对于  $H$ ,数据  $D$  是否支持任何备择假设  $H'$  ?如果是,支持的强度有多大?\"由于第一个问题不是良好定义的,概率论无法对其给出有意义的回答。而对于第二个问题,概率论则可以给出非常肯定的(定量与明确的)答案。",
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "我们可能会得出这样的结论:\"拟合优度\"的合适标准就是  $\\psi_{\\infty}$ ,或者说是概率  $p(D|H)$ 。但是事实并非如此,可以论证如下。正如我们在第6章末尾指出的那样,在获取数据  $D$  之后,总是可以找到一个奇怪的\"确定性\"假设  $H_{S}$ ,根据该假设, $D$  不可避免,即  $p(D|H_{S}) = 1$ , $H_{S}$  相对于  $H$  的证据总是等于  $\\psi_{\\infty} \\mathrm{~dB}$ 。让我们看看这意味着什么。假设我们掷一个骰子  $n = 10000$  次并详细记录其结果。然后,在  $H \\equiv$  \"骰子无偏\"的假设下, $6^{n}$  种可能结果中每一种的概率均为  $6^{- n}$ ,或者说",
+        "page_idx": 49
+    },
+    {
+        "type": "equation",
+        "text": "\n$$\n\\psi_{\\infty} = 10 \\log_{10}(6^{n}) = 77815 \\mathrm{~dB}. \\tag{9.89}\n$$\n",
+        "text_format": "latex",
+        "page_idx": 49
+    }
+]
