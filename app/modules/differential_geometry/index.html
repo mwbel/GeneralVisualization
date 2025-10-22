@@ -1,67 +1,76 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>微分几何可视化</title>
-    <link rel="stylesheet" href="../../lib/global-styles.css">
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>微分几何可视化世界</title>
+  <link rel="stylesheet" href="../../assets/style.css" />
 </head>
 <body>
-    <div id="app">
-        <header class="module-header">
-            <h1>微分几何可视化</h1>
-            <nav class="module-nav">
-                <a href="../../../index.html" class="back-link">返回主页</a>
-            </nav>
-        </header>
-        
-        <main class="main-content">
-            <aside class="sidebar">
-                <h3>可视化页面</h3>
-                <ul class="nav-list">
-                    <li><a href="./curves-and-surfaces.html">曲线与曲面</a></li>
-                    <li><a href="./curvature-analysis.html">曲率分析</a></li>
-                    <li><a href="./vector-fields.html">向量场</a></li>
-                    <li><a href="./differential-forms.html">微分形式</a></li>
-                    <li><a href="./manifolds.html">流形理论</a></li>
-                    <li><a href="./geodesics.html">测地线</a></li>
-                </ul>
-            </aside>
-            
-            <div class="content-area">
-                <div class="welcome-section">
-                    <h2>欢迎使用微分几何可视化模块</h2>
-                    <p>本模块提供了微分几何核心概念的三维可视化工具，帮助您理解曲线、曲面和流形的几何性质。</p>
-                    
-                    <div class="feature-grid">
-                        <div class="feature-card">
-                            <h3>曲线与曲面</h3>
-                            <p>参数化曲线和曲面的三维可视化和性质分析</p>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <h3>曲率分析</h3>
-                            <p>高斯曲率、平均曲率的计算和几何直观展示</p>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <h3>向量场</h3>
-                            <p>切向量场、法向量场的可视化和流线分析</p>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <h3>测地线</h3>
-                            <p>曲面上最短路径的计算和动态演示</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
+  <div class="container">
+    <div class="header">
+      <h1>微分几何可视化世界</h1>
+      <div class="actions">
+        <a class="button secondary" href="../../../index.html">返回"万物可视化"</a>
+      </div>
     </div>
-    
-    <script type="module" src="./main.js"></script>
+
+    <div class="search">
+      <input id="search" type="text" placeholder="搜索概念（标题/简介）" />
+    </div>
+
+    <div class="grid" id="cards">
+      
+    <div class="card" data-q="球面测地线 展示球面上两点间测地线">
+      <h3>球面测地线</h3>
+      <p>展示球面上两点间测地线</p>
+      <div class="actions">
+        <a class="button" href="./pages/geodesic_sphere.html">进入</a>
+      </div>
+    </div>
+
+    <div class="card" data-q="高斯曲率 可交互查看曲率符号与大小">
+      <h3>高斯曲率</h3>
+      <p>可交互查看曲率符号与大小</p>
+      <div class="actions">
+        <a class="button" href="./pages/curvature_gauss.html">进入</a>
+      </div>
+    </div>
+
+    <div class="card" data-q="平行移动 在球面三角形上演示平行移动">
+      <h3>平行移动</h3>
+      <p>在球面三角形上演示平行移动</p>
+      <div class="actions">
+        <a class="button" href="./pages/parallel_transport.html">进入</a>
+      </div>
+    </div>
+
+    <div class="card" data-q="高斯-博内定理 展示曲面的总曲率与拓扑关系">
+      <h3>高斯-博内定理</h3>
+      <p>展示曲面的总曲率与拓扑关系</p>
+      <div class="actions">
+        <a class="button" href="./pages/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE(%E5%9B%BE%E7%81%B5%E7%A4%BE%E5%8C%BA%E4%B8%8B%E8%BD%BD)gauss_bonnet.html">进入</a>
+      </div>
+    </div>
+    </div>
+
+    <div class="footer">
+      <span>概念数量：4</span>
+      <span>最后生成时间：2025-10-21 22:43</span>
+    </div>
+  </div>
+
+  <script>
+    const input = document.getElementById('search');
+    const cards = Array.from(document.querySelectorAll('#cards .card'));
+    input.addEventListener('input', () => {
+      const q = input.value.trim().toLowerCase();
+      cards.forEach(card => {
+        const t = (card.getAttribute('data-q') || '').toLowerCase();
+        card.style.display = t.includes(q) ? '' : 'none';
+      });
+    });
+  </script>
+
 </body>
 </html>

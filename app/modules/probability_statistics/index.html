@@ -1,136 +1,75 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>概率论与数理统计可视化</title>
-    <link rel="stylesheet" href="../../lib/global-styles.css">
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>概率论与数理统计可视化世界</title>
+  <link rel="stylesheet" href="../../assets/style.css" />
 </head>
 <body>
-    <div id="app">
-        <header class="module-header">
-            <h1>概率论与数理统计可视化</h1>
-            <nav class="module-nav">
--                <a href="../../index.html" class="back-link">返回主页</a>
-+                <a href="../../../index.html" class="back-link">返回 “万物可视化”主页</a>
-            </nav>
-        </header>
-        
-        <main class="main-content">
-            <aside class="sidebar">
-                <h3>可视化页面</h3>
-                <ul class="nav-list">
-                    <li><a href="./pages/二项分布现代化可视化_离线版.html">二项分布可视化</a></li>
-                    <li><a href="./pages/指数分布交互式可视化.html">指数分布可视化</a></li>
-                    <li><a href="./pages/正态分布交互式可视化.html">正态分布可视化</a></li>
-                    <li><a href="./pages/泊松分布交互式可视化_完整离线版.html">泊松分布可视化</a></li>
-                </ul>
-            </aside>
-            
-            <div class="content-area">
-                <div class="welcome-section">
-                    <h2>欢迎使用概率与统计可视化世界</h2>
-                    <p>本模块提供了概率论和统计学核心概念的交互式可视化工具，帮助您深入理解随机现象和统计推断。</p>
-                    
-                    <div class="feature-grid">
-                        <div class="feature-card">
-                            <h3>概率分布</h3>
-                            <p>可视化各种连续和离散概率分布的性质和参数影响</p>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <h3>中心极限定理</h3>
-                            <p>动态演示样本均值分布趋向正态分布的过程</p>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <h3>假设检验</h3>
-                            <p>交互式假设检验流程和统计量分布可视化</p>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <h3>回归分析</h3>
-                            <p>线性回归、多项式回归的拟合过程和残差分析</p>
-                        </div>
-                    </div>
-                </div>
-+
-+                <section class="chapter-section">
-+                    <h2>章节导览</h2>
-+                    <div class="feature-grid">
-+                        <div class="feature-card">
-+                            <h3>第一章 概率论的基本概念</h3>
-+                            <p>敬请期待</p>
-+                        </div>
-+                        <div class="feature-card">
-+                            <h3>第二章 随机变量及其分布</h3>
-+                            <div class="chip-list">
-+                                <a href="./pages/二项分布现代化可视化_离线版.html">二项分布</a>
-+                                <a href="./pages/泊松分布交互式可视化_完整离线版.html">泊松分布</a>
-+                                <a href="./pages/指数分布交互式可视化.html">指数分布</a>
-+                                <a href="./pages/正态分布交互式可视化.html">正态分布</a>
-+                            </div>
-+                        </div>
-+                        <div class="feature-card">
-+                            <h3>第三章 多维随机变量及其分布</h3>
-+                            <p>敬请期待</p>
-+                        </div>
-+                        <div class="feature-card">
-+                            <h3>第四章 随机变量的数字特征</h3>
-+                            <p>敬请期待</p>
-+                        </div>
-+                        <div class="feature-card">
-+                            <h3>第五章 大数定律及中心极限定理</h3>
-+                            <p>敬请期待</p>
-+                        </div>
-+                        <div class="feature-card">
-+                            <h3>第六章 样本及抽样分布</h3>
-+                            <p>敬请期待</p>
-+                        </div>
-+                        <div class="feature-card">
-+                            <h3>第七章 参数估计</h3>
-+                            <p>敬请期待</p>
-+                        </div>
-+                        <div class="feature-card">
-+                            <h3>第八章 假设检验</h3>
-+                            <p>敬请期待</p>
-+                        </div>
-+                        <div class="feature-card">
-+                            <h3>第九章 方差分析及回归分析</h3>
-+                            <p>敬请期待</p>
-+                        </div>
-+                        <div class="feature-card">
-+                            <h3>第十章 bootstrap方法(自助法)</h3>
-+                            <p>敬请期待</p>
-+                        </div>
-+                        <div class="feature-card">
-+                            <h3>第十一章 在数理统计中应用R软件</h3>
-+                            <p>敬请期待</p>
-+                        </div>
-+                        <div class="feature-card">
-+                            <h3>第十二章 随机过程</h3>
-+                            <p>敬请期待</p>
-+                        </div>
-+                        <div class="feature-card">
-+                            <h3>第十三章 马尔可夫链</h3>
-+                            <p>敬请期待</p>
-+                        </div>
-+                        <div class="feature-card">
-+                            <h3>第十四章 平稳随机过程</h3>
-+                            <p>敬请期待</p>
-+                        </div>
-+                        <div class="feature-card">
-+                            <h3>第十五章 时间序列分析</h3>
-+                            <p>敬请期待</p>
-+                        </div>
-+                    </div>
-            </div>
-        </main>
+  <div class="container">
+    <div class="header">
+      <h1>概率论与数理统计可视化世界</h1>
+      <div class="actions">
+        <a class="button secondary" href="../../../index.html">返回"万物可视化"</a>
+      </div>
     </div>
-    
-    <script type="module" src="./main.js"></script>
+
+    <div class="search">
+      <input id="search" type="text" placeholder="搜索概念（标题/简介）" />
+    </div>
+
+    <div class="grid" id="cards">
+    <div class="card" data-q="二项分布交互式可视化 - 离线版 ">
+      <h3>二项分布交互式可视化 - 离线版</h3>
+      <p></p>
+      <div class="actions">
+        <a class="button" href="./pages/%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83%E7%8E%B0%E4%BB%A3%E5%8C%96%E5%8F%AF%E8%A7%86%E5%8C%96_%E7%A6%BB%E7%BA%BF%E7%89%88.html">进入</a>
+      </div>
+    </div>
+
+    <div class="card" data-q="指数分布 Exp(λ) 参数影响分析 ">
+      <h3>指数分布 Exp(λ) 参数影响分析</h3>
+      <p></p>
+      <div class="actions">
+        <a class="button" href="./pages/%E6%8C%87%E6%95%B0%E5%88%86%E5%B8%83%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%8F%AF%E8%A7%86%E5%8C%96.html">进入</a>
+      </div>
+    </div>
+
+    <div class="card" data-q="正态分布 N(μ,σ²) 双参数影响分析 ">
+      <h3>正态分布 N(μ,σ²) 双参数影响分析</h3>
+      <p></p>
+      <div class="actions">
+        <a class="button" href="./pages/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%8F%AF%E8%A7%86%E5%8C%96.html">进入</a>
+      </div>
+    </div>
+
+    <div class="card" data-q="泊松分布交互式可视化 - 离线版 ">
+      <h3>泊松分布交互式可视化 - 离线版</h3>
+      <p></p>
+      <div class="actions">
+        <a class="button" href="./pages/%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%8F%AF%E8%A7%86%E5%8C%96_%E5%AE%8C%E6%95%B4%E7%A6%BB%E7%BA%BF%E7%89%88.html">进入</a>
+      </div>
+    </div>
+    </div>
+
+    <div class="footer">
+      <span>概念数量：4</span>
+      <span>最后生成时间：2025-10-22 00:28</span>
+    </div>
+  </div>
+
+  <script>
+    const input = document.getElementById('search');
+    const cards = Array.from(document.querySelectorAll('#cards .card'));
+    input.addEventListener('input', () => {
+      const q = input.value.trim().toLowerCase();
+      cards.forEach(card => {
+        const t = (card.getAttribute('data-q') || '').toLowerCase();
+        card.style.display = t.includes(q) ? '' : 'none';
+      });
+    });
+  </script>
+
 </body>
 </html>

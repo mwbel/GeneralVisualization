@@ -114,9 +114,6 @@
             width: 100%;
             text-transform: uppercase;
             letter-spacing: 1px;
-            text-decoration: none;
-            display: block;
-            text-align: center;
         }
 
         .module-button:hover {
@@ -195,10 +192,6 @@
             color: #764ba2;
         }
 
-        .geometry-icon {
-            color: #ff6b6b;
-        }
-
         .coming-soon {
             position: absolute;
             top: 15px;
@@ -245,7 +238,7 @@
         <div class="modules-container">
             <div class="module-card" onclick="navigateToModule('probability')">
                 <div class="module-icon probability-icon">📈</div>
-                <h2 class="module-title">概率论与数理统计可视化世界</h2>
+                <h2 class="module-title">概率论与数理统计可视化</h2>
                 <p class="module-description">
                     探索概率分布的奥秘，通过交互式图表深入理解二项分布、泊松分布、正态分布、指数分布等重要概念。
                     实时调节参数，观察分布形状的变化，掌握统计学的核心思想。
@@ -255,23 +248,12 @@
 
             <div class="module-card" onclick="navigateToModule('algebra')">
                 <div class="module-icon algebra-icon">🔢</div>
-                <h2 class="module-title">线性代数可视化世界</h2>
+                <h2 class="module-title">线性代数可视化</h2>
                 <p class="module-description">
                     将抽象的线性代数概念具象化，通过3D可视化理解行列式、矩阵运算、向量空间等核心内容。
                     包含二阶行列式、三阶行列式、矩阵运算和向量空间的交互式可视化。
                 </p>
                 <a class="module-button" href="app/modules/linear_algebra/index.html">进入模块</a>
-            </div>
-
-            <div class="module-card" onclick="navigateToModule('geometry')">
-                <div class="coming-soon">敬请期待</div>
-                <div class="module-icon geometry-icon">📐</div>
-                <h2 class="module-title">微分几何可视化世界</h2>
-                <p class="module-description">
-                    探索曲面的几何性质，通过可视化理解曲率、测地线、平行移动等微分几何核心概念。
-                    让抽象的几何理论变得直观可感。
-                </p>
-                <a class="module-button" href="app/modules/differential_geometry/index.html">进入模块</a>
             </div>
         </div>
 
@@ -284,11 +266,11 @@
     <script>
         function navigateToModule(module) {
             if (module === 'probability') {
+                // 导航到概率论模块页面
                 window.location.href = 'app/modules/probability_statistics/index.html';
             } else if (module === 'algebra') {
+                // 导航到线性代数模块页面
                 window.location.href = 'app/modules/linear_algebra/index.html';
-            } else if (module === 'geometry') {
-                window.location.href = 'app/modules/differential_geometry/index.html';
             }
         }
 

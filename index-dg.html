@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微分几何可视化</title>
+    <link rel="stylesheet" href="./app/lib/global-styles.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header class="module-header">
+            <h1>微分几何可视化</h1>
+            <nav class="module-nav">
+                <a href="./index.html" class="back-link">返回主页</a>
+            </nav>
+        </header>
+        
+        <main class="main-content">
+            <aside class="sidebar">
+                <h3>可视化页面</h3>
+                <ul class="nav-list">
+                    <li><a href="./curves-and-surfaces.html">曲线与曲面</a></li>
+                    <li><a href="./curvature-analysis.html">曲率分析</a></li>
+                    <li><a href="./vector-fields.html">向量场</a></li>
+                    <li><a href="./differential-forms.html">微分形式</a></li>
+                    <li><a href="./manifolds.html">流形理论</a></li>
+                    <li><a href="./geodesics.html">测地线</a></li>
+                </ul>
+            </aside>
+            
+            <div class="content-area">
+                <div class="welcome-section">
+                    <h2>欢迎使用微分几何可视化模块</h2>
+                    <p>本模块提供了微分几何核心概念的三维可视化工具，帮助您理解曲线、曲面和流形的几何性质。</p>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h3>曲线与曲面</h3>
+                            <p>参数化曲线和曲面的三维可视化和性质分析</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h3>曲率分析</h3>
+                            <p>高斯曲率、平均曲率的计算和几何直观展示</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h3>向量场</h3>
+                            <p>切向量场、法向量场的可视化和流线分析</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h3>测地线</h3>
+                            <p>曲面上最短路径的计算和动态演示</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script type="module" src="./main.js"></script>
+</body>
+</html>
