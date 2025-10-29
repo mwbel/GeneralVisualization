@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>正态分布 3σ 原则可视化</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.26.0/plotly.min.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      color: #333;
+      display: flex;
+    }
+    .sidebar {
+      width: 280px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 2px 0 15px rgba(0,0,0,0.1);
+      padding: 20px;
+      position: fixed;
+      height: 100vh;
+      overflow-y: auto;
+      z-index: 1000;
+    }
+    .sidebar-title { font-size: 1.6em; font-weight: 700; color: #2d3748; margin-bottom: 20px; text-align: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px; }
+    .nav-item { display: block; padding: 12px 15px; margin: 8px 0; color: #4a5568; text-decoration: none; border-radius: 10px; transition: all 0.3s; font-weight: 500; border-left: 4px solid transparent; cursor: pointer; }
+    .nav-item:hover { background: linear-gradient(135deg, #667eea, #764ba2); color: white; transform: translateX(5px); border-left-color: #667eea; }
+    .nav-item.active { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-left-color: #667eea; }
+    .page-content { margin-left: 280px; flex: 1; padding: 20px; }
+    .container { max-width: 1400px; margin: 0 auto; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); overflow: hidden; }
+    .header { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 30px; text-align: center; }
+    .header h1 { font-size: 2.2em; margin-bottom: 10px; font-weight: 700; }
+    .main-panel { padding: 30px; }
+    .info { background: #f8fafc; border-radius: 15px; padding: 20px; margin-bottom: 24px; border-left: 5px solid #667eea; }
+    .controls { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 24px; }
+    .control { background: #ffffff; padding: 16px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .control h4 { margin: 0 0 10px; color: #374151; }
+    .slider-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .slider { width: 100%; }
+    #chart { width: 100%; height: 520px; }
+    .legend { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 16px; }
+    .legend-item { background: #fff; border-radius: 10px; padding: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h3 class="sidebar-title">概率论与数理统计</h3>
+    <div class="nav-item" onclick="window.location.href='../index.html'">模块概览</div>
+    <div class="nav-item" onclick="window.location.href='二项分布现代化可视化_离线版.html'">二项分布</div>
+    <div class="nav-item" onclick="window.location.href='泊松分布交互式可视化_完整离线版.html'">泊松分布</div>
+    <div class="nav-item" onclick="window.location.href='指数分布交互式可视化.html'">指数分布</div>
+    <div class="nav-item" onclick="window.location.href='正态分布交互式可视化.html'">正态分布</div>
+    <div class="nav-item active" onclick="window.location.href='normal_3sigma_principle.html'">正态分布 3σ 原则</div>
+    <div class="nav-item" onclick="navigateTo('./normal_3sigma_principle.html')">正态分布 3σ 原则</div>
+    <div class="nav-item" onclick="navigateTo('./normal_upper_alpha_quantile.html')">正态分位 上α 分位点</div>
+    <div class="nav-item" onclick="navigateTo('./normal_bivariate_cdf.html')">二维正态分布 分布函数</div>
+    <!-- 返回首页 -->
+    <div class="nav-item" onclick="navigateTo('../index.html')">返回模块主页</div>
+    <div class="nav-item" onclick="window.location.href='../../../../index.html'">返回 “万物可视化”首页</div>
+  </div>
+
+  <div class="page-content">
+    <div class="container">
+      <div class="header">
+        <h1>📐 正态分布 3σ 原则可视化</h1>
+        <p>展示 68.27% / 95.45% / 99.73% 的覆盖范围与交互调整</p>
+      </div>
+      <div class="main-panel">
+        <div class="info">
+          <p><strong>3σ原则：</strong>对于正态分布 N(μ, σ²)，数据落在均值 μ 附近的区间概率为：
+            <br>• |X-μ| ≤ 1σ ≈ 68.27%
+            <br>• |X-μ| ≤ 2σ ≈ 95.45%
+            <br>• |X-μ| ≤ 3σ ≈ 99.73%
+          </p>
+          <p>你可以调整 μ 与 σ，观察区域与百分比标注如何随参数变化。</p>
+        </div>
+
+        <div class="controls">
+          <div class="control">
+            <h4>均值 μ</h4>
+            <div class="slider-row"><span>μ: <span id="muVal">0.0</span></span></div>
+            <input id="muSlider" class="slider" type="range" min="-3" max="3" step="0.1" value="0" />
+          </div>
+          <div class="control">
+            <h4>标准差 σ</h4>
+            <div class="slider-row"><span>σ: <span id="sigmaVal">1.0</span></span></div>
+            <input id="sigmaSlider" class="slider" type="range" min="0.5" max="2.5" step="0.1" value="1.0" />
+          </div>
+        </div>
+
+        <div id="chart"></div>
+        <div class="legend">
+          <div class="legend-item">深色区域：|x-μ| ≤ 1σ，约 68.27%</div>
+          <div class="legend-item">中间色区域：|x-μ| ≤ 2σ，约 95.45%</div>
+          <div class="legend-item">浅色区域：|x-μ| ≤ 3σ，约 99.73%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function gaussianPDF(x, mu, sigma) {
+      const coef = 1 / (sigma * Math.sqrt(2 * Math.PI));
+      const expo = -((x - mu) ** 2) / (2 * sigma * sigma);
+      return coef * Math.exp(expo);
+    }
+
+    // 固定坐标轴范围与采样点数
+    const X_MIN = -10;
+    const X_MAX = 10;
+    const N_POINTS = 1001;
+    const Y_MAX = 0.85; // 覆盖 sigma ∈ [0.5, 2.5] 的峰值范围
+
+    function generateX() {
+      const xs = [];
+      for (let i = 0; i < N_POINTS; i++) {
+        xs.push(X_MIN + (X_MAX - X_MIN) * i / (N_POINTS - 1));
+      }
+      return xs;
+    }
+
+    function regionTrace(name, x, y, left, right, color, opacity) {
+      const rx = [], ry = [];
+      for (let i = 0; i < x.length; i++) {
+        if (x[i] >= left && x[i] <= right) { rx.push(x[i]); ry.push(y[i]); } else { rx.push(x[i]); ry.push(null); }
+      }
+      return { x: rx, y: ry, name, type: 'scatter', mode: 'lines', fill: 'tozeroy', line: { color }, fillcolor: `rgba(${colorRGB(color)}, ${opacity})` };
+    }
+
+    function colorRGB(hex) {
+      const h = hex.replace('#','');
+      const r = parseInt(h.substring(0,2),16);
+      const g = parseInt(h.substring(2,4),16);
+      const b = parseInt(h.substring(4,6),16);
+      return `${r}, ${g}, ${b}`;
+    }
+
+    const X_GRID = generateX();
+
+    function update() {
+      const mu = parseFloat(document.getElementById('muSlider').value);
+      const sigma = parseFloat(document.getElementById('sigmaSlider').value);
+      document.getElementById('muVal').textContent = mu.toFixed(1);
+      document.getElementById('sigmaVal').textContent = sigma.toFixed(1);
+
+      const y = X_GRID.map(xx => gaussianPDF(xx, mu, sigma));
+
+      const color = '#4f46e5';
+      const base = { x: X_GRID, y, name: 'PDF', type: 'scatter', mode: 'lines', line: { color, width: 2 } };
+
+      const t1 = regionTrace('|x-μ| ≤ 1σ', X_GRID, y, mu - 1*sigma, mu + 1*sigma, color, 0.35);
+      const t2 = regionTrace('|x-μ| ≤ 2σ', X_GRID, y, mu - 2*sigma, mu + 2*sigma, color, 0.22);
+      const t3 = regionTrace('|x-μ| ≤ 3σ', X_GRID, y, mu - 3*sigma, mu + 3*sigma, color, 0.12);
+
+      const layout = {
+        title: `N(${mu.toFixed(1)}, ${sigma.toFixed(1)}²) 的 3σ 原则`,
+        margin: { t: 40, r: 30, b: 50, l: 50 },
+        xaxis: { title: 'x', range: [X_MIN, X_MAX], fixedrange: true },
+        yaxis: { title: 'f(x)', range: [0, Y_MAX], fixedrange: true },
+        shapes: [
+          { type: 'line', x0: mu, x1: mu, y0: 0, y1: Y_MAX, line: { color: '#111827', width: 1, dash: 'dot' } },
+          { type: 'line', x0: mu - 1*sigma, x1: mu - 1*sigma, y0: 0, y1: Y_MAX, line: { color: '#6b7280', width: 1, dash: 'dash' } },
+          { type: 'line', x0: mu + 1*sigma, x1: mu + 1*sigma, y0: 0, y1: Y_MAX, line: { color: '#6b7280', width: 1, dash: 'dash' } },
+          { type: 'line', x0: mu - 2*sigma, x1: mu - 2*sigma, y0: 0, y1: Y_MAX, line: { color: '#9ca3af', width: 1, dash: 'dash' } },
+          { type: 'line', x0: mu + 2*sigma, x1: mu + 2*sigma, y0: 0, y1: Y_MAX, line: { color: '#9ca3af', width: 1, dash: 'dash' } },
+          { type: 'line', x0: mu - 3*sigma, x1: mu - 3*sigma, y0: 0, y1: Y_MAX, line: { color: '#d1d5db', width: 1, dash: 'dash' } },
+          { type: 'line', x0: mu + 3*sigma, x1: mu + 3*sigma, y0: 0, y1: Y_MAX, line: { color: '#d1d5db', width: 1, dash: 'dash' } }
+        ],
+        annotations: [
+          { x: mu, y: Y_MAX*0.95, text: 'μ', showarrow: false, font: { size: 12 } },
+          { x: mu + 0.5*sigma, y: Y_MAX*0.85, text: '≈68.27%', showarrow: false, font: { size: 12, color: '#1f2937' } },
+          { x: mu + 1.5*sigma, y: Y_MAX*0.75, text: '≈95.45%', showarrow: false, font: { size: 12, color: '#374151' } },
+          { x: mu + 2.5*sigma, y: Y_MAX*0.65, text: '≈99.73%', showarrow: false, font: { size: 12, color: '#4b5563' } }
+        ]
+      };
+
+      Plotly.newPlot('chart', [t3, t2, t1, base], layout, {displayModeBar: false});
+    }
+
+    document.getElementById('muSlider').addEventListener('input', update);
+    document.getElementById('sigmaSlider').addEventListener('input', update);
+
+    update();
+  </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>基于 AI 的交互式数据可视化创建工具</title>
+  <link rel="stylesheet" href="../../assets/style.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container aivg-container">
+    <div class="header">
+      <h1>基于 AI 的交互式数据可视化创建工具</h1>
+      <p class="subtitle">用自然语言描述你的想法，自动生成可交互的可视化页面（Plotly / Three.js / D3.js）。</p>
+      <div class="actions">
+        <a class="button secondary" href="../../../index.html">返回"万物可视化"</a>
+      </div>
+    </div>
+
+    <div class="intro">
+      <div class="intro-icon">✨</div>
+      <div class="intro-text">输入你的可视化需求，选择类型与复杂度，然后点击生成。几秒钟后即可打开生成的交互式 HTML 页面。</div>
+    </div>
+
+    <div class="form-grid">
+      <div class="input-card">
+        <label for="promptInput">可视化需求（自然语言描述）</label>
+        <textarea id="promptInput" rows="8" placeholder="例如：创建一个交互式3D散点图，显示三维数据点的分布"></textarea>
+      </div>
+
+      <div class="control-card">
+        <div class="control-row">
+          <label for="vizTypeSelect">可视化类型</label>
+          <select id="vizTypeSelect">
+            <option value="自定义">自定义</option>
+            <option value="统计图">统计图</option>
+            <option value="几何结构">几何结构</option>
+            <option value="物理仿真">物理仿真</option>
+          </select>
+        </div>
+        <div class="control-row">
+          <label for="complexitySelect">复杂级别</label>
+          <select id="complexitySelect">
+            <option value="简单">简单</option>
+            <option value="中等">中等</option>
+            <option value="高级">高级</option>
+          </select>
+        </div>
+        <button id="generateBtn" class="primary-btn" type="button">✨ 生成可视化</button>
+      </div>
+    </div>
+
+    <div class="examples-card">
+      <h3>示例提示词</h3>
+      <div id="examplesList" class="examples-list"></div>
+    </div>
+
+    <div class="status-card" id="statusCard">
+      <h3>生成状态</h3>
+      <p id="statusMessage">尚未开始生成</p>
+      <div class="result-actions" id="resultActions" style="display:none;">
+        <a id="openLink" class="button" target="_blank" rel="noopener">在新窗口中查看</a>
+        <a id="downloadLink" class="button secondary" download>下载 HTML 文件</a>
+        <button id="regenerateBtn" class="button ghost">再生成一个</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js?v=20251022"></script>
+</body>
+</html>

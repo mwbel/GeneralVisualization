@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>二维正态分布 分布函数（CDF）交互式可视化</title>
+  <style>
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+    .container { display: flex; min-height: 100vh; }
+    .sidebar { width: 260px; background: #f6f8fa; border-right: 1px solid #e5e7eb; padding: 16px; box-sizing: border-box; }
+    .sidebar-title { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+    .nav-item { padding: 8px 10px; border-radius: 6px; cursor: pointer; color: #111827; }
+    .nav-item:hover { background: #e5e7eb; }
+    .nav-item.active { background: #111827; color: #fff; }
+    .content { flex: 1; padding: 16px; }
+    .panel { display: grid; grid-template-columns: repeat(2, minmax(320px, 1fr)); gap: 16px; margin-bottom: 16px; }
+    .card { border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px; background: #fff; }
+    .card h3 { margin: 6px 0 10px; font-size: 18px; }
+    .controls { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .controls .row { display: flex; align-items: center; gap: 8px; }
+    .controls label { width: 60px; color: #374151; }
+    .controls input[type="number"], .controls input[type="range"] { width: 100%; }
+    .stat { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; font-size: 14px; color: #374151; }
+    .plot { width: 100%; height: 420px; border: 1px dashed #e5e7eb; border-radius: 8px; }
+    .note { font-size: 13px; color: #6b7280; }
+    .footer { margin-top: 8px; font-size: 12px; color: #6b7280; }
+  </style>
+  <script>
+    function navigateTo(path) { window.location.href = path; }
+
+    // 1D 标准正态 CDF（近似，多项式/erf 近似）
+    function stdNormCDF(z) {
+      // Abramowitz-Stegun 近似
+      const t = 1 / (1 + 0.2316419 * Math.abs(z));
+      const d = 0.3989423 * Math.exp(-z * z / 2);
+      let p = d * t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.821256 + t * 1.330274))));
+      if (z > 0) p = 1 - p;
+      return p;
+    }
+    function normCDF(x, mu, sigma) { return stdNormCDF((x - mu) / sigma); }
+
+    // 二维正态 PDF（含相关系数 rho）
+    function bivarNormalPDF(x, y, muX, muY, sigmaX, sigmaY, rho) {
+      const X = (x - muX) / sigmaX;
+      const Y = (y - muY) / sigmaY;
+      const den = 2 * Math.PI * sigmaX * sigmaY * Math.sqrt(1 - rho * rho);
+      const expo = -1 / (2 * (1 - rho * rho)) * (X * X - 2 * rho * X * Y + Y * Y);
+      return Math.exp(expo) / den;
+    }
+
+    // 通过网格数值积分近似 F(x,y) = P(X<=x, Y<=y)
+    function approximateBivarCDF(x, y, muX, muY, sigmaX, sigmaY, rho, grid) {
+      let sum = 0;
+      let total = 0;
+      const dx = (grid.xMax - grid.xMin) / (grid.n - 1);
+      const dy = (grid.yMax - grid.yMin) / (grid.n - 1);
+      for (let i = 0; i < grid.n; i++) {
+        const xi = grid.xMin + i * dx;
+        for (let j = 0; j < grid.n; j++) {
+          const yj = grid.yMin + j * dy;
+          const w = bivarNormalPDF(xi, yj, muX, muY, sigmaX, sigmaY, rho);
+          total += w * dx * dy;
+          if (xi <= x && yj <= y) sum += w * dx * dy;
+        }
+      }
+      // total ~ 1，数值误差允许
+      return sum;
+    }
+
+    // 计算条带概率 P{x1<X<=x2}，两种方式：1D 边缘 CDF 差；二维 PDF 条带积分近似
+    function computeStripProb(x1, x2, muX, sigmaX, grid, muY, sigmaY, rho) {
+      const p1d = normCDF(x2, muX, sigmaX) - normCDF(x1, muX, sigmaX);
+      const dx = (grid.xMax - grid.xMin) / (grid.n - 1);
+      const dy = (grid.yMax - grid.yMin) / (grid.n - 1);
+      let p2d = 0;
+      for (let i = 0; i < grid.n; i++) {
+        const xi = grid.xMin + i * dx;
+        if (xi > x1 && xi <= x2) {
+          for (let j = 0; j < grid.n; j++) {
+            const yj = grid.yMin + j * dy;
+            const w = bivarNormalPDF(xi, yj, muX, muY, sigmaX, sigmaY, rho);
+            p2d += w * dx * dy;
+          }
+        }
+      }
+      return { p1d, p2d };
+    }
+
+    function clamp(val, min, max) { return Math.max(min, Math.min(max, val)); }
+
+    function init() {
+      const state = {
+        muX: 0, muY: 0, sigmaX: 1, sigmaY: 1, rho: 0.0,
+        x: 0.5, y: 0.5,
+        x1: -0.5, x2: 1.0,
+        y1: -0.5, y2: 1.0,
+        grid: { n: 141, xMin: -4, xMax: 4, yMin: -4, yMax: 4 },
+      };
+
+      // 控件绑定
+      const bindNum = (id, onChange) => {
+        const el = document.getElementById(id);
+        el.addEventListener('input', () => onChange(parseFloat(el.value)));
+        onChange(parseFloat(el.value));
+      };
+      const bindRange = (id, onChange) => {
+        const el = document.getElementById(id);
+        el.addEventListener('input', () => onChange(parseFloat(el.value)));
+        onChange(parseFloat(el.value));
+      };
+
+      bindNum('muX', v => { state.muX = v; render(); });
+      bindNum('muY', v => { state.muY = v; render(); });
+      bindNum('sigmaX', v => { state.sigmaX = clamp(v, 0.2, 5); document.getElementById('sigmaX').value = state.sigmaX; render(); });
+      bindNum('sigmaY', v => { state.sigmaY = clamp(v, 0.2, 5); document.getElementById('sigmaY').value = state.sigmaY; render(); });
+      bindRange('rho', v => { state.rho = clamp(v, -0.95, 0.95); document.getElementById('rhoVal').textContent = state.rho.toFixed(2); render(); });
+      // 移除数值输入，改为画布拖拽设置 (x,y)
+      // bindNum('x', v => { state.x = v; render(); });
+      // bindNum('y', v => { state.y = v; render(); });
+      bindNum('x1', v => { state.x1 = v; render(); });
+      bindNum('x2', v => { state.x2 = v; render(); });
+      bindNum('y1', v => { state.y1 = v; render(); });
+      bindNum('y2', v => { state.y2 = v; render(); });
+
+      // 在画布上拖拽点设置 (x,y)
+      function attachDrag(canvasId){
+        const canvas = document.getElementById(canvasId);
+        let dragging = false;
+        const toX = (px, W) => state.grid.xMin + px / W * (state.grid.xMax - state.grid.xMin);
+        const toY = (py, H) => state.grid.yMax - py / H * (state.grid.yMax - state.grid.yMin);
+        function updateFromEvent(e){
+          const rect = canvas.getBoundingClientRect();
+          const px = e.clientX - rect.left;
+          const py = e.clientY - rect.top;
+          const W = canvas.clientWidth, H = canvas.clientHeight;
+          state.x = clamp(toX(px, W), state.grid.xMin, state.grid.xMax);
+          state.y = clamp(toY(py, H), state.grid.yMin, state.grid.yMax);
+          render();
+        }
+        canvas.addEventListener('mousedown', e => { dragging = true; updateFromEvent(e); });
+        canvas.addEventListener('mousemove', e => { if (dragging) updateFromEvent(e); });
+        canvas.addEventListener('mouseup', () => { dragging = false; });
+        canvas.addEventListener('mouseleave', () => { dragging = false; });
+        // 触控支持
+        canvas.addEventListener('touchstart', e => { dragging = true; updateFromEvent(e.touches[0]); });
+        canvas.addEventListener('touchmove', e => { if (dragging) { e.preventDefault(); updateFromEvent(e.touches[0]); } });
+        canvas.addEventListener('touchend', () => { dragging = false; });
+      }
+      attachDrag('pdfCanvas');
+      attachDrag('cdfCanvas');
+
+      function render() {
+        drawPDFHeatmap(state);
+        drawCDFRectangle(state);
+        drawStripVisualization(state);
+        updateStats(state);
+      }
+
+      render();
+    }
+
+    // 重要公式矩形概率：P{x1<X≤x2, y1<Y≤y2}
+    function computeRectProb(x1, x2, y1, y2, state) {
+      const xa = Math.min(x1, x2), xb = Math.max(x1, x2);
+      const ya = Math.min(y1, y2), yb = Math.max(y1, y2);
+      const F = (x, y) => approximateBivarCDF(x, y, state.muX, state.muY, state.sigmaX, state.sigmaY, state.rho, state.grid);
+      const p_by_cdf = F(xb, yb) + F(xa, ya) - F(xa, yb) - F(xb, ya);
+      const nx = state.grid.n, ny = state.grid.n;
+      const dx = (state.grid.xMax - state.grid.xMin) / (nx - 1);
+      const dy = (state.grid.yMax - state.grid.yMin) / (ny - 1);
+      let p_by_pdf = 0;
+      for (let i = 0; i < nx; i++) {
+        const x = state.grid.xMin + i * dx;
+        if (x > xa && x <= xb) {
+          for (let j = 0; j < ny; j++) {
+            const y = state.grid.yMin + j * dy;
+            if (y > ya && y <= yb) {
+              const w = bivarNormalPDF(x, y, state.muX, state.muY, state.sigmaX, state.sigmaY, state.rho);
+              p_by_pdf += w * dx * dy;
+            }
+          }
+        }
+      }
+      return { p_by_cdf, p_by_pdf };
+    }
+
+    function drawPDFHeatmap(state) {
+      const canvas = document.getElementById('pdfCanvas');
+      const ctx = canvas.getContext('2d');
+      const W = canvas.width = canvas.clientWidth; const H = canvas.height = canvas.clientHeight;
+      ctx.clearRect(0,0,W,H);
+      // 绘制网格热度图
+      const nx = state.grid.n, ny = state.grid.n;
+      const dx = (state.grid.xMax - state.grid.xMin) / (nx - 1);
+      const dy = (state.grid.yMax - state.grid.yMin) / (ny - 1);
+      let maxVal = 0;
+      const values = new Array(nx * ny);
+      for (let i = 0; i < nx; i++) {
+        const x = state.grid.xMin + i * dx;
+        for (let j = 0; j < ny; j++) {
+          const y = state.grid.yMin + j * dy;
+          const v = bivarNormalPDF(x, y, state.muX, state.muY, state.sigmaX, state.sigmaY, state.rho);
+          values[i*ny + j] = v;
+          if (v > maxVal) maxVal = v;
+        }
+      }
+      function colorFor(v){
+        const t = Math.min(1, v / maxVal);
+        const r = Math.floor(255 * t);
+        const b = Math.floor(255 * (1 - t));
+        return `rgb(${r},0,${b})`;
+      }
+      for (let i = 0; i < nx; i++) {
+        for (let j = 0; j < ny; j++) {
+          const x = state.grid.xMin + i * dx;
+          const y = state.grid.yMin + j * dy;
+          const px = (x - state.grid.xMin) / (state.grid.xMax - state.grid.xMin) * W;
+          const py = H - (y - state.grid.yMin) / (state.grid.yMax - state.grid.yMin) * H;
+          ctx.fillStyle = colorFor(values[i*ny + j]);
+          ctx.fillRect(px, py, W/nx+1, H/ny+1);
+        }
+      }
+      // 轴与标注
+      ctx.strokeStyle = '#111827'; ctx.lineWidth = 1;
+      // 辅助：绘制均值点
+      const mx = (state.muX - state.grid.xMin) / (state.grid.xMax - state.grid.xMin) * W;
+      const my = H - (state.muY - state.grid.yMin) / (state.grid.yMax - state.grid.yMin) * H;
+      ctx.fillStyle = '#000'; ctx.beginPath(); ctx.arc(mx, my, 3, 0, Math.PI*2); ctx.fill();
+      // 选中拖拽点 (x,y)
+      const px = (state.x - state.grid.xMin) / (state.grid.xMax - state.grid.xMin) * W;
+      const py = H - (state.y - state.grid.yMin) / (state.grid.yMax - state.grid.yMin) * H;
+      ctx.strokeStyle = '#ef4444'; ctx.setLineDash([4,3]);
+      ctx.beginPath(); ctx.moveTo(px, 0); ctx.lineTo(px, H); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(0, py); ctx.lineTo(W, py); ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = '#ef4444'; ctx.beginPath(); ctx.arc(px, py, 4, 0, Math.PI*2); ctx.fill();
+      ctx.fillStyle = '#111827'; ctx.font = '12px sans-serif';
+      ctx.fillText(`拖拽点 (x,y)=(${state.x.toFixed(2)}, ${state.y.toFixed(2)})`, 8, 20);
+    }
+
+    function drawCDFRectangle(state){
+      const canvas = document.getElementById('cdfCanvas');
+      const ctx = canvas.getContext('2d');
+      const W = canvas.width = canvas.clientWidth; const H = canvas.height = canvas.clientHeight;
+      ctx.clearRect(0,0,W,H);
+      // 背景网格同 PDF 画布坐标映射
+      function toPxX(x){ return (x - state.grid.xMin) / (state.grid.xMax - state.grid.xMin) * W; }
+      function toPxY(y){ return H - (y - state.grid.yMin) / (state.grid.yMax - state.grid.yMin) * H; }
+      // 矩形：(-∞, x] × (-∞, y] 在有限窗口近似为 [xMin, x] × [yMin, y]
+      const x = clamp(state.x, state.grid.xMin, state.grid.xMax);
+      const y = clamp(state.y, state.grid.yMin, state.grid.yMax);
+      const rectX = toPxX(state.grid.xMin);
+      const rectY = toPxY(y);
+      const rectW = toPxX(x) - rectX;
+      const rectH = toPxY(state.grid.yMin) - rectY;
+      // 背景
+      ctx.fillStyle = 'rgba(0,0,0,0.05)'; ctx.fillRect(0,0,W,H);
+      // 高亮无穷矩形近似区域
+      ctx.fillStyle = 'rgba(34,197,94,0.35)';
+      ctx.fillRect(rectX, rectY, rectW, rectH);
+      // 边框与标注
+      ctx.strokeStyle = '#22c55e'; ctx.strokeRect(rectX, rectY, rectW, rectH);
+      ctx.fillStyle = '#111827'; ctx.font = '13px sans-serif';
+      ctx.fillText(`F(x,y) 近似区域，x=${x.toFixed(2)}, y=${y.toFixed(2)}`, 8, 18);
+      // 数值近似 CDF
+      const Fxy = approximateBivarCDF(x, y, state.muX, state.muY, state.sigmaX, state.sigmaY, state.rho, state.grid);
+      ctx.fillText(`数值近似 F(x,y) ≈ ${Fxy.toFixed(4)}`, 8, 36);
+    }
+
+    function drawStripVisualization(state){
+      const canvas = document.getElementById('stripCanvas');
+      const ctx = canvas.getContext('2d');
+      const W = canvas.width = canvas.clientWidth; const H = canvas.height = canvas.clientHeight;
+      ctx.clearRect(0,0,W,H);
+      function toPxX(x){ return (x - state.grid.xMin) / (state.grid.xMax - state.grid.xMin) * W; }
+      function toPxY(y){ return H - (y - state.grid.yMin) / (state.grid.yMax - state.grid.yMin) * H; }
+      // 替换：显示矩形 [x1,x2] × [y1,y2]
+      const xa = clamp(state.x1, state.grid.xMin, state.grid.xMax);
+      const xb = clamp(state.x2, state.grid.xMin, state.grid.xMax);
+      const ya = clamp(state.y1, state.grid.yMin, state.grid.yMax);
+      const yb = clamp(state.y2, state.grid.yMin, state.grid.yMax);
+      const xL = Math.min(xa, xb), xR = Math.max(xa, xb);
+      const yB = Math.min(ya, yb), yT = Math.max(ya, yb);
+      const px1 = toPxX(xL), px2 = toPxX(xR);
+      const py1 = toPxY(yT), py2 = toPxY(yB);
+      // 背景
+      ctx.fillStyle = 'rgba(0,0,0,0.04)'; ctx.fillRect(0,0,W,H);
+      // 高亮矩形区域（与右图一致）
+      ctx.fillStyle = 'rgba(59,130,246,0.35)';
+      ctx.fillRect(px1, py1, px2-px1, py2-py1);
+      ctx.strokeStyle = '#3b82f6'; ctx.lineWidth = 2; ctx.strokeRect(px1, py1, px2-px1, py2-py1);
+      // 虚线标注 x1,x2,y1,y2
+      ctx.strokeStyle = '#9ca3af'; ctx.setLineDash([6,4]);
+      ctx.beginPath(); ctx.moveTo(px1, 0); ctx.lineTo(px1, H); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(px2, 0); ctx.lineTo(px2, H); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(0, py1); ctx.lineTo(W, py1); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(0, py2); ctx.lineTo(W, py2); ctx.stroke();
+      ctx.setLineDash([]);
+      // 文案与数值
+      const { p_by_cdf, p_by_pdf } = computeRectProb(xL, xR, yB, yT, state);
+      ctx.fillStyle = '#111827'; ctx.font = '13px sans-serif';
+      ctx.fillText(`重要公式: P{x1<X≤x2, y1<Y≤y2} = F(x2,y2)+F(x1,y1)−F(x1,y2)−F(x2,y1)`, 8, 18);
+      ctx.fillText(`由分布函数: ${p_by_cdf.toFixed(6)}，二维积分近似: ${p_by_pdf.toFixed(6)}`, 8, 36);
+    }
+
+    function updateStats(state){
+      const Fxy = approximateBivarCDF(state.x, state.y, state.muX, state.muY, state.sigmaX, state.sigmaY, state.rho, state.grid);
+      const { p_by_cdf, p_by_pdf } = computeRectProb(state.x1, state.x2, state.y1, state.y2, state);
+      document.getElementById('statF').textContent = Fxy.toFixed(6);
+      document.getElementById('statRectCDF').textContent = p_by_cdf.toFixed(6);
+      document.getElementById('statRectPDF').textContent = p_by_pdf.toFixed(6);
+      document.getElementById('statDiff').textContent = Math.abs(p_by_cdf - p_by_pdf).toExponential(2);
+    }
+
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <div class="sidebar-title">概率论与数理统计</div>
+      <div class="nav-item" onclick="navigateTo('./正态分布交互式可视化.html')">正态分布</div>
+      <div class="nav-item" onclick="navigateTo('./normal_3sigma_principle.html')">正态分布 3σ 原则</div>
+      <div class="nav-item" onclick="navigateTo('./normal_upper_alpha_quantile.html')">正态分位 上α 分位点</div>
+      <div class="nav-item active" onclick="navigateTo('./normal_bivariate_cdf.html')">二维正态分布 分布函数</div>
+      <!-- 返回首页 -->
+      <div class="nav-item" onclick="navigateTo('../index.html')">返回模块主页</div>
+    </div>
+
+    <div class="content">
+      <div class="card">
+        <h2>二维正态分布 分布函数（CDF）交互式可视化</h2>
+        <div class="note">在右侧画布上自由拖动点来设置 (x,y)，观察 F(x,y)=P(X≤x, Y≤y) 对应的无穷矩形近似区域与数值；下方展示由分布函数和差构造矩形概率。</div>
+      </div>
+
+      <div class="card">
+        <h3>定义与应用场景</h3>
+        <div class="note">
+          - 联合分布函数：F(x,y)=P(X≤x, Y≤y)，表示样本落在以 (x,y) 为右上角的无穷矩形的概率。<br/>
+          - 应用：风险评估、相关变量联合事件概率、置信域近似等。<br/>
+          - 本页：通过拖拽点设置 (x,y)，直观看到 F(x,y) 与参数 (μx,μy,σx,σy,ρ) 的关系。
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>参数与控制</h3>
+        <div class="controls">
+          <div class="row"><label>μx</label><input id="muX" type="number" step="0.1" value="0" /></div>
+          <div class="row"><label>μy</label><input id="muY" type="number" step="0.1" value="0" /></div>
+          <div class="row"><label>σx</label><input id="sigmaX" type="number" step="0.1" value="1" min="0.2" max="5" /></div>
+          <div class="row"><label>σy</label><input id="sigmaY" type="number" step="0.1" value="1" min="0.2" max="5" /></div>
+          <div class="row"><label>ρ</label><input id="rho" type="range" min="-0.95" max="0.95" step="0.01" value="0" /><span id="rhoVal">0.00</span></div>
+          <!-- 移除 x,y 数值输入，改为画布拖拽设置 -->
+          <!-- <div class="row"><label>x</label><input id="x" type="number" step="0.1" value="0.5" /></div>
+          <div class="row"><label>y</label><input id="y" type="number" step="0.1" value="0.5" /></div> -->
+          <div class="row"><label>x1</label><input id="x1" type="number" step="0.1" value="-0.5" /></div>
+          <div class="row"><label>x2</label><input id="x2" type="number" step="0.1" value="1.0" /></div>
+          <div class="row"><label>y1</label><input id="y1" type="number" step="0.1" value="-0.5" /></div>
+          <div class="row"><label>y2</label><input id="y2" type="number" step="0.1" value="1.0" /></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>统计指标</h3>
+        <div class="stat">
+          <div>F(x,y) 近似：<span id="statF">-</span></div>
+          <div>P矩形(由F) ：<span id="statRectCDF">-</span></div>
+          <div>P矩形(积分) ：<span id="statRectPDF">-</span></div>
+          <div>两者差异：<span id="statDiff">-</span></div>
+        </div>
+        <div class="footer note">提示：在任一画布拖动可更新 (x,y)。</div>
+      </div>
+
+      <div class="panel">
+        <div class="card">
+          <h3>二维 PDF 热度图</h3>
+          <canvas id="pdfCanvas" class="plot"></canvas>
+        </div>
+        <div class="card">
+          <h3>F(x,y) 对应无穷矩形（近似）</h3>
+          <canvas id="cdfCanvas" class="plot"></canvas>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>通过分布函数和差构造矩形概率 P{x1<X≤x2, y1<Y≤y2}</h3>
+        <canvas id="stripCanvas" class="plot"></canvas>
+        <div class="footer note">说明：矩形概率可用重要公式 F(x2,y2)+F(x1,y1)−F(x1,y2)−F(x2,y1)，也可用二维 PDF 在该矩形上的积分近似；两者应一致（数值误差来自有限窗口与离散网格）。</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

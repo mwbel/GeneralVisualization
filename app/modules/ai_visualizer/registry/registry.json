@@ -1,0 +1,70 @@
+{
+  "concepts": [
+    {
+      "id": "normal_distribution",
+      "aliases": [
+        "正态分布",
+        "高斯分布",
+        "Gaussian",
+        "Normal",
+        "钟形曲线"
+      ],
+      "module": "probability_statistics",
+      "title": "正态分布（Gaussian）",
+      "url": "old versions/概率论与数理统计可视化/正态分布交互式可视化.html",
+      "type": "existing"
+    },
+    {
+      "id": "poisson_distribution",
+      "aliases": [
+        "泊松分布",
+        "Poisson"
+      ],
+      "module": "probability_statistics",
+      "title": "泊松分布交互式可视化",
+      "url": "old versions/概率论与数理统计可视化/泊松分布交互式可视化_离线版.html",
+      "type": "existing"
+    },
+    {
+      "id": "binomial_distribution",
+      "aliases": [
+        "二项分布",
+        "Binomial"
+      ],
+      "module": "probability_statistics",
+      "title": "二项分布交互式可视化",
+      "url": "old versions/概率论与数理统计可视化/二项分布现代化可视化_离线版.html.bak",
+      "type": "existing"
+    },
+    {
+      "id": "concept_20251022_172239",
+      "aliases": [
+        "三维旋转立方体"
+      ],
+      "module": "ai_visualizer",
+      "title": "三维旋转立方体",
+      "url": "app/modules/ai_visualizer/generated/viz_20251022_172239.html",
+      "type": "generated"
+    },
+    {
+      "id": "a_b",
+      "aliases": [
+        "柱状图对比 A/B 两组数据，添加平均线与误差线"
+      ],
+      "module": "ai_visualizer",
+      "title": "柱状图对比 A/B 两组数据，添加平均线与误差线",
+      "url": "app/modules/ai_visualizer/generated/viz_20251022_172537.html",
+      "type": "generated"
+    },
+    {
+      "id": "beta_distribution",
+      "aliases": [
+        "Beta分布的可视化"
+      ],
+      "module": "ai_visualizer",
+      "title": "Beta 分布 PDF",
+      "url": "app/modules/ai_visualizer/generated/viz_beta_distribution_20251022_181114.html",
+      "type": "generated"
+    }
+  ]
+}

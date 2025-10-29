@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 可视化生成器</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>AI 可视化生成器</h1>
+    <p>输入自然语言描述，命中已有页面则直接返回；否则自动生成交互式可视化。</p>
+  </header>
+
+  <div class="ai-layout">
+    <section class="input-pane">
+      <div class="field">
+        <label for="prompt">可视化需求</label>
+        <textarea id="prompt" rows="6" placeholder="例如：展示正态分布的PDF，并提供 μ/σ 可调节滑块"></textarea>
+      </div>
+
+      <div class="examples">
+        <div class="examples-header">
+          <span>示例提示词</span>
+          <button id="reloadExamples" class="link">刷新示例</button>
+        </div>
+        <ul id="examplesList" class="examples-list"></ul>
+      </div>
+
+      <div class="actions">
+        <button id="generateBtn" class="primary">✨ 生成可视化</button>
+        <span id="status" class="status">待输入</span>
+      </div>
+    </section>
+
+    <section class="preview-pane">
+      <div class="preview-actions">
+        <button id="btnWinFull" class="ghost">窗口全屏</button>
+        <button id="btnSysFull" class="ghost">电脑全屏</button>
+      </div>
+      <iframe id="vizFrame" title="生成结果" src="" loading="lazy"></iframe>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <p>样式遵循主站视觉规范 · 字体 Noto Sans SC</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

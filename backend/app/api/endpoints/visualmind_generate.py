@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
 from typing import Dict, Any
-from services.visualmind_service import VisualMindService
+from backend.app.services.visualmind_service import VisualMindService
 
 router = APIRouter()
 service = VisualMindService()

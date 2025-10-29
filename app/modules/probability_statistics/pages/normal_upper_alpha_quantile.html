@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>正态分布 上α分位点 交互式可视化</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.26.0/plotly.min.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; color: #333; display: flex; }
+    .sidebar { width: 280px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 2px 0 15px rgba(0,0,0,0.1); padding: 20px; position: fixed; height: 100vh; overflow-y: auto; z-index: 1000; }
+    .sidebar-title { font-size: 1.6em; font-weight: 700; color: #2d3748; margin-bottom: 20px; text-align: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px; }
+    .nav-item { display: block; padding: 12px 15px; margin: 8px 0; color: #4a5568; text-decoration: none; border-radius: 10px; transition: all 0.3s; font-weight: 500; border-left: 4px solid transparent; cursor: pointer; }
+    .nav-item:hover { background: linear-gradient(135deg, #667eea, #764ba2); color: white; transform: translateX(5px); border-left-color: #667eea; }
+    .nav-item.active { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-left-color: #667eea; }
+    .page-content { margin-left: 280px; flex: 1; padding: 20px; }
+    .container { max-width: 1400px; margin: 0 auto; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); overflow: hidden; }
+    .header { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 30px; text-align: center; }
+    .header h1 { font-size: 2.2em; margin-bottom: 10px; font-weight: 700; }
+    .main-panel { padding: 30px; }
+    .info { background: #f8fafc; border-radius: 15px; padding: 20px; margin-bottom: 24px; border-left: 5px solid #667eea; }
+    .controls { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-bottom: 24px; }
+    .control { background: #ffffff; padding: 16px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .control h4 { margin: 0 0 10px; color: #374151; }
+    .slider-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .slider { width: 100%; }
+    #chart { width: 100%; height: 520px; }
+    .legend { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 16px; }
+    .legend-item { background: #fff; border-radius: 10px; padding: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h3 class="sidebar-title">概率论与数理统计</h3>
+    <div class="nav-item" onclick="window.location.href='../index.html'">模块概览</div>
+    <div class="nav-item" onclick="window.location.href='二项分布现代化可视化_离线版.html'">二项分布</div>
+    <div class="nav-item" onclick="window.location.href='泊松分布交互式可视化_完整离线版.html'">泊松分布</div>
+    <div class="nav-item" onclick="window.location.href='指数分布交互式可视化.html'">指数分布</div>
+    <div class="nav-item" onclick="window.location.href='正态分布交互式可视化.html'">正态分布</div>
+    <div class="nav-item" onclick="window.location.href='normal_3sigma_principle.html'">正态分布 3σ 原则</div>
+    <div class="nav-item active" onclick="window.location.href='normal_upper_alpha_quantile.html'">正态分布 上α分位点</div>
+    <div class="nav-item" onclick="window.location.href='./normal_bivariate_cdf.html'">二维正态分布 分布函数</div>
+        <!-- 返回首页 -->
+        <div class="nav-item" onclick="navigateTo('../index.html')">返回模块主页</div>
+    <div class="nav-item" onclick="window.location.href='../index.html'">返回 “概率与统计可视化世界”首页</div>
+    <div class="nav-item" onclick="window.location.href='../../../../index.html'">返回 “万物可视化”首页</div>
+  </div>
+
+  <div class="page-content">
+    <div class="container">
+      <div class="header">
+        <h1>🎯 正态分布 上α分位点 交互式可视化</h1>
+        <p>调整 α、均值 μ 与标准差 σ，观察右尾概率为 α 的分位点位置</p>
+      </div>
+      <div class="main-panel">
+        <div class="info">
+          <p><strong>定义：</strong>给定正态分布 N(μ, σ²)，上α分位点 t 满足 P(X > t) = α。等价地，t = μ + σ·Φ^{-1}(1-α)。</p>
+          <p>滑动调整 α (右尾概率)、μ (均值) 与 σ (标准差)，可视化右侧区域面积约等于 α。</p>
+        </div>
+
+        <div class="controls">
+          <div class="control">
+            <h4>α（右尾概率）</h4>
+            <div class="slider-row"><span>α: <span id="alphaVal">0.050</span></span></div>
+            <input id="alphaSlider" class="slider" type="range" min="0.01" max="0.50" step="0.001" value="0.05" />
+          </div>
+          <div class="control">
+            <h4>均值 μ</h4>
+            <div class="slider-row"><span>μ: <span id="muVal">0.0</span></span></div>
+            <input id="muSlider" class="slider" type="range" min="-3" max="3" step="0.1" value="0" />
+          </div>
+          <div class="control">
+            <h4>标准差 σ</h4>
+            <div class="slider-row"><span>σ: <span id="sigmaVal">1.0</span></span></div>
+            <input id="sigmaSlider" class="slider" type="range" min="0.5" max="2.5" step="0.1" value="1.0" />
+          </div>
+        </div>
+
+        <div id="chart"></div>
+        <div class="legend">
+          <div class="legend-item">曲线：正态分布密度 f(x)</div>
+          <div class="legend-item">浅紫色填充：x ≥ t 的右尾区域，面积 ≈ α</div>
+          <div class="legend-item">虚线：分位点 t 与常用参考线（μ）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function gaussianPDF(x, mu, sigma) {
+      const coef = 1 / (sigma * Math.sqrt(2 * Math.PI));
+      const expo = -((x - mu) ** 2) / (2 * sigma * sigma);
+      return coef * Math.exp(expo);
+    }
+
+    // 近似标准正态分布逆CDF（Acklam算法实现）
+    function invNorm(p) {
+      if (p <= 0 || p >= 1) return NaN;
+      const a = [
+        -3.969683028665376e+01,
+        2.209460984245205e+02,
+        -2.759285104469687e+02,
+        1.383577518672690e+02,
+        -3.066479806614716e+01,
+        2.506628277459239e+00
+      ];
+      const b = [
+        -5.447609879822406e+01,
+        1.615858368580409e+02,
+        -1.556989798598866e+02,
+        6.680131188771972e+01,
+        -1.328068155288572e+01
+      ];
+      const c = [
+        -7.784894002430293e-03,
+        -3.223964580411365e-01,
+        -2.400758277161838e+00,
+        -2.549732539343734e+00,
+        4.374664141464968e+00,
+        2.938163982698783e+00
+      ];
+      const d = [
+        7.784695709041462e-03,
+        3.224671290700398e-01,
+        2.445134137142996e+00,
+        3.754408661907416e+00
+      ];
+      const plow = 0.02425;
+      const phigh = 1 - plow;
+      let q, r;
+      if (p < plow) {
+        q = Math.sqrt(-2 * Math.log(p));
+        return (((((c[0] * q + c[1]) * q + c[2]) * q + c[3]) * q + c[4]) * q + c[5]) /
+               ((((d[0] * q + d[1]) * q + d[2]) * q + d[3]) * q + 1);
+      }
+      if (phigh < p) {
+        q = Math.sqrt(-2 * Math.log(1 - p));
+        return -(((((c[0] * q + c[1]) * q + c[2]) * q + c[3]) * q + c[4]) * q + c[5]) /
+                ((((d[0] * q + d[1]) * q + d[2]) * q + d[3]) * q + 1);
+      }
+      q = p - 0.5;
+      r = q * q;
+      return (((((a[0] * r + a[1]) * r + a[2]) * r + a[3]) * r + a[4]) * r + a[5]) * q /
+             (((((b[0] * r + b[1]) * r + b[2]) * r + b[3]) * r + b[4]) * r + 1);
+    }
+
+    // 固定坐标轴范围
+    const X_MIN = -10;
+    const X_MAX = 10;
+    const N_POINTS = 1201;
+    const Y_MAX = 0.85;
+
+    function generateX() {
+      const xs = [];
+      for (let i = 0; i < N_POINTS; i++) {
+        xs.push(X_MIN + (X_MAX - X_MIN) * i / (N_POINTS - 1));
+      }
+      return xs;
+    }
+
+    function colorRGB(hex) {
+      const h = hex.replace('#','');
+      const r = parseInt(h.substring(0,2),16);
+      const g = parseInt(h.substring(2,4),16);
+      const b = parseInt(h.substring(4,6),16);
+      return `${r}, ${g}, ${b}`;
+    }
+
+    function regionRightTrace(name, x, y, t, color, opacity) {
+      const rx = [], ry = [];
+      for (let i = 0; i < x.length; i++) {
+        if (x[i] >= t) { rx.push(x[i]); ry.push(y[i]); } else { rx.push(x[i]); ry.push(null); }
+      }
+      return { x: rx, y: ry, name, type: 'scatter', mode: 'lines', fill: 'tozeroy', line: { color }, fillcolor: `rgba(${colorRGB(color)}, ${opacity})` };
+    }
+
+    const X_GRID = generateX();
+
+    function update() {
+      const alpha = parseFloat(document.getElementById('alphaSlider').value);
+      const mu = parseFloat(document.getElementById('muSlider').value);
+      const sigma = parseFloat(document.getElementById('sigmaSlider').value);
+      document.getElementById('alphaVal').textContent = alpha.toFixed(3);
+      document.getElementById('muVal').textContent = mu.toFixed(1);
+      document.getElementById('sigmaVal').textContent = sigma.toFixed(1);
+
+      const z = invNorm(1 - alpha);
+      const t = mu + sigma * z;
+
+      const y = X_GRID.map(xx => gaussianPDF(xx, mu, sigma));
+
+      const color = '#4f46e5';
+      const base = { x: X_GRID, y, name: 'PDF', type: 'scatter', mode: 'lines', line: { color, width: 2 } };
+      const right = regionRightTrace('右尾 (≈α)', X_GRID, y, t, color, 0.20);
+
+      const layout = {
+        title: `上α分位点: t = μ + σ·Φ^{-1}(1-α) | α=${alpha.toFixed(3)}; μ=${mu.toFixed(1)}; σ=${sigma.toFixed(1)}`,
+        margin: { t: 40, r: 30, b: 50, l: 50 },
+        xaxis: { title: 'x', range: [X_MIN, X_MAX], fixedrange: true },
+        yaxis: { title: 'f(x)', range: [0, Y_MAX], fixedrange: true },
+        shapes: [
+          { type: 'line', x0: mu, x1: mu, y0: 0, y1: Y_MAX, line: { color: '#111827', width: 1, dash: 'dot' } },
+          { type: 'line', x0: t, x1: t, y0: 0, y1: Y_MAX, line: { color: '#dc2626', width: 2, dash: 'dash' } }
+        ],
+        annotations: [
+          { x: mu, y: Y_MAX*0.95, text: 'μ', showarrow: false, font: { size: 12 } },
+          { x: t, y: Y_MAX*0.80, text: `t`, showarrow: false, font: { size: 12, color: '#dc2626' } },
+          { x: Math.min(X_MAX-1, t + 1), y: Y_MAX*0.60, text: `右侧面积 ≈ ${alpha.toFixed(3)}` , showarrow: false, font: { size: 12, color: '#4f46e5' } }
+        ]
+      };
+
+      Plotly.newPlot('chart', [right, base], layout, {displayModeBar: false});
+    }
+
+    document.getElementById('alphaSlider').addEventListener('input', update);
+    document.getElementById('muSlider').addEventListener('input', update);
+    document.getElementById('sigmaSlider').addEventListener('input', update);
+
+    update();
+  </script>
+</body>
+</html>

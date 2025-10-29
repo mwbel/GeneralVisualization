@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beta 分布 PDF</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.26.0/plotly.min.js"></script>
+  <style>
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto; background:#f7fafc; }
+    #viz { width: 100%; height: 90vh; }
+  </style>
+</head>
+<body>
+  <div id="viz"></div>
+  <script>
+    
+        const alpha = 2.0;
+        const beta = 5.0;
+        function betaPDF(x, a, b) {
+          function gamma(z) {
+            // Lanczos approximation
+            const g = 7;
+            const p = [0.99999999999980993, 676.5203681218851, -1259.1392167224028, 771.32342877765313, -176.61502916214059, 12.507343278686905, -0.13857109526572012, 9.9843695780195716e-6, 1.5056327351493116e-7];
+            if(z < 0.5) return Math.PI / (Math.sin(Math.PI*z) * gamma(1-z));
+            z -= 1;
+            let x = p[0];
+            for(let i=1; i<g+2; i++) x += p[i]/(z+i);
+            const t = z + g + 0.5;
+            return Math.sqrt(2*Math.PI) * Math.pow(t, z+0.5) * Math.exp(-t) * x;
+          }
+          const B = gamma(a)*gamma(b)/gamma(a+b);
+          return Math.pow(x, a-1) * Math.pow(1-x, b-1) / B;
+        }
+        const xs = Array.from({length:401}, (_,i)=> i/400);
+        const ys = xs.map(x => betaPDF(x, alpha, beta));
+        Plotly.newPlot('viz', [{x: xs, y: ys, type:'scatter', mode:'lines', name:'PDF'}], {title: 'Beta 分布 PDF'});
+        
+  </script>
+</body>
+</html>
